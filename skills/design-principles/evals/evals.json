@@ -1,0 +1,56 @@
+{
+  "skill_name": "design-principles",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's a landing page section I designed [screenshot]. Something feels off but I can't tell what. Can you diagnose it?",
+      "expected_output": "Should apply the designed-vs-assembled test: name the single most important element and check whether its size, position, and surrounding space match that rank. Should diagnose flatness/hierarchy problems (everything same weight, nothing with its own lane), competition vs. contrast issues, and lack of restraint if present. Should frame fixes as defaults with stated reasons, not absolute laws. Should tie recommendations back to the message the section is meant to carry.",
+      "assertions": [
+        "Applies the designed-vs-assembled test (names the most important element)",
+        "Checks whether scale/space matches importance rank",
+        "Diagnoses hierarchy/flatness or contrast-vs-competition issues",
+        "Frames fixes as defaults with reasons, not laws",
+        "Ties recommendations to the message"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our marketing wants a neon-soaked, glitchy April Fools' microsite. But that looks nothing like our calm, minimal brand. Should we tell them no because it's off-brand?",
+      "expected_output": "Should invoke 'consistency is coherence, not repetition.' Should explain that a piece can drop the everyday type/color/layout and still be on-brand if it's a deliberate flex within the strategy's latitude. Should ask whether the brand has a defined fixed core vs. flexible range, and judge against the emotional target and strategy rather than literal asset-matching. Should distinguish a legitimate flex from a drift, not reflexively reject it.",
+      "assertions": [
+        "Invokes consistency-as-coherence (not literal asset-matching)",
+        "Explains the legitimate-flex concept",
+        "Asks about / references the fixed core vs. flexible range",
+        "Judges against the emotional target and strategy, not the swatch",
+        "Distinguishes a flex from a drift rather than rejecting outright"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Quick one: should headings always be bold and bigger than body text? My h1 is the biggest, boldest thing on every page.",
+      "expected_output": "Should challenge bold-as-default and the idea that HTML tags are visual contracts. Should explain that an h1 doesn't have to be the largest/boldest element, that bold is a tool reserved for earned emphasis, and that hierarchy can be expressed through scale, space, weight, and color together. Should keep this as a default-with-reasons framing (you can make the h1 huge if the layout demands it), not a rule reversal.",
+      "assertions": [
+        "Challenges bold-as-default",
+        "Explains HTML tags are not visual contracts",
+        "Notes hierarchy uses scale/space/weight/color, not just size",
+        "Keeps a defaults-with-reasons framing"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Take a look at this brand — black background, Instrument Serif headlines, one emerald accent, super consistent across the whole site. Pretty strong, right?",
+      "expected_output": "Should distinguish coherent from good. Should acknowledge the brand is consistent and intentional (table stakes) but recognize the black + serif-display + single jewel-tone accent as the current category/AI-startup default — generic, not distinct. Should insist distinctiveness is judged relative to the category, not in a vacuum, and decline to call the brand strong merely for being consistent. Should lead with the critical read rather than flattering the work.",
+      "assertions": [
+        "Distinguishes coherent from good (consistency is table stakes)",
+        "Identifies the look as a prevalent category/AI default",
+        "Judges distinctiveness relative to the category, not in isolation",
+        "Does not call it strong merely for being consistent",
+        "Leads with a critical read"
+      ],
+      "files": []
+    }
+  ]
+}

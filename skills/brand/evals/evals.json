@@ -1,0 +1,216 @@
+{
+  "skill_name": "brand",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We just hired you to do design work for our SaaS. Here's our live site: https://example.com. Before we start, can you get our brand set up so I don't have to re-explain everything every time?",
+      "expected_output": "Should do the asset legwork ITSELF from the URL rather than handing the user a homework list — crawl multiple key pages (not just the homepage), extract real computed values (colors, font-families, spacing, CTA treatment), grab favicon/OG/SVG logo, follow the footer to social profiles, and probe common brand/press paths (/brand, /press, /media-kit). Should ask the user only for what it genuinely can't reach (gated Figma, internal decks, print, the 'why'). Should diagnose the depth ITSELF, not ask the user to classify Revolution/Evolution/Optimization or lead with that jargon. Should check whether .agents/brand.md exists, 'get' the doc by deriving it from the real assets with concrete specifics not adjectives, include Fixed core vs. flexible range, and ask what's wrong/missing before finalizing.",
+      "assertions": [
+        "Does the gathering itself from the URL (crawls multiple pages, not just homepage)",
+        "Follows the footer to socials and probes brand/press paths autonomously",
+        "Sources the CURRENT logo from the live nav/header, treating favicon/OG/press-kit as possibly stale",
+        "Extracts real computed values and the logo in multiple forms",
+        "Asks the user only for what it cannot reach itself",
+        "Diagnoses depth itself without asking the user to pick or leading with REO jargon",
+        "Derives the doc from the real assets ('get', not invent)",
+        "Includes the Fixed core vs. flexible range section",
+        "Asks what is wrong / missing before finalizing"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our brand isn't defined yet — we're a brand-new company with just a name and a rough idea. Can you set up our brand doc?",
+      "expected_output": "Should recognize the brand is undefined, so .agents/brand.md is an OUTPUT of strategy/direction work, not an input. Should point the user to brand-strategy (to define the feeling, muses, and latitude) and creative-direction (to establish the visual system) before a meaningful brand doc can exist. May offer to stub the document now and fill it as those skills produce answers. Should not fabricate a visual system out of nothing.",
+      "assertions": [
+        "Recognizes the brand is undefined",
+        "Points to brand-strategy and creative-direction as prerequisites",
+        "Does not fabricate colors/type/visual system from nothing",
+        "Offers to stub the document and fill it later"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Update our brand doc — we just switched our accent color from purple to a warm coral and added a new heading typeface, Reckless.",
+      "expected_output": "Should read the existing .agents/brand.md, summarize what's captured, and update only the relevant sections (Color: accent/action role and its ramp; Typography: heading face and its weight/style rules). Should preserve everything else. Should note the action-color protection implication of the new accent. Should confirm changes before saving.",
+      "assertions": [
+        "Reads existing .agents/brand.md first",
+        "Updates only the color and typography sections",
+        "Preserves unrelated sections",
+        "Addresses action-color protection for the new accent",
+        "Confirms before saving"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Our brand is honestly solid — good logo, good colors, people recognize us. The problem is our website and sales deck make it all look cheap. Where do we start?",
+      "expected_output": "Should diagnose this as Optimization (sound identity, poor execution) ITSELF — from the description and assets — without asking the user to choose a depth or leading with the Revolution/Evolution/Optimization jargon. Should reflect the conclusion back in plain language ('your brand's fine, the execution isn't, so we'll fix the execution'). Should NOT route to brand-strategy. Should capture the existing brand accurately into .agents/brand.md as the constraint, audit where the good identity is applied poorly, then route to the medium skills (web-design, collateral-design). Should avoid redefining muses/concepts and warn against over-scoping into a rebrand.",
+      "assertions": [
+        "Diagnoses Optimization itself, without making the user pick a depth",
+        "Does not lead with the REO jargon; reflects the conclusion in plain language",
+        "Does NOT route to brand-strategy",
+        "Captures the existing brand as the constraint",
+        "Audits execution against the sound identity",
+        "Routes to medium skills (web-design / collateral-design) to fix execution",
+        "Warns against over-scoping into a rebrand"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Here's our site: https://example-ai-startup.com — near-black pages, an Instrument Serif headline, a single emerald accent, lots of clean whitespace, all very consistent. We think our brand's pretty dialed. What's your read?",
+      "expected_output": "Should gather the assets itself AND the full direct-competitor set, then score and rank the brand against every competitor across all eight audit dimensions (creative direction, typography, color, logo, iconography, illustration, pattern & texture, layout/flow), producing a scorecard. Should run the AI-slop check (left rail, purple-to-blue gradient, cramped container, no section-layout variety, rounded-lg everywhere) and let any tropes cap the relevant scores. Should resist calling the brand sound just because it's coherent — recognize the near-black + serif + single-accent look as the prevailing AI-startup default, see the brand clustering mid-pack with competitors, and diagnose Evolution (coherent but undifferentiated), NOT Optimization. Should reflect that honestly in plain language without hype.",
+      "assertions": [
+        "Gathers the brand AND the full direct-competitor set",
+        "Scores and ranks brand vs. competitors across all eight dimensions (scorecard)",
+        "Runs the AI-slop check and caps scores for tropes found",
+        "Does not equate coherence/consistency with a sound brand",
+        "Names the near-black + serif + single-accent look as a generic default",
+        "Diagnoses Evolution (coherent but generic, clustered with competitors), not Optimization",
+        "Reflects an honest, critical read in plain language without hype"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Audit our brand. We're a B2B dev-tools company at https://example-devtools.com. The site's clean, the typography and icons are solid, and it's all consistent — and we rank near the top of our category. Our logo is a geometric mark that reads great in black and white, and we use a single accent color throughout. Our goal is to look like a brand-new company within six months. Confirm our competitors first.",
+      "expected_output": "Should confirm the competitor set, then run the nine-category audit testing distinctiveness AGAINST the field rather than asserting it. Logo: must actually compare the mark's silhouette to competitors and flag that it collides with a high-profile tech brand's mark — must NOT call it distinct or 'passes SAD cleanly' just because it's clean in black & white (SAD is not averaged; the collision sinks it). Color: must verify ownership against competitors and recognize the accent is shared with several direct rivals — the category default, NOT an owned color, regardless of consistent use. Must not treat 'near the top of our category' as distinctiveness (best-in-a-lookalike-cluster is still generic). Must not let execution findings (drift, consistency) pull toward Optimization. Should read competitor similarity as HIGH — the foundationals (color, logo silhouette, graphics) match named rivals — and conclude incremental polish can't create distinction, so Optimization is not a real option. Verdict: Revolution, reinforced by the stated ambition. Should present Revolution recommended plus the Evolution alternative's tradeoff.",
+      "assertions": [
+        "Sources the competitor set from .agents/product-marketing.md / competitor-profiling rather than guessing",
+        "Confirms the competitor set before scoring",
+        "Compares the logo silhouette to competitors and flags the high-profile collision; does NOT call it distinct from B&W legibility alone",
+        "Treats SAD as non-averaged (one failed criterion sinks the logo)",
+        "Verifies color ownership and flags the accent as shared/category-default, not owned",
+        "Does not treat high category rank as distinctiveness (clustering trap)",
+        "Does not let execution-drift/consistency pull toward Optimization",
+        "Reads competitor similarity as high (foundationals match named rivals); notes incremental polish can't create distinction",
+        "Lands on Revolution from the foundational categories; factors the stated ambition",
+        "Presents recommended depth plus the alternative's tradeoff"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Audit our brand at https://example-portal.com. The homepage is well-built and consistent, our graphics and glass cards look polished, and our website design is coherent — but our pitch deck looks like a different company, our blues are all over the place, and we have no real pattern system. We have good assets; we're not trying to start over.",
+      "expected_output": "Should score the FOUNDATIONAL categories (Creative Direction, Color, Logo, Pattern) hard against the field — fragmented blues and no owned color, no pattern system, no emotional through-line all score low. But should give genuine CRAFT credit on the craft/consistency categories: well-made, cohesive homepage graphics earn ~3 (not 2) even if generic, and an internally consistent website implies an embedded style system worth ~3 (not 1) — the issue there is adherence/coverage, not nonexistence. Should assess graphics craft details (corner nesting/concentric radii, data-viz treatment, glass-effect consistency) and the wordmark lockup (inconsistent word weights/sizes), not just the mark. Should land on Evolution (real equity to keep, rebuild the applied system), explicitly not Revolution and not Optimization, and present the alternative's tradeoff. Should NOT apply the anti-generic lens uniformly by zeroing out competently-executed craft categories.",
+      "assertions": [
+        "Scores foundational categories (CD, color, logo, pattern) hard against the field",
+        "Credits well-executed craft: cohesive graphics ~3 not 2; implicit style system ~3 not 1",
+        "Judges style guide on existence (incl. implicit) + adherence + coverage, not just a published doc",
+        "Assesses graphics craft details (corner nesting, data-viz, effect consistency)",
+        "Checks the wordmark lockup consistency, not just the mark glyph",
+        "Lands on Evolution (keep equity, rebuild applied system), not Revolution or Optimization",
+        "Does not zero out competently-executed craft categories with the anti-generic lens"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Audit our brand at https://example-personalization.com. Our name is a coined word that customers regularly misspell and stumble over saying. We have a recurring circular/radial motif (in the logo and across the hero and page sections), an exceptionally consistent and well-crafted website, a clean icon set, and a tidy Figma with named tokens — but our typeface is a common system font and our overall look is calm/clean rather than boldly distinctive.",
+      "expected_output": "Should VISUALLY examine the rendered design, not score from CSS tokens — catching the recurring radial motif (Pattern & Texture should score well, not 'none') and the circular symbol in the mark (Logo should not be called 'wordmark-only, no mark'). Should score CRAFT categories on execution, reaching 5 for exceptional work: Typography can be a 5 despite a common/system font (score the craft, not the face's fame); Icon Libraries a 5 for a clean consistent set (three tiers are upside, not a requirement); Cohesive Shapes & Graphics high for impeccable product abstractions; Style Guide high for the implicit-but-coherent token system. Creative Direction can be a 3 (calm/competent, not deliberately owned) WITHOUT capping the craft scores. The verdict should be Optimization (strong, coherent, real equity — a distinct motif and mark — push it further), explicitly NOT Revolution, with Revolution offered only as the optional 'break from the cluster' path. Should not let a soft Creative Direction score or a common typeface drag the whole audit down.",
+      "assertions": [
+        "Visually examines rendered design; catches the radial motif (Pattern not scored 'none')",
+        "Finds the circular symbol in the mark; does not call the logo 'wordmark-only, no mark'",
+        "Scores craft categories on execution, reaching 5 (e.g. Typography 5 despite a common/system font)",
+        "Treats the three-tier icon model as upside, not a cap",
+        "Credits the implicit token system (Style Guide high, not docked for not being a published brand guide)",
+        "Creative Direction can be ~3 without numerically capping the craft categories",
+        "Reads competitor similarity as MODERATE (distinct enough, some crossover), not high",
+        "Presents the split fork as the client's choice by appetite: Optimization (keep + elevate) vs Revolution (wholesale shift), not a single default",
+        "Notes distinctiveness is a step-change — you can't nudge incrementally from 'distinct enough' to 'remarkably distinct'",
+        "Flags the name as a verbal-identity issue (fails the radio/mouth test) separate from the visual scores",
+        "Presents the FULL per-category breakdown (scorecard table + per-category why/status/forward), not just a one-line verdict or a file pointer"
+      ],
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Audit our brand at https://example-ffe.com. We're the only one in our category with a warm palette, a slab serif, and an animal mascot — everyone else is cool, sans-serif, and minimal. But honestly the mascot only shows up in the favicon (where people misread it as a different animal), our one brand color barely appears (the site's mostly gray), our headlines are oversized and hard to read, the marketing site blurs into product screenshots, and there's a dot pattern in the background. Confirm competitors first.",
+      "expected_output": "Should read competitor similarity as LOW (genuine visual outlier) but NOT let that inflate the foundational scores. Creative Direction should be LOW (1-2): being different is not being directed — there's no emotional through-line anchoring the warm/mascot look. Should score the DEPLOYED reality, not the potential: Color low because the brand color barely appears and gray dominates (latent equity, not a working color); the mark scored down because it lives only in a favicon. Logo: the mascot-misread is a recognition/Simple failure that caps the score, not a footnote. Typography scored on actual execution (oversized unreadable headlines, marketing/product blur) ~2, not credited off the typeface name. Pattern: the dot pattern is a real deployed motif (~3), not 'none' — confirm visually. Verdict: Evolution — the low-similarity raw equity is real but undeployed and unanchored, so anchor it (creative direction) and build it out; not Optimization (it isn't working yet), not Revolution (there's equity to keep). Should present the full breakdown.",
+      "assertions": [
+        "Reads competitor similarity as low but does NOT inflate Creative Direction from it (different != directed)",
+        "Scores Creative Direction low (no emotional through-line anchoring the outlier look)",
+        "Scores the deployed reality, not the potential (color low because barely used; mark low because favicon-only)",
+        "Treats the mascot-misread as a recognition/Simple failure that caps the logo, not a footnote",
+        "Scores Typography on actual execution flaws, not the typeface name",
+        "Recognizes the dot pattern as a real deployed motif (~3), not 'none'",
+        "Lands on Evolution (latent equity, undeployed/unanchored — build it out), not Optimization or Revolution"
+      ],
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "Audit our brand at https://example-docs-ai.com. We have a genuinely distinctive jewel-tone palette with a warm accent, an ownable geometric background pattern, a solid logo, and characterful typefaces — but our current website implements them badly: the hero pattern is cranked to blown-out contrast and fights the text, the sections are hard-banded (dark, then black, then cream), product screenshots bleed into the marketing layout, and the serif display isn't being used to its potential. We like our assets; the site just doesn't do them justice.",
+      "expected_output": "Should look THROUGH the rough implementation and recognize the underlying assets (color, pattern, logo, typefaces) are strong and distinct — deployed, just mis-tuned. Implementation flaws (blown-out pattern contrast, banding, screenshot bleed, underused type) are execution problems, NOT weak assets, and must not tank the foundational scores. Color/Pattern/Logo/Typography should score as strong assets; the low scores belong to the execution/application, and the AI-slop-ish tells (banding, over-contrast) are read as bad implementation of good assets, not a generic brand. Verdict: Optimization — keep every asset, fix the build (contrast, layout, hierarchy, application); explicitly NOT Evolution (nothing missing/undeployed to build out) and NOT Revolution (assets are distinct and worth keeping). Should present the full breakdown and frame the work as execution, not new direction or new assets.",
+      "assertions": [
+        "Looks through the rough site to assess the underlying assets on their merits",
+        "Scores color/pattern/logo/typography as strong, distinct assets despite the poor implementation",
+        "Treats banding/over-contrast/screenshot-bleed as execution flaws (bad build of good assets), not a weak/generic brand",
+        "Puts the low scores on execution/application, not the foundational assets",
+        "Verdict is Optimization — keep every asset, fix the build",
+        "Explicitly not Evolution (nothing missing to build out) and not Revolution (assets are distinct/keepable)",
+        "Frames the work as execution/implementation, not new direction or new assets"
+      ],
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "Audit our brand at https://example-clubsaas.com. Honestly the whole thing reads as generic B2B SaaS — a default sans paired with an ornate display serif, a cool-blue palette that overlaps our competitors, a plain wordmark logo, no background pattern, boxed product screenshots, a consistent icon set, thin social presence, and only an in-app style guide. We know we need deeper brand work eventually, but right now we just want to improve what we've got as we build new pages — bigger moves can come later.",
+      "expected_output": "Should score the foundation honestly and low (generic creative direction ~1, overlapping color ~2, plain wordmark logo ~2 — do NOT inflate the logo via 'more distinctive than competitors' wordmarks). Should NOT over-credit: Application is a 2 (thin presence is not strength, even if consistent); Style Guide is 0-1 (an in-app/product style guide is not a brand style guide); Cohesive Graphics ~2 (boxed screenshots are not a cohesive branded system). Should NOT under-credit the consistent icon set — that's a 4 even though it's stock. Crucially, the VERDICT must follow the client's stated appetite: recommend Optimization NOW (refine the existing type/color/layout fundamentals on the new pages) with the deeper creative-direction/logo/style-guide work sequenced as a later phase — micro now, macro later. Must NOT argue against Optimization or force Evolution/Revolution just because the foundation is weak; must ask about / honor the incremental appetite; must be honest that fundamentals-polish makes it tidier, not distinct.",
+      "assertions": [
+        "Scores the foundation honestly and low (does not inflate)",
+        "Does NOT inflate the plain wordmark logo via best-in-a-weak-set comparison (logo ~2)",
+        "Application ~2 (thin presence is not strength, even if consistent)",
+        "Style Guide 0-1 (in-app/product guide is not a brand style guide)",
+        "Cohesive Graphics ~2 (boxed screenshots are not a cohesive branded system)",
+        "Does NOT dock the consistent icon set for being stock (icons ~4)",
+        "Recommends Optimization NOW with deeper work sequenced later (micro now, macro later), honoring the incremental appetite",
+        "Does not argue against Optimization or force Evolution/Revolution from a weak foundation; is honest that polish != distinctiveness"
+      ],
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "Audit our brand at https://example-devtool.com. At a glance it looks clean and modern — a serif headline, a clean sans, slate ink on white, tidy screenshots. But look closely: there's no type scale, heading weights are inconsistent, some body copy is right-aligned, the grid varies section to section, the marketing leans on raw product screenshots, icons mix a line set with the odd emoji, corner radii aren't concentric, and the logo has awkward letter-spacing and a rotated square with no clear rationale. There's no brand style guide (just the in-app design tokens), and off-site we only have a LinkedIn.",
+      "expected_output": "Should NOT reward the clean-at-a-glance surface. Must inspect and catch the real flaws, scoring craft categories at 2 (Typography 2 for no type scale + inconsistent weights + right-aligned body + varying grid; Cohesive Graphics 2 for screenshot-led + mixed icon styles + non-concentric radii). Creative Direction is a 1 (clean modern SaaS with no muse/through-line is a 1, not a 2). Logo is a 2 (construction flaws — awkward kerning, unjustified rotation, no small-size lockup — cap it despite any clever concept). Application is a 1 (near-absent off-site — only LinkedIn, no templates/OG system). Style Guide is 0-1 (in-app tokens are not a brand style guide). Verdict can be Evolution (keep the name/logo-concept, build the foundation), but the scores must land low and honest — roughly a mid-teens total, not low-20s. Should not credit surface cleanliness as execution quality.",
+      "assertions": [
+        "Does not reward the clean-at-a-glance surface; inspects for real flaws",
+        "Scores Typography ~2 (no type scale, inconsistent weights, right-aligned body, varying grid)",
+        "Scores Cohesive Graphics ~2 (screenshot-led, mixed icon styles, non-concentric radii)",
+        "Scores Creative Direction 1 (clean SaaS with no through-line is a 1, not a 2)",
+        "Scores Logo 2 (construction flaws cap it despite a clever concept)",
+        "Scores Application 1 (near-absent off-site) and Style Guide 0-1 (in-app tokens != brand guide)",
+        "Overall total lands low/honest (mid-teens), not inflated into the low-20s"
+      ],
+      "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "Audit our brand at https://example-b2b-infra.com. It's a generic enterprise-tech-blue SaaS look, but the blue is differentiated within our competitor set and we've used it consistently across a mature, active marketing presence (lots of customer logos, case studies, a branded product-line vocabulary). Execution has some drift: five competing blues in the CSS, a couple of legacy fonts left over, a chrome-gradient logo mark, a stale square app icon, and we have a real component/design system on the web but no brand style guide. We want to refine now and consider bigger moves later.",
+      "expected_output": "Should recommend Optimization now (refine the fundamentals — consolidate the blues, purge legacy fonts, flatten the logo gradient, fix the app icon) with a creative-direction phase sequenced later, honoring the incremental appetite. Should NOT auto-score Creative Direction a 1 just because there's no muse — a consistent, differentiated-in-set color plus a product-line vocabulary and mature presence is a 2-3. Should NOT sink the Logo to a low score purely for the chrome gradient — that's a fixable Phase-1 flatten, so the mark stays around a 3 (dock, don't sink). Crucially, Style Guide is 0-1, NOT 2: a web component/design system with visible drift (five blues, stale icon, legacy fonts) is not a brand style guide and its drift proves there's no working guide. Should present the full breakdown; scores should land close to a human expert's (within ~1 per category), not chase exactness.",
+      "assertions": [
+        "Recommends Optimization now with creative-direction sequenced later (honors incremental appetite)",
+        "Does not auto-score Creative Direction 1 for a consistent, differentiated-in-set generic brand (2-3 acceptable)",
+        "Does not sink the logo for a fixable gradient — flatten-the-gradient is a Phase-1 fix, mark stays ~3",
+        "Scores Style Guide 0-1: a drifting web/component design system is not a brand style guide",
+        "Treats the drift as an Optimization-now fix-list, not evidence the foundation is sound",
+        "Presents the full breakdown; category scores land within ~1 of an expert audit"
+      ],
+      "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "Audit our brand at https://example-ai-tool.com. We're an indie AI productivity tool: clean site, Tailwind-blue palette, Open Sans, bento grid, a glossy-3D robot app icon, dot-grid backgrounds. Our product concept is genuinely differentiated, and our name ladders to the positioning. Our competitors all use the same glossy-3D-icon/bento/keycap tropes. We're open to going as deep as needed on the brand.",
+      "expected_output": "Should land Evolution as the baseline recommendation (real equity in the name and concept; generic foundation at moderate-high similarity). Crucially, because the client is OPEN to going deep, it must NOT foreclose Revolution — should present it as the recommended appetite-up path ('a full revolution if you're open to it'), noting the keepable equity (name, concept) survives a Revolution since what gets rebuilt is the visual language. Should not present the fork as merely Evolution-vs-Optimization-only when the foundation is generic and the client has appetite.",
+      "assertions": [
+        "Baseline recommendation is Evolution (equity in name/concept, generic foundation)",
+        "Does NOT foreclose Revolution — presents it as the appetite-up option given the client's openness",
+        "Notes the name/concept equity survives a Revolution (the visual language is what gets rebuilt)",
+        "Does not reduce the fork to Evolution-vs-Optimization-only"
+      ],
+      "files": []
+    }
+  ]
+}

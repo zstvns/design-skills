@@ -1,0 +1,47 @@
+{
+  "skill_name": "creative-direction",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We need our visual identity figured out — pick our colors, fonts, and overall look. We're a B2B fintech startup, no brand work done yet. Just make it look premium.",
+      "expected_output": "Should check .agents/brand.md for an Emotional Target and muses, find none, and STOP — routing to brand-strategy first rather than choosing colors/typefaces from taste. Should explain why: without the feeling and the muses, any palette/type choice is a default or an accident (the 'premium' ask would likely produce the current AI-startup default). Should not just pick a tasteful palette to be helpful.",
+      "assertions": [
+        "Checks .agents/brand.md for Emotional Target and muses before designing",
+        "Refuses to pick colors/type from taste; routes to brand-strategy",
+        "Explains the failure mode (category default / different-by-accident)",
+        "Does not deliver a palette or type pairing in this state"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our brand strategy is done — emotional target is 'calm certainty, like a bank vault crossed with a Muji store,' with muses documented in .agents/brand.md, and our competitor set is confirmed (all of them run dark-mode purple-gradient AI aesthetics). We're a Revolution. Build the creative direction.",
+      "expected_output": "Should produce THREE genuinely distinct concepts (different muses/color stories/type pairings/attitudes — not three shades of one idea), presented as stylescapes described as real intended assets, not mood boards. Each element should trace to a muse or the emotional target. Color must be verified against the competitor set — escaping the dark-purple-gradient lane rather than joining it. Typography should include role assignments, restrictions, and the licensing/character-support checkpoint. Should plan a motif derivable from the (future) mark or system geometry. Should run the self-audit (foundational categories + AI-slop check) before presenting, and drive to a client decision, resisting 'a little of each.' Approved system gets written to .agents/brand.md with the why per choice.",
+      "assertions": [
+        "Produces three genuinely distinct concepts, not variations of one",
+        "Frames stylescapes as real intended assets, not mood boards",
+        "Traces elements to muses / the emotional target",
+        "Verifies color against the competitor set and escapes the category lane",
+        "Includes the type licensing / character-support checkpoint",
+        "Runs a self-audit (foundational categories + AI-slop) before presenting",
+        "Drives to a decision and resists merging all three",
+        "Writes the approved system + rationale to .agents/brand.md"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "We're an Evolution: keeping our logo and our navy (that's the fixed core, it's in .agents/brand.md along with our emotional target), but the audit said our type is generic, we have no motif, and our accent color collides with a competitor. Build the direction for the deltas.",
+      "expected_output": "Should anchor on the fixed core (logo + navy carried forward, untouched) and work ONLY the named deltas: a new type pairing (contrast-not-competition, licensing checked), a motif — preferably derived from the kept logo's geometry — that works without logo or color present and doesn't collide with a competitor's, and a replacement accent verified as unowned in the confirmed competitor set. Should start from the primary touchpoint (hero/website) to show the evolved direction against the current state. Should NOT rerun full discovery or propose three from-scratch concepts. Should validate and write the updated system into .agents/brand.md.",
+      "assertions": [
+        "Carries the fixed core (logo, navy) forward untouched",
+        "Works only the named deltas; does not rerun full discovery or offer three concepts",
+        "Derives the motif from the kept mark's geometry; checks competitor collision",
+        "Verifies the new accent is unowned against the confirmed competitor set",
+        "Anchors the presentation on the primary touchpoint vs. the current state",
+        "Writes the updated system to .agents/brand.md"
+      ],
+      "files": []
+    }
+  ]
+}

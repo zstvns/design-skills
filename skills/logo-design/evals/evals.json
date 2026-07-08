@@ -1,0 +1,47 @@
+{
+  "skill_name": "logo-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Is our logo any good? It's a serif 'M' inside a rounded square, plus the wordmark. Here's the site: https://example.com",
+      "expected_output": "Should refuse to judge the mark in a vacuum: first gather it in every form (favicon, social avatar, app icon, OG, reversed) and pull the direct competitors' logos, and read the Emotional Target from .agents/brand.md. Should then evaluate against SAD with each dimension in its context — Simple across the implementation grid, Appropriate against the core feelings, Distinct against the competitor shelf and the category default (a serif initial in a rounded square is a common pattern — should test, not assume). Should report pass/weak/fail per dimension with evidence, be honest that Distinct is the hardest bar, and write the verdict to .agents/brand.md.",
+      "assertions": [
+        "Takes the current mark from the live nav, not a stale favicon/OG/press-kit version",
+        "Gathers the mark in all implementations and the competitor set before judging",
+        "Reads the Emotional Target as the basis for Appropriate",
+        "Judges Simple across the implementation grid (favicon/social/app/reversed)",
+        "Judges Distinct against direct competitors, not in isolation",
+        "Flags the rounded-square serif-initial pattern as potentially generic, tested not assumed",
+        "Reports per-dimension verdicts with evidence and writes to .agents/brand.md"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Design a logo for our new B2B security product. We want it to feel like a vault — calm, certain, impenetrable.",
+      "expected_output": "Should treat this as a new mark and work from .agents/brand.md (Emotional Target = calm/certain/impenetrable; muses; competitor set) — if no brand context exists, should route to brand-strategy first. Should sketch across the three families (typographic, pictorial, abstract), resolve in black and white before color, and build the full system (primary, secondary, mark, clear space, min size, reversed/mono). Should reject playful or busy directions as inappropriate to the vault feeling, and check distinctiveness against security-category conventions (shields, locks, keyholes are clichés). Should test against the implementation grid before finishing.",
+      "assertions": [
+        "Works from the Emotional Target (or routes to brand-strategy if none)",
+        "Sketches across typographic / pictorial / abstract families",
+        "Resolves in black and white before color",
+        "Builds the full system (lockups, mark, clear space, min size, reversed)",
+        "Screens directions for appropriateness to the 'vault' feeling",
+        "Checks distinctiveness against category clichés (shield/lock/keyhole)"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our logo looks great on the website hero. Can we just call it done?",
+      "expected_output": "Should push back that the hero lockup is not enough to judge or finalize a logo. Simplicity is verified across every implementation — favicon, social avatar, app icon, single-color, reversed, tiny/print — and the mark must be the same construction in all of them. Should ask to see (or generate) the implementation grid, and also note that Appropriate and Distinct still need the emotional target and competitor set. Should not sign off on a single context.",
+      "assertions": [
+        "Rejects judging the logo from the hero lockup alone",
+        "Explains simplicity is verified across the full implementation grid",
+        "Notes the mark must be one consistent construction everywhere",
+        "Brings up Appropriate (emotional target) and Distinct (competitors) as still open",
+        "Does not sign off based on one context"
+      ],
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "skill_name": "brand-strategy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're rebranding from the ground up. Help us figure out what our brand should feel like. We make accounting software for freelancers.",
+      "expected_output": "Should name the depth as Revolution and run the discovery arc conversationally, one question at a time (not a dumped questionnaire). Should push hard for specificity and reject marketing-speak. Should drive the muse exercise toward stealable VISUAL cues, including muses outside the category. Should land on a specific, sensory Emotional Target (Big Three) and define the Fixed core vs. flexible range. Should aim toward three distinct creative concepts for the handoff to creative-direction, and note the output goes into .agents/brand.md.",
+      "assertions": [
+        "Names the depth (Revolution)",
+        "Runs discovery one question at a time, not all at once",
+        "Pushes for specificity / rejects marketing-speak",
+        "Drives muses to stealable visual cues",
+        "Produces a specific, sensory Emotional Target",
+        "Defines fixed core vs. flexible range",
+        "Heads toward three distinct concepts and writes to .agents/brand.md"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Here's a muse for our brand: Patagonia, because they really care about the environment and so do we.",
+      "expected_output": "Should flag this as a muse named for its mission, not its visual look (the 'muse with no visual' trigger). Should redirect: what would we actually STEAL visually from Patagonia — the earthy muted palette, the documentary photography style, the utilitarian type, the worn-in texture? Should insist that without a stealable visual cue it isn't a usable muse, while staying encouraging and curious rather than dismissive.",
+      "assertions": [
+        "Flags that the muse is mission-based, not visual",
+        "Redirects to a stealable visual cue (palette, photography, type, texture)",
+        "Insists on visual relevance to count as a muse",
+        "Stays encouraging / curious, not dismissive"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our brand is basically fine, we just think the website looks cheap. Do we need to do brand strategy?",
+      "expected_output": "Should diagnose this as Optimization, not Revolution — the foundation is solid, the execution is poor. Should advise that full brand strategy is likely unnecessary and could throw away equity, and point toward fixing the execution in the relevant medium (web-design) and consulting the existing brand context. Should match effort to depth rather than over-scoping.",
+      "assertions": [
+        "Diagnoses the depth as Optimization",
+        "Advises against full brand strategy here",
+        "Warns about throwing away equity by over-scoping",
+        "Points toward fixing execution (web-design) instead"
+      ],
+      "files": []
+    }
+  ]
+}
