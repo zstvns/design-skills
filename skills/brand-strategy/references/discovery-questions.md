@@ -11,6 +11,7 @@ Ask one at a time. After each answer, run it against the coaching triggers below
 | Too generic | Could describe any brand in any category | "What makes that specifically *this* brand?" |
 | Muse with no visual | An inspiration named for its mission, not its look | "What can we *steal* visually? If nothing, it's not a muse for us." |
 | Tactical when emotional is needed | Features/logistics when asked about feeling | "Set the logistics aside — how should it *feel*?" |
+| Asks you for the answers | "Just suggest some muses / pick a direction for us" | Offer the deeper path first ("your own muses will fit better — want to try a few questions first?"); generate ideas only after they decline, framed as starting points to react to |
 
 ## 1. Vision & Truth
 - What is this brand really for — beyond what it sells?

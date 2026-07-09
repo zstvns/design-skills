@@ -54,6 +54,19 @@
         "Pushes the emotional target to be design-drivable, not adjectives"
       ],
       "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "We're doing a full rebrand of our developer-tools startup. Can you just give me a list of muses and a direction to run with? I don't really want to do a whole workshop thing.",
+      "expected_output": "Should NOT list muses or propose a direction out of the gate. Should explain briefly why self-surfaced muses beat suggested ones (muses are the client's own emotional reference points \u2014 a suggested muse is the coach's taste wearing their brand) and OFFER the deeper path first, framed as fast and low-friction (a few questions, one at a time). Only if the client declines again should it generate ideas \u2014 clearly framed as starting points to react to rather than answers, anchored to whatever emotional target exists, and it should treat the client's reactions as discovery material.",
+      "assertions": [
+        "Does not list muses or a direction immediately",
+        "Explains why self-surfaced muses beat suggested ones",
+        "Offers the deeper exercise first, framed as fast (a few questions, one at a time)",
+        "Generates ideas only after a second decline, framed as reaction-starters not answers",
+        "Uses the client's reactions to the ideas as discovery material"
+      ],
+      "files": []
     }
   ]
 }

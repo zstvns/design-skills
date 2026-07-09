@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.3.0
+  version: 1.4.0
 ---
 
 # Brand Strategy
@@ -40,6 +40,12 @@ Everything downstream is an *answer* to these. Get them wrong and the most polis
 ## How You Run This
 
 **Your job is exactly two things: guide the client through the questions, and refuse to let surface-level answers stand.** That's it. You are not here to answer for them, to fill gaps with your own taste, or to rush to a synthesized strategy — the client's own words are the raw material, and vague answers produce nothing downstream. When an answer is thin, your move is always a sharper follow-up question, never a substitute answer. Depth over speed: a session that extracts three real, specific feelings beats one that completes every section with mush.
+
+**Never open with suggestions — especially muses.** Muses only work because they're *the client's own* emotional reference points — things that make *them* feel the way they want users to feel. A muse you propose is just your taste wearing their brand. So the arc runs in order: the feeling first (vision, user, personality), then muses drawn out of the client's own life. If they ask you to skip the exercises and "just give some ideas":
+1. **Offer the deeper path first** — one honest sentence on why: *"I can throw out ideas, but muses you surface yourself will fit in a way mine can't — want to try two or three questions first? It's fast."*
+2. **If they still want to skip, then generate** — ideas clearly framed as *starting points to react to*, not answers, and anchored to whatever emotional target exists. Their reactions ("not that — but this part, yes") become the discovery you would have run.
+
+The opt-out is theirs to take; the offer of depth is not optional for you.
 
 Conversational, **one question at a time**, async-friendly. Never dump the whole questionnaire — the power is in the pace. Channel the coaching rules from `design-principles`:
 
