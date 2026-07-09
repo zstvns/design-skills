@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Brand Strategy
@@ -15,11 +15,14 @@ Read `design-principles` first. This skill is the applied front-end of two of it
 
 ## Where You Enter
 
-**Don't re-run the diagnosis — `brand` owns it.** Read `.agents/brand.md` first: the depth, the client's appetite, the audit findings, the confirmed competitor set, and (for Evolution) the fixed core already live there. Your entry mode follows from what you find:
+**Don't re-run the diagnosis — `brand` owns it.** Read `.agents/brand.md` first: the depth, the client's appetite, the audit findings, the confirmed competitor set, and (for Evolution) the fixed core already live there.
 
-- **Full discovery** (Revolution, or nothing exists yet) — run the whole arc below: vision, muses, emotional target, latitude, three concepts.
-- **Deltas-only** (Evolution) — see "The Deltas-Only Mode" below. Don't re-litigate kept equity.
-- **Routed here by mistake** (a strong, distinct, deployed brand — an Optimization) — say so and route to the medium skills; strategy on a sound foundation burns equity.
+**This skill is only for brands whose emotional foundation is being built or rebuilt — a Revolution or a *heavy* Evolution.** Everyone else should skip it:
+
+- **Revolution, or nothing exists yet** → full discovery: run the whole arc below (vision, muses, emotional target, latitude, three concepts).
+- **Heavy Evolution** (the foundation itself is being re-anchored — new direction, new emotional target, major deltas) → "The Deltas-Only Mode" below. Don't re-litigate kept equity.
+- **Light Evolution** (equity kept, modest refinements) → skip the coaching session; `creative-direction` can work directly from the audit's Moving-forward notes and the existing direction.
+- **Optimization** → not this skill at all. The brand is sound; what they need is design help later, when the actual assets are being executed (`creative-direction` documentation-pass at most, then the medium skills). Say so and route out — a strategy session on a sound foundation burns equity and the client's time.
 
 If there's no `.agents/brand.md` at all, you can still run standalone for a brand-new company — but suggest `/brand` afterward so the output has a home every other skill reads.
 
@@ -35,6 +38,8 @@ Produce a **brand direction** that answers, with specificity:
 Everything downstream is an *answer* to these. Get them wrong and the most polished execution still feels off.
 
 ## How You Run This
+
+**Your job is exactly two things: guide the client through the questions, and refuse to let surface-level answers stand.** That's it. You are not here to answer for them, to fill gaps with your own taste, or to rush to a synthesized strategy — the client's own words are the raw material, and vague answers produce nothing downstream. When an answer is thin, your move is always a sharper follow-up question, never a substitute answer. Depth over speed: a session that extracts three real, specific feelings beats one that completes every section with mush.
 
 Conversational, **one question at a time**, async-friendly. Never dump the whole questionnaire — the power is in the pace. Channel the coaching rules from `design-principles`:
 
