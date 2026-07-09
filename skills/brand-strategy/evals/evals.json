@@ -39,6 +39,20 @@
         "Points toward fixing execution (web-design) instead"
       ],
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "We ran the brand audit — .agents/brand.md says we're an Evolution keeping our logo and navy (fixed core), and the deltas are: no motif, generic typography, and an accent color that collides with a rival. Run the strategy.",
+      "expected_output": "Should read .agents/brand.md and enter DELTAS-ONLY mode: treat the kept logo and navy as given constraints, not questions — must not re-run full discovery or ask the client to re-justify kept equity. Should first define/confirm one Emotional Target (Big Three) so the deltas share a feeling, then run only the arc sections the deltas need (muses scoped to motif character, competitive landscape scoped to the new accent's territory, personality scoped to typographic character). Should check the kept logo can plausibly live inside the new emotional target and flag any tension now. Emotional target must be design-drivable (specific enough to reject options), not adjectives.",
+      "assertions": [
+        "Enters deltas-only mode from .agents/brand.md; does not re-run full discovery",
+        "Treats the kept logo and navy as given constraints, not questions",
+        "Defines/confirms one Emotional Target before working the deltas",
+        "Scopes discovery to the named deltas (motif, type, accent territory)",
+        "Checks the kept equity against the new emotional target and flags tension",
+        "Pushes the emotional target to be design-drivable, not adjectives"
+      ],
+      "files": []
     }
   ]
 }
