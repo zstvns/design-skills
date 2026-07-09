@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.2.0
+  version: 1.3.0
 ---
 
 # Brand Strategy
@@ -49,7 +49,7 @@ Conversational, **one question at a time**, async-friendly. Never dump the whole
 - **Brain-dump first, refine later.**
 - **Curiosity, not criticism.**
 
-Full prompts and coaching triggers: [references/discovery-questions.md](references/discovery-questions.md).
+Full prompts and coaching triggers: [references/discovery-questions.md](references/discovery-questions.md). Working-document format: [references/strategy-doc-template.md](references/strategy-doc-template.md).
 
 ## The Discovery Arc
 
@@ -99,9 +99,23 @@ For **Revolution / serious Evolution**, the discovery becomes **three distinct c
 
 For **Evolution**, anchor on a single direction that respects existing equity — often starting from the primary touchpoint and carrying the existing logo/palette forward while introducing new graphics, type, or texture.
 
+## The Working Document
+
+The session is captured in **`.agents/brand-strategy.md`** — the full strategy record: every question, the client's answers in their own words, the coaching refinements, and the synthesized outputs. Rules:
+
+- **Save after every answer.** Coaching sessions get interrupted; the document is the session's memory. At the start of any run, check for an existing `.agents/brand-strategy.md`, read it, and offer to resume where they left off rather than starting over.
+- **Markdown is canonical.** This file is the source of truth the agent reads and edits throughout the brand build-out — later skills (`creative-direction`, `logo-design`, `design-critique`) refer back to it for the full reasoning behind the distilled context in `.agents/brand.md`.
+- **Publish anywhere, on request.** The client picks where the strategy "lives" for viewing and sharing — Notion, a Google Doc, a PDF, anything. Generate that copy *from* the markdown whenever they ask (and regenerate after updates). The published copy is a delivery surface; if edits happen there, fold them back into the markdown so the canonical version never drifts.
+- **Keep the client's verbatim language.** Their raw phrasing is source material for copy and creative direction — synthesize *alongside* it, don't overwrite it.
+
 ## The Deliverable
 
-A **brand direction** written into the relevant sections of `.agents/brand.md` (run `/brand` to create/update it): the vision and ideal-user notes, the competitive visual landscape, the pressure-tested personality, the muses with their stealable cues, the Emotional Target, the Fixed core vs. Flexible range, and — for Revolution — the concept directions.
+Two layers, one source of truth:
+
+1. **`.agents/brand-strategy.md`** — the full record (above): vision and ideal-user notes, the competitive visual landscape, the pressure-tested personality, the muses with their stealable cues, the Emotional Target, the Fixed core vs. Flexible range, and — for Revolution — the concept directions, all with the client's verbatim answers preserved.
+2. **`.agents/brand.md`** — the distilled context: on completion, write the synthesized outputs (Emotional Target, Muses, Fixed core / Flexible range, concept directions) into its sections so every downstream skill inherits them without reading the whole session.
+
+Plus, if the client wants it, a **published copy** wherever they choose (Notion, Google Doc, PDF) — generated from the markdown, never the other way around.
 
 This is the source `creative-direction`, `logo-design`, and `design-critique` all read from. When a later skill asks "is this *appropriate*?", appropriate means *appropriate to this direction*.
 
