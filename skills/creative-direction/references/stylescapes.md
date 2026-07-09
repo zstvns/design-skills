@@ -24,7 +24,7 @@ A stylescape is a wide, composed board that shows a concept as **real intended a
 ## Presenting
 
 - Present each concept with its **story first** — the feeling, the muses, why this answers the emotional target — then the board. A stylescape without its narrative is just tasteful arrangement.
-- Present all three in one session/loom so they're judged against each other, not in isolation.
+- Present all three together so they're judged against each other, not in isolation.
 - Ask for a **decision, not a critique**: which one is the brand? Gather reactions per concept, but drive to a pick.
 - **Resist "a little of each."** Merging three concepts averages them into none. A deliberate graft (concept A's palette with concept B's type) is legitimate only if the *story* still holds — re-validate against the emotional target before accepting it.
 

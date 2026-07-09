@@ -68,6 +68,8 @@ Then run `/brand` and give it a company URL. It gathers the assets itself, confi
 
 ## Using the Skills
 
+**Fully self-serve.** Everything here is built to be run end-to-end by you and your own AI agent — the audit, the strategy coaching, the creative direction, all of it. There's no agency, workshop, or consultant behind this repo, and nothing to book; iterate with your agent, keep your context in `.agents/`, and go as deep as your brand needs.
+
 Invoke any skill by name (e.g. `/brand`, `/brand-strategy`). Start at `brand` for any new project; the skills cross-reference each other and tell you where to go next. They read shared context from `.agents/brand.md` (and `.agents/product-marketing.md` if a marketing-skills setup is present).
 
 ## Status
