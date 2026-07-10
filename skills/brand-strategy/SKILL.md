@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.8.0
+  version: 1.9.0
 ---
 
 # Brand Strategy
@@ -33,7 +33,7 @@ Don't start by asking questions — start by taking inventory, so you only coach
 
 2. **Open by mapping, not interrogating.** Reflect back what you already have and name what's missing, so the founder never re-answers settled ground: *"From your audit and positioning I've already got who you serve, what you do differently, and who you're up against. What I don't have — and what actually drives the visuals — is how you want people to **feel**, and the references that give the brand its DNA. That's what this is: about fifteen minutes, one question at a time, and we'll look at images as we go."* This is where the generic positioning-seeded stab (above) lands, as the opener to the first real question.
 
-3. **Assess visual input, and set the visual mode.** Say plainly this is a *looking* exercise, not just a talking one — then gauge what the founder can bring: *"Do you already have references you love — a board, screenshots, brands, films, objects — or should I pull images as we go?"* Some founders arrive with strong visual opinions and a folder; others have nothing and need you to fetch and generate things for them to react to. Adapt to which, but either way set the expectation up front: you'll be putting images on screen, and their job is to point at what's right and what's wrong.
+3. **Set the visual mode — but don't collect favorites yet.** Say plainly this is a *looking* exercise, and handle only the logistics: *"As we go I'll pull images onto the screen and you'll point at what's right — if you've already got a board or screenshots, share them; if not, I'll fetch as we go."* Do **not** ask what they "love" or want to feature — that's the wrong question. Muses get solicited later and *anchored to the feeling* (see Muses); right now you're only setting the mode and gauging whether they bring references or you fetch them.
 
 4. **Then start the loop** on the first genuinely-open question — usually the feeling — reflecting as you go.
 
@@ -109,7 +109,11 @@ What does the category look like right now — the colors, type, imagery everyon
 If the brand were a person, who are they? Pick concrete traits and pressure-test them. "Confident" → confident like a Savile Row tailor, or like a stand-up comedian? Same word, opposite designs.
 
 ### 5. The Muses (the heart of it)
-The "steal your brand" exercise. Surface specific things — films, products, places, objects, interfaces, materials, brands inside *or outside* the category — that make *you* feel the way you want the user to feel. For each, name the **visual cue to steal**: a color story, a texture, a type treatment, a sense of space, a quality of light. Spend the most time here; this is where the brand gets its DNA. Drive every muse to a stealable visual.
+The "steal your brand" exercise. **A muse is not a favorite, and not something you want to feature — it's a thing that makes *you* feel the way you want your audience to feel.** That distinction is the whole method, and it's why the feeling comes first: the muse question is meaningless without a confirmed target.
+
+**Always ask muses anchored to that feeling:** *"You said you want people to feel [vindicated]. What makes *you* feel that — specifically, visually? A film, a place, an object, an interface, a material — anything, inside or outside your category."* If they drift into "well, I love [X]" or "we should show [Y]," redirect with one question: *does it make you feel the target feeling?* If not, it isn't a muse, however much they like it.
+
+For each muse, name the **visual cue to steal**: a color story, a texture, a type treatment, a sense of space, a quality of light. Spend the most time here; this is where the brand gets its DNA. Drive every muse to a stealable visual.
 
 **This stage is heavy visualization and image comparison — show the muses, don't just name them.** A muse in text is unverified: "Leica" could mean the machined M3 dial or the minimalist Q2 slab, and the words won't tell you which one carries the feeling. So:
 
