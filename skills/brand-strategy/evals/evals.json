@@ -14,7 +14,8 @@
         "Defines fixed core vs. flexible range",
         "Heads toward three distinct concepts and writes to .agents/brand.md",
         "Coaches answers out of the client; never substitutes its own answer for a thin one",
-        "Shows muses as fetched images (muse board), not just names; records image sources in the working doc"
+        "Shows muses as fetched images (muse board), not just names; records image sources in the working doc",
+        "Converges via reflective hypotheses (mirrors a specific 'feel more ___' read for confirm/correct), not by listing options"
       ],
       "files": []
     },
@@ -34,12 +35,13 @@
     {
       "id": 3,
       "prompt": "Our brand is basically fine, we just think the website looks cheap. Do we need to do brand strategy?",
-      "expected_output": "Should diagnose this as Optimization, not Revolution \u2014 the foundation is solid, the execution is poor. Should advise that brand strategy is not needed at all for an Optimization \u2014 what they need is design help later, when the actual assets are executed \u2014 and point toward fixing the execution in the relevant medium (web-design) and consulting the existing brand context. Should match effort to depth rather than over-scoping.",
+      "expected_output": "Should diagnose this as Optimization, not Revolution \u2014 the foundation is solid, the execution is poor. Should advise that brand strategy is not needed at all for an Optimization \u2014 what they need is design help later, when the actual assets are executed \u2014 and point toward fixing the execution in the relevant medium (web-design) and consulting the existing brand context. Should match effort to depth: at most a quick emotional-target read if none exists yet, never a full workshop.",
       "assertions": [
         "Diagnoses the depth as Optimization",
         "Advises against full brand strategy here",
         "Warns about throwing away equity by over-scoping",
-        "Points toward fixing execution (web-design) instead"
+        "Points toward fixing execution (web-design) instead",
+        "Offers at most the quick emotional-target read, not a full workshop"
       ],
       "files": []
     },
@@ -67,6 +69,19 @@
         "Offers the deeper exercise first, framed as fast (a few questions, one at a time)",
         "Generates ideas only after a second decline, framed as reaction-starters not answers",
         "Uses the client's reactions to the ideas as discovery material"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "We don't have time for a big brand workshop \u2014 we're an established B2B tool just refreshing our visuals. Can you quickly help us nail what our brand should feel like so the designer has something to aim at?",
+      "expected_output": "Should run THE QUICK READ, not the full workshop \u2014 no muse board, no three concepts. Should converge on a single design-drivable emotional target by REFLECTION: ask what they want people to feel, then mirror back a specific 'feel more ___' hypothesis and refine against their reactions (push 'calm' to 'calm like a cockpit vs a monastery' until it could reject a color/typeface). Should NOT throw a list of adjectives for them to pick, and should NOT fabricate a feeling with no input. Should write the confirmed emotional target to .agents/brand.md, note it's a quick read (not full discovery), and hand off to creative-direction.",
+      "assertions": [
+        "Runs the quick read, not the full workshop (no muse board / three concepts)",
+        "Converges by reflection \u2014 mirrors a specific 'feel more ___' hypothesis, refines against reactions",
+        "Pushes the feeling until it is design-drivable (specific enough to reject a color/typeface)",
+        "Does not list adjectives to pick from, and does not fabricate a feeling without input",
+        "Writes the emotional target to .agents/brand.md and hands to creative-direction; notes it's a quick read"
       ],
       "files": []
     }

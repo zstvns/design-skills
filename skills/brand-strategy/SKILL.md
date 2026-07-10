@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.5.0
+  version: 1.6.0
 ---
 
 # Brand Strategy
@@ -17,14 +17,13 @@ Read `design-principles` first. This skill is the applied front-end of two of it
 
 **Don't re-run the diagnosis — `brand` owns it.** Read `.agents/brand.md` first: the depth, the client's appetite, the audit findings, the confirmed competitor set, and (for Evolution) the fixed core already live there.
 
-**This skill is only for brands whose emotional foundation is being built or rebuilt — a Revolution or a *heavy* Evolution.** Everyone else should skip it:
+**Brand strategy's raw material is emotional truth — and that only lives in the founder.** Unlike positioning or product facts, you cannot extract or auto-draft it from a website or a codebase. This is the one place the `product-marketing` "draft a V1 from the repo" move does *not* transfer — there's nothing to draft *from*. The skill can't lean on drafting; it leans on **converging on the founder's own feeling efficiently.** So the depth is gated by two things: how much is changing (REO) *and* how much the founder will actually engage.
 
-- **Revolution, or nothing exists yet** → full discovery: run the whole arc below (vision, muses, emotional target, latitude, three concepts).
-- **Heavy Evolution** (the foundation itself is being re-anchored — new direction, new emotional target, major deltas) → "The Deltas-Only Mode" below. Don't re-litigate kept equity.
-- **Light Evolution** (equity kept, modest refinements) → skip the coaching session; `creative-direction` can work directly from the audit's Moving-forward notes and the existing direction.
-- **Optimization** → not this skill at all. The brand is sound; what they need is design help later, when the actual assets are being executed (`creative-direction` documentation-pass at most, then the medium skills). Say so and route out — a strategy session on a sound foundation burns equity and the client's time.
+- **Full discovery** — Revolution, or heavy Evolution, *with an engaged founder*. The deep muse workshop (the Discovery Arc below). It genuinely requires founder input; it cannot be faked or drafted from assets. If the founder won't sit for it, don't fake it — drop to the quick read. (Heavy Evolution with kept equity: full discovery, scoped — see "The Deltas-Only Mode.")
+- **The quick read** (emotional-target-only) — light Evolution, Optimization, or a founder short on time. Skip the workshop. Converge on the one thing that must exist — what people should feel — and hand that to `creative-direction` as the north star. See "The Quick Read" below.
+- **Skip** — a strong, design-drivable emotional target already lives in `.agents/brand.md`. Nothing to do; proceed to `creative-direction`.
 
-If there's no `.agents/brand.md` at all, you can still run standalone for a brand-new company — but suggest `/brand` afterward so the output has a home every other skill reads.
+If there's no `.agents/brand.md` at all, you can still run standalone for a brand-new company — but suggest `/brand` afterward so the output has a home. And if there's genuinely **no founder input to be had**, be honest: you can't manufacture an emotional foundation from nothing. Get the founder in the room, or produce a clearly-labeled *provisional* read for them to react to later — never a confident fabrication.
 
 ## The Goal
 
@@ -36,6 +35,17 @@ Produce a **brand direction** that answers, with specificity:
 4. **What's fixed and what can flex** — the core that must always hold vs. the range it's free to stretch within.
 
 Everything downstream is an *answer* to these. Get them wrong and the most polished execution still feels off.
+
+**But the emotional target is the irreducible core.** Muses, concepts, and latitude all exist to *nail what people should feel*. If you extract only a specific, design-drivable feeling, you've delivered the thing every downstream visual decision needs. If you complete every section *except* that, you've delivered nothing. So the emotional target is never optional, and it's always what you converge on first — the rest deepens and justifies it.
+
+## How You Converge — reflect, don't fish
+
+The failure mode is throwing options at the wall and hoping one registers. It never does. The method is **reflective convergence**: listen to the client's own words, then mirror back a *specific, singular hypothesis* about the feeling and let them react.
+
+- **A confident read, not a menu.** *"It sounds like you want people to feel more **courageous** — like they'll finally take the shot they've been putting off."* Then they confirm, correct, or sharpen. Each reaction moves you closer. Never hand them a bare list of adjectives to choose from — form the hypothesis yourself from what they've said and make them react to something specific.
+- **The format is transformation:** *"you want your users to feel more ___"* — more calm, more focused, more brave, more nurtured, more supported, more in control, more creative. A single word they say "yes, exactly" to beats a paragraph they shrug at.
+- **Push past the first "yeah, sure."** "Calm" → calm like *what*? A spa, a cockpit, a monastery, a bank vault? Keep going until the feeling is **design-drivable** — specific enough to reject a color or a typeface. That's the bar for "captured."
+- This is reflective *listening*, not suggesting: you only mirror what you've heard. It doesn't contradict "never open with suggestions" — you form the read *after* they speak, from their material, not before.
 
 ## How You Run This
 
@@ -57,9 +67,20 @@ Conversational, **one question at a time**, async-friendly. Never dump the whole
 
 Full prompts and coaching triggers: [references/discovery-questions.md](references/discovery-questions.md). Working-document format: [references/strategy-doc-template.md](references/strategy-doc-template.md).
 
+## The Quick Read (emotional-target-only)
+
+For light Evolution, Optimization, or a founder who can't sit for the full workshop. The goal is one thing: a **specific, design-drivable emotional target** the visual work can aim at. No muse board, no three concepts.
+
+1. Ask, plainly, what they want people to *feel* — or what should change in how the user feels after using the product.
+2. **Converge by reflection** (above): mirror back a specific "feel more ___" hypothesis, refine against their reactions until it's design-drivable (a feeling that could reject a color or a typeface).
+3. Optionally pressure-test with one or two muse-style prompts *if* they're game — but don't force the workshop; a confirmed feeling is enough here.
+4. Write the emotional target into `.agents/brand.md` and hand off to `creative-direction`. Note it's a quick read, not full discovery, so a later deep session can build on it.
+
+This is the honest floor: even an Optimization benefits from a named feeling to guide execution. It is *not* a substitute for full discovery on a Revolution — a north star without muses gives direction but not distinctive DNA.
+
 ## The Discovery Arc
 
-Walk these in order; each builds on the last.
+Walk these in order; each builds on the last. **(Full-discovery mode only — the quick read stops after the emotional target.)**
 
 ### 1. Vision & Truth
 What is this brand really for? What does it believe that competitors don't? What's the truth underneath the product? Grounds the feeling in something real, not arbitrary aesthetics.
