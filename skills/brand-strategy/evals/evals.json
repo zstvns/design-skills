@@ -81,7 +81,8 @@
         "Converges by reflection \u2014 mirrors a specific 'feel more ___' hypothesis, refines against reactions",
         "Pushes the feeling until it is design-drivable (specific enough to reject a color/typeface)",
         "Does not list adjectives to pick from, and does not fabricate a feeling without input",
-        "Writes the emotional target to .agents/brand.md and hands to creative-direction; notes it's a quick read"
+        "Writes the emotional target to .agents/brand.md and hands to creative-direction; notes it's a quick read",
+        "May seed a first feeling-guess from .agents/product-marketing.md but flags it as generic \u2014 a stab to push off, never the answer"
       ],
       "files": []
     }

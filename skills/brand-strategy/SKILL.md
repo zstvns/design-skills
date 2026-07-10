@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 # Brand Strategy
@@ -46,6 +46,8 @@ The failure mode is throwing options at the wall and hoping one registers. It ne
 - **The format is transformation:** *"you want your users to feel more ___"* — more calm, more focused, more brave, more nurtured, more supported, more in control, more creative. A single word they say "yes, exactly" to beats a paragraph they shrug at.
 - **Push past the first "yeah, sure."** "Calm" → calm like *what*? A spa, a cockpit, a monastery, a bank vault? Keep going until the feeling is **design-drivable** — specific enough to reject a color or a typeface. That's the bar for "captured."
 - This is reflective *listening*, not suggesting: you only mirror what you've heard. It doesn't contradict "never open with suggestions" — you form the read *after* they speak, from their material, not before.
+
+**Seeding the first hypothesis from positioning.** If `.agents/product-marketing.md` exists, you can take a *stab* at the feeling from the positioning to open the loop — *"Your positioning is all about getting freelancers paid without chasing invoices, so I'd guess you want people to feel more **in control** — less at the mercy of clients. Close?"* But **say out loud that it's a generic starting guess**, not a read of them: positioning tells you the job-to-be-done, not the founder's emotional truth, so a feeling derived from it lands in the safe, obvious middle every competitor could also claim. Its only job is to give the founder something concrete to push *off* of — "no, not in-control, more like *vindicated*" is worth more than the guess itself. Never let the positioning-derived stab stand as the answer; it's the least specific input you have, there to start the reaction, not end it.
 
 ## How You Run This
 
