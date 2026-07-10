@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 # Brand Strategy
@@ -24,6 +24,18 @@ Read `design-principles` first. This skill is the applied front-end of two of it
 - **Skip** — a strong, design-drivable emotional target already lives in `.agents/brand.md`. Nothing to do; proceed to `creative-direction`.
 
 If there's no `.agents/brand.md` at all, you can still run standalone for a brand-new company — but suggest `/brand` afterward so the output has a home. And if there's genuinely **no founder input to be had**, be honest: you can't manufacture an emotional foundation from nothing. Get the founder in the room, or produce a clearly-labeled *provisional* read for them to react to later — never a confident fabrication.
+
+## Opening the Session
+
+Don't start by asking questions — start by taking inventory, so you only coach what's genuinely open. The goal of the opening is two things: figure out which questions are *already answered*, and set up the *visual* working mode.
+
+1. **Read what already exists.** `.agents/brand.md` (audit findings, competitor set, any emotional-target stub), `.agents/product-marketing.md` (positioning, ICP, voice), and any prior `.agents/brand-strategy.md` (resume from it). Between the audit and positioning, several discovery questions usually come pre-answered — **vision, the ideal user, and the competitive landscape** are often already on record. Don't re-ask them; confirm them in a line and move on.
+
+2. **Open by mapping, not interrogating.** Reflect back what you already have and name what's missing, so the founder never re-answers settled ground: *"From your audit and positioning I've already got who you serve, what you do differently, and who you're up against. What I don't have — and what actually drives the visuals — is how you want people to **feel**, and the references that give the brand its DNA. That's what this is: about fifteen minutes, one question at a time, and we'll look at images as we go."* This is where the generic positioning-seeded stab (above) lands, as the opener to the first real question.
+
+3. **Assess visual input, and set the visual mode.** Say plainly this is a *looking* exercise, not just a talking one — then gauge what the founder can bring: *"Do you already have references you love — a board, screenshots, brands, films, objects — or should I pull images as we go?"* Some founders arrive with strong visual opinions and a folder; others have nothing and need you to fetch and generate things for them to react to. Adapt to which, but either way set the expectation up front: you'll be putting images on screen, and their job is to point at what's right and what's wrong.
+
+4. **Then start the loop** on the first genuinely-open question — usually the feeling — reflecting as you go.
 
 ## The Goal
 
