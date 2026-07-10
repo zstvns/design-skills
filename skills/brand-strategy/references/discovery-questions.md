@@ -33,7 +33,8 @@ Ask one at a time. After each answer, run it against the coaching triggers below
 - Pick three adjectives — now make each one specific. "Confident" *like whom*?
 - What is the brand definitely *not*?
 
-## 5. The Muses (spend the most time here)
+## 5. The Muses (spend the most time here — and SHOW them)
+For every muse named: fetch real images and put them on screen before accepting it. Confirm against the image ("which part of this is the feeling?"), add it to the muse board, and record the image source in the working doc. A muse without a confirmed image isn't captured yet.
 - Name something — anything — that makes *you* feel the way you want users to feel. A film, a product, a place, an object, an interface, a material, another brand.
 - For each: **what exactly would we steal?** A color story? A texture? A type treatment? A sense of space? A quality of light?
 - Push past the obvious in-category muses. The best DNA usually comes from outside the category.

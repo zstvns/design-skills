@@ -26,8 +26,9 @@ The working document for the coaching session. Create it at the first answer; up
 (claimed territory · unclaimed territory · the trend default to escape)
 ### Brand Personality (pressure-tested)
 ### Muses
-| Muse | Stealable visual cue |
-|------|----------------------|
+*(Muse board: [path/link — regenerate as muses accumulate])*
+| Muse | Stealable visual cue | Confirmed image(s) |
+|------|----------------------|--------------------|
 ### Emotional Target (Big Three)
 1. … *(design-drivable — could reject a color/typeface/motif)*
 2. …

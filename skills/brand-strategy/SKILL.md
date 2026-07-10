@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.4.0
+  version: 1.5.0
 ---
 
 # Brand Strategy
@@ -75,6 +75,16 @@ If the brand were a person, who are they? Pick concrete traits and pressure-test
 
 ### 5. The Muses (the heart of it)
 The "steal your brand" exercise. Surface specific things — films, products, places, objects, interfaces, materials, brands inside *or outside* the category — that make *you* feel the way you want the user to feel. For each, name the **visual cue to steal**: a color story, a texture, a type treatment, a sense of space, a quality of light. Spend the most time here; this is where the brand gets its DNA. Drive every muse to a stealable visual.
+
+**This stage is heavy visualization and image comparison — show the muses, don't just name them.** A muse in text is unverified: "Leica" could mean the machined M3 dial or the minimalist Q2 slab, and the words won't tell you which one carries the feeling. So:
+
+- **When the client names a muse, go get images of it** — web image search, site screenshots, product photos — and put them in front of the client. Then confirm visually: *"Is this the one? Which part of this image is the feeling — the dial, the leather, the light?"* The pointing-at-the-image moment is where the stealable cue actually gets captured.
+- **Maintain a muse board as the session runs.** Assemble the confirmed images into one visual surface the client can look at whole — a simple local HTML page with the images and a caption per muse naming its cue works everywhere; use a connected canvas/design tool if one's available. Regenerate it as muses accumulate; reviewing the board together is how you catch muses that don't belong ("seeing them side by side, that one's off").
+- **Un-searchable muses** (a memory, a grandfather's workshop, a specific quality of morning light) — ask for a photo, find the closest visual proxy, or generate an approximation and let them correct it. Never leave a muse with no image.
+- **The opt-out ideas path is visual too** — if they declined the exercises and you're generating starting points, show them as images to react to, not a list of names.
+- **Record every image source/path in `.agents/brand-strategy.md`** (and the board's location) — the confirmed images are the raw material `creative-direction` builds stylescapes from; a text summary loses exactly the information that matters.
+
+The same rule applies to the **Competitive Visual Landscape** (section 3): screenshot the confirmed competitors and show the category side by side as an image row. "Everyone is blue" lands differently when the client is looking at the wall of blue.
 
 ### 6. The Emotional Target ("Big Three")
 Distill everything into the few feelings the brand must evoke. Three is a good number. These become the rubric every later design is judged against — so **test each one for design-drivability**: could a designer choose a color, a typeface, or a motif *because* of this feeling? "Trustworthy" drives nothing; "calm certainty, like a bank vault crossed with a Muji store" drives everything. If a feeling can't reject a design option, it isn't specific enough yet.

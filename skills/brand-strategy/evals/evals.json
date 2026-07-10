@@ -13,7 +13,8 @@
         "Produces a specific, sensory Emotional Target",
         "Defines fixed core vs. flexible range",
         "Heads toward three distinct concepts and writes to .agents/brand.md",
-        "Coaches answers out of the client; never substitutes its own answer for a thin one"
+        "Coaches answers out of the client; never substitutes its own answer for a thin one",
+        "Shows muses as fetched images (muse board), not just names; records image sources in the working doc"
       ],
       "files": []
     },
@@ -25,7 +26,8 @@
         "Flags that the muse is mission-based, not visual",
         "Redirects to a stealable visual cue (palette, photography, type, texture)",
         "Insists on visual relevance to count as a muse",
-        "Stays encouraging / curious, not dismissive"
+        "Stays encouraging / curious, not dismissive",
+        "Fetches and shows actual Patagonia imagery to confirm which visual carries the feeling"
       ],
       "files": []
     },
