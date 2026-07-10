@@ -39,6 +39,7 @@ For every muse named: fetch real images and put them on screen before accepting 
 - *"What makes you feel [the target feeling]?"* — a film, a product, a place, an object, an interface, a material, another brand. (Not what you love; what produces the feeling.)
 - For each: **what exactly would we steal?** A color story? A texture? A type treatment? A sense of space? A quality of light?
 - Push past the obvious in-category muses. The best DNA usually comes from outside the category.
+- **If they're stuck**, suggest varied options anchored to the feeling for them to react to — then dig into *why* whatever lands is the feeling. Their reaction selects; don't let your suggestion stand unexamined.
 
 ## 6. Emotional Target (Big Three)
 - Of everything we've surfaced, what are the three feelings this brand must produce?

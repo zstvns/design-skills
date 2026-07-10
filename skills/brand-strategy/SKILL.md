@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.9.0
+  version: 1.10.0
 ---
 
 # Brand Strategy
@@ -112,6 +112,14 @@ If the brand were a person, who are they? Pick concrete traits and pressure-test
 The "steal your brand" exercise. **A muse is not a favorite, and not something you want to feature — it's a thing that makes *you* feel the way you want your audience to feel.** That distinction is the whole method, and it's why the feeling comes first: the muse question is meaningless without a confirmed target.
 
 **Always ask muses anchored to that feeling:** *"You said you want people to feel [vindicated]. What makes *you* feel that — specifically, visually? A film, a place, an object, an interface, a material — anything, inside or outside your category."* If they drift into "well, I love [X]" or "we should show [Y]," redirect with one question: *does it make you feel the target feeling?* If not, it isn't a muse, however much they like it.
+
+**Two ways a muse gets on the board — both end in the client's reaction:**
+1. **They surface their own** — the goal. They name what makes them feel [X]; you fetch images, confirm against them, board it.
+2. **They're stuck** — most founders can't free-associate visuals on command. Once the feeling is locked, **you suggest options for them to react to.** This is legitimate *here* (unlike opening cold with muses) precisely because the feeling is already set and *their reaction is what selects* — a candidate you sourced becomes theirs the moment they point at it. Guardrails:
+   - **Anchor every suggestion to the confirmed feeling**, not your taste — and run it past the escape-the-trend lens so you're not proposing the category/AI default.
+   - **Make them varied on purpose** — pull from different worlds (a material, a film, an era, an interface, a place) so their reactions *triangulate* a direction rather than rubber-stamp the one thing you showed.
+   - **The instant one lands, dig into *why*** — *"what about this is the feeling?"* — to convert your candidate into their captured cue.
+   - **Don't stop at the first "sure."** A lukewarm yes to your suggestion is weaker than a real self-surfaced muse; keep pulling, and use what they react *against* as much as what they react *toward*.
 
 For each muse, name the **visual cue to steal**: a color story, a texture, a type treatment, a sense of space, a quality of light. Spend the most time here; this is where the brand gets its DNA. Drive every muse to a stealable visual.
 

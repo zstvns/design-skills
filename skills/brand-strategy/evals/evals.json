@@ -87,6 +87,19 @@
         "May seed a first feeling-guess from .agents/product-marketing.md but flags it as generic \u2014 a stab to push off, never the answer"
       ],
       "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Okay, we nailed the feeling \u2014 you want people to feel 'quietly in command, like a pilot at cruising altitude.' But honestly I'm blanking on references. I can't think of anything that makes me feel that.",
+      "expected_output": "The feeling is locked, and the founder is stuck \u2014 so the skill should SUGGEST options for them to react to (legitimate here because the feeling is set and the reaction selects). Suggestions must be anchored to 'quietly in command / pilot at cruising altitude,' deliberately VARIED (pull from different worlds \u2014 a cockpit, a particular film's control-room palette, a watch, an instrument panel, an architect's studio), shown as IMAGES not just names, and run past the escape-the-trend lens (not the generic AI/SaaS default). When one lands, it should dig into WHY ('what about this is the feeling?') to convert the candidate into the founder's own captured cue, and keep pulling rather than stopping at the first lukewarm 'sure.' Should also use what they react against.",
+      "assertions": [
+        "Suggests options only after the feeling is locked, framed as reaction-starters",
+        "Anchors every suggestion to the confirmed feeling, not general taste; avoids the category/AI default",
+        "Suggestions are varied across different worlds and shown as images",
+        "Digs into WHY a landed suggestion is the feeling, converting it into the founder's captured cue",
+        "Keeps pulling past the first 'sure'; uses reactions-against as signal"
+      ],
+      "files": []
     }
   ]
 }
