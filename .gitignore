@@ -1,3 +1,7 @@
 .DS_Store
 *.log
 node_modules/
+
+# Corey Haines's makerskills — local reference/tooling, not part of this library
+makerskills/
+.claude/
