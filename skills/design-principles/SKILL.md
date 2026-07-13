@@ -2,7 +2,7 @@
 name: design-principles
 description: "The universal principles behind strong visual design — across logos, brand identity, collateral, and web. Use at the start of any design work, when a design feels off but you can't name why, when judging whether a piece earns its choices, or when a brand needs to flex without breaking. Other design skills inherit these principles."
 metadata:
-  version: 1.9.0
+  version: 1.10.0
 ---
 
 # Design Principles
@@ -112,6 +112,23 @@ Distinctiveness only exists relative to the field, so judging it means looking *
 But distinguish **undeployed** from **deployed-but-poorly-executed** — they pull opposite directions. A strong, distinctive asset that *is* in use but mis-tuned — a bold pattern shown at blown-out contrast, a great typeface set with weak hierarchy, a strong palette buried under banded layouts — is still a **strong asset**; the fix is better *execution*, not a low score for the asset. Undeployed → score low, build it out (Evolution). Deployed-but-mis-executed → the asset scores on its merits and the *implementation* is the work (Optimization). Don't confuse a sloppily-built site with a weak brand: look through the execution to the assets underneath.
 
 The clearest tells of a non-decision are the generated-design tropes — the left accent rail, the purple-to-blue gradient, the cramped center column, no variety between section layouts, `rounded-lg` on everything. [references/ai-slop.md](references/ai-slop.md) catalogs them. Treat each as a finding that caps a design's distinctiveness, not a style to respect.
+
+## Judge Your Own Work on the Competitor's Bar
+
+The hardest critique to run is on your own output, and it is the one that matters most — because the failure mode isn't ugly work, it's *plausible* work that grades itself generously. You will hold a competitor's brand to the wall and then wave your own version of the same defaults through, because you know what you *meant*. Intent doesn't render.
+
+- **Audit the artifact, not the concept.** A distinctive idea ("mission control," "punk," "old-world apothecary") does not make the pixels distinctive. Run the AI-slop check and the distinctiveness test on what you actually produced, at the same harshness you'd use on a rival.
+- **"Clean" is *unassessed*, not passed.** A tidy, calm surface is a first impression that pulls you toward a lazy 3–4. Inspect for the execution tells before awarding anything.
+- **Name what you found.** "No slop here" is a reflex, not a result. The output of a real self-audit is a *list* — the tropes present, the elements that trace to nothing, the places you took the default — or a specific, earned "none, because." A self-audit that always passes isn't running.
+- **A generous grade on your own work is the most expensive flattery there is** — it is the same error as calling a competitor's competent-but-generic brand "strong," pointed inward, and it's the one that ships mediocre work under your own name.
+
+## Distinctiveness Must Survive Application
+
+A concept is only worth what survives contact with the real artifact. The most common way strong strategy dies is that the *direction* is distinctive but the *applied piece* — the homepage, the deck, the mark drawn small — quietly reverts to the category default: neutral canvas, editorial sans, one accent, a tidy centered column.
+
+- **The stylescape is a promise; the application is the product.** Judge the built thing, not the concept board. If the concept is "the console of a mission-control room" and the homepage is warm-canvas-serif-with-an-accent-button like everyone else's, the brand didn't ship its distinctiveness — it shipped the default wearing a story.
+- **Re-run the cover-the-logo test on the *applied* artifact.** Not just the stylescape. Distinctiveness that only exists on the mood board is latent equity, not a delivered brand.
+- **Execution quality and distinctiveness are both required and both yours to hold.** A unique concept with generic, rough execution is not "close" — it is the specific gap to close before shipping. Name it as the work, don't score around it.
 
 ## Scoping the Depth
 

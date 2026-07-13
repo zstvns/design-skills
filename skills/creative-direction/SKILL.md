@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Creative Direction
@@ -44,10 +44,12 @@ Work through each element with the audit's bar in mind — the nine-category aud
 
 ## Validate Before You Present
 
-Run your own work through the same gauntlet the audit runs:
+Run your own work through the same gauntlet the audit runs — **adversarially, on the rendered board, not the concept in your head** (see `design-principles` → Judge Your Own Work on the Competitor's Bar). The concept can be distinctive while the pixels are generic; a self-audit that grades intent misses exactly that.
 
-- **Score it against the foundational categories** vs. the confirmed competitor set — would this system earn 4–5 on Creative Direction, Color, Pattern, and (with `logo-design`) Logo? Cover the logo: is it still recognizably this brand?
-- **Run the AI-slop check** (`design-principles` → ai-slop.md) on your own output. Escaping the category default is the whole point — don't ship a tidier version of it.
+- **Score it against the foundational categories** vs. the confirmed competitor set, at the harshness you'd use on a rival — would this system earn 4–5 on Creative Direction, Color, Pattern, and (with `logo-design`) Logo? Cover the logo: is it still recognizably this brand?
+- **Run the AI-slop check** (`design-principles` → ai-slop.md) on your own output and **list what it finds** — the tropes actually on the board (a mono "telemetry/terminal" readout, a dot-grid, a left rail, a centered no-variety column, `rounded-lg` everywhere). "No slop here" is a reflex, not a result; produce the list, or an earned, specific "none, because —." "Clean" counts as *unassessed*, not passed.
+- **Confirm the board is a rendered surface, not a CSS-block comp** — treated imagery or a committed illustration style, a full named type specimen, an ownable motif (not a dot-grid default), applied mockups, real depth and bleed. Missing anatomy = under-built (see [references/stylescapes.md](references/stylescapes.md)).
+- **Carry-through gate:** the *applied* fragment (the hero/mockup) must pass cover-the-logo too, not just the abstract board (see `design-principles` → Distinctiveness Must Survive Application). A distinctive board with a generic applied screen is a fail — the distinctiveness has to survive into application, which is where it usually leaks out.
 - **Trace every element to a muse or the emotional target.** Anything you can't trace, cut or justify.
 - **Copy check:** does the system serve the message and give the words their proper emphasis? Design serves the message — the system is the stage, not the show.
 
@@ -66,7 +68,7 @@ Run your own work through the same gauntlet the audit runs:
 - [ ] Type licensing + character support confirmed
 - [ ] Motif is ownable and doesn't collide with a competitor's
 - [ ] Every element traces to a muse or the emotional target
-- [ ] Self-audit run (foundational categories + AI-slop) before presenting
+- [ ] Adversarial self-audit run on the *rendered* board (AI-slop tropes listed, not "none"; applied fragment passes cover-the-logo) before presenting
 - [ ] Client approval secured; system + rationale written to `.agents/brand.md`
 
 ## Related Skills

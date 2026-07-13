@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 # Logo Design
@@ -63,6 +63,10 @@ Distinctiveness only exists relative to the field.
 3. Resolve in **black and white first.** If it doesn't work in one color, color won't save it — color comes after the form is right.
 4. Build the **full system**: primary lockup, secondary/stacked, the standalone mark, clear space, minimum size, reversed and single-color variants.
 5. Test against SAD *and* the implementation grid before calling it done.
+
+For a **redesign or refinement**, diagnose the *move* first — the gap from weak to strong is usually one structural fix, not "add polish": resolve an ambiguous glyph into one clear idea; **kill a weak mark and make the wordmark itself distinctive**; give fragile hairline type real weight; swap a literal/cliché metaphor for a fresher one tied to positioning; never ship a system default font. Full patterns with worked before→after cases: [references/logo-fixes.md](references/logo-fixes.md).
+
+**Be honest about rough marks.** Agent-drawn / SVG / "parametric" marks come out rough — uneven curve tension, awkward optical weight, near-misses that misread (a disc-with-wedge reading as Pac-Man). A rough mark is **not** a resolved mark: say "this is a rough cut, the construction still needs work" rather than scoring it bulletproof. Presenting an unresolved mark as finished is how the whole logo ships at a quality the brand can't use.
 
 ## Output
 

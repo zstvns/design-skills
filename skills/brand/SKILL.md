@@ -2,7 +2,7 @@
 name: brand
 description: "The entry point for any brand work. Gathers the brand's existing assets itself from just a URL (crawling the site, following its links to social and press), diagnoses how much should change, routes to the right path, and gets-or-makes the brand context document every other design skill reads. Use at the start of any design project, or when the user mentions 'brand context,' 'set up the brand,' 'brand guidelines,' 'our visual identity,' 'rebrand,' 'refresh our brand,' 'what's our brand,' or wants to stop re-explaining their colors, type, and visual direction on every task. Creates and maintains `.agents/brand.md`."
 metadata:
-  version: 1.24.0
+  version: 1.25.0
 ---
 
 # Brand
@@ -104,6 +104,10 @@ This also sets your **mode**: a genuinely strong brand → *ingest and protect t
 
 The one-line verdict is a header on top of this breakdown, never a replacement for it. Also save it as a standalone artifact (e.g. `<brand>-brand-audit-scorecard.md`) alongside `.agents/brand.md` so the user keeps a copy — but presenting it in full comes first.
 
+**On the appetite question — present the scorecard first, then confirm appetite.** Appetite is the primary driver of the *recommendation*, but asking it cold, before the client has seen a single score, feels arbitrary to them ("why are you asking how much I want to change before you've told me what's wrong?"). Do the diagnosis and **show the scorecard**, then have the appetite conversation with the score in front of you — the number is the concrete thing they react to ("21/45 and colliding with three competitors — how much of that do you want to take on now vs. later?"). If you gathered a preliminary appetite read earlier, revisit and confirm it against the score rather than treating the early answer as final.
+
+**Findings in plain language — no unexplained jargon.** Every line the client reads should be self-evident. If a category note would land as a cryptic fragment ("Application: unavoidable"), rewrite it as a plain sentence that says what you mean and why it matters. A finding the client can't parse is a finding that does nothing.
+
 ## Step 3: Route by Depth
 
 ### Revolution → define it from scratch
@@ -165,4 +169,9 @@ Show the document, ask what needs adjusting, save to `.agents/brand.md`, and tel
 
 ## Related Skills
 
-- `brand-strategy` · `design-principles` · `creative-direction` · `logo-design` · `design-critique`
+- `design-principles` — the craft beliefs the audit scores against (designed-vs-assembled, coherent-isn't-good, judge-your-own-work-on-the-competitor's-bar)
+- `brand-strategy` — the deep generative path this routes *to* for a Revolution / heavy Evolution; supplies the emotional target and muses this records
+- `creative-direction` — turns the routed direction into the concrete visual system; its output is scored against this audit's own categories
+- `logo-design` — assesses the mark against SAD as part of the diagnosis; this skill gathers the logo in all its forms and the competitor set it's judged against
+- `competitor-profiling` — sourced for the confirmed competitor set when there's no `.agents/product-marketing.md` to pull it from
+- `design-critique` — judges later work against the Emotional Target and the Fixed-core / Flexible-range latitude recorded here
