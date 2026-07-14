@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.2.0
+  version: 1.3.0
 ---
 
 # Creative Direction
@@ -28,6 +28,15 @@ Open `.agents/brand.md`. You need:
 - **Revolution** — build the system from scratch as **three genuinely distinct concepts**, presented as stylescapes (see [references/stylescapes.md](references/stylescapes.md)). Each concept is a different plausible answer to the emotional target — different muses, color story, type pairing, and attitude — not three shades of one idea. Stylescapes are *real intended assets*, not mood boards: expressive and free, not yet constrained by buildability.
 - **Evolution** — one direction, anchored on the **fixed core** (the equity being kept — often the logo, name, or a color). Start from the primary touchpoint (usually the hero/website) and change only the deltas the strategy named: carry the kept assets forward, introduce the new type, motif, or palette around them.
 - **Optimization** — mostly out of scope. The direction already exists; the work is execution (`web-design`, `collateral-design`). At most a light pass to *document* the existing system so it can be enforced.
+
+## The Core Move: Abstract the Muses
+
+This is the engine of a distinct direction, and the step most likely to be skipped. **Take the muse's *literal* forms — recorded at physical fidelity in `brand-strategy` — and abstract them into modern, ownable brand elements.** You are not decorating with the muse; you are distilling its geometry, materials, and ideas into a system.
+
+- Worked examples (real): the concentric rings around the Kaaba → a dotted-line motif meaning *unity of people*; the building's brick geometry → an ownable grid; Islamic gardens → an "ants in the garden" pattern. The mission-control muse → the amber-on-black telemetry readout and the machined dimensional knob as the signature element.
+- **Pull two things from each muse: a color story and an abstracted idea.** Then combine the abstractions with modern UI. Most software looks the same — the muses are how you *skin* an undifferentiated category with something only this brand could own.
+- **Why it lands: the abstraction must trace to the brand's core beliefs/values** (from `brand-strategy`), not just the muse's surface. When it traces to *why the brand exists*, the result reads as inevitable and unique; when it's pulled from the muse's look alone, it reads as costume.
+- Typography is chosen to **suit the direction**, not literally pulled from the muse (muse-derived type is rare) — the abstraction lives in motif, color, texture, and composition first.
 
 ## The System to Establish
 
@@ -67,10 +76,23 @@ Run your own work through the same gauntlet the audit runs — **adversarially, 
 
 ## Present, Decide, Record
 
-- **Revolution:** present the three stylescapes; the client picks one (or a deliberate merge — resist "a little of each," which averages three ideas into none).
+- **Give it a walkthrough first, then present.** Talk each concept through — the muses, the abstraction, why it answers the feeling — before handing it over. A stylescape without its narrative is just arrangement.
+- **Name the challenges, honestly.** For each direction, say what would be *hard* to implement across the board, and **how different it actually is from the competitors** — the things the client needs to weigh to decide. Don't only sell; surface the tradeoffs.
+- **Prove it has legs applied.** Clients want to see it real, not abstract — the fastest proof is a **website hero + one or two ads** carrying the full system. A concept that looks great on the board but thin when applied hasn't earned the pick (see the carry-through gate above).
+- **Document the styles and their sources.** Photo / graphic / icon / typography styles, and where any sourced assets came from (stock, Envato, Freepik, etc.) — notes now save the application skills from guessing later.
+- **Revolution:** present the three stylescapes; the client picks one. **Push for one idea, not a Frankenstein.** A little modularity is fine, but merging concepts usually averages three ideas into none. When a client asks to graft (e.g. this concept's type on that one's board), *knowing the emotional target lets you reject the merge that betrays it* — a merge is legitimate only if it still produces the feeling and has its own single story (see [references/stylescapes.md](references/stylescapes.md) → synthesis vs. averaging).
 - **Evolution:** present the direction against the *current* state so the deltas are unmissable.
-- Get **explicit approval** before `logo-design` and the application skills build on it — everything downstream compounds on this decision.
+- Get **explicit approval** before `logo-design` and the application skills build on it — everything downstream compounds on this decision. (Run creative direction *before* any naming project.)
 - **Write the approved system into `.agents/brand.md`** (the Visual system section, plus updates to Fixed core / Flexible range), recording the *why* behind each choice — the rationale is what survives handoffs and lets `design-critique` judge flexes later.
+
+## The Deliverable
+
+Two layers, one source of truth — mirroring `brand-strategy`:
+
+1. **`.agents/design.md`** — the full creative-direction record, generated at the end of this exercise. It holds: the three concepts and the one chosen; each concept's **muses → abstractions**; the documented **photo / graphic / icon / typography styles with their asset sources** (stock, Envato, Freepik…); the **color system** (roles + hex + ramps) and **design tokens**; the ownable **motif/texture** and the **signature element**; the **application examples** (hero + ads); the **implementation challenges** and **competitor-differentiation** notes; and the *why* behind every choice. Use the template in [references/design-doc-template.md](references/design-doc-template.md). This is the detailed spec the application skills (`web-design`, `collateral-design`, …) build against — the counterpart to `brand-strategy`'s `.agents/brand-strategy.md`.
+2. **`.agents/brand.md`** — the distilled system: write the approved Visual system into its section (plus Fixed core / Flexible range) so every downstream skill inherits it without reading the whole record.
+
+Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from* `.agents/design.md` — never the other way around.
 
 ## Non-Negotiables
 
@@ -81,7 +103,8 @@ Run your own work through the same gauntlet the audit runs — **adversarially, 
 - [ ] Motif is ownable and doesn't collide with a competitor's
 - [ ] Every element traces to a muse or the emotional target
 - [ ] Adversarial self-audit run on the *rendered* board (AI-slop tropes listed, not "none"; applied fragment passes cover-the-logo) before presenting
-- [ ] Client approval secured; system + rationale written to `.agents/brand.md`
+- [ ] Challenges + competitor-differentiation named; direction proven applied (hero + ad)
+- [ ] Client approval secured; full record written to `.agents/design.md`; distilled system written to `.agents/brand.md`
 
 ## Related Skills
 

@@ -2,7 +2,7 @@
 name: brand
 description: "The entry point for any brand work. Gathers the brand's existing assets itself from just a URL (crawling the site, following its links to social and press), diagnoses how much should change, routes to the right path, and gets-or-makes the brand context document every other design skill reads. Use at the start of any design project, or when the user mentions 'brand context,' 'set up the brand,' 'brand guidelines,' 'our visual identity,' 'rebrand,' 'refresh our brand,' 'what's our brand,' or wants to stop re-explaining their colors, type, and visual direction on every task. Creates and maintains `.agents/brand.md`."
 metadata:
-  version: 1.25.0
+  version: 1.25.1
 ---
 
 # Brand
@@ -154,7 +154,7 @@ Show the document, ask what needs adjusting, save to `.agents/brand.md`, and tel
 ## How Other Skills Use This
 
 - `brand-strategy` writes **Emotional target**, **Muses**, **Fixed core vs. flexible range** (Revolution, and the deltas in Evolution)
-- `creative-direction` writes the **Visual system**
+- `creative-direction` writes the **Visual system** into this doc and produces the full **`.agents/design.md`** creative-direction spec
 - `logo-design` writes the **Logo** section
 - The application skills (`web-design`, `collateral-design`, `email-design`, `social-design`, `motion-design`) *read* this and apply it
 - `design-critique` *judges* against the **Emotional target** and the **Fixed-core / Flexible-range** latitude
