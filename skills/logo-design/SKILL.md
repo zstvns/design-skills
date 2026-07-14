@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.7.0
+  version: 1.8.0
 ---
 
 # Logo Design
@@ -17,7 +17,7 @@ A good logo is **S**imple, **A**ppropriate, **D**istinct. The acronym is easy; t
 
 ### Simple — judged across *every implementation*
 
-Simple doesn't mean minimal or sparse. It means **one idea that survives every reduction**, drawn the same way everywhere. The baseline test is **plain black and white**: a logo must work with all color removed. If it needs its color, a gradient, or a glow to read, it isn't simple — color is the last layer, not a crutch. Then verify across the whole implementation set, never just the hero lockup:
+Simple doesn't mean minimal or sparse. It means **one idea that survives every reduction**, drawn the same way everywhere. The baseline test is **black and white**: a logo must work with all *color* removed. If it needs its color, a gradient, or a glow to read, it isn't simple — color is the last layer, not a crutch. **"Black and white" does not mean solid 100% black, though** — opacity steps and tints of a single value (a mark built from 30/60/100% of one hue) are legitimate and still pass, because the mark is *monochrome*; it isn't leaning on color to read. The failure is dependence on *hue/gradient*, not the use of tints. Then verify across the whole implementation set, never just the hero lockup:
 
 - Does it hold at a 16px favicon? In a circle-cropped social avatar? A rounded-square app icon? Reversed on dark? Single-color? Etched, embroidered, foil-stamped?
 - Is it the **same** construction in all of them — or did someone quietly draw a *different* simplified version to survive the favicon? If the mark needs a second drawing to work small, it isn't simple yet.
@@ -59,27 +59,36 @@ Distinctiveness only exists relative to the field.
 
 **Designing a new mark** — new brand, or the existing one fails the bar:
 1. Work from `.agents/brand.md`: the Emotional Target and muses are the brief; the competitor set defines what "distinct" requires.
-2. Sketch broadly across the three families — **typographic / wordmark**, **pictorial** (a literal-ish image), **abstract** (a non-literal mark). Don't marry the first idea.
-3. Resolve in **black and white first.** If it doesn't work in one color, color won't save it — color comes after the form is right.
-4. Build the **full system**: primary lockup, secondary/stacked, the standalone mark, clear space, minimum size, reversed and single-color variants.
-5. Test against SAD *and* the implementation grid before calling it done.
+2. **Find the thematic idea first.** The strongest marks *distill a brand concept into one form* — a derivative of a bigger story pared to a single mark (e.g. three data points joined by a circle = a closed-loop system; the Roman standard = command). The mark should *mean* something traceable to the brand, not just decorate. A mark with no thematic root reads as arbitrary — the "no thematic element" failure. Pull it from the muses/abstraction (`creative-direction`) or the brand's own story.
+3. Sketch broadly across the three families — **typographic / wordmark** (letterforms and their expression, graphic motifs *in* the letters, or letters fused with a pictorial/abstract element), **pictorial** (a stylized representation, Apple-style), **abstract** (a non-literal mark that evokes a feeling, Nike-style). Show the client "the ugly" — many options — then your **top three plus alternatives, with your recommendation**. Don't marry the first idea.
+4. Resolve in **black and white first.** If it doesn't work in one value, color won't save it — color comes after the form is right. If the client is hesitant, show B&W before finalizing.
+5. **Construct it properly** — geometric harmony (golden-ratio circles/squares) corrected by eye, unified paths, hand-tracked type, an optically balanced mark-to-wordmark lockup. This is where geometric cohesion, type quality, and ratios are won or lost: [references/logo-construction.md](references/logo-construction.md).
+6. Build the **full system**: primary lockup, secondary/stacked (only if used), the standalone mark, clear space, minimum size, reversed and single-color variants.
+7. Test against SAD *and* the implementation grid before calling it done.
 
 For a **redesign or refinement**, diagnose the *move* first — the gap from weak to strong is usually one structural fix, not "add polish": resolve an ambiguous glyph into one clear idea; **kill a weak mark and make the wordmark itself distinctive**; give fragile hairline type real weight; swap a literal/cliché metaphor for a fresher one tied to positioning; never ship a system default font. Full patterns with worked before→after cases: [references/logo-fixes.md](references/logo-fixes.md).
 
 **Be honest about rough marks.** Agent-drawn / SVG / "parametric" marks come out rough — uneven curve tension, awkward optical weight, near-misses that misread (a disc-with-wedge reading as Pac-Man). A rough mark is **not** a resolved mark: say "this is a rough cut, the construction still needs work" rather than scoring it bulletproof. Presenting an unresolved mark as finished is how the whole logo ships at a quality the brand can't use.
 
-## Output
+## Present it: the identity presentation
 
-Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, misuse — and, for an assessment, the SAD verdict with the evidence behind each dimension.
+A mark is sold (and sign-off is won) in context, not on a white artboard. Present the **identity presentation**: the sketches and creative direction that led here, the inspiration, the mark itself, its **black-and-white** form, and — the load-bearing part — the mark **applied**: business cards, signage, billboards, social, ephemera (hats, shirts), a sub-brand side by side if there is one, and **on the shelf next to the competitors**. Show the application of everything and *make the case objectively* — "this stands out in your market" — with the competitor lineup right there to prove it. This is where Distinct stops being an assertion and becomes visible.
+
+## Output & delivery
+
+Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, misuse — and, for an assessment, the SAD verdict with the evidence behind each dimension. On finalize, deliver the full variant set (full-color / black / white / grayscale / inverted, RGB), the app icon (rounded + square, ± name) as needed, and confirm commercial type licenses — see [references/logo-construction.md](references/logo-construction.md) → Delivery.
 
 ## Non-Negotiables
 
 - [ ] Brand context read — Emotional Target *and* competitor set — before judging or drawing
+- [ ] Mark has a **thematic idea** traceable to the brand, not arbitrary decoration
 - [ ] Logo seen in *every* implementation, not just the hero lockup
-- [ ] **Distinct** judged against the direct competitor set, not in isolation
+- [ ] **Distinct** judged against the direct competitor set, not in isolation (and shown on the shelf in the presentation)
 - [ ] **Appropriate** judged against the Emotional Target
 - [ ] **Simple** verified across the implementation grid (favicon → large, 1-color, reversed)
-- [ ] Resolves in black and white
+- [ ] Resolves in black and white (opacity/tints OK; hue/gradient dependence is not)
+- [ ] **Construction sound** — geometric harmony (golden ratio, optically corrected), unified paths, hand-tracked type, balanced lockup ratio
+- [ ] Commercial type licenses confirmed
 - [ ] Verdict / spec written to `.agents/brand.md`
 
 ## Related Skills
