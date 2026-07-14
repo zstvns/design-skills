@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.3.0
+  version: 1.3.1
 ---
 
 # Creative Direction
@@ -51,17 +51,17 @@ Work through each element with the audit's bar in mind — the nine-category aud
 7. **Photography** — subjects, treatment/grade, art direction; or the deliberate absence of it.
 8. **Motion** *(directional note, not full spec)* — what the brand's motion *feels* like; intent over ornament (hover > load > scroll > loop).
 
-## Producing the Board — Reach for Real Image/Raster Tooling
+## Producing the Board — Source and Generate the Real Assets
 
-A stylescape needs treated photography, generated muse-derived imagery, and genuine texture — the things HTML/CSS **cannot** fake, and the exact things whose absence reads as flat and austere. So at this juncture, **assess what generation tooling is connected and route the visuals through it** rather than defaulting to code-drawn shapes.
+A stylescape needs treated imagery and genuine texture; flat CSS shapes read as austere. But the operator is usually a **founder, not a designer** — assume they have **ChatGPT (GPT Image)** and maybe **free stock (Unsplash / Pexels)**, *no* paid stock (Envato/Freepik), *no* premium generators, and *no* design chops. So the leverage flips to **you**: you supply the craft the founder can't.
 
-- **Ask what the user has access to** if it isn't obvious, and route accordingly. Options, roughly richest-first:
-  - **Image generation** — **Higgsfield** (a strong default: treated imagery + texture with little manual work), **Magnific** (upscale / enhance / rework), **GPT Image**, **Adobe Firefly** (available via MCP), and similar. 
-  - **Design / raster canvas** — **Figma** / **Figma Weave** and any connected design MCPs — to compose the board and pull real assets.
-  - **Video / motion** — a video generator (e.g. Higgsfield) for the motion-direction note, if motion is in scope.
-- **Default to the richest connected path** so the client doesn't have to hand-make anything; Higgsfield is a good default when present.
-- **The muses are the brief.** Whatever tool you use, generate *to the muse cues recorded at physical fidelity in `brand-strategy`* (the machined knobs, the amber telemetry, the console texture) — treated to the concept, never generic stock.
-- **If no generation tooling is connected, say so plainly** and fall back to the best you can compose (HTML/CSS + sourced imagery), flagging that texture and fidelity will be limited until a raster/image tool is available. Don't quietly ship a flat board and call it done.
+- **You write the prompts; the founder just runs them.** A founder can "create anything" in GPT Image — *only if given the right prompt.* So **prompt-craft is the skill here.** Hand them precise, muse-anchored prompts — subject, treatment/grade, palette (hexes), texture, lighting, composition, aspect ratio, "no text," all tied to the recorded muse cues — for them to paste into ChatGPT and bring back. Iterate the prompt for them when a result misses. This is the realistic loop: the founder's generator + your prompt-writing.
+- **You compose the board, not the founder.** They have no Figma skill and no design eye — so *you* assemble the coalesced board (self-contained HTML/CSS/SVG) from the generated + free-stock assets. The founder supplies raw images; you do the art direction, layout, texture, and typography.
+- **Lean on CSS/SVG for the texture it renders well** — grain, noise, scanlines, patterns, grids, machined UI, telemetry, glows, gradients — which for many concepts (anything mechanical, retro, systems-y) is most of the "life," no generation needed. Reserve GPT Image / free stock for photographic or illustrative muses. (Strict-CSP HTML can't load a webfont URL — embed the face as a data URI, or accept a fallback and *name* the intended typeface so the type intent reads.)
+- **Free stock only where generation is weak** (a specific real place, a real product). Unsplash/Pexels; assume nothing paid.
+- **Accelerators, only if actually connected** (rare for a founder): Adobe Firefly (MCP), Higgsfield / Magnific, Figma / Figma Weave. Use directly when present; never assume them.
+- **The muses are the brief.** Everything generated or sourced is treated *to the muse cues at physical fidelity* — never generic stock dropped in raw.
+- **If imagery can't be produced yet, say so** and label the board a *composition / art-direction proof* with the GPT-Image prompts attached, so the founder can fill it in. Never quietly ship a flat board and call it finished.
 
 ## Validate Before You Present
 
