@@ -5,9 +5,9 @@ Current versions of all skills. Agents can compare against local versions to che
 | Skill | Version | Status | Last Updated |
 |-------|---------|--------|--------------|
 | brand | 1.25.0 | Built | 2026-07-13 |
-| brand-strategy | 1.10.0 | Built | 2026-06-30 |
+| brand-strategy | 1.11.0 | Built | 2026-07-14 |
 | design-principles | 1.10.0 | Built | 2026-07-13 |
-| creative-direction | 1.1.0 | Built | 2026-07-13 |
+| creative-direction | 1.2.0 | Built | 2026-07-14 |
 | brand-naming | — | Planned | — |
 | logo-design | 1.7.0 | Built | 2026-07-13 |
 | identity-proofing | — | Planned | — |

@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.10.0
+  version: 1.11.0
 ---
 
 # Brand Strategy
@@ -55,11 +55,33 @@ Everything downstream is an *answer* to these. Get them wrong and the most polis
 The failure mode is throwing options at the wall and hoping one registers. It never does. The method is **reflective convergence**: listen to the client's own words, then mirror back a *specific, singular hypothesis* about the feeling and let them react.
 
 - **A confident read, not a menu.** *"It sounds like you want people to feel more **courageous** — like they'll finally take the shot they've been putting off."* Then they confirm, correct, or sharpen. Each reaction moves you closer. Never hand them a bare list of adjectives to choose from — form the hypothesis yourself from what they've said and make them react to something specific.
-- **The format is transformation:** *"you want your users to feel more ___"* — more calm, more focused, more brave, more nurtured, more supported, more in control, more creative. A single word they say "yes, exactly" to beats a paragraph they shrug at.
-- **Push past the first "yeah, sure."** "Calm" → calm like *what*? A spa, a cockpit, a monastery, a bank vault? Keep going until the feeling is **design-drivable** — specific enough to reject a color or a typeface. That's the bar for "captured."
-- This is reflective *listening*, not suggesting: you only mirror what you've heard. It doesn't contradict "never open with suggestions" — you form the read *after* they speak, from their material, not before.
+- **You are after an *emotion* — not a capability, not a stance.** This is the single most common place strategy stalls. Founders answer with *capabilities* ("superpowers," "empowered," "in control," "productive") because that's how they think about the product. A capability is not a feeling — it begs the question *"empowered to feel *what*?"* Push it the last rung to an emotion — and the fastest way there is usually the **before**, not the adjective:
+  - **Enter through the "before."** Instead of offering a menu of feelings to pick from, ask *"what is their day — their life — like **before** your product?"* and put concrete before-states on the table to react to: *drowning in the backlog · faking expertise they don't have · staring at a blank page.* The target feeling is the **release** from that before — name the before vividly and the after-emotion falls out on its own. This is the arc entered from its "from" pole (below), and it's the most reliable door.
+  - **Pin the real antagonist — don't assume it's the competition.** What they're actually up against is usually *not* rivals; it's the volume of work, the chaos, the scale, the self-doubt, the clock. Get this wrong and the whole feeling swings adversarial (beat the enemy) when it should be about mastery (command the scale). "Outgunned by competitors" and "outgunned by the sheer mass of work I have to do" are different brands — the first is martial, the second is about calm command of overwhelming complexity. Confirm the antagonist explicitly before you commit to the feeling; it redirects the muses.
+  - **The transformation format:** once the before is clear, *"...so they feel more ___"* → more **calm** · **at ease** · **creative** · **energized** · **tranquil** · **authoritative** · **elite** · **strong** · **peaceful** · **moody / introspective**. "Superpowers" is the vehicle; name the emotion it *delivers*.
+  - **These are not mutually exclusive — you're assembling a blend, not crowning a winner.** Elite and authoritative are cousins; calm can sit right alongside both. Offer candidates as *"which of these are in the mix, and how do they round each other out?"* — never "pick one." The output is a combination (that becomes the Big Three), so let them accumulate and pressure-test how they coexist. Forcing a single exclusive choice is a false frame that makes a difficult client dig in.
+- **Push past the first "yeah, sure."** "Calm" → calm like *what*? A spa, a cockpit, a monastery, a bank vault? Keep going until each feeling in the blend is **design-drivable** — specific enough to reject a color or a typeface. That's the bar for "captured."
+
+**When they still can't name the emotion, switch scaffolds — don't keep poking.** Two work far better than repeating the question:
+
+- **Map the full arc — and lead with the "before."** The shift the ideal user travels, entered from the *from* state first: *drowning/chaotic → running the room · faking it/low-status → the credentialed authority · burned-out/strained → effortless · stale → alive.* Describe the before so they nod, then the after-feeling is the relief from it. The *shift* reveals the feeling and how it's manifested better than any standalone adjective.
+- **Push on attribute spectrums, and *show* the poles.** Give bipolar sliders and have them place the brand: *masculine ↔ feminine · natural ↔ industrial · refined ↔ sturdy · warm ↔ cool · playful ↔ serious · loud ↔ quiet · vintage ↔ futuristic · minimal ↔ maximal.* Then **don't ask them to define the words — show them.** Put up an example of each pole ("*this* is industrial, *this* is refined — where are you?"), or take a stab yourself and let them shove it. Showing beats defining every time (full set + how to run it: [references/attribute-spectrums.md](references/attribute-spectrums.md)). The *cluster* of placements is the feeling in latent form.
+
+- This is reflective *listening*, not suggesting: you only mirror what you've heard, or hand them concrete scaffolds to react to. It doesn't contradict "never open with suggestions" — you form the read *after* they speak, from their material, not before.
 
 **Seeding the first hypothesis from positioning.** If `.agents/product-marketing.md` exists, you can take a *stab* at the feeling from the positioning to open the loop — *"Your positioning is all about getting freelancers paid without chasing invoices, so I'd guess you want people to feel more **in control** — less at the mercy of clients. Close?"* But **say out loud that it's a generic starting guess**, not a read of them: positioning tells you the job-to-be-done, not the founder's emotional truth, so a feeling derived from it lands in the safe, obvious middle every competitor could also claim. Its only job is to give the founder something concrete to push *off* of — "no, not in-control, more like *vindicated*" is worth more than the guess itself. Never let the positioning-derived stab stand as the answer; it's the least specific input you have, there to start the reaction, not end it.
+
+## Your Second Job: Provoke From Their Own Material
+
+Reflecting the feeling is half the job. The other half is bringing **sharp strategic provocations the client can't see themselves** — and this does *not* contradict "never open with suggestions." That rule protects the *emotional target* from your taste. It does not mean you stay quiet. A strategist who only mirrors is a stenographer; your value is the angle they didn't have.
+
+The move is to provoke **from the brand's own raw material** — never from your personal aesthetic:
+
+- **Mine the name.** Etymology, language, and literal meaning are free strategy. *"Magister — that's the Latin title for the Supreme Commander of the late Roman army. Your whole 'commander' feeling is sitting inside your own name. What if the identity leaned into that imperial-command lineage instead of generic SaaS?"* A real angle from their own word beats any muse you'd pick.
+- **Mine the category, the founder's truth, the origin.** The unclaimed lane, the belief competitors won't say, the reason the thing exists — surface the angle and put it on the table as a candidate direction.
+- **Critique what exists, then paint what could be.** Say plainly what's wrong with the current identity *and* what it could become. Not "this is bad," but *"you've got a real idea buried here and it's being executed as the 2025 startup default — here's the version of your own idea that would actually own the space."* Honest diagnosis + an aspirational picture is more useful than either alone.
+
+These are offered as **provocations to react to**, framed as such — the client's reaction still selects. You're expanding the option space with strategy-grade angles, not handing them your preference. Bringing a provocation from their own name is the opposite of imposing your taste; it's doing the work they hired the strategist for.
 
 ## How You Run This
 
@@ -121,7 +143,11 @@ The "steal your brand" exercise. **A muse is not a favorite, and not something y
    - **The instant one lands, dig into *why*** — *"what about this is the feeling?"* — to convert your candidate into their captured cue.
    - **Don't stop at the first "sure."** A lukewarm yes to your suggestion is weaker than a real self-surfaced muse; keep pulling, and use what they react *against* as much as what they react *toward*.
 
-For each muse, name the **visual cue to steal**: a color story, a texture, a type treatment, a sense of space, a quality of light. Spend the most time here; this is where the brand gets its DNA. Drive every muse to a stealable visual.
+For each muse, name the **visual cue to steal** — and steal it at *physical fidelity*, not as a label. The cue is the **texture, material, dimensionality, light, and imperfection**, not the category summary. "Apollo Mission Control" is not a cue; *the worn console panels, the machined toggle switches, the amber CRT glow, the graph-paper grain, the wear on the Bakelite* are. "Teenage Engineering OP-1" is not a cue; *the actual 3D knobs, the molded-plastic tactility, the colored function keys you want to press* are. Record the cue at the level of detail a designer would have to *render*, not decorate around.
+
+Spend the most time here; this is where the brand gets its DNA. Drive every muse to a stealable visual — and to a **material one**.
+
+**Life over austerity — the cue is only captured if it survives execution.** The default failure downstream is that a rich, textured muse gets sanded into a clean, flat, austere surface — the muse's whole reason for existing, gone. A muse recorded shallowly *invites* that flattening. So capture it so vividly it can't be flattened: name the texture, the depth, the tactility, the human hand, the grain, the thing you'd want to touch — and mark it **must-carry**. Flatness and austerity are the category default the muses exist to escape (see `design-principles` → Distinctiveness Must Survive Application); protecting the muse's *life* into `creative-direction` is part of this skill's job, not CD's alone.
 
 **This stage is heavy visualization and image comparison — show the muses, don't just name them.** A muse in text is unverified: "Leica" could mean the machined M3 dial or the minimalist Q2 slab, and the words won't tell you which one carries the feeling. So:
 
@@ -157,10 +183,13 @@ When `brand` routed here with equity being kept, the discovery narrows — respe
 For **Revolution / serious Evolution**, the discovery becomes **three distinct creative concepts** (the handoff into `creative-direction`):
 
 - Each is a genuinely different plausible answer to the Emotional Target — not three shades of one idea
-- Each carries its own muses, color story, type pairing, and visual attitude
-- Present them as real intended assets (stylescapes), not safe mood boards — expressive and free, not yet constrained by buildability. `creative-direction` builds and presents them (see its `references/stylescapes.md`); this skill supplies the concepts' strategic core
+- Each carries its own **muse cluster, temperature/attitude, and strategic through-line** — the *direction*, described in words and reference muses. **Not the rendered visuals.** Naming the muses and the feeling-logic is strategy; choosing the actual typefaces, building the color system, drawing the motif, and composing the stylescapes is `creative-direction`. Don't do CD's job here — you'll do it worse and out of order.
+- **Keep the "current identity, evolved and made true" in your back pocket — offer it when the appetite calls for it.** This is the direction that takes what they already have — the equity, the bones, the instinct they were reaching for — keeps it, and pushes it to its *best possible self*: everything wrong fixed, everything latent finally deployed, still true to what they were going for. It's the lowest-risk, highest-trust option, and it proves you understand what's already good before proposing to replace it. But it is a *choice, not a rule* — **read it off the diagnosed depth and the client's appetite** (that calibration is the whole point of the audit + strategy). For a nervous or incremental client, it's often the anchor of the set. For a client who genuinely wants a transformational break, forcing a "keep what you have" concept wastes a slot and fights their appetite — leave it out. You can *always* reach for it; you don't *always* include it.
+- `creative-direction` is what turns these into real intended assets — stylescapes, typefaces, color, the motif in use (see its `references/stylescapes.md`); this skill supplies the concepts' strategic core.
 
-For **Evolution**, anchor on a single direction that respects existing equity — often starting from the primary touchpoint and carrying the existing logo/palette forward while introducing new graphics, type, or texture.
+**The handoff is the finish line.** Strategy's terminal deliverable is the **concept set pulled up** — the feeling, and two or three concept directions each with its muse cluster and through-line. The instant those are agreed, **move to `creative-direction`** — that's the skill that pushes into the visuals: seeing the typefaces, the color, the motif rendered, the stylescapes. Don't linger in strategy trying to show the look; you'll do it half-formed and out of order. Pull up the concepts, confirm the feeling is differentiated and true, hand off.
+
+For **Evolution**, anchor on a single direction that respects existing equity — often starting from the primary touchpoint and carrying the existing logo/palette forward while introducing new graphics, type, or texture (rendered in `creative-direction`).
 
 ## The Working Document
 
@@ -186,9 +215,11 @@ This is the source `creative-direction`, `logo-design`, and `design-critique` al
 
 - [ ] Depth named
 - [ ] Emotional Target is specific and sensory, not marketing-speak
-- [ ] Every muse has a stealable *visual* cue
+- [ ] Every muse's cue captured at *physical fidelity* (texture / material / dimension / light, not a label) and marked must-carry
+- [ ] The name mined for meaning; at least one provocation/angle brought from the brand's own material
 - [ ] Competitive visual landscape mapped (so "distinct" is meaningful)
 - [ ] Fixed core vs. flexible range defined
+- [ ] Concept set calibrated to the diagnosed depth + appetite (the "current identity, evolved & made true" direction offered when the appetite calls for it — not by default)
 - [ ] Direction is concrete enough that two designers would head the same way
 - [ ] Written into `.agents/brand.md`
 

@@ -29,11 +29,22 @@ A concept board that is missing any of these reads as under-built. Work through 
 - Anchor each in 1–2 of the muses from `brand-strategy`, and name the connection ("Concept B steals the quiet confidence of the Leica body: machined neutrals, engraved type, one red dot of action color").
 - Build each to the full anatomy above — far enough to be *felt*, not sketched.
 
-## Composing a stylescape
+## Composing a stylescape — a coalesced board, not a webpage
 
-- One wide board per concept (roughly 1800×690, several thousand px if extended), reading left → right from *foundation* (color, type) through *expression* (motif, imagery) to *application* (hero fragment, device/product mockup).
-- Use **real copy** from the brand — lorem hides whether the type actually serves the message, and starves the hero line of the one thing that sets a direction.
+**This is the format that separates a stylescape from a comp.** A stylescape is *one composed surface where every element coalesces* — the hero line, the treated imagery, the type specimen, the color ramp, the motif, and the applied mockup all **overlap, interlock, and bleed into each other** so you see how the whole language behaves *together*. It is **not** a vertical stack of full-width website sections (hero, then a color row, then a type row, then a mockup). If it reads like a scrolling landing page, it's wrong — that's the exact failure that makes a concept feel flat and templated.
+
+- **Think bento grid, then break it.** Lay the elements as tiles of *different sizes* — a large hero-image tile, a color tile, a type-specimen tile, a motif tile, an applied-mockup tile — then deliberately **overlap the tile boundaries** so imagery, texture, and illustration spill across cells. The grid is the underlying order; the overlaps are what make it one composition instead of a spreadsheet. Tiles should *talk to each other*, not sit in isolation.
+- **Recurring layout archetypes from strong boards** (pick per concept, don't default to one):
+  - *Left-anchor hero + right-bleed collage* — display type / a treated subject anchored left; imagery bleeding off the right edge; specimen and color ramp tucked into the midground; a device mockup overlapping the edge.
+  - *Full-bleed atmosphere + floating cards* — a textured or photographic full-bleed ground, with type/color/mockups as overlapping cards, polaroids, or torn-paper scraps layered on top.
+  - *Panel collage (bento)* — distinct sized panels, but with a subject, motif, or texture crossing panel seams so it reads as one surface.
+  - *Diagonal / scattered energy* — rotated photos, torn edges, stickers, scattered motif elements, hand marks (for expressive, high-energy directions).
+- **Depth is mandatory:** layering, overlap, rotation, full-bleed imagery, dramatic scale contrast, shadow/lift. Flat elements sitting in a centered single column at one scale = assembled, not designed (`design-principles` → Designed vs. Assembled).
+- **Read order still holds** underneath the collage — roughly *foundation* (color, type) → *expression* (motif, imagery) → *application* (mockup) — but expressed as a composition, not a stack.
+- Use **real copy** from the brand — lorem hides whether the type serves the message and starves the hero line.
 - Include the current logo (Evolution) or a placeholder lockup (Revolution — the mark comes later via `logo-design`; don't let a throwaway logo sketch hijack the concept discussion).
+
+*(The [frontend-boilerplate.md](frontend-boilerplate.md) art-direction, token, typography, texture, and abomination rules apply to the board. Its **build** mechanics — website sections, interaction states, breakpoints, failure paths — are for the application skills, not the stylescape itself. The stylescape shows the language; the application skills build the site.)*
 
 ## The self-audit — adversarial, on the pixels
 

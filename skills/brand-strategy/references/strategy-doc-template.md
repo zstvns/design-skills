@@ -21,20 +21,26 @@ The working document for the coaching session. Create it at the first answer; up
 <!-- Filled as sections complete; distilled into .agents/brand.md at the end. -->
 
 ### Vision & Truth
+### The Name — angle(s) from its meaning
+<!-- Etymology / language / literal meaning, and any strategic direction it suggests. e.g. "Magister = Latin for Supreme Commander → imperial-command lineage." -->
 ### The Ideal User
 ### Competitive Visual Landscape
 (claimed territory · unclaimed territory · the trend default to escape)
 ### Brand Personality (pressure-tested)
+### Provocations & Critique
+<!-- Strategy-grade angles brought from the brand's own material; honest read of what's wrong with the current identity and what it could become. -->
 ### Muses
 *(Muse board: [path/link — regenerate as muses accumulate])*
-| Muse | Stealable visual cue | Confirmed image(s) |
-|------|----------------------|--------------------|
+| Muse | Stealable cue — *texture / material / dimension / light*, not a label | Must-carry into CD? | Confirmed image(s) |
+|------|----------------------------------------------------------------------|---------------------|--------------------|
+<!-- Cue recorded at render fidelity: "machined 3D knobs + molded-plastic tactility," never "clean/minimal." Flatness betrays the muse. -->
 ### Emotional Target (Big Three)
 1. … *(design-drivable — could reject a color/typeface/motif)*
 2. …
 3. …
 ### Fixed Core vs. Flexible Range
 ### Concept Directions (Revolution)
+<!-- Calibrate the set to the diagnosed depth + appetite. "Current identity, evolved & made true" (what they have, pushed to its best self) is available to offer when the appetite is incremental/nervous — not a mandatory slot; drop it for a client who wants a transformational break. -->
 1. …
 2. …
 3. …

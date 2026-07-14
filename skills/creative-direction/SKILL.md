@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Creative Direction
@@ -31,7 +31,7 @@ Open `.agents/brand.md`. You need:
 
 ## The System to Establish
 
-Work through each element with the audit's bar in mind — the nine-category audit (see `brand`) is your acceptance test. Full per-element standards: [references/element-standards.md](references/element-standards.md).
+Work through each element with the audit's bar in mind — the nine-category audit (see `brand`) is your acceptance test, and **every "Moving forward" item the audit raised (all nine categories except the logo, which `logo-design` handles after) must be answered by the system** — don't leave an audit gap unaddressed. Full per-element standards: [references/element-standards.md](references/element-standards.md). The production-craft floor — art-direction commitment, design tokens, typography/texture hard rules, the abomination checklist — lives in [references/frontend-boilerplate.md](references/frontend-boilerplate.md); the board's collage/bento composition in [references/stylescapes.md](references/stylescapes.md).
 
 1. **Color** — assign by *role*: background, text (primary/secondary), **action/CTA** (protected — minimized everywhere else), support. Five stops per color, not ten. **Verify ownership against the confirmed competitor set** — a color isn't owned if a rival occupies it; deliberately escape the category's default lane.
 2. **Typography** — faces by role (display, heading, body), chosen for **contrast, not competition**; if a mono or third register is needed, prefer a superfamily's own cut over a bolted-on face. Set weight/style restrictions. **Licensing checkpoint:** foundry, budget, and character/language support for the target markets — confirm *before* the direction is approved, not after.
@@ -41,6 +41,18 @@ Work through each element with the audit's bar in mind — the nine-category aud
 6. **Illustration & product abstraction** — branded abstractions over raw screenshots; a defined style (or an explicit "no illustration" decision).
 7. **Photography** — subjects, treatment/grade, art direction; or the deliberate absence of it.
 8. **Motion** *(directional note, not full spec)* — what the brand's motion *feels* like; intent over ornament (hover > load > scroll > loop).
+
+## Producing the Board — Reach for Real Image/Raster Tooling
+
+A stylescape needs treated photography, generated muse-derived imagery, and genuine texture — the things HTML/CSS **cannot** fake, and the exact things whose absence reads as flat and austere. So at this juncture, **assess what generation tooling is connected and route the visuals through it** rather than defaulting to code-drawn shapes.
+
+- **Ask what the user has access to** if it isn't obvious, and route accordingly. Options, roughly richest-first:
+  - **Image generation** — **Higgsfield** (a strong default: treated imagery + texture with little manual work), **Magnific** (upscale / enhance / rework), **GPT Image**, **Adobe Firefly** (available via MCP), and similar. 
+  - **Design / raster canvas** — **Figma** / **Figma Weave** and any connected design MCPs — to compose the board and pull real assets.
+  - **Video / motion** — a video generator (e.g. Higgsfield) for the motion-direction note, if motion is in scope.
+- **Default to the richest connected path** so the client doesn't have to hand-make anything; Higgsfield is a good default when present.
+- **The muses are the brief.** Whatever tool you use, generate *to the muse cues recorded at physical fidelity in `brand-strategy`* (the machined knobs, the amber telemetry, the console texture) — treated to the concept, never generic stock.
+- **If no generation tooling is connected, say so plainly** and fall back to the best you can compose (HTML/CSS + sourced imagery), flagging that texture and fidelity will be limited until a raster/image tool is available. Don't quietly ship a flat board and call it done.
 
 ## Validate Before You Present
 
