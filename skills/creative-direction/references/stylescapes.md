@@ -54,6 +54,10 @@ When the board is delivered digitally (an HTML artifact), **use the medium** —
 - **Ambient loops and glow** on the signature element and accents (a pulsing telemetry glow, a breathing amber) — subtle, looping, `prefers-reduced-motion`-aware.
 - **Hover reveals and shifts** — tiles lift, labels appear, detail surfaces on hover.
 - **Tabbed / clickable exploration** — cycle candidate typefaces as **tabs** in the specimen; make **color swatches clickable** (reveal/copy the hex). Let the viewer *operate* the board.
+- **Make the signature element genuinely operable, not a picture of one.** If the concept's signature is a knob, it should *turn* (drag to rotate); if it's a motif, it should *respond*. An operable signature demonstrates the brand's behavior and is the single biggest source of delight — a static render of an interactive idea is a missed shot.
+- **Reduce the color on screen; reveal the rest on interaction.** Don't lay the whole palette out at once — that reads busy and undoes restraint (`design-principles` → Restraint). Show the dominant neutral + the one accent; let the full ramp/roles expand on click or hover. Hiding-then-revealing is itself interactivity.
+- **Run the concept's texture as a living background motif — everywhere.** The concept's signature texture (CRT scanlines, dot-grid, trajectory lines, a staff, an imperial rule) shouldn't sit in one swatch; let it run *through the background* of the whole board and react subtly to interaction. One motif, deployed pervasively, is what makes it feel like a world.
+- **Prefer a stylized, moving drop-shadow to a blur-glow on type.** A soft blur-glow reads as the default "make it pop" move; an intentional, slightly-animated *offset* shadow (in the accent color) reads as designed. Small distinction, big difference in whether the type feels authored.
 - Keep motion purposeful and reduced-motion-safe (frontend-boilerplate → Motion). The point is life, not a light show.
 
 ## Getting the specifics right (the details that separate it from a comp)
@@ -68,9 +72,14 @@ When the board is delivered digitally (an HTML artifact), **use the medium** —
 
 A single screen is fine, but only if the content genuinely *fits* with breathing room. If it's crowded or clipping, **extend to a fuller, scrollable page** rather than jamming everything into one viewport. Match the canvas to the content, not the reverse.
 
-## Presenting the set — all concepts on one page
+## Presenting the set — all concepts, one surface, judged together
 
-Deliver the concepts **navigable on a single page** — a tab bar or a stacked sequence — so the client sees all three, judges them against each other, and can move between them. Don't hand over three disconnected files.
+Deliver the concepts **navigable on a single surface** so the client sees all three and judges them against each other — never three disconnected files, and never a thin top tab-strip that hides two-thirds of the work.
+
+- **A floating side nav** — the three concepts *stacked*, each showing its **number, name, and a one-line descriptor**, so the whole set is legible at a glance and one click switches the stage.
+- **Put the concept's name inside the composition itself** (not only in the nav) — the board should announce what it is.
+- **Offer a compare view** — all three side by side, or a horizontal scroll — so they can be weighed directly against one another, not just toggled between.
+- **Build all three to the same fidelity.** A stub next to two finished boards biases the pick; if you present three, present *three*.
 
 ## The self-audit — adversarial, on the pixels
 
