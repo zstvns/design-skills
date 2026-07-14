@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.11.0
+  version: 1.12.0
 ---
 
 # Brand Strategy
@@ -149,6 +149,8 @@ Spend the most time here; this is where the brand gets its DNA. Drive every muse
 
 **Life over austerity — the cue is only captured if it survives execution.** The default failure downstream is that a rich, textured muse gets sanded into a clean, flat, austere surface — the muse's whole reason for existing, gone. A muse recorded shallowly *invites* that flattening. So capture it so vividly it can't be flattened: name the texture, the depth, the tactility, the human hand, the grain, the thing you'd want to touch — and mark it **must-carry**. Flatness and austerity are the category default the muses exist to escape (see `design-principles` → Distinctiveness Must Survive Application); protecting the muse's *life* into `creative-direction` is part of this skill's job, not CD's alone.
 
+**Extract the DNA the founder can't articulate — and tie every cue to a story.** Founders often name something deeply significant (a memory, a place, a trip) without seeing its *visual* value. That's your job: look at what they surface and pull the concrete visual DNA yourself — *"you mentioned your pilgrimage to Mecca; what I see is the Kaaba's geometry, the concentric rings of people bowing, the arches, the color of that sky."* Then **tie every cue back to the story**, so the eventual abstraction (in `creative-direction`) means something — "the grid comes from the building's brick; the concentric motif from the people; the arches from the courtyard" — never a shape pulled for looks alone. A cue anchored to the founder's real story is what makes the brand impossible for a competitor to copy; a cue pulled for its surface is costume.
+
 **This stage is heavy visualization and image comparison — show the muses, don't just name them.** A muse in text is unverified: "Leica" could mean the machined M3 dial or the minimalist Q2 slab, and the words won't tell you which one carries the feeling. So:
 
 - **When the client names a muse, go get images of it** — web image search, site screenshots, product photos — and put them in front of the client. Then confirm visually: *"Is this the one? Which part of this image is the feeling — the dial, the leather, the light?"* The pointing-at-the-image moment is where the stealable cue actually gets captured.
@@ -177,6 +179,7 @@ When `brand` routed here with equity being kept, the discovery narrows — respe
 - **Run only the arc sections the deltas need.** No motif? → Muses + Emotional Target focused on what the motif must feel like. Color colliding with a rival? → the competitive landscape + muse work scoped to the new color territory. Generic type? → personality + muses scoped to typographic character. The audit's per-category "Moving forward" notes are your agenda.
 - **Always anchor the deltas to one Emotional Target.** Even in a narrow engagement, define (or confirm) the Big Three first — deltas designed without a shared feeling produce a patchwork, and "different-but-aimless" is the failure mode this skill exists to prevent.
 - **The kept equity must pass through the new target.** If the logo being kept can't plausibly live inside the feeling being defined, flag the tension now — the mark is equity, not scripture — rather than letting `creative-direction` discover it later.
+- **Know what an Evolution *gives up*: the outside-industry muse collision.** A full Revolution's uniqueness comes from pulling muses from *outside the category* — a cabin on a lake, a UK pub's seashell texture, a Dwarvish city — the "interesting collision" that no competitor could arrive at. An Evolution scoped to deltas usually stays *inside existing influence* (the current site, the kept assets) and skips that collision — which is exactly why it lands less distinctive, closer to "winging it" from what's already there. That's a fair trade when the appetite is incremental; but if the client actually wants to be un-copyable, name that the outside-muse collision — i.e. a Revolution — is what delivers it. Don't let an Evolution quietly promise Revolution-level distinctiveness.
 
 ## From Strategy to Concepts
 

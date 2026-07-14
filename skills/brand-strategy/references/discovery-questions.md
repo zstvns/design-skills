@@ -14,6 +14,7 @@ Ask one at a time. After each answer, run it against the coaching triggers below
 | Muse with no visual | An inspiration named for its mission, not its look | "What can we *steal* visually? If nothing, it's not a muse for us." |
 | Muse captured flat | Cue recorded as a label or as "clean / minimal / modern" | "That's the summary, not the cue — what's the *texture, material, or dimension* we'd render? What would you want to touch?" |
 | Tactical when emotional is needed | Features/logistics when asked about feeling | "Set the logistics aside — how should it *feel*?" |
+| Contradiction / inconsistency | Answers that don't square — "elite" + "affordable"; an ideal user earning $500k who "shops at Aldi"; attribute words at war | Name it and clarify: "you said elite *and* affordable — which wins, and what does each actually mean to you?" Conflicts are signal (the founder may be wrong, or the words mean something specific); don't smooth them over. |
 | Asks you for the answers | "Just suggest some muses / pick a direction for us" | Offer the deeper path first ("your own muses will fit better — want to try a few questions first?"); generate ideas only after they decline, framed as starting points to react to |
 
 **Provoke, don't just capture.** Alongside the questions, bring strategy-grade angles from the brand's *own* material — the name's etymology/language, the category's unclaimed lane, the founder's truth — as provocations to react to (e.g. "Magister is the Latin title for the Roman Supreme Commander — lean into that?"). Critique what exists honestly and paint what it could become. This is not imposing your taste (which the emotional target must stay free of); it's the strategic thinking the client hired you for. See SKILL → Your Second Job.
@@ -28,6 +29,8 @@ Ask one at a time. After each answer, run it against the coaching triggers below
 - Describe one real person this is for. Not a segment — a person.
 - What do they already think is beautiful? Trustworthy? Premium? Fun?
 - Where do they spend attention, and what does *that* look like?
+- **Map their buying patterns, aesthetic priorities, and story arc** — the change they undergo (before → after). The arc lays the foundation for the visuals: a user going from *overwhelmed amateur → in-command* wants a different world than one going from *bored → delighted*.
+- **Look for the founder-story parallel.** Founders often unknowingly build for a version of themselves — find where the founder's own journey mirrors the ideal user's arc (e.g. "I built bridges between teams" → a tool that unifies teams). It's rich material and it makes the brand ring true.
 
 ## 3. Competitive Visual Landscape
 - Who are the 3–5 brands you're visually compared to?
