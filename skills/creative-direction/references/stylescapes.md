@@ -46,6 +46,32 @@ A concept board that is missing any of these reads as under-built. Work through 
 
 *(The [frontend-boilerplate.md](frontend-boilerplate.md) art-direction, token, typography, texture, and abomination rules apply to the board. Its **build** mechanics — website sections, interaction states, breakpoints, failure paths — are for the application skills, not the stylescape itself. The stylescape shows the language; the application skills build the site.)*
 
+## The board is a live, interactive canvas — not a static image
+
+When the board is delivered digitally (an HTML artifact), **use the medium** — a flat PNG leaves half the tools on the table. Interactivity and motion also *demonstrate* the brand's behavior, which a static image can't.
+
+- **A slow sweeping background element** — a light sweep, a drifting gradient, a moving scan — gives the whole composition dynamism. Add one to *every* concept; it's a reliable lift.
+- **Ambient loops and glow** on the signature element and accents (a pulsing telemetry glow, a breathing amber) — subtle, looping, `prefers-reduced-motion`-aware.
+- **Hover reveals and shifts** — tiles lift, labels appear, detail surfaces on hover.
+- **Tabbed / clickable exploration** — cycle candidate typefaces as **tabs** in the specimen; make **color swatches clickable** (reveal/copy the hex). Let the viewer *operate* the board.
+- Keep motion purposeful and reduced-motion-safe (frontend-boilerplate → Motion). The point is life, not a light show.
+
+## Getting the specifics right (the details that separate it from a comp)
+
+- **Balance all text** (`text-wrap: balance`); set an even type rhythm; no orphaned or lopsided lines.
+- **Overlaps are intentional and never obscure.** Overlap for depth and to show elements *interacting* — but nothing the viewer needs to read or assess may be hidden behind another element. **Clip and mask cleanly**; keep the underlying grid tidy so the collage reads as composed, not collided.
+- **Color, presented as a system — never a single strip.** Each color is its **own block with space around it**, its **shades and tints laid out directly below it**, wrapping to multiple rows. The *presentation* of color is itself a design decision; a row of touching swatches is a spec sheet, a spaced set of color blocks with ramps is a system.
+- **Type specimen: name the faces and show real samples** — the actual typeface names by role, with a large character sample for each, cycled via tabs where you're showing options.
+- **Show the muse reference image** on the board — the actual thing you're stealing from — next to the abstraction it produced, so the derivation is legible (reference → abstracted element).
+
+## Length: fit it, or extend it — don't cram
+
+A single screen is fine, but only if the content genuinely *fits* with breathing room. If it's crowded or clipping, **extend to a fuller, scrollable page** rather than jamming everything into one viewport. Match the canvas to the content, not the reverse.
+
+## Presenting the set — all concepts on one page
+
+Deliver the concepts **navigable on a single page** — a tab bar or a stacked sequence — so the client sees all three, judges them against each other, and can move between them. Don't hand over three disconnected files.
+
 ## The self-audit — adversarial, on the pixels
 
 Before presenting, audit the **rendered board**, not the concept in your head. The concept can be distinctive while the execution is generic — that gap is the default failure mode, and a self-audit that grades intent will miss it every time.
