@@ -48,7 +48,7 @@ The visual system is expressed as tokens — this is the concrete form of `creat
 
 ## Aesthetic hard rules
 
-**Typography** — avoid Inter, Roboto, Arial, system defaults; pair a *characterful display* with a *refined body*; tune tracking and leading deliberately; use typographic contrast as a primary tool; provide fallbacks that preserve tone. (Names, by role — echoes `brand-strategy`'s "named typefaces, not 'a geometric grotesk'.")
+**Typography** — avoid Inter, Roboto, Arial, system defaults; pair a *characterful display* with a *refined body*; tune tracking and leading deliberately; use typographic contrast as a primary tool; provide fallbacks that preserve tone. (Names, by role — echoes `brand-strategy`'s "named typefaces, not 'a geometric grotesk'.") **Hard rules that separate a real system from an amateur one:** the **subhead uses the secondary/body face, never the headline face**; **body is never set in a monospace** (mono is for labels, telemetry, code only); **body and eyebrow use different faces** — don't run one face across every role; and **no italic/oblique serif display** (it reads dated — near-universal no-go).
 
 **Color** — no emoji icons anywhere; **no default purple/blue gradient on white SaaS**; one dominant hue + 1–3 accents with *defined roles*; contrast and focus colors are functional; dark mode only if it strengthens the direction.
 
