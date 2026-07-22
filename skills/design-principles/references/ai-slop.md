@@ -19,7 +19,8 @@ A catalog of the tropes that mark a design as AI-generated or template-default. 
 - **Ten tints and shades** per color when five would do.
 
 ## Type
-- **Inter / Space Grotesk** reached for as the "safe" face.
+- **The try-hard trendy face** — reaching for a fashionable "designer" typeface (**Space Grotesk, Fraunces**, and their cohort) as a shortcut to looking designed. These now read as AI/startup-template costume — a characterful face doing the differentiation the *system* should be doing. **Banned in these skills.**
+- **The lazy-neutral default** — a neutral face (Inter, Geist, Helvetica) reached for because *no type decision was made*. Note the nuance: a neutral face is **not** slop when chosen *deliberately* — Inter, used so that color, motif, composition, and treatment carry the distinction, beats a try-hard characterful face every time. The slop is the absence of a decision, not neutrality itself.
 - **Bold as the default weight** — everything heavy, so nothing leads.
 - **Serif-display-on-cream + terracotta** — the other cliché pole (warm #F4F1EA, a serif headline, a clay accent).
 - **Near-black canvas + high-contrast serif display + one jewel-tone accent + tasteful mono** — the current "premium AI tool" default.

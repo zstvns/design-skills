@@ -15,10 +15,12 @@ The per-element detail behind `creative-direction`. Each element ends with the s
 - **Contrast, not competition:** the display face and body face should have unmistakably different jobs. Almost-alike pairs create tension with no payoff.
 - **System cohesion:** need a mono or a third register? Prefer a superfamily's own cut or a deliberate companion — never an unrelated face stapled on for flavor.
 - **Restrictions are part of the spec:** allowed weights, style rules (italic policy, casing conventions), prohibited faces/fallbacks.
+- **Weight discipline — default regular-to-semibold; reserve bold.** Full bold is rarely needed; semibold usually leads cleanly enough. Use bold sparingly, for specific deliberate emphasis, never as the default weight — when everything is heavy, nothing leads (see `design-principles` → ai-slop.md).
 - **Licensing checkpoint (before approval):** foundry and license type (desktop/web/app), budget, and character + ligature coverage for every target market's language.
 - A distinctive face is high-leverage in a same-sans category — but an expressive face badly systematized loses to a plain face perfectly systematized. Choose what you can execute.
 - **Evoke the muse, don't costume it.** The literal muse-matched face is the costume trap — an all-caps Roman for an imperial muse, a blackletter for a medieval one — and it reads cliché and on-the-nose. Muse-derived type is rare; more often you evoke the feeling with a strong, clean pairing (e.g. an authoritative sans against a characterful accent) and let motif, color, and composition carry the muse. The more on-the-nose the literal face, the harder you look for the oblique pairing that still lands the feeling.
 - **A different body face per concept.** In a three-concept set, repeating one body/paragraph face across concepts is a differentiation failure even when headlines and palettes differ — each concept gets a body face chosen for *its* world.
+- **Neutral beats try-hard; the system carries the distinction.** Differentiation comes from motif, color, composition, and treatment — not from a fashionable typeface. A neutral workhorse chosen *deliberately* (Inter) outperforms a trendy "designer" face grabbed to look designed. **Banned faces** (they now read as AI-slop / try-hard): **Space Grotesk, Fraunces** and their cohort — see `design-principles` → ai-slop.md. A characterful face earns its place only when it's genuinely the muse abstracted, never as costume.
 
 ## Composition & Layout
 
