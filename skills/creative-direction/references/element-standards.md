@@ -17,6 +17,8 @@ The per-element detail behind `creative-direction`. Each element ends with the s
 - **Restrictions are part of the spec:** allowed weights, style rules (italic policy, casing conventions), prohibited faces/fallbacks.
 - **Licensing checkpoint (before approval):** foundry and license type (desktop/web/app), budget, and character + ligature coverage for every target market's language.
 - A distinctive face is high-leverage in a same-sans category — but an expressive face badly systematized loses to a plain face perfectly systematized. Choose what you can execute.
+- **Evoke the muse, don't costume it.** The literal muse-matched face is the costume trap — an all-caps Roman for an imperial muse, a blackletter for a medieval one — and it reads cliché and on-the-nose. Muse-derived type is rare; more often you evoke the feeling with a strong, clean pairing (e.g. an authoritative sans against a characterful accent) and let motif, color, and composition carry the muse. The more on-the-nose the literal face, the harder you look for the oblique pairing that still lands the feeling.
+- **A different body face per concept.** In a three-concept set, repeating one body/paragraph face across concepts is a differentiation failure even when headlines and palettes differ — each concept gets a body face chosen for *its* world.
 
 ## Composition & Layout
 
