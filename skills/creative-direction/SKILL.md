@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.11.1
+  version: 1.11.2
 ---
 
 # Creative Direction
@@ -64,7 +64,7 @@ A stylescape needs treated imagery and genuine texture; flat CSS shapes read as 
 - **Lean on CSS/SVG for the texture it renders well** — grain, noise, scanlines, patterns, grids, machined UI, telemetry, glows, gradients — which for many concepts (anything mechanical, retro, systems-y) is most of the "life," no generation needed. Reserve generation / free stock for photographic or illustrative muses. (Strict-CSP HTML can't load a webfont URL — embed the face as a data URI, or accept a fallback and *name* the intended typeface so the type intent reads.)
 - **Unify every source through one grade.** Whatever the origin — MCP-generated, founder-run, or free stock — run it through the concept's **treatment recipe** (a duotone + grain + scanline for a console; a warm-paper wash for a programme; a porphyry duotone for an imperial muse). Show it as a before→after on the board. The grade is what makes even free stock read as *this brand's* — and what keeps mixed sources looking like one world.
 - **The muses are the brief.** Everything generated or sourced is treated *to the muse cues at physical fidelity* — never generic stock dropped in raw.
-- **If imagery can't be produced yet, say so** and label the board a *composition / art-direction proof* with the GPT-Image prompts attached, so the founder can fill it in. Never quietly ship a flat board and call it finished.
+- **If imagery can't be produced yet, say so** and label the board a *composition / art-direction proof* with the prompt packs attached (for whichever generator the fork identified), so the founder can fill it in. Never quietly ship a flat board and call it finished.
 
 ## Validate Before You Present
 
