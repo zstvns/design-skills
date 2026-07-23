@@ -2,7 +2,7 @@
 name: design-principles
 description: "The universal principles behind strong visual design — across logos, brand identity, collateral, and web. Use at the start of any design work, when a design feels off but you can't name why, when judging whether a piece earns its choices, or when a brand needs to flex without breaking. Other design skills inherit these principles."
 metadata:
-  version: 1.10.1
+  version: 1.11.0
 ---
 
 # Design Principles
