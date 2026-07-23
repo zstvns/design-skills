@@ -19,12 +19,13 @@ A catalog of the tropes that mark a design as AI-generated or template-default. 
 - **Ten tints and shades** per color when five would do.
 
 ## Type
-- **The try-hard trendy face** — reaching for a fashionable "designer" typeface (**Space Grotesk, Fraunces**, and their cohort) as a shortcut to looking designed. These now read as AI/startup-template costume — a characterful face doing the differentiation the *system* should be doing. **Banned in these skills.**
+- **The try-hard trendy face** — reaching for a fashionable "designer" typeface (**Space Grotesk, Fraunces, Instrument Serif, Syne, Geist-outside-Vercel**, the Fontshare wave — **Satoshi, Clash Display, General Sans** — and their cohort) as a shortcut to looking designed. These now read as AI/startup-template costume — a characterful face doing the differentiation the *system* should be doing. **Banned in these skills.** Full catalog, cohorts, and the wave law (the ban list decays; the *test* doesn't): [cliche-typefaces.md](cliche-typefaces.md).
 - **The lazy-neutral default** — a neutral face (Inter, Geist, Helvetica) reached for because *no type decision was made*. Note the nuance: a neutral face is **not** slop when chosen *deliberately* — Inter, used so that color, motif, composition, and treatment carry the distinction, beats a try-hard characterful face every time. The slop is the absence of a decision, not neutrality itself.
+- **The costume face** — the face that literally *is* the muse or category (Trajan/Cinzel for epic-or-Roman, Papyrus for ancient, Copperplate for law firms, blackletter for medieval). An abstraction failure, not a taste error — see cliche-typefaces.md cohort 6.
 - **Bold as the default weight** — everything heavy, so nothing leads.
 - **Serif-display-on-cream + terracotta** — the other cliché pole (warm #F4F1EA, a serif headline, a clay accent).
 - **Near-black canvas + high-contrast serif display + one jewel-tone accent + tasteful mono** — the current "premium AI tool" default.
-- **The "Vercel knockoff"** — near-black canvas, a geometric grotesk (Geist / Inter), and a monospace bolted on for "technical" flavor. The mono is decoration, not because the content is code.
+- **The "Vercel knockoff"** — near-black canvas, a geometric grotesk (Geist / Inter), and a monospace bolted on for "technical" flavor. The mono is decoration, not because the content is code. (The tell here is the *combination* worn as costume — not the neutral face itself; see the lazy-neutral nuance above.)
 - **Mismatched mono** — pairing a mono with a primary family that *already ships its own mono cut*. Use the family's mono (or a deliberate companion) for a coherent type system; an unrelated mono stapled on is a cohesion failure (see `design-principles` → Contrast, Not Competition).
 
 ## Iconography & imagery
