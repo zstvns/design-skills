@@ -14,20 +14,29 @@ Patterns that immediately signal a site was *generated* rather than *designed*. 
 - **Purple / oversaturated palettes** — electric blue, neon gradients chosen because they look "techy," not because they mean something.
 - **Too many tints and shades** — 10 stops where 5 (base + 2 shades + 2 tints) would do.
 - **CTA color everywhere** — the action color on icons, borders, backgrounds, decoration, diluting its power.
+- **CTA color = text color** — the button painted in the same hue as the headlines and graphics, so it blends instead of reading as *the* action. The CTA color must be a distinct forward color.
 
 ## Layout
 
 - **Banded sections** — alternating white/gray/white with hard edges.
 - **Uniform grids everywhere** — every section a 3-column icon grid, no rhythm.
+- **Only the column trio** — 2-col / 3-col / left-right and nothing more adventurous; the page never surprises, so it reads as safe/assembled.
+- **An eyebrow on every section** — a mono/uppercase kicker over each block, which flattens hierarchy instead of building it. Use them sparingly.
+- **A busy motif behind the hero** — pattern, grid, and scanlines competing with the headline and primary action in the one section that most needs to be clear.
 - **Wireframe-first thinking** — a template filled with copy, instead of a layout built around the words.
+- **Text-only sections that should carry a visual** — a claim that needs a product shot left as a wall of words.
 - **Filling leftover space** — logos, key claims, and hero assets dropped wherever there's a gap rather than given their own lane.
 - **Under-scaled headlines** — section titles sized like body copy, so no section has an anchor.
 
 ## Components
 
 - **Identical CTA treatments** — primary and secondary buttons the same, especially on hover.
+- **Squared-off CTA** — the primary action shaped like every other card and input, with no differentiated (pill/rounded) form.
+- **Icon-plus-text instead of real logos** — "📷 Instagram" stand-ins in a trust/integration strip where the actual brand marks exist and should be pulled.
+- **Low-contrast logo strip** — real logos, but dimmed until they're barely visible; the trust beat evaporates.
 - **Same icon for different concepts** — a generic checkmark/lightbulb reused across features.
-- **Generic screenshots** — raw product screenshots dropped in where a branded abstraction would be more intentional.
+- **Generic screenshots** — raw product screenshots dropped in where a branded, layered mockup would be more intentional.
+- **A product visual that misses its own story** — an illustration that decorates instead of showing what the product actually does.
 - **Scattered logos** — trust marks at mismatched sizes and weights, tucked beside other elements.
 
 ## Motion

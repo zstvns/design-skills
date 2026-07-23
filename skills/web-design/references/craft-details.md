@@ -12,9 +12,20 @@ The tells that separate a site that was *designed* from one that was *assembled*
 
 ## Color Discipline
 
-- **The CTA color is sacred.** One color for the primary action. Minimize it everywhere else — icons, borders, decoration — so it detonates when it lands on a button.
+- **The CTA color is one deliberate, always choice.** Pick it once and use it for the primary action across the entire site.
+- **It is not a text or graphic color.** The CTA color must be *chromatically distinct* from the color carrying headlines, icons, and decoration — pick one that reads as *progression forward* (green or blue, heuristically). If the button is the same color as the text around it, it blends instead of popping.
+- **Reserve it.** Minimize it everywhere else — icons, borders, decoration — so it detonates when it lands on a button.
+- **Differentiate the shape, too.** Give the CTA a pill or rounded form distinct from the squared rectangles of cards and inputs, so the action reads at a glance.
 - **Five stops, not ten.** Base + 2 shades + 2 tints per color. Resist the AI reflex to generate full ramps you'll never use.
 - **Secondary CTAs stay distinct** from primary in every state, hover included — never converging to the same appearance.
+
+## Work Systematically, Not Ad Hoc
+
+Think through the whole page before touching one section. Global decisions get made once, in a single swoop — not re-decided section by section.
+
+- **Batch global changes.** Recoloring every body paragraph to the secondary text color, restyling every card, swapping a typeface — do it across the page at once, ideally through a token/variable, never one element at a time.
+- **Define tokens up front** (text-primary, text-secondary, the CTA color, the 5-stop ramps) so a later change is one edit, not fifty.
+- **Pre-ship pass:** spelling and grammar check, and an Open Graph image for the page.
 
 ## Depth and Light
 

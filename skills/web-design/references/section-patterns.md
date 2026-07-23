@@ -100,8 +100,12 @@ Navigation utility, not a showcase.
 
 ## Section Rhythm
 
-- **Never the same layout for consecutive sections.**
-- Evaluate every section in the context of what's above and below.
-- Give the page a pace: dense then spacious, detailed then simple.
-- Dark/light transitions mark narrative shifts — not variety for its own sake.
+Rhythm is what makes a page read as *designed* rather than *assembled* — and it's more than "don't repeat a layout."
+
+- **The column trio is the floor, not the range.** 2-col / 3-col / left-right-left keeps a page from being monotonous, but it's still safe. When a stretch goes flat, reach for something **unexpected**: an offset overlap, a full-bleed visual, a broken or diagonal grid, an oversized number, a device shot bleeding off the edge, a section that inverts its own hierarchy.
+- **Vary the media, not just the columns.** Alternate vector graphics, photography, icons, and illustration so no two sections feel built from the same kit. A page that's all icon-grids reads flat no matter how the columns change.
+- **Balance text with a visual.** A text-only section that should carry an image reads as unfinished. Show the product in layered, overlapping mockups (device + card + a slightly rotated sticker, real depth) — not a flat screenshot.
+- **Never the same layout for consecutive sections**, and evaluate every section against what's above and below it.
+- **Give the page a pace:** dense then spacious, detailed then simple. Dark/light transitions mark narrative shifts — not variety for its own sake.
 - **Consolidate:** five thin sections are worse than three substantial ones.
+- **Study a page that builds pace well** (e.g. conversionfactory.co) — watch how each section changes shape, media, and density from the one before.
