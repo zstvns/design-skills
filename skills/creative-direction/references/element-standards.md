@@ -8,6 +8,8 @@ The per-element detail behind `creative-direction`. Each element ends with the s
 - **Five stops per color** (base + 2 shades + 2 tints). Build the ramps; don't ship a flat accent (`Blue100 == Blue500` is a system that was never finished).
 - **Verify ownership:** lay the palette against every confirmed competitor. Sharing the category's lane (the teal-greens, the tech-blues) means unowned, however consistently applied. Look for the lane nobody holds — and check the *conceptual* territory too (a name that implies a spectrum when a rival owns the rainbow).
 - Supporting colors may be saturated and contextual; bold vs. restrained is a brand decision driven by the emotional target, not a rule.
+- **Demonstrate the palette *coordinating* — don't let support colors vanish.** Reserving the accent is not the same as never showing the rest: a board that resolves to one accent + neutrals reads as an unfinished palette. Every declared color must appear *somewhere*, even briefly (a status, a second data series, a state), so the system reads as a coordinated whole. If a color is only ever named in a swatch and never used, either use it or cut it.
+- **Color transitions are a source of delight.** A control that shifts hue with state (a throttle that runs cool→warm as it climbs, a meter that crosses from support-color to accent at threshold) shows two palette colors coordinating *and* rewards interaction. Small, deliberate, on every concept.
 - WCAG AA pairs documented for every text/background combination.
 
 ## Typography
@@ -56,4 +58,5 @@ The per-element detail behind `creative-direction`. Each element ends with the s
 
 - Name the brand's motion character in one line (e.g. "quick, precise, no bounce" vs. "soft, buoyant").
 - Intent hierarchy: state-change/hover (highest value) > page-load > scroll (must serve narrative) > ambient loops (lowest — use sparingly).
+- **Motion can *communicate the concept*, not just decorate it.** For a music muse, a waveform or scale that actually *moves* says "music" faster than any static graphic; a launch muse wants a ramp, a governance muse a seal that stamps. When a concept feels flat or "trite," missing motion is often why — the idea isn't being performed. Interactive elements must read as **intentional, load-bearing** parts of the system, never afterthoughts bolted on.
 - Full motion specs live with the application skills; here you set the *feel* so they don't improvise it.
