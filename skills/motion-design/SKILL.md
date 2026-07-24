@@ -2,7 +2,7 @@
 name: motion-design
 description: "Design and build UI motion with intent — micro-interactions, transitions, entrances, scroll and hover behavior — applying the twelve principles of animation to a brand's settled system, in custom code. Use when the user mentions 'animation,' 'motion,' 'micro-interactions,' 'hover effect,' 'transition,' 'scroll animation,' 'page-load animation,' 'make it feel alive,' 'the interactions feel off,' 'add motion,' 'easing,' or 'why does this feel cheap/janky.' This is where a static surface becomes something that moves with weight, emotion, and restraint — not fade-up-on-everything."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Motion Design
@@ -71,6 +71,11 @@ The amateur instinct (and the AI default) is to animate everything, identically.
 
 Motion is subject to the same hierarchy as everything else. The elements that carry the message get the considered, expressive motion; supporting detail gets less or none. Uniform motion *flattens* hierarchy exactly the way uniform type weight does. If every section fades up the same way, nothing is emphasized — you've added movement and subtracted meaning.
 
+And the strongest form of restraint: **sometimes the best animation is no animation** (Emil Kowalski — [references/practical-tips.md](references/practical-tips.md)). Motion must earn its place by explaining, giving feedback, or delighting; on frequently-repeated interactions it does the opposite — first-time delight curdles into friction and the interface feels *slower*. Two rules follow:
+
+- **Never animate keyboard-initiated actions.** Arrow-keying through a list, menu, or command palette must be instant; an animated selection feels slow and disconnected from the key press.
+- **Strip animation (and gratuitous hover states) from high-frequency actions** — anything a user does dozens of times a day. Animate the rare and the explanatory; get out of the way everywhere else.
+
 ## The Motion Floor — the Craft Beneath the Principles
 
 Because this skill ships real code, there is a non-negotiable technical floor beneath the twelve principles. Full tokens and recipes in [references/motion-floor.md](references/motion-floor.md):
@@ -80,6 +85,8 @@ Because this skill ships real code, there is a non-negotiable technical floor be
 - **Animate compositor-friendly properties only — `transform` and `opacity` (and `filter` with care).** Animating `width`/`height`/`top`/`left`/`box-shadow` triggers layout/paint and causes jank; that jank is itself a "cheap" tell. This is the craft `web-design`'s light floor points here for.
 - **`prefers-reduced-motion: reduce` is non-negotiable.** Provide a reduced path — opacity-only or instant — for every non-trivial animation. Motion sickness and vestibular disorders are real; a beautiful animation that can't be turned down is a defect, not a flourish.
 - **Stagger with a consistent step** (an index custom property or incremental delay), small enough to overlap, not so large it becomes a slideshow.
+
+**Production defaults** — the specific numbers that read polished, from Emil Kowalski ([references/practical-tips.md](references/practical-tips.md)): **`ease-out` is the workhorse** for enter and exit (responsiveness beats physical purity; a custom curve, since the CSS built-in is too weak); **UI transitions stay under ~300ms** (125/180/300ms are the effective band; the longer expressive durations are reserved for rare hero moments); **scale buttons to `0.97` on `:active`**; **start entrances at `~0.9`, never `scale(0)`** (which looks like it materializes from nothing); **make popovers/zoom origin-aware** (`transform-origin` at the trigger, not center); and **a touch of `blur(2px)`** bridges a transition that still feels abrupt.
 
 ## Validate Before You Ship
 
@@ -107,6 +114,9 @@ Judge motion the way `design-principles` says to judge any work — **adversaria
 - [ ] Durations pulled from a **scale mapped to the emotion lever** (small/fast/cheap ↔ big/slow/expensive), not eyeballed per element
 - [ ] Animations run on **`transform`/`opacity`** (compositor), not layout-triggering properties
 - [ ] **`prefers-reduced-motion`** honored with a reduced path for every non-trivial animation
+- [ ] **`ease-out` is the default** curve (custom, not the weak CSS built-in); UI transitions **under ~300ms** unless a rare, deliberate expressive moment
+- [ ] Entrances start at **~0.9, not `scale(0)`**; buttons scale to `0.97` on press; popovers/zoom are **origin-aware** (`transform-origin` at the trigger)
+- [ ] **Keyboard-initiated actions are never animated**; high-frequency actions stripped of gratuitous motion/hover (sometimes the best animation is none)
 - [ ] Validated on the **rendered, moving page** — played back, not judged from static screenshots
 
 ## Related Skills
@@ -117,4 +127,4 @@ Judge motion the way `design-principles` says to judge any work — **adversaria
 - `collateral-design` / `email-design` / `social-design` — sibling Application skills; motion for video/social lives alongside them
 - `brand` — the audit whose emotional target sets the feeling motion must produce
 - `design-critique` — judges the shipped motion against the emotional target and the latitude
-- reference: the twelve principles ([references/twelve-principles.md](references/twelve-principles.md)), the UI-native technique toolkit ([references/ui-motion-techniques.md](references/ui-motion-techniques.md), from [motion.zajno.com](https://motion.zajno.com/)), and the technical floor ([references/motion-floor.md](references/motion-floor.md))
+- reference: the twelve principles ([references/twelve-principles.md](references/twelve-principles.md)), the UI-native technique toolkit ([references/ui-motion-techniques.md](references/ui-motion-techniques.md), from [motion.zajno.com](https://motion.zajno.com/)), the technical floor ([references/motion-floor.md](references/motion-floor.md)), and Emil Kowalski's production defaults + the case for restraint ([references/practical-tips.md](references/practical-tips.md))

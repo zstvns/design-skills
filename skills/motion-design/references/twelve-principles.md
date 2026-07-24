@@ -118,9 +118,9 @@ Real objects accelerate and decelerate; they never start or stop instantly. **Li
 .menu { transition: transform .6s var(--ease-standard), opacity .6s var(--ease-standard); }
 ```
 
-- **Entrances** often want more slow-*out* (decelerate into rest): an ease-out curve.
-- **Exits** often want more slow-*in* (accelerate away): an ease-in curve.
+- **`ease-out` is the workhorse** for both entrances and exits — it accelerates immediately and decelerates into rest, so the motion reads responsive (see [practical-tips.md](practical-tips.md) → tip 4). Responsiveness beats physical purity on screen.
 - **State changes** in place: symmetric ease-in-out.
+- Reserve a true **ease-in** (slow start, accelerate away) only for the rare, deliberate "flies away" exit — its slow start otherwise reads as lag.
 
 ---
 
@@ -140,6 +140,8 @@ A cheap, effective "fake arc": grow **wide first, then tall** (decouple the X an
 ```
 
 For true path motion, `offset-path` / `offset-distance` (CSS motion path) or a JS tween along a curve.
+
+> This wide-then-tall `scale(0,…)` arc is a deliberate *stylized* reveal. For an ordinary soft entrance (a popover, a card), **don't start from `scale(0)`** — it looks like the element materializes from nothing. Start from `~0.9` instead ([practical-tips.md](practical-tips.md) → tip 2).
 
 ---
 

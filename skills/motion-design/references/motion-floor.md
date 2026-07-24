@@ -19,6 +19,8 @@ Linear motion is the loudest amateur tell (nothing physical moves at a constant 
 }
 ```
 
+**Default to `--ease-out` for most enter/exit UI motion** — its immediate acceleration reads as responsive, which matters more on screen than physical accuracy (Emil Kowalski, [practical-tips.md](practical-tips.md) → tip 4). Reserve `--ease-in` for the rare deliberate "flies away" exit; its slow start otherwise feels like lag. Note the CSS built-in `ease-out` is usually too weak — the custom `--ease-out` above has more pull (build variations at [easings.co](https://easings.co/)).
+
 Tune the curves to the brand's motion character: a premium brand leans on longer, gentler standard curves with little or no overshoot; a playful brand leans on `--ease-overshoot`. The *feeling* (from `.agents/design.md` / the emotional target) picks the curve.
 
 ## A duration scale mapped to the emotion lever
