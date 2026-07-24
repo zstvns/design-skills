@@ -54,6 +54,19 @@
         "Runs the family side-by-side check and cover-the-logo carry-through"
       ],
       "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "We're speaking-sponsoring a conference and need a social post for each of our 24 speakers — headshot, name, title, talk. Can you make them?",
+      "expected_output": "Should treat this as a set, not 24 one-offs: build one reusable template and cascade the speakers through it. Should identify the format and exact size first (e.g. 1080x1350 or the platform's spec), then design a single system — grid, defined slots for headshot/name/title/talk, the brand's type and color from .agents/design.md, mixed media with some variety so the run isn't monotonous. Crucially, should stress-test the template against the worst-case content before cascading — find the speaker with the longest name (and longest title/talk, portrait-vs-landscape or missing headshot) and set the type scale and slots so the extreme fits cleanly, so every shorter one does too; give optional slots to elements that aren't always present. Should note this can be built in code and exported (or Paper/Figma) as long as the structure is set up first, export each at native resolution, and check the whole set reads as one brand with varied content. Should not lean on print/CMYK here — it's screen-first.",
+      "assertions": [
+        "Builds one reusable template/system and cascades the 24 speakers through it — not 24 hand-made posts",
+        "Identifies the exact format and pixel size up front; exports at native resolution (screen-first, not print/CMYK)",
+        "Sets up structure — grid, slots, brand type/color/motif, mixed media with variety",
+        "Stress-tests against worst-case content (longest name/title, missing/odd headshot) before cascading; optional slots for absent elements",
+        "Notes code-or-canvas is fine if the structure is set up first; verifies the set reads as one brand, varied content"
+      ],
+      "files": []
     }
   ]
 }

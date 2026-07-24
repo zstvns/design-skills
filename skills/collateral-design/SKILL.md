@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to fixed-format collateral — pitch and sales decks, one-pagers and sales sheets, print pieces (brochures, flyers, posters, business cards), and paid ads (social, display). Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'brochure,' 'flyer,' 'poster,' 'print,' 'business card,' 'ad creative,' 'display ad,' 'banner,' or wants a branded document or graphic that isn't a website. This is where the approved identity is applied to mediums that ship in one shot — a slide on a projector, a sheet in someone's hand, an ad in a feed."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Collateral Design
@@ -19,7 +19,7 @@ Web reflows, responds, and ships in commits you can revise tomorrow. Collateral 
 
 - **Fixed format.** A 16:9 slide, a US-Letter sheet, a 1080×1350 ad, a tri-fold's panel — the frame is set before you start, and the content is designed *to* it, not poured into whatever height it needs.
 - **One shot.** No hover to reveal, no scroll to continue, no "fold" to push detail below. A projected slide has ~3 seconds; a feed ad has ~1. What doesn't land immediately doesn't land.
-- **Often offline / off-platform.** A printed piece is CMYK on stock, not RGB on a screen. A deck gets emailed as a PDF and read with no presenter. A design that only works in your editor, in your color space, with you narrating, is not finished.
+- **Exported, not live.** Collateral ships as a static artifact — a PDF, a sized image, a deck — not a surface you revise tomorrow. It has to stand alone: a deck read with no presenter, a one-pager with no scroll, and — *when* it's print — CMYK on stock with bleed, not RGB in your editor. Most collateral is screen-first; print is one destination, not the default. If it only works in your tool, with you narrating, it isn't finished.
 
 Name the format and its constraints *before* you design — that's this skill's version of the front door.
 
@@ -50,6 +50,15 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
 4. **The motif carries the brand across the family — with restraint where the message must win.** The signature element (pattern, texture, recurring detail) is how a deck slide and an ad read as the *same brand* without being the same layout. This is where distinctiveness must **survive application** (see `design-principles`). Calm it wherever the message leads — a cover, a hero stat, an ad's one line — and let it work harder on connective, lower-stakes surfaces.
 5. **One accent, reserved.** Whatever signals "the point / the action" — the one CTA on an ad, the key number on a slide — stays scarce. Sprinkled on every heading and box, it stops meaning anything.
 
+## Build the System, Then Cascade
+
+Collateral almost always comes in *sets* — a deck, a run of conference-speaker posts, a family of OG images, ten localized one-pagers. The craft is to **build one reusable template and cascade content through it**, not to decorate each piece by hand. This is the same discipline the rest of the library teaches (grids, hierarchy, brand adherence), pointed at repeated, fixed-format output. Full method in [references/build-the-system.md](references/build-the-system.md).
+
+1. **Identify the format and size first.** Fixed-format means the destination and its dimensions are decided *before* you design — a 16:9 slide, an 8.5×11 PDF, a 1080×1350 post, an OG image, a printed banner. For print-bound pieces, set up for a **PDF export** with bleed / safe / carryover handled (see [references/print.md](references/print.md)); for screen, size to the exact placement and export at native resolution.
+2. **Build one template as the system** — a grid, borders, defined slots for what repeats and what changes, the brand's type / color / motif, and **mixed media with variety** (photo, vector, icon, illustration, and richer treatments like gradients or shaders where the brand warrants). Anything you'd compose in Figma or Paper you can compose in code — *if you set up that structure first*.
+3. **Stress-test against the worst-case content before cascading.** Find the **longest name / longest headline / densest bio** and design the type scale and slots around *that* instance — if it holds for the extreme, every shorter one fits. Give optional slots to elements that aren't always present.
+4. **Cascade the content through the proven system** so the set reads as one brand — *one system, varied content*, no two pieces stamped identically.
+
 ## Design to the Format — Each Has Its Own Craft
 
 Pick the format, then design to its real constraints. Deep dives per medium:
@@ -58,6 +67,7 @@ Pick the format, then design to its real constraints. Deep dives per medium:
 - **One-pagers, sales sheets & leave-behinds** → covered in [references/decks.md](references/decks.md) (the "self-contained surface" section). One primary message + ranked proof, on a single frame that works with **no presenter and no scroll** — it has to answer "what is this and why should I care" the instant it's picked up. Dense is fine; flat is not.
 - **Print** → [references/print.md](references/print.md). Real dimensions in mm/in (never px), **bleed / trim / safe-margin** set correctly, **CMYK** and a checked color translation, **300 DPI** raster / vector where possible, rich vs. registration black, fold panels that respect reading order, stock and finish. Ship a **press-ready PDF**, not a screenshot.
 - **Ads (paid social & display)** → [references/ads.md](references/ads.md). The **squint / scroll-stop test**: one message, legible at thumbnail, in ~1 second. Design to each **platform's size and safe zones** (feed 1:1 / 4:5, stories & reels 9:16 with UI-safe margins, IAB display sizes). Text discipline — a few decisive words, not a paragraph. **One CTA**, mark present but not shouting. Variations at scale: `ad-creative` owns the copy variants; you own the visual system that holds them together. Motion/video ad → route to `motion-design`.
+- **Digital graphics — OG images, marketing / feature graphics, social templates, banners** → build these with the **system-and-cascade** method above: fixed pixel size, exported at native resolution, legible at the size actually served (an OG image is seen small, in a link preview). A full social *system* (profiles, ongoing formats) routes to `social-design`; one-off branded graphics live here.
 
 ## Coherence Across the Family — the Whole Point of Collateral
 
@@ -101,6 +111,7 @@ Run your own output through the same gauntlet the audit runs — **adversarially
 - [ ] Front-door diagnosis run; system being defined/changed routed back to `creative-direction` (even if a logo exists)
 - [ ] `.agents/design.md`, `brand.md`, `product-marketing.md` read; system applied, not re-invented
 - [ ] Message exists and drives the layout — no template-first, no bullet soup, size follows content
+- [ ] For a set: one reusable system/template built and **stress-tested against worst-case content** (longest name/headline, densest/sparsest) before cascading — one system, varied content
 - [ ] Color in the right space (CMYK + checked translation for print), five stops, accent reserved; type by role, bold not the default, scaled for the real viewing distance; brand faces embedded
 - [ ] Real mark pulled and given clear space, present-not-dominant; motif carries the brand, calmed where the message leads
 - [ ] Designed to the format's craft — decks: one idea/slide, presented-vs-read decided, varied masters, one-takeaway data slides; print: bleed/trim/safe, 300 DPI, folds; ads: squint test, safe zones, one CTA
@@ -118,4 +129,5 @@ Run your own output through the same gauntlet the audit runs — **adversarially
 - `email-design` / `social-design` / `motion-design` — apply the same system to other mediums; motion/video ads route to `motion-design`
 - `design-critique` — judges the finished collateral against the emotional target and the flex-vs-drift latitude
 - marketing library: `copywriting` (the words come first), `sales-enablement` (one-pager / battle-card substance), `ad-creative` (ad copy variants at scale)
-- tooling (use when connected, fall back gracefully): **`canvas-design`** (static PNG/PDF art), **`slide-deck`** (decks), **`dataviz`** (charts), **Adobe MCP** (layout / print / InDesign), **Paper / Pencil / Figma MCP** (design canvases); see [references/tooling.md](references/tooling.md)
+- method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade — the scope and production principle); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
+- tooling (use when connected, fall back gracefully): **`canvas-design`** (static PNG/PDF art), **`slide-deck`** (decks), **`dataviz`** (charts), **Adobe MCP** (layout / print / InDesign), **Paper / Pencil / Figma MCP** (design canvases), or **code → PDF/image export**; see [references/tooling.md](references/tooling.md)
