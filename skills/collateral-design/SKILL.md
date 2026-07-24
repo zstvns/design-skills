@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.3.0
+  version: 1.4.0
 ---
 
 # Collateral Design
@@ -55,10 +55,13 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
 A fixed frame has no scroll to rescue a flat layout and no interaction to add interest, so composition carries most of the load. Full method in [references/composition.md](references/composition.md):
 
 - **Light first, dark second.** Default to a light composition, especially for print — a near-black printed piece is rare, drinks ink, scuffs, and goes muddy on uncoated stock. **Even a dark screen brand needs a light expression for paper.** Build that, then produce the dark variant for screen. If a piece genuinely should be dark, give it **depth** — a gradient with light in it, not flat black.
-- **Give it a background element that ties the composition together.** Text and boxes on an empty ground is the flat case. Use a large gradient wash, an oversized cropped motif, an isometric or dot field, a graphic line crossing the frame, a chart-line over a photo, a giant cropped numeral. It sits *behind*, stays low-contrast, never competes with the headline or the action, and should feel **cropped by the frame** rather than politely contained.
+- **Give it a background element that ties the composition together — and push it off the canvas.** Text and boxes on an empty ground is the flat case. Use a large gradient wash, an oversized cropped motif, a dotted/concentric field sweeping across the whole piece, a shape entering from off-frame. **Go bigger than feels safe, bring color into it, and let the frame crop it** — don't force it to fit. But **where type sits, the background yields** (mask, fade, or route around it): legibility wins. And watch the accumulation — wash *plus* rings *plus* grid *plus* giant numeral in one frame is how a piece starts reading as AI-generated. The tell isn't the pattern, it's the excess; add the element, then remove what it made redundant.
+- **Use rich media — including real photography.** Varying the layout isn't enough if every band is still type and boxes. Bring photography, illustration, product imagery, and the icon set in generously.
+- **No buttons on printed pieces, and no synthetic obliques.** A pill CTA on a printed one-pager implies a click that can't happen — use a URL, short link, or QR code instead. And never fake an italic: if the face has no true italic cut, the slanted roman is a distorted amateur tell — express emphasis with weight, size, or color instead.
 - **Compose on an 8-column grid, not a repeated two-column split.** A 2-col layout stamped down the whole piece is the fixed-format version of banded web sections. Vary the spans band to band (5+3 hero, 4+4, full-8 statement, 3+3+2, 6+2) while holding gutters and outer margin constant — same rhythm discipline `web-design` applies to sections.
 - **Mix the media across bands**, not just the column counts: photography, vector, icons, a device mockup, a chart, an inverted pull-quote card. Every band as text-in-boxes is still flat.
-- **Margin is the space *inside* the trim** — and print wants far more of it than screen instincts suggest (a screen-derived inset is often a **half to a third** of what the piece needs). Safe area is the floor, not the target. Small formats like cards feel this hardest.
+- **Margin is the space *inside* the trim — scaled to the format.** A large sheet wants far more than screen instincts give it (~1/2–3/4in on letter); a **business card wants content sitting just inside the safe line**, not a half-inch in, or it reads empty and unresolved. Align just inside safe, then add margin in proportion to the piece's size.
+- **Size type for where it will be seen.** Social and thumbnail type drawn to look balanced on a 1080 artboard arrives in a feed at a third that size and stops being readable. Design for the delivered size and **cut content rather than shrinking type** (see [references/ads.md](references/ads.md)).
 
 ## Build the System, Then Cascade
 
@@ -118,7 +121,8 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - **Switch between formats** — one-pager, social set, cards, thumbnails, deck — so the family can be compared in one place.
 - **Render each piece at its true size**, with a zoom control: *Fit*, *100%* (native pixels), and **Actual size** (true physical scale via the piece's DPI — a 3.5×2in card rendered 3.5×2in, which is the only honest test of a card).
 - **Present the deck as a deck** — click and arrow-key through it, a slide counter, a filmstrip to jump around, and a fullscreen present mode. A deck reviewed as static thumbnails hides its pacing.
-- **Toggle print guides — bleed, trim, and safe**, labeled with a legend, on a document built at **bleed size** so the review can see background art genuinely running past the cut line.
+- **Show pieces at trim by default; reveal bleed only when guides are tripped** — bleed is production, not how the piece looks. Guides on → bleed/trim/safe labeled with a legend, from a doc built at bleed size.
+- **Only surface controls that apply to the format** (no static/motion switch on a print one-pager — it can't animate), and put controls near what they affect rather than banked in a far corner.
 - **Stage everything on a neutral mid-gray canvas with a visible outline** — never white, never the brand's own colors. A light piece needs a darker ground to read as an object, and a dark piece disappears into a dark stage. If you can't see where the artifact ends, you can't judge its margins.
 - **Show social in real platform context, across platforms** — Instagram feed and story/reel, LinkedIn, X, Facebook — in device frames with the actual platform chrome, alongside the varied format set (square, 4:5, 9:16, 1.91:1).
 - **Animate the social and screen pieces, and show static *and* motion** with a replay control — text rising in, staggered reveals, a drifting background element, a considered button entrance. Social is a moving medium; judging it static judges half of it. Defer to `motion-design` for the craft.
@@ -141,7 +145,11 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] **Light expression designed first** (print especially); dark is a second variant, and any dark piece has depth (gradient, not flat black)
 - [ ] A **background element ties each composition together** (wash / oversized cropped motif / graphic line), behind the content and cropped by the frame — not text-and-boxes on an empty ground
 - [ ] Composed on an **8-column grid with varied spans** and mixed media band to band — not one two-column split repeated
-- [ ] **Interior margin generous** (well beyond the safe-area floor); small formats given real breathing room
+- [ ] **Interior margin scaled to the format** — large sheets well past safe; small formats (cards) sitting *just inside* safe, not ballooned into emptiness
+- [ ] **No button on a printed piece** (URL / short link / QR instead); **no synthetic obliques** anywhere
+- [ ] **Social & thumbnail type sized for the delivered screen**, verified legible at a glance in a device mockup — content cut rather than type shrunk
+- [ ] Motif pushed **off-canvas and given color**, yielding behind live text; background elements not accumulated into excess
+- [ ] **Rich media present** — photography / illustration, not geometry-and-type only
 - [ ] Color in the right space (CMYK + checked translation for print), five stops, accent reserved; type by role, bold not the default, scaled for the real viewing distance; brand faces embedded
 - [ ] Real mark pulled and given clear space, present-not-dominant; motif carries the brand, calmed where the message leads
 - [ ] Designed to the format's craft — decks: one idea/slide, presented-vs-read decided, varied masters, one-takeaway data slides; print: bleed/trim/safe, 300 DPI, folds; ads: squint test, safe zones, one CTA

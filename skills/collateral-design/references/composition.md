@@ -35,10 +35,37 @@ A two-column grid repeated down the whole piece is the fixed-format equivalent o
 
 Composition patterns worth stealing (all visible in strong reference collateral): a key phrase in the headline **underlined or highlighted** in the accent; one **filled/inverted card** among outlined ones to anchor a testimonial; **numbered steps threaded by a connecting rule**; a photo with a **graphic line overlay**; a light page **paired with a dark page** in a two-pager.
 
+## Push the Motif Off the Canvas
+
+The strongest background elements are **too big for the frame and deliberately cropped by it**. Don't force a motif to fit inside the canvas — scale it up until it runs off, and let the edge do the cropping. Concentric dotted rings sweeping all the way across a piece, a dot field bleeding past every edge, a shape entering from off-frame behind a hero — this is what creates visual dynamism, and it's the difference between a piece that feels composed and one that feels contained.
+
+- **Go bigger than feels safe**, then crop. A motif that just barely fits reads timid; one that clearly continues past the trim reads intentional.
+- **Bring color into it.** A motif rendered only as a faint neutral tint is a missed opportunity — the brand's accent, used at low saturation or in a tint, gives the background element life.
+- **Let it cross the whole piece**, not just hide in one corner. A single element sweeping across ties the composition together far better than four disconnected decorations.
+
+**But never let it clash with the text.** This is the one place to break the pattern: where type sits, the background must yield — mask it, fade it, drop its opacity, or route it around the text block. Legibility wins every time.
+
+**And watch the excess.** A background element is *one* decision, not a license to add. Piling on wash + rings + grid + giant numeral + texture in the same frame is how a piece starts reading as AI-generated — the tell isn't the pattern, it's the accumulation. Add the element, then remove what it made redundant.
+
+## Rich Media — Real Photography Belongs Here
+
+Varying the *layout* isn't enough if every band is still type and boxes. Strong print collateral leans on **rich media**: real photography, illustration, product imagery, and iconography used generously — not a geometric-and-type-only system. Bring the icon set in more visibly, use photography where a human moment or a product shot earns its place, and let the media mix carry as much of the variety as the grid does.
+
+## Print Pieces Don't Have Buttons
+
+A printed piece has no interactive elements, so **don't draw a button on it**. A pill-shaped CTA on a one-pager or a flyer is a screen habit leaking onto paper — it implies a click that can't happen. Drive the action with **a URL, a short link, a QR code, or a plain line of text** instead. (Screen-destined PDFs sit in a grey area — a real hyperlink is fine — but a printed leave-behind should read as print.)
+
+## No Synthetic Obliques
+
+Never fake an italic. If a face has no true italic cut, the browser or app **slants the roman** — a synthetic oblique with distorted letterforms and broken curves. It looks cheap at any size and is a reliable amateur tell, especially on a geometric or technical sans. Either use a face's real italic, or express the emphasis another way (weight, size, color, spacing, a rule). Applies everywhere, but pull-quotes are where it most often sneaks in.
+
 ## Margin — In Print It's the Inside
 
 Terminology matters because it inverts from web: in print, **margin is the space *inside* the trim**, between the edge and the content (what CSS calls padding). It is not an outside offset.
 
-**Be generous with it — more than screen instincts suggest.** A typical screen-derived inset is roughly **a half to a third of what a print piece wants**. Ample interior margin is what gives a printed piece its air and its quality; cramped content reads cheap regardless of how good the type is. On a small format like a business card this is the single biggest lever — a card wants a genuinely large interior margin so the few elements on it can breathe.
+**Be generous — but scale it to the format.** A screen-derived inset is usually only **a half to a third of what a large print piece wants**; cramped content on paper reads cheap regardless of how good the type is. The failure runs both ways, though, and over-correcting is just as visible:
 
-Critical content also has to clear the **safe area** (~1/8in inside the trim), so treat safe as the hard floor and your design margin as considerably more than that. The exception is anything *intended* to run off the edge — a background wash, a cropped pattern, a bleeding photo — which ignores the margin and extends past trim into the bleed.
+- **Large formats (letter sheet, poster, brochure panel):** the design margin is comfortably *larger* than the safe area — roughly **1/2–3/4in** on a letter sheet. Safe is the floor, not the target.
+- **Small formats (business card, label, ticket):** the safe area basically *is* the margin. Content should sit **just inside the safe line** — a hair in from it, not a half-inch. On a 3.5×2in card, an interior margin much past ~3/16in leaves the card looking empty and the type stranded, which reads as unresolved rather than generous.
+
+The rule of thumb: **align content just inside safe, then add margin in proportion to the piece's size.** Anything *intended* to run off the edge — a background wash, a cropped pattern, a bleeding photo — ignores the margin entirely and extends past trim into the bleed.

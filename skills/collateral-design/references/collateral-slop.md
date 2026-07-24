@@ -21,6 +21,13 @@ Patterns that immediately signal a piece of collateral was *assembled from a tem
 - **Cramped interior margin.** Screen-sized padding carried onto paper, so content crowds the trim; reads cheap no matter how good the type is.
 - **Bleed designed at trim size.** Background art stopping at the cut line instead of extending past it — white slivers on delivery.
 - **Social judged in isolation and static.** No platform context and no motion, so nobody saw how it actually lands in a feed.
+- **Type sized to the artboard, not the screen.** Social/thumbnail text that reads at 100% on a desktop and is illegible in-feed on a phone — the single most common social failure.
+- **A button on a printed piece.** A pill CTA on a flyer or leave-behind, implying a click that can't happen; use a URL, short link, or QR code.
+- **A synthetic oblique.** Faked italic on a face with no italic cut — slanted, distorted letterforms; a reliable amateur tell, usually in a pull-quote.
+- **Background excess.** Wash *and* rings *and* grid *and* a giant numeral stacked in one frame — the accumulation, not the pattern, is what reads as AI-generated. Also: a motif clashing behind live text instead of yielding to it.
+- **A motif politely contained.** Background elements shrunk to fit inside the canvas instead of scaled up and cropped by the frame — timid where off-canvas would create dynamism.
+- **Over-corrected margin on small formats.** So much interior margin on a business card that the content looks stranded and the card reads empty.
+- **Geometry-and-type only.** No photography or illustration anywhere in the media mix, so "varied layout" is still the same two ingredients rearranged.
 
 ## Decks
 

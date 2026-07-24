@@ -22,6 +22,17 @@ Each placement is a **fixed frame with rules**. Design to the real spec, not one
 
 Export **each placement at its native size**, cropped and re-composed per aspect ratio — don't letterbox one master across all of them.
 
+## Size Type for the Screen It Lands On, Not the Canvas You Draw On
+
+The most common social-design failure: type sized to look balanced on a **1080px artboard at 100% on a desktop**, which then arrives on a phone at roughly a third that size and becomes unreadable. A 1080×1350 post displayed in a feed is only ~360pt wide. **Design for the delivered size.**
+
+- **Test it in the device, at device scale** — mount the artboard in a phone mockup and ask *can I tell what this says at a glance?* If you have to lean in, it's too small. This applies equally to Instagram feed and story, LinkedIn, X, and Facebook.
+- **Body/supporting text has to be much larger than screen instincts suggest.** Detail rows, captions, labels and stat lines that feel fine at 16–20px on a 1080 artboard are illegible in-feed. Push them well up — and if that means the content no longer fits, **cut content rather than shrinking type**.
+- **The headline should be readable in the thumbnail alone.** One glance, one message.
+- **Respect the edges too** — content crowding the artboard edge looks cramped once the platform frames it. Give social artboards real interior margin, and keep everything clear of platform UI-safe zones.
+
+Same discipline for **blog/OG thumbnails**: they're usually seen small in a card or link preview, so size the type for that, not for the artboard.
+
 ## Text Discipline
 
 - **A few decisive words, not a paragraph.** The visual + a short hook does the work; the platform's caption/headline field carries the rest. A text-crammed ad reads as noise and underperforms (the old Meta "20% text" rule is gone, but the *reason* behind it isn't — heavy text still tanks performance).
