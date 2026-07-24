@@ -1,0 +1,59 @@
+{
+  "skill_name": "collateral-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you design us a pitch deck? Here's the outline — about 15 slides. We'll be presenting it live to investors but also emailing it around afterward.",
+      "expected_output": "Should first read the system from .agents/design.md / brand.md / product-marketing.md (route back to creative-direction if the system isn't settled) and get the copy/story before designing. Should surface the presented-vs-read decision as the key fork: a live-pitch deck is sparse (one idea per slide, big visuals, presenter carries the words) while an emailed deck must stand alone, and building one as the other is the classic failure — so for a deck that must do both, propose a hybrid or two versions (e.g. presented deck plus a fuller appendix / read-ready speaker density) rather than splitting the difference. Should treat the deck as a sequence with an arc, one idea per slide, kill bullet soup (statement + visual over five bullets), vary slide layouts off a shared master for rhythm, title data slides with the takeaway (not the metric) and route charts through dataviz, and scale type/contrast for projection. Should validate by reading it as a silent PDF and checking family coherence.",
+      "assertions": [
+        "Reads the settled system first; routes back to creative-direction if undefined; gets copy/story before layout",
+        "Raises presented-vs-read as the decisive fork and proposes a hybrid/two-version answer for a deck that must do both",
+        "One idea per slide, bullet soup killed, deck treated as a sequence with an arc",
+        "Varied layouts off a shared master for rhythm — not 20 identical slides",
+        "Data slides titled with the takeaway, charts via dataviz",
+        "Scales type and contrast for the room; validates by reading it as a silent PDF"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We need business cards and a tri-fold brochure printed. I'll just export the designs as PNGs from our website's design files and send them to the printer.",
+      "expected_output": "Should stop the PNG-from-web-files plan as a print failure. Should require real physical dimensions (mm/in at trim), correct bleed (~3mm/0.125in) and safe margins, CMYK color with a checked translation of the brand hex (which shifts on press; consider spot/Pantone for a critical color), 300 DPI raster / vector for the mark and type, and a press-ready PDF with embedded/outlined fonts — not a screenshot or RGB web export. Should treat the tri-fold's folds as reordering reading (design by panel in reading order, mind panel widths, don't break content across a crease) and note stock/finish as part of the design. Should proof at size because a printed run can't be patched.",
+      "assertions": [
+        "Rejects PNG/RGB web export as a print deliverable; requires a press-ready PDF",
+        "Sets real dimensions (mm/in at trim) with correct bleed and safe margins",
+        "Converts to CMYK and checks the brand-color translation (spot/Pantone if critical)",
+        "300 DPI raster / vector mark and type; fonts embedded or outlined",
+        "Designs the tri-fold by fold/panel and reading order, not as flat columns",
+        "Proofs at size — no post-run patch"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Here's our hero graphic from the website. Can you resize it to a few ad sizes for a Facebook and Instagram campaign — feed, stories, and a couple of display banners?",
+      "expected_output": "Should refuse to just letterbox one master across placements — each size is a fixed frame that must be composed on its own (feed 1:1 or 4:5, stories 9:16 with UI-safe top/bottom margins, IAB display sizes like 300x250 / 728x90 designed individually). Should apply the squint/scroll-stop test: one message, one focal point, legible at thumbnail in ~1 second — a website hero usually carries too much for an ad. Should enforce text discipline (a hook, not a paragraph), one CTA in the reserved forward color that actually pops, and the mark present but not dominant; keep message and mark out of stories/reels UI-safe zones. Should note copy variants at scale belong to ad-creative and a motion/video ad routes to motion-design, and export each placement at native size.",
+      "assertions": [
+        "Composes each placement at native size/aspect — no one-master letterbox",
+        "Applies the squint/thumbnail test: one message, one focal point, legible small",
+        "Respects platform safe zones (stories/reels UI overlay) and IAB display sizes",
+        "Text discipline (hook not paragraph); one CTA in the reserved color that pops; mark present not dominant",
+        "Points copy-variants-at-scale to ad-creative and a motion ad to motion-design"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "We just shipped our website. Now we want a sales one-pager, a deck, and some ads — all matching. Can you just reuse the same layout for all of them so they're consistent?",
+      "expected_output": "Should reframe 'same layout' as the wrong definition of consistency — coherence is strategic (same color roles, type, mark, motif, feeling), not literal (the same grid stamped three times), which is itself a slop tell. Should keep each format designed to its own craft and constraints (one-pager: single self-contained frame, no scroll/presenter, ranked proof; deck: sequence with varied masters; ads: squint test and per-placement sizing) while sharing the system so the set reads as one brand. Should keep the collateral coherent with the just-shipped site (same tokens, mark treatment, motif logic) since web-design already established the surface. Should allow a deliberate flex where a piece warrants it (per design-principles coherence-not-repetition and design-critique's flex-vs-drift call), and run the side-by-side family check plus cover-the-logo.",
+      "assertions": [
+        "Corrects 'same layout' — coherence is shared system + feeling, not a cloned grid (naming cloning as a slop tell)",
+        "Designs each format to its own constraints while sharing the system",
+        "Keeps collateral coherent with the already-shipped site (tokens, mark, motif)",
+        "Allows a deliberate flex within the strategy's latitude (design-principles / design-critique)",
+        "Runs the family side-by-side check and cover-the-logo carry-through"
+      ],
+      "files": []
+    }
+  ]
+}

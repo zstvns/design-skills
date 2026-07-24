@@ -33,7 +33,7 @@ then:  brand-naming → logo-design → identity-proofing
 | Identity | [`logo-design`](skills/logo-design/SKILL.md) | The core mark — Simple, Appropriate, Distinct (SAD), each judged *in context*: distinct vs. competitors, appropriate to the feeling, simple across every implementation. | ✅ |
 | Identity | `identity-proofing` | Testing the identity in action on sample collateral and web *before* full rollout. | 🔜 |
 | Application | `web-design` | Applying the brand to a live, conversion-focused site with real copy. | 🔜 |
-| Application | `collateral-design` | Decks, one-pagers, print, ads. | 🔜 |
+| Application | [`collateral-design`](skills/collateral-design/SKILL.md) | Decks, one-pagers, print, and ads — the approved system applied to fixed-format deliverables that ship in one shot; coherence across the family, not one cloned template. | ✅ |
 | Application | `email-design` | Lifecycle and campaign email. | 🔜 |
 | Application | `social-design` | Social formats and systems. | 🔜 |
 | Application | `motion-design` | Micro-interactions and animation with intent. | 🔜 |
