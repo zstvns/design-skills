@@ -2,7 +2,7 @@
 name: motion-design
 description: "Design and build UI motion with intent — micro-interactions, transitions, entrances, scroll and hover behavior — applying the twelve principles of animation to a brand's settled system, in custom code. Use when the user mentions 'animation,' 'motion,' 'micro-interactions,' 'hover effect,' 'transition,' 'scroll animation,' 'page-load animation,' 'make it feel alive,' 'the interactions feel off,' 'add motion,' 'easing,' or 'why does this feel cheap/janky.' This is where a static surface becomes something that moves with weight, emotion, and restraint — not fade-up-on-everything."
 metadata:
-  version: 1.3.1
+  version: 1.4.0
 ---
 
 # Motion Design
@@ -22,16 +22,52 @@ Motion is the **last layer.** Before adding a single transition, confirm two thi
 
 The rule of thumb mirrors `web-design`: **proceed only when the surface is built and the system is settled.** Otherwise, go back.
 
-## Motion Carries Emotion — the Core Insight
+## Motion Is Emotion — the Core Insight
 
-The most important thing about motion is counterintuitive: **the same element, animated two different ways, communicates two entirely different things.** A button with a fast springy overshoot reads *fun and cheap-in-a-good-way*; the identical button scaling up slowly and settling reads *premium and serious*. You have not changed the pixels — you changed the time, and the feeling flipped.
+It's in the word: **e-motion.** Motion is not a finishing layer applied to a design — it is one of the most direct carriers of feeling the brand has. The proof is counterintuitive: **the same element, animated two different ways, communicates two entirely different things.** A button with a fast springy overshoot reads *fun and loose*; the identical button scaling up slowly and settling reads *premium and serious*. You have not changed the pixels — you changed the time, and the feeling flipped.
 
-Two levers do most of that emotional work:
+Two levers do most of that work at the element level:
 
-- **Speed encodes cost.** Fast is snappy, casual, inexpensive. Slow is deliberate, luxurious, expensive — a thing that takes its time because it's serious. Reach for the fast end on playful/utility brands, the slow end on premium ones.
+- **Speed encodes cost.** Fast is snappy, casual, inexpensive. Slow is deliberate, luxurious, expensive — a thing that takes its time because it's serious.
 - **Size sets pace.** Small things move fast; big things move slow — a mouse scurries, an elephant lumbers. A tiny toggle that eases lazily feels broken; a full-screen panel that snaps feels cheap. Match duration to the mass of the thing moving.
 
-So before you touch the easing, ask the same question `design-principles` asks of every choice: **what should this feel like?** The answer picks your timing and your curve.
+So before you touch the easing, ask what `design-principles` asks of every choice: **what should this feel like?** The answer picks your timing and your curve. And that answer is not yours to invent — it comes from the brand.
+
+## Motion Character Is Brand-Derived — Calibrate the Whole System First
+
+**How motion is executed is contingent on the brand being built.** Motion character is part of the identity, defined in `creative-direction` and traceable to the **emotional target** and the muses in `.agents/design.md` / `.agents/brand.md`. Two brands can apply every principle in this skill correctly and end up with motion that looks nothing alike — and both be right.
+
+Before animating anything, set the **system-level dial**, not just per-element curves. Four things vary by brand:
+
+- **Easing personality** — how strange the curves are allowed to be. Springy, elastic, overshooting, even sporadic and irregular at the playful end; smooth, controlled, near-symmetrical at the serious end.
+- **Amplitude** — how *grandiose* a given move is. Big travel, big scale, showy multi-property transforms vs. small, tight, minimal displacement.
+- **Frequency & coverage** — *how much of the surface moves at all*, and how often. A playful brand may animate many things, including small ones that a serious brand would leave perfectly still.
+- **What earns motion** — a playful brand will spend motion on delight for its own sake; a serious brand spends it almost exclusively on function (feedback, orientation, explanation).
+
+Two poles to calibrate against — most brands sit somewhere between:
+
+| | **Creative · fun · eccentric · playful** | **Serious · premium · precise** |
+|---|---|---|
+| Easing | springy, elastic, overshoot; irregular curves welcome | smooth, controlled, restrained; little or no overshoot |
+| Amplitude | grandiose, generous travel and scale | subtle, tight, minimal |
+| Frequency | frequent — including on small elements | sparing — reserved for moments that matter |
+| Motive | delight is a legitimate reason on its own | motion mostly justifies itself functionally |
+| Result | expressive, alive, characterful | slick, quiet, expensive |
+
+**"Slick" is not the universal goal.** A playful brand rendered in tasteful, minimal, premium motion has been flattened into a generic one — that's a failure of appropriateness, exactly as `logo-design` treats a playful mark for a vault brand. Judge motion against *this brand's* emotional target, never against a house default.
+
+### First Classify the Motion: Functional or Storytelling
+
+Brand character doesn't apply evenly — **how much latitude a given animation gets depends on the job it's doing.** This is the balance to strike, and it's the first question, before the brand question:
+
+- **Functional / UI motion** — it has a *job*: feedback on a press, orientation during a state change, showing cause and effect, revealing where something came from. **Be utilitarian, regardless of how playful the brand is.** Fast, unobtrusive, predictable, out of the way. The user has a goal; this motion serves it and disappears. A playful brand's save-confirmation still shouldn't bounce for 800ms.
+- **Storytelling / delight motion** — a narrative beat, an expressive hero moment, a flourish whose purpose *is* the feeling: explaining the product's story, rewarding exploration, establishing character. **This is where brand latitude lives.** Be expressive, be on-brand, spend the amplitude — an eccentric brand should be genuinely eccentric here.
+
+So the two axes compose: **functional motion converges** toward utilitarian across every brand; **expressive motion diverges** by brand. The more a motion is doing a job, the more utilitarian it should be; the more it's telling a story or creating delight, the more it should look like the brand and less like a convention.
+
+And underneath both, a floor that never bends for personality: motion stays **hierarchical** (never uniform — see below), **decided** rather than defaulted, and bound by **usability and accessibility** — keyboard-initiated actions, high-frequency utility interactions, performance, and `prefers-reduced-motion`.
+
+The ai-slop tropes are failures of *decision*, not of quantity — "fade-up on every element identically" is slop because it's undifferentiated and unchosen, not merely because it's a lot of motion. A playful brand moving many things, deliberately and hierarchically, is not slop. A restrained brand fading everything up the same way is.
 
 ## The Twelve Principles of Animation, Applied to UI
 
@@ -76,9 +112,9 @@ So calibrate to the brief, and be honest about the ceiling:
 - **"Make it feel considered / functional"** → general motion **is** the target. Apply the principles with restraint and stop. This is the common case and a good outcome — don't manufacture excitement the brief didn't ask for.
 - **"Make it exciting / memorable"** → general motion is the **floor, not the finish.** Reach for content-relative, bespoke ideas tied to the product's story and the brand's signature element — and that requires real design direction as *input* (`creative-direction` for the motion character and motif; `art-direction` for bespoke asset/motion ideas). **Without that input, say so:** the honest ceiling of generic application is "good," not "exciting." Ask for the direction rather than faking depth the brief never supplied.
 
-## Restraint — Not Everything Moves
+## Restraint — Not Everything Moves *Equally*
 
-The amateur instinct (and the AI default) is to animate everything, identically. **Fade-up-on-scroll on every element regardless of importance, a looping gradient untethered to any story** — these are named tropes in `design-principles` → ai-slop for a reason: they are a default substituted for a decision.
+The amateur instinct (and the AI default) is to animate everything, **identically**. **Fade-up-on-scroll on every element regardless of importance, a looping gradient untethered to any story** — these are named tropes in `design-principles` → ai-slop for a reason: they are a default substituted for a decision. Note the failure is the *sameness*, not the amount; how much moves is the brand's dial to set (above).
 
 Motion is subject to the same hierarchy as everything else. The elements that carry the message get the considered, expressive motion; supporting detail gets less or none. Uniform motion *flattens* hierarchy exactly the way uniform type weight does. If every section fades up the same way, nothing is emphasized — you've added movement and subtracted meaning.
 
@@ -103,7 +139,7 @@ Because this skill ships real code, there is a non-negotiable technical floor be
 
 Judge motion the way `design-principles` says to judge any work — **adversarially, on the rendered, moving page, not in your head.** Static screenshots cannot audit motion; you have to watch it.
 
-- **Does it convey the intended feeling?** Play it back. Does the timing/easing match the brand's emotional target, or did you default to a generic ease?
+- **Does it convey the intended feeling?** Play it back. Does the timing/easing match the brand's emotional target, or did you default to a generic ease? **Check the calibration, not just the curves:** if the brand is playful, is the motion actually *expressive* — or did you quietly render it slick and premium like everything else?
 - **Is it hierarchical, or uniform?** List what moves and why. If the answer is "everything, the same way," that's ai-slop — cut it back to what carries meaning.
 - **Overlap check.** Do grouped elements enter one-after-another (amateur) or overlapping-and-staggered (expensive)? Fix the sequence.
 - **Linear check.** Is anything still moving on `linear` or an unconsidered default ease? Assign it a curve from the system.
@@ -119,6 +155,8 @@ Judge motion the way `design-principles` says to judge any work — **adversaria
 
 - [ ] Front-door diagnosis run: surface is structurally sound and the system's motion character is settled — otherwise routed back (`web-design` / `creative-direction`)
 - [ ] Motion tied to the brand's **emotional target**, not a generic default — the feeling chosen before the easing
+- [ ] **Each motion classified by role first** — functional/UI motion kept utilitarian regardless of brand; storytelling/delight motion is where brand latitude is spent
+- [ ] **Motion character calibrated at the system level** — easing personality, amplitude, frequency/coverage, and what earns motion, all set from the brand (playful ≠ premium; "slick" is not the universal goal)
 - [ ] Motion is **hierarchical**, not uniform — what moves and why is a short defensible list, never "everything, the same way"
 - [ ] Grouped elements **overlap and stagger**; nothing fires as a one-after-another slideshow
 - [ ] A **named easing system** in use — no raw `linear`, no single `ease` on everything
