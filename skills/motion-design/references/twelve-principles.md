@@ -207,7 +207,7 @@ Respect the three-dimensional space flat elements occupy. Give them depth with r
 ```css
 /* A stack of cards that fans out like held photos on hover */
 .stack:hover .card:nth-child(1) { transform: translateX(-30%) rotate(-14deg); filter: blur(2px); }
-.stack:hover .card:nth-child(2) { transform: translateX(0)    rotate(0deg);   transform: scale(1.08); } /* front, toward viewer */
+.stack:hover .card:nth-child(2) { transform: translateX(0) rotate(0deg) scale(1.08); } /* front, toward viewer */
 .stack:hover .card:nth-child(3) { transform: translateX(30%)  rotate(14deg);  filter: blur(1px); }
 .stack .card { transition: transform .5s var(--ease-overshoot), filter .5s var(--ease-standard); }
 ```
