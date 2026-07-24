@@ -2,7 +2,7 @@
 name: motion-design
 description: "Design and build UI motion with intent — micro-interactions, transitions, entrances, scroll and hover behavior — applying the twelve principles of animation to a brand's settled system, in custom code. Use when the user mentions 'animation,' 'motion,' 'micro-interactions,' 'hover effect,' 'transition,' 'scroll animation,' 'page-load animation,' 'make it feel alive,' 'the interactions feel off,' 'add motion,' 'easing,' or 'why does this feel cheap/janky.' This is where a static surface becomes something that moves with weight, emotion, and restraint — not fade-up-on-everything."
 metadata:
-  version: 1.4.0
+  version: 1.5.0
 ---
 
 # Motion Design
@@ -132,6 +132,7 @@ Because this skill ships real code, there is a non-negotiable technical floor be
 - **Animate compositor-friendly properties only — `transform` and `opacity` (and `filter` with care).** Animating `width`/`height`/`top`/`left`/`box-shadow` triggers layout/paint and causes jank; that jank is itself a "cheap" tell. This is the craft `web-design`'s light floor points here for.
 - **`prefers-reduced-motion: reduce` is non-negotiable.** Provide a reduced path — opacity-only or instant — for every non-trivial animation. Motion sickness and vestibular disorders are real; a beautiful animation that can't be turned down is a defect, not a flourish.
 - **Stagger with a consistent step** (an index custom property or incremental delay), small enough to overlap, not so large it becomes a slideshow.
+- **Use CSS for simple state motion; reach for GSAP when it gets complex.** Hover, focus, press, and single-property reveals belong in CSS — don't add a library for what the platform does natively. For **smooth, choreographed, timeline-based** motion, **GSAP is the best tool available** and now fully free, all plugins included: **ScrollTrigger** (scroll-driven sequences and pinning), **SplitText** (staggered word/line reveals), **Flip** (shared-element/layout transitions — the morph technique). Its timelines make overlapping and staggering far easier to control than hand-tuned delay chains, and its interpolation is noticeably smoother on demanding sequences. Details in [references/motion-floor.md](references/motion-floor.md).
 
 **Production defaults** — the specific numbers that read polished, from Emil Kowalski ([references/practical-tips.md](references/practical-tips.md)): **`ease-out` is the workhorse** for enter and exit (responsiveness beats physical purity; a custom curve, since the CSS built-in is too weak); **UI transitions stay under ~300ms** (125/180/300ms are the effective band; the longer expressive durations are reserved for rare hero moments); **scale buttons to `0.97` on `:active`**; **start entrances at `~0.9`, never `scale(0)`** (which looks like it materializes from nothing); **make popovers/zoom origin-aware** (`transform-origin` at the trigger, not center); and **a touch of `blur(2px)`** bridges a transition that still feels abrupt.
 

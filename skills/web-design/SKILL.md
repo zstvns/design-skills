@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.4.0
+  version: 1.5.0
 ---
 
 # Web Design
@@ -70,10 +70,35 @@ Pull the system from `.agents/design.md` — don't re-derive it, don't invent al
 Work the page as a sequence, never each section in isolation. Full per-section playbook in [references/section-patterns.md](references/section-patterns.md).
 
 - **Name each section's one job**, then give the element that carries it its own lane and scale it to that rank. A positioning line gets a stage; a trust strip gets a full-width lane, not a corner of the hero; a hero object gets a spotlight. Supporting detail recedes.
-- **Rhythm is a vocabulary of section *types*, not a column count.** Rotate through genuinely different section types — each a different *medium* — and never play the same one twice: asymmetric hero, a **full-bleed human/video moment**, an illustration/contrast beat, an oversized aphorism, a **pinned scroll-telling sequence** (a heading pins while statements cycle beneath giant ghost numerals), colored cards, a spotlit object reveal, a carousel. **Change the medium** (UI → video → illustration → photo → cards), not just the layout. Then **unify** the variety with one through-line texture + strict color discipline, use **scale contrast** (ghost numerals vs. tiny copy), and leave **quiet between the loud** beats. The failure mode: *one instrument played the whole song* — the same card/panel idiom repeated with only the column count changing. Full vocabulary in [references/section-patterns.md](references/section-patterns.md); study conversionfactory.co for how it's paced.
+- **Rhythm is a vocabulary of section *types*, not a column count.** Rotate through genuinely different section types — each a different *medium* — and never play the same one twice: asymmetric hero, a **full-bleed human/video moment**, an illustration/contrast beat, an oversized aphorism, a **pinned scroll-telling sequence** (a heading pins while statements cycle beneath giant ghost numerals — choreograph it with `motion-design`), colored cards, a spotlit object reveal, a carousel. **Change the medium** (UI → video → illustration → photo → cards), not just the layout. Then **unify** the variety with one through-line texture + strict color discipline, use **scale contrast** (ghost numerals vs. tiny copy), and leave **quiet between the loud** beats. The failure mode: *one instrument played the whole song* — the same card/panel idiom repeated with only the column count changing. Full vocabulary in [references/section-patterns.md](references/section-patterns.md); study conversionfactory.co for how it's paced.
 - **Balance every text section with a visual.** A text-only section that should carry an image reads as unfinished. Show the product in **layered, overlapping mockups** — a device, a card, a sticker at a slight rotation, real depth — the way strong marketing sites do, rather than a flat screenshot or nothing.
 - **Consolidate.** Three substantial sections beat five thin ones. Whitespace is emphasis, not just breathing room.
 - **CTAs, logos, and hover states are content, not decoration.** Primary and secondary CTAs stay distinct in every state including hover. Partner/integration logos get one normalized trust lane — **real logos**, optical (not pixel) sizing, one color story, and enough contrast to actually read.
+
+## Motion — Carry the Brand's Motion Character, Then Hand Off
+
+**Motion is part of the system, not a garnish added at the end** — and like color and type, its character is **brand-derived**. Read the motion character from `.agents/design.md` and the **emotional target**: a playful, eccentric brand earns springy, generous, frequent motion; a serious, premium brand earns subtle, controlled, sparing motion. **"Slick" is not the universal goal** — rendering a playful brand's motion tastefully minimal flattens it into a generic one. Never substitute a house default for the brand's own feel.
+
+Then split the work by the job each animation is doing — this is the line between what you handle here and what `motion-design` handles:
+
+- **Functional / UI motion — build it here.** Hover and focus states, press feedback, the CTA's states, disclosure and menu transitions, section reveals. This motion has a job: feedback, orientation, cause and effect. Keep it **utilitarian regardless of how playful the brand is** — fast, unobtrusive, out of the way.
+- **Expressive / storytelling motion — hand off to `motion-design`.** Choreographed page-load sequences, the **pinned scroll-telling beat**, signature product-visual behavior, hero moments, and any content-specific idea whose purpose *is* the feeling. That's where brand latitude gets spent, and where the twelve principles pay off.
+
+### The floor you build to here
+
+These are the `motion-design` rules that matter most on a marketing site — apply them inline; you don't need the full skill to get them right:
+
+- **A named easing set, and `ease-out` as the workhorse.** Custom curves, not raw `linear` (the loudest amateur tell) and not one undifferentiated `ease` on everything. Entrances and exits both read better decelerating into rest.
+- **UI transitions under ~300ms.** Hover/press in the 100–200ms range; anything slower has to earn the wait. Match duration to the *mass* of the thing moving — small fast, big slow.
+- **Press feedback.** A subtle scale-down (~`0.97`) on `:active` so the interface feels like it's listening.
+- **Entrances overlap and stagger; they never queue.** Grouped elements share timing and offset by small delays (~40–80ms) rather than each waiting for the last to finish. This one move is most of the distance between "fine" and "expensive."
+- **Animate `transform` and `opacity` only.** Animating `width`/`height`/`top`/`left`/`box-shadow` triggers layout or paint and janks — and that jank reads as a cheap build.
+- **Reveals are hierarchical, not uniform.** Fade-up on every element identically is a named slop trope ([references/web-slop.md](references/web-slop.md)) — the failure is the *sameness*, not the amount. Reveal what carries the message; leave the rest still.
+- **`prefers-reduced-motion` is non-negotiable.** Ship a reduced path (opacity-only or instant) for every non-trivial animation, and kill ambient/parallax motion entirely under it.
+
+**Reach for GSAP when the motion gets real.** CSS transitions and `@keyframes` are the right tool for hover, focus, press, and simple reveals — don't pull in a library for what the platform does natively. But for **smooth, complex, choreographed motion**, GSAP is the best option available and now entirely free (all plugins included, since Webflow took it over): **ScrollTrigger** for scroll-driven sequences and pinning (exactly the pinned scroll-telling beat above), **SplitText** for staggered word/line reveals, and **Flip** for shared-element/layout transitions. Its timelines make overlapping, staggered choreography far easier to control than hand-tuned CSS delays, and its interpolation is noticeably smoother on demanding sequences.
+
+Full craft — the twelve principles, the technique toolkit, easing/duration tokens, and the motion-slop checklist — lives in `motion-design`. Reach for it whenever the site needs expressive motion rather than just a competent floor.
 
 ## Tooling & References — Use What's Connected, Fall Back Gracefully
 
@@ -84,6 +109,7 @@ The build is faster and the rhythm richer when you lean on real tools — but **
 - **`web-design-guidelines`** — the UX/UI + accessibility compliance pass.
 - **Mobbin / Refero MCP** — pattern intake: study how strong sites solve a section before you build it.
 - **Reference-site intake** — pull in the popular sites the client admires; name what to steal and what to avoid.
+- **GSAP** *(preferred for real motion — free, all plugins)* — timeline-based choreography, **ScrollTrigger** (scroll sequences + pinning), **SplitText** (staggered text reveals), **Flip** (shared-element transitions). Use CSS for simple states; use GSAP when the sequence is complex or must be genuinely smooth. See the Motion section above and `motion-design`.
 - **three.js / WebGL** — when the brand genuinely warrants ambitious 3D or interactive depth (not as decoration).
 
 ## Validate Before You Ship
@@ -94,6 +120,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - **Run the web-slop check** ([references/web-slop.md](references/web-slop.md)) and **list what it finds** — the tropes actually on the page (bold-as-default, banded sections, uniform icon grids, CTA color bleeding everywhere, eyeballed nested radii). "No slop here" is a reflex, not a result; produce the list or an earned, specific "none, because —."
 - **Cover-the-logo carry-through:** with the mark hidden, is the built page still recognizably this brand? If the distinctiveness lived only in the logo, the system didn't survive application.
 - **Responsive + accessibility.** Check real breakpoints (mobile fixes as additive overrides, never touching desktop base). Hand off to `web-design-guidelines` for the interface/accessibility compliance pass.
+- **Motion check — watch it, don't screenshot it.** Static captures cannot audit motion. Play the page back: does the timing/easing match the brand's character, or did you default to a generic ease? Is anything on `linear`, queuing instead of overlapping, or janking on a layout property? Toggle `prefers-reduced-motion` and confirm the page is calm and usable.
 - **Copy check.** Does the layout give the words their proper emphasis, or did the design bury the message?
 
 ## The Deliverable
@@ -114,6 +141,8 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - [ ] Columns top-aligned, content left-aligned by default (center only genuinely-centered blocks); each section demarcated (header + spacing) so repeated L-R rows don't blur into one
 - [ ] Headline size follows the content; contrast checked; no widows (headlines balanced); real photography pulled where imagery is called for
 - [ ] Craft floor met (rem/clamp, layered shadows, optical alignment, nested radii, distinct CTA states); global changes done systematically
+- [ ] **Motion character taken from the brand** (playful ≠ premium; no house default); functional motion kept utilitarian and expressive/storytelling motion handed to `motion-design`
+- [ ] **Motion floor met** — named easing with `ease-out` as workhorse (no raw `linear`), UI transitions under ~300ms, press feedback, entrances overlap/stagger rather than queue, `transform`/`opacity` only, reveals hierarchical not uniform, `prefers-reduced-motion` honored
 - [ ] Adversarial self-audit on the *rendered* page (web-slop tropes listed, not "none"); responsive + accessibility pass; spelling/grammar + OG image checked
 
 ## Related Skills
@@ -122,6 +151,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - `creative-direction` — supplies the visual system (hard prerequisite); route back for Revolution / heavy Evolution
 - `logo-design` — the mark, applied here
 - `brand` — the audit whose categories are this skill's acceptance test
+- `motion-design` — the motion layer on top of this one: build the functional/UI floor here, hand off expressive choreography, scroll-telling, and signature motion there (it expects a structurally-sound surface, so run it *after* the build)
 - `collateral-design` / `email-design` / `social-design` — apply the same system to other mediums
 - `design-critique` — judges the shipped site against the emotional target and latitude
 - `frontend-design` — distinctive production-grade frontend when a build accelerator isn't connected

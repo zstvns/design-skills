@@ -31,7 +31,7 @@ then:  brand-naming → logo-design
 | Identity | [`creative-direction`](skills/creative-direction/SKILL.md) | Translates the emotional target + muses into the concrete visual system — color, type, composition, pattern & texture, icons, illustration, photography — as one coherent language, validated against the audit's own bar. Three stylescapes for a Revolution; anchored deltas for an Evolution. | ✅ |
 | Identity | `brand-naming` | Naming the brand or product, where applicable. | 🔜 |
 | Identity | [`logo-design`](skills/logo-design/SKILL.md) | The core mark — Simple, Appropriate, Distinct (SAD), each judged *in context*: distinct vs. competitors, appropriate to the feeling, simple across every implementation. | ✅ |
-| Application | `web-design` | Applying the brand to a live, conversion-focused site with real copy — the design-craft layer that reads the defined system and gives the words their proper emphasis. Absorbs the marketing library's website-design guidance. | 🔜 |
+| Application | [`web-design`](skills/web-design/SKILL.md) | Applying the brand to a live, conversion-focused site with real copy — designed *and built* in custom code, giving the words their proper emphasis. Rhythm as a vocabulary of section types, one reserved CTA color, faithful replication when referencing a live site. Absorbs the marketing library's website-design guidance. | ✅ |
 | Application | `collateral-design` | Decks, one-pagers, print, ads. | 🔜 |
 | Application | `email-design` | Lifecycle and campaign email. | 🔜 |
 | Application | `social-design` | Social formats and systems. | 🔜 |

@@ -10,10 +10,10 @@ Current versions of all skills. Agents can compare against local versions to che
 | creative-direction | 1.12.0 | Built | 2026-07-23 |
 | brand-naming | — | Planned | — |
 | logo-design | 1.8.0 | Built | 2026-07-14 |
-| web-design | 1.4.0 | Built | 2026-07-24 |
+| web-design | 1.5.0 | Built | 2026-07-24 |
 | collateral-design | — | Planned | — |
 | email-design | — | Planned | — |
 | social-design | — | Planned | — |
-| motion-design | 1.4.0 | Built | 2026-07-24 |
+| motion-design | 1.5.0 | Built | 2026-07-24 |
 | art-direction | — | Planned | — |
 | design-critique | — | Planned | — |
