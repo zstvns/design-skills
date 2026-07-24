@@ -15,6 +15,6 @@ Current versions of all skills. Agents can compare against local versions to che
 | collateral-design | — | Planned | — |
 | email-design | — | Planned | — |
 | social-design | — | Planned | — |
-| motion-design | 1.2.0 | Built | 2026-07-24 |
+| motion-design | 1.3.0 | Built | 2026-07-24 |
 | art-direction | — | Planned | — |
 | design-critique | — | Planned | — |

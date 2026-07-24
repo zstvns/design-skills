@@ -2,7 +2,7 @@
 name: motion-design
 description: "Design and build UI motion with intent — micro-interactions, transitions, entrances, scroll and hover behavior — applying the twelve principles of animation to a brand's settled system, in custom code. Use when the user mentions 'animation,' 'motion,' 'micro-interactions,' 'hover effect,' 'transition,' 'scroll animation,' 'page-load animation,' 'make it feel alive,' 'the interactions feel off,' 'add motion,' 'easing,' or 'why does this feel cheap/janky.' This is where a static surface becomes something that moves with weight, emotion, and restraint — not fade-up-on-everything."
 metadata:
-  version: 1.2.0
+  version: 1.3.0
 ---
 
 # Motion Design
@@ -64,6 +64,17 @@ The twelve principles are the *physics and emotion* of motion. Alongside them, w
 8. **Zoom** — transition between states and depth, scaling from the correct `transform-origin` so it emanates from what the user acted on.
 
 The distinction to hold: use the **principles** to decide what a motion should *feel* like and whether it earns its place; use the **techniques** to build it. Zajno's own thesis matches this skill's — **motion is a strategic tool to direct attention, not decoration.** (Note the real-time vs. non-real-time split: real-time motion is tied to the user's hand — hover, drag, scroll; non-real-time plays as a scripted response after an interaction.)
+
+## General Motion Has a Ceiling — Signature Motion Is Content-Specific
+
+The twelve principles, the techniques, and the production defaults get you **general motion**: a polished, functional, on-brand baseline applied to the standard UI patterns — reveals, hovers, presses, transitions, staggered entrances. Applied with restraint, this is genuinely good, and **for most surfaces it is the right target.** The site has to *work* first; general motion is what keeps movement in service of function instead of showing off.
+
+But general motion has a ceiling. The motion that makes a surface feel *exciting* — memorable, unmistakably **this** product — is **content-specific**: ideas derived from what the content actually *is* and the story it tells, not a principle applied uniformly. An agent-log that streams in because the product is *an agent doing work*; a metric line that draws itself because the story is *growth*; a signature interaction built on the brand's own motif. These don't come from the principles alone — they come from **design direction**: the emotional target, the muses, the signature element, the real product narrative.
+
+So calibrate to the brief, and be honest about the ceiling:
+
+- **"Make it feel considered / functional"** → general motion **is** the target. Apply the principles with restraint and stop. This is the common case and a good outcome — don't manufacture excitement the brief didn't ask for.
+- **"Make it exciting / memorable"** → general motion is the **floor, not the finish.** Reach for content-relative, bespoke ideas tied to the product's story and the brand's signature element — and that requires real design direction as *input* (`creative-direction` for the motion character and motif; `art-direction` for bespoke asset/motion ideas). **Without that input, say so:** the honest ceiling of generic application is "good," not "exciting." Ask for the direction rather than faking depth the brief never supplied.
 
 ## Restraint — Not Everything Moves
 
