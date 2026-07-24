@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magister — Creative Directions · 01 Mission Control / 02 The Conductor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Spectral:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&display=block" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0a0805;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+.material-symbols-sharp{font-family:'Material Symbols Sharp';line-height:1;-webkit-font-feature-settings:'liga';font-feature-settings:'liga'}
+.material-symbols-rounded{font-family:'Material Symbols Rounded';line-height:1;-webkit-font-feature-settings:'liga';font-feature-settings:'liga';font-variation-settings:'FILL' 1}
+
+/* ===== concept nav + compare ===== */
+.cnav{position:fixed;left:16px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:8px}
+.cnav button{width:150px;text-align:left;background:rgba(20,16,10,.88);backdrop-filter:blur(6px);border:1px solid #3A3020;color:#B4A88F;border-radius:6px;padding:10px 12px;cursor:pointer;font-family:'JetBrains Mono',monospace;transition:.15s}
+.cnav button .n{font-size:15px;font-weight:600;color:#ECE4D6}
+.cnav button .nm{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
+.cnav button:hover{border-color:#5a4a2c}
+.cnav button.on{border-color:#F4A93C;box-shadow:0 0 0 1px rgba(244,169,60,.4),0 0 18px rgba(232,131,12,.25)}
+.cnav button.on .n{color:#F4A93C}
+.cnav button.cmp{background:rgba(20,16,10,.7)}
+body.compare .cnav button.cmp{border-color:#F4A93C;color:#F4A93C}
+@media(max-width:1100px){.cnav{left:8px}.cnav button{width:118px}}
+
+.stage{position:relative}
+.concept{display:none;position:relative;min-height:100vh}
+.concept.active{display:block}
+body.compare .stage{display:grid;grid-template-columns:repeat(3,1fr);height:100vh;overflow:hidden}
+body.compare .concept{display:block !important;height:100vh;overflow-y:auto;zoom:.44}
+body.compare .concept+.concept{border-left:2px solid #3A3020}
+
+/* =========================================================
+   C1 — MISSION CONTROL (approved exemplar, ported)
+   ========================================================= */
+.c1{
+  --ground:#0F0C07;--panel:#1B160E;--panel2:#221B11;--panel3:#2A2114;--seam:#3A3020;--seam2:#4A3D24;
+  --bone:#ECE4D6;--dim:#B4A88F;--faint:#7C725C;
+  --accent:#E8830C;--lo:#F4A93C;--go:#5BA772;--sync:#4E7BC4;--alert:#D2542E;
+  --disp:'Chakra Petch',sans-serif;--body:'IBM Plex Sans',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  --glow:0 0 .5px rgba(244,169,60,.9),0 0 14px rgba(232,131,12,.35);
+  --gridA:.55;--glowOp:.55;
+  color:var(--bone);font-family:var(--body);
+  background:radial-gradient(1300px 760px at 76% -10%,rgba(232,131,12,.10),transparent 60%),var(--ground);
+}
+.c1::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:var(--gridA);
+  background-image:linear-gradient(rgba(255,220,170,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,220,170,.028) 1px,transparent 1px);
+  background-size:46px 46px}
+.c1::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.34;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+.c1 .bgarc{position:absolute;top:0;left:0;width:100%;height:900px;z-index:0;pointer-events:none;opacity:.14}
+.c1 .sweep{position:absolute;inset:0;z-index:40;pointer-events:none;background:linear-gradient(100deg,transparent 44%,rgba(244,169,60,.05) 50%,transparent 56%);transform:translateX(-120%)}
+@media(prefers-reduced-motion:no-preference){.c1 .sweep{animation:c1sweep 17s linear infinite}@keyframes c1sweep{to{transform:translateX(120%)}}}
+.c1 .syncflash{position:absolute;inset:0;z-index:41;pointer-events:none;opacity:0;background:linear-gradient(100deg,transparent 30%,rgba(78,123,196,.14) 50%,transparent 70%)}
+.c1 .syncflash.on{animation:sflash 1s ease-out}
+@keyframes sflash{0%{opacity:0;transform:translateX(-40%)}30%{opacity:1}100%{opacity:0;transform:translateX(40%)}}
+.c1 .wrap{position:relative;z-index:2;max-width:1220px;margin:0 auto;padding:0 24px 72px 90px}
+body.compare .c1 .wrap{padding-left:24px}
+.c1 .rail{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 2px 12px;border-bottom:1px solid var(--seam);margin-bottom:16px;flex-wrap:wrap}
+.c1 .rail .id{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.c1 .rail .stats{display:flex;gap:20px;font-family:var(--mono);font-size:11px;color:var(--dim);flex-wrap:wrap}
+.c1 .rail b{color:var(--bone);font-weight:500}
+.c1 .dot{width:7px;height:7px;border-radius:50%;display:inline-block;background:var(--go);box-shadow:0 0 8px var(--go);margin-right:6px;vertical-align:1px}
+.c1 .rail .thr b{color:var(--lo)}
+.c1 .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.c1 .plate{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);border:1px solid var(--seam);padding:4px 9px;border-radius:2px;display:inline-block;background:rgba(0,0,0,.25)}
+.c1 .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--seam);border-radius:6px;padding:18px;position:relative;box-shadow:inset 0 1px 0 rgba(255,220,170,.05),0 10px 30px rgba(0,0,0,.45)}
+.c1 .corner{position:absolute;width:9px;height:9px;border:1px solid var(--seam2)}
+.c1 .corner.tl{top:6px;left:6px;border-right:0;border-bottom:0}.c1 .corner.tr{top:6px;right:6px;border-left:0;border-bottom:0}
+.c1 .corner.bl{bottom:6px;left:6px;border-right:0;border-top:0}.c1 .corner.br{bottom:6px;right:6px;border-left:0;border-top:0}
+.c1 .sechead{display:flex;align-items:baseline;gap:12px;margin-bottom:2px}
+.c1 .sechead h2{font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone)}
+.c1 .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.c1 .hero{grid-column:span 12}.c1 .deck{grid-column:span 4}.c1 .log{grid-column:span 5}.c1 .radar{grid-column:span 3}
+.c1 .perf{grid-column:span 5}.c1 .muse{grid-column:span 7}
+.c1 .type{grid-column:span 6}.c1 .color{grid-column:span 6}
+.c1 .icons{grid-column:span 4}.c1 .motif{grid-column:span 3}.c1 .read{grid-column:span 5}
+.c1 .applied{grid-column:span 12}
+@media(max-width:960px){.c1 .bento>*{grid-column:1/-1 !important}}
+.c1 .hero{overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:space-between}
+.c1 .traj{position:absolute;inset:0;z-index:0}
+.c1 .glowwash{position:absolute;inset:0;z-index:0;opacity:var(--glowOp);transition:opacity .5s;background:radial-gradient(700px 420px at 74% 20%,rgba(232,131,12,.22),transparent 65%)}
+.c1 .htop{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.c1 h1{position:relative;z-index:2;font-family:var(--disp);font-weight:700;font-size:clamp(38px,5.6vw,72px);line-height:.97;letter-spacing:-.01em;max-width:14ch;text-wrap:balance;margin-top:14px}
+.c1 h1 .lead{color:transparent;-webkit-text-stroke:1.4px var(--lo);paint-order:stroke;text-shadow:0 0 24px rgba(232,131,12,.45);display:inline-block}
+@media(prefers-reduced-motion:no-preference){.c1 h1 .lead{animation:glitch 9s steps(1) infinite}
+@keyframes glitch{0%,96.5%,100%{transform:none;opacity:1}97%{transform:translateX(2px) skewX(3deg);opacity:.85}97.6%{transform:translateX(-2px);opacity:1}98%{transform:none}}}
+.c1 .sub{position:relative;z-index:2;color:var(--dim);font-size:15.5px;max-width:52ch;margin-top:14px}
+.c1 .hrow{position:relative;z-index:2;display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
+.c1 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#1a1206;font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:13px 20px;border-radius:4px;border:1px solid var(--lo);box-shadow:var(--glow);cursor:pointer;transition:.15s}
+.c1 .cta .material-symbols-sharp{font-size:16px}
+.c1 .cta.armed{background:#1a1206;color:var(--lo)}
+.c1 .count{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.14em}
+.c1 .count b{color:var(--bone);font-weight:500}
+.c1 .deck{display:flex;flex-direction:column;gap:14px}
+.c1 .dial-label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);text-align:center}
+.c1 .dial-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:2px 0}
+.c1 .dial{width:148px;height:148px;border-radius:50%;position:relative;cursor:grab;background:radial-gradient(circle at 50% 38%,#2c2416,#14100a 70%);border:1px solid var(--seam);box-shadow:inset 0 6px 18px rgba(0,0,0,.6),0 6px 16px rgba(0,0,0,.5)}
+.c1 .dial:active{cursor:grabbing}
+.c1 .ring{position:absolute;inset:-1px;border-radius:50%}
+.c1 .notch{position:absolute;left:50%;top:6px;width:3px;height:14px;background:var(--seam);border-radius:2px;transform-origin:50% 68px}
+.c1 .notch.on{background:var(--lo);box-shadow:0 0 8px rgba(244,169,60,.8)}
+.c1 .knob{position:absolute;inset:26px;border-radius:50%;background:linear-gradient(145deg,#3a2f1c,#1a1409);border:1px solid var(--seam);box-shadow:inset 0 2px 6px rgba(255,220,170,.12),inset 0 -8px 14px rgba(0,0,0,.6)}
+.c1 .pointer{position:absolute;left:50%;top:30px;width:3px;height:30px;background:var(--lo);border-radius:2px;transform-origin:50% 44px;box-shadow:0 0 10px rgba(244,169,60,.7)}
+.c1 .dval{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:var(--mono);pointer-events:none}
+.c1 .dval b{font-size:30px;color:var(--bone);font-weight:600}
+.c1 .dval span{font-size:9px;letter-spacing:.24em;color:var(--faint);text-transform:uppercase;margin-top:2px}
+.c1 .meter{height:7px;border-radius:3px;background:#0d0a06;border:1px solid var(--seam);overflow:hidden;width:100%}
+.c1 .meter i{display:block;height:100%;width:62%;background:linear-gradient(90deg,var(--sync) 0%,#6f8fb0 34%,var(--accent) 72%,var(--lo) 100%);box-shadow:0 0 10px rgba(232,131,12,.5);transition:width .12s}
+.c1 .meterrow{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);width:100%;margin-top:5px}
+.c1 .meterrow .cold{color:var(--sync)}.c1 .meterrow .hot{color:var(--lo)}
+.c1 .autorow{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+.c1 .modekey{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);text-align:center;padding:9px 4px;border:1px solid var(--seam);border-radius:5px;background:linear-gradient(180deg,var(--panel3),#14100a);cursor:pointer;box-shadow:inset 0 -3px 0 rgba(0,0,0,.45),inset 0 1px 0 rgba(255,220,170,.08)}
+.c1 .modekey.on{color:var(--lo);border-color:rgba(244,169,60,.55);box-shadow:var(--glow),inset 0 -3px 0 rgba(0,0,0,.45)}
+.c1 .keys{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%}
+.c1 .key{background:linear-gradient(180deg,var(--panel3),#14100a);border:1px solid var(--seam);border-radius:6px;padding:11px 6px 9px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;box-shadow:inset 0 -4px 0 rgba(0,0,0,.5),inset 0 1px 0 rgba(255,220,170,.1),0 3px 6px rgba(0,0,0,.4);transition:.1s}
+.c1 .key:active{transform:translateY(2px)}
+.c1 .key .material-symbols-sharp{font-size:19px;color:var(--dim)}
+.c1 .key .kl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.c1 .key.armed{border-color:var(--lo);box-shadow:var(--glow),inset 0 -4px 0 rgba(0,0,0,.5)}
+.c1 .key.armed .material-symbols-sharp,.c1 .key.armed .kl{color:var(--lo)}
+.c1 .key.hot{animation:hotpulse 1.2s ease-in-out infinite}
+@keyframes hotpulse{0%,100%{box-shadow:0 0 6px rgba(232,131,12,.4)}50%{box-shadow:0 0 22px rgba(232,131,12,.65)}}
+.c1 .tuners{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+.c1 .tuner{display:flex;align-items:center;gap:10px;border:1px solid var(--seam);border-radius:5px;padding:8px 10px;background:linear-gradient(180deg,var(--panel3),#14100a)}
+.c1 .mini{width:34px;height:34px;border-radius:50%;position:relative;flex:0 0 auto;cursor:ew-resize;background:radial-gradient(circle at 50% 35%,#33291a,#14100a);border:1px solid var(--seam)}
+.c1 .mini i{position:absolute;left:50%;top:4px;width:2px;height:10px;background:var(--lo);transform-origin:50% 13px;border-radius:1px}
+.c1 .tuner .tl2{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);line-height:1.5}
+.c1 .tuner .tl2 b{display:block;color:var(--dim);font-weight:500}
+.c1 .vu{display:flex;align-items:flex-end;gap:3px;height:26px;margin-top:2px}
+.c1 .vu i{width:5px;height:30%;border-radius:1px;background:var(--go)}
+.c1 .vu i:nth-child(4n){background:var(--lo)}
+@media(prefers-reduced-motion:no-preference){.c1 .vu i{animation:vu 1s ease-in-out infinite}
+.c1 .vu i:nth-child(2){animation-delay:.12s}.c1 .vu i:nth-child(3){animation-delay:.3s}.c1 .vu i:nth-child(4){animation-delay:.05s}
+.c1 .vu i:nth-child(5){animation-delay:.4s}.c1 .vu i:nth-child(6){animation-delay:.22s}.c1 .vu i:nth-child(7){animation-delay:.34s}
+.c1 .vu i:nth-child(8){animation-delay:.15s}.c1 .vu i:nth-child(9){animation-delay:.45s}.c1 .vu i:nth-child(10){animation-delay:.28s}
+@keyframes vu{0%,100%{height:22%}50%{height:88%}}}
+.c1 .rows{display:flex;flex-direction:column;margin-top:12px;font-family:var(--mono);font-size:12.5px}
+.c1 .logrow{display:grid;grid-template-columns:60px 22px 1fr auto;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid rgba(58,48,32,.5)}
+.c1 .logrow:last-child{border-bottom:0}
+.c1 .logrow .t{color:var(--faint);font-size:10.5px}
+.c1 .logrow .material-symbols-sharp{font-size:16px;color:var(--dim)}
+.c1 .logrow .m{color:var(--bone)}.c1 .logrow .m em{font-style:normal;color:var(--faint);font-size:11px}
+.c1 .st{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:2px;border:1px solid var(--seam);color:var(--dim)}
+.c1 .st.done{color:var(--go);border-color:rgba(91,167,114,.5)}
+.c1 .st.live{color:var(--lo);border-color:rgba(244,169,60,.6);box-shadow:var(--glow)}
+.c1 .st.sync{color:var(--sync);border-color:rgba(78,123,196,.55)}
+.c1 .st.queue{color:var(--faint)}
+@media(prefers-reduced-motion:no-preference){.c1 .st.live{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}}
+.c1 .prog{height:4px;border-radius:2px;background:#0d0a06;border:1px solid var(--seam);overflow:hidden;margin:2px 0 4px}
+.c1 .prog i{display:block;height:100%;width:62%;background:linear-gradient(90deg,var(--sync),var(--lo))}
+@media(prefers-reduced-motion:no-preference){.c1 .prog i{animation:prog 8s ease-in-out infinite}@keyframes prog{0%{width:34%}60%{width:78%}100%{width:34%}}}
+.c1 .caption{font-size:11px;color:var(--faint);margin-top:10px;font-family:var(--mono)}
+.c1 .radar{display:flex;flex-direction:column}
+.c1 .scope{position:relative;aspect-ratio:1;border-radius:50%;margin:12px auto 6px;width:min(100%,190px);background:radial-gradient(circle,#141008 0%,#0d0a06 70%);border:1px solid var(--seam);overflow:hidden;box-shadow:inset 0 0 30px rgba(0,0,0,.7)}
+.c1 .scope .rg{position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(circle at 50% 50%,transparent 0 26px,rgba(244,169,60,.09) 26px 27px)}
+.c1 .scope .cross::before,.c1 .scope .cross::after{content:"";position:absolute;background:rgba(244,169,60,.1)}
+.c1 .scope .cross::before{left:50%;top:0;bottom:0;width:1px}.c1 .scope .cross::after{top:50%;left:0;right:0;height:1px}
+.c1 .beam{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(244,169,60,.30),transparent 22%)}
+@media(prefers-reduced-motion:no-preference){.c1 .beam{animation:spin 5.5s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}}
+.c1 .blip{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--go);box-shadow:0 0 8px var(--go)}
+.c1 .blip.b2{background:var(--sync);box-shadow:0 0 8px var(--sync)}
+.c1 .blip.b3{background:var(--lo);box-shadow:0 0 8px var(--lo)}
+.c1 .blip span{position:absolute;left:10px;top:-4px;font-family:var(--mono);font-size:8px;letter-spacing:.1em;color:var(--dim);white-space:nowrap}
+.c1 .radar .caption{text-align:center;letter-spacing:.06em}
+.c1 .perf{display:flex;flex-direction:column}
+.c1 .bignum{display:flex;align-items:baseline;justify-content:space-between;margin-top:8px}
+.c1 .bignum span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.c1 .bignum b{font-family:var(--disp);font-size:46px;font-weight:600;color:var(--lo);text-shadow:0 0 18px rgba(232,131,12,.35)}
+.c1 .perf svg{width:100%;height:158px;margin-top:4px}
+.c1 .legend{display:flex;gap:16px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+.c1 .legend i{display:inline-block;width:10px;height:2px;vertical-align:3px;margin-right:6px}
+.c1 .musegrid{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;margin-top:12px}
+@media(max-width:860px){.c1 .musegrid{grid-template-columns:1fr}}
+.c1 .slider{position:relative;border:1px solid var(--seam);border-radius:6px;overflow:hidden}
+.c1 .slides{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.c1 .slide{min-width:100%}
+.c1 .simg{height:200px;background-size:cover;background-position:center;position:relative;filter:grayscale(1) contrast(1.06) brightness(.82)}
+.c1 .simg::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(232,131,12,.45),rgba(20,14,8,.72));mix-blend-mode:multiply}
+.c1 .simg::before{content:"";position:absolute;inset:0;z-index:1;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);opacity:.55}
+.c1 .scap{padding:9px 12px;font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.03em;border-top:1px solid var(--seam)}
+.c1 .scap b{color:var(--lo);font-weight:500}
+.c1 .sarrow{position:absolute;top:84px;width:30px;height:30px;border-radius:50%;border:1px solid var(--seam);background:rgba(10,8,5,.72);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3}
+.c1 .sarrow.prev{left:8px}.c1 .sarrow.next{right:8px}
+.c1 .sarrow .material-symbols-sharp{font-size:16px}
+.c1 .dots{position:absolute;bottom:46px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:3}
+.c1 .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer}
+.c1 .dots i.on{background:var(--lo);width:18px;border-radius:3px}
+.c1 .treatwrap{display:flex;flex-direction:column;gap:10px}
+.c1 .treatlabel{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.c1 .treat{display:grid;grid-template-columns:1fr 20px 1fr;align-items:center;gap:8px}
+.c1 .ba{border:1px solid var(--seam);border-radius:5px;overflow:hidden}
+.c1 .ba .bimg{height:116px;background-size:cover;background-position:center;position:relative}
+.c1 .ba.graded .bimg{filter:grayscale(1) contrast(1.06) brightness(.82)}
+.c1 .ba.graded .bimg::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(232,131,12,.45),rgba(20,14,8,.72));mix-blend-mode:multiply}
+.c1 .ba.graded .bimg::before{content:"";position:absolute;inset:0;z-index:1;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);opacity:.55}
+.c1 .ba .blab{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:5px 8px;border-top:1px solid var(--seam)}
+.c1 .treat .ar{color:var(--faint);text-align:center;font-family:var(--mono)}
+.c1 .treatnote{font-family:var(--mono);font-size:10px;color:var(--faint);line-height:1.55}
+.c1 .spec{display:flex;flex-direction:column;gap:13px;margin-top:12px}
+.c1 .specrow{display:grid;grid-template-columns:118px 1fr;gap:14px;align-items:baseline;border-top:1px solid rgba(58,48,32,.5);padding-top:12px}
+.c1 .specrow:first-child{border-top:0}
+.c1 .specrow .rl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);line-height:1.55}
+.c1 .specrow .rl b{display:block;color:var(--dim);font-weight:500}
+.c1 .s-disp{font-family:var(--disp);font-weight:700;font-size:31px;line-height:1}
+.c1 .s-body{font-family:var(--body);font-weight:400;font-size:15.5px;color:var(--bone)}
+.c1 .s-mono{font-family:var(--mono);font-weight:500;font-size:13.5px;color:var(--dim);letter-spacing:.02em}
+.c1 .glyphs{font-family:var(--disp);color:var(--faint);font-size:12.5px;letter-spacing:.05em;margin-top:6px}
+.c1 .typenote,.c1 .colornote,.c1 .note{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:10px;letter-spacing:.04em}
+.c1 .lamps{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.c1 .lamp{width:58px;cursor:pointer;text-align:center}
+.c1 .lamp .chip{height:44px;border-radius:4px;border:1px solid rgba(255,255,255,.08);box-shadow:0 3px 8px rgba(0,0,0,.4)}
+.c1 .lamp .cl{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:5px}
+.c1 .lamp.sel .chip{outline:1.5px solid var(--lo);outline-offset:2px}
+.c1 .ramp{margin-top:13px}
+.c1 .rlabel{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.c1 .steps{display:grid;grid-template-columns:repeat(5,1fr);border-radius:4px;overflow:hidden;border:1px solid var(--seam)}
+.c1 .step{height:44px;display:flex;align-items:flex-end;padding:5px 6px;font-family:var(--mono);font-size:8.5px}
+.c1 .inuse{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.c1 .inuse .u{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:2px;border:1px solid var(--seam)}
+.c1 .u-go{color:var(--go);border-color:rgba(91,167,114,.5)}
+.c1 .u-sync{color:var(--sync);border-color:rgba(78,123,196,.55)}
+.c1 .u-amber{color:var(--lo);border-color:rgba(244,169,60,.55)}
+.c1 .u-alert{color:var(--alert);border-color:rgba(210,84,46,.5)}
+.c1 .iconset{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.c1 .ico{aspect-ratio:1;border:1px solid var(--seam);border-radius:5px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 35%,var(--panel3),var(--panel));color:var(--dim)}
+.c1 .ico .material-symbols-sharp{font-size:25px}
+.c1 .motif .tile{height:150px;border:1px solid var(--seam);border-radius:5px;margin-top:12px;position:relative;overflow:hidden;background:#14100a}
+.c1 .motif .tile::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,220,170,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,220,170,.05) 1px,transparent 1px);background-size:24px 24px}
+.c1 .motif .tile::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.3) 0 1px,transparent 1px 3px)}
+.c1 .motif .tile svg{position:absolute;inset:0;width:100%;height:100%}
+.c1 .read .cells{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.c1 .read .cell{border:1px solid var(--seam);border-radius:5px;padding:11px 12px;background:rgba(0,0,0,.18)}
+.c1 .read .cell .k{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.c1 .read .cell p{font-size:12px;color:var(--dim);line-height:1.5}
+.c1 .read .cell p b{color:var(--bone);font-weight:600}
+.c1 .appgrid{display:grid;grid-template-columns:1.7fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:900px){.c1 .appgrid{grid-template-columns:1fr}}
+.c1 .browser{border:1px solid var(--seam);border-radius:8px;overflow:hidden;background:#0c0a06;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.c1 .chrome{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--seam)}
+.c1 .chrome .tl{display:flex;gap:6px}.c1 .chrome .tl i{width:10px;height:10px;border-radius:50%;background:var(--seam)}
+.c1 .chrome .url{font-family:var(--mono);font-size:11px;color:var(--faint);background:#0d0a06;border:1px solid var(--seam);border-radius:4px;padding:5px 12px;flex:1}
+.c1 .screen{display:grid;grid-template-columns:190px 1fr;min-height:290px}
+.c1 .sidebar{background:var(--panel);border-right:1px solid var(--seam);padding:16px 12px;display:flex;flex-direction:column;gap:4px}
+.c1 .navi{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:5px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.c1 .navi .material-symbols-sharp{font-size:16px}
+.c1 .navi.on{background:rgba(232,131,12,.12);color:var(--lo);box-shadow:inset 0 0 0 1px rgba(232,131,12,.3)}
+.c1 .stagep{padding:20px 22px}
+.c1 .stagep h3{font-family:var(--disp);font-weight:600;font-size:21px}
+.c1 .srow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.c1 .stat{background:var(--panel);border:1px solid var(--seam);border-radius:6px;padding:13px}
+.c1 .stat .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.c1 .stat .v{font-family:var(--disp);font-weight:600;font-size:25px;margin-top:6px}
+.c1 .stat .v small{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--go);margin-left:6px}
+.c1 .stat .v small.blue{color:var(--sync)}
+.c1 .ad{border:1px solid var(--seam);border-radius:8px;overflow:hidden;position:relative;min-height:290px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.c1 .adimg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.06) brightness(.7)}
+.c1 .adimg::after{content:"";position:absolute;inset:0;background:linear-gradient(170deg,rgba(232,131,12,.4),rgba(15,12,7,.88) 75%);mix-blend-mode:multiply}
+.c1 .adimg::before{content:"";position:absolute;inset:0;z-index:1;background:repeating-linear-gradient(0deg,rgba(0,0,0,.3) 0 1px,transparent 1px 3px);opacity:.6}
+.c1 .adbody{position:relative;z-index:2;padding:20px}
+.c1 .adeyebrow{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.c1 .ad h4{font-family:var(--disp);font-weight:700;font-size:30px;line-height:1;margin-top:8px;color:transparent;-webkit-text-stroke:1.1px var(--lo);paint-order:stroke;text-shadow:0 0 18px rgba(232,131,12,.4)}
+.c1 .ad p{font-size:12.5px;color:var(--dim);margin-top:8px;max-width:30ch}
+.c1 .adcta{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#1a1206;background:var(--accent);border:1px solid var(--lo);border-radius:3px;padding:7px 12px;font-weight:600}
+.c1 .foot{font-family:var(--mono);font-size:10.5px;color:var(--faint);text-align:center;margin-top:34px;letter-spacing:.08em}
+
+/* =========================================================
+   C2 — THE CONDUCTOR (exemplar-bar rebuild: the board IS a performance)
+   ========================================================= */
+.c2{
+  --paper:#F4EFE3;--paper2:#ECE5D3;--card:#FBF7EC;--ink:#221D15;--ink2:#57503F;--faint:#8D8368;
+  --gold:#A6742F;--goldlo:#C9A45C;--ox:#7A2E33;--line:#DBD2BC;
+  --disp:'DM Serif Display',Georgia,serif;--body:'Inter',system-ui,sans-serif;--nota:'Spectral',Georgia,serif;
+  --amp:.55;
+  color:var(--ink);font-family:var(--body);
+  background:radial-gradient(1000px 640px at 24% -10%,rgba(166,116,47,.09),transparent 60%),var(--paper);
+}
+/* motif: five staff lines running the whole ground */
+.c2::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.55;
+  background:repeating-linear-gradient(0deg,transparent 0 120px,rgba(34,29,21,.06) 120px 121px,transparent 121px 128px,rgba(34,29,21,.06) 128px 129px,transparent 129px 136px,rgba(34,29,21,.06) 136px 137px,transparent 137px 144px,rgba(34,29,21,.06) 144px 145px,transparent 145px 152px,rgba(34,29,21,.06) 152px 153px,transparent 153px 320px)}
+.c2::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(120,95,55,.09) 1px,transparent 1px);background-size:3px 3px;mix-blend-mode:multiply}
+.c2 .wrap{position:relative;z-index:2;max-width:1220px;margin:0 auto;padding:0 24px 72px 90px}
+body.compare .c2 .wrap{padding-left:24px}
+/* masthead — editorial double rule, centered programme voice */
+.c2 .rail{padding:16px 2px 12px;border-bottom:3px double var(--ink);margin-bottom:16px;display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.c2 .rail .id{font-family:var(--body);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c2 .rail .stats{display:flex;gap:22px;font-family:var(--nota);font-style:italic;font-size:13px;color:var(--ink2)}
+.c2 .rail b{font-style:normal;font-family:var(--body);font-weight:600;color:var(--ink)}
+.c2 .eyebrow{font-family:var(--body);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c2 .plate{font-family:var(--body);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--goldlo);padding:4px 10px;border-radius:999px;display:inline-block;font-weight:500}
+.c2 .panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;position:relative;box-shadow:0 1px 0 #fff inset,0 10px 26px rgba(90,70,30,.10)}
+.c2 .sechead{display:flex;align-items:baseline;gap:12px}
+.c2 .sechead h2{font-family:var(--disp);font-weight:400;font-size:19px;color:var(--ink)}
+.c2 .rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:7px 0 0}
+.c2 .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.c2 .hero{grid-column:span 12}
+.c2 .podium{grid-column:span 4}.c2 .score{grid-column:span 5}.c2 .ensemble{grid-column:span 3}
+.c2 .perf{grid-column:span 5}.c2 .muse{grid-column:span 7}
+.c2 .type{grid-column:span 6}.c2 .color{grid-column:span 6}
+.c2 .icons{grid-column:span 4}.c2 .motif{grid-column:span 3}.c2 .read{grid-column:span 5}
+.c2 .applied{grid-column:span 12}
+@media(max-width:960px){.c2 .bento>*{grid-column:1/-1 !important}}
+/* hero — CENTERED programme cover (its own archetype, not the console's) */
+.c2 .hero{min-height:360px;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:space-between;overflow:hidden}
+.c2 .hero .htop{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.c2 h1{font-family:var(--disp);font-weight:400;font-size:clamp(38px,5.4vw,68px);line-height:1.02;max-width:18ch;text-wrap:balance;margin-top:20px;position:relative;z-index:2}
+.c2 h1 .lead{font-style:italic;color:var(--gold)}
+.c2 .sub{color:var(--ink2);font-size:15.5px;max-width:56ch;margin-top:12px;position:relative;z-index:2}
+.c2 .hrow{display:flex;align-items:center;gap:18px;margin-top:20px;position:relative;z-index:2}
+.c2 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:.05em;padding:13px 22px;border-radius:999px;border:1px solid var(--ink);cursor:pointer;transition:.18s}
+.c2 .cta:hover{background:var(--gold);border-color:var(--gold)}
+.c2 .cta svg{width:15px;height:15px}
+.c2 .nowplay{font-family:var(--nota);font-style:italic;font-size:13.5px;color:var(--faint)}
+.c2 .nowplay b{font-style:normal;font-family:var(--body);font-weight:600;color:var(--gold);font-size:12px;letter-spacing:.04em}
+/* live waveform along hero base */
+.c2 .wave{width:100%;height:74px;margin-top:14px;position:relative;z-index:1}
+.c2 .wave svg{width:100%;height:100%}
+/* eq corner */
+.c2 .eq{position:absolute;top:20px;right:22px;display:flex;align-items:flex-end;gap:3px;height:34px;z-index:2}
+.c2 .eq i{width:4px;height:30%;border-radius:2px;background:var(--gold);transform-origin:bottom}
+.c2 .eq i:nth-child(odd){background:var(--ox)}
+@media(prefers-reduced-motion:no-preference){.c2 .eq i{animation:eq 1.1s ease-in-out infinite}
+.c2 .eq i:nth-child(2){animation-delay:.15s}.c2 .eq i:nth-child(3){animation-delay:.32s}.c2 .eq i:nth-child(4){animation-delay:.47s}
+.c2 .eq i:nth-child(5){animation-delay:.1s}.c2 .eq i:nth-child(6){animation-delay:.38s}.c2 .eq i:nth-child(7){animation-delay:.22s}.c2 .eq i:nth-child(8){animation-delay:.52s}
+@keyframes eq{0%,100%{transform:scaleY(calc(.25*var(--amp,1) + .1))}50%{transform:scaleY(calc(1.6*var(--amp,1)))}}}
+/* podium — dynamics hairpin + tempo + transport */
+.c2 .podium{display:flex;flex-direction:column;gap:14px}
+.c2 .podlabel{font-family:var(--body);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);text-align:center;font-weight:500}
+.c2 .hairwrap{padding:6px 2px 0}
+.c2 .hairpin{position:relative;height:74px;cursor:ew-resize}
+.c2 .hairpin svg{width:100%;height:100%;overflow:visible}
+.c2 .dynrow{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--nota);font-style:italic;font-size:14px;color:var(--faint);margin-top:4px}
+.c2 .dynrow b{font-style:italic;font-family:var(--nota);color:var(--ox);font-size:30px;font-weight:500}
+.c2 .metro{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:8px;padding:10px 14px;background:#fff}
+.c2 .pend{width:34px;height:44px;position:relative;flex:0 0 auto}
+.c2 .pend::before{content:"";position:absolute;left:50%;bottom:2px;width:26px;height:3px;margin-left:-13px;background:var(--line);border-radius:2px}
+.c2 .pendarm{position:absolute;left:50%;bottom:4px;width:2px;height:38px;background:var(--ink);transform-origin:bottom center;border-radius:1px}
+.c2 .pendarm::after{content:"";position:absolute;top:4px;left:-4px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+@media(prefers-reduced-motion:no-preference){.c2 .pendarm{animation:tick 1s ease-in-out infinite alternate}@keyframes tick{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}}
+.c2 .metro .ml{font-family:var(--nota);font-style:italic;font-size:13px;color:var(--ink2);line-height:1.5}
+.c2 .metro .ml b{font-style:normal;font-family:var(--body);font-weight:600;color:var(--ink)}
+.c2 .transport{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.c2 .tk{border:1px solid var(--line);border-radius:8px;padding:10px 6px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;background:#fff;box-shadow:inset 0 -3px 0 rgba(90,70,30,.08);transition:.12s}
+.c2 .tk:active{transform:translateY(1px)}
+.c2 .tk svg{width:17px;height:17px;color:var(--ink2)}
+.c2 .tk .kl{font-family:var(--nota);font-style:italic;font-size:11.5px;color:var(--faint)}
+.c2 .tk:hover{border-color:var(--goldlo)}
+.c2 .tk.on{border-color:var(--gold);background:rgba(166,116,47,.07)}
+.c2 .tk.on svg,.c2 .tk.on .kl{color:var(--gold)}
+/* the score — playhead performs the campaign */
+.c2 .scorebox{margin-top:12px;position:relative;border:1px solid var(--line);border-radius:8px;background:#fff;padding:20px 16px 12px;overflow:hidden}
+.c2 .stafflines{position:absolute;left:16px;right:16px;top:52px;height:48px;background:repeating-linear-gradient(0deg,transparent 0 11px,var(--line) 11px 12px)}
+.c2 .movement{display:flex;justify-content:space-between;font-family:var(--nota);font-style:italic;font-size:12px;color:var(--faint);margin-bottom:6px;position:relative;z-index:2}
+.c2 .playhead{position:absolute;top:40px;bottom:34px;left:16px;width:2px;background:var(--gold);box-shadow:0 0 8px rgba(166,116,47,.5);z-index:3;opacity:0}
+.c2 .playhead.show{opacity:1}
+.c2 .notes{position:relative;height:78px;display:flex;align-items:center;justify-content:space-around;z-index:2}
+.c2 .ni{display:flex;flex-direction:column;align-items:center;gap:6px}
+.c2 .nh{width:20px;height:14px;border-radius:50%;background:var(--ink);transform:rotate(-18deg);position:relative;transition:background .25s, box-shadow .25s}
+.c2 .nh::after{content:"";position:absolute;right:0;top:-19px;width:2px;height:22px;background:inherit}
+.c2 .ni.played .nh{background:var(--gold);box-shadow:0 0 10px rgba(166,116,47,.55)}
+.c2 .ni.oxx .nh{background:var(--ox)}
+.c2 .ni.oxx.played .nh{background:var(--gold)}
+.c2 .nl{font-family:var(--body);font-size:9.5px;color:var(--ink2);text-align:center;line-height:1.25}
+.c2 .nl b{display:block;font-family:var(--nota);font-style:italic;color:var(--faint);font-weight:400;font-size:9px}
+.c2 .setlist{display:flex;flex-direction:column;margin-top:10px}
+.c2 .slrow{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid rgba(219,210,188,.7);font-size:13px}
+.c2 .slrow:last-child{border-bottom:0}
+.c2 .slrow .mv{font-family:var(--nota);font-style:italic;font-size:12px;color:var(--faint)}
+.c2 .slrow .m{color:var(--ink)}
+.c2 .slrow .m em{font-style:normal;color:var(--faint);font-size:11px}
+.c2 .stx{font-family:var(--body);font-weight:500;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--faint)}
+.c2 .stx.done{color:var(--gold);border-color:var(--goldlo)}
+.c2 .stx.play{color:#fff;background:var(--ox);border-color:var(--ox)}
+.c2 .stx.cue{color:var(--ink2);border-color:var(--ink2)}
+.c2 .caption{font-family:var(--nota);font-style:italic;font-size:12px;color:var(--faint);margin-top:10px}
+/* ensemble — orchestra seating, channels as sections */
+.c2 .ensemble{display:flex;flex-direction:column}
+.c2 .seating{position:relative;margin:14px auto 4px;width:min(100%,200px);aspect-ratio:1.15}
+.c2 .arc{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);border:1px dashed var(--line);border-bottom:0;border-radius:50% 50% 0 0/100% 100% 0 0}
+.c2 .arc.a1{width:90px;height:45px}.c2 .arc.a2{width:140px;height:70px}.c2 .arc.a3{width:190px;height:95px}
+.c2 .seat{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--ink2)}
+.c2 .seat.gold{background:var(--gold)}.c2 .seat.oxs{background:var(--ox)}
+@media(prefers-reduced-motion:no-preference){.c2 .seat{animation:breathe 3s ease-in-out infinite}
+.c2 .seat:nth-child(3n){animation-delay:.6s}.c2 .seat:nth-child(3n+1){animation-delay:1.2s}
+@keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}}
+.c2 .podiumdot{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px rgba(166,116,47,.5)}
+.c2 .seatkey{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:8px;font-family:var(--body);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.c2 .seatkey i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;vertical-align:0}
+.c2 .ensemble .caption{text-align:center}
+/* crescendo chart */
+.c2 .perf{display:flex;flex-direction:column}
+.c2 .bignum{display:flex;align-items:baseline;justify-content:space-between;margin-top:8px}
+.c2 .bignum span{font-family:var(--body);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c2 .bignum b{font-family:var(--disp);font-size:46px;font-weight:400;color:var(--gold)}
+.c2 .perf svg{width:100%;height:158px;margin-top:4px}
+.c2 .legend{display:flex;gap:16px;font-family:var(--body);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:8px;font-weight:500}
+.c2 .legend i{display:inline-block;width:10px;height:2px;vertical-align:3px;margin-right:6px}
+/* muse */
+.c2 .musegrid{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;margin-top:12px}
+@media(max-width:860px){.c2 .musegrid{grid-template-columns:1fr}}
+.c2 .slider{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.c2 .slides{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.c2 .slide{min-width:100%}
+.c2 .simg{height:200px;background-size:cover;background-position:center;position:relative;filter:sepia(.45) contrast(.98) brightness(1.02) saturate(.85)}
+.c2 .simg::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(166,116,47,.26),rgba(244,239,227,.32));mix-blend-mode:multiply}
+.c2 .simg::before{content:"";position:absolute;inset:0;z-index:1;background-image:radial-gradient(rgba(120,95,55,.16) 1px,transparent 1px);background-size:3px 3px;opacity:.6}
+.c2 .scap{padding:9px 12px;font-family:var(--nota);font-style:italic;font-size:11.5px;color:var(--ink2);border-top:1px solid var(--line)}
+.c2 .scap b{font-style:normal;font-family:var(--body);font-weight:600;color:var(--gold);font-size:10.5px}
+.c2 .sarrow{position:absolute;top:84px;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.85);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3}
+.c2 .sarrow.prev{left:8px}.c2 .sarrow.next{right:8px}
+.c2 .sarrow svg{width:15px;height:15px}
+.c2 .dots{position:absolute;bottom:46px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:3}
+.c2 .dots i{width:6px;height:6px;border-radius:50%;background:rgba(34,29,21,.3);cursor:pointer}
+.c2 .dots i.on{background:var(--gold);width:18px;border-radius:3px}
+.c2 .treatwrap{display:flex;flex-direction:column;gap:10px}
+.c2 .treatlabel{font-family:var(--body);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c2 .treat{display:grid;grid-template-columns:1fr 20px 1fr;align-items:center;gap:8px}
+.c2 .ba{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+.c2 .ba .bimg{height:116px;background-size:cover;background-position:center;position:relative}
+.c2 .ba.graded .bimg{filter:sepia(.45) contrast(.98) brightness(1.02) saturate(.85)}
+.c2 .ba.graded .bimg::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(166,116,47,.26),rgba(244,239,227,.32));mix-blend-mode:multiply}
+.c2 .ba.graded .bimg::before{content:"";position:absolute;inset:0;z-index:1;background-image:radial-gradient(rgba(120,95,55,.16) 1px,transparent 1px);background-size:3px 3px;opacity:.6}
+.c2 .ba .blab{font-family:var(--body);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:5px 8px;border-top:1px solid var(--line);font-weight:500}
+.c2 .treat .ar{color:var(--faint);text-align:center}
+.c2 .treatnote{font-family:var(--nota);font-style:italic;font-size:11.5px;color:var(--faint);line-height:1.55}
+/* type */
+.c2 .spec{display:flex;flex-direction:column;gap:13px;margin-top:12px}
+.c2 .specrow{display:grid;grid-template-columns:128px 1fr;gap:14px;align-items:baseline;border-top:1px solid rgba(219,210,188,.7);padding-top:12px}
+.c2 .specrow:first-child{border-top:0}
+.c2 .specrow .rl{font-family:var(--body);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);line-height:1.55;font-weight:500}
+.c2 .specrow .rl b{display:block;color:var(--ink2);font-weight:600}
+.c2 .s-disp{font-family:var(--disp);font-weight:400;font-size:33px;line-height:1.05;color:var(--ink)}
+.c2 .s-body{font-family:var(--body);font-weight:400;font-size:15px;color:var(--ink2)}
+.c2 .s-nota{font-family:var(--nota);font-style:italic;font-size:16px;color:var(--gold)}
+.c2 .glyphs{font-family:var(--disp);color:var(--faint);font-size:14px;margin-top:6px}
+.c2 .typenote,.c2 .colornote,.c2 .note{font-family:var(--nota);font-style:italic;font-size:11.5px;color:var(--faint);margin-top:10px}
+/* color */
+.c2 .lamps{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.c2 .lamp{width:60px;cursor:pointer;text-align:center}
+.c2 .lamp .chip{height:44px;border-radius:6px;border:1px solid rgba(34,29,21,.12)}
+.c2 .lamp .cl{font-family:var(--body);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:5px;font-weight:500}
+.c2 .lamp.sel .chip{outline:1.5px solid var(--gold);outline-offset:2px}
+.c2 .ramp{margin-top:13px}
+.c2 .rlabel{font-family:var(--body);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin-bottom:6px;font-weight:500}
+.c2 .steps{display:grid;grid-template-columns:repeat(5,1fr);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.c2 .step{height:44px;display:flex;align-items:flex-end;padding:5px 6px;font-family:var(--body);font-size:8.5px}
+.c2 .inuse{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.c2 .inuse .u{font-family:var(--body);font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--line);font-weight:500}
+.c2 .u-gold{color:var(--gold);border-color:var(--goldlo)}
+.c2 .u-ox{color:var(--ox);border-color:rgba(122,46,51,.45)}
+.c2 .u-ink{color:var(--ink2);border-color:var(--ink2)}
+/* icons / motif / read */
+.c2 .iconset{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.c2 .ico{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;background:#fff;color:var(--ink2)}
+.c2 .ico svg{width:25px;height:25px;stroke-width:1.4}
+.c2 .motif .tile{height:150px;border:1px solid var(--line);border-radius:8px;margin-top:12px;position:relative;overflow:hidden;background:#fff}
+.c2 .motif .tile::before{content:"";position:absolute;left:10%;right:10%;top:34%;height:46px;background:repeating-linear-gradient(0deg,transparent 0 10px,var(--line) 10px 11px)}
+.c2 .motif .tile svg{position:absolute;inset:0;width:100%;height:100%}
+.c2 .read .cells{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.c2 .read .cell{border:1px solid var(--line);border-radius:8px;padding:11px 12px;background:#fff}
+.c2 .read .cell .k{font-family:var(--body);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:5px;font-weight:500}
+.c2 .read .cell p{font-size:12px;color:var(--ink2);line-height:1.5}
+.c2 .read .cell p b{color:var(--ink);font-weight:600}
+/* applied */
+.c2 .appgrid{display:grid;grid-template-columns:1.7fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:900px){.c2 .appgrid{grid-template-columns:1fr}}
+.c2 .browser{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 16px 40px rgba(90,70,30,.14)}
+.c2 .chrome{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--paper2);border-bottom:1px solid var(--line)}
+.c2 .chrome .tl{display:flex;gap:6px}.c2 .chrome .tl i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.c2 .chrome .url{font-family:var(--body);font-size:11px;color:var(--faint);background:#fff;border:1px solid var(--line);border-radius:6px;padding:5px 12px;flex:1}
+.c2 .screen{display:grid;grid-template-columns:190px 1fr;min-height:290px;background:var(--card)}
+.c2 .sidebar{background:var(--paper2);border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:4px}
+.c2 .navi{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;font-family:var(--body);font-size:12.5px;color:var(--ink2)}
+.c2 .navi svg{width:15px;height:15px;stroke-width:1.6}
+.c2 .navi.on{background:rgba(166,116,47,.1);color:var(--gold)}
+.c2 .stagep{padding:20px 22px}
+.c2 .stagep h3{font-family:var(--disp);font-weight:400;font-size:23px;color:var(--ink)}
+.c2 .srow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.c2 .stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:13px}
+.c2 .stat .k{font-family:var(--body);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c2 .stat .v{font-family:var(--disp);font-weight:400;font-size:25px;margin-top:6px;color:var(--ink)}
+.c2 .stat .v small{font-family:var(--nota);font-style:italic;font-size:12px;color:var(--gold);margin-left:6px}
+.c2 .stat .v small.oxc{color:var(--ox)}
+.c2 .ad{border:1px solid var(--line);border-radius:10px;overflow:hidden;position:relative;min-height:290px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 16px 40px rgba(90,70,30,.16)}
+.c2 .adimg{position:absolute;inset:0;background-size:cover;background-position:center;filter:sepia(.45) contrast(1.0) brightness(.95) saturate(.85)}
+.c2 .adimg::after{content:"";position:absolute;inset:0;background:linear-gradient(175deg,rgba(166,116,47,.18),rgba(244,239,227,.92) 78%)}
+.c2 .adbody{position:relative;z-index:2;padding:20px}
+.c2 .adeyebrow{font-family:var(--body);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);font-weight:500}
+.c2 .ad h4{font-family:var(--disp);font-weight:400;font-size:31px;line-height:1.02;margin-top:8px;color:var(--ink)}
+.c2 .ad h4 em{color:var(--ox)}
+.c2 .ad p{font-size:12.5px;color:var(--ink2);margin-top:8px;max-width:32ch}
+.c2 .adcta{display:inline-block;margin-top:12px;font-family:var(--body);font-size:10.5px;letter-spacing:.08em;color:var(--paper);background:var(--ink);border-radius:999px;padding:8px 14px;font-weight:500}
+.c2 .foot{font-family:var(--nota);font-style:italic;font-size:12px;color:var(--faint);text-align:center;margin-top:34px}
+
+/* =========================================================
+   C3 — MAGISTER (exemplar-bar rebuild: the board GOVERNS)
+   ========================================================= */
+.c3{
+  --porph:#171019;--panel:#211724;--panel2:#281C2C;--panel3:#312236;--seam:#3E2E42;--seam2:#54405A;
+  --marble:#EDE6ED;--dim:#B9A9B8;--faint:#8A7889;
+  --bronze:#C09758;--bronzelo:#E4CE9C;--ox:#8A3340;
+  --disp:'Inter',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif;
+  --sealp:0;
+  color:var(--marble);font-family:var(--body);
+  background:radial-gradient(1000px 640px at 50% -12%,rgba(192,151,88,.11),transparent 62%),var(--porph);
+}
+/* motif: vertical fluting run through the whole ground */
+.c3::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.6;
+  background:repeating-linear-gradient(90deg,transparent 0 58px,rgba(237,230,237,.03) 58px 59px,transparent 59px 64px,rgba(237,230,237,.03) 64px 65px,transparent 65px 120px)}
+.c3::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.45;
+  background-image:radial-gradient(rgba(192,151,88,.07) 1px,transparent 1px);background-size:3px 3px;mix-blend-mode:screen}
+.c3 .wrap{position:relative;z-index:2;max-width:1220px;margin:0 auto;padding:0 24px 72px 90px}
+body.compare .c3 .wrap{padding-left:24px}
+/* architrave — a SOLID bronze band, nothing like 01's rail or 02's double rule */
+.c3 .rail{background:linear-gradient(180deg,var(--bronzelo),var(--bronze));color:#211724;padding:12px 18px;margin:14px 0 18px;display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;box-shadow:0 3px 0 #211724,0 4px 0 rgba(192,151,88,.5),0 10px 24px rgba(0,0,0,.4)}
+.c3 .rail .id{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#3a2b1a;font-weight:600}
+.c3 .rail .stats{display:flex;gap:22px;font-size:11px;letter-spacing:.08em;color:#4a3722}
+.c3 .rail b{font-weight:700;color:#211724}
+.c3 .rail .sealed b{color:#5e1f28}
+.c3 .eyebrow{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c3 .plate{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);border:1px solid rgba(192,151,88,.45);padding:4px 10px;display:inline-block;font-weight:500;border-radius:2px}
+/* carved slab: squared, double-edged like inscribed stone — not 01's machined bezel, not 02's soft card */
+.c3 .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--seam2);border-radius:0;padding:22px;position:relative;box-shadow:inset 0 0 0 1px #140e17,inset 0 0 0 2px rgba(192,151,88,.14),0 14px 34px rgba(0,0,0,.55)}
+.c3 .panel::before{content:"";position:absolute;top:6px;left:6px;right:6px;height:3px;background:linear-gradient(90deg,var(--bronze),rgba(192,151,88,.15));opacity:.6}
+.c3 .sechead{display:flex;align-items:baseline;gap:12px}
+.c3 .sechead h2{font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--marble)}
+.c3 .sechead h2::before{content:"§ ";color:var(--bronze);font-weight:700}
+.c3 .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+/* the STELE: a tall vertical hero spanning two rows — monumentality is vertical */
+.c3 .hero{grid-column:span 5;grid-row:span 2}
+.c3 .mandate{grid-column:span 4}.c3 .held{grid-column:span 3}
+.c3 .register{grid-column:span 7}
+.c3 .perf{grid-column:span 5}.c3 .muse{grid-column:span 7}
+.c3 .type{grid-column:span 6}.c3 .color{grid-column:span 6}
+.c3 .icons{grid-column:span 4}.c3 .motif{grid-column:span 3}.c3 .read{grid-column:span 5}
+.c3 .applied{grid-column:span 12}
+@media(max-width:960px){.c3 .bento>*{grid-column:1/-1 !important;grid-row:auto !important}}
+/* hero — the stele: vertical, engraved, stacked */
+.c3 .hero{min-height:560px;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:space-between;overflow:hidden;
+  border-top:6px solid var(--bronze)}
+.c3 .colbg{position:absolute;inset:0;z-index:0;opacity:.55}
+.c3 .hero .htop{width:100%;display:flex;flex-direction:column;align-items:center;gap:10px;position:relative;z-index:2}
+.c3 .heronum{font-weight:700;font-size:15px;letter-spacing:.5em;color:var(--bronze);margin-top:10px;position:relative;z-index:2}
+.c3 h1{font-weight:700;font-size:clamp(44px,4.6vw,64px);line-height:1.02;letter-spacing:.02em;text-transform:uppercase;max-width:10ch;text-wrap:balance;margin-top:14px;position:relative;z-index:2;
+  color:#D9CCD8;text-shadow:0 -1px 0 rgba(0,0,0,.85),0 1px 0 rgba(237,230,237,.13)}
+.c3 h1 .lead{color:var(--bronze);text-shadow:0 -1px 0 rgba(0,0,0,.8),0 1px 0 rgba(228,206,156,.25)}
+.c3 .inscribe{position:relative;z-index:2;width:120px;height:2px;background:var(--bronze);margin-top:16px;transform:scaleX(0);transform-origin:center}
+@media(prefers-reduced-motion:no-preference){.c3 .inscribe{animation:inscribe 1.2s .3s ease-out forwards}@keyframes inscribe{to{transform:scaleX(1)}}}
+.c3 .sub{color:var(--dim);font-size:15.5px;max-width:54ch;margin-top:14px;position:relative;z-index:2}
+.c3 .hrow{display:flex;align-items:center;gap:18px;margin-top:22px;position:relative;z-index:2}
+.c3 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--bronze);color:#211724;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:13px 22px;border-radius:2px;border:1px solid var(--bronzelo);cursor:pointer;transition:.15s}
+.c3 .cta .material-symbols-rounded{font-size:16px}
+.c3 .cta.armed{background:#211724;color:var(--bronze)}
+.c3 .standing{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.c3 .standing b{color:var(--marble);font-weight:600}
+/* mandate — the seal, improved */
+.c3 .mandate{display:flex;flex-direction:column;gap:14px;align-items:center}
+.c3 .podlabel{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);text-align:center;font-weight:500}
+.c3 .seal{width:168px;height:168px;position:relative;cursor:pointer;user-select:none;-webkit-user-select:none}
+.c3 .seal svg.ringy{position:absolute;inset:0;transform:rotate(-90deg)}
+.c3 .seal .track{fill:none;stroke:var(--seam);stroke-width:5}
+.c3 .seal .prog{fill:none;stroke:var(--bronze);stroke-width:5;stroke-linecap:round;stroke-dasharray:490;stroke-dashoffset:490;filter:drop-shadow(0 0 6px rgba(192,151,88,.6))}
+.c3 .seal.holding .prog{transition:stroke-dashoffset 1.25s linear;stroke-dashoffset:0}
+.c3 .seal .face{position:absolute;inset:26px;border-radius:50%;background:radial-gradient(circle at 50% 36%,#3a2941,#1d1420);border:1px solid var(--seam2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;transition:transform .12s}
+.c3 .seal .face .material-symbols-rounded{font-size:30px;color:var(--dim);transition:color .3s}
+.c3 .seal .face b{font-size:15px;letter-spacing:.2em;color:var(--marble);font-weight:600}
+.c3 .seal .face span{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
+.c3 .seal.stamp .face{animation:stampdown .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes stampdown{0%{transform:scale(1)}35%{transform:scale(.88)}70%{transform:scale(1.04)}100%{transform:scale(1)}}
+.c3 .seal .ripple{position:absolute;inset:14px;border-radius:50%;border:2px solid var(--bronze);opacity:0;pointer-events:none}
+.c3 .seal.stamp .ripple{animation:rip 1s ease-out}
+@keyframes rip{0%{opacity:.8;transform:scale(.8)}100%{opacity:0;transform:scale(1.5)}}
+.c3 .seal.done .face{border-color:var(--bronze);box-shadow:0 0 24px rgba(192,151,88,.35)}
+.c3 .seal.done .face .material-symbols-rounded{color:var(--bronze)}
+.c3 .seal.done .face b{color:var(--bronze)}
+.c3 .authrow{width:100%;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.c3 .authrow b{color:var(--bronze);font-weight:600}
+.c3 .gavelkeys{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%}
+.c3 .gk{border:1px solid var(--seam);border-radius:2px;padding:10px 6px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;background:linear-gradient(180deg,var(--panel3),#1a1220);box-shadow:inset 0 -3px 0 rgba(0,0,0,.4);transition:.12s}
+.c3 .gk:active{transform:translateY(1px)}
+.c3 .gk .material-symbols-rounded{font-size:18px;color:var(--dim)}
+.c3 .gk .kl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c3 .gk.on{border-color:var(--bronze)}
+.c3 .gk.on .material-symbols-rounded,.c3 .gk.on .kl{color:var(--bronze)}
+/* register — the product's work, codified; cascades on seal */
+.c3 .ledger{display:flex;flex-direction:column;margin-top:12px}
+.c3 .lrow{display:grid;grid-template-columns:24px 1fr auto;align-items:center;gap:12px;padding:10px 2px;border-bottom:1px solid rgba(62,46,66,.6);font-size:13px}
+.c3 .lrow:last-child{border-bottom:0}
+.c3 .lrow .material-symbols-rounded{font-size:17px;color:var(--dim)}
+.c3 .lrow .m{color:var(--marble)}
+.c3 .lrow .m em{font-style:normal;color:var(--faint);font-size:11px}
+.c3 .stz{font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:2px;border:1px solid var(--seam);color:var(--dim);font-weight:500;transition:all .3s}
+.c3 .stz.rat{color:var(--bronze);border-color:rgba(192,151,88,.55)}
+.c3 .stz.rev{color:var(--marble);border-color:var(--seam2)}
+.c3 .stz.void{color:var(--ox);border-color:rgba(138,51,64,.55)}
+.c3 .caption{font-size:11px;color:var(--faint);margin-top:10px;letter-spacing:.04em}
+/* held to standard — compliance bars */
+.c3 .held{display:flex;flex-direction:column}
+.c3 .bars{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.c3 .brow .bl{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;font-weight:500}
+.c3 .brow .bl i{font-style:normal;color:var(--faint)}
+.c3 .btrack{position:relative;height:8px;background:#140e17;border:1px solid var(--seam);border-radius:2px}
+.c3 .btrack::after{content:"";position:absolute;left:70%;top:-3px;bottom:-3px;width:1px;background:var(--bronzelo);opacity:.8}
+.c3 .bfill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--bronze);border-radius:1px;transition:width 1.1s ease-out}
+.c3 .bfill.under{background:var(--ox)}
+.c3 .held .caption{text-align:left}
+/* benchmark chart */
+.c3 .perf{display:flex;flex-direction:column}
+.c3 .bignum{display:flex;align-items:baseline;justify-content:space-between;margin-top:8px}
+.c3 .bignum span{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c3 .bignum b{font-size:46px;font-weight:700;letter-spacing:-.02em;color:var(--bronze)}
+/* plinths — rising stone columns, not a line chart */
+.c3 .plinths{position:relative;display:flex;align-items:flex-end;gap:10px;height:158px;margin-top:8px;padding:0 2px;border-bottom:1px solid var(--seam2)}
+.c3 .standardline{position:absolute;left:0;right:0;bottom:62%;height:0;border-top:1.5px dashed var(--bronzelo);opacity:.8;z-index:2;pointer-events:none}
+.c3 .standardline span{position:absolute;right:0;top:-14px;font-size:7.5px;letter-spacing:.24em;color:var(--faint);font-weight:600}
+.c3 .pl{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.c3 .pl i{display:block;width:100%;height:0;background:linear-gradient(180deg,var(--bronzelo),var(--bronze) 30%,#8a6c3c);border:1px solid rgba(228,206,156,.35);border-bottom:0;box-shadow:inset 0 2px 0 rgba(255,244,214,.35);transition:height 1.1s cubic-bezier(.2,.7,.3,1)}
+.c3 .pl.under i{background:linear-gradient(180deg,#AB5A66,var(--ox) 30%,#5e2129);border-color:rgba(171,90,102,.4)}
+.c3 .pl.cap i{box-shadow:inset 0 3px 0 var(--bronzelo),0 0 18px rgba(192,151,88,.35)}
+.c3 .pl b{font-size:8.5px;letter-spacing:.16em;color:var(--faint);font-weight:600;text-transform:uppercase;margin-top:6px}
+.c3 .legend{display:flex;gap:16px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:8px;font-weight:500}
+.c3 .legend i{display:inline-block;width:10px;height:2px;vertical-align:3px;margin-right:6px}
+/* muse */
+.c3 .musegrid{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;margin-top:12px}
+@media(max-width:860px){.c3 .musegrid{grid-template-columns:1fr}}
+.c3 .slider{position:relative;border:1px solid var(--seam);border-radius:2px;overflow:hidden}
+.c3 .slides{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.c3 .slide{min-width:100%}
+.c3 .simg{height:200px;background-size:cover;background-position:center;position:relative;filter:grayscale(1) contrast(1.05) brightness(.85)}
+.c3 .simg::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(138,51,64,.38),rgba(23,16,25,.74));mix-blend-mode:multiply}
+.c3 .simg::before{content:"";position:absolute;inset:0;z-index:1;background-image:radial-gradient(rgba(192,151,88,.13) 1px,transparent 1px);background-size:3px 3px;opacity:.5}
+.c3 .scap{padding:9px 12px;font-size:11px;color:var(--dim);letter-spacing:.02em;border-top:1px solid var(--seam)}
+.c3 .scap b{color:var(--bronze);font-weight:600;font-size:10.5px;letter-spacing:.06em}
+.c3 .sarrow{position:absolute;top:84px;width:30px;height:30px;border-radius:2px;border:1px solid var(--seam);background:rgba(23,16,25,.78);color:var(--marble);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3}
+.c3 .sarrow.prev{left:8px}.c3 .sarrow.next{right:8px}
+.c3 .sarrow .material-symbols-rounded{font-size:16px}
+.c3 .dots{position:absolute;bottom:46px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:3}
+.c3 .dots i{width:6px;height:6px;border-radius:50%;background:rgba(237,230,237,.35);cursor:pointer}
+.c3 .dots i.on{background:var(--bronze);width:18px;border-radius:3px}
+.c3 .treatwrap{display:flex;flex-direction:column;gap:10px}
+.c3 .treatlabel{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c3 .treat{display:grid;grid-template-columns:1fr 20px 1fr;align-items:center;gap:8px}
+.c3 .ba{border:1px solid var(--seam);border-radius:2px;overflow:hidden}
+.c3 .ba .bimg{height:116px;background-size:cover;background-position:center;position:relative}
+.c3 .ba.graded .bimg{filter:grayscale(1) contrast(1.05) brightness(.85)}
+.c3 .ba.graded .bimg::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(138,51,64,.38),rgba(23,16,25,.74));mix-blend-mode:multiply}
+.c3 .ba.graded .bimg::before{content:"";position:absolute;inset:0;z-index:1;background-image:radial-gradient(rgba(192,151,88,.13) 1px,transparent 1px);background-size:3px 3px;opacity:.5}
+.c3 .ba .blab{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);padding:5px 8px;border-top:1px solid var(--seam);font-weight:500}
+.c3 .treat .ar{color:var(--faint);text-align:center}
+.c3 .treatnote{font-size:10.5px;color:var(--faint);line-height:1.55}
+/* type — ONE neutral family, hierarchy by weight/size/tracking */
+.c3 .spec{display:flex;flex-direction:column;gap:13px;margin-top:12px}
+.c3 .specrow{display:grid;grid-template-columns:128px 1fr;gap:14px;align-items:baseline;border-top:1px solid rgba(62,46,66,.6);padding-top:12px}
+.c3 .specrow:first-child{border-top:0}
+.c3 .specrow .rl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);line-height:1.55;font-weight:500}
+.c3 .specrow .rl b{display:block;color:var(--dim);font-weight:600}
+.c3 .s-disp{font-weight:700;font-size:32px;line-height:1;letter-spacing:-.028em;color:var(--marble)}
+.c3 .s-body{font-weight:400;font-size:15px;color:var(--dim)}
+.c3 .s-label{font-weight:600;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze)}
+.c3 .glyphs{color:var(--faint);font-size:13px;letter-spacing:0;margin-top:6px;font-weight:500}
+.c3 .typenote,.c3 .colornote,.c3 .note{font-size:10.5px;color:var(--faint);margin-top:10px;letter-spacing:.03em}
+/* color */
+.c3 .lamps{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.c3 .lamp{width:60px;cursor:pointer;text-align:center}
+.c3 .lamp .chip{height:44px;border-radius:2px;border:1px solid rgba(237,230,237,.1)}
+.c3 .lamp .cl{font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:5px;font-weight:500}
+.c3 .lamp.sel .chip{outline:1.5px solid var(--bronze);outline-offset:2px}
+.c3 .ramp{margin-top:13px}
+.c3 .rlabel{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;font-weight:500}
+.c3 .steps{display:grid;grid-template-columns:repeat(5,1fr);border-radius:2px;overflow:hidden;border:1px solid var(--seam)}
+.c3 .step{height:44px;display:flex;align-items:flex-end;padding:5px 6px;font-size:8.5px}
+.c3 .inuse{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.c3 .inuse .u{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:2px;border:1px solid var(--seam);font-weight:500}
+.c3 .u-br{color:var(--bronze);border-color:rgba(192,151,88,.5)}
+.c3 .u-oxz{color:var(--ox);border-color:rgba(138,51,64,.5)}
+.c3 .u-mb{color:var(--dim);border-color:var(--seam2)}
+/* icons / motif / read */
+.c3 .iconset{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.c3 .ico{aspect-ratio:1;border:1px solid var(--seam);border-radius:2px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 35%,var(--panel3),var(--panel));color:var(--dim)}
+.c3 .ico .material-symbols-rounded{font-size:26px}
+.c3 .motif .tile{height:150px;border:1px solid var(--seam);border-radius:2px;margin-top:12px;position:relative;overflow:hidden;background:#140e17}
+.c3 .motif .tile::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(237,230,237,.05) 22px 23px)}
+.c3 .motif .tile svg{position:absolute;inset:0;width:100%;height:100%}
+.c3 .read .cells{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.c3 .read .cell{border:1px solid var(--seam);border-radius:2px;padding:11px 12px;background:rgba(0,0,0,.2)}
+.c3 .read .cell .k{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:5px;font-weight:500}
+.c3 .read .cell p{font-size:12px;color:var(--dim);line-height:1.5}
+.c3 .read .cell p b{color:var(--marble);font-weight:600}
+/* applied */
+.c3 .appgrid{display:grid;grid-template-columns:1.7fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:900px){.c3 .appgrid{grid-template-columns:1fr}}
+.c3 .browser{border:1px solid var(--seam);border-radius:2px;overflow:hidden;background:#130d16;box-shadow:0 18px 44px rgba(0,0,0,.55)}
+.c3 .chrome{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--seam)}
+.c3 .chrome .tl{display:flex;gap:6px}.c3 .chrome .tl i{width:10px;height:10px;border-radius:50%;background:var(--seam)}
+.c3 .chrome .url{font-size:11px;color:var(--faint);background:#0f0a12;border:1px solid var(--seam);border-radius:2px;padding:5px 12px;flex:1}
+.c3 .screen{display:grid;grid-template-columns:190px 1fr;min-height:290px}
+.c3 .sidebar{background:var(--panel);border-right:1px solid var(--seam);padding:16px 12px;display:flex;flex-direction:column;gap:4px}
+.c3 .navi{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:2px;font-size:12px;color:var(--dim)}
+.c3 .navi .material-symbols-rounded{font-size:16px}
+.c3 .navi.on{background:rgba(192,151,88,.12);color:var(--bronze);box-shadow:inset 0 0 0 1px rgba(192,151,88,.3)}
+.c3 .stagep{padding:20px 22px}
+.c3 .stagep h3{font-weight:700;font-size:21px;letter-spacing:-.02em}
+.c3 .srow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.c3 .stat{background:var(--panel);border:1px solid var(--seam);border-radius:2px;padding:13px}
+.c3 .stat .k{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.c3 .stat .v{font-weight:700;font-size:25px;margin-top:6px;letter-spacing:-.02em}
+.c3 .stat .v small{font-size:11px;font-weight:500;color:var(--bronze);margin-left:6px;letter-spacing:0}
+.c3 .stat .v small.oxm{color:var(--ox)}
+.c3 .ad{border:1px solid var(--seam);border-radius:2px;overflow:hidden;position:relative;min-height:290px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 18px 44px rgba(0,0,0,.55)}
+.c3 .adimg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.05) brightness(.62)}
+.c3 .adimg::after{content:"";position:absolute;inset:0;background:linear-gradient(172deg,rgba(138,51,64,.32),rgba(23,16,25,.92) 78%);mix-blend-mode:multiply}
+.c3 .adbody{position:relative;z-index:2;padding:20px}
+.c3 .adeyebrow{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);font-weight:500}
+.c3 .ad h4{font-weight:700;font-size:29px;line-height:1;letter-spacing:-.025em;margin-top:8px;color:var(--marble)}
+.c3 .ad h4 span{color:var(--bronze)}
+.c3 .ad p{font-size:12.5px;color:var(--dim);margin-top:8px;max-width:30ch}
+.c3 .adcta{display:inline-block;margin-top:12px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#211724;background:var(--bronze);border-radius:2px;padding:8px 13px;font-weight:600}
+.c3 .foot{font-size:10.5px;color:var(--faint);text-align:center;margin-top:34px;letter-spacing:.14em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<nav class="cnav">
+  <button class="on" data-goto="1"><span class="n">01</span><span class="nm">Mission Control</span></button>
+  <button data-goto="2"><span class="n">02</span><span class="nm">The Conductor</span></button>
+  <button data-goto="3"><span class="n">03</span><span class="nm">Magister</span></button>
+  <button class="cmp" data-compare><span class="n">⇆</span><span class="nm">Compare</span></button>
+</nav>
+
+<div class="stage">
+
+<!-- ============ C1 · MISSION CONTROL ============ -->
+<div class="concept c1 active" data-c="1">
+  <svg class="bgarc" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+    <path d="M-40 860 C 380 800, 760 560, 1080 220 S 1420 -80, 1480 -140" fill="none" stroke="#E8830C" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="2 8"/>
+    <path d="M-40 900 C 420 860, 820 640, 1180 300" fill="none" stroke="#5a4a2c" stroke-opacity=".5" stroke-width="1"/>
+  </svg>
+  <div class="sweep" aria-hidden="true"></div>
+  <div class="syncflash" data-syncflash aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="rail">
+      <div class="id">Creative Direction · 01 — Mission Control</div>
+      <div class="stats">
+        <span><span class="dot"></span>SYSTEMS NOMINAL</span>
+        <span>T+ <b data-clock>04:12:58</b></span>
+        <span>CH <b>07/07</b></span>
+        <span class="thr">THROTTLE <b data-railthr>62%</b></span>
+      </div>
+    </div>
+    <div class="bento">
+      <section class="hero panel">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="glowwash"></div>
+        <svg class="traj" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMid slice">
+          <path d="M-20 350 C 320 330, 620 240, 860 110 S 1160 -30, 1240 -70" fill="none" stroke="#E8830C" stroke-opacity=".45" stroke-width="1.6" stroke-dasharray="2 7"/>
+          <path d="M-20 378 C 360 360, 680 270, 940 140" fill="none" stroke="#5a4a2c" stroke-opacity=".5" stroke-width="1"/>
+          <circle r="4.5" fill="#F4A93C"><animateMotion dur="9s" repeatCount="indefinite" path="M-20 350 C 320 330, 620 240, 860 110 S 1160 -30, 1240 -70"/></circle>
+        </svg>
+        <div class="htop"><span class="plate">Concept 01 — Apollo × OP-1</span><span class="eyebrow">command · precision · confidence</span></div>
+        <h1>Run it like <span class="lead">mission control.</span></h1>
+        <p class="sub">Every campaign is a launch. Magister is the console — the whole marketing operation armed, monitored, and fired on your command, with every channel reporting back in real time.</p>
+        <div class="hrow">
+          <button class="cta" data-armcta><span class="material-symbols-sharp">power_settings_new</span><span data-armtxt>Arm the console</span></button>
+          <span class="count">NEXT WINDOW <b data-count>T–00:04:59</b></span>
+        </div>
+      </section>
+      <aside class="deck panel">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Deck</h2></div>
+        <div class="dial-wrap">
+          <div class="dial-label">Output intensity</div>
+          <div class="dial" data-dial>
+            <div class="ring" data-ring></div><div class="knob"></div><div class="pointer" data-pointer></div>
+            <div class="dval"><b data-dval>62</b><span>throttle</span></div>
+          </div>
+          <div style="width:100%">
+            <div class="meter"><i data-mfill></i></div>
+            <div class="meterrow"><span class="cold">idle · sync</span><span class="hot">full burn</span></div>
+          </div>
+        </div>
+        <div class="autorow">
+          <div class="modekey" data-manual>Manual</div>
+          <div class="modekey on" data-auto>Auto-pilot</div>
+        </div>
+        <div class="keys">
+          <div class="key" data-key="fire"><span class="material-symbols-sharp">rocket_launch</span><span class="kl">Fire</span></div>
+          <div class="key" data-key="hold"><span class="material-symbols-sharp">pause</span><span class="kl">Hold</span></div>
+          <div class="key" data-key="go"><span class="material-symbols-sharp">play_arrow</span><span class="kl">Go</span></div>
+          <div class="key" data-key="sync"><span class="material-symbols-sharp">sync</span><span class="kl">Sync</span></div>
+        </div>
+        <div class="tuners">
+          <div class="tuner"><div class="mini" data-tune="glow"><i style="transform:rotate(20deg)"></i></div><div class="tl2">Glow<b>hero wash</b></div></div>
+          <div class="tuner"><div class="mini" data-tune="grid"><i style="transform:rotate(-30deg)"></i></div><div class="tl2">Grid<b>ground grain</b></div></div>
+        </div>
+        <div class="vu" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </aside>
+      <section class="log panel">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Mission log</h2><span class="eyebrow">the product's actual work</span></div>
+        <div class="rows">
+          <div class="logrow"><span class="t">T+00:41</span><span class="material-symbols-sharp">grid_view</span><span class="m">Social post <em>· LinkedIn, 3 variants</em></span><span class="st done" data-firstst>Shipped</span></div>
+          <div class="logrow"><span class="t">T+02:07</span><span class="material-symbols-sharp">description</span><span class="m">Blog draft <em>· "Launch playbook", 1,240w</em></span><span class="st done">Published</span></div>
+          <div class="logrow"><span class="t">T+03:55</span><span class="material-symbols-sharp">search</span><span class="m">SEO sweep <em>· 47 keywords, 12 gaps</em></span><span class="st live">Running</span></div>
+          <div class="logrow" style="border-bottom:0;padding-bottom:2px"><span class="t"></span><span></span><div class="prog" style="grid-column:3/5"><i></i></div></div>
+          <div class="logrow"><span class="t">T+04:12</span><span class="material-symbols-sharp">monitoring</span><span class="m">Performance report <em>· weekly rollup</em></span><span class="st sync">Syncing</span></div>
+          <div class="logrow"><span class="t">T+05:00</span><span class="material-symbols-sharp">ad_group</span><span class="m">Landing variant <em>· A/B headline test</em></span><span class="st queue">Queued</span></div>
+        </div>
+        <div class="caption">// the console launches real marketing work — posts, blogs, SEO, reports. Green = go, blue = sync, amber = burning.</div>
+      </section>
+      <aside class="radar panel">
+        <span class="corner tr"></span><span class="corner bl"></span>
+        <div class="sechead"><h2>Scope</h2></div>
+        <div class="scope">
+          <div class="rg"></div><div class="cross"></div><div class="beam"></div>
+          <div class="blip" style="left:62%;top:30%"><span>LI</span></div>
+          <div class="blip b2" style="left:34%;top:44%"><span>BLOG</span></div>
+          <div class="blip b3" style="left:56%;top:64%"><span>SEO</span></div>
+          <div class="blip" style="left:26%;top:24%"><span>EM</span></div>
+          <div class="blip b2" style="left:72%;top:52%"><span>ADS</span></div>
+        </div>
+        <div class="caption">every channel on scope</div>
+      </aside>
+      <section class="perf panel">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Trajectory</h2><span class="eyebrow">pipeline this cycle</span></div>
+        <div class="bignum"><span>vs. last cycle</span><b data-bignum>+0%</b></div>
+        <svg viewBox="0 0 340 158" preserveAspectRatio="none">
+          <defs><linearGradient id="fillg1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#E8830C" stop-opacity=".32"/><stop offset="1" stop-color="#E8830C" stop-opacity="0"/></linearGradient></defs>
+          <g stroke="#3A3020" stroke-width="1"><line x1="0" y1="126" x2="340" y2="126"/><line x1="0" y1="84" x2="340" y2="84" stroke-dasharray="2 6"/><line x1="0" y1="42" x2="340" y2="42" stroke-dasharray="2 6"/></g>
+          <line x1="0" y1="66" x2="340" y2="66" stroke="#4E7BC4" stroke-opacity=".55" stroke-width="1" stroke-dasharray="5 4"/>
+          <path d="M0 124 L64 114 L128 100 L192 74 L256 46 L340 14 L340 158 L0 158 Z" fill="url(#fillg1)"/>
+          <path data-trajline d="M0 124 L64 114 L128 100 L192 74 L256 46 L340 14" fill="none" stroke="#F4A93C" stroke-width="2.2" style="filter:drop-shadow(0 0 6px rgba(232,131,12,.6))"/>
+          <circle cx="340" cy="14" r="3.5" fill="#F4A93C"/>
+        </svg>
+        <div class="legend"><span><i style="background:#F4A93C"></i>actual burn</span><span><i style="background:#4E7BC4"></i>sync target</span></div>
+      </section>
+      <section class="muse panel">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Muses</h2><span class="eyebrow">real sources → the grade applies to any image</span></div>
+        <div class="musegrid">
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Eugene_F._Kranz_at_his_console_at_the_NASA_Mission_Control_Center.jpg/960px-Eugene_F._Kranz_at_his_console_at_the_NASA_Mission_Control_Center.jpg')"></div><div class="scap"><b>Apollo Mission Control (NASA, PD)</b> — banks of lit consoles → the deck, telemetry, the launch verbs</div></div>
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/The_OP-1_by_Teenage_Engineering.jpg/960px-The_OP-1_by_Teenage_Engineering.jpg')"></div><div class="scap"><b>Teenage Engineering OP-1 (CC BY-SA)</b> — machined dials + amber readout → the intensity dial, the keycaps</div></div>
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Apollo_11_Launch2.jpg/960px-Apollo_11_Launch2.jpg')"></div><div class="scap"><b>Apollo 11 launch (NASA, PD)</b> — the trajectory arc → the hero backdrop, the payload in motion</div></div>
+            </div>
+            <button class="sarrow prev" data-prev><span class="material-symbols-sharp">chevron_left</span></button>
+            <button class="sarrow next" data-next><span class="material-symbols-sharp">chevron_right</span></button>
+            <div class="dots" data-dots></div>
+          </div>
+          <div class="treatwrap">
+            <div class="treatlabel">The grade — grayscale → amber duotone → CRT scan</div>
+            <div class="treat">
+              <div class="ba"><div class="bimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Roger_B._Chaffee_at_a_console_in_the_Mission_Control_Center%2C_Houston%2C_during_the_Gemini-Titan_3_flight.jpg/960px-Roger_B._Chaffee_at_a_console_in_the_Mission_Control_Center%2C_Houston%2C_during_the_Gemini-Titan_3_flight.jpg')"></div><div class="blab">Raw source</div></div>
+              <div class="ar">→</div>
+              <div class="ba graded"><div class="bimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Roger_B._Chaffee_at_a_console_in_the_Mission_Control_Center%2C_Houston%2C_during_the_Gemini-Titan_3_flight.jpg/960px-Roger_B._Chaffee_at_a_console_in_the_Mission_Control_Center%2C_Houston%2C_during_the_Gemini-Titan_3_flight.jpg')"></div><div class="blab">Magister grade</div></div>
+            </div>
+            <div class="treatnote">// the recipe travels: any stock photo, any generated frame, any screenshot becomes on-brand with one treatment.</div>
+          </div>
+        </div>
+      </section>
+      <section class="type panel">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Type</h2><span class="eyebrow">every face, by role</span></div>
+        <div class="spec">
+          <div class="specrow"><div class="rl">Display<b>Chakra Petch · 700</b></div><div><div class="s-disp">Command the launch</div><div class="glyphs">AaBbCcDdEeFfGg 0123456789 &amp;@%·—</div></div></div>
+          <div class="specrow"><div class="rl">Body<b>IBM Plex Sans · 400</b></div><div class="s-body">The console is calm at rest and precise under load. Body copy carries the operator through the mission without competing with the display.</div></div>
+          <div class="specrow"><div class="rl">Telemetry<b>JetBrains Mono · 500</b></div><div class="s-mono">T+04:12:58 · CH 07/07 · THROTTLE 62% · NOMINAL</div></div>
+        </div>
+        <div class="typenote">// weight discipline: semibold leads; bold appears exactly twice on this board — the headline and this specimen.</div>
+      </section>
+      <section class="color panel">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Color</h2><span class="eyebrow">console lamps · every color earns a job</span></div>
+        <div class="lamps" data-lamps>
+          <div class="lamp" data-ramp="ground"><div class="chip" style="background:#0F0C07"></div><div class="cl">Ground</div></div>
+          <div class="lamp" data-ramp="panel"><div class="chip" style="background:#221B11"></div><div class="cl">Panel</div></div>
+          <div class="lamp sel" data-ramp="accent"><div class="chip" style="background:#E8830C"></div><div class="cl">Action</div></div>
+          <div class="lamp" data-ramp="bone"><div class="chip" style="background:#ECE4D6"></div><div class="cl">Bone</div></div>
+          <div class="lamp" data-ramp="go"><div class="chip" style="background:#5BA772"></div><div class="cl">Go</div></div>
+          <div class="lamp" data-ramp="sync"><div class="chip" style="background:#4E7BC4"></div><div class="cl">Sync</div></div>
+          <div class="lamp" data-ramp="alert"><div class="chip" style="background:#D2542E"></div><div class="cl">Abort</div></div>
+        </div>
+        <div class="ramp"><div class="rlabel" data-rlabel>Action — amber · 5 stops</div><div class="steps" data-steps></div></div>
+        <div class="inuse">
+          <span class="u u-amber">amber → burning / action</span>
+          <span class="u u-go">green → shipped / nominal</span>
+          <span class="u u-sync">blue → syncing / idle throttle</span>
+          <span class="u u-alert">red → abort only</span>
+        </div>
+        <div class="colornote">// coordination proof: the throttle runs sync-blue → amber; the log uses all four statuses; the chart plots burn vs. sync target.</div>
+      </section>
+      <section class="icons panel">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Icons</h2><span class="eyebrow">Material Symbols Sharp</span></div>
+        <div class="iconset">
+          <div class="ico"><span class="material-symbols-sharp">rocket_launch</span></div>
+          <div class="ico"><span class="material-symbols-sharp">radar</span></div>
+          <div class="ico"><span class="material-symbols-sharp">monitoring</span></div>
+          <div class="ico"><span class="material-symbols-sharp">center_focus_strong</span></div>
+          <div class="ico"><span class="material-symbols-sharp">speed</span></div>
+          <div class="ico"><span class="material-symbols-sharp">search</span></div>
+          <div class="ico"><span class="material-symbols-sharp">tune</span></div>
+          <div class="ico"><span class="material-symbols-sharp">sensors</span></div>
+        </div>
+        <div class="note">// sharp right angles = machined console. A different icon system per concept.</div>
+      </section>
+      <aside class="motif panel">
+        <span class="corner tr"></span><span class="corner bl"></span>
+        <div class="sechead"><h2>Motif</h2></div>
+        <div class="tile">
+          <svg viewBox="0 0 220 150" preserveAspectRatio="xMidYMid slice">
+            <path d="M-10 140 C 60 130, 130 90, 180 40 S 230 -10, 240 -20" fill="none" stroke="#E8830C" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="2 6"/>
+            <circle cx="180" cy="40" r="3" fill="#F4A93C"/>
+          </svg>
+        </div>
+        <div class="note">// trajectory grid + CRT scan + the arc. Deployable off-site with no logo, no amber — still unmistakably this brand.</div>
+      </aside>
+      <section class="read panel">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Direction read</h2></div>
+        <div class="cells">
+          <div class="cell"><div class="k">Pros</div><p><b>Maps natively to software.</b> Telemetry, statuses, and launches are what a marketing console already does — zero translation loss.</p></div>
+          <div class="cell"><div class="k">Challenges</div><p><b>On-the-nose risk.</b> "Mission control for X" is a reached-for metaphor in AI; the grade, motif, and hardware verbs must carry the ownership.</p></div>
+          <div class="cell"><div class="k">Most differentiated?</div><p>Vs. the category's flat blue dashboards — <b>yes</b>. Vs. other "console" brands — the amber-on-black + machined OP-1 hardware keeps it apart.</p></div>
+          <div class="cell"><div class="k">On-emotion?</div><p><b>Command, precision, confidence — direct hit.</b> The operator feels like flight control, not a spectator of charts.</p></div>
+        </div>
+      </section>
+      <section class="applied panel">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="sechead"><h2>Applied</h2><span class="eyebrow">the system survives contact — product screen + paid ad</span></div>
+        <div class="appgrid">
+          <div class="browser">
+            <div class="chrome"><div class="tl"><i></i><i></i><i></i></div><div class="url">app.magister.io/mission</div></div>
+            <div class="screen">
+              <div class="sidebar">
+                <div class="navi on"><span class="material-symbols-sharp">center_focus_strong</span>Mission</div>
+                <div class="navi"><span class="material-symbols-sharp">grid_view</span>Channels</div>
+                <div class="navi"><span class="material-symbols-sharp">monitoring</span>Trajectory</div>
+                <div class="navi"><span class="material-symbols-sharp">search</span>Research</div>
+              </div>
+              <div class="stagep">
+                <h3>Q3 Launch — armed</h3>
+                <div class="srow">
+                  <div class="stat"><div class="k">Assets shipped</div><div class="v">34<small>▲ 12</small></div></div>
+                  <div class="stat"><div class="k">Pipeline</div><div class="v">$1.2M<small>▲ 218%</small></div></div>
+                  <div class="stat"><div class="k">Syncing</div><div class="v">2<small class="blue">channels</small></div></div>
+                </div>
+                <div class="srow" style="grid-template-columns:1fr">
+                  <div class="stat"><div class="k">Next window</div><div class="v" style="font-size:17px">Blog + 3 social · T+05:00 <small>auto-fire</small></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ad">
+            <div class="adimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Apollo_11_Launch2.jpg/960px-Apollo_11_Launch2.jpg')"></div>
+            <div class="adbody">
+              <div class="adeyebrow">Magister · paid social</div>
+              <h4>T-minus everything.</h4>
+              <p>One console for the whole marketing operation. Arm it once.</p>
+              <span class="adcta">Start the countdown</span>
+            </div>
+          </div>
+        </div>
+        <div class="caption">// carry-through gate: cover the logo — the ad still reads as this brand from the grade, the outline type, and the arc alone.</div>
+      </section>
+    </div>
+    <div class="foot">MAGISTER · CREATIVE DIRECTION 01 · MISSION CONTROL · v1.11.0</div>
+  </div>
+</div>
+
+<!-- ============ C2 · THE CONDUCTOR ============ -->
+<div class="concept c2" data-c="2">
+  <div class="wrap">
+    <div class="rail">
+      <div class="id">Creative Direction · 02 — The Conductor</div>
+      <div class="stats">
+        <span>Programme <b>No. 07</b></span>
+        <span>Tempo <b data-bpm>♩ = 120</b></span>
+        <span>Movement <b data-mvt>II</b></span>
+        <span>Dynamics <b data-dynrail>mf</b></span>
+      </div>
+    </div>
+    <div class="bento">
+      <!-- HERO — centered programme cover; live waveform -->
+      <section class="hero panel">
+        <div class="htop"><span class="plate">Concept 02 — Orchestration</span><span class="eyebrow">harmony · momentum · mastery</span></div>
+        <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>Every channel, <span class="lead">in concert.</span></h1>
+        <p class="sub">Marketing isn't a launch — it's a performance. Magister is the podium: every channel a section, every asset a note, the whole campaign kept in time and swelling on your cue.</p>
+        <div class="hrow">
+          <button class="cta" data-playcta><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l14 8-14 8z" stroke-linejoin="round"/></svg><span data-playtxt>Begin the performance</span></button>
+          <span class="nowplay" data-nowplay>ready — <b>ON CUE</b></span>
+        </div>
+        <div class="wave" aria-hidden="true">
+          <svg viewBox="0 0 1200 74" preserveAspectRatio="none">
+            <path data-wavepath d="M0 37 L1200 37" fill="none" stroke="#A6742F" stroke-width="1.6" stroke-opacity=".8"/>
+            <path data-wavepath2 d="M0 37 L1200 37" fill="none" stroke="#7A2E33" stroke-width="1" stroke-opacity=".5"/>
+          </svg>
+        </div>
+      </section>
+
+      <!-- PODIUM — conduct the dynamics (ONE clean instrument) -->
+      <aside class="podium panel">
+        <div class="sechead"><h2>The Podium</h2></div><div class="rule"></div>
+        <div class="podlabel">Drag the hairpin — conduct the dynamics</div>
+        <div class="hairwrap">
+          <div class="hairpin" data-hairpin>
+            <svg viewBox="0 0 300 74" preserveAspectRatio="none">
+              <line x1="0" y1="10" x2="300" y2="10" stroke="#DBD2BC" stroke-width="1"/>
+              <line x1="0" y1="64" x2="300" y2="64" stroke="#DBD2BC" stroke-width="1"/>
+              <polygon data-wedge points="0,37 186,12 186,62" fill="rgba(122,46,51,.14)" stroke="#7A2E33" stroke-width="1.4" stroke-linejoin="round"/>
+              <line data-cursorline x1="186" y1="4" x2="186" y2="70" stroke="#A6742F" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="dynrow"><span>pp</span><b data-dynval>mf</b><span>ff</span></div>
+        </div>
+        <div class="metro">
+          <div class="pend"><div class="pendarm" data-pendarm></div></div>
+          <div class="ml"><b>Allegro · ♩ = 120</b><br>the campaign keeps time</div>
+        </div>
+        <div class="transport">
+          <div class="tk on" data-tkey="play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4l14 8-14 8z" stroke-linejoin="round"/></svg><span class="kl">Play</span></div>
+          <div class="tk" data-tkey="fermata"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16a8 8 0 0116 0" stroke-linecap="round"/><circle cx="12" cy="16" r="1.6" fill="currentColor"/></svg><span class="kl">Fermata</span></div>
+          <div class="tk" data-tkey="dacapo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 108-8" stroke-linecap="round"/><path d="M4 4v8h8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="kl">Da capo</span></div>
+          <div class="tk" data-tkey="cue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v10" stroke-linecap="round"/><path d="M12 13c0 3-2 5-5 5" stroke-linecap="round"/><circle cx="12" cy="3" r="1.4" fill="currentColor"/></svg><span class="kl">Cue</span></div>
+        </div>
+      </aside>
+
+      <!-- THE SCORE — playhead ships assets -->
+      <section class="score panel">
+        <div class="sechead"><h2>The Score</h2><span class="eyebrow">each note is an asset — press play and the campaign performs</span></div><div class="rule"></div>
+        <div class="scorebox">
+          <div class="movement"><span>I. Awareness</span><span>II. Consideration</span><span>III. Conversion</span><span>IV. Retention</span></div>
+          <div class="stafflines"></div>
+          <div class="playhead" data-playhead></div>
+          <div class="notes" data-notes>
+            <div class="ni" data-asset="Social post · LinkedIn ×3"><div class="nh"></div><div class="nl">Social<b>×3</b></div></div>
+            <div class="ni oxx" data-asset="Pillar blog · 1,900w"><div class="nh"></div><div class="nl">Blog<b>pillar</b></div></div>
+            <div class="ni" data-asset="SEO sweep · 47 kw"><div class="nh"></div><div class="nl">SEO<b>47 kw</b></div></div>
+            <div class="ni" data-asset="Email drip · 5 sends"><div class="nh"></div><div class="nl">Email<b>drip ×5</b></div></div>
+            <div class="ni oxx" data-asset="Landing A/B"><div class="nh"></div><div class="nl">Landing<b>A/B</b></div></div>
+            <div class="ni" data-asset="Webinar · live"><div class="nh"></div><div class="nl">Webinar<b>live</b></div></div>
+            <div class="ni oxx" data-asset="Case study"><div class="nh"></div><div class="nl">Case<b>study</b></div></div>
+          </div>
+        </div>
+        <div class="setlist" data-setlist>
+          <div class="slrow"><span class="mv">I.</span><span class="m">Social post <em>· LinkedIn, 3 variants</em></span><span class="stx done">Performed</span></div>
+          <div class="slrow"><span class="mv">I.</span><span class="m">Pillar blog <em>· 1,900w</em></span><span class="stx done">Performed</span></div>
+          <div class="slrow"><span class="mv">II.</span><span class="m">SEO sweep <em>· 47 keywords</em></span><span class="stx play">Playing</span></div>
+          <div class="slrow"><span class="mv">III.</span><span class="m">Email drip <em>· 5 sends</em></span><span class="stx cue">On cue</span></div>
+          <div class="slrow"><span class="mv">IV.</span><span class="m">Case study <em>· customer story</em></span><span class="stx">Tacet</span></div>
+        </div>
+        <div class="caption">the muse is the orchestra — and every note the baton passes is a real asset the product ships, in four movements.</div>
+      </section>
+
+      <!-- ENSEMBLE — channels seated as sections -->
+      <aside class="ensemble panel">
+        <div class="sechead"><h2>The Ensemble</h2></div><div class="rule"></div>
+        <div class="seating">
+          <div class="arc a1"></div><div class="arc a2"></div><div class="arc a3"></div>
+          <div class="seat gold" style="left:24%;top:52%"></div>
+          <div class="seat gold" style="left:38%;top:44%"></div>
+          <div class="seat gold" style="left:52%;top:42%"></div>
+          <div class="seat gold" style="left:66%;top:46%"></div>
+          <div class="seat" style="left:18%;top:30%"></div>
+          <div class="seat" style="left:34%;top:22%"></div>
+          <div class="seat" style="left:52%;top:19%"></div>
+          <div class="seat" style="left:68%;top:23%"></div>
+          <div class="seat" style="left:82%;top:32%"></div>
+          <div class="seat oxs" style="left:30%;top:68%"></div>
+          <div class="seat oxs" style="left:50%;top:64%"></div>
+          <div class="seat oxs" style="left:68%;top:66%"></div>
+          <div class="podiumdot"></div>
+        </div>
+        <div class="seatkey">
+          <span><i style="background:#A6742F"></i>social</span>
+          <span><i style="background:#57503F"></i>content</span>
+          <span><i style="background:#7A2E33"></i>paid</span>
+        </div>
+        <div class="caption">every section, seated and tuned</div>
+      </aside>
+
+      <!-- CRESCENDO -->
+      <section class="perf panel">
+        <div class="sechead"><h2>Crescendo</h2><span class="eyebrow">pipeline this season</span></div><div class="rule"></div>
+        <div class="bignum"><span>vs. last season</span><b data-bignum2>+0%</b></div>
+        <svg viewBox="0 0 340 158" preserveAspectRatio="none">
+          <g stroke="#DBD2BC" stroke-width="1"><line x1="0" y1="126" x2="340" y2="126"/><line x1="0" y1="84" x2="340" y2="84"/><line x1="0" y1="42" x2="340" y2="42"/></g>
+          <line x1="0" y1="70" x2="340" y2="70" stroke="#7A2E33" stroke-opacity=".5" stroke-width="1" stroke-dasharray="5 4"/>
+          <path data-crescline d="M0 124 L64 116 L128 100 L192 74 L256 46 L340 16" fill="none" stroke="#A6742F" stroke-width="2.2"/>
+          <g fill="#221D15"><ellipse cx="64" cy="116" rx="6" ry="4.4" transform="rotate(-18 64 116)"/><ellipse cx="128" cy="100" rx="6" ry="4.4" transform="rotate(-18 128 100)"/><ellipse cx="192" cy="74" rx="6" ry="4.4" transform="rotate(-18 192 74)"/><ellipse cx="256" cy="46" rx="6" ry="4.4" transform="rotate(-18 256 46)"/></g>
+          <ellipse cx="340" cy="16" rx="7" ry="5" transform="rotate(-18 340 16)" fill="#A6742F"/>
+        </svg>
+        <div class="legend"><span><i style="background:#A6742F"></i>actual swell</span><span><i style="background:#7A2E33"></i>forte target</span></div>
+      </section>
+
+      <!-- MUSES -->
+      <section class="muse panel">
+        <div class="sechead"><h2>Muses</h2><span class="eyebrow">real sources → the warm-paper grade applies to any image</span></div><div class="rule"></div>
+        <div class="musegrid">
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Houghton_-_Wilhelm_Friedemann_Bach_-_MS_Mus_93.jpg/960px-Houghton_-_Wilhelm_Friedemann_Bach_-_MS_Mus_93.jpg')"></div><div class="scap"><b>Bach manuscript (Houghton, PD)</b> — the hand-drawn staff → the score, the note-as-asset</div></div>
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Conductor_Tetiana_Kalinichenko.jpg/960px-Conductor_Tetiana_Kalinichenko.jpg')"></div><div class="scap"><b>The conductor (CC BY-SA)</b> — the raised baton → the hairpin, the cue, the playhead</div></div>
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Concert_performance_by_the_Iranian_National_Music_Orchestra%2C_conducted_by_Farhad_Fakhreddini_and_sung_by_Hamidreza_Nourbakhsh_and_Rashid_Vatandoust%2C_at_Roudaki_Hall_Friday_-_August_21%2C_2015_%283%29.jpg/960px-thumbnail.jpg')"></div><div class="scap"><b>Concert hall (CC BY-SA)</b> — sections in concert → the ensemble, channels seated</div></div>
+            </div>
+            <button class="sarrow prev" data-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="sarrow next" data-next><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="dots" data-dots></div>
+          </div>
+          <div class="treatwrap">
+            <div class="treatlabel">The grade — warm sepia → gold wash → paper grain</div>
+            <div class="treat">
+              <div class="ba"><div class="bimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Dream_a_Little_Dream_of_Me_%28manuscript%2C_1930%29.jpg/960px-Dream_a_Little_Dream_of_Me_%28manuscript%2C_1930%29.jpg')"></div><div class="blab">Raw source</div></div>
+              <div class="ar">→</div>
+              <div class="ba graded"><div class="bimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Dream_a_Little_Dream_of_Me_%28manuscript%2C_1930%29.jpg/960px-Dream_a_Little_Dream_of_Me_%28manuscript%2C_1930%29.jpg')"></div><div class="blab">Programme grade</div></div>
+            </div>
+            <div class="treatnote">no scanlines here — the light board earns its own texture: paper grain and a gold wash, never the console's CRT.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TYPE -->
+      <section class="type panel">
+        <div class="sechead"><h2>Type</h2><span class="eyebrow">every face, by role</span></div><div class="rule"></div>
+        <div class="spec">
+          <div class="specrow"><div class="rl">Display<b>DM Serif Display · 400</b></div><div><div class="s-disp">Keep the whole ensemble in time</div><div class="glyphs">AaBbCcDdEeFfGg 0123456789 &amp;?—</div></div></div>
+          <div class="specrow"><div class="rl">Body<b>Inter · 400</b></div><div class="s-body">Body sets in a neutral sans against the serif display — real contrast between the roles. Eyebrows are spaced Inter caps; the serif never carries running text.</div></div>
+          <div class="specrow"><div class="rl">Notation<b>Spectral · Italic</b></div><div class="s-nota">allegro · crescendo · a tempo · movement IV</div></div>
+        </div>
+        <div class="typenote">no bold anywhere on this board — the serif carries scale by size, the sans leads at semibold or below.</div>
+      </section>
+
+      <!-- COLOR -->
+      <section class="color panel">
+        <div class="sechead"><h2>Color</h2><span class="eyebrow">ink on ivory · every color earns a chair</span></div><div class="rule"></div>
+        <div class="lamps" data-lamps2>
+          <div class="lamp" data-ramp="paper"><div class="chip" style="background:#F4EFE3"></div><div class="cl">Ivory</div></div>
+          <div class="lamp" data-ramp="ink"><div class="chip" style="background:#221D15"></div><div class="cl">Ink</div></div>
+          <div class="lamp sel" data-ramp="gold"><div class="chip" style="background:#A6742F"></div><div class="cl">Gold</div></div>
+          <div class="lamp" data-ramp="ox"><div class="chip" style="background:#7A2E33"></div><div class="cl">Oxblood</div></div>
+        </div>
+        <div class="ramp"><div class="rlabel" data-rlabel2>Gold — the cue · 5 stops</div><div class="steps" data-steps2></div></div>
+        <div class="inuse">
+          <span class="u u-gold">gold → the cue / playhead / crescendo</span>
+          <span class="u u-ox">oxblood → dynamics / forte / playing now</span>
+          <span class="u u-ink">ink → the voice</span>
+        </div>
+        <div class="colornote">coordination proof: the hairpin is oxblood with a gold cursor; the wave runs both; the chart plots gold swell against a forte target in oxblood.</div>
+      </section>
+
+      <!-- ICONS -->
+      <section class="icons panel">
+        <div class="sechead"><h2>Icons</h2><span class="eyebrow">Lucide · thin &amp; lyrical</span></div><div class="rule"></div>
+        <div class="iconset">
+          <div class="ico"><i data-lucide="music"></i></div>
+          <div class="ico"><i data-lucide="music-2"></i></div>
+          <div class="ico"><i data-lucide="audio-lines"></i></div>
+          <div class="ico"><i data-lucide="list-music"></i></div>
+          <div class="ico"><i data-lucide="mic"></i></div>
+          <div class="ico"><i data-lucide="radio"></i></div>
+          <div class="ico"><i data-lucide="clock"></i></div>
+          <div class="ico"><i data-lucide="piano"></i></div>
+        </div>
+        <div class="note">a loose, flowing line — deliberately unlike the console's machined Sharp system.</div>
+      </section>
+
+      <!-- MOTIF -->
+      <aside class="motif panel">
+        <div class="sechead"><h2>Motif</h2></div><div class="rule"></div>
+        <div class="tile">
+          <svg viewBox="0 0 220 150" preserveAspectRatio="xMidYMid slice">
+            <polygon points="24,75 150,54 150,96" fill="rgba(122,46,51,.10)" stroke="#7A2E33" stroke-width="1.2" stroke-linejoin="round"/>
+            <ellipse cx="176" cy="62" rx="8" ry="5.6" transform="rotate(-18 176 62)" fill="#221D15"/>
+            <path d="M183 60 L183 34" stroke="#221D15" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <div class="note">five staff lines + the hairpin + the note. Deployable with no gold, no logo — still this brand.</div>
+      </aside>
+
+      <!-- DIRECTION READ -->
+      <section class="read panel">
+        <div class="sechead"><h2>Direction read</h2></div><div class="rule"></div>
+        <div class="cells">
+          <div class="cell"><div class="k">Pros</div><p><b>The stronger idea.</b> Orchestration is what the product literally does — many parts, one time signature — and it's far less reached-for than "mission control" in AI.</p></div>
+          <div class="cell"><div class="k">Challenges</div><p><b>Harder abstraction.</b> Music motifs slide into kitsch fast; the system must stay in the score's *logic* (time, dynamics, sections), never clip-art notes.</p></div>
+          <div class="cell"><div class="k">Most differentiated?</div><p><b>Yes — twice over.</b> Light ivory in a dark-dashboard category, and a musical operating metaphor no rival owns.</p></div>
+          <div class="cell"><div class="k">On-emotion?</div><p><b>Harmony, momentum, mastery.</b> The operator is the conductor — calm authority over many moving parts, not a stressed dispatcher.</p></div>
+        </div>
+      </section>
+
+      <!-- APPLIED -->
+      <section class="applied panel">
+        <div class="sechead"><h2>Applied</h2><span class="eyebrow">the system survives contact — product screen + concert-poster ad</span></div><div class="rule"></div>
+        <div class="appgrid">
+          <div class="browser">
+            <div class="chrome"><div class="tl"><i></i><i></i><i></i></div><div class="url">app.magister.io/programme</div></div>
+            <div class="screen">
+              <div class="sidebar">
+                <div class="navi on"><i data-lucide="list-music"></i>Programme</div>
+                <div class="navi"><i data-lucide="music"></i>Sections</div>
+                <div class="navi"><i data-lucide="audio-lines"></i>Crescendo</div>
+                <div class="navi"><i data-lucide="clock"></i>Tempo</div>
+              </div>
+              <div class="stagep">
+                <h3>Season No. 7 — in performance</h3>
+                <div class="srow">
+                  <div class="stat"><div class="k">Assets in score</div><div class="v">34<small>▲ 12</small></div></div>
+                  <div class="stat"><div class="k">Pipeline</div><div class="v">$1.2M<small>▲ 218%</small></div></div>
+                  <div class="stat"><div class="k">Playing now</div><div class="v">2<small class="oxc">sections</small></div></div>
+                </div>
+                <div class="srow" style="grid-template-columns:1fr">
+                  <div class="stat"><div class="k">Next entrance</div><div class="v" style="font-size:17px">Email drip · bar 12 <small>on cue</small></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ad">
+            <div class="adimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Concert_performance_by_the_Iranian_National_Music_Orchestra%2C_conducted_by_Farhad_Fakhreddini_and_sung_by_Hamidreza_Nourbakhsh_and_Rashid_Vatandoust%2C_at_Roudaki_Hall_Friday_-_August_21%2C_2015_%283%29.jpg/960px-thumbnail.jpg')"></div>
+            <div class="adbody">
+              <div class="adeyebrow">Magister · paid social</div>
+              <h4>Marketing, <em>conducted.</em></h4>
+              <p>Every channel in time. Every asset on cue. One podium.</p>
+              <span class="adcta">Take the podium</span>
+            </div>
+          </div>
+        </div>
+        <div class="caption">carry-through gate: cover the logo — the ivory, the staff, the serif-and-italic voice still say this brand.</div>
+      </section>
+    </div>
+    <div class="foot">Magister · Creative Direction 02 · The Conductor · v1.11.0</div>
+  </div>
+</div>
+
+<!-- ============ C3 · MAGISTER ============ -->
+<div class="concept c3" data-c="3">
+  <div class="wrap">
+    <div class="rail">
+      <div class="id">Creative Direction · 03 — Magister</div>
+      <div class="stats">
+        <span>Register <b>No. VII</b></span>
+        <span>Standard <b data-standing>In force</b></span>
+        <span class="sealed">Ratified <b data-ratcount>31 / 34</b></span>
+      </div>
+    </div>
+    <div class="bento">
+      <!-- HERO — the stele: tall, vertical, engraved -->
+      <section class="hero panel">
+        <svg class="colbg" viewBox="0 0 520 620" preserveAspectRatio="xMidYMid slice">
+          <defs><radialGradient id="mg3" cx="50%" cy="30%" r="70%"><stop offset="0" stop-color="#C09758" stop-opacity=".14"/><stop offset="1" stop-color="#C09758" stop-opacity="0"/></radialGradient></defs>
+          <rect width="520" height="620" fill="url(#mg3)"/>
+          <circle cx="260" cy="300" r="190" fill="none" stroke="#C09758" stroke-opacity=".14" stroke-width="1.6"/>
+          <circle cx="260" cy="300" r="150" fill="none" stroke="#C09758" stroke-opacity=".09" stroke-width="1"/>
+          <circle cx="260" cy="300" r="230" fill="none" stroke="#C09758" stroke-opacity=".07" stroke-width="1"/>
+          <g stroke="#C09758" stroke-opacity=".2" stroke-width="1">
+            <line x1="60" y1="0" x2="60" y2="620"/><line x1="120" y1="0" x2="120" y2="620"/>
+            <line x1="400" y1="0" x2="400" y2="620"/><line x1="460" y1="0" x2="460" y2="620"/>
+          </g>
+        </svg>
+        <div class="htop">
+          <span class="plate">Concept 03 — Mastery, abstracted</span>
+          <span class="eyebrow">authority · definitive · trusted</span>
+        </div>
+        <div class="heronum">№ · VII</div>
+        <h1>Set the <span class="lead">standard</span></h1>
+        <div class="inscribe"></div>
+        <p class="sub">Magister is the master of record — the authority every channel answers to. It codifies the marketing standard, ratifies the work against it, and holds the whole operation to the mark.</p>
+        <div class="hrow">
+          <button class="cta" data-mandcta><span class="material-symbols-rounded">approval</span><span data-mandtxt>Bring the mandate</span></button>
+          <span class="standing">STANDING · <b data-standb>UNSEALED</b></span>
+        </div>
+      </section>
+
+      <!-- MANDATE — the seal, pushed -->
+      <aside class="mandate panel">
+        <div class="sechead" style="align-self:flex-start"><h2>Mandate</h2></div>
+        <div class="podlabel">Press &amp; hold — ratify the register</div>
+        <div class="seal" data-seal>
+          <svg class="ringy" viewBox="0 0 168 168"><circle class="track" cx="84" cy="84" r="78"/><circle class="prog" data-sealprog cx="84" cy="84" r="78"/></svg>
+          <div class="ripple" data-ripple></div>
+          <div class="face" data-sealface>
+            <span class="material-symbols-rounded" data-sealico>approval</span>
+            <b data-sealtxt>MMXXVI</b>
+            <span data-sealsub>hold to seal</span>
+          </div>
+        </div>
+        <div class="authrow"><span>Authority</span><b data-authval>standing</b><span>Sealed</span></div>
+        <div class="gavelkeys">
+          <div class="gk on" data-gkey="ratify"><span class="material-symbols-rounded">approval</span><span class="kl">Ratify</span></div>
+          <div class="gk" data-gkey="review"><span class="material-symbols-rounded">visibility</span><span class="kl">Review</span></div>
+          <div class="gk" data-gkey="repeal"><span class="material-symbols-rounded">undo</span><span class="kl">Repeal</span></div>
+          <div class="gk" data-gkey="publish"><span class="material-symbols-rounded">campaign</span><span class="kl">Publish</span></div>
+        </div>
+      </aside>
+
+      <!-- HELD TO STANDARD — compliance bars -->
+      <aside class="held panel">
+        <div class="sechead"><h2>Held</h2></div>
+        <div class="bars" data-bars>
+          <div class="brow"><div class="bl"><span>Social</span><i>96</i></div><div class="btrack"><div class="bfill" data-w="96"></div></div></div>
+          <div class="brow"><div class="bl"><span>Blog</span><i>88</i></div><div class="btrack"><div class="bfill" data-w="88"></div></div></div>
+          <div class="brow"><div class="bl"><span>Email</span><i>79</i></div><div class="btrack"><div class="bfill" data-w="79"></div></div></div>
+          <div class="brow"><div class="bl"><span>Ads</span><i>58</i></div><div class="btrack"><div class="bfill under" data-w="58"></div></div></div>
+          <div class="brow"><div class="bl"><span>SEO</span><i>84</i></div><div class="btrack"><div class="bfill" data-w="84"></div></div></div>
+        </div>
+        <div class="caption">// the tick is the standard (70). Bronze holds it; oxblood is below the mark — shown plainly, not hidden.</div>
+      </aside>
+
+      <!-- REGISTER — the product's work, codified -->
+      <section class="register panel">
+        <div class="sechead"><h2>The Register</h2><span class="eyebrow">the product's work — codified, then sealed</span></div>
+        <div class="ledger" data-ledger>
+          <div class="lrow"><span class="material-symbols-rounded">verified</span><span class="m">Messaging standard <em>· positioning + 6 proof points</em></span><span class="stz rat" data-reg>Ratified</span></div>
+          <div class="lrow"><span class="material-symbols-rounded">shield</span><span class="m">Brand system <em>· enforced across 7 channels</em></span><span class="stz rat" data-reg>Ratified</span></div>
+          <div class="lrow"><span class="material-symbols-rounded">history_edu</span><span class="m">Q3 campaign <em>· 34 assets against the standard</em></span><span class="stz rev" data-reg>In review</span></div>
+          <div class="lrow"><span class="material-symbols-rounded">workspace_premium</span><span class="m">Benchmark <em>· pipeline +218% vs. the bar</em></span><span class="stz rev" data-reg>In review</span></div>
+          <div class="lrow"><span class="material-symbols-rounded">gavel</span><span class="m">Off-brand landing variant <em>· failed the mark</em></span><span class="stz void">Void</span></div>
+        </div>
+        <div class="caption">// hold the seal and the reviews ratify in cascade — governance is the verb this board performs. Void stays void: the standard means something.</div>
+      </section>
+
+      <!-- BENCHMARK -->
+      <section class="perf panel">
+        <div class="sechead"><h2>The Benchmark</h2><span class="eyebrow">pipeline held above the bar</span></div>
+        <div class="bignum"><span>vs. last register</span><b data-bignum3>+0%</b></div>
+        <div class="plinths" data-plinths>
+          <div class="standardline"><span>THE STANDARD</span></div>
+          <div class="pl" data-h="34"><i></i><b>Q1</b></div>
+          <div class="pl" data-h="46"><i></i><b>Q2</b></div>
+          <div class="pl under" data-h="58"><i></i><b>Q3</b></div>
+          <div class="pl" data-h="72"><i></i><b>Q4</b></div>
+          <div class="pl" data-h="86"><i></i><b>Q5</b></div>
+          <div class="pl cap" data-h="100"><i></i><b>Now</b></div>
+        </div>
+        <div class="legend"><span><i style="background:#C09758"></i>held above</span><span><i style="background:#E4CE9C"></i>the standard</span><span><i style="background:#8A3340"></i>below the mark</span></div>
+      </section>
+
+      <!-- MUSES -->
+      <section class="muse panel">
+        <div class="sechead"><h2>Muses</h2><span class="eyebrow">real sources → the porphyry grade applies to any image</span></div>
+        <div class="musegrid">
+          <div class="slider" data-slider>
+            <div class="slides">
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/%28Venice%29_Statue_of_the_four_tetrarchs_St._Mark%27s_Basilica.jpg/960px-%28Venice%29_Statue_of_the_four_tetrarchs_St._Mark%27s_Basilica.jpg')"></div><div class="scap"><b>THE TETRARCHS, PORPHYRY (PD)</b> — the stone of emperors → the porphyry ground, the bronze rule</div></div>
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/German_-_Signet_Ring_-_Walters_572050.jpg/960px-German_-_Signet_Ring_-_Walters_572050.jpg')"></div><div class="scap"><b>SIGNET RING (WALTERS, PD)</b> — the seal of authority → press-and-hold ratification</div></div>
+              <div class="slide"><div class="simg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Interior_of_the_Colosseum%2C_Corinthian_capital_with_acanthus_mollis_in_Proconnesian_marble.JPG/960px-Interior_of_the_Colosseum%2C_Corinthian_capital_with_acanthus_mollis_in_Proconnesian_marble.JPG')"></div><div class="scap"><b>CORINTHIAN CAPITAL (PD)</b> — the column → the vertical fluting motif, abstracted (never literal)</div></div>
+            </div>
+            <button class="sarrow prev" data-prev><span class="material-symbols-rounded">chevron_left</span></button>
+            <button class="sarrow next" data-next><span class="material-symbols-rounded">chevron_right</span></button>
+            <div class="dots" data-dots></div>
+          </div>
+          <div class="treatwrap">
+            <div class="treatlabel">The grade — grayscale → porphyry duotone → stone grain</div>
+            <div class="treat">
+              <div class="ba"><div class="bimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Decorated_Initial_D_-_Google_Art_Project.jpg/960px-Decorated_Initial_D_-_Google_Art_Project.jpg')"></div><div class="blab">Raw source</div></div>
+              <div class="ar">→</div>
+              <div class="ba graded"><div class="bimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Decorated_Initial_D_-_Google_Art_Project.jpg/960px-Decorated_Initial_D_-_Google_Art_Project.jpg')"></div><div class="blab">Register grade</div></div>
+            </div>
+            <div class="treatnote">// the authority is abstracted — no togas, no Trajan capitals, no laurel clip-art. Stone, seal, and standard carry it.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TYPE — one neutral family, decisive hierarchy -->
+      <section class="type panel">
+        <div class="sechead"><h2>Type</h2><span class="eyebrow">one neutral family — hierarchy by weight, size, and tracking</span></div>
+        <div class="spec">
+          <div class="specrow"><div class="rl">Display<b>Inter · 700 · −2.8%</b></div><div><div class="s-disp">The master of record</div><div class="glyphs">AaBbCcDdEeFfGg 0123456789 &amp;@§—</div></div></div>
+          <div class="specrow"><div class="rl">Body<b>Inter · 400</b></div><div class="s-body">Deliberately neutral. The authority comes from the system — porphyry, bronze, the seal, the fluting, the grade — not from a costume face. The typeface stays out of the way and the standard does the talking.</div></div>
+          <div class="specrow"><div class="rl">Label<b>Inter · 600 · +30%</b></div><div class="s-label">Ratified · Standard · Register VII</div></div>
+        </div>
+        <div class="typenote">// the abstraction law applied to type: a literal Roman face would wear the muse. One family, three decisive registers, zero costume.</div>
+      </section>
+
+      <!-- COLOR -->
+      <section class="color panel">
+        <div class="sechead"><h2>Color</h2><span class="eyebrow">porphyry &amp; marble · bronze reserved for the seal</span></div>
+        <div class="lamps" data-lamps3>
+          <div class="lamp" data-ramp="porph"><div class="chip" style="background:#171019"></div><div class="cl">Porphyry</div></div>
+          <div class="lamp" data-ramp="marble"><div class="chip" style="background:#EDE6ED"></div><div class="cl">Marble</div></div>
+          <div class="lamp sel" data-ramp="bronze"><div class="chip" style="background:#C09758"></div><div class="cl">Bronze</div></div>
+          <div class="lamp" data-ramp="ox"><div class="chip" style="background:#8A3340"></div><div class="cl">Oxblood</div></div>
+        </div>
+        <div class="ramp"><div class="rlabel" data-rlabel3>Bronze — the seal · 5 stops</div><div class="steps" data-steps3></div></div>
+        <div class="inuse">
+          <span class="u u-br">bronze → the seal / ratified / the standard line</span>
+          <span class="u u-oxz">oxblood → below the mark / void</span>
+          <span class="u u-mb">marble → the record itself</span>
+        </div>
+        <div class="colornote">// coordination proof: the compliance bars run bronze above the tick and oxblood below; the register carries both; the chart names all three.</div>
+      </section>
+
+      <!-- ICONS -->
+      <section class="icons panel">
+        <div class="sechead"><h2>Icons</h2><span class="eyebrow">Material Symbols Rounded · filled</span></div>
+        <div class="iconset">
+          <div class="ico"><span class="material-symbols-rounded">shield</span></div>
+          <div class="ico"><span class="material-symbols-rounded">workspace_premium</span></div>
+          <div class="ico"><span class="material-symbols-rounded">balance</span></div>
+          <div class="ico"><span class="material-symbols-rounded">verified</span></div>
+          <div class="ico"><span class="material-symbols-rounded">gavel</span></div>
+          <div class="ico"><span class="material-symbols-rounded">history_edu</span></div>
+          <div class="ico"><span class="material-symbols-rounded">approval</span></div>
+          <div class="ico"><span class="material-symbols-rounded">account_balance</span></div>
+        </div>
+        <div class="note">// filled and weighty = carved authority. A third icon system — unlike the console's Sharp and the programme's Lucide.</div>
+      </section>
+
+      <!-- MOTIF -->
+      <aside class="motif panel">
+        <div class="sechead"><h2>Motif</h2></div>
+        <div class="tile">
+          <svg viewBox="0 0 220 150" preserveAspectRatio="xMidYMid slice">
+            <circle cx="110" cy="75" r="34" fill="none" stroke="#C09758" stroke-opacity=".7" stroke-width="1.5"/>
+            <circle cx="110" cy="75" r="26" fill="none" stroke="#C09758" stroke-opacity=".35" stroke-width="1"/>
+            <path d="M110 49 L110 101 M84 75 L136 75" stroke="#C09758" stroke-opacity=".3" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="note">// fluting + the seal ring. Deployable with no bronze, no logo — the vertical rhythm alone says this brand.</div>
+      </aside>
+
+      <!-- DIRECTION READ -->
+      <section class="read panel">
+        <div class="sechead"><h2>Direction read</h2></div>
+        <div class="cells">
+          <div class="cell"><div class="k">Pros</div><p><b>The trust position.</b> "The standard, kept" is a claim no dashboard aesthetic makes — porphyry + bronze is an unoccupied lane in this category.</p></div>
+          <div class="cell"><div class="k">Challenges</div><p><b>Coldness risk.</b> Governance can read as severe; the warmth has to come from the bronze and the craft, and the neutral face gives the system nowhere to hide.</p></div>
+          <div class="cell"><div class="k">Most differentiated?</div><p><b>Chromatically, yes</b> — nobody owns deep porphyry. Conceptually it must stay abstracted; one toga and it collapses into costume.</p></div>
+          <div class="cell"><div class="k">On-emotion?</div><p><b>Authority, definitive, trusted.</b> The operator isn't watching metrics — they're keeping a standard, and everything answers to it.</p></div>
+        </div>
+      </section>
+
+      <!-- APPLIED -->
+      <section class="applied panel">
+        <div class="sechead"><h2>Applied</h2><span class="eyebrow">the system survives contact — product screen + paid ad</span></div>
+        <div class="appgrid">
+          <div class="browser">
+            <div class="chrome"><div class="tl"><i></i><i></i><i></i></div><div class="url">app.magister.io/register</div></div>
+            <div class="screen">
+              <div class="sidebar">
+                <div class="navi on"><span class="material-symbols-rounded">account_balance</span>Register</div>
+                <div class="navi"><span class="material-symbols-rounded">shield</span>Standards</div>
+                <div class="navi"><span class="material-symbols-rounded">workspace_premium</span>Benchmark</div>
+                <div class="navi"><span class="material-symbols-rounded">history_edu</span>Doctrine</div>
+              </div>
+              <div class="stagep">
+                <h3>Register No. VII — in force</h3>
+                <div class="srow">
+                  <div class="stat"><div class="k">Ratified</div><div class="v">31<small>of 34</small></div></div>
+                  <div class="stat"><div class="k">Above standard</div><div class="v">+218%</div></div>
+                  <div class="stat"><div class="k">Below the mark</div><div class="v">1<small class="oxm">channel</small></div></div>
+                </div>
+                <div class="srow" style="grid-template-columns:1fr">
+                  <div class="stat"><div class="k">Next ruling</div><div class="v" style="font-size:17px">Q4 messaging · pending seal <small>1 review</small></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ad">
+            <div class="adimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/%28Venice%29_Statue_of_the_four_tetrarchs_St._Mark%27s_Basilica.jpg/960px-%28Venice%29_Statue_of_the_four_tetrarchs_St._Mark%27s_Basilica.jpg')"></div>
+            <div class="adbody">
+              <div class="adeyebrow">Magister · paid social</div>
+              <h4>The standard, <span>kept.</span></h4>
+              <p>Every channel held to the mark. One register. One seal.</p>
+              <span class="adcta">Set your standard</span>
+            </div>
+          </div>
+        </div>
+        <div class="caption">// carry-through gate: cover the logo — porphyry, the bronze rule, and the fluting still say this brand.</div>
+      </section>
+    </div>
+    <div class="foot">Magister · Creative Direction 03 · Magister · v1.11.0</div>
+  </div>
+</div>
+
+</div><!-- /stage -->
+
+
+
+<script>
+(function(){
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(window.lucide) lucide.createIcons();
+
+  // ===== nav + compare =====
+  document.querySelectorAll('.cnav [data-goto]').forEach(function(b){b.addEventListener('click',function(){
+    document.body.classList.remove('compare');
+    var g=b.dataset.goto;
+    document.querySelectorAll('.concept').forEach(function(c){c.classList.toggle('active',c.dataset.c===g);});
+    document.querySelectorAll('.cnav [data-goto]').forEach(function(x){x.classList.remove('on');});b.classList.add('on');
+    window.scrollTo(0,0);
+  });});
+  document.querySelector('[data-compare]').addEventListener('click',function(){
+    document.body.classList.toggle('compare');
+    window.scrollTo(0,0);
+  });
+
+  // ===== shared: sliders + contrast-aware ramps =====
+  function lum(h){var c=h.substring(1);return(0.299*parseInt(c.substr(0,2),16)+0.587*parseInt(c.substr(2,2),16)+0.114*parseInt(c.substr(4,2),16))/255;}
+  document.querySelectorAll('[data-slider]').forEach(function(sl){
+    var track=sl.querySelector('.slides'),slides=sl.querySelectorAll('.slide'),dots=sl.querySelector('[data-dots]'),i=0;
+    slides.forEach(function(_,k){var d=document.createElement('i');if(k===0)d.className='on';d.addEventListener('click',function(){go(k);});dots.appendChild(d);});
+    function go(k){i=(k+slides.length)%slides.length;track.style.transform='translateX(-'+(i*100)+'%)';dots.querySelectorAll('i').forEach(function(x,j){x.classList.toggle('on',j===i);});}
+    sl.querySelector('[data-prev]').addEventListener('click',function(){go(i-1);});
+    sl.querySelector('[data-next]').addEventListener('click',function(){go(i+1);});
+  });
+  function wireRamps(lampsSel,stepsSel,labelSel,ramps,names,darkText,lightText){
+    var lamps=document.querySelector(lampsSel),steps=document.querySelector(stepsSel),rlabel=document.querySelector(labelSel);
+    if(!lamps)return;
+    function show(k){steps.innerHTML='';ramps[k].forEach(function(h){var d=document.createElement('div');d.className='step';d.style.background=h;
+      d.style.color=lum(h)>0.5?darkText:lightText;d.textContent=h.toUpperCase();steps.appendChild(d);});rlabel.textContent=names[k]+' · 5 stops';}
+    var sel=lamps.querySelector('.lamp.sel'); show(sel?sel.dataset.ramp:Object.keys(ramps)[0]);
+    lamps.querySelectorAll('.lamp').forEach(function(l){l.addEventListener('click',function(){
+      lamps.querySelectorAll('.lamp').forEach(function(x){x.classList.remove('sel');});l.classList.add('sel');show(l.dataset.ramp);});});
+  }
+  wireRamps('[data-lamps]','[data-steps]','[data-rlabel]',
+    {ground:['#0A0805','#0F0C07','#1B160E','#2A2114','#3A3020'],panel:['#14100A','#1B160E','#221B11','#2A2114','#332815'],
+     accent:['#8A4B06','#B8660A','#E8830C','#F4A93C','#FBD08A'],bone:['#7C725C','#B4A88F','#D4C8B4','#ECE4D6','#F7F1E6'],
+     go:['#2E5A3E','#42815A','#5BA772','#83C79A','#B4E2C4'],sync:['#2C4A78','#3C6199','#4E7BC4','#7BA0DC','#B0C9F0'],
+     alert:['#7A2E18','#A84224','#D2542E','#E07E5A','#EFB09A']},
+    {ground:'Ground — warm black',panel:'Panel — machined',accent:'Action — amber',bone:'Bone — text',go:'Go — status',sync:'Sync — status',alert:'Abort — alert only'},
+    '#1a1206','#ECE4D6');
+  wireRamps('[data-lamps2]','[data-steps2]','[data-rlabel2]',
+    {paper:['#E3DBC6','#ECE5D3','#F4EFE3','#FBF7EC','#FFFFFF'],ink:['#0F0C08','#221D15','#57503F','#8D8368','#C3BAA2'],
+     gold:['#6E4A18','#8A5F26','#A6742F','#C9A45C','#E7D3A6'],ox:['#4A181C','#621F26','#7A2E33','#A0555C','#C88B92']},
+    {paper:'Ivory — the stage',ink:'Ink — the voice',gold:'Gold — the cue',ox:'Oxblood — dynamics'},
+    '#221D15','#F4EFE3');
+
+  // ===== count-ups =====
+  function countUp(sel,target){
+    var el=document.querySelector(sel);if(!el)return;var done=false;
+    new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting&&!done){done=true;var s=0,iv=setInterval(function(){s+=6;if(s>=target){s=target;clearInterval(iv);}el.textContent='+'+s+'%';},22);}});},{threshold:.4}).observe(el);
+  }
+  countUp('[data-bignum]',218); countUp('[data-bignum2]',218);
+  ['[data-trajline]','[data-crescline]'].forEach(function(sel){
+    var tl=document.querySelector(sel);if(!tl||reduced)return;
+    var L=tl.getTotalLength();tl.style.strokeDasharray=L;tl.style.strokeDashoffset=L;
+    new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){tl.style.transition='stroke-dashoffset 1.6s ease-out';tl.style.strokeDashoffset='0';}});},{threshold:.4}).observe(tl);
+  });
+
+  /* ================= C1 · MISSION CONTROL ================= */
+  (function(){
+    var root=document.querySelector('.c1'); if(!root)return;
+    var q=function(s){return root.querySelector(s)};
+    var t=4*3600+12*58, held=false;
+    var clock=q('[data-clock]'),cdel=q('[data-count]');
+    function pad(n){return String(n).padStart(2,'0')}
+    setInterval(function(){if(held)return;t++;clock.textContent=pad(Math.floor(t/3600))+':'+pad(Math.floor(t%3600/60))+':'+pad(t%60);},1000);
+    var cd=299; setInterval(function(){if(held)return;cd=cd>0?cd-1:299;cdel.textContent='T–00:'+pad(Math.floor(cd/60))+':'+pad(cd%60);},1000);
+    var dial=q('[data-dial]'),ptr=q('[data-pointer]'),dv=q('[data-dval]'),mf=q('[data-mfill]'),ring=q('[data-ring]'),railthr=q('[data-railthr]');
+    var N=32;for(var i=0;i<N;i++){var n=document.createElement('div');n.className='notch';n.style.transform='rotate('+(i/N*300-150)+'deg)';ring.appendChild(n);}
+    var notches=ring.querySelectorAll('.notch'),val=62;
+    function set(v){val=Math.max(0,Math.min(100,v));dv.textContent=Math.round(val);mf.style.width=val+'%';railthr.textContent=Math.round(val)+'%';
+      ptr.style.transform='rotate('+(val/100*300-150)+'deg)';var lit=Math.round(val/100*N);notches.forEach(function(nn,ii){nn.classList.toggle('on',ii<lit);});}
+    set(62);
+    var drag=false;
+    function ang(e){var r=dial.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+      var a=Math.atan2(e.clientY-cy,e.clientX-cx)*180/Math.PI+90;if(a>180)a-=360;if(a<-150)a=-150;if(a>150)a=150;set((a+150)/300*100);}
+    dial.addEventListener('mousedown',function(e){drag=true;setMode('manual');ang(e);e.preventDefault();});
+    window.addEventListener('mousemove',function(e){if(drag)ang(e);});
+    window.addEventListener('mouseup',function(){drag=false;});
+    var autoOn=true,ap=null,tt=0,autoBtn=q('[data-auto]'),manBtn=q('[data-manual]');
+    function setMode(m){autoOn=(m==='auto');autoBtn.classList.toggle('on',autoOn);manBtn.classList.toggle('on',!autoOn);
+      if(autoOn&&!ap&&!reduced){ap=setInterval(function(){tt+=.02;set(58+30*Math.sin(tt)+8*Math.sin(tt*2.7));},60);}
+      if(!autoOn&&ap){clearInterval(ap);ap=null;}}
+    autoBtn.addEventListener('click',function(){setMode('auto')});
+    manBtn.addEventListener('click',function(){setMode('manual')});
+    if(!reduced)setMode('auto');
+    var armcta=q('[data-armcta]'),armtxt=q('[data-armtxt]'),armed=false,fireKey=q('[data-key="fire"]');
+    armcta.addEventListener('click',function(){armed=!armed;armcta.classList.toggle('armed',armed);
+      armtxt.textContent=armed?'Armed · stand by':'Arm the console';fireKey.classList.toggle('hot',armed);});
+    var firstst=q('[data-firstst]');
+    root.querySelectorAll('[data-key]').forEach(function(k){k.addEventListener('click',function(){
+      root.querySelectorAll('[data-key]').forEach(function(x){x.classList.remove('armed');});k.classList.add('armed');
+      var kk=k.dataset.key;
+      if(kk==='hold')held=true;
+      if(kk==='go')held=false;
+      if(kk==='sync'){var sf=q('[data-syncflash]');sf.classList.remove('on');void sf.offsetWidth;sf.classList.add('on');}
+      if(kk==='fire'){fireKey.classList.remove('hot');armed=false;armcta.classList.remove('armed');armtxt.textContent='Arm the console';
+        setMode('manual');
+        var sv=val,steps=0,burn=setInterval(function(){steps++;set(sv+(100-sv)*Math.min(1,steps/16));
+          if(steps===16){clearInterval(burn);firstst.textContent='Launch';firstst.className='st live';
+            root.style.setProperty('--glowOp','1');
+            setTimeout(function(){root.style.setProperty('--glowOp','.55');firstst.textContent='Shipped';firstst.className='st done';setMode('auto');},2200);}},45);}
+    });});
+    root.querySelectorAll('.mini').forEach(function(m){
+      var which=m.dataset.tune,needle=m.querySelector('i'),v=55,dragging=false,lastX=0;
+      function apply(){needle.style.transform='rotate('+(v/100*240-120)+'deg)';
+        if(which==='glow')root.style.setProperty('--glowOp',(0.15+v/100*.85).toFixed(2));
+        else root.style.setProperty('--gridA',(0.1+v/100*.8).toFixed(2));}
+      apply();
+      m.addEventListener('mousedown',function(e){dragging=true;lastX=e.clientX;e.preventDefault();});
+      window.addEventListener('mousemove',function(e){if(!dragging)return;v=Math.max(0,Math.min(100,v+(e.clientX-lastX)*.8));lastX=e.clientX;apply();});
+      window.addEventListener('mouseup',function(){dragging=false;});
+    });
+  })();
+
+  /* ================= C2 · THE CONDUCTOR ================= */
+  (function(){
+    var root=document.querySelector('.c2'); if(!root)return;
+    var q=function(s){return root.querySelector(s)};
+
+    // dynamics hairpin: drag 0..100 → pp..ff; drives --amp + wave + rail
+    var hair=q('[data-hairpin]'),wedge=q('[data-wedge]'),cursor=q('[data-cursorline]'),
+        dynval=q('[data-dynval]'),dynrail=q('[data-dynrail]');
+    var marks=[[0,'pp'],[18,'p'],[36,'mp'],[54,'mf'],[72,'f'],[90,'ff']];
+    var dyn=62;
+    function setDyn(v){dyn=Math.max(0,Math.min(100,v));
+      var x=dyn/100*300;
+      wedge.setAttribute('points','0,37 '+x+','+(37-25*dyn/100)+' '+x+','+(37+25*dyn/100));
+      cursor.setAttribute('x1',x);cursor.setAttribute('x2',x);
+      var m='pp';for(var i=0;i<marks.length;i++){if(dyn>=marks[i][0])m=marks[i][1];}
+      dynval.textContent=m;dynrail.textContent=m;
+      root.style.setProperty('--amp',(0.25+dyn/100*.75).toFixed(2));
+    }
+    setDyn(62);
+    var hd=false;
+    function hAt(e){var r=hair.getBoundingClientRect();setDyn((e.clientX-r.left)/r.width*100);}
+    hair.addEventListener('mousedown',function(e){hd=true;hAt(e);e.preventDefault();});
+    window.addEventListener('mousemove',function(e){if(hd)hAt(e);});
+    window.addEventListener('mouseup',function(){hd=false;});
+
+    // live waveform — amplitude follows dynamics
+    var wp=q('[data-wavepath]'),wp2=q('[data-wavepath2]');
+    if(!reduced&&wp){var ph=0;
+      (function draw(){ph+=.035;
+        var amp=8+ (dyn/100)*26;
+        var d='M0 37',d2='M0 37';
+        for(var x=0;x<=1200;x+=24){
+          var y=37+Math.sin(x*.012+ph)*amp*Math.sin(x*.003+ph*.4);
+          var y2=37+Math.sin(x*.017+ph*1.3)*amp*.45;
+          d+=' L'+x+' '+y.toFixed(1); d2+=' L'+x+' '+y2.toFixed(1);
+        }
+        wp.setAttribute('d',d);wp2.setAttribute('d',d2);
+        requestAnimationFrame(draw);})();}
+
+    // performance: playhead crosses the score, notes ship
+    var playhead=q('[data-playhead]'),notes=root.querySelectorAll('.ni'),nowplay=q('[data-nowplay]'),
+        playcta=q('[data-playcta]'),playtxt=q('[data-playtxt]'),mvt=q('[data-mvt]');
+    var playing=false,paused=false,prog=0,raf=null,scorebox=q('.scorebox');
+    function step(ts){
+      if(!playing)return;
+      if(!paused){prog+=.0022;
+        if(prog>=1){prog=1;playing=false;playtxt.textContent='Encore';nowplay.innerHTML='finale — <b>ALL PERFORMED</b>';}
+        var w=scorebox.clientWidth-32;
+        playhead.style.left=(16+prog*w)+'px';
+        var mIdx=Math.min(3,Math.floor(prog*4));mvt.textContent=['I','II','III','IV'][mIdx];
+        notes.forEach(function(n,i){
+          var nx=(i+.5)/notes.length;
+          if(prog>=nx&&!n.classList.contains('played')){n.classList.add('played');
+            nowplay.innerHTML='now playing — <b>'+n.dataset.asset.toUpperCase()+'</b>';}
+        });
+      }
+      raf=requestAnimationFrame(step);
+    }
+    function begin(){
+      notes.forEach(function(n){n.classList.remove('played')});
+      prog=0;playing=true;paused=false;playhead.classList.add('show');
+      playtxt.textContent='Performing…';
+      root.querySelectorAll('[data-tkey]').forEach(function(x){x.classList.remove('on')});
+      root.querySelector('[data-tkey="play"]').classList.add('on');
+      if(raf)cancelAnimationFrame(raf);
+      if(!reduced)raf=requestAnimationFrame(step);
+    }
+    playcta.addEventListener('click',begin);
+    root.querySelectorAll('[data-tkey]').forEach(function(k){k.addEventListener('click',function(){
+      root.querySelectorAll('[data-tkey]').forEach(function(x){x.classList.remove('on')});k.classList.add('on');
+      var kk=k.dataset.tkey;
+      if(kk==='play'){if(!playing)begin();else paused=false;}
+      if(kk==='fermata'){paused=true;nowplay.innerHTML='held — <b>FERMATA</b>';}
+      if(kk==='dacapo'){begin();}
+      if(kk==='cue'){setDyn(Math.min(100,dyn+14));nowplay.innerHTML='cue — <b>CRESCENDO</b>';}
+    });});
+  })();
+
+  /* ================= C3 · MAGISTER ================= */
+  (function(){
+    var root=document.querySelector('.c3'); if(!root)return;
+    var q=function(s){return root.querySelector(s)};
+
+    // count-up + benchmark line draw
+    (function(){var el=q('[data-bignum3]');if(!el)return;var done=false;
+      new IntersectionObserver(function(es){es.forEach(function(en){
+        if(en.isIntersecting&&!done){done=true;var s=0,iv=setInterval(function(){s+=6;if(s>=218){s=218;clearInterval(iv);}el.textContent='+'+s+'%';},22);}});},{threshold:.4}).observe(el);})();
+    (function(){var pw=q('[data-plinths]');if(!pw)return;var done=false;
+      new IntersectionObserver(function(es){es.forEach(function(en){
+        if(en.isIntersecting&&!done){done=true;pw.querySelectorAll('.pl').forEach(function(p,i){
+          setTimeout(function(){p.querySelector('i').style.height=(p.dataset.h*0.88)+'%';},i*120);});}});},{threshold:.3}).observe(pw);})();
+
+    // compliance bars animate on view
+    (function(){var bars=root.querySelectorAll('.bfill');if(!bars.length)return;var done=false;
+      new IntersectionObserver(function(es){es.forEach(function(en){
+        if(en.isIntersecting&&!done){done=true;bars.forEach(function(b){b.style.width=b.dataset.w+'%';});}});},{threshold:.3}).observe(q('[data-bars]'));})();
+
+    // ramps
+    (function(){
+      var lamps=q('[data-lamps3]'),steps=q('[data-steps3]'),rlabel=q('[data-rlabel3]');
+      var ramps={porph:['#0F0A12','#171019','#211724','#281C2C','#3E2E42'],marble:['#8A7889','#B9A9B8','#D6C9D5','#EDE6ED','#F8F4F8'],
+        bronze:['#7C5E2E','#9C7A42','#C09758','#E4CE9C','#F2E6C6'],ox:['#4A1A22','#631F29','#8A3340','#AB5A66','#CE929B']};
+      var names={porph:'Porphyry — the stone',marble:'Marble — the record',bronze:'Bronze — the seal',ox:'Oxblood — below the mark'};
+      function lum(h){var c=h.substring(1);return(0.299*parseInt(c.substr(0,2),16)+0.587*parseInt(c.substr(2,2),16)+0.114*parseInt(c.substr(4,2),16))/255;}
+      function show(k){steps.innerHTML='';ramps[k].forEach(function(h){var d=document.createElement('div');d.className='step';d.style.background=h;
+        d.style.color=lum(h)>0.5?'#211724':'#EDE6ED';d.textContent=h.toUpperCase();steps.appendChild(d);});rlabel.textContent=names[k]+' · 5 stops';}
+      show('bronze');
+      lamps.querySelectorAll('.lamp').forEach(function(l){l.addEventListener('click',function(){
+        lamps.querySelectorAll('.lamp').forEach(function(x){x.classList.remove('sel');});l.classList.add('sel');show(l.dataset.ramp);});});
+    })();
+
+    // THE SEAL — hold to ratify; the register cascades
+    var seal=q('[data-seal]'),face=q('[data-sealface]'),stx=q('[data-sealtxt]'),ssub=q('[data-sealsub]'),
+        sico=q('[data-sealico]'),auth=q('[data-authval]'),standb=q('[data-standb]'),ratc=q('[data-ratcount]'),
+        mandcta=q('[data-mandcta]'),mandtxt=q('[data-mandtxt]'),ripple=q('[data-ripple]');
+    var sealed=false,holdTimer=null;
+    var prog=q('[data-sealprog]');
+    function stampIt(){
+      if(sealed)return; sealed=true;
+      seal.classList.remove('holding');seal.classList.add('stamp','done');
+      stx.textContent='SEALED';ssub.textContent='ratified';sico.textContent='verified';
+      auth.textContent='conferred';standb.textContent='SEALED';
+      mandtxt.textContent='Mandate in force';mandcta.classList.add('armed');
+      // cascade: reviews → ratified, one by one
+      var revs=root.querySelectorAll('[data-reg].rev');
+      var count=31;
+      revs.forEach(function(r,i){setTimeout(function(){
+        r.classList.remove('rev');r.classList.add('rat');r.textContent='Ratified';
+        count++;ratc.textContent=count+' / 34';
+      },500+i*550);});
+    }
+    prog.addEventListener('transitionend',function(){ if(seal.classList.contains('holding')&&!sealed) stampIt(); });
+    function startHold(){ if(sealed)return; seal.classList.add('holding'); }
+    function cancelHold(){ if(sealed)return; seal.classList.remove('holding'); }
+    seal.addEventListener('mousedown',startHold);
+    seal.addEventListener('touchstart',function(){startHold()},{passive:true});
+    window.addEventListener('mouseup',cancelHold);
+    window.addEventListener('touchend',cancelHold);
+    seal.addEventListener('mouseleave',cancelHold);
+    mandcta.addEventListener('click',function(){ if(!sealed){ssub.textContent='the seal awaits';seal.classList.add('stamp');setTimeout(function(){seal.classList.remove('stamp')},520);} });
+
+    // gavel keys
+    root.querySelectorAll('[data-gkey]').forEach(function(k){k.addEventListener('click',function(){
+      root.querySelectorAll('[data-gkey]').forEach(function(x){x.classList.remove('on')});k.classList.add('on');
+      var kk=k.dataset.gkey;
+      if(kk==='repeal'&&sealed){ // reset the whole ritual
+        sealed=false;seal.classList.remove('done','stamp','holding');
+        prog.style.transition='none';prog.style.strokeDashoffset='490';void prog.offsetWidth;prog.style.transition='';
+        stx.textContent='MMXXVI';ssub.textContent='hold to seal';sico.textContent='approval';
+        auth.textContent='standing';standb.textContent='UNSEALED';ratc.textContent='31 / 34';
+        mandtxt.textContent='Bring the mandate';mandcta.classList.remove('armed');
+        var regs=root.querySelectorAll('[data-reg]');
+        regs.forEach(function(r,i){ if(i>=2){r.classList.remove('rat');r.classList.add('rev');r.textContent='In review';} });
+      }
+      if(kk==='review'){ssub.textContent=sealed?'ratified':'under review';}
+      if(kk==='publish'&&sealed){standb.textContent='PUBLISHED';}
+    });});
+  })();
+})();
+</script>
+</body>
+</html>
