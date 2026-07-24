@@ -27,6 +27,25 @@ Collateral is produced in the format's native tooling, not custom web code (that
 - **`sales-enablement`** — the *substance* of a sales one-pager / battle card (what to claim, proof points, competitive positioning). You rank and stage it; this supplies it.
 - **`ad-creative`** — ad copy variants at scale. Pair it with a visual system flexible enough to carry the variants and coherent enough to read as one brand (see [ads.md](ads.md)).
 
+## Sourcing Photography
+
+Collateral needs **rich media**, and photography is the piece most often faked or skipped. Order of preference:
+
+1. **The brand's own photography** — real product shots, real team, real customers. Always first choice; check `.agents/brand.md` / the project for an existing library.
+2. **Properly licensed stock** — a paid library, or Adobe Stock via the Adobe MCP (`asset_license_and_download_stock`). This is what a real deliverable ships with.
+3. **Openly licensed images** for exploration and internal comps — e.g. Wikimedia Commons, queried through its API so you get real, attributable files rather than guessing URLs:
+
+```bash
+curl -s "https://commons.wikimedia.org/w/api.php?action=query&format=json\
+&generator=search&gsrsearch=filetype:bitmap%20<terms>&gsrlimit=5&gsrnamespace=6\
+&prop=imageinfo&iiprop=url&iiurlwidth=1200" | python3 -c "…print thumburl…"
+```
+Use the returned `thumburl` directly — constructed `Special:FilePath` guesses 404 often.
+
+**Label placeholders as placeholders.** An open-licence or comp image standing in for brand photography is fine *while designing*, but say so in the handoff — never let a stand-in ship as if it were the brand's own, and check the licence covers the actual use (commercial, print run, ad spend). Also apply the craft: crop it deliberately, and consider a **graphic-line or motif overlay** so the photo reads as part of the system rather than a dropped-in rectangle.
+
+**And skip the clichés.** The handshake, the headset agent, the generic team-at-laptop — a stock trope where a real product moment belonged is a named slop tell.
+
 ## Fonts and Assets
 
 - Use the **licensed brand faces** from `.agents/design.md`. **Embed them** in the deliverable (PDF/PPTX embed, or outline for print) so the file survives handoff without the fonts installed.

@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.5.0
+  version: 1.5.1
 ---
 
 # Collateral Design
@@ -161,12 +161,12 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] **Interior margin scaled to the format** — large sheets well past safe; small formats (cards) sitting *just inside* safe, not ballooned into emptiness
 - [ ] **No button on a printed piece** (URL / short link / QR instead); **no synthetic obliques** anywhere
 - [ ] **Social & thumbnail type sized for the delivered screen**, verified legible at a glance in a device mockup — content cut rather than type shrunk
-- [ ] **Thumbnails checked at real scale in a scrolling list**; vertical (9:16) formats given true interior margin inside the UI-safe zones
+- [ ] **Thumbnails checked at real scale in a scrolling list** (a scroll-test strip in the viewer); vertical (9:16) formats given true interior margin inside the UI-safe zones
 - [ ] Anything animated **reviewed in motion**, replayable — not approved as a still
 - [ ] **One motif, not several** — a single background language (rings *or* lines, never both in a frame), varied by scale/crop/density
 - [ ] Motif applied **across the whole family including cards and social**, and shown that way in review — not just on the big pieces
 - [ ] Motif pushed **off-canvas and given color**, yielding behind live text; background elements not accumulated into excess
-- [ ] **Rich media present** — photography / illustration, not geometry-and-type only
+- [ ] **Rich media present** — real photography / illustration (brand's own > licensed > openly-licensed comp, and placeholders labelled as such), cropped deliberately and tied into the system; not geometry-and-type only
 - [ ] Color in the right space (CMYK + checked translation for print), five stops, accent reserved; type by role, bold not the default, scaled for the real viewing distance; brand faces embedded
 - [ ] Real mark pulled and given clear space, present-not-dominant; motif carries the brand, calmed where the message leads
 - [ ] Designed to the format's craft — decks: one idea/slide, presented-vs-read decided, varied masters, one-takeaway data slides; print: bleed/trim/safe, 300 DPI, folds; ads: squint test, safe zones, one CTA

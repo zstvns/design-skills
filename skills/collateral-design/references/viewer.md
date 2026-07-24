@@ -46,6 +46,8 @@ Design each piece at its **native pixel dimensions** and scale only for display 
 
 **7. Animate the social and screen pieces.** Social is a moving medium; judging it static is judging half of it. Show **both** — a static state and a motion state, with a replay control. Useful, restrained moves: text sliding/rising in, staggered list reveals, a background element drifting, a considered button entrance, a story progress bar filling. Blog thumbnails and deck transitions benefit from the same treatment. Keep it purposeful and defer to `motion-design` for the craft (easing, duration, restraint).
 
+**7b. Add a scroll test for feed-scale formats.** Thumbnails and social posts are consumed in a *list*, so review them in one: render the set at **real feed scale (~150px wide for a blog/OG card)** stacked in a mock list with their titles and meta, exactly as someone scrolling would meet them. This is the fastest way to catch type that's too small and headlines that are too long — a thumbnail whose headline is mush at 150px needs fewer words and bigger type, not a smaller font. Build it from the same artboards so it can never drift from the real asset.
+
 **8. Show the specs.** A small info strip per format: what it is, its real dimensions (`1050 × 600 px · 3.5×2in @300dpi`), and what to look for. Review is faster when the reviewer doesn't have to ask "what size is this?"
 
 **9. Make it deep-linkable.** Read state from the query string (`?v=cards&z=phys&s=4&guides=1`) so a specific piece, zoom, or slide can be pointed at directly in review — and so it can be screenshotted programmatically for a self-audit.
