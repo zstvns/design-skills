@@ -36,7 +36,7 @@ then:  brand-naming → logo-design → identity-proofing
 | Application | `collateral-design` | Decks, one-pagers, print, ads. | 🔜 |
 | Application | `email-design` | Lifecycle and campaign email. | 🔜 |
 | Application | `social-design` | Social formats and systems. | 🔜 |
-| Application | `motion-design` | Micro-interactions and animation with intent. | 🔜 |
+| Application | [`motion-design`](skills/motion-design/SKILL.md) | The twelve principles of animation applied to UI motion in custom code — micro-interactions, transitions, entrances, scroll and hover behavior — with weight, emotion, and restraint. Motion carries feeling; not fade-up-on-everything. | ✅ |
 | Application | `art-direction` | Sourcing and generating the actual visual assets (AI generation, stock, commissioning) to the standards the craft sets. | 🔜 |
 | Review | `design-critique` | Judges any artifact against the emotional target and the latitude — including whether a deviation is a legitimate **flex** or a drift. | 🔜 |
 
