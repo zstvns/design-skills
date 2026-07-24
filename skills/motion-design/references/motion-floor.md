@@ -78,6 +78,20 @@ Vestibular disorders and motion sensitivity are real; large or continuous motion
 
 A blanket reset like the above is a safe floor. Better: keep meaningful *opacity* transitions (they don't cause motion sickness) and kill only the *movement* — reduced-motion means calmer, not necessarily zero feedback. Kill ambient/parallax/looping motion entirely under reduced-motion; those are the worst offenders.
 
+## Tooling — CSS first, GSAP when it gets real
+
+**CSS is the right tool for state motion.** Hover, focus, press, disclosure, and single-property reveals should be plain `transition` / `@keyframes`; scroll-driven CSS animations (`animation-timeline: scroll()/view()`) cover many reveal cases with no library at all. Don't add a dependency for what the platform does natively.
+
+**GSAP is the best option for smooth, complex, choreographed motion** — and it's now entirely free, every plugin included (Webflow took over stewardship and removed the paid tiers). Reach for it when the sequence outgrows CSS:
+
+- **Timelines** — the core win. Overlapping, staggered, multi-element choreography with real control over relative timing (`position` parameters, `stagger` configs) instead of hand-tuned `transition-delay` chains that break the moment you reorder anything.
+- **ScrollTrigger** — scroll-driven sequences, **pinning** a section while content advances, scrubbing an animation to scroll position. This is the tool for a scroll-telling beat.
+- **SplitText** — split a headline into characters / words / lines for staggered text reveals (pair with the stagger step above).
+- **Flip** — FLIP-based shared-element and layout transitions; the practical way to do the transform & morph technique (card → detail view) without animating layout properties.
+- **Smoothness** — GSAP's interpolation and its single rAF loop are noticeably steadier than many hand-rolled or competing implementations on demanding sequences.
+
+The principles don't change with the tool: everything above still applies — `transform`/`opacity` where possible, durations from the scale, curves from the easing system (GSAP has its own eases; map them to the same intent), and **`prefers-reduced-motion` still honored** — check it in JS (`matchMedia('(prefers-reduced-motion: reduce)')`) and skip or shorten the timeline, since a library bypasses the CSS media-query reset.
+
 ## The motion-slop checklist (what to catch in your own build)
 
 Extends `design-principles` → ai-slop's Motion section. If the page does these, it reads assembled, not designed:
