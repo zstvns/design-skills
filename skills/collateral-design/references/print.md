@@ -1,6 +1,8 @@
 # Print
 
-Print is the format that punishes screen habits hardest, because you can't patch it after the run. Everything that's forgiving on the web — RGB color, px units, "close enough" edges, low DPI — becomes a defect on paper. The rules below are the production floor; miss them and the piece comes back wrong from the printer, at cost.
+Most collateral never goes to a commercial press — it's a digital PDF, an office/laser print, a screen export. **Reach for this reference only when the piece is genuinely going to a print shop / offset run**, where you can't patch it after the fact. For a laser-printed one-pager or a PDF someone prints at their desk, RGB and sensible margins are fine; don't over-engineer CMYK and bleed for a job that doesn't need it.
+
+*When* it is a real press run, print punishes screen habits hardest: RGB color, px units, "close enough" edges, and low DPI all become defects on paper. The rules below are the production floor for that case — miss them and the piece comes back wrong from the printer, at cost.
 
 ## Work in Real Dimensions, Not Pixels
 

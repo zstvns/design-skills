@@ -12,7 +12,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | logo-design | 1.8.0 | Built | 2026-07-14 |
 | identity-proofing | — | Planned | — |
 | web-design | — | Planned | — |
-| collateral-design | 1.1.0 | Built | 2026-07-24 |
+| collateral-design | 1.2.0 | Built | 2026-07-24 |
 | email-design | — | Planned | — |
 | social-design | — | Planned | — |
 | motion-design | — | Planned | — |

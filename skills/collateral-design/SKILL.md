@@ -1,8 +1,8 @@
 ---
 name: collateral-design
-description: "Apply a brand's defined visual system to fixed-format collateral — pitch and sales decks, one-pagers and sales sheets, print pieces (brochures, flyers, posters, business cards), and paid ads (social, display). Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'brochure,' 'flyer,' 'poster,' 'print,' 'business card,' 'ad creative,' 'display ad,' 'banner,' or wants a branded document or graphic that isn't a website. This is where the approved identity is applied to mediums that ship in one shot — a slide on a projector, a sheet in someone's hand, an ad in a feed."
+description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Collateral Design
@@ -96,13 +96,26 @@ Run your own output through the same gauntlet the audit runs — **adversarially
 - **Score it against the audit categories** vs. the confirmed competitor set at a rival's harshness — Creative Direction, Color, Type, Layout. Would this earn a 4–5?
 - **Run the collateral-slop check** ([references/collateral-slop.md](references/collateral-slop.md)) and **list what it finds** — bullet soup, template-underneath decks, centered-everything sheets, clip-art icons, stock-photo clichés, CTA/accent bleed, low-contrast-on-projector, RGB-headed-to-print. "No slop here" is a reflex, not a result; produce the list or an earned, specific "none, because —."
 - **Test it in its real moment, not your editor.** Project the slide (is it legible from the back, in a bright room?). Shrink the ad to thumbnail (does one message survive the squint?). Export the print piece to a press-ready PDF and check bleed/trim/CMYK. Read the deck as a silent PDF (does it stand without you talking?).
+- **Review at the size it ships at — never only at reduced scale.** A shrunken contact sheet flatters everything: type that's unreadable at final size still *looks* fine at 30%. Small physical formats are where this bites hardest — check a business card at true 3.5×2in, not at 3× on screen, and hold a practical floor (**~7pt minimum for contact/role lines, ~10–12pt for a name**; at 300dpi that's ~30px and ~50px, so screen-native type sizes are far too small if carried over unchanged). If a piece was only ever reviewed scaled down, it wasn't reviewed.
 - **Cover-the-logo carry-through.** With the mark hidden, is the piece still recognizably this brand? If the distinctiveness lived only in the logo, the system didn't survive application.
 - **Family coherence.** Lay the pieces side by side: one brand, or three unrelated templates? Same feeling, varied layout?
 - **Proof the words.** Spelling, grammar, numbers, and — for anything printed — a final read *at size*, because you can't patch a printed run.
 
+## Deliver It in a Viewer — Reviewable at True Size
+
+A set of collateral is hard to judge as a pile of files or a shrunken contact sheet. **Ship the work in a lightweight viewer** so it can be seen the way it will actually exist. Build it as a single self-contained HTML file alongside the exports — it costs little and it's where review actually happens. Full pattern in [references/viewer.md](references/viewer.md).
+
+- **Switch between formats** — one-pager, social set, cards, thumbnails, deck — so the family can be compared in one place.
+- **Render each piece at its true size**, with a zoom control: *Fit*, *100%* (native pixels), and **Actual size** (true physical scale via the piece's DPI — a 3.5×2in card rendered 3.5×2in, which is the only honest test of a card).
+- **Present the deck as a deck** — click and arrow-key through it, a slide counter, a filmstrip to jump around, and a fullscreen present mode. A deck reviewed as static thumbnails hides its pacing.
+- **Toggle print guides** (safe margin / bleed) on print-bound pieces.
+- **Keep the viewer chrome neutral and outside the artifact** — a plain grey shell, never the brand's own colors, and no helper text overlapping the piece. The chrome must not become part of what's being judged.
+- **Make views deep-linkable** (`?v=cards&z=phys`) so specific pieces can be pointed at in review.
+
 ## The Deliverable
 
 - **The finished artifact(s)** in the correct output format: a presentable/sendable deck (PDF, and editable source where relevant), a print-ready PDF (CMYK, bleed, correct trim), sized ad exports per placement, or a screen/print one-pager.
+- **The viewer** (above) — a single HTML file that renders the set at true size and plays the deck, so the work can be reviewed as it will actually be seen.
 - **Optional: a short note** on how the system was applied (which tokens, mark treatment, master/template conventions) appended to the project so later collateral and other mediums stay coherent. Don't duplicate `.agents/design.md` — reference it.
 
 ## Non-Negotiables
@@ -117,6 +130,8 @@ Run your own output through the same gauntlet the audit runs — **adversarially
 - [ ] Designed to the format's craft — decks: one idea/slide, presented-vs-read decided, varied masters, one-takeaway data slides; print: bleed/trim/safe, 300 DPI, folds; ads: squint test, safe zones, one CTA
 - [ ] Family coherence checked — same system, varied layouts; coherent with the shipped site; any flex is deliberate, not drift
 - [ ] Adversarial self-audit on the *rendered* artifact in its real moment (collateral-slop tropes listed, not "none"); cover-the-logo carry-through
+- [ ] **Reviewed at true size, not only scaled down** — physical scale checked on small print formats, type above the practical floor (~7pt contact/role, ~10–12pt names)
+- [ ] Delivered in a viewer: format switching, true-size zoom, deck clickable/arrow-navigable with present mode, print guides; chrome neutral and outside the artifact
 - [ ] Correct output format shipped (press-ready PDF / sized exports / sendable deck); spelling, grammar, numbers proofed at size
 
 ## Related Skills
@@ -129,5 +144,5 @@ Run your own output through the same gauntlet the audit runs — **adversarially
 - `email-design` / `social-design` / `motion-design` — apply the same system to other mediums; motion/video ads route to `motion-design`
 - `design-critique` — judges the finished collateral against the emotional target and the flex-vs-drift latitude
 - marketing library: `copywriting` (the words come first), `sales-enablement` (one-pager / battle-card substance), `ad-creative` (ad copy variants at scale)
-- method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade — the scope and production principle); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
+- method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade — the scope and production principle); delivery: [references/viewer.md](references/viewer.md) (true-size viewer + playable deck); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
 - tooling (use when connected, fall back gracefully): **`canvas-design`** (static PNG/PDF art), **`slide-deck`** (decks), **`dataviz`** (charts), **Adobe MCP** (layout / print / InDesign), **Paper / Pencil / Figma MCP** (design canvases), or **code → PDF/image export**; see [references/tooling.md](references/tooling.md)

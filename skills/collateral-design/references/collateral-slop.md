@@ -13,6 +13,8 @@ Patterns that immediately signal a piece of collateral was *assembled from a tem
 - **Stock-photo clichés.** The handshake, the diverse-team-at-laptop, the headset support agent, the lightbulb "idea" — a stock cliché where a real product shot or owned image belongs.
 - **A pile of identical templates.** A "family" that's the same layout stamped across deck, sheet, and ad — coherence faked by cloning instead of earned by a shared system with varied layouts.
 - **Distinctiveness only in the logo.** Cover the mark and it's anonymous — the system didn't survive application.
+- **Type that dies at final size.** Sizes carried over from a screen design into a small physical format — a card's role or contact line landing at 3–4pt, legible only because you reviewed it scaled up. Check the real size (see [viewer.md](viewer.md)).
+- **Only ever reviewed at reduced scale.** A shrunken contact sheet hides exactly the defects that matter; if nobody saw the piece at true size, treat it as unreviewed.
 
 ## Decks
 
