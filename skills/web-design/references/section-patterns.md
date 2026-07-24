@@ -9,7 +9,9 @@ The first thing anyone sees. Job: communicate the core value and earn the scroll
 - Headline is the star — room and emphasis.
 - Subheadline expands, doesn't repeat.
 - One primary CTA, optionally one secondary (distinct treatment).
-- Hero animation can hold attention but needn't loop forever — catch, deliver, release.
+- The headline may be *completed* by a typed/animated second line — plan the copy for it, and size the headline down to make room.
+- Prefer a hero visual that shows real work (a cycling stack of shipped items) over a static, decorative image.
+- **Hero motion runs once, then rests and pushes forward** — catch, deliver, release, then let the CTA take over. Don't loop the hero forever; a perpetual loop competes with the action you want.
 - Background treatment (gradient, texture, the motif) sets the mood for the whole page.
 
 ## Social Proof Bar
@@ -105,6 +107,7 @@ Rhythm is what makes a page read as *designed* rather than *assembled* — and i
 - **The column trio is the floor, not the range.** 2-col / 3-col / left-right-left keeps a page from being monotonous, but it's still safe. When a stretch goes flat, reach for something **unexpected**: an offset overlap, a full-bleed visual, a broken or diagonal grid, an oversized number, a device shot bleeding off the edge, a section that inverts its own hierarchy.
 - **Vary the media, not just the columns.** Alternate vector graphics, photography, icons, and illustration so no two sections feel built from the same kit. A page that's all icon-grids reads flat no matter how the columns change.
 - **Balance text with a visual.** A text-only section that should carry an image reads as unfinished. Show the product in layered, overlapping mockups (device + card + a slightly rotated sticker, real depth) — not a flat screenshot.
+- **Demarcate sections so they don't blur.** A run of alternating left-right-left-right feature rows reads as *one* section unless you separate them — give a group its own header, more vertical spacing between rows, and a reveal-on-scroll cue so the reader knows they've entered something new. Distinct features that sit too close read as a single tied-together block.
 - **Never the same layout for consecutive sections**, and evaluate every section against what's above and below it.
 - **Give the page a pace:** dense then spacious, detailed then simple. Dark/light transitions mark narrative shifts — not variety for its own sake.
 - **Consolidate:** five thin sections are worse than three substantial ones.

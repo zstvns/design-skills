@@ -8,14 +8,32 @@ The tells that separate a site that was *designed* from one that was *assembled*
 - **Weight.** Don't default to bold — bold is a tool, not a starting point. Body is regular/book. Reserve heavier weights for moments that earn emphasis; use lighter weights for supporting text.
 - **Casing as a tool.** Uppercase for labels and metadata, sentence case for readability, all-lowercase for a deliberate casual feel. Casing is a design decision, not an accident.
 - **Leading.** Headings 1.1–1.3. Body 1.5–1.6.
-- **Size hierarchy.** The type scale (golden ratio ~1.618 is a fine baseline) gives order; breaking it intentionally gives interest. An `h1` need not be the biggest thing on the page — HTML tags are semantics, not a visual contract.
+- **Size hierarchy.** The type scale (golden ratio ~1.618 is a fine baseline) gives order; breaking it intentionally gives interest. An `h1` need not be the biggest thing on the page — HTML tags are semantics, not a visual contract. **Headline size follows the content:** a hook meant to be completed by a second line wants a smaller headline, not a lone giant one-liner.
+- **No widows.** Never leave a single word stranded on a headline's last line. Balance the wrap (`text-wrap: balance`), or rewrite, unless the break is deliberate.
+- **Low-opacity headline + one standout word.** A reliable emphasis move: set the headline in a dimmed color and lift one word (or phrase) to full opacity or the brand accent. The dimmed-with-a-highlight version usually reads better than full-strength everywhere.
+- **Contrast.** Check small/secondary text against its background — the softest text is usually a hair too low; nudge it up until it's comfortably readable.
 
 ## Color Discipline
 
 - **The CTA color is one deliberate, always choice.** Pick it once and use it for the primary action across the entire site.
 - **It is not a text or graphic color.** The CTA color must be *chromatically distinct* from the color carrying headlines, icons, and decoration — pick one that reads as *progression forward* (green or blue, heuristically). If the button is the same color as the text around it, it blends instead of popping.
-- **Reserve it.** Minimize it everywhere else — icons, borders, decoration — so it detonates when it lands on a button.
+- **Reserve it — hard.** It appears *only* on actual CTAs. Not on a headline, not on an icon, not on a decorative accent, not on a status pill. The moment the forward color shows up as decoration, the button stops reading as "act." Repeated emphasis is the job of a *separate* brand accent, used with restraint.
+- **Never fake a CTA.** A non-interactive element (a diagram node, a label) styled like a button erodes the real one. If it isn't clickable, it doesn't get the button treatment.
 - **Differentiate the shape, too.** Give the CTA a pill or rounded form distinct from the squared rectangles of cards and inputs, so the action reads at a glance.
+
+## Contrast by Dichotomy
+
+To dramatize a before/after or old/new comparison, don't reach for a new "negative" color (and never make a brand color the villain). Instead: **strip one side to neutral/grayscale and saturate the other with the brand's colors.** No color vs. all the colors is an instantly legible dichotomy — it shows the contrast without polluting the palette or making a brand color read as bad.
+
+## Alignment
+
+- **Top-align multi-column rows.** When text sits beside a visual, align both to the top (`align-items: flex-start`), not the vertical center — centered pairs drift and lose their grid.
+- **Left-align by default.** Section headers and content align left; reserve centering for genuinely centered blocks (a hero of one centered statement, a video, a testimonial). Centering *everything* is a tell.
+- **One container width.** The nav aligns to the same content container as everything below it — no stray gutter mismatch between the header and the page.
+
+## Progressive Disclosure
+
+Don't dump every detail at once. Build **layers of discovery**: a logo marquee that **pauses on hover and reveals the integration's name**, a card that expands, a detail that surfaces on interaction. Anything interactive should *look* interactive (hover cue, cursor, lift). An infinite marquee must loop **seamlessly** — never snap back to the start.
 - **Five stops, not ten.** Base + 2 shades + 2 tints per color. Resist the AI reflex to generate full ramps you'll never use.
 - **Secondary CTAs stay distinct** from primary in every state, hover included — never converging to the same appearance.
 

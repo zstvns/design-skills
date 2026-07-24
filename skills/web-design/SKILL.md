@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.2.0
+  version: 1.3.0
 ---
 
 # Web Design
@@ -34,6 +34,8 @@ Routing back holds **even if the user arrives with a logo already** — a mark w
 
 The single most important input is the words. Read the copy in `.agents/product-marketing.md` (audience, voice, positioning, and the page copy itself). **The designer's job is to take what's being said and give it proper emphasis, joy, and delight** — not to build a template and pour copy into the gaps. Wireframe-first thinking is the fastest tell of an assembled page. If the copy isn't written, get it written first.
 
+**Size follows the content, not a template.** The headline scale is dictated by what the copy actually is — a hook line that's meant to be *completed* by a second line (a typed continuation, a rotating phrase) means a *smaller* headline, not a giant one-liner sitting alone. A hero with a lone hook and no follow-through reads as unfinished. Design the content you have; don't force it into a fixed hero shell.
+
 The visual system serves the message. Design serves the message. The site is the stage; the copy is the show.
 
 ## When You Reference an Existing Site, Be Faithful to It
@@ -57,7 +59,7 @@ You are not producing a comp for someone else to implement. **You design by buil
 Pull the system from `.agents/design.md` — don't re-derive it, don't invent alongside it:
 
 1. **Color by role.** Background, text (primary/secondary), **action/CTA**, support. Five stops per color, not ten. Use the tokens as defined.
-2. **The CTA color is one deliberate, always choice — and it is *not* a text or graphic color.** Pick a single color that reads as *progression forward* (a green or blue, heuristically) and use it for the primary action everywhere. It must be **chromatically distinct** from the color carrying your headlines, icons, and decoration — otherwise the button doesn't pop, it blends. Reserve it: minimized off buttons so it detonates on one. And give the CTA a **differentiated shape** — a pill or rounded form, not the same squared rectangle as every card — so the action reads at a glance.
+2. **The CTA color is one deliberate, always choice — and it is *not* a text or graphic color.** Pick a single color that reads as *progression forward* (a green or blue, heuristically) and use it for the primary action everywhere. It must be **chromatically distinct** from the color carrying your headlines, icons, and decoration — otherwise the button doesn't pop, it blends. **Use it only on actual CTAs** — never a headline, never a decorative accent. A *separate* brand accent carries repeated emphasis (and even that with restraint); if the forward color starts showing up on labels and graphics, it stops meaning "act." Never style a non-interactive element like a button, either — a fake CTA erodes the real one. And give the CTA a **differentiated shape** — a pill or rounded form, not the same squared rectangle as every card — so the action reads at a glance.
 3. **Type by role, for contrast not competition.** Display, heading, body — each with a clear job. Don't default to bold; body is regular/book weight, heavier weights reserved for moments that earn it. Heading leading 1.1–1.3, body 1.5–1.6. Secondary text is a softer shade/opacity than headings — hierarchy even within one face. **Change body copy to the secondary text color across the whole page in one systematic pass**, not section by section (see [references/craft-details.md](references/craft-details.md) → work systematically).
 4. **The motif carries the brand — but restrained where the message must win.** Deploy the signature element as texture, pattern, or a recurring detail (this is where distinctiveness must *survive application* — see `design-principles`). **In the hero, calm it down:** a busy motif behind the headline and primary action is distraction, not identity. Let the message and the CTA lead; thread the motif more assertively in later sections.
 5. **Eyebrows sparingly.** A mono/uppercase kicker over *every* section is clutter — it flattens hierarchy instead of building it. Use an eyebrow only where a section genuinely needs the label; most sections lead with the headline.
@@ -106,9 +108,11 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - [ ] Copy exists and drives the layout — no wireframe-first, no filler
 - [ ] If referencing an existing site: every section ported, the primary action reproduced, **real logos** pulled (no icon+text stand-ins)
 - [ ] Real custom code shipped (project stack matched or clean HTML/CSS) — not a comp, not Webflow/Framer
-- [ ] CTA color is a single forward color, distinct from text/graphics, pill/rounded shape, reserved; five stops; bold not the default
+- [ ] CTA color is a single forward color, distinct from text/graphics, used *only* on CTAs (never headlines/decoration), pill/rounded, reserved; no fake CTAs; separate brand accent carries emphasis; five stops; bold not the default
 - [ ] Eyebrows sparing; hero motif calmed so message + action lead; motif carried assertively later; distinctiveness survives cover-the-logo
 - [ ] Rhythm goes beyond the column trio — unexpected layouts and varied media (vector/photo/icon/illustration); text sections balanced with layered visuals
+- [ ] Columns top-aligned, content left-aligned by default (center only genuinely-centered blocks); each section demarcated (header + spacing) so repeated L-R rows don't blur into one
+- [ ] Headline size follows the content; contrast checked; no widows (headlines balanced); real photography pulled where imagery is called for
 - [ ] Craft floor met (rem/clamp, layered shadows, optical alignment, nested radii, distinct CTA states); global changes done systematically
 - [ ] Adversarial self-audit on the *rendered* page (web-slop tropes listed, not "none"); responsive + accessibility pass; spelling/grammar + OG image checked
 
