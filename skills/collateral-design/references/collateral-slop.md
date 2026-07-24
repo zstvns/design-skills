@@ -15,6 +15,12 @@ Patterns that immediately signal a piece of collateral was *assembled from a tem
 - **Distinctiveness only in the logo.** Cover the mark and it's anonymous — the system didn't survive application.
 - **Type that dies at final size.** Sizes carried over from a screen design into a small physical format — a card's role or contact line landing at 3–4pt, legible only because you reviewed it scaled up. Check the real size (see [viewer.md](viewer.md)).
 - **Only ever reviewed at reduced scale.** A shrunken contact sheet hides exactly the defects that matter; if nobody saw the piece at true size, treat it as unreviewed.
+- **Text and boxes on an empty ground.** No background element tying the composition together — the single most common reason a fixed-format piece reads flat. (See [composition.md](composition.md).)
+- **A flat black print piece.** Near-black stock treated as the default rather than a deliberate exception, with no light expression designed at all. Also: flat `#000` where a gradient with depth belonged.
+- **One two-column split, repeated.** The same 2-col band down the whole piece — the fixed-format equivalent of banded web sections.
+- **Cramped interior margin.** Screen-sized padding carried onto paper, so content crowds the trim; reads cheap no matter how good the type is.
+- **Bleed designed at trim size.** Background art stopping at the cut line instead of extending past it — white slivers on delivery.
+- **Social judged in isolation and static.** No platform context and no motion, so nobody saw how it actually lands in a feed.
 
 ## Decks
 

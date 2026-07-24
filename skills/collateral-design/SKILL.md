@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.2.0
+  version: 1.3.0
 ---
 
 # Collateral Design
@@ -49,6 +49,16 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
 3. **The mark is present but rarely the hero.** A logo belongs on collateral — footer of a slide, corner of a sheet, sign-off of an ad — sized for recognition, not dominance (the exception is a cover or a pure brand piece). Give it clear space; never stretch, recolor off-system, or drop it onto a busy field. Pull the real mark from the identity, not a redrawn approximation.
 4. **The motif carries the brand across the family — with restraint where the message must win.** The signature element (pattern, texture, recurring detail) is how a deck slide and an ad read as the *same brand* without being the same layout. This is where distinctiveness must **survive application** (see `design-principles`). Calm it wherever the message leads — a cover, a hero stat, an ad's one line — and let it work harder on connective, lower-stakes surfaces.
 5. **One accent, reserved.** Whatever signals "the point / the action" — the one CTA on an ad, the key number on a slide — stays scarce. Sprinkled on every heading and box, it stops meaning anything.
+
+## Compose the Frame — Dynamic, Not Filled
+
+A fixed frame has no scroll to rescue a flat layout and no interaction to add interest, so composition carries most of the load. Full method in [references/composition.md](references/composition.md):
+
+- **Light first, dark second.** Default to a light composition, especially for print — a near-black printed piece is rare, drinks ink, scuffs, and goes muddy on uncoated stock. **Even a dark screen brand needs a light expression for paper.** Build that, then produce the dark variant for screen. If a piece genuinely should be dark, give it **depth** — a gradient with light in it, not flat black.
+- **Give it a background element that ties the composition together.** Text and boxes on an empty ground is the flat case. Use a large gradient wash, an oversized cropped motif, an isometric or dot field, a graphic line crossing the frame, a chart-line over a photo, a giant cropped numeral. It sits *behind*, stays low-contrast, never competes with the headline or the action, and should feel **cropped by the frame** rather than politely contained.
+- **Compose on an 8-column grid, not a repeated two-column split.** A 2-col layout stamped down the whole piece is the fixed-format version of banded web sections. Vary the spans band to band (5+3 hero, 4+4, full-8 statement, 3+3+2, 6+2) while holding gutters and outer margin constant — same rhythm discipline `web-design` applies to sections.
+- **Mix the media across bands**, not just the column counts: photography, vector, icons, a device mockup, a chart, an inverted pull-quote card. Every band as text-in-boxes is still flat.
+- **Margin is the space *inside* the trim** — and print wants far more of it than screen instincts suggest (a screen-derived inset is often a **half to a third** of what the piece needs). Safe area is the floor, not the target. Small formats like cards feel this hardest.
 
 ## Build the System, Then Cascade
 
@@ -108,7 +118,10 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - **Switch between formats** — one-pager, social set, cards, thumbnails, deck — so the family can be compared in one place.
 - **Render each piece at its true size**, with a zoom control: *Fit*, *100%* (native pixels), and **Actual size** (true physical scale via the piece's DPI — a 3.5×2in card rendered 3.5×2in, which is the only honest test of a card).
 - **Present the deck as a deck** — click and arrow-key through it, a slide counter, a filmstrip to jump around, and a fullscreen present mode. A deck reviewed as static thumbnails hides its pacing.
-- **Toggle print guides** (safe margin / bleed) on print-bound pieces.
+- **Toggle print guides — bleed, trim, and safe**, labeled with a legend, on a document built at **bleed size** so the review can see background art genuinely running past the cut line.
+- **Stage everything on a neutral mid-gray canvas with a visible outline** — never white, never the brand's own colors. A light piece needs a darker ground to read as an object, and a dark piece disappears into a dark stage. If you can't see where the artifact ends, you can't judge its margins.
+- **Show social in real platform context, across platforms** — Instagram feed and story/reel, LinkedIn, X, Facebook — in device frames with the actual platform chrome, alongside the varied format set (square, 4:5, 9:16, 1.91:1).
+- **Animate the social and screen pieces, and show static *and* motion** with a replay control — text rising in, staggered reveals, a drifting background element, a considered button entrance. Social is a moving medium; judging it static judges half of it. Defer to `motion-design` for the craft.
 - **Keep the viewer chrome neutral and outside the artifact** — a plain grey shell, never the brand's own colors, and no helper text overlapping the piece. The chrome must not become part of what's being judged.
 - **Make views deep-linkable** (`?v=cards&z=phys`) so specific pieces can be pointed at in review.
 
@@ -125,13 +138,17 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] `.agents/design.md`, `brand.md`, `product-marketing.md` read; system applied, not re-invented
 - [ ] Message exists and drives the layout — no template-first, no bullet soup, size follows content
 - [ ] For a set: one reusable system/template built and **stress-tested against worst-case content** (longest name/headline, densest/sparsest) before cascading — one system, varied content
+- [ ] **Light expression designed first** (print especially); dark is a second variant, and any dark piece has depth (gradient, not flat black)
+- [ ] A **background element ties each composition together** (wash / oversized cropped motif / graphic line), behind the content and cropped by the frame — not text-and-boxes on an empty ground
+- [ ] Composed on an **8-column grid with varied spans** and mixed media band to band — not one two-column split repeated
+- [ ] **Interior margin generous** (well beyond the safe-area floor); small formats given real breathing room
 - [ ] Color in the right space (CMYK + checked translation for print), five stops, accent reserved; type by role, bold not the default, scaled for the real viewing distance; brand faces embedded
 - [ ] Real mark pulled and given clear space, present-not-dominant; motif carries the brand, calmed where the message leads
 - [ ] Designed to the format's craft — decks: one idea/slide, presented-vs-read decided, varied masters, one-takeaway data slides; print: bleed/trim/safe, 300 DPI, folds; ads: squint test, safe zones, one CTA
 - [ ] Family coherence checked — same system, varied layouts; coherent with the shipped site; any flex is deliberate, not drift
 - [ ] Adversarial self-audit on the *rendered* artifact in its real moment (collateral-slop tropes listed, not "none"); cover-the-logo carry-through
 - [ ] **Reviewed at true size, not only scaled down** — physical scale checked on small print formats, type above the practical floor (~7pt contact/role, ~10–12pt names)
-- [ ] Delivered in a viewer: format switching, true-size zoom, deck clickable/arrow-navigable with present mode, print guides; chrome neutral and outside the artifact
+- [ ] Delivered in a viewer: format switching, true-size zoom, deck clickable/arrow-navigable with present mode, bleed/trim/safe guides; **neutral gray canvas with visible piece outlines**; social shown **in-platform across platforms**, static *and* animated; chrome neutral and outside the artifact
 - [ ] Correct output format shipped (press-ready PDF / sized exports / sendable deck); spelling, grammar, numbers proofed at size
 
 ## Related Skills
@@ -144,5 +161,5 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - `email-design` / `social-design` / `motion-design` — apply the same system to other mediums; motion/video ads route to `motion-design`
 - `design-critique` — judges the finished collateral against the emotional target and the flex-vs-drift latitude
 - marketing library: `copywriting` (the words come first), `sales-enablement` (one-pager / battle-card substance), `ad-creative` (ad copy variants at scale)
-- method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade — the scope and production principle); delivery: [references/viewer.md](references/viewer.md) (true-size viewer + playable deck); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
+- method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade); [composition.md](references/composition.md) (light-first, background element, 8-col grid, print margin); delivery: [references/viewer.md](references/viewer.md) (true-size viewer + playable deck); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
 - tooling (use when connected, fall back gracefully): **`canvas-design`** (static PNG/PDF art), **`slide-deck`** (decks), **`dataviz`** (charts), **Adobe MCP** (layout / print / InDesign), **Paper / Pencil / Figma MCP** (design canvases), or **code → PDF/image export**; see [references/tooling.md](references/tooling.md)

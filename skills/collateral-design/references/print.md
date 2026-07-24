@@ -4,6 +4,14 @@ Most collateral never goes to a commercial press — it's a digital PDF, an offi
 
 *When* it is a real press run, print punishes screen habits hardest: RGB color, px units, "close enough" edges, and low DPI all become defects on paper. The rules below are the production floor for that case — miss them and the piece comes back wrong from the printer, at cost.
 
+## Light First — Printed Black Is the Exception
+
+**Design print light, and make the dark version second.** A near-black printed piece is genuinely rare: it soaks ink, shows every scuff and fingerprint, costs more, and goes muddy on uncoated stock. Even when the brand's screen identity is dark, its printed expression should normally be a light ground with dark ink — the brand earns a **light expression** for paper. Reserve dark stock for a deliberate, premium-feeling exception, and when you do go dark, give it depth (a gradient with light in it) rather than flat black. Full reasoning in [composition.md](composition.md).
+
+## Margin Is the Space *Inside* the Trim
+
+Print inverts the web's vocabulary: **margin is interior** — the breathing room between the trim edge and the content. Be generous with it; a screen-derived inset is usually only **a half to a third** of what a print piece wants. Safe area (below) is the hard floor, not the target. Anything meant to run off the edge — a background wash, a cropped pattern, a photo — ignores the margin entirely and extends into the bleed.
+
 ## Work in Real Dimensions, Not Pixels
 
 Print is physical. Set the document in **mm or inches at final trim size** — never px. Common sizes:
@@ -22,6 +30,8 @@ Three nested boundaries. Get them wrong and you ship white slivers at the edge o
 - **Safe margin** — keep all critical content (text, logo, anything you can't lose) **inside** the trim by ~3–5 mm / 0.125–0.25 in, so nothing important gets cut.
 
 Content to the edge → it needs bleed. Content that must not be cut → keep it inside safe. State both when you set the document up.
+
+**Set the document up at bleed size, not trim size.** A 3.5×2in card is a **3.75×2.25in document** with the trim 1/8in inside it; an 8.5×11in sheet is **8.75×11.25in**. Designing at trim and "adding bleed later" is how pieces ship with white slivers — the background art has to actually exist out there. And **show the bleed when you present it**: a review needs to see the background wash or pattern genuinely running past the trim line, so everyone can confirm nothing critical is out there and nothing stops short of the cut.
 
 ## Color: CMYK, Not RGB
 

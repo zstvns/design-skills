@@ -36,11 +36,17 @@ Design each piece at its **native pixel dimensions** and scale only for display 
 - A **filmstrip** of live thumbnails to jump around, with the current slide marked
 - **Fullscreen present mode** (`requestFullscreen`, bound to a key like `F`), hiding the filmstrip
 
-**4. Toggle print guides.** For print-bound pieces, a checkbox that overlays the **safe margin** and **bleed** as dashed insets — so you can see whether critical content sits inside safe and edge content actually bleeds. Only show the toggle on formats where it means something.
+**4. Toggle print guides — all three boundaries.** For print-bound pieces, overlay **bleed**, **trim/cut**, and **safe** as distinct, labeled, color-coded guides (1/8in for bleed and safe), with a legend. The piece must be built at bleed size so the review can *see* the background art running past the trim line — that's the whole point. Only show the toggle where it means something.
 
-**5. Show the specs.** A small info strip per format: what it is, its real dimensions (`1050 × 600 px · 3.5×2in @300dpi`), and what to look for. Review is faster when the reviewer doesn't have to ask "what size is this?"
+**5. Present pieces on a neutral canvas, with a visible outline.** Treat the stage like a press table or a light table: a **mid-gray neutral background**, never white and never the brand's own colors. Two reasons — a light piece needs a darker ground to read as an object, and a **dark piece disappears into a dark stage**. Give every piece a crisp edge (a hairline plus a real drop shadow) so its boundary is unmistakable. If you can't see where the artifact ends, you can't judge its margins.
 
-**6. Make it deep-linkable.** Read state from the query string (`?v=cards&z=phys&s=4&guides=1`) so a specific piece, zoom, or slide can be pointed at directly in review — and so it can be screenshotted programmatically for a self-audit.
+**6. Show social in real platform context — and more than one platform.** An asset in isolation doesn't tell you how it lands. Mount each post inside a **device frame with the actual platform UI** — and cover the platforms it will actually run on: **Instagram feed and story/reel, LinkedIn, X/Twitter, Facebook**. Each has different chrome, different crop, and different text treatment, so each is a real test. Pair that with the **varied format set** (square, 4:5 portrait, 9:16 vertical, 1.91:1 link) so the review sees every placement.
+
+**7. Animate the social and screen pieces.** Social is a moving medium; judging it static is judging half of it. Show **both** — a static state and a motion state, with a replay control. Useful, restrained moves: text sliding/rising in, staggered list reveals, a background element drifting, a considered button entrance, a story progress bar filling. Blog thumbnails and deck transitions benefit from the same treatment. Keep it purposeful and defer to `motion-design` for the craft (easing, duration, restraint).
+
+**8. Show the specs.** A small info strip per format: what it is, its real dimensions (`1050 × 600 px · 3.5×2in @300dpi`), and what to look for. Review is faster when the reviewer doesn't have to ask "what size is this?"
+
+**9. Make it deep-linkable.** Read state from the query string (`?v=cards&z=phys&s=4&guides=1`) so a specific piece, zoom, or slide can be pointed at directly in review — and so it can be screenshotted programmatically for a self-audit.
 
 ## Keep the Chrome Out of the Artifact
 
