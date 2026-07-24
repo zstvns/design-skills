@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.5.1
+  version: 1.6.0
 ---
 
 # Collateral Design
@@ -55,7 +55,10 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
 3. **Use the REAL assets from `.agents/design.md` — never a stand-in.** This file (plus `logo-design`'s output) holds the actual **logo files, brand colors, licensed typefaces, and motif** established upstream. Pull them; do not approximate them.
    - **Never substitute an icon-font glyph or a lookalike shape for the logo.** A Material Symbols / Lucide / emoji icon standing in for the mark is the single most damaging shortcut in this skill — it silently replaces the brand's most controlled asset with a generic one. If you can't locate the real file, **stop and ask** rather than approximating.
    - **Check you have the current version.** Identities get revised; a mark from an earlier round may be stale. Confirm the logo, palette, and type in `design.md` are the latest before applying them across a whole family — a full set built on a superseded mark is a full set to redo.
+   - **The mark lives in `logo-design`'s deliverable** — the actual vector files it produced. Go get them (and prepare them for reuse: make the fill/stroke inherit `currentColor` so one asset works on light *and* dark grounds, rather than keeping separate hardcoded copies).
+   - **Set the wordmark in the licensed face, don't use a generated raster.** `logo-design`'s rule holds here: the symbol is a drawn asset, the wordmark is real type.
    - **Same for color and type:** exact brand values and licensed faces from `design.md`, not visually-similar substitutes.
+   - **If the mark's detail collapses at the sizes collateral actually needs, that's a finding — not something to fudge.** A card, a slide footer, and an avatar are small; a mark with fine interior detail (thin ticks, knurled edges, hairlines) can turn to mush there. Report it back to `logo-design` and ask for a simplified small-size cut rather than shipping a muddy mark or quietly redrawing one yourself. Collateral is usually where this gets discovered, because it's the first place the mark is used small and repeatedly.
 4. **The mark is present but rarely the hero — and use the right cut of it.** A logo belongs on collateral (slide footer, sheet corner, ad sign-off) sized for recognition, not dominance; a cover or pure brand piece is the exception. Give it clear space; never stretch, recolor off-system, or drop it onto a busy field. **Inside a constrained shape — a circle, an avatar, a small badge — use the mark alone, not the full lockup.** Nesting a mark-plus-wordmark inside a ring or a tiny container crowds both; pick the symbol and let it breathe. And don't add the logo where it earns nothing: on a piece already carrying the brand's motif and type, a redundant mark is clutter.
 5. **The motif carries the brand across the family — with restraint where the message must win.** The signature element (pattern, texture, recurring detail) is how a deck slide and an ad read as the *same brand* without being the same layout. This is where distinctiveness must **survive application** (see `design-principles`). Calm it wherever the message leads — a cover, a hero stat, an ad's one line — and let it work harder on connective, lower-stakes surfaces.
 6. **One accent, reserved.** Whatever signals "the point / the action" — the one CTA on an ad, the key number on a slide — stays scarce. Sprinkled on every heading and box, it stops meaning anything.
@@ -152,7 +155,7 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] `.agents/design.md`, `brand.md`, `product-marketing.md` read; system applied, not re-invented
 - [ ] **Copy gate passed** — strong copy exists and drives the layout (weak copy = stop and get it written); identity-only pieces (business cards, avatars, letterhead) exempt
 - [ ] **Real assets pulled from `.agents/design.md`** — actual logo files (never an icon-font/emoji stand-in), exact brand colors, licensed faces — and confirmed to be the *current* version
-- [ ] Mark used at the right cut: **symbol alone inside a constrained shape** (circle/avatar/badge), no redundant logo where the motif and type already carry the brand
+- [ ] Mark used at the right cut: **symbol alone inside a constrained shape** (circle/avatar/badge), no redundant logo where the motif and type already carry the brand; small-size legibility checked and any collapse **reported back to `logo-design`**
 - [ ] Message exists and drives the layout — no template-first, no bullet soup, size follows content
 - [ ] For a set: one reusable system/template built and **stress-tested against worst-case content** (longest name/headline, densest/sparsest) before cascading — one system, varied content
 - [ ] **Light expression designed first** (print especially); dark is a second variant, and any dark piece has depth (gradient, not flat black)
