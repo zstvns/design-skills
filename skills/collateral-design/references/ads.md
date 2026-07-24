@@ -31,7 +31,11 @@ The most common social-design failure: type sized to look balanced on a **1080px
 - **The headline should be readable in the thumbnail alone.** One glance, one message.
 - **Respect the edges too** — content crowding the artboard edge looks cramped once the platform frames it. Give social artboards real interior margin, and keep everything clear of platform UI-safe zones.
 
-Same discipline for **blog/OG thumbnails**: they're usually seen small in a card or link preview, so size the type for that, not for the artboard.
+Same discipline for **blog/OG thumbnails** — and they're the format that most often fails it. A thumbnail is seen **small, in a grid or link preview, while someone is scrolling past**. Judge it that way: view the set at real thumbnail scale in a scrolling list, not one at a time at full size. If a thumbnail's headline doesn't survive that, it needs fewer words and bigger type — not a smaller font to fit the words you have.
+
+**Watch the vertical formats for margin.** Story/reel artboards (9:16) are the most common place content ends up crowding an edge, because the platform's UI-safe zones eat the top and bottom and the remaining band feels tight. Give them real interior margin *inside* the safe zones — don't let "it fits between the overlays" become the whole layout.
+
+**And if a piece will move, review it moving.** An animated post or thumbnail judged as a still is half-judged; make the motion actually run in the review (and replayable), or you're approving something you haven't seen.
 
 ## Text Discipline
 

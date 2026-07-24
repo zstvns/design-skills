@@ -27,6 +27,13 @@ Patterns that immediately signal a piece of collateral was *assembled from a tem
 - **Background excess.** Wash *and* rings *and* grid *and* a giant numeral stacked in one frame — the accumulation, not the pattern, is what reads as AI-generated. Also: a motif clashing behind live text instead of yielding to it.
 - **A motif politely contained.** Background elements shrunk to fit inside the canvas instead of scaled up and cropped by the frame — timid where off-canvas would create dynamism.
 - **Over-corrected margin on small formats.** So much interior margin on a business card that the content looks stranded and the card reads empty.
+- **An icon-font glyph standing in for the logo.** A Material Symbols / Lucide / emoji shape used as the mark instead of the real asset from `design.md` — the brand's most controlled element quietly replaced with a generic one. Also: shipping a whole family on a *superseded* logo.
+- **A full lockup crammed into a circle or badge.** Mark-plus-wordmark nested in a ring or tiny container where the symbol alone belonged. And a redundant logo on a piece the motif and type already brand.
+- **Two motifs at once.** Lines *and* concentric rings in the same frame — indecision dressed as richness. Pick one language; vary scale, crop and density.
+- **A motif on only some of the family.** Patterned one-pager and deck, bare business cards and social — sprinkled, not systematized.
+- **Weak copy the design is trying to rescue.** Generic lines given beautiful emphasis; the fix is upstream, in the words.
+- **Thumbnails judged one-at-a-time at full size**, then illegible in a scrolling grid.
+- **Animated pieces approved as stills.**
 - **Geometry-and-type only.** No photography or illustration anywhere in the media mix, so "varied layout" is still the same two ingredients rearranged.
 
 ## Decks

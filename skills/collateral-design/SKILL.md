@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.4.0
+  version: 1.5.0
 ---
 
 # Collateral Design
@@ -34,6 +34,12 @@ Before anything, diagnose where the brand is. Open `.agents/design.md`, `.agents
 
 **If `.agents/design.md` is missing, that *is* the "go back" signal.** If `.agents/product-marketing.md` is missing or the piece has no copy, route to the marketing library's `copywriting` (or `sales-enablement` for a sales asset's substance) first: **the piece is built around the message, never the reverse.** Routing back holds even if the user already has a logo — a mark without the system around it isn't enough to keep a deck, a sheet, and an ad coherent.
 
+## Copy First — This Is the Gate, Not a Preference
+
+**Weak collateral is usually a copy problem wearing a design problem's clothes.** No amount of composition rescues generic lines; conversely, get genuinely good copy and the design gets good almost on its own, because there's finally something worth giving emphasis to. So this is a **gate, not a nicety**: if the copy isn't strong, stop and get it written — route to the marketing library's `copywriting` (or `sales-enablement` for a sales asset's substance). Placeholder-grade copy produces placeholder-grade design, and you will not be able to fix it downstream.
+
+**The exception: pieces with no real message to carry.** A business card, a profile avatar, a letterhead, a folder — the content is a name, a role, a URL. These are pure identity applications and can be designed **immediately**, without waiting on copy. Everything that argues something — one-pagers, decks, social posts, ads, thumbnails — waits for the words.
+
 ## Message First — Especially Here
 
 Collateral exists to carry a *specific message to a specific moment*: a deck persuades a room, a one-pager survives being left on a desk, an ad interrupts a scroll. The single most important input is what it needs to say and to whom. Read `product-marketing.md` (audience, voice, positioning) and the actual copy. **Your job is to give that message proper emphasis, joy, and delight** — not to build a template and drop text into the boxes. Template-first is the fastest tell of assembled collateral: the deck where every slide is a title and three bullets, the sheet that's a wall of equal-weight paragraphs.
@@ -46,9 +52,13 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
 
 1. **Color by role, in the right color space.** Background, text (primary/secondary), action/accent, support — five stops, not ten. **For anything going to print, work in CMYK and check the translation** — brand RGB/hex often shifts on press (see [references/print.md](references/print.md)). For decks and screen-PDF, RGB is fine, but mind projector contrast: subtle low-contrast pairs that read on your monitor die in a bright room.
 2. **Type by role, for contrast not competition.** Display, heading, body — each with a job. Bold is not the default; body is a reading weight. **Fixed formats punish under-scaled type**: a deck read from the back of a room and an ad seen at thumbnail size both demand bigger, more decisive type than a website. Use the licensed brand faces; embed them in the file (PDF/PPTX) so they survive the handoff.
-3. **The mark is present but rarely the hero.** A logo belongs on collateral — footer of a slide, corner of a sheet, sign-off of an ad — sized for recognition, not dominance (the exception is a cover or a pure brand piece). Give it clear space; never stretch, recolor off-system, or drop it onto a busy field. Pull the real mark from the identity, not a redrawn approximation.
-4. **The motif carries the brand across the family — with restraint where the message must win.** The signature element (pattern, texture, recurring detail) is how a deck slide and an ad read as the *same brand* without being the same layout. This is where distinctiveness must **survive application** (see `design-principles`). Calm it wherever the message leads — a cover, a hero stat, an ad's one line — and let it work harder on connective, lower-stakes surfaces.
-5. **One accent, reserved.** Whatever signals "the point / the action" — the one CTA on an ad, the key number on a slide — stays scarce. Sprinkled on every heading and box, it stops meaning anything.
+3. **Use the REAL assets from `.agents/design.md` — never a stand-in.** This file (plus `logo-design`'s output) holds the actual **logo files, brand colors, licensed typefaces, and motif** established upstream. Pull them; do not approximate them.
+   - **Never substitute an icon-font glyph or a lookalike shape for the logo.** A Material Symbols / Lucide / emoji icon standing in for the mark is the single most damaging shortcut in this skill — it silently replaces the brand's most controlled asset with a generic one. If you can't locate the real file, **stop and ask** rather than approximating.
+   - **Check you have the current version.** Identities get revised; a mark from an earlier round may be stale. Confirm the logo, palette, and type in `design.md` are the latest before applying them across a whole family — a full set built on a superseded mark is a full set to redo.
+   - **Same for color and type:** exact brand values and licensed faces from `design.md`, not visually-similar substitutes.
+4. **The mark is present but rarely the hero — and use the right cut of it.** A logo belongs on collateral (slide footer, sheet corner, ad sign-off) sized for recognition, not dominance; a cover or pure brand piece is the exception. Give it clear space; never stretch, recolor off-system, or drop it onto a busy field. **Inside a constrained shape — a circle, an avatar, a small badge — use the mark alone, not the full lockup.** Nesting a mark-plus-wordmark inside a ring or a tiny container crowds both; pick the symbol and let it breathe. And don't add the logo where it earns nothing: on a piece already carrying the brand's motif and type, a redundant mark is clutter.
+5. **The motif carries the brand across the family — with restraint where the message must win.** The signature element (pattern, texture, recurring detail) is how a deck slide and an ad read as the *same brand* without being the same layout. This is where distinctiveness must **survive application** (see `design-principles`). Calm it wherever the message leads — a cover, a hero stat, an ad's one line — and let it work harder on connective, lower-stakes surfaces.
+6. **One accent, reserved.** Whatever signals "the point / the action" — the one CTA on an ad, the key number on a slide — stays scarce. Sprinkled on every heading and box, it stops meaning anything.
 
 ## Compose the Frame — Dynamic, Not Filled
 
@@ -140,6 +150,9 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] Format and its constraints named up front (trim/size, color space, presented-vs-read, platform safe zones)
 - [ ] Front-door diagnosis run; system being defined/changed routed back to `creative-direction` (even if a logo exists)
 - [ ] `.agents/design.md`, `brand.md`, `product-marketing.md` read; system applied, not re-invented
+- [ ] **Copy gate passed** — strong copy exists and drives the layout (weak copy = stop and get it written); identity-only pieces (business cards, avatars, letterhead) exempt
+- [ ] **Real assets pulled from `.agents/design.md`** — actual logo files (never an icon-font/emoji stand-in), exact brand colors, licensed faces — and confirmed to be the *current* version
+- [ ] Mark used at the right cut: **symbol alone inside a constrained shape** (circle/avatar/badge), no redundant logo where the motif and type already carry the brand
 - [ ] Message exists and drives the layout — no template-first, no bullet soup, size follows content
 - [ ] For a set: one reusable system/template built and **stress-tested against worst-case content** (longest name/headline, densest/sparsest) before cascading — one system, varied content
 - [ ] **Light expression designed first** (print especially); dark is a second variant, and any dark piece has depth (gradient, not flat black)
@@ -148,6 +161,10 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] **Interior margin scaled to the format** — large sheets well past safe; small formats (cards) sitting *just inside* safe, not ballooned into emptiness
 - [ ] **No button on a printed piece** (URL / short link / QR instead); **no synthetic obliques** anywhere
 - [ ] **Social & thumbnail type sized for the delivered screen**, verified legible at a glance in a device mockup — content cut rather than type shrunk
+- [ ] **Thumbnails checked at real scale in a scrolling list**; vertical (9:16) formats given true interior margin inside the UI-safe zones
+- [ ] Anything animated **reviewed in motion**, replayable — not approved as a still
+- [ ] **One motif, not several** — a single background language (rings *or* lines, never both in a frame), varied by scale/crop/density
+- [ ] Motif applied **across the whole family including cards and social**, and shown that way in review — not just on the big pieces
 - [ ] Motif pushed **off-canvas and given color**, yielding behind live text; background elements not accumulated into excess
 - [ ] **Rich media present** — photography / illustration, not geometry-and-type only
 - [ ] Color in the right space (CMYK + checked translation for print), five stops, accent reserved; type by role, bold not the default, scaled for the real viewing distance; brand faces embedded

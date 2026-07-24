@@ -35,6 +35,15 @@ A two-column grid repeated down the whole piece is the fixed-format equivalent o
 
 Composition patterns worth stealing (all visible in strong reference collateral): a key phrase in the headline **underlined or highlighted** in the accent; one **filled/inverted card** among outlined ones to anchor a testimonial; **numbered steps threaded by a connecting rule**; a photo with a **graphic line overlay**; a light page **paired with a dark page** in a two-pager.
 
+## One Motif, Applied Consistently Across the Whole Family
+
+A motif only becomes brand equity through **repetition across pieces**. Two failures kill it, and they're opposites:
+
+- **Mixing motifs.** Concentric rings on one piece, diagonal lines on the next, a dot field on a third — or worse, *lines and rings in the same frame*. That's not richness, it's indecision. **Pick one background system and commit.** If the identity's motif is concentric rings, then rings are the language everywhere; variation comes from **scale, crop, position, and density**, not from swapping in a different pattern.
+- **Applying it to only some pieces.** A motif that shows up on the one-pager and the deck but is missing from the business cards and the social posts isn't a system — it's decoration on two surfaces. **If it's the brand's motif, it belongs on the cards and the social set too**, and the review should *show* that: here's the ring language on a card, on a feed post, on a story, on a thumbnail.
+
+The test is the same one the family test uses: lay the whole set side by side. **Can you name one background language running through all of it?** If you can't, or if a piece is bare while its neighbours are patterned, the motif hasn't been applied — it's been sprinkled.
+
 ## Push the Motif Off the Canvas
 
 The strongest background elements are **too big for the frame and deliberately cropped by it**. Don't force a motif to fit inside the canvas — scale it up until it runs off, and let the edge do the cropping. Concentric dotted rings sweeping all the way across a piece, a dot field bleeding past every edge, a shape entering from off-frame behind a hero — this is what creates visual dynamism, and it's the difference between a piece that feels composed and one that feels contained.
