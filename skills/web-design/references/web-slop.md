@@ -26,6 +26,7 @@ Patterns that immediately signal a site was *generated* rather than *designed*. 
 - **An eyebrow on every section** — a mono/uppercase kicker over each block, which flattens hierarchy instead of building it. Use them sparingly.
 - **Centering everything** — every section headline and column centered by reflex; centered pairs drift off the grid. Left-align by default; top-align columns; center only truly-centered blocks.
 - **Sections that blur together** — a run of L-R-L-R feature rows with no headers or spacing between groups, so distinct features read as one tied-together block.
+- **One instrument the whole song** — the same card/panel idiom repeated down the page with only the column count changing; no shift in *medium* (no video, photo, illustration, pinned scroll-tell, or scale contrast). Tidy, but assembled.
 - **A lone hook headline** — a giant one-liner hero with no follow-through, when the copy needed a completing second line and a smaller headline.
 - **Widows** — a single word stranded on a headline's last line.
 - **A fake CTA** — a non-interactive element (a diagram node, a label) styled like a button.

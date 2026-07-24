@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.3.0
+  version: 1.4.0
 ---
 
 # Web Design
@@ -70,7 +70,7 @@ Pull the system from `.agents/design.md` — don't re-derive it, don't invent al
 Work the page as a sequence, never each section in isolation. Full per-section playbook in [references/section-patterns.md](references/section-patterns.md).
 
 - **Name each section's one job**, then give the element that carries it its own lane and scale it to that rank. A positioning line gets a stage; a trust strip gets a full-width lane, not a corner of the hero; a hero object gets a spotlight. Supporting detail recedes.
-- **Rhythm is the difference between designed and assembled — and it's more than "don't repeat a layout."** The column trio (2-col / 3-col / left-right-left) is a floor, not the range. When a stretch of the page goes flat, reach for something *unexpected* — an offset overlap, a full-bleed visual, a broken grid, an oversized number, a device shot bleeding off the edge, a diagonal. **Create richness with varied media**, not just varied columns: alternate vector graphics, photography, icons, and illustration so no two sections feel built from the same kit. Study a page that does this well (e.g. conversionfactory.co) for how pace is built section to section.
+- **Rhythm is a vocabulary of section *types*, not a column count.** Rotate through genuinely different section types — each a different *medium* — and never play the same one twice: asymmetric hero, a **full-bleed human/video moment**, an illustration/contrast beat, an oversized aphorism, a **pinned scroll-telling sequence** (a heading pins while statements cycle beneath giant ghost numerals), colored cards, a spotlit object reveal, a carousel. **Change the medium** (UI → video → illustration → photo → cards), not just the layout. Then **unify** the variety with one through-line texture + strict color discipline, use **scale contrast** (ghost numerals vs. tiny copy), and leave **quiet between the loud** beats. The failure mode: *one instrument played the whole song* — the same card/panel idiom repeated with only the column count changing. Full vocabulary in [references/section-patterns.md](references/section-patterns.md); study conversionfactory.co for how it's paced.
 - **Balance every text section with a visual.** A text-only section that should carry an image reads as unfinished. Show the product in **layered, overlapping mockups** — a device, a card, a sticker at a slight rotation, real depth — the way strong marketing sites do, rather than a flat screenshot or nothing.
 - **Consolidate.** Three substantial sections beat five thin ones. Whitespace is emphasis, not just breathing room.
 - **CTAs, logos, and hover states are content, not decoration.** Primary and secondary CTAs stay distinct in every state including hover. Partner/integration logos get one normalized trust lane — **real logos**, optical (not pixel) sizing, one color story, and enough contrast to actually read.

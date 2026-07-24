@@ -112,3 +112,25 @@ Rhythm is what makes a page read as *designed* rather than *assembled* — and i
 - **Give the page a pace:** dense then spacious, detailed then simple. Dark/light transitions mark narrative shifts — not variety for its own sake.
 - **Consolidate:** five thin sections are worse than three substantial ones.
 - **Study a page that builds pace well** (e.g. conversionfactory.co) — watch how each section changes shape, media, and density from the one before.
+
+### Rhythm is a vocabulary of section *types* — change the medium, not just the columns
+
+The deepest source of rhythm isn't varying column counts; it's rotating through genuinely **different section types**, each a different *medium*, and never playing the same one twice in a row. A strong marketing page draws from a vocabulary like:
+
+- **Asymmetric hero** — text to one side, a layered product mockup + a stat sticker to the other, over live motion (particles, gradient).
+- **Full-bleed human moment** — a testimonial *video* or portrait, edge-to-edge, with a quote card overlaid. A face and motion, right after a UI-heavy beat, is a huge tonal shift.
+- **Illustration / contrast beat** — a dark, neutral section carrying a brand illustration or a before/after.
+- **Aphorism** — one idea, oversized, acres of air, on a textured ground.
+- **Pinned scroll-telling** — a heading *pins* (`position: sticky`) while statements cycle beneath it, each with an enormous ghost numeral behind and supporting copy swapping in. One signature device that earns several screen-heights and reads as craft.
+- **Colored cards** — product/ecosystem or case-study cards, each with its own accent and real imagery.
+- **Dramatic object reveal** — a device or product rising out of darkness, spotlit.
+- **Carousel** — testimonials or logos with real controls.
+
+Rules that make the vocabulary cohere:
+- **Alternate the medium**, not just the layout: UI mockup → human video → illustration → textured type → device photo → cards. Every few screens, the *kind of thing* on screen should change.
+- **Unify the variety** with one through-line — a single background texture/motif and a strict color discipline — so wild section-to-section change still reads as one site.
+- **Scale contrast** — giant ghost numerals or headings against small supporting copy; full-bleed faces against tight cards.
+- **Quiet between the loud** — generous, textured space between the hits, so nothing feels crammed and each big moment lands.
+- **Motion is structural** — reveals, pinning, particles, carousels *are* part of the rhythm, not decoration on top of it.
+
+The failure mode to avoid: **one instrument played the whole song** — the same card/panel idiom repeated down the page with only the column count changing. That's tidy, but it's assembled, not designed.
