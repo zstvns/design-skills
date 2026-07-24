@@ -2,7 +2,7 @@
 name: motion-design
 description: "Design and build UI motion with intent — micro-interactions, transitions, entrances, scroll and hover behavior — applying the twelve principles of animation to a brand's settled system, in custom code. Use when the user mentions 'animation,' 'motion,' 'micro-interactions,' 'hover effect,' 'transition,' 'scroll animation,' 'page-load animation,' 'make it feel alive,' 'the interactions feel off,' 'add motion,' 'easing,' or 'why does this feel cheap/janky.' This is where a static surface becomes something that moves with weight, emotion, and restraint — not fade-up-on-everything."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Motion Design
@@ -49,6 +49,21 @@ The canon comes from Disney (Thomas & Johnston, *The Illusion of Life*, 1981). T
 10. **Exaggeration** — push past literal realism; a perfect imitation of reality reads static and dull. A thicker-than-default underline, a head-shake on a disabled button, a photo that "develops" from B&W on hover. **It's easier to dial exaggeration back than to add it** — overshoot on purpose, then pull it to taste.
 11. **Solid drawing** — respect 3D space, volume, and weight. Cards fan out and rotate as if held; elements set further back blur slightly and scale down; the front one scales toward the viewer; shadows stack in layers. Flat 2D given real dimension.
 12. **Appeal** — charisma, magnetism, delight. Pleasing gradients, a soft glow on hover, an almost-imperceptible ambient parallax that invites exploration. The hardest one, because it's downstream of simply being a good designer. The whole point of it: make a person *want* to explore the page and stay.
+
+## The UI-Native Toolkit — the Moves You Reach For
+
+The twelve principles are the *physics and emotion* of motion. Alongside them, work with a second lens: the **UI-native techniques** — the practical move-set you actually deploy in an interface. Full catalog with recipes and the mapping back to the principles in [references/ui-motion-techniques.md](references/ui-motion-techniques.md) (source: [motion.zajno.com](https://motion.zajno.com/)):
+
+1. **Easing** — the foundation; every expressive motion rides a curve (= slow-in/slow-out).
+2. **Offset & delay** — staggered arrival as a hierarchy cue (= overlapping action, the biggest lever).
+3. **Fade in/out** — but **never alone**; always pair opacity with a position or scale change, or it has no direction or weight.
+4. **Transform & morph** — one shape continuously becomes another; the shared-element transition (card → page, icon → close). Continuity of focus, done with FLIP / View Transitions on `transform`, not `width`/`height`.
+5. **Masking** — reveal content *within* a boundary (`clip-path`/`mask`) for a **directional** wipe instead of a flat fade.
+6. **Dimension** — depth built from *relationships between layers* (layered shadow, perspective), not one element's shadow (= solid drawing).
+7. **Parallax** — depth through differential layer speed; **restraint is the whole game** — subtle invites, heavy induces motion sickness. Kill it under reduced-motion.
+8. **Zoom** — transition between states and depth, scaling from the correct `transform-origin` so it emanates from what the user acted on.
+
+The distinction to hold: use the **principles** to decide what a motion should *feel* like and whether it earns its place; use the **techniques** to build it. Zajno's own thesis matches this skill's — **motion is a strategic tool to direct attention, not decoration.** (Note the real-time vs. non-real-time split: real-time motion is tied to the user's hand — hover, drag, scroll; non-real-time plays as a scripted response after an interaction.)
 
 ## Restraint — Not Everything Moves
 
@@ -102,4 +117,4 @@ Judge motion the way `design-principles` says to judge any work — **adversaria
 - `collateral-design` / `email-design` / `social-design` — sibling Application skills; motion for video/social lives alongside them
 - `brand` — the audit whose emotional target sets the feeling motion must produce
 - `design-critique` — judges the shipped motion against the emotional target and the latitude
-- reference: the twelve principles ([references/twelve-principles.md](references/twelve-principles.md)) and the technical floor ([references/motion-floor.md](references/motion-floor.md))
+- reference: the twelve principles ([references/twelve-principles.md](references/twelve-principles.md)), the UI-native technique toolkit ([references/ui-motion-techniques.md](references/ui-motion-techniques.md), from [motion.zajno.com](https://motion.zajno.com/)), and the technical floor ([references/motion-floor.md](references/motion-floor.md))
