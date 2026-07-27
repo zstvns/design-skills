@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.6.0
+  version: 1.6.1
 ---
 
 # Collateral Design
@@ -134,7 +134,7 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - **Switch between formats** — one-pager, social set, cards, thumbnails, deck — so the family can be compared in one place.
 - **Render each piece at its true size**, with a zoom control: *Fit*, *100%* (native pixels), and **Actual size** (true physical scale via the piece's DPI — a 3.5×2in card rendered 3.5×2in, which is the only honest test of a card).
 - **Present the deck as a deck** — click and arrow-key through it, a slide counter, a filmstrip to jump around, and a fullscreen present mode. A deck reviewed as static thumbnails hides its pacing.
-- **Show pieces at trim by default; reveal bleed only when guides are tripped** — bleed is production, not how the piece looks. Guides on → bleed/trim/safe labeled with a legend, from a doc built at bleed size.
+- **Show pieces at trim by default; reveal bleed only when guides are tripped** — bleed is production, not how the piece looks. Guides on → bleed/trim/safe labeled with a legend, from a doc built at bleed size. **Anchor the trim box so nothing moves when the toggle flips** — the bleed appears *around* a piece that holds its exact size and position; no review overlay may reposition the artifact it describes.
 - **Only surface controls that apply to the format** (no static/motion switch on a print one-pager — it can't animate), and put controls near what they affect rather than banked in a far corner.
 - **Stage everything on a neutral mid-gray canvas with a visible outline** — never white, never the brand's own colors. A light piece needs a darker ground to read as an object, and a dark piece disappears into a dark stage. If you can't see where the artifact ends, you can't judge its margins.
 - **Show social in real platform context, across platforms** — Instagram feed and story/reel, LinkedIn, X, Facebook — in device frames with the actual platform chrome, alongside the varied format set (square, 4:5, 9:16, 1.91:1).
@@ -176,7 +176,7 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] Family coherence checked — same system, varied layouts; coherent with the shipped site; any flex is deliberate, not drift
 - [ ] Adversarial self-audit on the *rendered* artifact in its real moment (collateral-slop tropes listed, not "none"); cover-the-logo carry-through
 - [ ] **Reviewed at true size, not only scaled down** — physical scale checked on small print formats, type above the practical floor (~7pt contact/role, ~10–12pt names)
-- [ ] Delivered in a viewer: format switching, true-size zoom, deck clickable/arrow-navigable with present mode, bleed/trim/safe guides; **neutral gray canvas with visible piece outlines**; social shown **in-platform across platforms**, static *and* animated; chrome neutral and outside the artifact
+- [ ] Delivered in a viewer: format switching, true-size zoom, deck clickable/arrow-navigable with present mode, bleed/trim/safe guides that **reveal without moving the piece**; **neutral gray canvas with visible piece outlines**; social shown **in-platform across platforms**, static *and* animated; chrome neutral and outside the artifact
 - [ ] Correct output format shipped (press-ready PDF / sized exports / sendable deck); spelling, grammar, numbers proofed at size
 
 ## Related Skills

@@ -36,7 +36,19 @@ Design each piece at its **native pixel dimensions** and scale only for display 
 - A **filmstrip** of live thumbnails to jump around, with the current slide marked
 - **Fullscreen present mode** (`requestFullscreen`, bound to a key like `F`), hiding the filmstrip
 
-**4. Show the piece at trim by default; reveal bleed only when guides are on.** Bleed is a production concern, not how the piece looks — so the default view should be the piece **cropped to trim**, exactly as it will exist after cutting. Flipping the guides toggle then expands the view to reveal the bleed area with **bleed**, **trim/cut**, and **safe** as distinct labeled, color-coded guides (1/8in for bleed and safe) plus a legend. Building the doc at bleed size makes both views possible from one artifact. Only offer the toggle where it means something.
+**4. Show the piece at trim by default; reveal bleed only when guides are on — and never move the piece to do it.** Bleed is a production concern, not how the piece looks, so the default view is the piece **cropped to trim**, exactly as it will exist after cutting. Flipping guides reveals the bleed area plus **bleed**, **trim/cut**, and **safe** as distinct labeled, color-coded guides (1/8in for bleed and safe) with a legend. Building the doc at bleed size makes both views possible from one artifact. Only offer the toggle where it means something.
+
+**Anchor the trim box.** The toggle must reveal the bleed *outward, around* a piece that stays exactly where it was — same size, same position, same place on screen. If flipping guides reflows the layout and the artwork jumps, the reviewer loses their place and can't compare the two states, which defeats the point of a toggle. Concretely: size the wrapper to the **trim** dimensions permanently and offset the oversized artboard into it, then switch only `overflow` (hidden → visible) so the bleed spills out without changing geometry:
+
+```js
+// wrapper is always the TRIM box — geometry never changes
+frame.style.transform = `translate(${-trim*s}px, ${-trim*s}px) scale(${s})`;
+wrap.style.width  = (w - 2*trim) * s + 'px';
+wrap.style.height = (h - 2*trim) * s + 'px';
+wrap.style.overflow = showBleed ? 'visible' : 'hidden';   // the ONLY thing that changes
+```
+
+Leave permanent breathing room in the stage padding and grid gaps so the revealed bleed has somewhere to spill — adding that room *on toggle* would reintroduce exactly the movement you're avoiding. **General rule: no review overlay — guides, safe zones, grids, rulers — may reposition or resize the artifact it's describing.**
 
 **4b. Only show controls that apply to the current format.** Every control implies the thing it toggles is a real variable. A static/motion switch on a one-pager suggests a one-pager might animate — it can't; it's print. Hide motion controls on static print formats, hide print guides on screen formats, hide zoom on the deck. And **put the controls near what they affect** rather than banking them all in a far corner of a top bar — proximity to the piece being changed beats a tidy toolbar.
 
