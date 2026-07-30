@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.7.0
+  version: 1.7.1
 ---
 
 # Collateral Design
@@ -163,7 +163,7 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] **Copy gate passed** — strong copy exists and drives the layout (weak copy = stop and get it written); identity-only pieces (business cards, avatars, letterhead) exempt
 - [ ] **Real assets pulled from `.agents/design.md`** — actual logo files (never an icon-font/emoji stand-in), exact brand colors, licensed faces — and confirmed to be the *current* version
 - [ ] Mark used at the right cut: **symbol alone inside a constrained shape** (circle/avatar/badge), no redundant logo where the motif and type already carry the brand; small-size legibility checked and any collapse **reported back to `logo-design`**
-- [ ] **Nothing clipped** — all content inside the safe area on every edge (only decoration bleeds); content shrunk or cut to fit rather than spilled
+- [ ] **Nothing clipped** — verified by an automated overflow **measurement** against the safe box (not by eye), per view; only decoration bleeds; content shrunk or cut to fit rather than spilled
 - [ ] **Logo at the bottom** (covers excepted); **no logo on social posts**; business-card back is the mark + at most one motif crop
 - [ ] **Craft pass run** (`frontend-design` / `web-design-guidelines`): exact alignment, systematic spacing, hanging quote marks, overlap only where it earns depth
 - [ ] **No web components ported into print**; every element in the brand's actual typeface

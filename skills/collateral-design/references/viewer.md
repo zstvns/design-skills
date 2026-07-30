@@ -60,6 +60,19 @@ Leave permanent breathing room in the stage padding and grid gaps so the reveale
 
 **7b. Add a scroll test for feed-scale formats.** Thumbnails and social posts are consumed in a *list*, so review them in one: render the set at **real feed scale (~150px wide for a blog/OG card)** stacked in a mock list with their titles and meta, exactly as someone scrolling would meet them. This is the fastest way to catch type that's too small and headlines that are too long — a thumbnail whose headline is mush at 150px needs fewer words and bigger type, not a smaller font. Build it from the same artboards so it can never drift from the real asset.
 
+**7c. Measure the canvas, don't eyeball it.** Build an **overflow audit** into the viewer rather than judging by eye — eyes pass work that a measurement fails. Walk every content element in each piece, compare its bounding box to the safe box, and print the violations with the element and the overspill in artboard px:
+
+```js
+const fr = frame.getBoundingClientRect(), sc = fr.width / w;   // w = artboard width
+const L = fr.left + safe*sc, R = fr.right - safe*sc, T = fr.top + safe*sc, B = fr.bottom - safe*sc;
+// for each content el (skip .bgwash/.bgdots/guides — decoration is allowed out):
+//   r.bottom > B  → `bottom ${((r.bottom-B)/sc).toFixed(0)}px` … etc.
+```
+
+Report per view, and treat a clean result with suspicion until you've confirmed the audit actually catches a known violation — an audit that always passes isn't running (see `design-principles` → Judge Your Own Work).
+
+**7d. Cache-bust the viewer's own assets.** If the viewer loads external JS/CSS, append a changing query (`v4-pieces.js?b=<stamp>`) on every build. Reviewing a stale cached script and reporting on a version that no longer exists wastes a whole review round — theirs and yours.
+
 **8. Show the specs.** A small info strip per format: what it is, its real dimensions (`1050 × 600 px · 3.5×2in @300dpi`), and what to look for. Review is faster when the reviewer doesn't have to ask "what size is this?"
 
 **9. Make it deep-linkable.** Read state from the query string (`?v=cards&z=phys&s=4&guides=1`) so a specific piece, zoom, or slide can be pointed at directly in review — and so it can be screenshotted programmatically for a self-audit.
