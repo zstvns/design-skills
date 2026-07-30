@@ -34,6 +34,15 @@ Patterns that immediately signal a piece of collateral was *assembled from a tem
 - **Weak copy the design is trying to rescue.** Generic lines given beautiful emphasis; the fix is upstream, in the words.
 - **Thumbnails judged one-at-a-time at full size**, then illegible in a scrolling grid.
 - **Animated pieces approved as stills.**
+- **Clipped content.** A headline, stat, or footer cut off by the frame edge — the canvas is a hard limit and content that doesn't fit must be shrunk or cut, not spilled. The single most damaging failure in this medium.
+- **Content crowding or crossing the safe line**, when only decoration is allowed out there.
+- **The logo at the top of the piece**, spending the most valuable position on the mark instead of the message. And a logo on a social post at all.
+- **A busy business-card back** — taglines, chips, capability lists where the logo alone belonged.
+- **Off-centre "centered" elements**, inconsistent spacing, and quote marks sitting inside the measure instead of hanging outside it.
+- **A web component pasted into print** — browser chrome, nav bar, app card, form field — usually arriving in the wrong typeface.
+- **An element in a different typeface** than the rest of the piece.
+- **A decorative overlap that does nothing** — two elements colliding with no depth or connection created.
+- **Placeholder-grade stock photography** used to fill a hole a graphic or typographic solution should have filled.
 - **Geometry-and-type only.** No photography or illustration anywhere in the media mix, so "varied layout" is still the same two ingredients rearranged.
 
 ## Decks

@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.6.1
+  version: 1.7.0
 ---
 
 # Collateral Design
@@ -56,6 +56,7 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
    - **Never substitute an icon-font glyph or a lookalike shape for the logo.** A Material Symbols / Lucide / emoji icon standing in for the mark is the single most damaging shortcut in this skill — it silently replaces the brand's most controlled asset with a generic one. If you can't locate the real file, **stop and ask** rather than approximating.
    - **Check you have the current version.** Identities get revised; a mark from an earlier round may be stale. Confirm the logo, palette, and type in `design.md` are the latest before applying them across a whole family — a full set built on a superseded mark is a full set to redo.
    - **The mark lives in `logo-design`'s deliverable** — the actual vector files it produced. Go get them (and prepare them for reuse: make the fill/stroke inherit `currentColor` so one asset works on light *and* dark grounds, rather than keeping separate hardcoded copies).
+   - **Read which mark was *chosen*, don't just grab a file.** A logo exploration leaves behind many candidates — three families, a shortlist, several wordmark experiments. **Find the stated recommendation / sign-off and use that one.** Picking whichever file looks plausible (or whichever the presentation happened to reference in a layout) is how a whole collateral family gets built on a rejected concept. If the recommendation isn't recorded, or the assets are still placeholders, **stop and ask** — this is not a guess worth making, because every piece in the family inherits the error.
    - **Set the wordmark in the licensed face, don't use a generated raster.** `logo-design`'s rule holds here: the symbol is a drawn asset, the wordmark is real type.
    - **Same for color and type:** exact brand values and licensed faces from `design.md`, not visually-similar substitutes.
    - **If the mark's detail collapses at the sizes collateral actually needs, that's a finding — not something to fudge.** A card, a slide footer, and an avatar are small; a mark with fine interior detail (thin ticks, knurled edges, hairlines) can turn to mush there. Report it back to `logo-design` and ask for a simplified small-size cut rather than shipping a muddy mark or quietly redrawing one yourself. Collateral is usually where this gets discovered, because it's the first place the mark is used small and repeatedly.
@@ -66,6 +67,12 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
 ## Compose the Frame — Dynamic, Not Filled
 
 A fixed frame has no scroll to rescue a flat layout and no interaction to add interest, so composition carries most of the load. Full method in [references/composition.md](references/composition.md):
+
+- **The canvas is a hard limit — content never exceeds it.** Headlines, stats, quotes, cards, CTAs must sit **entirely inside the safe area**; only *decoration* (washes, patterns, oversized motifs, bleeding photos) runs off the edge. Clipped content is a failure, not a rough edge — and the fix is to **shrink or cut the content**, never to let it spill. Check all four edges and the bottom of the last element before calling a piece done.
+- **The logo goes at the BOTTOM, not the top.** The top of the frame belongs to the message. The mark signs off at the bottom (deck covers and pure brand pieces excepted), and **social posts get no logo at all** — the handle and avatar already brand them.
+- **Alignment is exact, spacing is systematic, punctuation hangs.** Off-centre is sloppiness; a pull-quote's opening `"` must hang outside the measure so the text's left edge stays true. Run the craft pass with `frontend-design` / `web-design-guidelines` — those principles apply verbatim to a fixed canvas. Overlap only where it creates depth or connects two things.
+- **Don't port web components into print.** A browser frame, nav bar, app card, or form field pasted onto a sheet reads as a screenshot and usually drags the wrong typeface in with it. Share the *system* with the site, not its components — and set everything in the brand's actual face.
+- **A bad image is worse than no image.** Generic stock cheapens the piece; if you don't have imagery that's specific and good, solve it typographically or graphically instead.
 
 - **Light first, dark second.** Default to a light composition, especially for print — a near-black printed piece is rare, drinks ink, scuffs, and goes muddy on uncoated stock. **Even a dark screen brand needs a light expression for paper.** Build that, then produce the dark variant for screen. If a piece genuinely should be dark, give it **depth** — a gradient with light in it, not flat black.
 - **Give it a background element that ties the composition together — and push it off the canvas.** Text and boxes on an empty ground is the flat case. Use a large gradient wash, an oversized cropped motif, a dotted/concentric field sweeping across the whole piece, a shape entering from off-frame. **Go bigger than feels safe, bring color into it, and let the frame crop it** — don't force it to fit. But **where type sits, the background yields** (mask, fade, or route around it): legibility wins. And watch the accumulation — wash *plus* rings *plus* grid *plus* giant numeral in one frame is how a piece starts reading as AI-generated. The tell isn't the pattern, it's the excess; add the element, then remove what it made redundant.
@@ -156,6 +163,11 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] **Copy gate passed** — strong copy exists and drives the layout (weak copy = stop and get it written); identity-only pieces (business cards, avatars, letterhead) exempt
 - [ ] **Real assets pulled from `.agents/design.md`** — actual logo files (never an icon-font/emoji stand-in), exact brand colors, licensed faces — and confirmed to be the *current* version
 - [ ] Mark used at the right cut: **symbol alone inside a constrained shape** (circle/avatar/badge), no redundant logo where the motif and type already carry the brand; small-size legibility checked and any collapse **reported back to `logo-design`**
+- [ ] **Nothing clipped** — all content inside the safe area on every edge (only decoration bleeds); content shrunk or cut to fit rather than spilled
+- [ ] **Logo at the bottom** (covers excepted); **no logo on social posts**; business-card back is the mark + at most one motif crop
+- [ ] **Craft pass run** (`frontend-design` / `web-design-guidelines`): exact alignment, systematic spacing, hanging quote marks, overlap only where it earns depth
+- [ ] **No web components ported into print**; every element in the brand's actual typeface
+- [ ] Imagery is specific and good, or replaced by a typographic/graphic solution — no placeholder-grade stock
 - [ ] Message exists and drives the layout — no template-first, no bullet soup, size follows content
 - [ ] For a set: one reusable system/template built and **stress-tested against worst-case content** (longest name/headline, densest/sparsest) before cascading — one system, varied content
 - [ ] **Light expression designed first** (print especially); dark is a second variant, and any dark piece has depth (gradient, not flat black)

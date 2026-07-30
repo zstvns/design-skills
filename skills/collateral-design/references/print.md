@@ -8,6 +8,10 @@ Most collateral never goes to a commercial press — it's a digital PDF, an offi
 
 **Design print light, and make the dark version second.** A near-black printed piece is genuinely rare: it soaks ink, shows every scuff and fingerprint, costs more, and goes muddy on uncoated stock. Even when the brand's screen identity is dark, its printed expression should normally be a light ground with dark ink — the brand earns a **light expression** for paper. Reserve dark stock for a deliberate, premium-feeling exception, and when you do go dark, give it depth (a gradient with light in it) rather than flat black. **Business cards are the notable exception** — a card is small, held, and premium by nature, so a dark card (often dark on *both* sides) is genuinely strong rather than odd. Judge it by the piece, not the rule. Full reasoning in [composition.md](composition.md).
 
+## The Back of a Business Card
+
+Keep it almost empty. The back of a card is **the logo — and at most one creative mark or motif crop.** That's it. It is the one surface in the whole family that exists purely to be an identity moment, and it works by restraint. Resist adding taglines, capability lists, chips, contact details (those belong on the front), or a second wordmark. A dark back with the mark centred and generous space around it is the strong default.
+
 ## Margin Is the Space *Inside* the Trim
 
 Print inverts the web's vocabulary: **margin is interior** — the breathing room between the trim edge and the content. Be generous, but **scale it to the format**: a letter sheet wants roughly **1/2–3/4in** (well past the safe line), while a **business card wants content sitting just inside safe** — much past ~3/16in and the card reads empty with its type stranded. Align just inside safe, then add margin in proportion to the piece's size. Anything meant to run off the edge — a background wash, a cropped pattern, a photo — ignores the margin entirely and extends into the bleed.

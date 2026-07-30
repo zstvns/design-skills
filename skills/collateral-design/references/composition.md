@@ -1,5 +1,27 @@
 # Composing a Fixed Format — Dynamic, Not Filled
 
+## The Canvas Is a Hard Limit — Content Never Exceeds It
+
+This is the first law of the medium and the easiest to violate: **the canvas is finite, and your content must fit inside it.** There is no scroll to absorb overflow. Anything that doesn't fit gets **cut off**, and clipped content — a headline losing its descenders, a stat cropped in half, a footer sheared away — is an unambiguous failure, not a rough edge.
+
+The distinction that matters:
+
+- **Content** — headlines, body, stats, quotes, logos, CTAs, cards — **must sit entirely within the safe area.** Never at the edge, never past it, never clipped.
+- **Decoration** — background washes, patterns, oversized cropped motifs, bleeding photography — **may and should run off the canvas.** That's the dynamism.
+
+So: *background* goes off the edge; *content* stays in. If the content doesn't fit, **you do not let it spill and you do not shrink the frame — you shrink or cut the content.** Reduce the type scale, tighten the vertical rhythm, drop a band, cut a row, consolidate two points into one. Fixed formats force editorial decisions; making them is the job. "It almost fits" means it doesn't fit.
+
+**Check every edge before you call a piece done.** Render it and look at all four sides plus the bottom of the last element — clipping usually happens at the bottom, where a stack of bands has quietly grown past the frame.
+
+## Put the Logo at the Bottom
+
+**On collateral, the logo belongs at the bottom, not the top.** The top of the frame is the most valuable real estate on the piece and it belongs to the **message** — the headline, the hook, the thing you want read first. Leading with a logo spends that position on something the reader either already knows or doesn't yet care about, and it pushes the actual argument down.
+
+- **One-pagers, flyers, sheets, thumbnails, ads:** headline leads; mark signs off at the bottom.
+- **Deck covers and pure brand pieces** are the reasonable exception — a cover *is* an identity moment.
+- **Social posts: no logo at all.** The account handle, avatar, and platform chrome already brand the post; a logo inside the creative is redundant clutter.
+- A piece already carrying the brand's type, color, and motif is *already* branded. The mark is a signature, not a header.
+
 A fixed frame is unforgiving: there's no scroll to rescue a flat layout and no interaction to add interest. Composition is most of the craft here. Three things separate a dynamic piece from a filled template: **light-first thinking**, a **background element that ties the composition together**, and a **grid fine enough to build varied layouts on**.
 
 ## Light First, Then Dark
@@ -56,9 +78,27 @@ The strongest background elements are **too big for the frame and deliberately c
 
 **And watch the excess.** A background element is *one* decision, not a license to add. Piling on wash + rings + grid + giant numeral + texture in the same frame is how a piece starts reading as AI-generated — the tell isn't the pattern, it's the accumulation. Add the element, then remove what it made redundant.
 
+## Craft Floor — Spacing, Alignment, Optical Detail
+
+Composition isn't only the big moves. The details are what make a piece read as designed, and they're the same fundamentals the interface skills teach — **invoke `frontend-design` and `web-design-guidelines` for the craft pass**; those principles apply verbatim to a fixed canvas.
+
+- **Alignment is exact or it's wrong.** "Roughly centered" reads as a mistake. If something is centered, center it *optically* and verify; if it's on a grid line, put it on the line. Off-centre elements are the most visible sloppiness in an otherwise decent layout.
+- **Optically align hanging punctuation.** A pull-quote that starts with `"` must **hang the quote mark outside the text block** so the first letter aligns with the lines below it. Leaving the quote inside the measure pushes the whole first line in and breaks the left edge. Same for bullets, opening brackets, and hyphens.
+- **Spacing is a system, not a guess.** Consistent, intentional rhythm between and inside elements; equal optical gaps where things should read as equal. Inspect the spacing you've produced rather than trusting that it looked fine while you were building it.
+- **Overlap needs a reason.** Layering elements is a strong device *when it creates depth or connects two things*; an overlap that just makes two elements collide is noise. If you can't say what the overlap is doing, remove it.
+- **Everything traces to the system.** Radii, border weights, shadow depth, icon style — from `design.md`, consistent across the family.
+
+## Don't Port Web Components Into Print
+
+A UI element lifted from the website — a browser chrome frame, a nav bar, an app card, a button, a form field — **does not belong in a print piece.** It reads as a screenshot pasted into a document, and it usually drags the wrong typeface and the wrong scale in with it. Collateral shares the *system* with the site (color, type, motif, spacing logic) but not its *components*. Design a print-native expression of the same idea instead: a typographic statement, a data figure, a photograph, a diagram.
+
+And whatever you do bring in, **set it in the brand's actual typeface.** An element that arrives with a different face than the rest of the piece is one of the most obvious tells there is.
+
 ## Rich Media — Real Photography Belongs Here
 
 Varying the *layout* isn't enough if every band is still type and boxes. Strong print collateral leans on **rich media**: real photography, illustration, product imagery, and iconography used generously — not a geometric-and-type-only system. Bring the icon set in more visibly, use photography where a human moment or a product shot earns its place, and let the media mix carry as much of the variety as the grid does.
+
+**But a bad image is worse than no image.** Generic stock — the anonymous person-at-a-laptop, the smiling headset, the abstract handshake — actively cheapens a piece; it announces that nobody had a real picture to show. If you can't get imagery that is *specific and good* (the real product, the real team, a genuinely striking photograph), **don't fill the hole with a placeholder-grade photo** — solve it typographically or graphically instead: an oversized figure, a data visual, a bold motif crop, a strong pull-quote. Reach for a photograph when you have one worth showing, and hold the line on quality when you don't.
 
 ## Print Pieces Don't Have Buttons
 
