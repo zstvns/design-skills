@@ -10,11 +10,13 @@ Most collateral never goes to a commercial press — it's a digital PDF, an offi
 
 ## The Back of a Business Card
 
-Keep it almost empty. The back of a card is **the logo — and at most one creative mark or motif crop.** That's it. It is the one surface in the whole family that exists purely to be an identity moment, and it works by restraint. Resist adding taglines, capability lists, chips, contact details (those belong on the front), or a second wordmark. A dark back with the mark centred and generous space around it is the strong default.
+Keep it almost empty. The back of a card is **the logo — and at most one creative mark or motif crop.** That's it.
+
+**The spec that works:** place the logo **dead centre of the card, uncropped, at its delivered proportions** — no container, no box, no recolour. If the motif is radial/concentric, **centre it on the card's true centre so it radiates from the logo**; a radial that's off-centre reads as a mistake instantly. Nothing else on the surface: no tagline, no chips, no capability words, no second wordmark, no contact details. It is the one surface in the whole family that exists purely to be an identity moment, and it works by restraint. Resist adding taglines, capability lists, chips, contact details (those belong on the front), or a second wordmark. A dark back with the mark centred and generous space around it is the strong default.
 
 ## Margin Is the Space *Inside* the Trim
 
-Print inverts the web's vocabulary: **margin is interior** — the breathing room between the trim edge and the content. Be generous, but **scale it to the format**: a letter sheet wants roughly **1/2–3/4in** (well past the safe line), while a **business card wants content sitting just inside safe** — much past ~3/16in and the card reads empty with its type stranded. Align just inside safe, then add margin in proportion to the piece's size. Anything meant to run off the edge — a background wash, a cropped pattern, a photo — ignores the margin entirely and extends into the bleed.
+Print inverts the web's vocabulary: **margin is interior** — the breathing room between the trim edge and the content. Be generous, but **scale it to the format**: a letter sheet wants roughly **1/2–3/4in** (well past the safe line), while a **business card's content may run right up to the safe line** (1/8in) — that is the working edge, not a boundary to hold far off; sitting well inside it strands the type and makes the card read empty. Align just inside safe, then add margin in proportion to the piece's size. Anything meant to run off the edge — a background wash, a cropped pattern, a photo — ignores the margin entirely and extends into the bleed.
 
 ## Work in Real Dimensions, Not Pixels
 

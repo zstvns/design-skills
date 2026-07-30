@@ -43,6 +43,14 @@ Patterns that immediately signal a piece of collateral was *assembled from a tem
 - **An element in a different typeface** than the rest of the piece.
 - **A decorative overlap that does nothing** — two elements colliding with no depth or connection created.
 - **Placeholder-grade stock photography** used to fill a hole a graphic or typographic solution should have filled.
+- **A rebuilt logo.** Symbol and wordmark assembled by hand instead of placed as the one delivered locked asset — re-spaced, re-proportioned, or a different construction per format. The logo must behave identically in every medium.
+- **A recoloured logo.** Tinting the mark to an accent or letting CSS `currentColor` decide it, instead of using a delivered colour variant. Hard misuse.
+- **A boxed logo.** Mark dropped in a rounded square / chip / badge the identity never defined.
+- **A cropped logo.** Clipped by its own container or a wrong `viewBox` — the drawing's bounds don't contain the artwork.
+- **An off-centre radial.** A concentric/radial motif not centred on the piece it radiates through (most glaring on a card back).
+- **Invented elements that aren't in the brand language** — a decorative underline, a gradient bar, a second line system added "just for print," often colliding with the real motif.
+- **Cards around everything.** Every block wrapped in a bordered container instead of structured with column headers, type and space.
+- **Print thinking imported into a deck.** A deck is digital — RGB, screen-viewed, can carry motion; treat it like a web layout in a fixed frame, not a press piece.
 - **Geometry-and-type only.** No photography or illustration anywhere in the media mix, so "varied layout" is still the same two ingredients rearranged.
 
 ## Decks

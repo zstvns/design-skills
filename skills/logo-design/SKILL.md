@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.8.0
+  version: 1.9.0
 ---
 
 # Logo Design
@@ -74,6 +74,18 @@ For a **redesign or refinement**, diagnose the *move* first — the gap from wea
 
 A mark is sold (and sign-off is won) in context, not on a white artboard. Present the **identity presentation**: the sketches and creative direction that led here, the inspiration, the mark itself, its **black-and-white** form, and — the load-bearing part — the mark **applied**: business cards, signage, billboards, social, ephemera (hats, shirts), a sub-brand side by side if there is one, and **on the shelf next to the competitors**. Show the application of everything and *make the case objectively* — "this stands out in your market" — with the competitor lineup right there to prove it. This is where Distinct stops being an assertion and becomes visible.
 
+## Deliver the Logo as ONE Locked Element
+
+The single most common way a good mark gets wrecked downstream is that consumers **rebuild** it — a designer (or an agent) places the symbol, sets the wordmark themselves, picks their own gap, tints it to match an accent, and drops it in a rounded box. Prevent that by delivering the logo as a **single, self-contained, locked asset**, not a kit of parts:
+
+- **One file per lockup.** The mark and the wordmark are locked together inside the asset in fixed proportion and fixed relationship. A consumer places *the logo*; they never assemble it. Provide the standalone symbol as its own separate asset for the cases that genuinely need it (avatar, app icon, favicon) — but it is a *named variant*, not an invitation to re-lockup.
+- **The wordmark ships as outlined vector**, so it can never re-render in a substitute face on a machine without the licensed font.
+- **Correct artwork bounds.** The `viewBox` / artboard must contain the whole drawing with intended clear space — **no clipping**. A mark that arrives cropped by its own frame will be cropped everywhere it's used. Verify by rendering each delivered file standalone at large and small size.
+- **Colour is fixed and enumerated.** Ship the exact variants — full-colour, inverse, all-white, all-black, grayscale — and state plainly that **recolouring the logo is misuse**. Do not leave the mark colour-inheriting/undefined such that a consumer's CSS decides it; if you deliver a version meant to take a single colour, deliver it *as* the one-colour variant with the permitted colours named.
+- **State the invariants next to the files:** minimum size, clear space, permitted variants, and an explicit misuse list — no recolouring, no boxing/containing, no cropping, no re-spacing or rebuilding the lockup, no stretching, no effects.
+
+**The governing principle: the logo behaves identically in every medium.** Web, print, deck, social, signage, app icon — same asset, same proportions, same relationship, same colours. If it looks or behaves differently on a new surface, the identity has been broken, not adapted.
+
 ## Output & delivery
 
 Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, misuse — and, for an assessment, the SAD verdict with the evidence behind each dimension. On finalize, deliver the full variant set (full-color / black / white / grayscale / inverted, RGB), the app icon (rounded + square, ± name) as needed, and confirm commercial type licenses — see [references/logo-construction.md](references/logo-construction.md) → Delivery.
@@ -88,6 +100,9 @@ Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space
 - [ ] **Simple** verified across the implementation grid (favicon → large, 1-color, reversed)
 - [ ] Resolves in black and white (opacity/tints OK; hue/gradient dependence is not)
 - [ ] **Construction sound** — geometric harmony (golden ratio, optically corrected), unified paths, hand-tracked type, balanced lockup ratio
+- [ ] **Delivered as one locked element** — mark+wordmark fixed together, wordmark outlined, artwork bounds contain the full drawing (nothing clipped), colour variants enumerated
+- [ ] **Invariants + misuse stated** — min size, clear space, and an explicit no-recolour / no-boxing / no-cropping / no-rebuilding list
+- [ ] Each delivered file **rendered standalone** at large and small to confirm it isn't cropped or colour-broken
 - [ ] Commercial type licenses confirmed
 - [ ] Verdict / spec written to `.agents/brand.md`
 

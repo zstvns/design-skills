@@ -1,5 +1,7 @@
 # Decks, Presentations & Self-Contained Sheets
 
+> **A deck is a digital medium — treat it like a screen, not a print piece.** It's RGB, it's viewed on a display or projected, it can carry motion and transitions, and it has none of print's ink/stock/bleed constraints. So the closest analogue is a website confined to a fixed frame: the same craft you'd apply to a web layout applies here (see `web-design`, `frontend-design`), minus the scroll. Don't import print thinking — CMYK, bleed, paper-weight caution — into a deck.
+
 The deck is the collateral format most often built wrong, because it *looks* easy — a title box and a bullet placeholder on every slide. That default is exactly the assembled-vs-designed failure from `design-principles`, thirty slides deep. This is how to design it instead.
 
 ## Decide the Mode First: Presented or Read
