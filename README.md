@@ -17,7 +17,7 @@ Design runs as a build, not a flat menu. **`brand` is the diagnostic front door*
 brand  (diagnose REO) ──┼─ Evolution   → capture, then strategy on the deltas → creative-direction
                         └─ Optimization → capture + audit → straight to the medium skills (fix execution)
 
-then:  brand-naming → logo-design → identity-proofing
+then:  brand-naming → logo-design
        → APPLICATION (web · collateral · email · social · motion) → design-critique
 ```
 
@@ -31,12 +31,11 @@ then:  brand-naming → logo-design → identity-proofing
 | Identity | [`creative-direction`](skills/creative-direction/SKILL.md) | Translates the emotional target + muses into the concrete visual system — color, type, composition, pattern & texture, icons, illustration, photography — as one coherent language, validated against the audit's own bar. Three stylescapes for a Revolution; anchored deltas for an Evolution. | ✅ |
 | Identity | `brand-naming` | Naming the brand or product, where applicable. | 🔜 |
 | Identity | [`logo-design`](skills/logo-design/SKILL.md) | The core mark — Simple, Appropriate, Distinct (SAD), each judged *in context*: distinct vs. competitors, appropriate to the feeling, simple across every implementation. | ✅ |
-| Identity | `identity-proofing` | Testing the identity in action on sample collateral and web *before* full rollout. | 🔜 |
-| Application | `web-design` | Applying the brand to a live, conversion-focused site with real copy. | 🔜 |
+| Application | [`web-design`](skills/web-design/SKILL.md) | Applying the brand to a live, conversion-focused site with real copy — designed *and built* in custom code, giving the words their proper emphasis. Rhythm as a vocabulary of section types, one reserved CTA color, faithful replication when referencing a live site. Absorbs the marketing library's website-design guidance. | ✅ |
 | Application | `collateral-design` | Decks, one-pagers, print, ads. | 🔜 |
 | Application | `email-design` | Lifecycle and campaign email. | 🔜 |
 | Application | `social-design` | Social formats and systems. | 🔜 |
-| Application | `motion-design` | Micro-interactions and animation with intent. | 🔜 |
+| Application | [`motion-design`](skills/motion-design/SKILL.md) | The twelve principles of animation applied to UI motion in custom code — micro-interactions, transitions, entrances, scroll and hover behavior — with weight, emotion, and restraint. Motion carries feeling; not fade-up-on-everything. | ✅ |
 | Application | `art-direction` | Sourcing and generating the actual visual assets (AI generation, stock, commissioning) to the standards the craft sets. | 🔜 |
 | Review | `design-critique` | Judges any artifact against the emotional target and the latitude — including whether a deviation is a legitimate **flex** or a drift. | 🔜 |
 

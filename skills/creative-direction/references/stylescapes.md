@@ -1,5 +1,7 @@
 # Stylescapes — Building and Presenting the Three Concepts
 
+> **Worked exemplar:** [../examples/magister-stylescapes.html](../examples/magister-stylescapes.html) — a full three-concept interactive set (console *operates* / programme *performs* / stele *governs*) with `1·2·3` nav and a side-by-side compare view, built to every rule in this file. Open it in a browser; squint at the compare view to see silhouette-level distinctness in practice.
+
 For **Revolution** (and serious Evolution) engagements: the discovery from `brand-strategy` becomes three distinct creative concepts, each expressed as a stylescape.
 
 ## What a stylescape is (and isn't)
