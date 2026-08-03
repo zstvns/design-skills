@@ -78,6 +78,22 @@ For a **redesign or refinement**, diagnose the *move* first — the gap from wea
 
 A mark is sold (and sign-off is won) in context, not on a white artboard. Present the **identity presentation**: the sketches and creative direction that led here, the inspiration, the mark itself, its **black-and-white** form, and — the load-bearing part — the mark **applied**: business cards, signage, billboards, social, ephemera (hats, shirts), a sub-brand side by side if there is one, and **on the shelf next to the competitors**. Show the application of everything and *make the case objectively* — "this stands out in your market" — with the competitor lineup right there to prove it. This is where Distinct stops being an assertion and becomes visible.
 
+## Deliver the Logo as ONE Locked Element
+
+The single most common way a good mark gets wrecked downstream is that consumers **rebuild** it — a designer (or an agent) places the symbol, sets the wordmark themselves, picks their own gap, tints it to match an accent, and drops it in a rounded box. Prevent that by delivering the logo as a **single, self-contained, locked asset**, not a kit of parts:
+
+- **One file per lockup.** The mark and the wordmark are locked together inside the asset in fixed proportion and fixed relationship. A consumer places *the logo*; they never assemble it. Provide the standalone symbol as its own separate asset for the cases that genuinely need it (avatar, app icon, favicon) — but it is a *named variant*, not an invitation to re-lockup.
+- **The wordmark ships as outlined vector**, so it can never re-render in a substitute face on a machine without the licensed font.
+- **Correct artwork bounds.** The `viewBox` / artboard must contain the whole drawing with its intended clear space — **no clipping**. A mark that arrives cropped by its own frame will be cropped everywhere it's used. Verify by rendering each delivered file standalone at large *and* small size.
+- **Color is fixed and enumerated.** Ship the exact variants — full-color, inverse, all-white, all-black, grayscale — and state plainly that **recoloring the logo is misuse**. Don't leave the mark color-inheriting or undefined such that a consumer's CSS decides it; if a version is meant to take a single color, deliver it *as* the one-color variant with the permitted colors named.
+- **Never drop the name or swap the face.** The logotype is part of the mark. A lockup missing the wordmark, set in the wrong typeface, or filled with placeholder/AI-slop copy is not the logo.
+- **Never invent medium-specific ornament.** Lines, frames, or decorations added "just for the business card / the deck" that aren't in the brand system are off-brand *by definition* — applying an identity means placing the system's elements, not adding new ones.
+- **State the invariants next to the files:** minimum size, clear space, permitted variants, and an explicit misuse list — no recoloring, no boxing/containing, no cropping, no re-spacing or rebuilding the lockup, no stretching, no effects. And when the mark stands alone (e.g. dead-center on a card), *actually center it*.
+
+**The governing principle: the logo behaves identically in every medium.** Web, print, deck, social, signage, app icon — same asset, same proportions, same relationship, same colors. If it looks or behaves differently on a new surface, the identity has been broken, not adapted.
+
+Layout, print safe-zones/bleed, and deck-vs-web composition live in `collateral-design`; logo-design guarantees only that the mark itself stays **locked and on-system** wherever it lands.
+
 ## Output & delivery
 
 Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, **misuse** — and, for an assessment, the SAD verdict with the evidence behind each dimension.
@@ -105,17 +121,6 @@ On finalize, hand over a **downloadable, ordered package** the client can house 
 - **Formats:** each in **SVG, PNG, and JPEG**. In the SVG the **logotype is outlined** — the licensed face converted to paths — so the file carries no font dependency and never re-renders in a fallback.
 - **Color variants:** full-color, **inverse** (the icon holds its color, the wordmark flips for dark grounds), all-white, all-black, grayscale. Work in RGB (Apple RGB for digital). Tools like Logo Package Express automate the export once the mark + logotype are set.
 - Confirm commercial type licenses — see [references/logo-construction.md](references/logo-construction.md) → Delivery.
-
-### The logo is one locked element
-
-The lockup is a **single, grouped, proportioned unit with one source of truth** — the same construction, ratio, spacing, and colorway *everywhere*. You do not use the logo in a different capacity in a new medium; it is the same thing all over the place. A logo is **placed**, never re-assembled, re-spaced, or re-proportioned to suit a card, a deck, or a sign. The misuse this rule prevents — each one a real failure, not hypothetical:
-
-- **Never recolor it.** A color outside the defined variant set — even "just for print" — is misuse. Pull a variant; never tint the mark to taste.
-- **Never crop, box, or contain it.** Dropping the mark in an arbitrary square, letting it clip, or cutting off part of the construction breaks the single-element rule. Give it its **clear space**, and when it stands alone (e.g. dead-center on a card) *actually center it*.
-- **Never drop the name or swap the face.** The logotype is part of the mark. A lockup missing the wordmark, set in the wrong typeface, or filled with placeholder/AI-slop copy is not the logo.
-- **Never invent medium-specific ornament.** Lines, frames, or decorations added "just for the business card / the deck" that aren't in the brand system are off-brand *by definition* — applying an identity means placing the system's elements, not adding new ones.
-
-Layout, print safe-zones/bleed, and deck-vs-web composition live in `collateral-design`; logo-design guarantees only that the mark itself stays **locked and on-system** wherever it lands.
 
 ## Non-Negotiables
 
