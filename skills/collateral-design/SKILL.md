@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.8.0
+  version: 1.9.0
 ---
 
 # Collateral Design
@@ -73,12 +73,13 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
 A fixed frame has no scroll to rescue a flat layout and no interaction to add interest, so composition carries most of the load. Full method in [references/composition.md](references/composition.md):
 
 - **The canvas is a hard limit — content never exceeds it.** Headlines, stats, quotes, cards, CTAs must sit **entirely inside the safe area**; only *decoration* (washes, patterns, oversized motifs, bleeding photos) runs off the edge. Clipped content is a failure, not a rough edge — and the fix is to **shrink or cut the content**, never to let it spill. Check all four edges and the bottom of the last element before calling a piece done.
-- **The logo goes at the BOTTOM, not the top.** The top of the frame belongs to the message. The mark signs off at the bottom (deck covers and pure brand pieces excepted), and **social posts get no logo at all** — the handle and avatar already brand them.
+- **The logo goes at the BOTTOM, not the top.** The top of the frame belongs to the message. The mark signs off at the bottom (deck covers and pure brand pieces excepted), and **social posts get no logo at all** — the handle and avatar already brand them. On an identity piece this decides the whole layout: **on a business card the person's name is the message**, so the name leads at the top and the logo signs off at the bottom — not a wordmark banked at the top with the name pushed under it and a dead band of nothing in between.
 - **Alignment is exact, spacing is systematic, punctuation hangs.** Off-centre is sloppiness; a pull-quote's opening `"` must hang outside the measure so the text's left edge stays true. Run the craft pass with `frontend-design` / `web-design-guidelines` — those principles apply verbatim to a fixed canvas. Overlap only where it creates depth or connects two things.
 - **Don't port web components into print.** A browser frame, nav bar, app card, or form field pasted onto a sheet reads as a screenshot and usually drags the wrong typeface in with it. Share the *system* with the site, not its components — and set everything in the brand's actual face.
 - **A bad image is worse than no image.** Generic stock cheapens the piece; if you don't have imagery that's specific and good, solve it typographically or graphically instead.
 
 - **Light first, dark second.** Default to a light composition, especially for print — a near-black printed piece is rare, drinks ink, scuffs, and goes muddy on uncoated stock. **Even a dark screen brand needs a light expression for paper.** Build that, then produce the dark variant for screen. If a piece genuinely should be dark, give it **depth** — a gradient with light in it, not flat black.
+- **One motif language per frame *and* per family — check for the quiet second one.** Two line systems in one piece reads as indecision, and the second one is usually something you stopped seeing: a faint background grid sitting under the real motif, a hairline rule system, a texture inherited from a template. Sweep the whole family for it — if the deck and one thumbnail carry a grid while everything else carries the rings, the family has two languages, not one. And when a radial/concentric motif's **centre is visible on the canvas it reads as a bullseye** — a target that pulls the eye — instead of a big system sweeping through the frame; push the centre off-canvas or hollow it out.
 - **Give it a background element that ties the composition together — and push it off the canvas.** Text and boxes on an empty ground is the flat case. Use a large gradient wash, an oversized cropped motif, a dotted/concentric field sweeping across the whole piece, a shape entering from off-frame. **Go bigger than feels safe, bring color into it, and let the frame crop it** — don't force it to fit. But **where type sits, the background yields** (mask, fade, or route around it): legibility wins. And watch the accumulation — wash *plus* rings *plus* grid *plus* giant numeral in one frame is how a piece starts reading as AI-generated. The tell isn't the pattern, it's the excess; add the element, then remove what it made redundant.
 - **Use rich media — including real photography.** Varying the layout isn't enough if every band is still type and boxes. Bring photography, illustration, product imagery, and the icon set in generously.
 - **Don't invent elements that aren't in the brand language.** Adding a device "just for print" — a decorative rule under a word, a gradient bar, a line system that appears nowhere else in the identity — is not enrichment, it's drift. Every graphic element on a piece should trace to `design.md`; if it doesn't, cut it. And if an invented line collides with the real motif, that's the tell.
@@ -136,6 +137,7 @@ Run your own output through the same gauntlet the audit runs — **adversarially
 - **Run the collateral-slop check** ([references/collateral-slop.md](references/collateral-slop.md)) and **list what it finds** — bullet soup, template-underneath decks, centered-everything sheets, clip-art icons, stock-photo clichés, CTA/accent bleed, low-contrast-on-projector, RGB-headed-to-print. "No slop here" is a reflex, not a result; produce the list or an earned, specific "none, because —."
 - **Test it in its real moment, not your editor.** Project the slide (is it legible from the back, in a bright room?). Shrink the ad to thumbnail (does one message survive the squint?). Export the print piece to a press-ready PDF and check bleed/trim/CMYK. Read the deck as a silent PDF (does it stand without you talking?).
 - **Review at the size it ships at — never only at reduced scale.** A shrunken contact sheet flatters everything: type that's unreadable at final size still *looks* fine at 30%. Small physical formats are where this bites hardest — check a business card at true 3.5×2in, not at 3× on screen, and hold a practical floor (**~7pt minimum for contact/role lines, ~10–12pt for a name**; at 300dpi that's ~30px and ~50px, so screen-native type sizes are far too small if carried over unchanged). If a piece was only ever reviewed scaled down, it wasn't reviewed.
+- **Measure the type floor, don't look at it.** Convert every text element to points at the piece's own DPI (`px / dpi * 72`) and report anything under the floor. Undersized type on a print piece is invisible as a defect on screen — 25px on a 300dpi card looks perfectly comfortable and prints at 6pt — so it survives round after round of visual review, including on work that's already been approved. Same discipline as the canvas: it's a measurement.
 - **Cover-the-logo carry-through.** With the mark hidden, is the piece still recognizably this brand? If the distinctiveness lived only in the logo, the system didn't survive application.
 - **Family coherence.** Lay the pieces side by side: one brand, or three unrelated templates? Same feeling, varied layout?
 - **Proof the words.** Spelling, grammar, numbers, and — for anything printed — a final read *at size*, because you can't patch a printed run.
@@ -153,7 +155,10 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - **Show social in real platform context, across platforms** — Instagram feed and story/reel, LinkedIn, X, Facebook — in device frames with the actual platform chrome, alongside the varied format set (square, 4:5, 9:16, 1.91:1).
 - **Animate the social and screen pieces, and show static *and* motion** with a replay control — text rising in, staggered reveals, a drifting background element, a considered button entrance. Social is a moving medium; judging it static judges half of it. Defer to `motion-design` for the craft.
 - **Keep the viewer chrome neutral and outside the artifact** — a plain grey shell, never the brand's own colors, and no helper text overlapping the piece. The chrome must not become part of what's being judged.
+- **Build the audits in, and make them able to fail.** An overflow audit against a safe box **on every format, screen included** (interior margin; platform UI-safe bands on a 9:16), plus a type-floor audit in points at the piece's DPI. Report **coverage** — how many artboards were measured — because "clean" over zero artboards looks exactly like a pass, and prove the audit still catches a planted violation.
+- **Give the reviewer a content layer they own** — copy and type sizes in a plain-data file, separate from the rendering code, which you never rewrite. Copy is the gate, so review *means* editing words; if that requires touching markup they can't do it, and a scripted rewrite of yours will destroy the edits they did make.
 - **Make views deep-linkable** (`?v=cards&z=phys`) so specific pieces can be pointed at in review.
+- **Cache-bust at page load, not at build time** — a stamp baked into the HTML never changes, so the browser serves stale code and edits stay invisible.
 
 ## The Deliverable
 
@@ -174,7 +179,8 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] Radial/concentric motifs **centred on the piece** they radiate through
 - [ ] A **deck is treated as digital** (screen/web craft), not as a print piece
 - [ ] Mark used at the right cut: **symbol alone inside a constrained shape** (circle/avatar/badge), no redundant logo where the motif and type already carry the brand; small-size legibility checked and any collapse **reported back to `logo-design`**
-- [ ] **Nothing clipped** — verified by an automated overflow **measurement** against the safe box (not by eye), per view; only decoration bleeds; content shrunk or cut to fit rather than spilled
+- [ ] **Nothing clipped** — verified by an automated overflow **measurement** against the safe box (not by eye), **on every format including screen** (interior margin; UI-safe bands on 9:16), with **coverage reported** (how many artboards measured) and the audit **proven able to fail** on a planted violation; only decoration bleeds; content shrunk or cut to fit rather than spilled
+- [ ] **Type floor measured in points at the piece's DPI** (`px/dpi*72`), not judged on screen — nothing under ~7pt on a print piece
 - [ ] **Logo at the bottom** (covers excepted); **no logo on social posts**; business-card back is the mark + at most one motif crop
 - [ ] **Craft pass run** (`frontend-design` / `web-design-guidelines`): exact alignment, systematic spacing, hanging quote marks, overlap only where it earns depth
 - [ ] **No web components ported into print**; every element in the brand's actual typeface
@@ -189,7 +195,7 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] **Social & thumbnail type sized for the delivered screen**, verified legible at a glance in a device mockup — content cut rather than type shrunk
 - [ ] **Thumbnails checked at real scale in a scrolling list** (a scroll-test strip in the viewer); vertical (9:16) formats given true interior margin inside the UI-safe zones
 - [ ] Anything animated **reviewed in motion**, replayable — not approved as a still
-- [ ] **One motif, not several** — a single background language (rings *or* lines, never both in a frame), varied by scale/crop/density
+- [ ] **One motif, not several** — a single background language (rings *or* lines, never both in a frame), varied by scale/crop/density; swept for a **quiet second system** (background grid, stray rule set) and any **visible radial centre** pushed off-canvas or hollowed
 - [ ] Motif applied **across the whole family including cards and social**, and shown that way in review — not just on the big pieces
 - [ ] Motif pushed **off-canvas and given color**, yielding behind live text; background elements not accumulated into excess
 - [ ] **Rich media present** — real photography / illustration (brand's own > licensed > openly-licensed comp, and placeholders labelled as such), cropped deliberately and tied into the system; not geometry-and-type only
@@ -200,6 +206,8 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] Adversarial self-audit on the *rendered* artifact in its real moment (collateral-slop tropes listed, not "none"); cover-the-logo carry-through
 - [ ] **Reviewed at true size, not only scaled down** — physical scale checked on small print formats, type above the practical floor (~7pt contact/role, ~10–12pt names)
 - [ ] Delivered in a viewer: format switching, true-size zoom, deck clickable/arrow-navigable with present mode, bleed/trim/safe guides that **reveal without moving the piece**; **neutral gray canvas with visible piece outlines**; social shown **in-platform across platforms**, static *and* animated; chrome neutral and outside the artifact
+- [ ] **Reviewer owns a plain-data content layer** (copy + type sizes) that the rendering code reads and you never rewrite — and no scripted whole-file rewrites over anything they edit
+- [ ] Viewer assets **cache-busted at page load**, not with a stamp baked into the HTML
 - [ ] Correct output format shipped (press-ready PDF / sized exports / sendable deck); spelling, grammar, numbers proofed at size
 
 ## Related Skills

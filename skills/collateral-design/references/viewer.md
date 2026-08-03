@@ -69,13 +69,43 @@ const L = fr.left + safe*sc, R = fr.right - safe*sc, T = fr.top + safe*sc, B = f
 //   r.bottom > B  → `bottom ${((r.bottom-B)/sc).toFixed(0)}px` … etc.
 ```
 
-Report per view, and treat a clean result with suspicion until you've confirmed the audit actually catches a known violation — an audit that always passes isn't running (see `design-principles` → Judge Your Own Work).
+Four things decide whether that audit is real or theatre:
 
-**7d. Cache-bust the viewer's own assets.** If the viewer loads external JS/CSS, append a changing query (`v4-pieces.js?b=<stamp>`) on every build. Reviewing a stale cached script and reporting on a version that no longer exists wastes a whole review round — theirs and yours.
+- **Every format gets a safe box, screen included.** A safe line is not a print concept — a screen piece has an **interior margin**, and a story/reel has **platform UI-safe bands** top and bottom. Carry the *required minimum* inset on each artboard (`data-safe="64"`, or CSS-order `data-safe="250 64 290 64"` for a 9:16), and measure against **that standard** rather than against the piece's own padding, which it can never fail. A print frame can default to trim + another ⅛in. Skipping screen formats is how "clean" gets reported for a whole family when only one piece was ever measured.
+- **Measure leaves and skinned boxes, not layout containers.** A full-width flex column touches the artboard edge by design while its content sits safely inside its own padding; flagging it produces noise, and noise is how an audit gets ignored. Measure elements with no element children, plus any box with a background or border (those are visible, so they count). Mark deliberate full-bleed media (`.bleed`) so it's excluded rather than weakening the rule for everything.
+- **Report coverage, not just a verdict.** Print *how many artboards were measured and with what safe box*. A "clean" result over zero artboards — a selector that misses the deck's slides, say — reads exactly like a pass, and that is the single easiest way to ship a broken piece while believing you checked it.
+- **Prove it can still fail.** Give the audit a **self-test**: plant a deliberately overflowing probe element, confirm it's reported, remove it, then measure for real. Wire it to a query (`?audit=selftest`) and run it per view. An audit that always passes isn't running (see `design-principles` → Judge Your Own Work).
+
+**7d. Audit the type sizes too — in points, at the piece's DPI.** The canvas audit catches spills and says nothing about type that is simply too small for the delivered size. Convert and hold the floor mechanically:
+
+```js
+const pt = parseFloat(getComputedStyle(el).fontSize) / dpi * 72;   // dpi from the artboard
+if (pt < 7) report(el);          // ~7pt floor for contact / role / meta lines
+```
+
+On a 300dpi card, 25px is **6pt** — comfortable on your monitor, gone in the hand. This is the defect that hid through several review rounds on work that had already been signed off, because nothing about it looks wrong on screen. Same principle as the canvas: it's a measurement, not a look.
+
+**7e. Cache-bust at page load, not at build time.** If the viewer loads external JS/CSS, the stamp must be generated **when the page loads** — inject the scripts with a `Date.now()` query. A stamp *baked into the HTML* is worse than none: the URL never changes, so the browser serves its cached copy forever and edits to those files stay invisible until someone regenerates the stamp. Reviewing a stale script and reporting on a version that no longer exists wastes a whole round — theirs and yours.
+
+```html
+<script>['pieces.js','viewer.js'].forEach(src =>
+  document.write('<script src="'+src+'?b='+Date.now()+'"><\/script>'));</script>
+```
 
 **8. Show the specs.** A small info strip per format: what it is, its real dimensions (`1050 × 600 px · 3.5×2in @300dpi`), and what to look for. Review is faster when the reviewer doesn't have to ask "what size is this?"
 
 **9. Make it deep-linkable.** Read state from the query string (`?v=cards&z=phys&s=4&guides=1`) so a specific piece, zoom, or slide can be pointed at directly in review — and so it can be screenshotted programmatically for a self-audit.
+
+## Give the Reviewer a Content Layer They Own
+
+**Copy is the gate, so review means changing words.** The reviewer will want to try a shorter headline, cut a row, or push a type size — and if doing that means editing markup, they either can't or their edit gets destroyed the next time you touch the file. Both happened: scripted whole-file rewrites overwrote a reviewer's copy edits, and there was no history to recover them from.
+
+So split the artifact:
+
+- **A content file the reviewer owns** — plain data only (headline, type size, rows, CTA, URL, per format), no markup, no logic. Say so at the top of the file: *this file is yours; I don't rewrite it.* Then honour that.
+- **Rendering code you own** — reads the content file and lays it out. You change layout freely without ever touching their words.
+
+Two rules follow. **Never run a scripted whole-file rewrite over a region the reviewer edits** — a regex pass that reads and rewrites the file will silently clobber their work; make targeted edits instead. And when a piece is over-full, the skill's answer is *cut content, don't shrink type* — which is a **content** decision. Make it possible as a data edit (render the optional panel only when its rows exist), then say what should be cut and let them cut it.
 
 ## Keep the Chrome Out of the Artifact
 
