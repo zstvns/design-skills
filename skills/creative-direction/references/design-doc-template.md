@@ -4,6 +4,8 @@ The creative-direction record, generated at the end of the exercise — the deta
 
 Create it as concepts take shape; finalize on the client's pick. Keep the rejected concepts — they document *why* the chosen one won and seed later flexes.
 
+**This is a living record, not a snapshot.** `creative-direction` writes the founding sections; every downstream skill that *decides* a brand asset **appends its decision here** — `logo-design` writes the Logo section, `motion-design` the Motion System as built, application skills their adopted libraries and application notes. Each append carries a date and the one-sentence *why*, and updates the `Last updated` line. Read before deciding; append after deciding; never re-derive or contradict an existing section silently — if a decision changes, update the section and note what changed. The distilled result of any append also flows to `.agents/brand.md` where it affects the Fixed core / Flexible range.
+
 ```markdown
 # Creative Direction — [Brand Name]
 
@@ -55,4 +57,19 @@ Implementation difficulties across the board; how different this is from each di
 
 ## Self-Audit (adversarial, on the rendered board)
 AI-slop tropes found (listed, not "none"); cover-the-logo result on board AND applied fragment; foundational-category scores vs the competitor set.
+
+---
+<!-- ============ LIVING RECORD — appended by downstream skills ============ -->
+
+## Logo *(appended by logo-design · [date])*
+The approved mark: construction/geometry notes, lockups, clear space, minimum size, color/reversed variants, misuse rules, file locations — and the SAD verdict. Mirrors the Logo section of .agents/brand.md; this copy carries the fuller rationale.
+
+## Icon Library — as adopted *(appended by the deciding skill · [date])*
+The actual library/system shipped (named pack or custom set), grid/stroke/fill rules as implemented, where it diverged from the Iconography spec above and why.
+
+## Motion System — as built *(appended by motion-design · [date])*
+Easing tokens, duration scale, stagger step, reduced-motion rule, and the signature moves as shipped. Extends the directional Motion note above into the enforceable system.
+
+## Application Notes *(appended by web-design / collateral / email / social skills · [date])*
+Decisions made during application that future work must respect: component patterns adopted, grade/treatment implementations, places the system flexed and the ruling on whether the flex is now canon.
 ```

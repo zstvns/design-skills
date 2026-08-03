@@ -2,7 +2,7 @@
 name: motion-design
 description: "Design and build UI motion with intent — micro-interactions, transitions, entrances, scroll and hover behavior — applying the twelve principles of animation to a brand's settled system, in custom code. Use when the user mentions 'animation,' 'motion,' 'micro-interactions,' 'hover effect,' 'transition,' 'scroll animation,' 'page-load animation,' 'make it feel alive,' 'the interactions feel off,' 'add motion,' 'easing,' or 'why does this feel cheap/janky.' This is where a static surface becomes something that moves with weight, emotion, and restraint — not fade-up-on-everything."
 metadata:
-  version: 1.5.0
+  version: 1.6.0
 ---
 
 # Motion Design
@@ -150,7 +150,7 @@ Judge motion the way `design-principles` says to judge any work — **adversaria
 ## The Deliverable
 
 - **The motion, in the shipped code** — transitions, keyframes, scroll/hover/press behavior applied to the real artifact, in the project's stack (CSS transitions & `@keyframes`, CSS scroll-driven animations, or a JS motion library / IntersectionObserver where the interaction genuinely needs it — tool-agnostic, whatever the project already uses).
-- **Optional: a short "motion system" note** appended to the project — the easing tokens, the duration scale, the stagger step, and the reduced-motion rule — so later work and other Application skills stay consistent. Reference `.agents/design.md`'s motion character; don't duplicate it.
+- **Append the "Motion System — as built" section of `.agents/design.md`** (the living record — see `creative-direction` → design-doc-template.md): the easing tokens, the duration scale, the stagger step, the reduced-motion rule, and the signature moves as shipped — dated — so later work and other Application skills inherit the system instead of re-deriving it. This extends the directional Motion note `creative-direction` wrote; reference it, don't duplicate it.
 
 ## Non-Negotiables
 
