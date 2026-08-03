@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.9.0
+  version: 1.10.0
 ---
 
 # Logo Design
@@ -80,7 +80,7 @@ A mark is sold (and sign-off is won) in context, not on a white artboard. Presen
 
 ## Output & delivery
 
-Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, **misuse** — and, for an assessment, the SAD verdict with the evidence behind each dimension.
+Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, **misuse** — and, for an assessment, the SAD verdict with the evidence behind each dimension. **Also append the Logo section of `.agents/design.md`** (the living record — see `creative-direction` → design-doc-template.md): the same spec with the fuller rationale — construction/geometry notes, why the mark answers the Emotional Target, file locations — dated. `brand.md` carries the distilled rules; `design.md` carries the record.
 
 On finalize, hand over a **downloadable, ordered package** the client can house and reuse:
 
@@ -113,7 +113,7 @@ Layout, print safe-zones/bleed, and deck-vs-web composition live in `collateral-
 - [ ] Commercial type licenses confirmed
 - [ ] Delivered as **one locked element** — same construction/proportion/colorway everywhere; never recolored, cropped, boxed, or re-set per medium
 - [ ] Delivery package: lockup · icon · square avatar · app icon, each in SVG/PNG/JPEG × the color-variant set, **logotype outlined** in the SVG
-- [ ] Verdict / spec written to `.agents/brand.md`
+- [ ] Verdict / spec written to `.agents/brand.md`; Logo section appended to `.agents/design.md` (the living record)
 
 ## Related Skills
 

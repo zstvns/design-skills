@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.12.0
+  version: 1.13.0
 ---
 
 # Creative Direction
@@ -93,7 +93,7 @@ Run your own work through the same gauntlet the audit runs — **adversarially, 
 
 Two layers, one source of truth — mirroring `brand-strategy`:
 
-1. **`.agents/design.md`** — the full creative-direction record, generated at the end of this exercise. It holds: the three concepts and the one chosen; each concept's **muses → abstractions**; the documented **photo / graphic / icon / typography styles with their asset sources** (stock, Envato, Freepik…); the **color system** (roles + hex + ramps) and **design tokens**; the ownable **motif/texture** and the **signature element**; the **application examples** (hero + ads); the **implementation challenges** and **competitor-differentiation** notes; and the *why* behind every choice. Use the template in [references/design-doc-template.md](references/design-doc-template.md). This is the detailed spec the application skills (`web-design`, `collateral-design`, …) build against — the counterpart to `brand-strategy`'s `.agents/brand-strategy.md`.
+1. **`.agents/design.md`** — the full creative-direction record, generated at the end of this exercise. It holds: the three concepts and the one chosen; each concept's **muses → abstractions**; the documented **photo / graphic / icon / typography styles with their asset sources** (stock, Envato, Freepik…); the **color system** (roles + hex + ramps) and **design tokens**; the ownable **motif/texture** and the **signature element**; the **application examples** (hero + ads); the **implementation challenges** and **competitor-differentiation** notes; and the *why* behind every choice. Use the template in [references/design-doc-template.md](references/design-doc-template.md). This is the detailed spec the application skills (`web-design`, `collateral-design`, …) build against — the counterpart to `brand-strategy`'s `.agents/brand-strategy.md`. **And it's a living record:** downstream skills append their decided assets to it as the pipeline advances — `logo-design` the approved mark, `motion-design` the built motion system, application skills their adopted libraries and notes (see the template's Living Record sections). This skill writes the founding sections; the record grows from there.
 2. **`.agents/brand.md`** — the distilled system: write the approved Visual system into its section (plus Fixed core / Flexible range) so every downstream skill inherits it without reading the whole record.
 
 Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from* `.agents/design.md` — never the other way around.
