@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.6.0
+  version: 1.7.0
 ---
 
 # Web Design
@@ -127,7 +127,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 ## The Deliverable
 
 - **The shipped site** — production front-end code in the user's project, designed and built together, applying the approved system.
-- **Optional: a short "site system" note** appended to the project (component conventions, section inventory, the tokens as used) so later pages and `collateral-design` stay consistent. Don't duplicate `.agents/design.md` — reference it.
+- **Append the "Application Notes" section of `.agents/design.md`** (the living record — see `creative-direction` → design-doc-template.md): component conventions adopted, the tokens as used, any place the system flexed and whether the flex is now canon — dated — so later pages and `collateral-design` inherit decisions instead of re-deriving them. Don't duplicate the founding sections — reference them.
 
 ## Non-Negotiables
 
