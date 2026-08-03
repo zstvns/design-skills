@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.9.0
+  version: 1.10.0
 ---
 
 # Logo Design
@@ -81,6 +81,23 @@ A mark is sold (and sign-off is won) in context, not on a white artboard. Presen
 ## Output & delivery
 
 Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, **misuse** — and, for an assessment, the SAD verdict with the evidence behind each dimension.
+
+### Write the locked assets where the other skills will find them
+
+A logo recorded only as prose can't be *applied* — the next skill has nothing to place, so it rebuilds the mark and wrecks it. So **emit real files to a canonical path** and register them in the context docs:
+
+```
+.agents/assets/logo/
+  logo-lockup.svg          # primary — icon + outlined logotype, ONE locked element
+  logo-icon.svg            # the mark alone
+  logo-lockup-inverse.svg  # icon holds its colour, logotype flips (dark grounds)
+  logo-lockup-black.svg    logo-lockup-white.svg    logo-lockup-gray.svg
+  avatar.svg               # square, icon centred
+  app-icon.svg             # rounded square
+  raster/                  # PNG + JPEG of each, for surfaces that can't take SVG
+```
+
+Then record those **exact paths** in the Logo section of `.agents/design.md` (the spec the application skills build against) and in `.agents/brand.md`. Downstream skills — `web-design`, `collateral-design`, `social-design`, `email-design` — **reference and place these files**; they never redraw, re-space, recolour, crop, box, or re-typeset the mark. If a surface needs a variant that isn't in the folder, **come back here and add it** rather than improvising one at the point of use.
 
 On finalize, hand over a **downloadable, ordered package** the client can house and reuse:
 

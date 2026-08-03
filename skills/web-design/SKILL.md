@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.5.0
+  version: 1.6.0
 ---
 
 # Web Design
@@ -58,6 +58,7 @@ You are not producing a comp for someone else to implement. **You design by buil
 
 Pull the system from `.agents/design.md` — don't re-derive it, don't invent alongside it:
 
+0. **Place the locked logo; never rebuild it.** Take the mark from the canonical files the `logo-design` skill wrote — `.agents/assets/logo/logo-lockup.svg` (nav, footer), `logo-icon.svg` (favicon, tight spaces), the `-inverse` / mono variants on dark or single-colour grounds. It is **one locked element**: don't set the wordmark yourself, don't pick your own gap, don't recolour it to match an accent, don't crop it or drop it in a box, don't scale it below its minimum size, and respect its clear space. If the surface needs a variant that isn't in the folder, route back to `logo-design` — don't improvise one in CSS.
 1. **Color by role.** Background, text (primary/secondary), **action/CTA**, support. Five stops per color, not ten. Use the tokens as defined.
 2. **The CTA color is one deliberate, always choice — and it is *not* a text or graphic color.** Pick a single color that reads as *progression forward* (a green or blue, heuristically) and use it for the primary action everywhere. It must be **chromatically distinct** from the color carrying your headlines, icons, and decoration — otherwise the button doesn't pop, it blends. **Use it only on actual CTAs** — never a headline, never a decorative accent. A *separate* brand accent carries repeated emphasis (and even that with restraint); if the forward color starts showing up on labels and graphics, it stops meaning "act." Never style a non-interactive element like a button, either — a fake CTA erodes the real one. And give the CTA a **differentiated shape** — a pill or rounded form, not the same squared rectangle as every card — so the action reads at a glance.
 3. **Type by role, for contrast not competition.** Display, heading, body — each with a clear job. Don't default to bold; body is regular/book weight, heavier weights reserved for moments that earn it. Heading leading 1.1–1.3, body 1.5–1.6. Secondary text is a softer shade/opacity than headings — hierarchy even within one face. **Change body copy to the secondary text color across the whole page in one systematic pass**, not section by section (see [references/craft-details.md](references/craft-details.md) → work systematically).
@@ -132,6 +133,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 
 - [ ] Front-door diagnosis run; Revolution / heavy Evolution routed back to `creative-direction` (even if a logo already exists)
 - [ ] `.agents/design.md`, `brand.md`, `product-marketing.md` read; system applied, not re-invented
+- [ ] **Locked logo placed from `.agents/assets/logo/`** — not rebuilt, recoloured, cropped, boxed, or re-typeset; correct variant for the ground
 - [ ] Copy exists and drives the layout — no wireframe-first, no filler
 - [ ] If referencing an existing site: every section ported, the primary action reproduced, **real logos** pulled (no icon+text stand-ins)
 - [ ] Real custom code shipped (project stack matched or clean HTML/CSS) — not a comp, not Webflow/Framer

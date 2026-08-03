@@ -23,6 +23,19 @@ The Big Three the system must produce — every choice below traces here.
 - **Why chosen / not chosen:** …
 
 ## The System (chosen direction)
+### Logo (locked assets — from `logo-design`)
+| Asset | Canonical file | Use |
+|-------|----------------|-----|
+| Primary lockup | `.agents/assets/logo/logo-lockup.svg` | default, everywhere |
+| Icon / mark alone | `.agents/assets/logo/logo-icon.svg` | favicon, avatar, tight spaces |
+| Inverse | `.agents/assets/logo/logo-lockup-inverse.svg` | dark grounds |
+| Mono | `.agents/assets/logo/logo-lockup-black.svg` · `-white.svg` | 1-colour, print, etch |
+| Social avatar · app icon | `.agents/assets/logo/avatar.svg` · `app-icon.svg` | square · rounded |
+
+**Clear space:** · **Minimum size:** · **Reserved colour:**
+<!-- These files are LOCKED: single, self-contained, outlined logotype, one source of truth.
+     Application skills PLACE them — never rebuild, re-space, recolour, crop, box, or re-typeset.
+     If a needed variant doesn't exist, go back to logo-design and add it; don't improvise one. -->
 ### Color
 | Role | Name | Hex | Notes |
 |------|------|-----|-------|
