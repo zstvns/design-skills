@@ -13,7 +13,7 @@ Initial public release. Eight skills, installable as a Claude Code plugin or sym
 | `brand` | 1.26.1 |
 | `brand-strategy` | 1.12.1 |
 | `design-principles` | 1.11.1 |
-| `creative-direction` | 1.14.1 |
+| `creative-direction` | 1.14.2 |
 | `logo-design` | 1.11.2 |
 | `web-design` | 1.7.1 |
 | `collateral-design` | 1.11.1 |
