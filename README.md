@@ -134,7 +134,7 @@ Eight skills ship today. Deliberately not shipped yet:
 
 | Skill | Why it's waiting |
 |---|---|
-| `art-direction` | Sourcing and generating the actual bespoke visual assets. Held for v2 because it genuinely requires external generative tooling — a raster image or video generator like Midjourney — that has to sit outside this library. Until it ships, `creative-direction` owns asset direction and hands you prompt packs. |
+| `art-direction` | Sourcing and generating the actual bespoke visual assets. Held for v2 because it can't exist without generative tooling connected — a raster image or video generator (Midjourney, Higgsfield, Flora, GPT Image, Gemini/Imagen) that has to sit outside this library. Until it ships, `creative-direction` owns asset direction and hands you prompt packs. See [INSTALL.md](./INSTALL.md#3-recommended-connections-all-optional). |
 | `design-critique` | Judging any artifact against the emotional target and the latitude — including whether a deviation is a legitimate **flex** or a drift. For now, run that judgement against `.agents/brand.md` yourself; `design-principles` carries the flex-vs-drift reasoning. |
 | `email-design` · `social-design` | Folded into `collateral-design` for now, which already covers social posts, OG images, and email graphics as fixed formats. These split out only if the mediums earn their own depth. |
 | `brand-naming` | Naming a brand or product is a separate discipline from designing one. |

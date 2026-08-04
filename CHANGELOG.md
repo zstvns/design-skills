@@ -22,7 +22,7 @@ Initial public release. Eight skills, installable as a Claude Code plugin or sym
 **Packaging**
 
 - Added `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` — installable via `/plugin marketplace add zstvns/design-skills`
-- Added `INSTALL.md` documenting the (entirely optional) recommended connections: Quiver API, Figma MCP, Adobe MCP, Paper MCP, Flora MCP
+- Added `INSTALL.md` documenting the (entirely optional) recommended connections: Quiver API, Figma MCP, Adobe MCP, Paper MCP, and Flora or Higgsfield for generative rich media
 - Rewrote `README.md` with an install path, a five-minute getting-started, an intent → skill routing table, and a roadmap
 
 **Documentation**

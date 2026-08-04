@@ -56,7 +56,11 @@ Every skill degrades gracefully without these — it will tell you when a lower-
 | **Figma MCP** | `logo-design`, `creative-direction`, `web-design` | Read an existing brand's variables, tokens, type styles, and components during the audit; draw and assemble vectors on a real canvas a designer can take over. |
 | **Adobe MCP** | `creative-direction`, `collateral-design`, `logo-design` | Firefly generation, image editing and adjustment, vectorizing, background removal, and real document/print export. |
 | **Paper MCP** | `creative-direction`, `web-design`, `collateral-design` | A design canvas the agent can compose in directly — useful for stylescapes and fixed-format layout. |
-| **Flora MCP** | `creative-direction`, `collateral-design` | Generative imagery for muse-anchored boards and bespoke assets. |
+| **Flora MCP** *or* **Higgsfield** | `creative-direction`, `collateral-design`, `web-design` | Generative imagery and video for muse-anchored boards, bespoke assets, and rich media on the page. Either is a good choice — pick one; you don't need both. |
+
+**Rich media is the whole point of this layer.** Every skill that produces a visual surface needs real imagery to produce anything worth looking at — a stylescape without bespoke assets is a color swatch, a site without rich media is a wireframe, a social post without it is a text box. That applies to `creative-direction`, `collateral-design` (including social formats), `web-design`, and the planned `art-direction`, which is held for v2 precisely because it can't exist without this tooling underneath it.
+
+The skills will tell you when they're working without it — but "clearly-labeled low-fidelity" is still low-fidelity. If you connect one thing from this table, connect a generator.
 
 Set the Quiver key in your shell profile:
 
@@ -67,7 +71,7 @@ export QUIVER_API_KEY="..."
 
 Read the key from the environment — never commit it. The skills look it up at run time and skip the path entirely when it's absent.
 
-**On generative tooling generally:** the skills are deliberately tool-agnostic. They ask what you have access to and take the most capable available path rather than hardcoding a provider. If you have a raster or video generator (Midjourney, GPT Image, Gemini/Imagen, Higgsfield, Magnific), say so when asked and the agent will route asset generation through it.
+**On generative tooling generally:** the skills are deliberately tool-agnostic. They ask what you have access to and take the most capable available path rather than hardcoding a provider. If you have a raster or video generator (Midjourney, GPT Image, Gemini/Imagen, Higgsfield, Flora, Magnific), say so when asked and the agent will route asset generation through it — including tools with no MCP, where it will hand you prompt packs to run yourself and then work from what you bring back.
 
 ## 4. Where your data lives
 
