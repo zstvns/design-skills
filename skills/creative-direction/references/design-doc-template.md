@@ -62,7 +62,22 @@ AI-slop tropes found (listed, not "none"); cover-the-logo result on board AND ap
 <!-- ============ LIVING RECORD — appended by downstream skills ============ -->
 
 ## Logo *(appended by logo-design · [date])*
-The approved mark: construction/geometry notes, lockups, clear space, minimum size, color/reversed variants, misuse rules, file locations — and the SAD verdict. Mirrors the Logo section of .agents/brand.md; this copy carries the fuller rationale.
+The approved mark: construction/geometry notes, lockups, clear space, minimum size, color/reversed variants, misuse rules — and the SAD verdict. Mirrors the Logo section of .agents/brand.md; this copy carries the fuller rationale.
+
+**Locked assets** — the canonical files application skills PLACE (never rebuild, re-space, recolour, crop, box, or re-typeset):
+
+| Asset | Canonical file | Use |
+|-------|----------------|-----|
+| Primary lockup | `.agents/assets/logo/logo-lockup.svg` | default, everywhere |
+| Icon / mark alone | `.agents/assets/logo/logo-icon.svg` | favicon, avatar, tight spaces |
+| Inverse | `.agents/assets/logo/logo-lockup-inverse.svg` | dark grounds |
+| Mono | `.agents/assets/logo/logo-lockup-black.svg` · `-white.svg` · `-gray.svg` | 1-colour, print, etch |
+| Social avatar · app icon | `.agents/assets/logo/avatar.svg` · `app-icon.svg` | square · rounded |
+| Raster | `.agents/assets/logo/raster/` | PNG + JPEG, for surfaces that can't take SVG |
+
+**Clear space:** · **Minimum size:** · **Reserved colour:**
+<!-- If a needed variant doesn't exist, route back to logo-design and have it added — never improvise one at the point of use. -->
+
 
 ## Icon Library — as adopted *(appended by the deciding skill · [date])*
 The actual library/system shipped (named pack or custom set), grid/stroke/fill rules as implemented, where it diverged from the Iconography spec above and why.
