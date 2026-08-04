@@ -32,7 +32,7 @@ then:  brand-naming → logo-design
 | Identity | `brand-naming` | Naming the brand or product, where applicable. | 🔜 |
 | Identity | [`logo-design`](skills/logo-design/SKILL.md) | The core mark — Simple, Appropriate, Distinct (SAD), each judged *in context*: distinct vs. competitors, appropriate to the feeling, simple across every implementation. | ✅ |
 | Application | [`web-design`](skills/web-design/SKILL.md) | Applying the brand to a live, conversion-focused site with real copy — designed *and built* in custom code, giving the words their proper emphasis. Rhythm as a vocabulary of section types, one reserved CTA color, faithful replication when referencing a live site. Absorbs the marketing library's website-design guidance. | ✅ |
-| Application | `collateral-design` | Decks, one-pagers, print, ads. | 🔜 |
+| Application | [`collateral-design`](skills/collateral-design/SKILL.md) | Decks, one-pagers, print, and ads — the approved system applied to fixed-format deliverables that ship in one shot; coherence across the family, not one cloned template. | ✅ |
 | Application | `email-design` | Lifecycle and campaign email. | 🔜 |
 | Application | `social-design` | Social formats and systems. | 🔜 |
 | Application | [`motion-design`](skills/motion-design/SKILL.md) | The twelve principles of animation applied to UI motion in custom code — micro-interactions, transitions, entrances, scroll and hover behavior — with weight, emotion, and restraint. Motion carries feeling; not fade-up-on-everything. | ✅ |

@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.11.0
+  version: 1.11.1
 ---
 
 # Logo Design
@@ -135,6 +135,7 @@ On finalize, hand over a **downloadable, ordered package** the client can house 
 - [ ] Commercial type licenses confirmed
 - [ ] Delivered as **one locked element** — same construction/proportion/colorway everywhere; never recolored, cropped, boxed, or re-set per medium
 - [ ] Delivery package: lockup · icon · square avatar · app icon, each in SVG/PNG/JPEG × the color-variant set, **logotype outlined** in the SVG
+- [ ] **Locked asset FILES emitted to `.agents/assets/logo/`** and their exact paths registered in both context docs — a Logo section recorded as prose with no files behind it is the failure this prevents: the next skill has nothing to place, so it rebuilds the mark
 - [ ] Verdict / spec written to `.agents/brand.md`; Logo section appended to `.agents/design.md` (the living record)
 
 ## Related Skills
