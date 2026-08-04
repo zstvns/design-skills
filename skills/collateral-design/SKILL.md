@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.10.0
+  version: 1.11.0
 ---
 
 # Collateral Design
@@ -55,7 +55,19 @@ Pull the system from `.agents/design.md`; don't re-derive it, don't invent along
 3. **Use the REAL assets from `.agents/design.md` — never a stand-in.** This file (plus `logo-design`'s output) holds the actual **logo files, brand colors, licensed typefaces, and motif** established upstream. Pull them; do not approximate them.
    - **Never substitute an icon-font glyph or a lookalike shape for the logo.** A Material Symbols / Lucide / emoji icon standing in for the mark is the single most damaging shortcut in this skill — it silently replaces the brand's most controlled asset with a generic one. If you can't locate the real file, **stop and ask** rather than approximating.
    - **Check you have the current version.** Identities get revised; a mark from an earlier round may be stale. Confirm the logo, palette, and type in `design.md` are the latest before applying them across a whole family — a full set built on a superseded mark is a full set to redo.
-   - **The mark lives in `logo-design`'s deliverable** — the actual vector files it produced. Go get them (and prepare them for reuse: make the fill/stroke inherit `currentColor` so one asset works on light *and* dark grounds, rather than keeping separate hardcoded copies).
+   - **The mark has a canonical path — place the file, don't prepare one.** `logo-design` delivers locked files to a fixed location and registers them in `design.md`'s Logo section. Read the table there and place the file by name:
+
+     | Need | File |
+     |---|---|
+     | Default, everywhere | `.agents/assets/logo/logo-lockup.svg` |
+     | Mark alone (tight space, avatar, favicon) | `logo-icon.svg` |
+     | Dark ground | `logo-lockup-inverse.svg` |
+     | One-colour (print, etch, single-ink) | `logo-lockup-black.svg` · `-white.svg` · `-gray.svg` |
+     | Square / rounded | `avatar.svg` · `app-icon.svg` |
+     | Surfaces that can't take SVG | `raster/` |
+
+     **A ground is a variant choice, not a colour edit.** Light piece → the primary; dark piece → the *inverse* or *white* file. Do not make one asset inherit `currentColor` so the surrounding CSS decides its colour — that's not "one asset working everywhere," it's handing the brand's most controlled asset to whatever `color` happens to cascade in, which is how it ends up tinted to an accent. `currentColor` is legitimate **only** inside a file the identity designates as the one-colour variant, where the single ink is the point.
+     - **If the variant you need doesn't exist, route back to `logo-design` and have it added.** Never improvise one at the point of use — not by recolouring, not by inverting in CSS, not by exporting your own.
    - **Read which mark was *chosen*, don't just grab a file.** A logo exploration leaves behind many candidates — three families, a shortlist, several wordmark experiments. **Find the stated recommendation / sign-off and use that one.** Picking whichever file looks plausible (or whichever the presentation happened to reference in a layout) is how a whole collateral family gets built on a rejected concept. If the recommendation isn't recorded, or the assets are still placeholders, **stop and ask** — this is not a guess worth making, because every piece in the family inherits the error.
    - **The logo is ONE locked element. Use it exactly as delivered.** Mark and wordmark come pre-locked in fixed proportion and fixed relationship — you place that single asset, you never rebuild the lockup out of parts, and you never re-space it. **A logo must behave identically in every medium.** Specifically, never:
      - **recolor it** — use only the delivered color variants (full-colour / inverse / white / black / mono). Tinting the mark to match an accent is a hard no.
@@ -177,7 +189,8 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] Front-door diagnosis run; system being defined/changed routed back to `creative-direction` (even if a logo exists)
 - [ ] `.agents/design.md`, `brand.md`, `product-marketing.md` read; system applied, not re-invented
 - [ ] **Copy gate passed** — strong copy exists and drives the layout (weak copy = stop and get it written); identity-only pieces (business cards, avatars, letterhead) exempt
-- [ ] **Real assets pulled from `.agents/design.md`** — actual logo files (never an icon-font/emoji stand-in), exact brand colors, licensed faces — and confirmed to be the *current* version
+- [ ] **Real assets pulled from `.agents/design.md`** — locked logo files **placed from their canonical paths** (`.agents/assets/logo/…`), never an icon-font/emoji stand-in or a self-prepared copy; exact brand colors, licensed faces; confirmed to be the *current* version
+- [ ] **Ground handled by variant, not by recolouring** — primary on light, inverse/white on dark, mono where one ink is the point; **no `currentColor` letting consumer CSS pick the mark's colour**; missing variant routed back to `logo-design`
 - [ ] **Logo placed as the one locked asset** — never rebuilt, recoloured, boxed, cropped, re-proportioned, or given a second `viewBox`/coordinate space; identical behaviour in every medium
 - [ ] **Logo render diffed against the delivered file** — side by side at ~200px *and* checked at the smallest shipped size; a numeric/bbox check is not a verification
 - [ ] **No invented elements** — every graphic traces to `design.md`; nothing added "just for print"
