@@ -78,11 +78,12 @@ Who this must feel right *to*. (If `.agents/product-marketing.md` exists, link i
 **Art-direction notes:**
 
 ## Logo
+**Locked assets:** `.agents/assets/logo/` — `logo-lockup.svg` (primary) · `logo-icon.svg` (mark) · `-inverse` / `-black` / `-white` / `-gray` · `avatar.svg` · `app-icon.svg`
 **Primary lockup:**
 **Secondary / mark:**
 **Clear space:**
 **Minimum size:**
-**Misuse:** (what never to do)
+**Misuse:** (what never to do — at minimum: never recolour, crop, box, re-space, or re-typeset it; place the locked file, don't rebuild it)
 
 ## Voice
 (If `.agents/product-marketing.md` exists, link it.)
