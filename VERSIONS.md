@@ -9,7 +9,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | design-principles | 1.11.0 | Built | 2026-07-23 |
 | creative-direction | 1.14.0 | Built | 2026-08-03 |
 | brand-naming | — | Planned | — |
-| logo-design | 1.11.0 | Built | 2026-08-03 |
+| logo-design | 1.11.1 | Built | 2026-08-04 |
 | web-design | 1.7.0 | Built | 2026-08-03 |
 | collateral-design | 1.11.0 | Built | 2026-08-03 |
 | email-design | — | Planned | — |
