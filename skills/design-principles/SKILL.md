@@ -2,7 +2,7 @@
 name: design-principles
 description: "The universal principles behind strong visual design — across logos, brand identity, collateral, and web. Use at the start of any design work, when a design feels off but you can't name why, when judging whether a piece earns its choices, or when a brand needs to flex without breaking. Other design skills inherit these principles."
 metadata:
-  version: 1.11.0
+  version: 1.11.1
 ---
 
 # Design Principles
@@ -86,7 +86,7 @@ This is the principle most people get wrong, and the one that separates a brand 
 - The test is never "does it use the brand font and the brand blue?" The test is "**is this a flex within the strategy's latitude, or has the brand lost the plot?**"
 - This only works if the brand has *defined* that latitude — a **fixed core** (what must always hold) and a **flexible range** (where it's free to stretch). A brand with no defined flex either calcifies into a template or drifts into incoherence.
 
-When you judge brand fit (`design-critique`) or apply a brand to a new medium, judge against the *feeling and the strategy*, not the swatch.
+When you judge brand fit or apply a brand to a new medium, judge against the *feeling and the strategy*, not the swatch.
 
 ## Coherent Is Not the Same as Good
 
@@ -169,4 +169,4 @@ Not perfection — **better than it was.** Sweat the details. Follow the through
 - `brand` — the context doc (`.agents/brand.md`) that records a specific brand's answers to these principles
 - `brand-strategy` — the muse method and the fixed-core / flexible-range latitude
 - `creative-direction` — establishes the concrete visual system (color, type, pattern, texture, illustration, iconography, photography)
-- `design-critique` — applies "coherence, not repetition" to judge brand fit and legitimate flex
+- `design-critique` *(planned — not yet shipped)* — will apply "coherence, not repetition" to judge brand fit and legitimate flex

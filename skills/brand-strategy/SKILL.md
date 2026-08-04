@@ -2,7 +2,7 @@
 name: brand-strategy
 description: "Coach a client or team through defining a brand's visual identity from scratch — what it should make people feel, the muses it steals from, the distinct creative concepts, and the latitude it's allowed to flex within. Use before any creative direction, logo, or application work, or when the user mentions 'brand strategy,' 'what should our brand feel like,' 'brand workshop,' 'creative concepts,' 'brand personality,' 'find our visual direction,' or a brand that's undefined or being rethought. This is strategy, not execution."
 metadata:
-  version: 1.12.0
+  version: 1.12.1
 ---
 
 # Brand Strategy
@@ -169,7 +169,7 @@ The latitude that makes legitimate flexing possible later. Define:
 - **Fixed core** — the non-negotiables that make it recognizably *this* brand. Sometimes that's a logo and a color; sometimes it's a feeling and a sense of space, with everything else free.
 - **Flexible range** — where the brand is free to stretch (campaigns, premium tiers, seasonal moments, sub-brands), and what "stretch" means there.
 
-The test that ties them together: **a flex is legitimate when it still produces the Emotional Target, even if it drops the everyday type, color, or layout.** Brands with no defined latitude either calcify into a template or drift into incoherence. This section is what lets `design-critique` later tell the difference.
+The test that ties them together: **a flex is legitimate when it still produces the Emotional Target, even if it drops the everyday type, color, or layout.** Brands with no defined latitude either calcify into a template or drift into incoherence. This section is what lets a later critique tell the difference.
 
 ## The Deltas-Only Mode (Evolution)
 
@@ -199,7 +199,7 @@ For **Evolution**, anchor on a single direction that respects existing equity �
 The session is captured in **`.agents/brand-strategy.md`** — the full strategy record: every question, the client's answers in their own words, the coaching refinements, and the synthesized outputs. Rules:
 
 - **Save after every answer.** Coaching sessions get interrupted; the document is the session's memory. At the start of any run, check for an existing `.agents/brand-strategy.md`, read it, and offer to resume where they left off rather than starting over.
-- **Markdown is canonical.** This file is the source of truth the agent reads and edits throughout the brand build-out — later skills (`creative-direction`, `logo-design`, `design-critique`) refer back to it for the full reasoning behind the distilled context in `.agents/brand.md`.
+- **Markdown is canonical.** This file is the source of truth the agent reads and edits throughout the brand build-out — later skills (`creative-direction`, `logo-design`) refer back to it for the full reasoning behind the distilled context in `.agents/brand.md`.
 - **Publish anywhere, on request.** The client picks where the strategy "lives" for viewing and sharing — Notion, a Google Doc, a PDF, anything. Generate that copy *from* the markdown whenever they ask (and regenerate after updates). The published copy is a delivery surface; if edits happen there, fold them back into the markdown so the canonical version never drifts.
 - **Keep the client's verbatim language.** Their raw phrasing is source material for copy and creative direction — synthesize *alongside* it, don't overwrite it.
 
@@ -212,7 +212,7 @@ Two layers, one source of truth:
 
 Plus, if the client wants it, a **published copy** wherever they choose (Notion, Google Doc, PDF) — generated from the markdown, never the other way around.
 
-This is the source `creative-direction`, `logo-design`, and `design-critique` all read from. When a later skill asks "is this *appropriate*?", appropriate means *appropriate to this direction*.
+This is the source `creative-direction` and `logo-design` both read from. When a later skill asks "is this *appropriate*?", appropriate means *appropriate to this direction*.
 
 ## Non-Negotiables
 
@@ -232,4 +232,4 @@ This is the source `creative-direction`, `logo-design`, and `design-critique` al
 - `brand` — records this direction in `.agents/brand.md`
 - `creative-direction` — turns the direction into a concrete visual system
 - `logo-design` — distills it into the core mark
-- `design-critique` — judges later work against the Emotional Target and the latitude defined here
+- `design-critique` *(planned — not yet shipped)* — will judge later work against the Emotional Target and the latitude defined here

@@ -80,7 +80,7 @@ The nine categories are visual; the **name** is brand equity too, and a taxing o
 - **The radio test** — if someone *hears* the name, can they reliably spell it and find it? Coined or respelled words (e.g. a respelled portmanteau) fail this: ambiguous spelling hurts word-of-mouth, search, and recall.
 - **The mouth test** — is it easy to *say*? Count syllables, awkward consonant clusters, and ambiguous stress. A name that's phonetically or linguistically taxing on the mouth and the mind taxes every customer who tries to refer you.
 
-Note the issue in the audit and in `.agents/brand.md`. A rename is a heavy, separate decision — if it's on the table, that's `brand-naming`, not this audit. But surfacing the friction is part of an honest brand read.
+Note the issue in the audit and in `.agents/brand.md`. A rename is a heavy, separate decision — if it's on the table, that's a separate naming exercise, not this audit. But surfacing the friction is part of an honest brand read.
 
 ## Competitor similarity — the pivot (weighted heaviest)
 

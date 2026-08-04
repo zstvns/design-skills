@@ -2,7 +2,7 @@
 name: motion-design
 description: "Design and build UI motion with intent — micro-interactions, transitions, entrances, scroll and hover behavior — applying the twelve principles of animation to a brand's settled system, in custom code. Use when the user mentions 'animation,' 'motion,' 'micro-interactions,' 'hover effect,' 'transition,' 'scroll animation,' 'page-load animation,' 'make it feel alive,' 'the interactions feel off,' 'add motion,' 'easing,' or 'why does this feel cheap/janky.' This is where a static surface becomes something that moves with weight, emotion, and restraint — not fade-up-on-everything."
 metadata:
-  version: 1.6.0
+  version: 1.6.1
 ---
 
 # Motion Design
@@ -110,7 +110,7 @@ But general motion has a ceiling. The motion that makes a surface feel *exciting
 So calibrate to the brief, and be honest about the ceiling:
 
 - **"Make it feel considered / functional"** → general motion **is** the target. Apply the principles with restraint and stop. This is the common case and a good outcome — don't manufacture excitement the brief didn't ask for.
-- **"Make it exciting / memorable"** → general motion is the **floor, not the finish.** Reach for content-relative, bespoke ideas tied to the product's story and the brand's signature element — and that requires real design direction as *input* (`creative-direction` for the motion character and motif; `art-direction` for bespoke asset/motion ideas). **Without that input, say so:** the honest ceiling of generic application is "good," not "exciting." Ask for the direction rather than faking depth the brief never supplied.
+- **"Make it exciting / memorable"** → general motion is the **floor, not the finish.** Reach for content-relative, bespoke ideas tied to the product's story and the brand's signature element — and that requires real design direction as *input* — `creative-direction` owns both the motion character and motif and the direction for bespoke assets. **Without that input, say so:** the honest ceiling of generic application is "good," not "exciting." Ask for the direction rather than faking depth the brief never supplied.
 
 ## Restraint — Not Everything Moves *Equally*
 
@@ -174,7 +174,7 @@ Judge motion the way `design-principles` says to judge any work — **adversaria
 - `design-principles` — the craft beliefs this skill applies in the time dimension (hierarchy, restraint, emotion before execution, ai-slop's Motion tropes)
 - `creative-direction` — defines the brand's motion character as part of the visual system; route back for Revolution / heavy Evolution
 - `web-design` — ships the surface with a light motion floor and defers expressive motion craft to here; the most common upstream skill
-- `collateral-design` / `email-design` / `social-design` — sibling Application skills; motion for video/social lives alongside them
+- `collateral-design` — sibling Application skill for fixed formats; motion for video/social ads lives alongside it
 - `brand` — the audit whose emotional target sets the feeling motion must produce
-- `design-critique` — judges the shipped motion against the emotional target and the latitude
+- `design-critique` *(planned — not yet shipped)* — will judge the shipped motion against the emotional target and the latitude
 - reference: the twelve principles ([references/twelve-principles.md](references/twelve-principles.md)), the UI-native technique toolkit ([references/ui-motion-techniques.md](references/ui-motion-techniques.md), from [motion.zajno.com](https://motion.zajno.com/)), the technical floor ([references/motion-floor.md](references/motion-floor.md)), and Emil Kowalski's production defaults + the case for restraint ([references/practical-tips.md](references/practical-tips.md))

@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.7.0
+  version: 1.7.1
 ---
 
 # Web Design
@@ -154,8 +154,8 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - `logo-design` — the mark, applied here
 - `brand` — the audit whose categories are this skill's acceptance test
 - `motion-design` — the motion layer on top of this one: build the functional/UI floor here, hand off expressive choreography, scroll-telling, and signature motion there (it expects a structurally-sound surface, so run it *after* the build)
-- `collateral-design` / `email-design` / `social-design` — apply the same system to other mediums
-- `design-critique` — judges the shipped site against the emotional target and latitude
+- `collateral-design` — applies the same system to fixed-format mediums (decks, print, ads, social, OG images, email graphics)
+- `design-critique` *(planned — not yet shipped)* — will judge the shipped site against the emotional target and latitude
 - `frontend-design` — distinctive production-grade frontend when a build accelerator isn't connected
 - marketing library: `copywriting` / `website-copy` (the copy comes first), `cro` (optimize existing pages), `web-design-guidelines` (accessibility), `website-build-*` (only for an explicit platform build)
 - tooling (use when connected, fall back gracefully): **Relume MCP** (sitemap · wireframe · style guide), **Mobbin / Refero MCP** (pattern intake); see [references/tooling.md](references/tooling.md)

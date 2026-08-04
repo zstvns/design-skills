@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.11.0
+  version: 1.11.1
 ---
 
 # Collateral Design
@@ -124,7 +124,7 @@ Pick the format, then design to its real constraints. Deep dives per medium:
 - **One-pagers, sales sheets & leave-behinds** → covered in [references/decks.md](references/decks.md) (the "self-contained surface" section). One primary message + ranked proof, on a single frame that works with **no presenter and no scroll** — it has to answer "what is this and why should I care" the instant it's picked up. Dense is fine; flat is not.
 - **Print** → [references/print.md](references/print.md). Real dimensions in mm/in (never px), **bleed / trim / safe-margin** set correctly, **CMYK** and a checked color translation, **300 DPI** raster / vector where possible, rich vs. registration black, fold panels that respect reading order, stock and finish. Ship a **press-ready PDF**, not a screenshot.
 - **Ads (paid social & display)** → [references/ads.md](references/ads.md). The **squint / scroll-stop test**: one message, legible at thumbnail, in ~1 second. Design to each **platform's size and safe zones** (feed 1:1 / 4:5, stories & reels 9:16 with UI-safe margins, IAB display sizes). Text discipline — a few decisive words, not a paragraph. **One CTA**, mark present but not shouting. Variations at scale: `ad-creative` owns the copy variants; you own the visual system that holds them together. Motion/video ad → route to `motion-design`.
-- **Digital graphics — OG images, marketing / feature graphics, social templates, banners** → build these with the **system-and-cascade** method above: fixed pixel size, exported at native resolution, legible at the size actually served (an OG image is seen small, in a link preview). A full social *system* (profiles, ongoing formats) routes to `social-design`; one-off branded graphics live here.
+- **Digital graphics — OG images, marketing / feature graphics, social templates, banners** → build these with the **system-and-cascade** method above: fixed pixel size, exported at native resolution, legible at the size actually served (an OG image is seen small, in a link preview). A full social *system* (profiles, ongoing formats) is also this skill's job — build it as a system with a cascade, not as one-off art; one-off branded graphics live here too.
 
 ## Coherence Across the Family — the Whole Point of Collateral
 
@@ -132,7 +132,7 @@ A single beautiful slide is not the job; a *set* that reads as one brand is. Whe
 
 - **Same system, different layouts.** The deck, the sheet, and the ad should share color roles, type, mark, and motif but **must not be the same layout stamped three times.** Coherence is strategic (same feeling, same rules), not literal (same grid). A pile of identical templates is as much a failure as three pieces that don't look related.
 - **Coherent with the site.** If `web-design` already shipped, the collateral extends that surface's system — same tokens, same mark treatment, same motif logic — so a prospect who saw the site recognizes the deck.
-- **A legitimate flex is allowed.** A conference banner, an event one-pager, a premium leave-behind may stretch the everyday system *if it stays true to the strategy* (see `design-principles` → coherence, not repetition, and `design-critique` for the flex-vs-drift call).
+- **A legitimate flex is allowed.** A conference banner, an event one-pager, a premium leave-behind may stretch the everyday system *if it stays true to the strategy* (see `design-principles` → coherence, not repetition, which carries the flex-vs-drift call).
 
 ## Tooling & References — Use What's Connected, Fall Back Gracefully
 
@@ -237,8 +237,8 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - `logo-design` — the mark, applied here
 - `brand` — the audit whose categories are this skill's acceptance test
 - `web-design` — the same system on the web surface; keep collateral coherent with it
-- `email-design` / `social-design` / `motion-design` — apply the same system to other mediums; motion/video ads route to `motion-design`
-- `design-critique` — judges the finished collateral against the emotional target and the flex-vs-drift latitude
+- `motion-design` — the same system in motion; animated and video ads route there
+- `design-critique` *(planned — not yet shipped)* — will judge the finished collateral against the emotional target and the flex-vs-drift latitude
 - marketing library: `copywriting` (the words come first), `sales-enablement` (one-pager / battle-card substance), `ad-creative` (ad copy variants at scale)
 - method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade); [composition.md](references/composition.md) (light-first, background element, 8-col grid, print margin); delivery: [references/viewer.md](references/viewer.md) (true-size viewer + playable deck); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
 - tooling (use when connected, fall back gracefully): **`canvas-design`** (static PNG/PDF art), **`slide-deck`** (decks), **`dataviz`** (charts), **Adobe MCP** (layout / print / InDesign), **Paper / Pencil / Figma MCP** (design canvases), or **code → PDF/image export**; see [references/tooling.md](references/tooling.md)

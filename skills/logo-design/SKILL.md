@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.11.1
+  version: 1.11.2
 ---
 
 # Logo Design
@@ -113,7 +113,7 @@ A logo recorded only as prose can't be *applied* — the next skill has nothing 
   raster/                  # PNG + JPEG of each, for surfaces that can't take SVG
 ```
 
-Then record those **exact paths** in the Logo section of both `.agents/design.md` and `.agents/brand.md`. Downstream skills — `web-design`, `collateral-design`, `social-design`, `email-design` — **reference and place these files**; they never redraw, re-space, recolour, crop, box, or re-typeset the mark. If a surface needs a variant that isn't in the folder, **come back here and add it** rather than improvising one at the point of use.
+Then record those **exact paths** in the Logo section of both `.agents/design.md` and `.agents/brand.md`. Downstream skills — `web-design`, `collateral-design`, `motion-design` — **reference and place these files**; they never redraw, re-space, recolour, crop, box, or re-typeset the mark. If a surface needs a variant that isn't in the folder, **come back here and add it** rather than improvising one at the point of use.
 
 On finalize, hand over a **downloadable, ordered package** the client can house and reuse:
 
@@ -145,4 +145,4 @@ On finalize, hand over a **downloadable, ordered package** the client can house 
 - `brand-strategy` — the Emotional Target and competitive landscape this skill judges against
 - `creative-direction` — the wider visual system the mark anchors
 - `collateral-design` — the mediums the locked mark is *placed* into (cards, decks, print safe-zones/bleed); this skill only guarantees the mark stays locked and on-system
-- `design-critique` — judges the mark in use against the brand
+- `design-critique` *(planned — not yet shipped)* — will judge the mark in use against the brand
