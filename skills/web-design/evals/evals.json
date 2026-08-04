@@ -1,0 +1,57 @@
+{
+  "skill_name": "web-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're doing a full rebrand — new name, new logo, new everything. Can you design and build our new homepage?",
+      "expected_output": "Should run the front-door diagnosis, identify this as a Revolution, and refuse to build a site on an undefined system — routing back to creative-direction (and brand-strategy if the emotional target isn't set) before any design work. Should hold that position even if the user says they already have a logo, since a mark without the system around it isn't enough for a coherent site. Should note that a missing .agents/design.md is itself the 'go back' signal.",
+      "assertions": [
+        "Runs the front-door diagnosis and classifies as Revolution",
+        "Routes back to creative-direction rather than designing",
+        "Holds the position even when a logo already exists",
+        "Treats missing .agents/design.md as the go-back signal"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Here's our brand guide and design.md. Build the homepage — just use placeholder copy for now and we'll fill in the words later.",
+      "expected_output": "Should refuse to build around placeholder copy: the site is built around the words, never the reverse, and wireframe-first thinking is the fastest tell of an assembled page. Should route to the marketing library's copywriting / website-copy (or ask for the real copy) first, explaining that the designer's job is to give what's being said its proper emphasis. Should also note headline scale follows the actual content rather than a fixed hero shell.",
+      "assertions": [
+        "Refuses placeholder/filler copy as the basis for the design",
+        "Routes to copywriting / website-copy or asks for the real copy first",
+        "Explains copy-first: design gives the message proper emphasis",
+        "Notes size/scale follows the content, not a template"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Redesign this page to look better: https://example.com — our brand is settled and design.md is up to date.",
+      "expected_output": "Should proceed (settled brand = Optimization) but insist on faithful replication: inventory the source top to bottom and port every section with the right copy and order, reproduce the primary action mechanism (not just its words), and pull the real partner/integration logos rather than icon-plus-text stand-ins. Should ship real custom code in the project's stack (or clean HTML/CSS), not a mockup or a Webflow/Framer build. Should apply the system from design.md rather than inventing alongside it — including one reserved forward CTA color used only on actual CTAs, and rhythm as a vocabulary of varied section types rather than one repeated card idiom.",
+      "assertions": [
+        "Proceeds because the brand is settled (Optimization)",
+        "Inventories and ports every section, preserving the primary action",
+        "Pulls real logos, not icon+text stand-ins",
+        "Ships real custom code, not a comp or platform build",
+        "Applies design.md's system; CTA color reserved for actual CTAs only",
+        "Varies section types/media rather than repeating one layout idiom"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "The build looks good. Now make it feel alive — add a bunch of animations, including a big scroll-telling section where the heading pins.",
+      "expected_output": "Should take the motion character from the brand's emotional target rather than a generic default (playful vs. premium produce different motion; 'slick' is not the universal goal). Should split the work: build the functional/UI floor here — named easing with ease-out as the workhorse (no raw linear), UI transitions under ~300ms, press feedback, entrances that overlap and stagger rather than queue, transform/opacity only, hierarchical (not uniform) reveals, and prefers-reduced-motion honored — while handing the expressive pinned scroll-telling choreography to motion-design. Should recommend GSAP (ScrollTrigger) for the pinned sequence rather than hand-rolling it, while keeping CSS for simple states. Should push back on 'a bunch of animations' as uniform fade-up slop and validate by watching the rendered page, not screenshots.",
+      "assertions": [
+        "Derives motion character from the brand, not a house default",
+        "Builds the functional motion floor inline (ease-out, <300ms, transform/opacity, reduced-motion)",
+        "Uses overlapping/staggered entrances rather than sequential queuing",
+        "Hands the pinned scroll-telling sequence to motion-design",
+        "Recommends GSAP/ScrollTrigger for the complex sequence, CSS for simple states",
+        "Pushes back on uniform 'animate everything' as slop; validates by watching the page"
+      ],
+      "files": []
+    }
+  ]
+}

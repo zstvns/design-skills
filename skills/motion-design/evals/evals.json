@@ -1,0 +1,55 @@
+{
+  "skill_name": "motion-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I added fade-up-on-scroll to every section and every card on the site but it still feels off and kind of cheap. Can you make the animations look pro?",
+      "expected_output": "Should diagnose the problem as uniform, hierarchy-less motion — fade-up on everything identically is a named ai-slop trope (a default substituted for a decision). Should explain that motion is subject to the same hierarchy as everything else: the elements carrying the message get expressive motion, supporting detail gets less or none. Should introduce overlapping-and-staggered entrances (the single biggest lever) instead of everything firing the same way, assign considered easing curves from a named system instead of a single default, and tie the motion to the brand's emotional target. Should want to watch the rendered, moving page, not judge from static screenshots.",
+      "assertions": [
+        "Names fade-up-on-everything as ai-slop / uniform motion with no hierarchy",
+        "Prescribes motion hierarchy — not everything moves, and not equally",
+        "Introduces overlapping/staggered entrances as the biggest lever",
+        "Replaces default easing with a named easing system, no raw linear/single ease",
+        "Ties the motion to the brand emotional target, not a generic default",
+        "Validates on the rendered moving page, not static screenshots"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We're still finalizing the layout and copy for the homepage but I want to start adding all the animations now so it feels alive.",
+      "expected_output": "Should push back: motion is the last layer. Should run the front-door diagnosis and decline to animate an unsettled surface — polishing motion onto a layout that's about to change is wasted work. Should confirm the artifact is structurally sound (real markup, hierarchy, real copy) and the visual system's motion character is settled in .agents/design.md before proceeding, routing back to web-design / creative-direction if not. Should frame the correct order: design the thing structurally sound first, animate second.",
+      "assertions": [
+        "States motion is the last layer and declines to animate an unsettled layout",
+        "Runs the front-door diagnosis (structurally sound + settled system)",
+        "Routes back to web-design / creative-direction when the surface/system isn't ready",
+        "Frames the correct sequence: structure first, motion second"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Make this 'Delete account' button feel premium and considered when you interact with it.",
+      "expected_output": "Should start from the feeling (emotion before execution) — premium reads as unhurried, so slow timing and a gentle no-overshoot curve, not a springy bounce. Should reach for the relevant principles: slow-in/slow-out easing, timing (slow = expensive), and secondary action so the button visibly affects the modal/state it controls (e.g. hovering it previews the destructive effect), reinforcing cause and effect. Should keep motion on transform/opacity for smoothness, and honor prefers-reduced-motion. Should not just add a generic hover color change.",
+      "assertions": [
+        "Chooses the feeling first, then picks slow timing + gentle easing to match 'premium'",
+        "Applies slow-in/slow-out and timing (slow = expensive) deliberately",
+        "Uses secondary action to show the button affecting the thing it controls",
+        "Keeps animation on transform/opacity (compositor), honors prefers-reduced-motion"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "The menu animates open but it looks stiff and robotic. Here's the CSS — it uses `transition: all 0.15s linear`.",
+      "expected_output": "Should identify two tells: linear easing (nothing physical moves at a constant rate — the classic amateur signal) and the too-short duration for a panel that size (small things move fast, big things slow). Should assign a considered curve from a named easing system (an ease-out for the entrance so it decelerates into rest), lengthen the duration to fit the element's mass, and add slight overlapping/staggered entrance on the menu items rather than everything appearing at once. Should also flag `transition: all` as risky (can animate layout-triggering properties) and prefer explicit transform/opacity.",
+      "assertions": [
+        "Flags linear as the amateur tell and replaces it with a curve from an easing system",
+        "Lengthens duration to match the element's size (big = slow)",
+        "Adds overlapping/staggered entrance to the menu items",
+        "Flags `transition: all` and prefers explicit transform/opacity properties"
+      ],
+      "files": []
+    }
+  ]
+}
