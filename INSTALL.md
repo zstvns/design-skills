@@ -29,7 +29,7 @@ done
 
 ```bash
 git clone https://github.com/zstvns/design-skills ~/code/design-skills
-ln -s ~/code/design-skills ~/.claude/plugins/design-skills
+ln -s ~/code/design-skills ~/.claude/plugins/designskills
 ```
 
 ## 2. Verify
