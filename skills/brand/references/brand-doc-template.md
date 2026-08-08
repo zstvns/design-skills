@@ -91,7 +91,7 @@ Who this must feel right *to*. (If `.agents/product-marketing.md` exists, link i
 **Personality (3–5 adjectives):**
 
 ## Fixed Core vs. Flexible Range
-*The section that lets `design-critique` tell a legitimate flex from a drift.*
+*The section that lets a later critique tell a legitimate flex from a drift.*
 
 **Fixed core — must ALWAYS hold** (the non-negotiables that make it recognizably this brand):
 -

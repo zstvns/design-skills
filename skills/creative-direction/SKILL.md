@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.14.0
+  version: 1.14.2
 ---
 
 # Creative Direction
@@ -87,7 +87,7 @@ Run your own work through the same gauntlet the audit runs — **adversarially, 
 - **Revolution:** present the three stylescapes; the client picks one. **Push for one idea, not a Frankenstein.** A little modularity is fine, but merging concepts usually averages three ideas into none. When a client asks to graft (e.g. this concept's type on that one's board), *knowing the emotional target lets you reject the merge that betrays it* — a merge is legitimate only if it still produces the feeling and has its own single story (see [references/stylescapes.md](references/stylescapes.md) → synthesis vs. averaging).
 - **Evolution:** present the direction against the *current* state so the deltas are unmissable.
 - Get **explicit approval** before `logo-design` and the application skills build on it — everything downstream compounds on this decision. (Run creative direction *before* any naming project.)
-- **Write the approved system into `.agents/brand.md`** (the Visual system section, plus updates to Fixed core / Flexible range), recording the *why* behind each choice — the rationale is what survives handoffs and lets `design-critique` judge flexes later.
+- **Write the approved system into `.agents/brand.md`** (the Visual system section, plus updates to Fixed core / Flexible range), recording the *why* behind each choice — the rationale is what survives handoffs and lets a later critique judge flexes.
 
 ## The Deliverable
 
@@ -117,4 +117,4 @@ Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from
 - `brand-strategy` — supplies the emotional target and muses (hard prerequisite)
 - `logo-design` — the mark, designed inside this system
 - `web-design` / `collateral-design` — apply the approved system with real copy
-- `design-critique` — judges later work against what's recorded here
+- `design-critique` *(planned — not yet shipped)* — will judge later work against what's recorded here

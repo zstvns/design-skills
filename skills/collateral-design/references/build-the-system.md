@@ -56,4 +56,4 @@ The full family this skill applies a brand system to (CF's "Every Design Deliver
 - **Social ads and templates**; **social profile elements** (avatars, headers, covers)
 - **Slide decks** (sales, pitch, demo)
 - Case studies, enterprise one-pager PDFs, lead magnets / ebooks
-- Email marketing design and animated pieces exist too — those route to `email-design`, `social-design`, and `motion-design` respectively; this skill owns the static, fixed-format core.
+- Email and social graphics live here too — this skill owns the static, fixed-format core across every medium. Animated pieces route to `motion-design`. (Dedicated `email-design` and `social-design` skills may split out later; until then, treat those formats as collateral.)
