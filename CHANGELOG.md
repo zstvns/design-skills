@@ -2,7 +2,7 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
-## 1.0.0 — 2026-08-04
+## 1.0.0 — 2026-08-07
 
 Initial public release. Eight skills, installable as a Claude Code plugin or symlinked into any Agent Skills host.
 
