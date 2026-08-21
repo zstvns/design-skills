@@ -2,6 +2,14 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
+## 1.0.1 — 2026-08-07
+
+Documents the `npx` install path. No skill content changed — this worked at 1.0.0, it just wasn't written down anywhere.
+
+- `npx skills add zstvns/design-skills --all` installs all 8 skills into `.agents/skills/` via the [skills](https://github.com/vercel-labs/skills) CLI, wiring up every detected agent (Claude Code, Codex, Cursor, Amp, Cline, Antigravity, and more) and writing a `skills-lock.json`. Verified end to end against the live repo: all 8 discovered with correct descriptions, every `references/` and `evals/` file intact after install.
+- README and `INSTALL.md` now lead with npx for non-Claude-Code hosts and demote the manual clone-and-symlink to the "manage it yourself" option.
+- Documented that re-syncing is safe: these skills never write state inside their own folder, so an update that replaces the skill files can't destroy a user's brand context, strategy record, or logo assets. (This is the failure mode that cost `makerskills` its users' archives — worth stating as a deliberate property rather than luck.)
+
 ## 1.0.0 — 2026-08-07
 
 Initial public release. Eight skills, installable as a Claude Code plugin or symlinked into any Agent Skills host.

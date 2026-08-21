@@ -13,7 +13,29 @@ What follows is the optional layer. Design work gets substantially better when t
 /plugin install designskills@designskills
 ```
 
+### Any Agent Skills host (npx — recommended)
+
+```bash
+npx skills add zstvns/design-skills --all
+```
+
+Uses the [skills](https://github.com/vercel-labs/skills) CLI. Installs all 8 into `.agents/skills/` — the cross-agent standard — and wires up every agent it detects (Claude Code, Codex, Cursor, Amp, Cline, Antigravity, and more), writing a `skills-lock.json` so the install is reproducible.
+
+| Flag | Effect |
+|---|---|
+| *(none)* | Interactive — pick which skills and which agents |
+| `--all` | All 8 skills, all detected agents, no prompts |
+| `-s <names>` | Only named skills, e.g. `-s brand,logo-design` |
+| `-g` | Install user-level instead of project-level |
+| `--copy` | Copy files instead of symlinking |
+
+Update later with `npx skills update`.
+
+**Updates are safe to re-run.** These skills never write state inside their own folder — every artifact they produce lands in your project's `.agents/` directory (see [Where your data lives](#4-where-your-data-lives)). A re-sync that replaces the skill files can't destroy your brand context, strategy record, or logo assets.
+
 ### Any Agent Skills host (clone + symlink)
+
+If you'd rather manage it yourself:
 
 ```bash
 git clone https://github.com/zstvns/design-skills.git ~/code/design-skills
@@ -36,7 +58,8 @@ ln -s ~/code/design-skills ~/.claude/plugins/designskills
 
 ```bash
 # Should list 8 skills
-ls ~/code/design-skills/skills/
+ls ~/code/design-skills/skills/     # clone install
+npx skills list                     # npx install
 ```
 
 Then, in your agent:

@@ -18,7 +18,15 @@ Works with [Claude Code](https://claude.ai/code), Codex, Cursor, and other [Agen
 /plugin install designskills@designskills
 ```
 
-Any other Agent Skills host — clone and symlink into the cross-agent skills directory:
+Any other Agent Skills host — one command, via the [skills](https://github.com/vercel-labs/skills) CLI:
+
+```bash
+npx skills add zstvns/design-skills --all
+```
+
+Installs all 8 into `.agents/skills/` (the cross-agent standard) and wires up every agent it detects — Claude Code, Codex, Cursor, Amp, Cline, and others. Drop `--all` to pick skills and agents interactively, or `-g` for a user-level install instead of project-level. `npx skills update` pulls later versions.
+
+Prefer to manage it yourself:
 
 ```bash
 git clone https://github.com/zstvns/design-skills.git ~/code/design-skills
