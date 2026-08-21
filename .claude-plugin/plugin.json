@@ -1,7 +1,7 @@
 {
   "name": "designskills",
   "description": "AI agent skills for the designer's craft. Brand diagnosis and audit, brand strategy, creative direction, logo design, and application across web, collateral, and motion — with a shared context document so you never re-explain your brand.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Zach Stevens",
     "url": "https://github.com/zstvns"

@@ -1,6 +1,6 @@
 # Design Skills Versions
 
-Plugin version: **1.0.0** — see [CHANGELOG.md](CHANGELOG.md).
+Plugin version: **1.0.1** — see [CHANGELOG.md](CHANGELOG.md).
 
 Current versions of all skills. Agents can compare against local versions to check for updates.
 

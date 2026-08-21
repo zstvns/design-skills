@@ -13,7 +13,39 @@ What follows is the optional layer. Design work gets substantially better when t
 /plugin install designskills@designskills
 ```
 
+### Any Agent Skills host (npx — recommended)
+
+```bash
+npx skills add zstvns/design-skills --all
+```
+
+Uses the [skills](https://github.com/vercel-labs/skills) CLI, which writes a `skills-lock.json` recording a content hash per skill so the install is reproducible.
+
+**Where files land depends on which agents you target**, so it's worth knowing before you run it:
+
+| Command | Result |
+|---|---|
+| `--all` | Every supported agent. `.agents/skills/` (the cross-agent standard) **plus** a duplicate `agent/skills/` tree (~800K) and `.claude/skills/` symlinks. |
+| `-a claude-code` | `.claude/skills/` only — no `.agents/` directory created. |
+| *(interactive)* | You pick the agents; the directories follow from that choice. |
+
+If you want the cross-agent `.agents/skills/` layout specifically, use `--all` or include a universal agent in the interactive picker.
+
+| Flag | Effect |
+|---|---|
+| *(none)* | Interactive — pick which skills and which agents |
+| `--all` | All 8 skills, all detected agents, no prompts |
+| `-s <names>` | Only named skills, space-separated: `-s brand logo-design` |
+| `-g` | Install user-level instead of project-level |
+| `--copy` | Copy files instead of symlinking |
+
+Update later with `npx skills update`.
+
+**Updates are safe to re-run.** These skills never write state inside their own folder — every artifact they produce lands in your project's `.agents/` directory (see [Where your data lives](#4-where-your-data-lives)). A re-sync that replaces the skill files can't destroy your brand context, strategy record, or logo assets.
+
 ### Any Agent Skills host (clone + symlink)
+
+If you'd rather manage it yourself:
 
 ```bash
 git clone https://github.com/zstvns/design-skills.git ~/code/design-skills
@@ -35,9 +67,11 @@ ln -s ~/code/design-skills ~/.claude/plugins/designskills
 ## 2. Verify
 
 ```bash
-# Should list 8 skills
-ls ~/code/design-skills/skills/
+ls .agents/skills/            # npx install (project scope) — should list 8
+ls ~/code/design-skills/skills/   # clone install — should list 8
 ```
+
+If you installed globally with `-g`, check `npx skills list -g` instead — plain `npx skills list` only reads project scope. The CLI may print `missing required frontmatter field(s): name` for its own `agent/skills/` copies; that's a quirk of how it rewrites those files, not a problem with the skills.
 
 Then, in your agent:
 
