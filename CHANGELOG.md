@@ -2,7 +2,7 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
-## 1.0.1 — 2026-08-07
+## 1.0.1 — 2026-08-21
 
 Documents the `npx` install path. No skill content changed — this worked at 1.0.0, it just wasn't written down anywhere.
 

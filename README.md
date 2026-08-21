@@ -24,7 +24,7 @@ Any other Agent Skills host — one command, via the [skills](https://github.com
 npx skills add zstvns/design-skills --all
 ```
 
-Installs all 8 into `.agents/skills/` (the cross-agent standard) and wires up every agent it detects — Claude Code, Codex, Cursor, Amp, Cline, and others. Drop `--all` to pick skills and agents interactively, or `-g` for a user-level install instead of project-level. `npx skills update` pulls later versions.
+Installs for every supported agent — Claude Code, Codex, Cursor, Amp, Cline, and others — with the cross-agent copy in `.agents/skills/`. Drop `--all` to choose skills and agents interactively, `-a claude-code` to target just one, or `-g` for a user-level install. `npx skills update` pulls later versions. Exactly which directories get written depends on the agents you target — see [INSTALL.md](./INSTALL.md).
 
 Prefer to manage it yourself:
 
