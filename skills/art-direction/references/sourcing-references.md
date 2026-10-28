@@ -37,4 +37,4 @@ Each class gets one reference that is *almost* right — the over-polished versi
 
 ## What to Record
 
-For each reference: URL, class, the quality it was picked for, the user's verdict (in / out / near-miss) and why, and the status (`reference only` or `usable — <license>`). Usable references that the user loves are anchor candidates (SKILL.md Step 4). Reference-only images inform the spec and the prompts; they never ship.
+For each reference: URL, class, the quality it was picked for, the user's verdict (in / out / near-miss) and why, and the status (`reference only` or `usable — <license>`). Usable references that the user loves are anchor candidates (SKILL.md Step 5). Reference-only images inform the spec and the prompts; they never ship.

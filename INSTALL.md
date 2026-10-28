@@ -96,7 +96,7 @@ You don't have to configure tiers up front. `/brand` detects what's connected, a
 
 | Connection | Which skills use it | What it unlocks |
 |---|---|---|
-| **Quiver API** (`QUIVER_API_KEY`) | `logo-design` | Text → real editable **SVG**, and raster → SVG vectorizing for sketches made elsewhere. The best-fit path for logo work, because it produces actual vectors instead of raster approximations or hand-drawn paths. |
+| **Quiver API** (`QUIVER_API_KEY`) | `logo-design`, `art-direction` | Text → real editable **SVG** with Quiver's Arrow models, and raster → SVG vectorizing for sketches made elsewhere. The best-fit path for logo work, because it produces actual vectors instead of raster approximations or hand-drawn paths. **Arrow is also available inside Flora and Paper** — if you have either, you already have it. |
 | **Flora MCP** *or* **Higgsfield** | `art-direction` (and through it `creative-direction`, `collateral-design`, `web-design`) | Generative imagery and video for muse-anchored boards, bespoke assets, and rich media on the page. Either is a good choice — pick one; you don't need both. |
 | **Adobe MCP** | `art-direction`, `collateral-design`, `logo-design` | Firefly generation, image editing and adjustment, vectorizing, background removal, and real document/print export. |
 | **Figma MCP** | `logo-design`, `creative-direction`, `web-design` | Read an existing brand's variables, tokens, type styles, and components during the audit; draw and assemble vectors on a real canvas a designer can take over. |

@@ -72,6 +72,25 @@ The classes have to live together. Write down:
 - **Which class leads where** — e.g. web hero: photography; feature sections: illustration; social: illustration + motif; decks: photography as full-bleed dividers.
 - **Ratio across a set** — e.g. a 10-post social grid is ~6 illustration, 3 photography, 1 type-only.
 
+## The Style Test
+
+A spec is a hypothesis until it's been run against subjects it wasn't written for. The test sheet is one surface — a grid of results from the same spec — that the user approves the style on.
+
+| Class | The sheet | What it proves |
+|---|---|---|
+| **Illustration** | 6–8 tiles: a person · an object · a place · an abstract idea the brand must explain (e.g. "handoff," "trust," "speed") · the product as a branded abstraction · a crowded scene · one spot illustration at its real small size · one hero at full width | The technique, line, palette count, perspective, and detail level hold across subjects and scale — and the style can explain this brand's actual ideas, not just draw nice objects. |
+| **Photography** | 4–6 tiles: different subjects and settings (people, object, environment, detail) under the same light, lens, and grade | The look lives in the spec's light and grade, not in one lucky subject. |
+| **Iconography** | The brand's real concept set (8–12) at every size tier, next to body text in the brand face | Stroke and corners match the type; nothing breaks at the smallest size; one concept per glyph. |
+| **Pattern & texture** | The motif and each texture at three scales, behind a headline and behind body text | It stays a backdrop — never fighting the type — at every scale. |
+
+How to run and read it:
+
+- **Same prompt structure for every tile**; only the subject changes. If you change the wording per tile, you're testing your prompts, not the style.
+- **Run the sheet twice** (again, or in a second tool). Siblings → the spec holds. Not siblings → name the field that drifted and tighten it, then rerun the tiles that failed.
+- **Put two tiles in place** — a website section and a social post — so the style is judged where it will live, with real type and the brand's color around it.
+- **Lay the sheet next to the references the user picked.** The style should read as the same world.
+- **Record the verdict on the sheet itself**: which tiles passed, what drifted, what changed in the spec. Passing tiles are anchor candidates.
+
 ## The Treatment Recipe
 
 One grade, applied to every image regardless of source. Write the values, then the implementation:
