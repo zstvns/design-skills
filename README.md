@@ -38,6 +38,8 @@ done
 
 For Claude Code without the plugin, use `.claude/skills/` in place of `.agents/skills/`.
 
+**In the Claude app** (claude.ai or desktop), upload each skill as a zip and work inside one Claude Project per brand — the skills hand back your brand documents as files to add to the Project's knowledge. Steps in [INSTALL.md](./INSTALL.md#the-claude-app-claudeai-and-desktop).
+
 There are **no required dependencies** — every skill runs as-is. Claude plus a ChatGPT or Gemini subscription is a complete working setup; connected generators make it faster. See [INSTALL.md](./INSTALL.md#3-pick-your-tier-all-optional).
 
 ---
@@ -52,7 +54,7 @@ There are **no required dependencies** — every skill runs as-is. Claude plus a
 /brand yourbrand.com
 ```
 
-It crawls the site, follows links out to social and press, gathers the brand's existing assets itself, confirms the competitor set with you, runs a nine-category audit, and presents a full scorecard plus a verdict: **Revolution, Evolution, or Optimization** — how much should actually change.
+No website yet? Just give it the name and the idea — `/brand` maps your competitors' visual landscape and routes you to strategy. With a site, it crawls the site, follows links out to social and press, gathers the brand's existing assets itself, confirms the competitor set with you, runs a nine-category audit, and presents a full scorecard plus a verdict: **Revolution, Evolution, or Optimization** — how much should actually change.
 
 The one input it can't infer is your **appetite** (incremental refinement vs. transformational change). Give it if you know it; it drives the recommended path.
 
