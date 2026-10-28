@@ -2,7 +2,7 @@
 
 [![Stars](https://img.shields.io/github/stars/zstvns/design-skills?style=flat-square&label=stars&color=000)](https://github.com/zstvns/design-skills/stargazers) [![Release](https://img.shields.io/github/v/release/zstvns/design-skills?style=flat-square&color=000)](https://github.com/zstvns/design-skills/releases) [![License](https://img.shields.io/badge/license-MIT-000?style=flat-square)](./LICENSE)
 
-**AI agent skills for the designer's craft.** Brand diagnosis and audit, brand strategy, creative direction, logo design, and application across web, collateral, and motion — with a shared context document so you never re-explain your brand.
+**AI agent skills for the designer's craft.** Brand diagnosis and audit, brand strategy, creative direction, art direction, logo design, and application across web, collateral, and motion — with a shared context document so you never re-explain your brand.
 
 The principles are **universal** — good design, stated with authority, usable on any brand. They are not tied to one agency's process.
 
@@ -70,8 +70,9 @@ Everything in this library reads from and writes to plain markdown in your proje
 |---|---|---|
 | **`.agents/brand.md`** | `brand` | **The keystone.** The distilled source of truth every skill reads first — emotional target, muses, color, type, pattern & texture, illustration, iconography, photography, logo, the fixed-core / flexible-range latitude, and your **Toolkit** (which generators and canvases you can use, asked once). |
 | **`.agents/brand-strategy.md`** | `brand-strategy` | The full coaching record behind the distillation — your verbatim answers, the muses with their stealable cues, the pressure-tested personality, the concept directions. `brand.md` gets the synthesis; this keeps the reasoning. |
-| **`.agents/design.md`** | `creative-direction` | The full creative-direction spec — concepts, color system and tokens, documented photo / graphic / icon / type styles with asset sources, the motif and signature element, and the *why* behind every choice. **It's a living record:** `logo-design` appends the approved mark, `motion-design` the built motion system, and the application skills their adopted libraries and notes. |
+| **`.agents/design.md`** | `creative-direction` | The full creative-direction spec — concepts, color system and tokens, documented photo / graphic / icon / type styles with asset sources, the motif and signature element, and the *why* behind every choice. **It's a living record:** `logo-design` appends the approved mark, `art-direction` the imagery specs, `motion-design` the built motion system, and the application skills their adopted libraries and notes. |
 | **`.agents/assets/logo/`** | `logo-design` | The locked logo files themselves — lockup · icon · square avatar · app icon, each in SVG/PNG/JPEG across the colorway set. Downstream skills *place these files*; they never redraw the mark. |
+| **`.agents/assets/imagery/`** | `art-direction` | The brand's image library — anchors per class, approved photography / illustration / icons / textures (treated to the brand's grade), the reference board, the prompt packs, and a `manifest.md` with source, rights, and alt text for every file. Application skills place from it and route new needs back. |
 | **`.agents/product-marketing.md`** | *external* | Positioning, ICP, voice, and the competitive landscape — from the [marketingskills](https://github.com/coreyhaines31/marketingskills) library. Read, never written. If present, the brand audit pulls its competitor set from here instead of guessing. |
 
 Nothing here is required up front. Each skill creates what's missing or tells you which one to run first.
@@ -87,7 +88,7 @@ Design runs as a build, not a flat menu. **`brand` is the diagnostic front door*
 brand  (diagnose REO) ──┼─ Evolution   → capture, then strategy on the deltas → creative-direction
                         └─ Optimization → capture + audit → straight to the medium skills (fix execution)
 
-then:  logo-design
+then:  logo-design · art-direction (imagery — its board pass also runs inside creative-direction)
        → APPLICATION (web · collateral · motion)
 ```
 
@@ -99,6 +100,7 @@ then:  logo-design
 | Foundation | [`design-principles`](skills/design-principles/SKILL.md) | Universal craft beliefs every other skill inherits — designed-vs-assembled, hierarchy, restraint, contrast, coherence-not-repetition. |
 | Strategy | [`brand-strategy`](skills/brand-strategy/SKILL.md) | The heavy generative path `brand` routes to: what the brand should *feel* like, the muses it steals from, the distinct concepts, the fixed-core / flexible-range latitude. Skipped in an Optimization. |
 | Identity | [`creative-direction`](skills/creative-direction/SKILL.md) | Translates the emotional target + muses into the concrete visual system — color, type, composition, pattern & texture, icons, illustration, photography — as one coherent language, validated against the audit's own bar. Three stylescapes for a Revolution; anchored deltas for an Evolution. |
+| Identity | [`art-direction`](skills/art-direction/SKILL.md) | The imagery — photography, illustration, iconography, pattern & texture, and how they combine. Implies each style from the strategy, shows you real reference images from the web to point at, writes a spec tight enough to converge on, then produces assets with what you have — ChatGPT or Gemini prompt packs, a connected generator, or treated free stock — and reviews every one before it enters the library. |
 | Identity | [`logo-design`](skills/logo-design/SKILL.md) | The core mark — Simple, Appropriate, Distinct (SAD), each judged *in context*: distinct vs. competitors, appropriate to the feeling, simple across every implementation. Delivers locked asset files, not a description. |
 | Application | [`web-design`](skills/web-design/SKILL.md) | Applying the brand to a live, conversion-focused site with real copy — designed *and built* in custom code, giving the words their proper emphasis. Rhythm as a vocabulary of section types, one reserved CTA color, faithful replication when referencing a live site. |
 | Application | [`collateral-design`](skills/collateral-design/SKILL.md) | Every fixed-format piece that isn't a website — decks, one-pagers, social posts, OG images, ads, print. Ships as a true-size viewer plus real exports. Coherence across the family, not one cloned template. |
@@ -111,6 +113,7 @@ then:  logo-design
 | Find out how good my brand actually is, and how much should change | [`brand`](skills/brand/SKILL.md) |
 | Figure out what my brand should *feel* like | [`brand-strategy`](skills/brand-strategy/SKILL.md) |
 | Pick my colors, type, and visual language | [`creative-direction`](skills/creative-direction/SKILL.md) |
+| Decide what our photos, illustrations, and icons look like — and make them | [`art-direction`](skills/art-direction/SKILL.md) |
 | Design or critique a logo | [`logo-design`](skills/logo-design/SKILL.md) |
 | Design and build a website or landing page | [`web-design`](skills/web-design/SKILL.md) |
 | Make a deck, one-pager, social post, OG image, ad, or print piece | [`collateral-design`](skills/collateral-design/SKILL.md) |
@@ -138,11 +141,10 @@ Invoke any skill by name (e.g. `/brand`, `/logo-design`). Start at `brand` for a
 
 ## Roadmap
 
-Eight skills ship today. Deliberately not shipped yet:
+Nine skills ship today. Deliberately not shipped yet:
 
 | Skill | Why it's waiting |
 |---|---|
-| `art-direction` | Sourcing and generating the actual bespoke visual assets. Held for v2 because it can't exist without generative tooling connected — a raster image or video generator (Midjourney, Higgsfield, Flora, GPT Image, Gemini/Imagen) that has to sit outside this library. Until it ships, `creative-direction` owns asset direction and hands you prompt packs. See [INSTALL.md](./INSTALL.md#3-pick-your-tier-all-optional). |
 | `design-critique` | Judging any artifact against the emotional target and the latitude — including whether a deviation is a legitimate **flex** or a drift. For now, run that judgement against `.agents/brand.md` yourself; `design-principles` carries the flex-vs-drift reasoning. |
 | `email-design` · `social-design` | Folded into `collateral-design` for now, which already covers social posts, OG images, and email graphics as fixed formats. These split out only if the mediums earn their own depth. |
 | `brand-naming` | Naming a brand or product is a separate discipline from designing one. |

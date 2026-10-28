@@ -4,7 +4,7 @@ The creative-direction record, generated at the end of the exercise — the deta
 
 Create it as concepts take shape; finalize on the client's pick. Keep the rejected concepts — they document *why* the chosen one won and seed later flexes.
 
-**This is a living record, not a snapshot.** `creative-direction` writes the founding sections; every downstream skill that *decides* a brand asset **appends its decision here** — `logo-design` writes the Logo section, `motion-design` the Motion System as built, application skills their adopted libraries and application notes. Each append carries a date and the one-sentence *why*, and updates the `Last updated` line. Read before deciding; append after deciding; never re-derive or contradict an existing section silently — if a decision changes, update the section and note what changed. The distilled result of any append also flows to `.agents/brand.md` where it affects the Fixed core / Flexible range.
+**This is a living record, not a snapshot.** `creative-direction` writes the founding sections; every downstream skill that *decides* a brand asset **appends its decision here** — `logo-design` writes the Logo section, `art-direction` the Art Direction specs, `motion-design` the Motion System as built, application skills their adopted libraries and application notes. Each append carries a date and the one-sentence *why*, and updates the `Last updated` line. Read before deciding; append after deciding; never re-derive or contradict an existing section silently — if a decision changes, update the section and note what changed. The distilled result of any append also flows to `.agents/brand.md` where it affects the Fixed core / Flexible range.
 
 ```markdown
 # Creative Direction — [Brand Name]
@@ -79,7 +79,17 @@ The approved mark: construction/geometry notes, lockups, clear space, minimum si
 <!-- If a needed variant doesn't exist, route back to logo-design and have it added — never improvise one at the point of use. -->
 
 
-## Icon Library — as adopted *(appended by the deciding skill · [date])*
+## Art Direction *(appended by art-direction · [date])*
+The imagery specs — one per class, each opening with its plain-language style paragraph and closing with its never list (format: art-direction → style-specs.md).
+### Photography · ### Illustration · ### Iconography · ### Pattern & Texture
+### Combination rules
+Which classes share a surface, layer order, shared DNA, which class leads in which medium.
+### Treatment recipe
+The one grade every image runs through — values, plus the file and web implementations.
+### Anchors & library
+Anchor set per class (`.agents/assets/imagery/anchors/`), the approved library and its `manifest.md`, the reference board, and the generator + primer in use (`prompts.md`).
+
+## Icon Library — as adopted *(appended by art-direction, or the deciding skill · [date])*
 The actual library/system shipped (named pack or custom set), grid/stroke/fill rules as implemented, where it diverged from the Iconography spec above and why.
 
 ## Motion System — as built *(appended by motion-design · [date])*
