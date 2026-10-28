@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.8.0
+  version: 1.9.0
 ---
 
 # Web Design
@@ -107,6 +107,7 @@ The build is faster and the rhythm richer when you lean on real tools — but **
 
 - **Relume MCP** *(preferred accelerator, when connected)* — generate the **sitemap** (top-level and parent/child pages), **wireframe** from its component library (which varies layouts and seeds rhythm), and a **style guide** whose base color auto-expands to 5-stop tints and sets the single always-CTA color — all of which ports into the build. Group pages by shared format (all solution pages one structure, varied content).
 - **`frontend-design` skill** — when Relume isn't available, for distinctive, production-grade frontend.
+- **Claude Design** — optional canvas exploration with the published system, handed off to Claude Code; the handoff is a starting point for the custom build, not the build.
 - **`web-design-guidelines`** — the UX/UI + accessibility compliance pass.
 - **Mobbin / Refero MCP** — pattern intake: study how strong sites solve a section before you build it.
 - **Reference-site intake** — pull in the popular sites the client admires; name what to steal and what to avoid.
