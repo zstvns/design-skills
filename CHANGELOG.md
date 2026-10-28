@@ -2,6 +2,20 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
+## 1.4.0 — 2026-10-28
+
+**Easier to start, wherever you run it.** Two kinds of user were getting stuck at the front door: founders with no website yet, and people using the Claude app rather than a coding agent.
+
+- **No website yet.** `brand` 1.29.0 no longer assumes a URL to crawl. For a brand that doesn't exist, it gathers the name, the idea, and anything already made, then confirms the competitor set. Instead of a meaningless scorecard, it shows the competitive visual landscape side by side with the shared lane named. It calls the depth a Revolution by default, records anything the founder loves as Fixed core, and routes to `brand-strategy`. New trigger phrases: "starting a new brand," "we don't have a website yet."
+- **The Claude app.** The skills assumed a writable project folder. Now, with no folder, they read the brand documents from a Claude Project's knowledge and hand back complete updated files to replace them, never leaving the record only in chat history. The rule lives in `brand` and in the header of each document template (`brand.md`, `brand-strategy.md`, `design.md`), so every skill that reads the file inherits it (`brand-strategy` 1.12.2, `creative-direction` 1.17.1).
+- **INSTALL and README** explain how to zip and upload the skills to the Claude app, and how to set up one Claude Project per brand.
+
+| Skill | Version |
+|---|---|
+| `brand` | 1.29.0 |
+| `brand-strategy` | 1.12.2 |
+| `creative-direction` | 1.17.1 |
+
 ## 1.3.0 — 2026-10-28
 
 **Claude Design.** Every Claude plan includes it, and it's where the people who never open a terminal will make most of their decks and one-pagers. The skills now put the brand there.
