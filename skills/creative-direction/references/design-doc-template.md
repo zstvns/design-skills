@@ -8,6 +8,7 @@ Create it as concepts take shape; finalize on the client's pick. Keep the reject
 
 ```markdown
 # Creative Direction — [Brand Name]
+<!-- This file is .agents/design.md. With no project folder (the Claude app), it lives in the Claude Project's knowledge: read it from there, and whenever you change it, hand back the complete updated file so the user can replace the old one. -->
 
 *Last updated: [date] · Status: [concepts presented / direction chosen / system finalized]*
 *Depth: [Revolution / Evolution] · Source: .agents/brand-strategy.md + .agents/brand.md audit [date]*

@@ -57,6 +57,19 @@ done
 
 `.agents/skills/` is the cross-agent standard. For Claude Code without the plugin, use `.claude/skills/` instead.
 
+### The Claude app (claude.ai and desktop)
+
+Custom skills upload as one zip per skill, each with the skill's folder at the root:
+
+```bash
+git clone https://github.com/zstvns/design-skills.git && cd design-skills/skills
+for s in */; do zip -qr "../${s%/}.zip" "$s" -x '*/evals/*'; done
+```
+
+Then in Claude, turn on code execution and upload each zip from the Skills settings (Settings → Capabilities on most accounts; the menu has moved before, so look for **Skills → Upload**). Custom skills need a paid plan with code execution on; they're per-user, and Team and Enterprise owners can provision them for the whole organization. Upload **all nine** — the skills hand off to each other.
+
+**Work inside a Claude Project, one per brand.** The app has no project folder for `.agents/`, so the skills hand back each document they change (`brand.md`, `brand-strategy.md`, `design.md`) as a file — add it to the Project's knowledge, replacing the old copy, and every later conversation in that Project starts from it. Logo files and the imagery library come back as zips; keep those on disk. If you'd rather have the files written for you, run the skills in Claude Code instead.
+
 ### Symlink for local development
 
 ```bash
