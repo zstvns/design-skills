@@ -63,6 +63,20 @@
         "Briefly explains why"
       ],
       "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "The illustration spec reads great — flat, line-led, two brand colors plus ink, isometric. Lock it and start producing illustrations for the feature pages. Toolkit: Tier 2, Flora connected.",
+      "expected_output": "Should not lock the illustration style from the written spec alone. Should run a style test first: a sheet of 6–8 tiles from the same prompt structure across deliberately different subjects (a person, an object, a place, an abstract idea the brand must explain, the product as a branded abstraction, a crowded scene) at hero and spot size; generate it in Flora (noting Arrow can return flat illustration as SVG) after quoting the cost; run it twice to check the results are siblings; name any field that drifted and tighten the spec; show two tiles in place (a section, a post) next to the user's picked references; and get the style approved on the sheet before producing feature-page illustrations. Passing tiles become anchor candidates; the sheet is saved to .agents/assets/imagery/tests/.",
+      "assertions": [
+        "Refuses to lock the style from the spec alone; runs a style test first",
+        "Test sheet covers varied subjects including an abstract idea and the product, at hero and spot size",
+        "Generates in the connected tool (Flora) after quoting the cost",
+        "Runs the sheet twice and tightens whatever field drifted",
+        "Shows tiles in place and gets approval on the sheet before production",
+        "Saves the sheet to .agents/assets/imagery/tests/ and promotes passing tiles to anchor candidates"
+      ],
+      "files": []
     }
   ]
 }

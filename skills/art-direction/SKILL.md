@@ -1,6 +1,6 @@
 ---
 name: art-direction
-description: "Turn the creative direction into the brand's actual imagery — photography, illustration, iconography, and pattern & texture, and how they combine. Implies each style from the brand strategy, finds real reference images on the web that fit the mood, writes a spec tight enough that two people would converge on it, then produces assets with whatever the operator has (ChatGPT or Gemini prompt packs, a connected generator like Flora, or treated free stock), reviews every result against the spec, and files an approved library. Use while building creative-direction stylescapes, whenever a page or piece needs on-brand imagery, or when the user mentions 'art direction,' 'photo style,' 'photography direction,' 'illustration style,' 'icon style,' 'image style,' 'find reference photos,' 'mood images,' 'what should our photos look like,' 'generate brand images,' 'ChatGPT image prompts,' 'make our images on-brand,' 'pattern,' or 'texture.'"
+description: "Turn the creative direction into the brand's actual imagery — photography, illustration, iconography, and pattern & texture, and how they combine. Implies each style from the brand strategy, finds real reference images on the web that fit the mood, writes a spec tight enough that two people would converge on it, then produces assets with whatever the operator has (ChatGPT or Gemini prompt packs, a connected generator like Flora, or treated free stock), reviews every result against the spec, and files an approved library. Use while building creative-direction stylescapes, whenever a page or piece needs on-brand imagery, or when the user mentions 'art direction,' 'photo style,' 'photography direction,' 'illustration style,' 'test our illustration style,' 'icon style,' 'image style,' 'find reference photos,' 'mood images,' 'what should our photos look like,' 'generate brand images,' 'ChatGPT image prompts,' 'make our images on-brand,' 'pattern,' or 'texture.'"
 metadata:
   version: 1.0.0
 ---
@@ -29,7 +29,7 @@ Open `.agents/brand.md` and, for a system pass, `.agents/design.md`. You need:
 
 ## Two Depths
 
-- **Board pass** (inside `creative-direction`, once per concept) — enough to make each stylescape real: the four styles in a paragraph each, a reference set, and a handful of hero assets produced and treated. Breadth across concepts, not a library.
+- **Board pass** (inside `creative-direction`, once per concept) — enough to make each stylescape real: the four styles in a paragraph each, a reference set, a quick style test, and a handful of hero assets produced and treated. Breadth across concepts, not a library.
 - **System pass** (the approved direction) — the full spec per class, the anchor set, the treatment recipe, the combination rules, and an approved library the application skills draw from.
 
 ## Step 1 — Imply the Styles From the Strategy
@@ -62,11 +62,21 @@ Turn the agreed paragraph and the picked references into a spec tight enough tha
 - **Combination rules** — which classes share a surface, what layers over what, how icons relate to the illustration's line, where texture unifies everything, and which class leads in which medium.
 - **The treatment recipe** — the one grade every image runs through, whatever its source. Write it as values (duotone stops, grain amount, contrast curve), and implement it once in code: an ImageMagick or `sharp` script for files, an SVG filter or CSS for the web. Show it as a before→after.
 
-## Step 4 — Pick the Anchors
+## Step 4 — Test the Style Before You Lock It
+
+A spec that reads well can still fall apart the moment it meets a second subject. **Prove it on a test sheet before anything is built on it** — illustration above all, because it's the class where the same words produce the widest spread. Sheet format and the subjects to include: [references/style-specs.md](references/style-specs.md) → The Style Test.
+
+- **Same spec, deliberately different subjects.** For illustration: a person, an object, a place, an abstract idea the brand actually has to explain, and the product as a branded abstraction — at hero size and at spot size. Photography varies subject and setting while holding light and grade; icons run the brand's concept set at every size tier; texture runs at three scales behind real type.
+- **Include the hard cases** — hands and faces, crowded scenes, abstract concepts, the smallest size. That's where a style breaks.
+- **Run it twice.** The same prompts again (or in a second tool): if the two sheets aren't siblings, the spec is underspecified. Find the field that drifted — line weight, color count, perspective, detail — and tighten it.
+- **Do what you can yourself.** Line-led, flat, and geometric styles render well in SVG, so you can build a first sheet in code; with a connected tool (Flora, Paper, Figma, Adobe), generate the sheet in-session — Arrow (via Quiver, Flora, or Paper) produces flat illustration and spot icons as real SVG. Painterly, textured, or dimensional styles need a generator: at Tier 1 the test sheet *is* the first prompt pack. Much of the heavier testing happens in those tools — run it there when they're available.
+- **Approve the style on the sheet, not the spec.** Show the user the sheet, in place (a section, a post, a slide) and next to the references they picked. Update the spec with whatever the test taught you; the sheet's winners become anchor candidates. Save it to `.agents/assets/imagery/tests/`.
+
+## Step 5 — Pick the Anchors
 
 Choose **3–6 anchor images per class** — the best embodiments of the spec, from usable references or approved generations. They are the brand's visual memory: every later generation is made *with the anchors attached as references*, which is what keeps image #40 looking like image #1. Store them in `.agents/assets/imagery/anchors/`.
 
-## Step 5 — Produce, by Tier
+## Step 6 — Produce, by Tier
 
 Read the Toolkit and take the most capable path available. Full playbooks — the ChatGPT Project / Gemini Gem primer, prompt anatomy per class, edit-first iteration, and connected-tool notes: [references/generation.md](references/generation.md).
 
@@ -76,7 +86,7 @@ Read the Toolkit and take the most capable path available. Full playbooks — th
 
 **Edit before you regenerate.** When an image is 80% right, ask for the specific fix ("keep everything; drop the second figure; cool the shadows") — current models edit in place. Regenerating throws away what was working.
 
-## Step 6 — Review Every Image Against the Spec
+## Step 7 — Review Every Image Against the Spec
 
 **Nothing enters the library unreviewed.** Look at each image — actually look — and check it rule by rule against its class spec and the never list, then against [references/imagery-slop.md](references/imagery-slop.md) — the tells that mark an image as generic or AI-made.
 
@@ -84,7 +94,7 @@ Read the Toolkit and take the most capable path available. Full playbooks — th
 - **Give one verdict per image:** **approve** · **edit** (with the exact edit prompt) · **re-prompt** (what to change in the prompt and why) · **reject**.
 - **Judge it in place, not alone.** Drop the candidate into the surface it's for — the hero, the post, the slide — next to the approved set. An image can pass on its own and still break the family.
 
-## Step 7 — Treat, File, Record
+## Step 8 — Treat, File, Record
 
 - **Run every approved image through the treatment recipe.** Mixed sources — generated, stock, shot — only read as one world after one grade.
 - **File it:** `.agents/assets/imagery/approved/<photography|illustration|icons|texture>/`, and add a line to `.agents/assets/imagery/manifest.md` — file, class, source or tool, prompt (or source URL), rights, **alt text**, date, intended use.
@@ -102,7 +112,7 @@ Read the Toolkit and take the most capable path available. Full playbooks — th
 
 1. **The Art Direction section in `.agents/design.md`** — the four specs, combination rules, treatment recipe, anchor list, and the tool notes (which generator, which primer).
 2. **The distilled lines in `.agents/brand.md`** — Photography, Illustration, Iconography, Pattern & Texture.
-3. **The library** — `.agents/assets/imagery/` with `anchors/`, `approved/`, `manifest.md`, the reference board and its source list in `references/`, and `prompts.md` at Tier 1.
+3. **The library** — `.agents/assets/imagery/` with `anchors/`, `approved/`, `manifest.md`, the reference board and its source list in `references/`, the style test sheets in `tests/`, and `prompts.md` at Tier 1.
 4. For a board pass: the produced, treated hero assets handed back to `creative-direction` for the stylescapes.
 
 ## Non-Negotiables
@@ -112,6 +122,7 @@ Read the Toolkit and take the most capable path available. Full playbooks — th
 - [ ] Each style written in plain words and traced to a muse or the feeling; "none" stated explicitly where it applies
 - [ ] Web references shown per class, captioned, with a near-miss; picks recorded; every reference marked reference-only or usable
 - [ ] Spec per class with hex anchors, a never list, combination rules, and one treatment recipe
+- [ ] Style tested on a sheet — varied subjects, hard cases, sizes, run twice — and approved on the sheet (illustration always)
 - [ ] Every image reviewed against its spec and the imagery-slop list — findings listed, one verdict each, judged in place
 - [ ] No logo or brand type in generated images; no fabricated people or product; no reference-only image shipped
 - [ ] Library filed with manifest (rights + alt text); spec written to `.agents/design.md`, distilled to `.agents/brand.md`

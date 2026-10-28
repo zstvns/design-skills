@@ -8,6 +8,7 @@ Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
 - **Imply, then show.** Each style is first written as a plain paragraph traced to the muses and the emotional target. Then the agent finds real web references for each class (4–6, each captioned with the one quality it contributes, plus a deliberate near-miss), and the user points at what's right. References are marked reference-only or usable. Icons are rendered in candidate libraries using the brand's own concepts rather than shown from marketing pages.
 - **A spec two people would converge on.** Field-by-field formats per class, hex palette anchors, a never list, combination rules, and one treatment recipe implemented in code (ImageMagick for files, an SVG filter for the web).
+- **Test the style before locking it.** Illustration especially: a test sheet runs the same spec across deliberately different subjects (a person, an object, an abstract idea the brand must explain, the product), hard cases, and sizes, run twice to check the results are siblings. The user approves the style on the sheet, not on the written spec. The agent builds what it can in SVG itself and runs the rest in connected tools.
 - **Produce by tier.** Tier 2 generates directly (Flora, Adobe, Higgsfield) with anchors attached. Tier 1 gets a primer for a ChatGPT Project or Gemini Gem, so each request is one line plus attached anchors, with an edit-first loop. Tier 0 uses treated free stock and draws in code, and is honest about what it can't produce.
 - **Nothing enters the library unreviewed.** Every image is checked against its spec and a new imagery-slop list, judged in place next to the approved set, and given one verdict (approve / edit / re-prompt / reject). Approved files are treated, filed, and logged in `manifest.md` with rights and alt text.
 - **Hard rules.** No logo or brand type inside generated images. No "in the style of" a living artist. No fabricated customers, team members, or product shots.
@@ -16,7 +17,7 @@ Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 **Wiring**
 
 - `creative-direction` 1.16.0 — the stylescape board gets its imagery from `art-direction`'s board pass; items 4–7 of the system are decided as direction and spec'd there.
-- `logo-design` 1.12.0 — new **Raster to SVG** section. ChatGPT and Gemini output raster only, and SVG they write by hand is the hand-drawn failure. Real vectorizing paths are Quiver (`/v1/svgs/vectorizations`, `arrow-2`), Adobe `image_vectorize`, local Potrace, and Vectorizer.AI, plus how to prompt a sketch so it traces cleanly. Quiver examples updated to `arrow-2`.
+- `logo-design` 1.12.0 — new **Raster to SVG** section. ChatGPT and Gemini output raster only, and SVG they write by hand is the hand-drawn failure. Real vectorizing paths are Quiver's Arrow (API `/v1/svgs/vectorizations` with `arrow-2`, or inside Flora or Paper), Adobe `image_vectorize`, local Potrace, Figma's image trace (rougher), and Vectorizer.AI, plus how to prompt a sketch so it traces cleanly. Quiver examples updated to `arrow-2`.
 - `web-design` 1.8.0, `collateral-design` 1.12.0 — place imagery from the `art-direction` library; route new needs back to it.
 - `brand` 1.27.1 — lists `art-direction` among the skills that write into `brand.md`.
 

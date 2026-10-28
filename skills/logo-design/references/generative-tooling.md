@@ -13,7 +13,7 @@ The single hardest-won lesson of this skill: **an agent hand-authoring SVG primi
 Do **not** hardcode a provider or an API key into the skill — most users won't have one, and the skill must still run. Check `.agents/brand.md` → **Toolkit** for what the operator has (and update it if you find something it doesn't list), then route to the best surface available, in rough order of fit for logo work:
 
 - **QuiverAI** — text → **SVG** (best fit: real editable vectors, not raster). Worked example below.
-- **Flora** (MCP) — generative design surface.
+- **Flora** (MCP) — hosts Quiver's **Arrow** models (text → SVG and image → SVG), so a Flora account gets Arrow without a Quiver key; also a general generative canvas. Model ids change — list them (`flora_list_models`, query "arrow") and quote the cost before running.
 - **GPT Image 2.0** / any image model — raster sketches; vectorize the winner (e.g. an image→SVG vectorizer) before construction. When it's only in the operator's ChatGPT (Toolkit tier 1), write the prompts for them to run and work from the sketches they bring back.
 - **Figma** (`use_figma` / generative) — draw/assemble vectors on a real canvas a designer can take over.
 
@@ -35,13 +35,15 @@ Content-Type: application/json
 
 ## Raster to SVG — vectorizing a generated sketch
 
-**ChatGPT and Gemini don't vectorize.** Their image models output raster files (PNG, JPEG, WebP). Both will happily *write* SVG code if asked — but that's an LLM typing `<path>` coordinates, the exact hand-drawn failure this reference opens with. A raster sketch from either is a fine starting point; the vector has to come from a tracer. Options, best fit first:
+**ChatGPT and Gemini don't vectorize.** Their image models output raster files (PNG, JPEG, WebP). Both will happily *write* SVG code if asked — but that's an LLM typing `<path>` coordinates, the exact hand-drawn failure this reference opens with. A raster sketch from either is a fine starting point; the vector has to come from a tracer. Options, best fit first — **Arrow is the quality bar**, wherever the operator reaches it:
 
 | Path | Needs | Notes |
 |---|---|---|
 | **Quiver vectorize** | `QUIVER_API_KEY` | `POST https://api.quiver.ai/v1/svgs/vectorizations` with `{ "model": "arrow-2", "image": { "url": "…" } }` (or `{ "base64": "…" }`; png/jpeg/webp, ≤4096px); options include `auto_crop` and `target_size`. Returns `data[].svg`. A generative model, not a pixel tracer (it takes `reasoning_effort`), so it interprets as well as traces — compare the result against the sketch. |
+| **Arrow inside Flora or Paper** | A Flora or Paper account | The same Arrow models through a tool the operator may already pay for — vectorize the sketch on the canvas. In Flora, use the Arrow vectorize model (via MCP when connected). |
 | **Adobe MCP** (`image_vectorize`) | Adobe connected | Image → vector through the connected Adobe account, alongside its background-removal and cleanup tools. |
 | **Potrace, locally** | Claude Code + `brew install potrace` (and ImageMagick) | Free and offline. Single-color only — trace each color of a multi-color mark separately. `magick sketch.png -colorspace gray -threshold 50% sketch.pbm && potrace sketch.pbm -s -o sketch.svg`; tune `-t` (speckle size) and `-a` (corner smoothness). |
+| **Figma image trace** | Figma | Place the raster in Figma and trace it to vector there — convenient when the mark is headed into Figma anyway, but noticeably rougher than Arrow. |
 | **Vectorizer.AI** (web) | A browser | Upload, preview free, pay to download. A reasonable no-setup option for a Tier 1 operator. |
 
 **Generate for tracing.** Ask the image model for **flat, solid black on pure white, no gradients, no shading, no texture, no text, centered with margin, large** — tracers turn shading and soft edges into lumpy, node-heavy paths. Then:

@@ -49,7 +49,7 @@ One line, plus the attached anchors:
 e.g. Photography · hands sanding a walnut tabletop, late light · web hero 16:9, keep the left third empty for the headline
 ```
 
-Give each request an id (`photo-hero-01`) and ask the operator to save results with it into `.agents/assets/imagery/inbox/`. Then review (SKILL.md Step 6) and send back either approvals or the next edit.
+Give each request an id (`photo-hero-01`) and ask the operator to save results with it into `.agents/assets/imagery/inbox/`. Then review (SKILL.md Step 7) and send back either approvals or the next edit.
 
 ## Prompt Anatomy — for Standalone Prompts
 
@@ -58,7 +58,7 @@ When there's no primer (a one-off, a tool without projects), write the full prom
 - **Photography:** subject and action → setting → light → lens and camera → composition (and where the negative space goes) → palette hexes → grade and grain → aspect ratio → exclusions.
 - **Illustration:** subject → technique → line → shape language → exact palette hexes and color count → perspective → detail level → background → exclusions.
 - **Texture:** material → scale → lighting (flat and even, so it tiles) → tonal range → exclusions. Generators don't produce seamless tiles reliably; make it tile in code (crop, mirror, or blend the seams), and prefer a CSS/SVG texture whenever the style allows.
-- **Icons:** **don't generate UI icons** — use the chosen library or a custom set on one grid. Generate only larger storytelling or spot icons, then vectorize the approved one (see `logo-design` → generative-tooling.md → Raster to SVG) so it can be recolored and scaled.
+- **Icons:** **don't generate UI icons** — use the chosen library or a custom set on one grid. Generate only larger storytelling or spot icons — as SVG directly with Arrow (Quiver API, or inside Flora or Paper) where you can, otherwise as raster and then vectorized (see `logo-design` → generative-tooling.md → Raster to SVG) so they can be recolored and scaled.
 
 Always end with **no text, no letters, no logos, no watermark.** Type and the mark are placed in layout, never generated.
 
@@ -75,7 +75,7 @@ Current image models edit in place. When an image is mostly right:
 
 Same spec, same anchors, same review — you run it yourself.
 
-- **Flora (MCP):** generate on a project canvas with the anchors attached as references. Once 10+ approved images exist in a class, train a style model on them if the workspace supports it — the strongest consistency lever available. Quote the cost before generating; the operator is paying for every run.
+- **Flora (MCP):** generate on a project canvas with the anchors attached as references. Flora also hosts Quiver's **Arrow** models, so flat and line-led illustration and spot icons can come out as real SVG, not raster. Once 10+ approved images exist in a class, train a style model on them if the workspace supports it — the strongest consistency lever available. Quote the cost before generating; the operator is paying for every run.
 - **Adobe (MCP):** Firefly generation, plus the fix-up tools that make Tier 1 output usable too — generative fill and expand, background removal, select-and-adjust, and vectorizing.
 - **Higgsfield, or any connected video generator:** start from an **approved still** (image-to-video) rather than text-to-video, so the grade and composition carry. Take the motion character from `.agents/design.md` (see `motion-design`); keep loops short and seamless; no text.
 
