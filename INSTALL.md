@@ -34,7 +34,7 @@ If you want the cross-agent `.agents/skills/` layout specifically, use `--all` o
 | Flag | Effect |
 |---|---|
 | *(none)* | Interactive — pick which skills and which agents |
-| `--all` | All 8 skills, all detected agents, no prompts |
+| `--all` | All 9 skills, all detected agents, no prompts |
 | `-s <names>` | Only named skills, space-separated: `-s brand logo-design` |
 | `-g` | Install user-level instead of project-level |
 | `--copy` | Copy files instead of symlinking |
@@ -67,8 +67,8 @@ ln -s ~/code/design-skills ~/.claude/plugins/designskills
 ## 2. Verify
 
 ```bash
-ls .agents/skills/            # npx install (project scope) — should list 8
-ls ~/code/design-skills/skills/   # clone install — should list 8
+ls .agents/skills/            # npx install (project scope) — should list 9
+ls ~/code/design-skills/skills/   # clone install — should list 9
 ```
 
 If you installed globally with `-g`, check `npx skills list -g` instead — plain `npx skills list` only reads project scope. The CLI may print `missing required frontmatter field(s): name` for its own `agent/skills/` copies; that's a quirk of how it rewrites those files, not a problem with the skills.
@@ -89,16 +89,16 @@ You don't have to configure tiers up front. `/brand` detects what's connected, a
 | Tier | You have | How assets get made |
 |---|---|---|
 | **0 — Claude only** | Just your agent | Layout, type, color, texture, and pattern built in code (much of a system's "life" renders well in CSS/SVG); free stock (Unsplash, Pexels) treated to the brand's grade; logo sketches clearly labeled low-fidelity. |
-| **1 — Claude + a generator you run** | ChatGPT (GPT Image), Gemini, Midjourney… | The agent writes precise prompt packs; you run them and bring the images back; the agent judges them against the brand, asks for fixes, treats the keepers, and places them. **Most people start here, and it's a complete working setup.** |
+| **1 — Claude + a generator you run** | ChatGPT (GPT Image), Gemini, Midjourney… | `art-direction` writes a primer carrying the brand's image style that you paste into a ChatGPT Project or Gemini Gem once, then one-line requests; you run them and drop the images in a folder; the agent judges them against the brand, asks for fixes, treats the keepers, and places them. **Most people start here, and it's a complete working setup.** |
 | **2 — Connected tools** | A generator or canvas the agent can drive | The agent generates and places assets itself, in-session. See the table below. |
 
 ### Tier 2 connections
 
 | Connection | Which skills use it | What it unlocks |
 |---|---|---|
-| **Quiver API** (`QUIVER_API_KEY`) | `logo-design` | Text → real editable **SVG**. The best-fit path for logo work, because it produces actual vectors instead of raster approximations or hand-drawn paths. |
-| **Flora MCP** *or* **Higgsfield** | `creative-direction`, `collateral-design`, `web-design` | Generative imagery and video for muse-anchored boards, bespoke assets, and rich media on the page. Either is a good choice — pick one; you don't need both. |
-| **Adobe MCP** | `creative-direction`, `collateral-design`, `logo-design` | Firefly generation, image editing and adjustment, vectorizing, background removal, and real document/print export. |
+| **Quiver API** (`QUIVER_API_KEY`) | `logo-design`, `art-direction` | Text → real editable **SVG** with Quiver's Arrow models, and raster → SVG vectorizing for sketches made elsewhere. The best-fit path for logo work, because it produces actual vectors instead of raster approximations or hand-drawn paths. **Arrow is also available inside Flora and Paper** — if you have either, you already have it. |
+| **Flora MCP** *or* **Higgsfield** | `art-direction` (and through it `creative-direction`, `collateral-design`, `web-design`) | Generative imagery and video for muse-anchored boards, bespoke assets, and rich media on the page. Either is a good choice — pick one; you don't need both. |
+| **Adobe MCP** | `art-direction`, `collateral-design`, `logo-design` | Firefly generation, image editing and adjustment, vectorizing, background removal, and real document/print export. |
 | **Figma MCP** | `logo-design`, `creative-direction`, `web-design` | Read an existing brand's variables, tokens, type styles, and components during the audit; draw and assemble vectors on a real canvas a designer can take over. |
 | **Paper MCP** | `creative-direction`, `web-design`, `collateral-design` | A design canvas the agent can compose in directly — useful for stylescapes and fixed-format layout. |
 

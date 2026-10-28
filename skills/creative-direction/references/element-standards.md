@@ -1,6 +1,6 @@
 # Element Standards — the Bar per Asset Class
 
-The per-element detail behind `creative-direction`. Each element ends with the same two tests: *does it trace to a muse or the emotional target?* and *would it score 4–5 in the audit against the confirmed competitor set?*
+The per-element detail behind `creative-direction`. For Pattern & Texture, Iconography, Illustration, and Photography, this is the bar; `art-direction` → style-specs.md is the spec format that meets it, and that skill produces the assets. Each element ends with the same two tests: *does it trace to a muse or the emotional target?* and *would it score 4–5 in the audit against the confirmed competitor set?*
 
 ## Color
 

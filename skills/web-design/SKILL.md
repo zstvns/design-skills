@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.7.2
+  version: 1.8.0
 ---
 
 # Web Design
@@ -103,7 +103,7 @@ Full craft — the twelve principles, the technique toolkit, easing/duration tok
 
 ## Tooling & References — Use What's Connected, Fall Back Gracefully
 
-The build is faster and the rhythm richer when you lean on real tools — but **never block on a missing one; degrade to the next option.** Check `.agents/brand.md` → **Toolkit** first for what the operator has (including the image generator behind the page's rich media), and write back anything new you find connected.
+The build is faster and the rhythm richer when you lean on real tools — but **never block on a missing one; degrade to the next option.** Check `.agents/brand.md` → **Toolkit** first for what the operator has (including the image generator behind the page's rich media), and write back anything new you find connected. **Imagery comes from the `art-direction` library** (`.agents/assets/imagery/approved/`) — place what's there; route anything new back to `art-direction` rather than sourcing it ad hoc.
 
 - **Relume MCP** *(preferred accelerator, when connected)* — generate the **sitemap** (top-level and parent/child pages), **wireframe** from its component library (which varies layouts and seeds rhythm), and a **style guide** whose base color auto-expands to 5-stop tints and sets the single always-CTA color — all of which ports into the build. Group pages by shared format (all solution pages one structure, varied content).
 - **`frontend-design` skill** — when Relume isn't available, for distinctive, production-grade frontend.
@@ -151,6 +151,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 
 - `design-principles` — the craft beliefs this skill applies
 - `creative-direction` — supplies the visual system (hard prerequisite); route back for Revolution / heavy Evolution
+- `art-direction` — the photography, illustration, icons, and textures this skill places; route new imagery needs there
 - `logo-design` — the mark, applied here
 - `brand` — the audit whose categories are this skill's acceptance test
 - `motion-design` — the motion layer on top of this one: build the functional/UI floor here, hand off expressive choreography, scroll-telling, and signature motion there (it expects a structurally-sound surface, so run it *after* the build)
