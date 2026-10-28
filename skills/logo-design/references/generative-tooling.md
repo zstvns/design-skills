@@ -10,11 +10,11 @@ The single hardest-won lesson of this skill: **an agent hand-authoring SVG primi
 
 ## Tool-agnostic by design
 
-Do **not** hardcode a provider or an API key into the skill — most users won't have one, and the skill must still run. Route to whatever generative surface the agent has, in rough order of fit for logo work:
+Do **not** hardcode a provider or an API key into the skill — most users won't have one, and the skill must still run. Check `.agents/brand.md` → **Toolkit** for what the operator has (and update it if you find something it doesn't list), then route to the best surface available, in rough order of fit for logo work:
 
 - **QuiverAI** — text → **SVG** (best fit: real editable vectors, not raster). Worked example below.
 - **Flora** (MCP) — generative design surface.
-- **GPT Image 2.0** / any image model — raster sketches; vectorize the winner (e.g. an image→SVG vectorizer) before construction.
+- **GPT Image 2.0** / any image model — raster sketches; vectorize the winner (e.g. an image→SVG vectorizer) before construction. When it's only in the operator's ChatGPT (Toolkit tier 1), write the prompts for them to run and work from the sketches they bring back.
 - **Figma** (`use_figma` / generative) — draw/assemble vectors on a real canvas a designer can take over.
 
 **Read the key from the environment** (e.g. `QUIVER_API_KEY`) and **degrade gracefully** when it's absent: fall back to code/vector sketches, clearly labeled *low-fidelity*, and still produce breadth across the families. These tools are **optional** — but the results are **substantially better** with them, and the skill should say so rather than pretend hand-drawn output is acceptable.

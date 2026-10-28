@@ -80,21 +80,27 @@ Then, in your agent:
 /design-principles       # should respond with the craft beliefs
 ```
 
-## 3. Recommended connections (all optional)
+## 3. Pick your tier (all optional)
 
-Every skill degrades gracefully without these — it will tell you when a lower-fidelity path is being used rather than pretending the output is finished. But the gap between "describes an asset" and "produces an asset" is most of the value in design work.
+Every skill works without any of this — it reads what you have and takes the best path available, telling you when a lower-fidelity path is being used rather than pretending the output is finished. But real imagery is most of the value in design work: a stylescape without bespoke assets is a color swatch, a site without rich media is a wireframe, a social post without it is a text box.
+
+You don't have to configure tiers up front. `/brand` detects what's connected, asks once about the tools you use by hand, and records the answer in the **Toolkit** section of `.agents/brand.md` — every other skill reads it from there instead of asking again.
+
+| Tier | You have | How assets get made |
+|---|---|---|
+| **0 — Claude only** | Just your agent | Layout, type, color, texture, and pattern built in code (much of a system's "life" renders well in CSS/SVG); free stock (Unsplash, Pexels) treated to the brand's grade; logo sketches clearly labeled low-fidelity. |
+| **1 — Claude + a generator you run** | ChatGPT (GPT Image), Gemini, Midjourney… | The agent writes precise prompt packs; you run them and bring the images back; the agent judges them against the brand, asks for fixes, treats the keepers, and places them. **Most people start here, and it's a complete working setup.** |
+| **2 — Connected tools** | A generator or canvas the agent can drive | The agent generates and places assets itself, in-session. See the table below. |
+
+### Tier 2 connections
 
 | Connection | Which skills use it | What it unlocks |
 |---|---|---|
-| **Quiver API** (`QUIVER_API_KEY`) | `logo-design` | Text → real editable **SVG**. The best-fit path for logo work, because it produces actual vectors instead of raster approximations or hand-drawn paths. Without it, marks fall back to clearly-labeled low-fidelity sketches. |
-| **Figma MCP** | `logo-design`, `creative-direction`, `web-design` | Read an existing brand's variables, tokens, type styles, and components during the audit; draw and assemble vectors on a real canvas a designer can take over. |
-| **Adobe MCP** | `creative-direction`, `collateral-design`, `logo-design` | Firefly generation, image editing and adjustment, vectorizing, background removal, and real document/print export. |
-| **Paper MCP** | `creative-direction`, `web-design`, `collateral-design` | A design canvas the agent can compose in directly — useful for stylescapes and fixed-format layout. |
+| **Quiver API** (`QUIVER_API_KEY`) | `logo-design` | Text → real editable **SVG**. The best-fit path for logo work, because it produces actual vectors instead of raster approximations or hand-drawn paths. |
 | **Flora MCP** *or* **Higgsfield** | `creative-direction`, `collateral-design`, `web-design` | Generative imagery and video for muse-anchored boards, bespoke assets, and rich media on the page. Either is a good choice — pick one; you don't need both. |
-
-**Rich media is the whole point of this layer.** Every skill that produces a visual surface needs real imagery to produce anything worth looking at — a stylescape without bespoke assets is a color swatch, a site without rich media is a wireframe, a social post without it is a text box. That applies to `creative-direction`, `collateral-design` (including social formats), `web-design`, and the planned `art-direction`, which is held for v2 precisely because it can't exist without this tooling underneath it.
-
-The skills will tell you when they're working without it — but "clearly-labeled low-fidelity" is still low-fidelity. If you connect one thing from this table, connect a generator.
+| **Adobe MCP** | `creative-direction`, `collateral-design`, `logo-design` | Firefly generation, image editing and adjustment, vectorizing, background removal, and real document/print export. |
+| **Figma MCP** | `logo-design`, `creative-direction`, `web-design` | Read an existing brand's variables, tokens, type styles, and components during the audit; draw and assemble vectors on a real canvas a designer can take over. |
+| **Paper MCP** | `creative-direction`, `web-design`, `collateral-design` | A design canvas the agent can compose in directly — useful for stylescapes and fixed-format layout. |
 
 Set the Quiver key in your shell profile:
 
@@ -105,7 +111,7 @@ export QUIVER_API_KEY="..."
 
 Read the key from the environment — never commit it. The skills look it up at run time and skip the path entirely when it's absent.
 
-**On generative tooling generally:** the skills are deliberately tool-agnostic. They ask what you have access to and take the most capable available path rather than hardcoding a provider. If you have a raster or video generator (Midjourney, GPT Image, Gemini/Imagen, Higgsfield, Flora, Magnific), say so when asked and the agent will route asset generation through it — including tools with no MCP, where it will hand you prompt packs to run yourself and then work from what you bring back.
+**The skills are deliberately tool-agnostic.** They never hardcode a provider; they read your Toolkit and take the most capable available path. Connect something new later and the next skill that runs will notice it and update the Toolkit.
 
 ## 4. Where your data lives
 

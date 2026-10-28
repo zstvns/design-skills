@@ -6,13 +6,13 @@ Current versions of all skills. Agents can compare against local versions to che
 
 | Skill | Version | Status | Last Updated |
 |-------|---------|--------|--------------|
-| brand | 1.26.1 | Built | 2026-08-07 |
+| brand | 1.27.0 | Built | 2026-10-28 |
 | design-principles | 1.11.1 | Built | 2026-08-07 |
 | brand-strategy | 1.12.1 | Built | 2026-08-07 |
-| creative-direction | 1.14.2 | Built | 2026-08-07 |
-| logo-design | 1.11.2 | Built | 2026-08-07 |
-| web-design | 1.7.1 | Built | 2026-08-07 |
-| collateral-design | 1.11.1 | Built | 2026-08-07 |
+| creative-direction | 1.15.0 | Built | 2026-10-28 |
+| logo-design | 1.11.3 | Built | 2026-10-28 |
+| web-design | 1.7.2 | Built | 2026-10-28 |
+| collateral-design | 1.11.2 | Built | 2026-10-28 |
 | motion-design | 1.6.1 | Built | 2026-08-07 |
 | art-direction | — | Planned (v2 — requires external raster/video generation) | — |
 | design-critique | — | Planned | — |

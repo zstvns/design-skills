@@ -106,4 +106,13 @@ Who this must feel right *to*. (If `.agents/product-marketing.md` exists, link i
 ## In Use
 Links and examples of correct application across mediums.
 -
+
+## Toolkit
+*What the operator can actually use to produce assets — about the person running the skills, not the brand. Captured once by `brand`; every skill reads it before choosing a tool path and updates it when something changes.*
+
+**Tier:** (0 — Claude only · 1 — plus a generator the operator runs by hand · 2 — a generator connected to the agent)
+**Generators the operator runs by hand:** (e.g. ChatGPT / GPT Image, Gemini, Midjourney — or none)
+**Connected to the agent:** (MCPs and keys detected in-session — e.g. Flora, Adobe, Figma, Paper, `QUIVER_API_KEY`)
+**Design canvas:** (e.g. Figma, Paper — or none)
+**Last confirmed:** [date]
 ```
