@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.11.1
+  version: 1.11.2
 ---
 
 # Collateral Design
@@ -136,7 +136,7 @@ A single beautiful slide is not the job; a *set* that reads as one brand is. Whe
 
 ## Tooling & References — Use What's Connected, Fall Back Gracefully
 
-Collateral is produced in the format's native tooling, not custom web code. Lean on what's connected; **never block on a missing tool — degrade to the next option** (full map in [references/tooling.md](references/tooling.md)):
+Collateral is produced in the format's native tooling, not custom web code. Lean on what's connected; **never block on a missing tool — degrade to the next option** (full map in [references/tooling.md](references/tooling.md)). Check `.agents/brand.md` → **Toolkit** first for what the operator has — including the image generator that supplies a piece's imagery — and write back anything new you find connected:
 
 - **`canvas-design` skill** — static art to PNG/PDF (posters, one-pagers, ads, print pieces) with design philosophy built in. A strong default for a single fixed-format graphic.
 - **`slide-deck` (makerskills) / presentation tooling** — deck generation and structure.
