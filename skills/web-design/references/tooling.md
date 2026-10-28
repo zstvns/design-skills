@@ -18,6 +18,7 @@ Relume's output is a starting point for **custom code**, not a Webflow handoff �
 - **`frontend-design` skill** — distinctive, production-grade frontend generation. The default when there's no component accelerator.
 - **`web-design-guidelines` skill** — the UX/UI and accessibility compliance pass; run before ship regardless of the rest of the stack.
 - **Mobbin / Refero MCP** — pattern intake. Before building a pricing table, an onboarding flow, or a comparison section, study how strong products solved it. Understand the pattern, then adapt — don't copy.
+- **Claude Design** — when the operator wants to see layouts on a canvas before the build, and the system is published there (see `creative-direction` → claude-design.md): explore sections on artboards, then hand off to Claude Code from its Export menu. The handoff bundle is a **starting point for the custom build, not the build** — rebuild it against the project's tokens and components, and it still has to pass every gate in SKILL.md.
 - **Reference-site intake** — ask for (or take in) the popular sites the client admires. Name explicitly what to steal (a rhythm, a hero mechanic, a motion idea) and what to avoid.
 - **three.js / WebGL** — when a brand genuinely warrants ambitious 3D or interactive depth and the emotional target supports it. Ambition in service of the story, never decoration for its own sake.
 
