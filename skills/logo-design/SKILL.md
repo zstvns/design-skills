@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.11.3
+  version: 1.12.0
 ---
 
 # Logo Design
@@ -144,5 +144,6 @@ On finalize, hand over a **downloadable, ordered package** the client can house 
 - `brand` — gathers the logo in all forms + the competitor set; records the Logo section
 - `brand-strategy` — the Emotional Target and competitive landscape this skill judges against
 - `creative-direction` — the wider visual system the mark anchors
+- `art-direction` — the imagery the mark sits over (never inside); its pattern deployments and icon details take their geometry from the mark
 - `collateral-design` — the mediums the locked mark is *placed* into (cards, decks, print safe-zones/bleed); this skill only guarantees the mark stays locked and on-system
 - `design-critique` *(planned — not yet shipped)* — will judge the mark in use against the brand

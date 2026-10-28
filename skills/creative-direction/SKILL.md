@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.15.0
+  version: 1.16.0
 ---
 
 # Creative Direction
@@ -49,22 +49,21 @@ Work through each element with the audit's bar in mind — the nine-category aud
 4. **Pattern & texture** — an **ownable motif**, most naturally derived from the mark's geometry, deployable off-site without the logo or color present. Check it doesn't collide with a competitor's motif.
 5. **Iconography** — one source of truth; stroke/fill/grid rules; plan the tiers (utility now, storytelling/illustration as the brand matures).
 6. **Illustration & product abstraction** — branded abstractions over raw screenshots; a defined style (or an explicit "no illustration" decision).
-7. **Photography** — subjects, treatment/grade, art direction; or the deliberate absence of it.
+7. **Photography** — subjects, treatment/grade, feel; or the deliberate absence of it.
 8. **Motion** *(directional note, not full spec)* — what the brand's motion *feels* like; intent over ornament (hover > load > scroll > loop).
+
+Items 4–7 are decided here as *direction*; `art-direction` turns them into full specs and the actual assets.
 
 ## Producing the Board — Source and Generate the Real Assets
 
-A stylescape needs treated imagery and genuine texture; flat CSS shapes read as austere. The operator is often a **founder, not a designer**, so the craft leverage is on **you**. But *don't assume their toolset — ask first, then fork the workflow.*
+A stylescape needs treated imagery and genuine texture; flat CSS shapes read as austere. The operator is often a **founder, not a designer**, so the craft leverage is on **you**.
 
-- **Read the Toolkit, then fork.** `.agents/brand.md` → **Toolkit** records what the operator can generate with and which tier they're on. If it's missing or doesn't cover image generation, ask once — most operators have at least **ChatGPT (GPT Image)** or **Google Gemini / Imagen**; the fuller set — **Higgsfield, Flora, Weave, Magnific, Midjourney, Adobe Firefly, Figma, Paper** — isn't in everyone's purview, so *ask rather than assume* — and write the answer back so no later skill asks again. Then take the most capable path available:
-  - **(a) Drive it directly** — if a tool is connected to *you* as an MCP (Adobe Firefly, Figma, and Paper are common), generate and place the bespoke, muse-anchored imagery yourself, in-session. Strongest and most ownable; zero founder steps.
-  - **(b) Hand off prompt packs** — for a generator only *they* have (ChatGPT, Gemini, Midjourney, Higgsfield…), write precise muse-anchored prompts (subject, grade, palette hexes, texture, lighting, composition, aspect ratio, "no text") for them to run and bring back. Iterate the prompt when a result misses.
-  - **(c) Free stock, treated** — if they have none, real free stock (Unsplash/Pexels) run through the concept's grade is a great floor. Populate it *yourself* so tone is present without a founder step.
+- **Get the imagery from `art-direction` — its board pass, once per concept.** It implies each concept's photography, illustration, icon, and texture style from the muses, finds web references the founder can point at, and produces the hero assets by the Toolkit's tier: generated directly with a connected tool, prompt packs for a generator the founder runs (ChatGPT, Gemini…), or free stock treated to the grade. It hands back treated assets; you build the board. Don't re-ask about tools — the Toolkit in `.agents/brand.md` already says what's available.
 - **You compose the board, not the founder.** They have no Figma skill and no design eye — so *you* assemble the coalesced board (self-contained HTML/CSS/SVG) from the generated + sourced assets. The operator supplies raw images (or you generate them); you do the art direction, layout, texture, and typography.
 - **Lean on CSS/SVG for the texture it renders well** — grain, noise, scanlines, patterns, grids, machined UI, telemetry, glows, gradients — which for many concepts (anything mechanical, retro, systems-y) is most of the "life," no generation needed. Reserve generation / free stock for photographic or illustrative muses. (Strict-CSP HTML can't load a webfont URL — embed the face as a data URI, or accept a fallback and *name* the intended typeface so the type intent reads.)
 - **Unify every source through one grade.** Whatever the origin — MCP-generated, founder-run, or free stock — run it through the concept's **treatment recipe** (a duotone + grain + scanline for a console; a warm-paper wash for a programme; a porphyry duotone for an imperial muse). Show it as a before→after on the board. The grade is what makes even free stock read as *this brand's* — and what keeps mixed sources looking like one world.
 - **The muses are the brief.** Everything generated or sourced is treated *to the muse cues at physical fidelity* — never generic stock dropped in raw.
-- **If imagery can't be produced yet, say so** and label the board a *composition / art-direction proof* with the prompt packs attached (for whichever generator the fork identified), so the founder can fill it in. Never quietly ship a flat board and call it finished.
+- **If imagery can't be produced yet, say so** and label the board a *composition / art-direction proof* with the prompt packs attached (for whichever generator the Toolkit names), so the founder can fill it in. Never quietly ship a flat board and call it finished.
 
 ## Validate Before You Present
 
@@ -93,7 +92,7 @@ Run your own work through the same gauntlet the audit runs — **adversarially, 
 
 Two layers, one source of truth — mirroring `brand-strategy`:
 
-1. **`.agents/design.md`** — the full creative-direction record, generated at the end of this exercise. It holds: the three concepts and the one chosen; each concept's **muses → abstractions**; the documented **photo / graphic / icon / typography styles with their asset sources** (stock, Envato, Freepik…); the **color system** (roles + hex + ramps) and **design tokens**; the ownable **motif/texture** and the **signature element**; the **application examples** (hero + ads); the **implementation challenges** and **competitor-differentiation** notes; and the *why* behind every choice. Use the template in [references/design-doc-template.md](references/design-doc-template.md). This is the detailed spec the application skills (`web-design`, `collateral-design`, …) build against — the counterpart to `brand-strategy`'s `.agents/brand-strategy.md`. **And it's a living record:** downstream skills append their decided assets to it as the pipeline advances — `logo-design` the approved mark, `motion-design` the built motion system, application skills their adopted libraries and notes (see the template's Living Record sections). This skill writes the founding sections; the record grows from there.
+1. **`.agents/design.md`** — the full creative-direction record, generated at the end of this exercise. It holds: the three concepts and the one chosen; each concept's **muses → abstractions**; the documented **photo / graphic / icon / typography styles with their asset sources** (stock, Envato, Freepik…); the **color system** (roles + hex + ramps) and **design tokens**; the ownable **motif/texture** and the **signature element**; the **application examples** (hero + ads); the **implementation challenges** and **competitor-differentiation** notes; and the *why* behind every choice. Use the template in [references/design-doc-template.md](references/design-doc-template.md). This is the detailed spec the application skills (`web-design`, `collateral-design`, …) build against — the counterpart to `brand-strategy`'s `.agents/brand-strategy.md`. **And it's a living record:** downstream skills append their decided assets to it as the pipeline advances — `logo-design` the approved mark, `art-direction` the imagery specs, `motion-design` the built motion system, application skills their adopted libraries and notes (see the template's Living Record sections). This skill writes the founding sections; the record grows from there.
 2. **`.agents/brand.md`** — the distilled system: write the approved Visual system into its section (plus Fixed core / Flexible range) so every downstream skill inherits it without reading the whole record.
 
 Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from* `.agents/design.md` — never the other way around.
@@ -115,6 +114,7 @@ Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from
 - `design-principles` — the rules this skill applies
 - `brand` — the audit that diagnoses; its categories are this skill's acceptance test
 - `brand-strategy` — supplies the emotional target and muses (hard prerequisite)
+- `art-direction` — the imagery: photography, illustration, iconography, and pattern & texture, as specs and real assets (board pass for the stylescapes, system pass on the chosen direction)
 - `logo-design` — the mark, designed inside this system
 - `web-design` / `collateral-design` — apply the approved system with real copy
 - `design-critique` *(planned — not yet shipped)* — will judge later work against what's recorded here

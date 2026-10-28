@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.11.2
+  version: 1.12.0
 ---
 
 # Collateral Design
@@ -90,6 +90,7 @@ A fixed frame has no scroll to rescue a flat layout and no interaction to add in
 - **The logo goes at the BOTTOM, not the top.** The top of the frame belongs to the message. The mark signs off at the bottom (deck covers and pure brand pieces excepted), and **social posts get no logo at all** — the handle and avatar already brand them. On an identity piece this decides the whole layout: **on a business card the person's name is the message**, so the name leads at the top and the logo signs off at the bottom — not a wordmark banked at the top with the name pushed under it and a dead band of nothing in between.
 - **Alignment is exact, spacing is systematic, punctuation hangs.** Off-centre is sloppiness; a pull-quote's opening `"` must hang outside the measure so the text's left edge stays true. Run the craft pass with `frontend-design` / `web-design-guidelines` — those principles apply verbatim to a fixed canvas. Overlap only where it creates depth or connects two things.
 - **Don't port web components into print.** A browser frame, nav bar, app card, or form field pasted onto a sheet reads as a screenshot and usually drags the wrong typeface in with it. Share the *system* with the site, not its components — and set everything in the brand's actual face.
+- **Draw imagery from the `art-direction` library** (`.agents/assets/imagery/approved/`), and route anything new back to `art-direction` — it specs, sources or generates, reviews, and treats it to the brand's grade.
 - **A bad image is worse than no image.** Generic stock cheapens the piece; if you don't have imagery that's specific and good, solve it typographically or graphically instead.
 
 - **Light first, dark second.** Default to a light composition, especially for print — a near-black printed piece is rare, drinks ink, scuffs, and goes muddy on uncoated stock. **Even a dark screen brand needs a light expression for paper.** Build that, then produce the dark variant for screen. If a piece genuinely should be dark, give it **depth** — a gradient with light in it, not flat black.
@@ -234,6 +235,7 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 
 - `design-principles` — the craft beliefs this skill applies
 - `creative-direction` — supplies the visual system (hard prerequisite); route back for Revolution / heavy Evolution
+- `art-direction` — the photography, illustration, icons, and textures this skill places; route new imagery needs there
 - `logo-design` — the mark, applied here
 - `brand` — the audit whose categories are this skill's acceptance test
 - `web-design` — the same system on the web surface; keep collateral coherent with it

@@ -2,6 +2,33 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
+## 1.2.0 — 2026-10-28
+
+**New skill: `art-direction`.** It was held for v2 on the grounds that it needed a connected generator. With the 1.1.0 Toolkit, Claude + ChatGPT or Gemini is a full working tier, so it ships now. It turns the creative direction into the brand's actual imagery across four classes — photography, illustration, iconography, pattern & texture — plus the rules for combining them.
+
+- **Imply, then show.** Each style is first written as a plain paragraph traced to the muses and the emotional target. Then the agent finds real web references for each class (4–6, each captioned with the one quality it contributes, plus a deliberate near-miss), and the user points at what's right. References are marked reference-only or usable. Icons are rendered in candidate libraries using the brand's own concepts rather than shown from marketing pages.
+- **A spec two people would converge on.** Field-by-field formats per class, hex palette anchors, a never list, combination rules, and one treatment recipe implemented in code (ImageMagick for files, an SVG filter for the web).
+- **Produce by tier.** Tier 2 generates directly (Flora, Adobe, Higgsfield) with anchors attached. Tier 1 gets a primer for a ChatGPT Project or Gemini Gem, so each request is one line plus attached anchors, with an edit-first loop. Tier 0 uses treated free stock and draws in code, and is honest about what it can't produce.
+- **Nothing enters the library unreviewed.** Every image is checked against its spec and a new imagery-slop list, judged in place next to the approved set, and given one verdict (approve / edit / re-prompt / reject). Approved files are treated, filed, and logged in `manifest.md` with rights and alt text.
+- **Hard rules.** No logo or brand type inside generated images. No "in the style of" a living artist. No fabricated customers, team members, or product shots.
+- **New context location: `.agents/assets/imagery/`**, owned by `art-direction` (documented in the README and CLAUDE.md context tables). `.agents/design.md` gains an Art Direction living-record section.
+
+**Wiring**
+
+- `creative-direction` 1.16.0 — the stylescape board gets its imagery from `art-direction`'s board pass; items 4–7 of the system are decided as direction and spec'd there.
+- `logo-design` 1.12.0 — new **Raster to SVG** section. ChatGPT and Gemini output raster only, and SVG they write by hand is the hand-drawn failure. Real vectorizing paths are Quiver (`/v1/svgs/vectorizations`, `arrow-2`), Adobe `image_vectorize`, local Potrace, and Vectorizer.AI, plus how to prompt a sketch so it traces cleanly. Quiver examples updated to `arrow-2`.
+- `web-design` 1.8.0, `collateral-design` 1.12.0 — place imagery from the `art-direction` library; route new needs back to it.
+- `brand` 1.27.1 — lists `art-direction` among the skills that write into `brand.md`.
+
+| Skill | Version |
+|---|---|
+| `art-direction` | 1.0.0 *(new)* |
+| `creative-direction` | 1.16.0 |
+| `logo-design` | 1.12.0 |
+| `web-design` | 1.8.0 |
+| `collateral-design` | 1.12.0 |
+| `brand` | 1.27.1 |
+
 ## 1.1.0 — 2026-10-28
 
 Ask about tools once, and treat Claude + ChatGPT as a real working setup. Four skills used to ask "what image tools do you have?" separately, and INSTALL described anything short of a connected generator as low-fidelity.

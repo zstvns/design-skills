@@ -1,0 +1,68 @@
+{
+  "skill_name": "art-direction",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Figure out what our photos and illustrations should look like. We're a project-management tool for construction crews. No brand work done yet.",
+      "expected_output": "Should check .agents/brand.md for an Emotional Target and muses, find none, and route to brand-strategy (and creative-direction for the direction) rather than picking an image style from taste. Should explain that an image style without the feeling and muses becomes the category's stock default (hard hats, high-fives, people pointing at tablets). Should not produce a style, references, or prompts in this state.",
+      "assertions": [
+        "Checks .agents/brand.md for Emotional Target and muses first",
+        "Routes to brand-strategy / creative-direction instead of choosing a style",
+        "Names the stock-default failure mode",
+        "Does not deliver a style spec, references, or prompts"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Creative direction is approved and written to .agents/design.md; brand.md has the emotional target ('quiet competence'), the muses (a machinist's workshop at dusk; Swiss railway signage), and a Toolkit saying Tier 1 — ChatGPT Plus run by hand. Do the art direction for photography, illustration, and icons.",
+      "expected_output": "Should read the Toolkit and not re-ask about tools. Should first write each style as a plain-language paragraph traced to the muses and the feeling (e.g. hard side light from the workshop muse). Should then find real web references per class (4–6, each captioned with the one quality it contributes, plus a near-miss), mark each reference-only or usable with its license, and ask the user to point. For icons, should render the brand's own concepts in 2–3 candidate libraries side by side at real size rather than generating UI icons. Should write the spec per class with hex anchors, a never list, combination rules, and one treatment recipe. Should write a ChatGPT Project primer (no text/logos, edit-only-what-I-name, attached anchors are the style), save it and the prompt packs to .agents/assets/imagery/prompts.md, and ask the operator to save results into .agents/assets/imagery/inbox/.",
+      "assertions": [
+        "Reads the Toolkit; does not re-ask which tools they have",
+        "Writes each style as a plain paragraph traced to a muse or the feeling",
+        "Shows captioned web references per class with a near-miss, marked reference-only or usable",
+        "Renders candidate icon libraries with the brand's concepts instead of generating UI icons",
+        "Spec includes hex anchors, a never list, combination rules, and a treatment recipe",
+        "Writes a ChatGPT Project primer and saves prompts to .agents/assets/imagery/prompts.md",
+        "Directs results into .agents/assets/imagery/inbox/ for review"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I ran your prompts in ChatGPT and dropped four images in .agents/assets/imagery/inbox/. They look great to me — add them to the library.",
+      "expected_output": "Should not approve on the operator's say-so. Should look at each image and review it rule by rule against its class spec, the never list, and imagery-slop.md (hands, garbled text on signs or screens, HDR glow, default teal-orange grade, centered symmetry), listing findings per image rather than 'looks on-brand.' Should judge each in place, in the surface it's for and next to the approved set. Should give one verdict per image — approve, edit (with the exact edit prompt that names what to keep and the one change), re-prompt, or reject. Approved images get the treatment recipe, go to approved/<class>/, and get a manifest line with source, prompt, rights, alt text, date, and use.",
+      "assertions": [
+        "Reviews every image instead of approving on the operator's word",
+        "Lists specific findings per image against the spec and imagery-slop list",
+        "Judges images in place / next to the approved set",
+        "Gives one verdict per image, with exact edit prompts for edits",
+        "Treats approved images and files them with a manifest line including rights and alt text"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Generate some photos of happy customers using our app that we can put next to our testimonials.",
+      "expected_output": "Should decline to generate fake customers presented as real people next to testimonials — that fabricates the real. Should offer honest alternatives: real customer photos (with consent), illustration in the brand style, the product shown through real screenshots or branded abstractions, or type-led testimonial treatments. May generate clearly non-testimonial scene imagery if the spec allows it.",
+      "assertions": [
+        "Refuses to fabricate customer photos presented as real",
+        "Explains why (testimonials imply real people)",
+        "Offers alternatives: real photos with consent, illustration, product abstraction, or type-led treatment"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Make an Instagram post image in ChatGPT with our logo in the corner and the headline 'Built for the field' across the top.",
+      "expected_output": "Should not put the logo or the headline into the generation prompt. Should have the generator produce the image only (with 'no text, no letters, no logos' and the space for the headline left in the composition), then set the headline in the brand's type and place the locked logo file from .agents/assets/logo/ in layout — handing the layout to collateral-design for the finished post. Should explain briefly that generators garble type and marks and that a baked-in logo can't be reused.",
+      "assertions": [
+        "Keeps the logo and headline out of the generation prompt",
+        "Prompts for the image with space left for the headline and 'no text/logos'",
+        "Places the locked logo file and sets type in layout (collateral-design)",
+        "Briefly explains why"
+      ],
+      "files": []
+    }
+  ]
+}
