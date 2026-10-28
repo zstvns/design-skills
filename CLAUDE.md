@@ -24,7 +24,7 @@ design-skills/
 │       ├── references/*.md    # Optional — deep dives, templates, specs
 │       └── evals/evals.json   # Optional — test cases
 ├── README.md
-├── INSTALL.md                # Optional connections (Quiver, Figma, Adobe, Paper, Flora)
+├── INSTALL.md                # Tooling tiers + optional connections (Quiver, Figma, Adobe, Paper, Flora)
 ├── CHANGELOG.md              # Plugin-level releases
 ├── VERSIONS.md               # Per-skill versions
 ├── CONTRIBUTING.md

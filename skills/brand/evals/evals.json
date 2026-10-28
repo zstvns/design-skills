@@ -211,6 +211,18 @@
         "Does not reduce the fork to Evolution-vs-Optimization-only"
       ],
       "files": []
+    },
+    {
+      "id": 15,
+      "prompt": "Set up our brand context from https://example-coffee.com. FYI I only have Claude and a ChatGPT Plus subscription — no Figma, no Midjourney.",
+      "expected_output": "Should run the normal gather/audit/route flow, and when writing .agents/brand.md include a Toolkit section: detect connected MCPs and keys itself rather than asking about them, record ChatGPT (GPT Image) as a generator the operator runs by hand, set the tier to 1, and date it. Should treat Claude + ChatGPT as a complete working tier (prompt packs the operator runs and brings back), not as a degraded or blocked setup. Should not re-ask which tools they have, since the user already said.",
+      "assertions": [
+        "Writes a Toolkit section into .agents/brand.md",
+        "Records ChatGPT / GPT Image as operator-run and sets tier 1 with a date",
+        "Checks connected MCPs / env keys itself instead of asking about them",
+        "Does not frame Claude + ChatGPT as degraded or ask again which tools they have"
+      ],
+      "files": []
     }
   ]
 }

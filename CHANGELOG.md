@@ -2,6 +2,22 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
+## 1.1.0 — 2026-10-28
+
+Ask about tools once, and treat Claude + ChatGPT as a real working setup. Four skills used to ask "what image tools do you have?" separately, and INSTALL described anything short of a connected generator as low-fidelity.
+
+- **Toolkit section in `.agents/brand.md`.** `brand` checks for itself which generator and canvas MCPs are connected and whether keys like `QUIVER_API_KEY` are set, asks one plain question about tools you run by hand (ChatGPT, Gemini, Midjourney…), and records a tier: **0** Claude only · **1** plus a generator you run yourself · **2** a generator connected to the agent. `creative-direction`, `logo-design`, `web-design`, and `collateral-design` read it instead of asking, and write back anything new they find connected. Existing `brand.md` files without the section still work — the first skill that needs it asks once and fills it in.
+- **INSTALL leads with the tiers.** Tier 1 (Claude + a generator you run yourself) is documented as a complete working setup: the agent writes the prompt packs, you run them and bring the images back. Connected tools (Quiver, Flora / Higgsfield, Adobe, Figma, Paper) are listed under Tier 2.
+- ChatGPT and Gemini are now named explicitly in the prompt-pack path in `creative-direction` and `logo-design`.
+
+| Skill | Version |
+|---|---|
+| `brand` | 1.27.0 |
+| `creative-direction` | 1.15.0 |
+| `logo-design` | 1.11.3 |
+| `web-design` | 1.7.2 |
+| `collateral-design` | 1.11.2 |
+
 ## 1.0.1 — 2026-08-21
 
 Documents the `npx` install path. No skill content changed — this worked at 1.0.0, it just wasn't written down anywhere.
