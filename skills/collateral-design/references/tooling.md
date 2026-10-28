@@ -6,14 +6,15 @@ Collateral is produced in the format's native tooling, not custom web code (that
 
 | Format | First choice | Fallbacks |
 |--------|--------------|-----------|
-| One fixed-format graphic (poster, one-pager, ad, flyer) | **`canvas-design`** skill (PNG/PDF, design philosophy built in) | Adobe MCP render; Paper/Pencil/Figma canvas → export; HTML/CSS → print-to-PDF |
-| Deck / presentation | **`slide-deck`** (makerskills) / presentation tooling | HTML/CSS slides → PDF; Figma Slides; Adobe MCP |
+| One fixed-format graphic (poster, one-pager, ad, flyer) | **`canvas-design`** skill (PNG/PDF, design philosophy built in) — or **Claude Design** when the system is published there and the operator will keep editing it | Adobe MCP render; Paper/Pencil/Figma canvas → export; HTML/CSS → print-to-PDF |
+| Deck / presentation | **Claude Design** when the system is published there (edit on canvas; export PDF, PPTX, Google Slides) · otherwise **`slide-deck`** (makerskills) / presentation tooling | HTML/CSS slides → PDF; Figma Slides; Adobe MCP |
 | Any chart / stat / dashboard on a slide or sheet | **`dataviz`** skill (read before drawing) | — (always route charts through it) |
 | Print production (brochure, business card, multi-page) | **Adobe MCP** — InDesign / IDML, `document_render_layout` / `render_vector` | `canvas-design` → CMYK PDF export; layout in a design canvas → press-ready PDF |
 | Visual composition you want to see and iterate | **Paper / Pencil / Figma MCP** design canvas | — |
 
 ## The Tools
 
+- **Claude Design** — the visual canvas inside Claude. When `creative-direction` has published the system there as a design system (see `creative-direction` → claude-design.md), new projects inherit the type, color, logo, and components, and the operator can edit on the canvas, comment, and export PDF, PPTX, Google Slides, or standalone HTML, or send on to Canva or Adobe. The strongest path for decks and one-pagers that **non-designers will keep editing**. It doesn't generate imagery — bring it from the `art-direction` library. The canvas doesn't replace this skill's bar: still check the export at true size, in context, against the collateral-slop list.
 - **`canvas-design` skill** — creates static visual art in PNG and PDF with design philosophy baked in. The strong default for a single fixed-format piece (poster, ad, one-pager, print flyer). Original work only — never copy an existing artist's piece.
 - **`slide-deck` (makerskills)** — deck generation and structure. Good for getting a full deck scaffolded to the brand's system, then refined.
 - **`dataviz` skill** — the mandatory stop before *any* chart, stat tile, meter, KPI row, or dashboard on a slide or sheet. It makes the data read as one system (form heuristic, color formula, mark specs) and takes a brand palette. Don't hand-draw charts around it.
@@ -32,8 +33,9 @@ Collateral is produced in the format's native tooling, not custom web code (that
 Collateral needs **rich media**, and photography is the piece most often faked or skipped. Order of preference:
 
 1. **The brand's own photography** — real product shots, real team, real customers. Always first choice; check `.agents/brand.md` / the project for an existing library.
-2. **Properly licensed stock** — a paid library, or Adobe Stock via the Adobe MCP (`asset_license_and_download_stock`). This is what a real deliverable ships with.
-3. **Openly licensed images** for exploration and internal comps — e.g. Wikimedia Commons, queried through its API so you get real, attributable files rather than guessing URLs:
+2. **The `art-direction` library** — `.agents/assets/imagery/approved/`: generated and sourced images already reviewed against the brand's spec and treated to its grade, with rights recorded in `manifest.md`. If what you need isn't there, route the request to `art-direction` rather than sourcing it ad hoc here.
+3. **Properly licensed stock** — a paid library, or Adobe Stock via the Adobe MCP (`asset_license_and_download_stock`). This is what a real deliverable ships with.
+4. **Openly licensed images** for exploration and internal comps — e.g. Wikimedia Commons, queried through its API so you get real, attributable files rather than guessing URLs:
 
 ```bash
 curl -s "https://commons.wikimedia.org/w/api.php?action=query&format=json\

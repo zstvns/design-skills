@@ -54,6 +54,21 @@
         "Labels boards awaiting imagery as composition proofs with prompt packs attached"
       ],
       "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "The client approved concept B and it's written to .agents/design.md; the logo is locked in .agents/assets/logo/. There's no website code yet. Their marketing lead lives in Claude Design — can we get the brand in there so she can make decks herself?",
+      "expected_output": "Should build a kit in .agents/assets/design-system/ from .agents/design.md: tokens.css (color roles and ramps with the action color named as protected, type scale, spacing, radii), fonts only if the license permits uploading them, copies of the locked logo files (never redrawn), rights-cleared imagery per the art-direction manifest, and preview cards that each import tokens.css (type specimen, color roles, buttons, card, section types, motif, deck slides, one-pager, social post). Should have the operator run /design-sync and review the plan before approving, then check the sync's validation output (not just the cards) for missing tokens or CSS, confirm in a new Claude Design project, and record the project in .agents/design.md. Should state that .agents/ stays the source of truth and changes made in Claude Design get pulled back.",
+      "assertions": [
+        "Builds the kit in .agents/assets/design-system/ from .agents/design.md",
+        "Checks font licensing before uploading faces",
+        "Copies the locked logo files rather than redrawing",
+        "Previews import tokens.css",
+        "Operator runs /design-sync and reviews the plan before approving",
+        "Checks validation output, not just the preview cards",
+        "Records the project in .agents/design.md; .agents/ stays the source of truth"
+      ],
+      "files": []
     }
   ]
 }

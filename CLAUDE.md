@@ -43,6 +43,7 @@ Skills read and write plain markdown in the *user's* project under `.agents/`. C
 | `.agents/brand-strategy.md` | `brand-strategy` | Full coaching record — verbatim answers, muses with stealable cues, concept directions. `brand.md` gets the synthesis. |
 | `.agents/design.md` | `creative-direction` | Full creative-direction spec, and a **living record**: `logo-design`, `art-direction`, `motion-design`, and the application skills append their decided assets as the pipeline advances. |
 | `.agents/assets/logo/` | `logo-design` | The locked logo *files*. Downstream skills place them; they never redraw the mark. |
+| `.agents/assets/design-system/` | `creative-direction` | The kit published to Claude Design via `/design-sync` when no site repo exists — `tokens.css`, licensed fonts, logo copies, rights-cleared imagery, preview cards. A published copy; `.agents/design.md` stays the source of truth. |
 | `.agents/assets/imagery/` | `art-direction` | The image library — anchors, approved assets per class, references, prompt packs, and `manifest.md` (source, rights, alt text). Application skills place from it and route new needs back. |
 | `.agents/product-marketing.md` | *external* | From the marketing-skills library. Read, never written. |
 

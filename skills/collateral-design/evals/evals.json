@@ -67,6 +67,19 @@
         "Notes code-or-canvas is fine if the structure is set up first; verifies the set reads as one brand, varied content"
       ],
       "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Our brand is published to Claude Design as a design system. Make a 10-slide sales deck our reps can keep editing. We need a few photos of people using the product in a warehouse.",
+      "expected_output": "Should pick Claude Design as the deck tool since the system is published there and non-designers will keep editing, with export to PDF/PPTX/Google Slides. Should decide presented vs. read first and keep one idea per slide with varied layouts. Should not source warehouse photos ad hoc or generate them inside Claude Design: should check the art-direction library (.agents/assets/imagery/approved/) and route anything missing to art-direction; should not fabricate 'customers' as real people. Should still check the export at true size against collateral-slop.",
+      "assertions": [
+        "Chooses Claude Design because the system is published there and reps will keep editing",
+        "Decides presented vs. read; one idea per slide; varied layouts",
+        "Pulls imagery from the art-direction library and routes missing photos to art-direction",
+        "Does not fabricate real customers",
+        "Validates the export against the collateral bar"
+      ],
+      "files": []
     }
   ]
 }

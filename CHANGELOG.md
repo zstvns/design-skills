@@ -2,6 +2,23 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
+## 1.3.0 — 2026-10-28
+
+**Claude Design.** Every Claude plan includes it, and it's where the people who never open a terminal will make most of their decks and one-pagers. The skills now put the brand there.
+
+- `creative-direction` 1.17.0 — **publish the approved system to Claude Design** as a design system, so every new project inherits the type, color, logo, and components. Syncs from the site repo if one exists, otherwise from a small kit in `.agents/assets/design-system/` (new location, owned by `creative-direction`): `tokens.css`, license-permitting fonts, the locked logo files, rights-cleared imagery, and preview cards. The operator runs `/design-sync` and approves the plan; the agent checks the sync's validation rather than trusting the preview cards. Re-syncs as `logo-design` and `art-direction` add to the record. `.agents/` stays the source of truth. New reference: `claude-design.md`.
+- `collateral-design` 1.13.0 — Claude Design is a first choice for decks and one-pagers non-designers will keep editing (exports PDF, PPTX, Google Slides). Photography sourcing now goes brand's own → `art-direction` library → licensed stock → open-licensed comps.
+- `web-design` 1.9.0 — optional Claude Design canvas exploration, handed off to Claude Code; the handoff is a starting point for the custom build, not the build.
+- `brand` 1.28.0 — the Toolkit question also asks about design canvases (Claude Design, Figma), and the template lists Claude Design.
+- INSTALL gains a Claude Design section.
+
+| Skill | Version |
+|---|---|
+| `creative-direction` | 1.17.0 |
+| `collateral-design` | 1.13.0 |
+| `web-design` | 1.9.0 |
+| `brand` | 1.28.0 |
+
 ## 1.2.0 — 2026-10-28
 
 **New skill: `art-direction`.** It was held for v2 on the grounds that it needed a connected generator. With the 1.1.0 Toolkit, Claude + ChatGPT or Gemini is a full working tier, so it ships now. It turns the creative direction into the brand's actual imagery across four classes — photography, illustration, iconography, pattern & texture — plus the rules for combining them.

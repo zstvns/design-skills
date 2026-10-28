@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.16.0
+  version: 1.17.0
 ---
 
 # Creative Direction
@@ -97,6 +97,8 @@ Two layers, one source of truth — mirroring `brand-strategy`:
 
 Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from* `.agents/design.md` — never the other way around.
 
+**Publish the system to Claude Design** once it's approved, if the operator uses it (Toolkit → design canvas): it becomes a design system that every new Claude Design project inherits, so anyone on the team can make on-brand decks, one-pagers, and prototypes without a terminal. Sync from the site repo if one exists, otherwise from a small kit in `.agents/assets/design-system/`; re-sync as `logo-design` and `art-direction` add to the record. Method, kit contents, and the sync checks: [references/claude-design.md](references/claude-design.md). Same rule as any published copy — `.agents/` stays the source of truth.
+
 ## Non-Negotiables
 
 - [ ] Emotional Target + muses read from `.agents/brand.md` (or routed to `brand-strategy` first)
@@ -108,6 +110,7 @@ Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from
 - [ ] Adversarial self-audit run on the *rendered* board (AI-slop tropes listed, not "none"; applied fragment passes cover-the-logo) before presenting
 - [ ] Challenges + competitor-differentiation named; direction proven applied (hero + ad)
 - [ ] Client approval secured; full record written to `.agents/design.md`; distilled system written to `.agents/brand.md`
+- [ ] If the operator uses Claude Design: system published as a design system (kit or repo), validation checked, project recorded in `.agents/design.md`
 
 ## Related Skills
 
