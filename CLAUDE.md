@@ -23,6 +23,8 @@ design-skills/
 │       ├── SKILL.md          # Required — the skill
 │       ├── references/*.md    # Optional — deep dives, templates, specs
 │       └── evals/evals.json   # Optional — test cases
+├── examples/
+│   └── magister/             # Worked example — one brand through every skill (.agents/ + deliverables)
 ├── README.md
 ├── INSTALL.md                # Tooling tiers + optional connections (Quiver, Figma, Adobe, Paper, Flora)
 ├── CHANGELOG.md              # Plugin-level releases

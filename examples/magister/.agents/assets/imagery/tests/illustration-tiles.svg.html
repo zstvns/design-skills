@@ -1,0 +1,115 @@
+<meta charset="utf-8">
+<!-- Illustration style test, run A — drawn in SVG by the agent from the spec (art-direction Step 4).
+     Spec: technical "flight plan" line drawing. Bone line 1.5px at 82% on ground; ONE active element in amber;
+     planned paths dotted (2 7), completed paths solid; mono labels, uppercase, tracked; orthographic, no perspective;
+     no fills but node dots; people are never drawn as figures — the operator is a marked point. -->
+<style>
+  body{margin:0;background:#0F0C07;display:flex;flex-wrap:wrap;gap:12px;padding:12px;align-items:flex-start}
+  .ill{background:#0F0C07;border:1px solid #3A3020;border-radius:8px;display:block}
+  .ill .ln{stroke:#ECE4D6;stroke-opacity:.82;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .ill .fn{stroke:#ECE4D6;stroke-opacity:.28;stroke-width:1;fill:none}
+  .ill .pl{stroke-dasharray:2 7}
+  .ill .act{stroke:#E8830C;stroke-opacity:1}
+  .ill .dot{fill:#ECE4D6;fill-opacity:.82}
+  .ill .adot{fill:#E8830C}
+  .ill .lbl{font:500 9.5px 'JetBrains Mono',monospace;letter-spacing:.14em;fill:#988B71;text-transform:uppercase}
+  .ill .albl{fill:#F4A93C}
+  .ill .br{stroke:#4A3D24;stroke-width:1;fill:none}
+</style>
+
+<!-- 1 · A PERSON — the operator. Review: run A drew a ring around the point, which echoed the logo's ring; edited to a square marker. Hard case: the spec forbids figures, so does the style still say "a person"? -->
+<svg class="ill" id="t-person" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="The operator shown as a marked point receiving three work streams">
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <path class="ln pl" d="M40 70 C120 70 150 150 200 150"/>
+  <path class="ln pl" d="M40 150 H200"/>
+  <path class="ln pl" d="M40 230 C120 230 150 150 200 150"/>
+  <circle class="dot" cx="40" cy="70" r="3"/><circle class="dot" cx="40" cy="150" r="3"/><circle class="dot" cx="40" cy="230" r="3"/>
+  <text class="lbl" x="52" y="62">Draft</text><text class="lbl" x="52" y="142">Report</text><text class="lbl" x="52" y="222">Campaign</text>
+  <rect class="ln act" x="189" y="139" width="22" height="22"/><circle class="adot" cx="200" cy="150" r="4"/>
+  <path class="ln" d="M214 150 H360"/><path class="ln" d="M352 144 l8 6 -8 6"/>
+  <text class="lbl albl" x="182" y="186">You · approve</text><text class="lbl" x="300" y="140">Ships</text>
+</svg>
+
+<!-- 2 · AN OBJECT — the keycap, front elevation with dimension lines -->
+<svg class="ill" id="t-object" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Front elevation of a console keycap with dimension lines">
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <rect class="ln" x="130" y="80" width="140" height="120" rx="10"/>
+  <rect class="ln" x="146" y="92" width="108" height="92" rx="6"/>
+  <path class="ln act" d="M176 160 h48"/>
+  <path class="fn" d="M130 222 v16 M270 222 v16 M130 232 H270"/><path class="fn" d="M290 80 h16 M290 200 h16 M300 80 V200"/>
+  <text class="lbl" x="178" y="252">19.05 mm</text><text class="lbl" x="312" y="144">Travel 2</text>
+  <text class="lbl albl" x="174" y="148">Fire</text>
+  <path class="ln" d="M110 210 H290"/>
+</svg>
+
+<!-- 3 · A PLACE — the room, in plan: rows of consoles, one live -->
+<svg class="ill" id="t-place" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Plan view of an operations room with four rows of consoles, one active">
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <rect class="fn" x="40" y="40" width="320" height="220"/>
+  <path class="ln" d="M80 88 q120 -26 240 0"/><path class="ln" d="M80 132 q120 -26 240 0"/>
+  <path class="ln act" d="M80 176 q120 -26 240 0"/><path class="ln" d="M80 220 q120 -26 240 0"/>
+  <rect class="ln" x="150" y="48" width="100" height="10"/>
+  <text class="lbl" x="262" y="56">Main display</text>
+  <circle class="adot" cx="200" cy="168" r="4"/><text class="lbl albl" x="212" y="194">Your seat</text>
+</svg>
+
+<!-- 4 · AN ABSTRACT IDEA — the handoff: planned work passes the approval gate and becomes shipped -->
+<svg class="ill" id="t-idea" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Planned work passing through an approval gate and becoming shipped work">
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <path class="ln pl" d="M40 150 H180"/>
+  <path class="ln" d="M180 110 V190 M220 110 V190"/><path class="ln act" d="M180 150 H220"/>
+  <path class="ln" d="M220 150 C280 150 300 90 360 90"/><path class="ln" d="M220 150 C280 150 300 210 360 210"/>
+  <circle class="dot" cx="360" cy="90" r="3"/><circle class="dot" cx="360" cy="210" r="3"/>
+  <text class="lbl" x="40" y="138">Planned</text><text class="lbl albl" x="172" y="214">Approve</text><text class="lbl" x="296" y="80">Shipped</text>
+</svg>
+
+<!-- 5 · THE PRODUCT, as a branded abstraction — the agent shipping a post, as a flight plan -->
+<svg class="ill" id="t-product" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="A trajectory from brief to draft to review to shipped, with the review stage active">
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <path class="fn" d="M40 240 H360"/>
+  <path class="ln" d="M50 240 C100 240 120 170 160 150"/>
+  <path class="ln act" d="M160 150 C200 130 230 100 260 96"/>
+  <path class="ln pl" d="M260 96 C300 92 330 70 352 56"/>
+  <circle class="dot" cx="50" cy="240" r="3"/><circle class="dot" cx="160" cy="150" r="3"/><circle class="adot" cx="260" cy="96" r="4"/><circle class="dot" cx="352" cy="56" r="3"/>
+  <text class="lbl" x="44" y="262">Brief</text><text class="lbl" x="168" y="170">Draft</text><text class="lbl albl" x="236" y="122">Review</text><text class="lbl" x="300" y="48">Shipped</text>
+  <rect class="ln" x="300" y="150" width="64" height="44" rx="4"/><path class="fn" d="M308 162 h40 M308 172 h48 M308 182 h28"/>
+  <path class="ln pl" d="M300 172 H272"/>
+</svg>
+
+<!-- 6 · A CROWDED SCENE — 100+ integrations around one agent. Hard case: density -->
+<svg class="ill" id="t-crowd" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="An agent at the centre of three orbits of many small integration nodes, one active">
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <circle class="fn" cx="200" cy="150" r="48"/><circle class="fn" cx="200" cy="150" r="88"/><circle class="fn" cx="200" cy="150" r="124"/>
+  <g><circle class="dot" cx="248.0" cy="150.0" r="1.8"/><circle class="dot" cx="238.8" cy="178.2" r="1.8"/><circle class="dot" cx="214.8" cy="195.7" r="1.8"/><circle class="dot" cx="185.2" cy="195.7" r="1.8"/><circle class="dot" cx="161.2" cy="178.2" r="1.8"/><circle class="dot" cx="152.0" cy="150.0" r="1.8"/><circle class="dot" cx="161.2" cy="121.8" r="1.8"/><circle class="dot" cx="185.2" cy="104.3" r="1.8"/><circle class="dot" cx="214.8" cy="104.3" r="1.8"/><circle class="dot" cx="238.8" cy="121.8" r="1.8"/><circle class="dot" cx="286.7" cy="164.9" r="1.8"/><circle class="dot" cx="276.4" cy="193.7" r="1.8"/><circle class="dot" cx="256.9" cy="217.2" r="1.8"/><circle class="dot" cx="230.5" cy="232.6" r="1.8"/><circle class="dot" cx="200.4" cy="238.0" r="1.8"/><circle class="dot" cx="170.3" cy="232.8" r="1.8"/><circle class="dot" cx="143.7" cy="217.7" r="1.8"/><circle class="dot" cx="124.0" cy="194.3" r="1.8"/><circle class="dot" cx="113.4" cy="165.7" r="1.8"/><circle class="dot" cx="113.3" cy="135.1" r="1.8"/><circle class="dot" cx="123.6" cy="106.3" r="1.8"/><circle class="dot" cx="143.1" cy="82.8" r="1.8"/><circle class="dot" cx="169.5" cy="67.4" r="1.8"/><circle class="dot" cx="199.6" cy="62.0" r="1.8"/><circle class="dot" cx="229.7" cy="67.2" r="1.8"/><circle class="dot" cx="256.3" cy="82.3" r="1.8"/><circle class="dot" cx="276.0" cy="105.7" r="1.8"/><circle class="dot" cx="286.6" cy="134.3" r="1.8"/><circle class="dot" cx="323.8" cy="157.4" r="1.8"/><circle class="dot" cx="318.4" cy="186.8" r="1.8"/><circle class="dot" cx="306.1" cy="214.1" r="1.8"/><circle class="dot" cx="287.7" cy="237.6" r="1.8"/><circle class="dot" cx="264.2" cy="256.1" r="1.8"/><circle class="dot" cx="236.9" cy="268.4" r="1.8"/><circle class="dot" cx="207.5" cy="273.8" r="1.8"/><circle class="dot" cx="177.7" cy="272.0" r="1.8"/><circle class="dot" cx="149.2" cy="263.1" r="1.8"/><circle class="dot" cx="123.6" cy="247.6" r="1.8"/><circle class="dot" cx="102.4" cy="226.5" r="1.8"/><circle class="dot" cx="86.9" cy="200.9" r="1.8"/><circle class="dot" cx="78.0" cy="172.4" r="1.8"/><circle class="dot" cx="76.2" cy="142.6" r="1.8"/><circle class="dot" cx="81.6" cy="113.2" r="1.8"/><circle class="dot" cx="93.9" cy="85.9" r="1.8"/><circle class="dot" cx="112.3" cy="62.4" r="1.8"/><circle class="dot" cx="135.8" cy="43.9" r="1.8"/><circle class="dot" cx="163.1" cy="31.6" r="1.8"/><circle class="dot" cx="192.5" cy="26.2" r="1.8"/><circle class="dot" cx="222.3" cy="28.0" r="1.8"/><circle class="dot" cx="250.8" cy="36.9" r="1.8"/><circle class="dot" cx="276.4" cy="52.4" r="1.8"/><circle class="dot" cx="297.6" cy="73.5" r="1.8"/><circle class="dot" cx="313.1" cy="99.1" r="1.8"/><circle class="dot" cx="322.0" cy="127.6" r="1.8"/></g>
+  <circle class="ln" cx="200" cy="150" r="10"/><circle class="dot" cx="200" cy="150" r="3"/>
+  <path class="ln act" d="M200 150 L262 74"/><circle class="adot" cx="262" cy="74" r="4"/>
+  <text class="lbl" x="166" y="292">100+ tools</text>
+</svg>
+
+<!-- 7 · SPOT SIZE — tile 5 at 96px, the size a feature card actually uses -->
+<svg class="ill" id="t-spot" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Trajectory spot illustration at 96 pixels">
+  <path class="ln" d="M14 78 C30 78 36 56 48 50"/><path class="ln act" d="M48 50 C60 44 66 36 74 34"/><path class="ln pl" d="M74 34 C80 32 84 26 86 20"/>
+  <circle class="dot" cx="14" cy="78" r="2"/><circle class="adot" cx="74" cy="34" r="3"/>
+</svg>
+
+
+<!-- 7b · SPOT SIZE, after tightening the spec — 2px stroke, no labels, max three nodes -->
+<svg class="ill" id="t-spot-b" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Trajectory spot illustration at 96 pixels, spot rules applied">
+  <path class="ln" style="stroke-width:2" d="M16 76 C34 76 40 52 52 46"/><path class="ln act" style="stroke-width:2" d="M52 46 C62 40 70 30 80 22"/>
+  <circle class="dot" cx="16" cy="76" r="2.5"/><circle class="adot" cx="80" cy="22" r="3.5"/>
+</svg>
+
+<!-- 8 · HERO SIZE — a campaign week as a flight plan -->
+<svg class="ill" id="t-hero" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="A week-long campaign drawn as a flight plan with launch windows and one active burn">
+  <path class="br" d="M14 26V14h12M1174 14h12v12M1186 394v12h-12M26 406H14v-12"/>
+  <path class="fn" d="M60 340 H1140"/>
+  <g class="fn"><path d="M60 334v12M214 334v12M368 334v12M522 334v12M676 334v12M830 334v12M984 334v12M1138 334v12"/></g>
+  <text class="lbl" x="60" y="368">Mon</text><text class="lbl" x="214" y="368">Tue</text><text class="lbl" x="368" y="368">Wed</text><text class="lbl" x="522" y="368">Thu</text><text class="lbl" x="676" y="368">Fri</text><text class="lbl" x="830" y="368">Sat</text><text class="lbl" x="984" y="368">Sun</text>
+  <path class="ln" d="M60 340 C160 340 200 250 290 220 C380 190 430 200 522 170"/>
+  <path class="ln act" d="M522 170 C600 146 640 110 720 96"/>
+  <path class="ln pl" d="M720 96 C820 80 900 90 1000 70 C1060 58 1100 50 1140 46"/>
+  <path class="ln" d="M214 340 C300 330 330 290 400 280"/><path class="ln pl" d="M676 340 C760 334 800 300 880 286"/>
+  <circle class="dot" cx="290" cy="220" r="3"/><circle class="dot" cx="522" cy="170" r="3"/><circle class="adot" cx="720" cy="96" r="5"/><circle class="dot" cx="400" cy="280" r="3"/>
+  <text class="lbl" x="250" y="206">Blog live</text><text class="lbl" x="470" y="156">Email send</text><text class="lbl albl" x="734" y="116">Launch burn · now</text><text class="lbl" x="1040" y="40">Report</text>
+  <rect class="fn" x="660" y="60" width="140" height="280" fill="#E8830C" fill-opacity=".04"/><text class="lbl" x="668" y="76">Window</text>
+</svg>

@@ -2,7 +2,7 @@
 name: art-direction
 description: "Turn the creative direction into the brand's actual imagery — photography, illustration, iconography, and pattern & texture, and how they combine. Implies each style from the brand strategy, finds real reference images on the web that fit the mood, writes a spec tight enough that two people would converge on it, then produces assets with whatever the operator has (ChatGPT or Gemini prompt packs, a connected generator like Flora, or treated free stock), reviews every result against the spec, and files an approved library. Use while building creative-direction stylescapes, whenever a page or piece needs on-brand imagery, or when the user mentions 'art direction,' 'photo style,' 'photography direction,' 'illustration style,' 'test our illustration style,' 'icon style,' 'image style,' 'find reference photos,' 'mood images,' 'what should our photos look like,' 'generate brand images,' 'ChatGPT image prompts,' 'make our images on-brand,' 'pattern,' or 'texture.'"
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Art Direction
@@ -104,7 +104,7 @@ Read the Toolkit and take the most capable path available. Full playbooks — th
 
 - **No logo and no brand type inside generated imagery.** Generators garble both, and a baked-in mark can't be reused or updated. Set the type and place the locked logo files (`.agents/assets/logo/`) on top, in layout.
 - **Never prompt "in the style of [a living artist or photographer]."** Describe the qualities you want — light, line, palette, texture. It's both the ethical line and the better prompt.
-- **Never fabricate the real.** No generated "customers," "team members," or testimonial portraits presented as real people; no generated likeness of a real person; no generated product shots passed off as the actual product. Show the product through real screenshots or branded abstractions (see `creative-direction` → element-standards.md).
+- **Never fabricate the real.** No generated "customers," "team members," or testimonial portraits presented as real people; no generated likeness of a real person; no generated product shots passed off as the actual product; **no generated "archival" or historical photograph** — when the muse is history, use the real archive (much of it is public domain). Show the product through real screenshots or branded abstractions (see `creative-direction` → element-standards.md).
 - **Reference-only never ships.** If the right image is a reference you can't license, generate or shoot toward it with the anchors — don't use it.
 - **Rights are recorded, not assumed.** Note each tool's commercial-use terms and each stock license in the manifest.
 
@@ -135,3 +135,5 @@ Read the Toolkit and take the most capable path available. Full playbooks — th
 - `logo-design` — the locked mark placed over imagery, never generated into it; its geometry seeds the pattern
 - `web-design` / `collateral-design` — draw imagery from the approved library; route back here for anything new
 - `motion-design` — motion character for any generated video or animated asset
+
+**Worked example:** [examples/magister](https://github.com/zstvns/design-skills/tree/main/examples/magister) — a full run, including the style test with every verdict (`.agents/assets/imagery/tests/style-test.html`).

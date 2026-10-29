@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magister — Logo Identity Presentation (Mission Control) · v3 (real Quiver marks)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ground:#100D07; --panel:#1B160E; --panel2:#221B11; --panel3:#2A2114;
+  --seam:#3A3020; --bone:#ECE4D6; --dim:#B4A88F; --faint:#7C725C;
+  --accent:#E8830C; --lo:#F4A93C; --go:#5BA772; --red:#C4553B;
+  --disp:'Chakra Petch',sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --glow:0 0 0.5px rgba(244,169,60,.9), 0 0 14px rgba(232,131,12,.35);
+}
+body{-webkit-font-smoothing:antialiased; line-height:1.5; overflow-x:hidden; color:var(--bone); font-family:var(--body);
+  background:radial-gradient(1200px 700px at 82% -8%, rgba(232,131,12,.09), transparent 60%), var(--ground);}
+body::before{content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.45;
+  background-image:linear-gradient(rgba(255,220,170,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,220,170,.028) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(1200px 900px at 74% 6%, #000 40%, transparent 92%)}
+body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.3;
+  background:repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 1px, transparent 1px 3px); mix-blend-mode:multiply}
+
+.snav{position:fixed; left:14px; top:50%; transform:translateY(-50%); z-index:50; display:flex; flex-direction:column; gap:5px}
+.snav a{display:flex; gap:9px; align-items:baseline; width:176px; text-decoration:none; background:rgba(20,16,10,.82); backdrop-filter:blur(6px);
+  border:1px solid var(--seam); color:var(--dim); border-radius:5px; padding:7px 10px; font-family:var(--mono); font-size:10px; letter-spacing:.03em; transition:.14s}
+.snav a .n{color:var(--bone); font-weight:600; font-size:11px}
+.snav a:hover{border-color:#5a4a2c; color:var(--bone)}
+.snav a.on{border-color:var(--lo); box-shadow:0 0 0 1px rgba(244,169,60,.3)}
+.snav a.on .n, .snav a.on{color:var(--lo)}
+@media(max-width:1200px){.snav{display:none}}
+
+.wrap{position:relative; z-index:1; max-width:1120px; margin:0 auto; padding:30px 26px 90px 214px}
+@media(max-width:1200px){.wrap{padding-left:26px}}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--seam);border-radius:6px;padding:24px;position:relative;box-shadow:inset 0 1px 0 rgba(255,220,170,.05),0 10px 30px rgba(0,0,0,.4)}
+.corner{position:absolute;width:8px;height:8px;border:1px solid var(--seam)}
+.corner.tl{top:6px;left:6px;border-right:0;border-bottom:0}.corner.br{bottom:6px;right:6px;border-left:0;border-top:0}
+section.step{margin-bottom:22px; scroll-margin-top:20px}
+.sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;border-bottom:1px solid var(--seam);padding-bottom:12px}
+.sechead .ix{font-family:var(--disp);font-weight:700;font-size:15px;color:var(--lo);letter-spacing:.08em}
+.sechead h2{font-family:var(--disp);font-weight:600;font-size:20px;letter-spacing:.03em;text-transform:uppercase;color:var(--bone)}
+.sechead .note{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.04em;text-align:right}
+p.lede{color:var(--dim);font-size:15px;max-width:72ch;margin-bottom:16px}
+p.lede b{color:var(--bone);font-weight:600}
+.mono-note{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.02em;line-height:1.6;margin-top:12px}
+.mono-note b{color:var(--lo)}
+.tag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:2px;border:1px solid var(--seam);color:var(--dim)}
+.tag.win{color:var(--lo);border-color:rgba(244,169,60,.6)}
+.tag.reject{color:var(--red);border-color:rgba(196,85,59,.5)}
+.tag.pass{color:var(--go);border-color:rgba(91,167,114,.5)}
+.tag.weak{color:var(--lo);border-color:rgba(244,169,60,.5)}
+.tag.fail{color:var(--red);border-color:rgba(196,85,59,.6)}
+
+.mkbox{display:inline-block;line-height:0}
+.mkbox svg{display:block;width:100%;height:100%}
+
+/* wordmark (real type) */
+.wm{font-family:var(--disp);font-weight:700;letter-spacing:.02em;color:var(--bone);line-height:1;white-space:nowrap}
+.wm sup{font-size:.34em;color:var(--accent);vertical-align:super;margin-left:.05em}
+.wm.spaced{letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+.wm.cut .cutM{position:relative}
+.wm.ink{color:#131017}
+
+/* brief */
+.briefgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:820px){.briefgrid{grid-template-columns:1fr}}
+.kv{border-top:1px solid var(--seam);padding-top:10px;margin-top:10px}
+.kv:first-child{border-top:0;margin-top:0}
+.kv .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+.kv .v{font-size:14px;color:var(--bone)}.kv .v em{font-style:normal;color:var(--dim)}
+.kv .v strong{color:var(--bone);font-weight:600}
+.feel{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.feel span{font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--lo);border:1px solid rgba(244,169,60,.4);padding:5px 10px;border-radius:3px}
+
+/* muse slider */
+.musegrid{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+@media(max-width:820px){.musegrid{grid-template-columns:1fr}}
+.slider{position:relative;border:1px solid var(--seam);border-radius:6px;overflow:hidden}
+.slides{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.slide{min-width:100%;position:relative}
+.slide .simg{height:230px;background-size:cover;background-position:center}
+.slide .scap{padding:11px 13px;font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.02em;border-top:1px solid var(--seam)}
+.slide .scap b{color:var(--lo);font-weight:500}
+.grade{position:relative;filter:grayscale(1) contrast(1.06) brightness(.82)}
+.grade::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(232,131,12,.45),rgba(20,14,8,.72));mix-blend-mode:multiply}
+.grade::before{content:"";position:absolute;inset:0;z-index:1;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);opacity:.5}
+.sarrow{position:absolute;top:98px;width:30px;height:30px;border-radius:50%;border:1px solid var(--seam);background:rgba(10,8,5,.7);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;backdrop-filter:blur(4px)}
+.sarrow.prev{left:8px}.sarrow.next{right:8px}.sarrow svg{width:15px;height:15px}
+.dots{position:absolute;bottom:56px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:3}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer}
+.dots i.on{background:var(--lo);width:18px;border-radius:3px}
+.idea{display:flex;flex-direction:column;gap:14px}
+.idea .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.idea .big{font-family:var(--disp);font-weight:600;font-size:19px;line-height:1.25;color:var(--bone)}
+.idea .big b{color:var(--lo);font-weight:700}
+.idea .distil{display:flex;align-items:center;gap:16px;border:1px solid var(--seam);border-radius:6px;padding:16px;background:rgba(0,0,0,.2)}
+.idea .distil .mkbox{width:66px;height:66px;flex:0 0 auto}
+.idea .distil p{font-size:13px;color:var(--dim)}
+
+/* sketches — every option is a mark+wordmark lockup */
+.famhead{display:flex;align-items:baseline;gap:12px;margin:22px 0 12px}
+.famhead:first-of-type{margin-top:0}
+.famhead h3{font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone)}
+.famhead .d{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.skrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:820px){.skrow{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.skrow{grid-template-columns:1fr}}
+.sk{border:1px solid var(--seam);border-radius:6px;background:linear-gradient(180deg,var(--panel3),var(--panel));padding:16px 16px 12px;position:relative;display:flex;flex-direction:column;gap:12px}
+.sk .lk{display:flex;align-items:center;gap:12px;min-height:52px}
+.sk .lk .mkbox{width:46px;height:46px;flex:0 0 auto}
+.sk .lk .wm{font-size:21px}
+.sk .foot{display:flex;align-items:baseline;justify-content:space-between;gap:8px;border-top:1px solid var(--seam);padding-top:9px}
+.sk .cap{font-family:var(--mono);font-size:9.5px;color:var(--dim);line-height:1.4}
+.sk .why{font-family:var(--mono);font-size:8.5px;color:var(--faint);text-align:right;line-height:1.4;max-width:48%}
+.sk.rej{opacity:.52}
+.sk.rej .mkbox svg{filter:grayscale(1)}
+.sk.adv{border-color:rgba(244,169,60,.5);box-shadow:0 0 0 1px rgba(244,169,60,.16)}
+.sk .pin{position:absolute;top:8px;right:8px}
+.wmonly{display:flex;align-items:center;min-height:52px}
+.wmonly .wm{font-size:26px}
+.rejimg{width:auto;height:44px;object-fit:contain;background:#fff;border-radius:4px;padding:3px;filter:grayscale(1);opacity:.9}
+.wmimg{height:34px;width:auto;object-fit:contain;background:#fff;border-radius:4px;padding:2px 6px}
+
+/* top picks */
+.threegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:820px){.threegrid{grid-template-columns:1fr}}
+.cand{border:1px solid var(--seam);border-radius:6px;padding:18px;background:rgba(0,0,0,.2);display:flex;flex-direction:column;gap:12px}
+.cand.rec{border-color:var(--lo);box-shadow:0 0 0 1px rgba(244,169,60,.25),0 0 22px rgba(232,131,12,.12)}
+.cand .top{display:flex;align-items:center;justify-content:space-between}
+.cand .fam{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.cand .disp{display:flex;align-items:center;justify-content:center;gap:14px;padding:20px 0;background:radial-gradient(circle at 50% 45%,rgba(232,131,12,.06),transparent);border-radius:5px;min-height:96px}
+.cand .disp .mkbox{width:60px;height:60px}
+.cand .disp .wm{font-size:24px}
+.cand h4{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--bone)}
+.cand p{font-size:12.5px;color:var(--dim);line-height:1.55}.cand p b{color:var(--bone);font-weight:600}
+
+/* the mark hero */
+.markhero{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+@media(max-width:820px){.markhero{grid-template-columns:1fr}}
+.markstage{border:1px solid var(--seam);border-radius:8px;background:radial-gradient(circle at 50% 42%,#241c11,#120e08 72%);min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;box-shadow:inset 0 2px 24px rgba(0,0,0,.5)}
+.markstage .solo{width:132px;height:132px;filter:drop-shadow(var(--glow))}
+/* centered lockup: mark optical-centered with wordmark, generous gap */
+.lockup{display:flex;align-items:center;gap:22px}
+.lockup .mkbox{width:56px;height:56px;filter:drop-shadow(var(--glow))}
+.lockup .wm{font-size:34px;letter-spacing:.04em}
+.markwhy .kv .v{font-size:13px;color:var(--dim)}
+.markwhy .kv .v strong{color:var(--bone);font-weight:600}
+
+/* construction — golden ratio ON the mark */
+.constrgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media(max-width:820px){.constrgrid{grid-template-columns:1fr}}
+.gridstage{border:1px solid var(--seam);border-radius:8px;background:#0d0a06;padding:18px;display:flex;align-items:center;justify-content:center}
+.gridstage svg{width:100%;max-width:330px;height:auto}
+.constrlist{display:flex;flex-direction:column;gap:12px}
+.constrlist .item{border-left:2px solid var(--seam);padding-left:12px}
+.constrlist .item b{font-family:var(--disp);font-weight:600;font-size:13px;color:var(--lo);letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:3px}
+.constrlist .item span{font-size:12.5px;color:var(--dim);line-height:1.5}
+
+/* variants */
+.bwrow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:820px){.bwrow{grid-template-columns:repeat(2,1fr)}}
+.swatch{border:1px solid var(--seam);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.swatch .face{height:110px;display:flex;align-items:center;justify-content:center}
+.swatch .face .mkbox{width:60px;height:60px}
+.swatch .lab{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding:8px 10px;border-top:1px solid var(--seam);background:var(--panel)}
+.f-dark{background:#120e08}.f-white{background:#fff}.f-gray{background:#d9d3ca}.f-accent{background:#241c11}
+
+/* spacing */
+.specgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.specgrid{grid-template-columns:1fr}}
+.csbox{border:1px solid var(--seam);border-radius:6px;background:#0d0a06;padding:20px;display:flex;align-items:center;justify-content:center;min-height:170px}
+.minsize{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap;justify-content:center}
+.minsize .m{display:flex;flex-direction:column;align-items:center;gap:8px}
+.minsize .m span{font-family:var(--mono);font-size:9px;color:var(--faint)}
+
+/* implementation grid */
+.implgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:900px){.implgrid{grid-template-columns:repeat(2,1fr)}}
+.impl{border:1px solid var(--seam);border-radius:6px;overflow:hidden}
+.impl .box{height:130px;display:flex;align-items:center;justify-content:center;position:relative}
+.impl .lab{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--faint);padding:8px 10px;border-top:1px solid var(--seam);background:var(--panel);display:flex;justify-content:space-between;gap:6px}
+.favtab{display:flex;align-items:center;gap:8px;background:#241c11;border-radius:7px 7px 0 0;padding:8px 12px;border:1px solid var(--seam);border-bottom:0}
+.favtab .mkbox{width:16px;height:16px}.favtab span{font-family:var(--body);font-size:11px;color:var(--dim)}
+.avatar{width:74px;height:74px;border-radius:50%;background:#120e08;border:1px solid var(--seam);display:flex;align-items:center;justify-content:center}
+.avatar .mkbox{width:42px;height:42px}
+.appicon{width:74px;height:74px;border-radius:17px;background:linear-gradient(160deg,#2a2114,#120e08);border:1px solid var(--seam);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.5)}
+.appicon .mkbox{width:42px;height:42px}
+.onphoto{background-image:linear-gradient(rgba(10,8,5,.35),rgba(10,8,5,.55)),url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Eugene_F._Kranz_at_his_console_at_the_NASA_Mission_Control_Center.jpg/960px-Eugene_F._Kranz_at_his_console_at_the_NASA_Mission_Control_Center.jpg');background-size:cover;background-position:center}
+
+/* shelf — real competitor marks */
+.shelf{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:720px){.shelf{grid-template-columns:repeat(2,1fr)}}
+.shelfcard{border:1px solid var(--seam);border-radius:6px;background:#0d0a06;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:0 12px}
+.shelfcard.us{border-color:var(--lo);box-shadow:inset 0 0 0 1px rgba(244,169,60,.25)}
+.shelfcard img{width:34px;height:34px;object-fit:contain;border-radius:6px;background:#fff}
+.shelfcard .mkbox{width:34px;height:34px}
+.shelfcard .nm{font-family:var(--body);font-size:10px;letter-spacing:.02em;color:var(--faint)}
+.shelfcard.us .nm{font-family:var(--disp);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lo)}
+.testrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+@media(max-width:720px){.testrow{grid-template-columns:1fr}}
+.test{border-top:1px solid var(--seam);padding-top:10px}
+.test .t{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--lo);margin-bottom:5px}
+.test p{font-size:12px;color:var(--dim);line-height:1.5}
+
+/* SAD */
+.sadrow{display:grid;grid-template-columns:130px 130px 1fr;gap:16px;align-items:start;padding:16px 0;border-top:1px solid var(--seam)}
+.sadrow:first-child{border-top:0}
+@media(max-width:720px){.sadrow{grid-template-columns:1fr;gap:6px}}
+.sadrow .dim{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--bone)}
+.sadrow .dim small{display:block;font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.06em;color:var(--faint);text-transform:uppercase;margin-top:3px}
+.sadrow .ev{font-size:13px;color:var(--dim);line-height:1.55}.sadrow .ev b{color:var(--bone);font-weight:600}
+
+/* applied */
+.appliedgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+@media(max-width:900px){.appliedgrid{grid-template-columns:repeat(2,1fr)}}
+.ap{border:1px solid var(--seam);border-radius:6px;overflow:hidden;position:relative;background:var(--panel)}
+.ap .aplab{position:absolute;left:9px;bottom:8px;font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);z-index:3}
+.ap.card{grid-column:span 3;background:#F3ECDE;color:#131017;padding:20px;display:flex;flex-direction:column;justify-content:space-between;min-height:150px}
+.ap.card .cbrand{display:flex;align-items:center;gap:12px}
+.ap.card .cbrand .mkbox{width:34px;height:34px}
+.ap.card .cwm{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.04em;color:#131017}
+.ap.card .cinfo{font-family:var(--mono);font-size:9px;color:#5f574a;letter-spacing:.04em;line-height:1.7}
+.ap.sign{grid-column:span 3;min-height:150px;background:linear-gradient(160deg,#1a1913,#0c0b08);display:flex;align-items:center;justify-content:center;gap:16px}
+.ap.sign .mkbox{width:46px;height:46px;filter:drop-shadow(var(--glow))}
+.ap.sign .swm{font-family:var(--disp);font-weight:700;font-size:26px;letter-spacing:.05em;color:var(--bone)}
+.ap.bill{grid-column:span 4;min-height:170px;background:linear-gradient(120deg,#2a1a08,#120d07);display:flex;flex-direction:column;justify-content:center;padding:26px}
+.ap.bill h3{font-family:var(--disp);font-weight:700;font-size:clamp(22px,3.2vw,34px);line-height:1;color:var(--bone);max-width:16ch}
+.ap.bill h3 .lead{color:transparent;-webkit-text-stroke:1.1px var(--lo);paint-order:stroke;text-shadow:0 0 18px rgba(232,131,12,.4)}
+.ap.bill .bb{display:flex;align-items:center;gap:12px;margin-top:16px}
+.ap.bill .bb .mkbox{width:26px;height:26px;filter:drop-shadow(var(--glow))}
+.ap.bill .bb .wm{font-size:15px;letter-spacing:.05em}
+.ap.social{grid-column:span 2;min-height:170px;display:flex;flex-direction:column}
+.ap.social .cover{height:66px;background:linear-gradient(120deg,#3a2408,#120d07);position:relative}
+.ap.social .av{position:absolute;left:14px;bottom:-20px;width:46px;height:46px;border-radius:50%;background:#120e08;border:2px solid var(--panel);display:flex;align-items:center;justify-content:center}
+.ap.social .av .mkbox{width:26px;height:26px}
+.ap.social .sbody{padding:26px 14px 12px}
+.ap.social .sbody .h{font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:.03em;color:var(--bone)}
+.ap.social .sbody .hd{font-family:var(--mono);font-size:9px;color:var(--faint);margin-top:3px}
+.ap.merch{grid-column:span 3;min-height:150px;background:#161009;display:flex;align-items:center;justify-content:space-around;gap:10px}
+.ap.merch .chip{display:flex;flex-direction:column;align-items:center;gap:8px}
+.ap.merch .cap{width:70px;height:44px;border-radius:36px 36px 6px 6px;background:linear-gradient(180deg,#241c11,#120e08);border:1px solid var(--seam);display:flex;align-items:center;justify-content:center}
+.ap.merch .cap .mkbox{width:20px;height:20px}
+.ap.merch .tee{width:56px;height:56px;background:#1e1810;border:1px solid var(--seam);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.ap.merch .tee .mkbox{width:24px;height:24px}
+.ap.merch .stk{width:44px;height:44px;border-radius:9px;background:#E8830C;display:flex;align-items:center;justify-content:center}
+.ap.merch .stk .mkbox{width:26px;height:26px}
+.ap.merch small{font-family:var(--mono);font-size:8px;color:var(--faint)}
+.ap.browser{grid-column:span 3;min-height:150px;background:#0c0a06;display:flex;flex-direction:column}
+.ap.browser .chrome{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--panel);border-bottom:1px solid var(--seam)}
+.ap.browser .chrome .tl{display:flex;gap:5px}.ap.browser .chrome .tl i{width:8px;height:8px;border-radius:50%;background:var(--seam)}
+.ap.browser .chrome .fav{width:15px;height:15px;margin-left:4px}
+.ap.browser .chrome .url{font-family:var(--mono);font-size:9.5px;color:var(--faint);background:#0d0a06;border:1px solid var(--seam);border-radius:4px;padding:4px 10px;flex:1}
+.ap.browser .b2{flex:1;display:flex;align-items:center;gap:14px;padding:0 18px}
+.ap.browser .b2 .mkbox{width:32px;height:32px;filter:drop-shadow(var(--glow))}
+.ap.browser .b2 .wm{font-size:22px;letter-spacing:.04em}
+
+/* spec */
+.specblock{font-family:var(--mono);font-size:12px;line-height:1.9;color:var(--dim);background:#0d0a06;border:1px solid var(--seam);border-radius:6px;padding:20px;white-space:pre-wrap}
+.specblock .h{color:var(--lo)}.specblock b{color:var(--bone);font-weight:500}
+/* delivery */
+.varbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.varbar button{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:rgba(0,0,0,.25);border:1px solid var(--seam);border-radius:4px;padding:7px 12px;cursor:pointer;transition:.14s}
+.varbar button:hover{border-color:#5a4a2c;color:var(--bone)}
+.varbar button.on{border-color:var(--lo);color:var(--lo);box-shadow:0 0 0 1px rgba(244,169,60,.25)}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.dgrid{grid-template-columns:repeat(2,1fr)}}
+.dcard{border:1px solid var(--seam);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.dcard .dprev{height:120px;display:flex;align-items:center;justify-content:center;padding:16px;transition:background .2s}
+.dcard .dprev svg{width:100%;height:100%;display:block}
+.dcard .dname{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--bone);padding:9px 10px 2px}
+.dcard .dsub{font-family:var(--mono);font-size:8.5px;color:var(--faint);padding:0 10px 8px}
+.dcard .dbtns{display:flex;gap:6px;padding:0 10px 12px;margin-top:auto}
+.dcard .dbtns button{flex:1;font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--dim);background:rgba(0,0,0,.3);border:1px solid var(--seam);border-radius:3px;padding:6px 0;cursor:pointer;transition:.12s}
+.dcard .dbtns button:hover{border-color:var(--lo);color:var(--lo)}
+.dtree{font-family:var(--mono);font-size:11px;line-height:1.8;color:var(--dim);background:#0d0a06;border:1px solid var(--seam);border-radius:6px;padding:18px 20px;margin-top:18px;white-space:pre-wrap}
+.dtree b{color:var(--lo)}
+.foot{font-family:var(--mono);font-size:10.5px;color:var(--faint);text-align:center;margin-top:34px;letter-spacing:.08em}
+.disc{border:1px dashed rgba(244,169,60,.4);border-radius:6px;padding:14px 16px;margin-bottom:22px;background:rgba(232,131,12,.05)}
+.disc p{font-family:var(--mono);font-size:11px;color:var(--dim);line-height:1.65}.disc b{color:var(--lo)}
+</style>
+</head>
+<body>
+
+<nav class="snav">
+  <a href="#s1" class="on"><span class="n">01</span> Brief</a>
+  <a href="#s2"><span class="n">02</span> Inspiration</a>
+  <a href="#s3"><span class="n">03</span> Sketches · the ugly</a>
+  <a href="#s4"><span class="n">04</span> Shortlist + rec</a>
+  <a href="#s5"><span class="n">05</span> The mark</a>
+  <a href="#s6"><span class="n">06</span> Construction</a>
+  <a href="#s7"><span class="n">07</span> Versions</a>
+  <a href="#s8"><span class="n">08</span> Spacing &amp; size</a>
+  <a href="#s9"><span class="n">09</span> Simple · the grid</a>
+  <a href="#s10"><span class="n">10</span> Distinct · the shelf</a>
+  <a href="#s11"><span class="n">11</span> SAD verdict</a>
+  <a href="#s12"><span class="n">12</span> Applied</a>
+  <a href="#s13"><span class="n">13</span> Spec</a>
+  <a href="#s14"><span class="n">14</span> Delivery</a>
+</nav>
+
+<div class="wrap">
+
+  <div class="disc">
+    <p><b>Dogfood note.</b> Icon marks here are <b>real vectors generated by QuiverAI</b> (arrow-1.1) via its API, recolored to the system — not hand-drawn primitives. The wordmark is set in a <b>licensed face</b> (generated type garbles — see the §03 reject). A designer still refines the winning vector in Figma/Illustrator before delivery. Generative tools — <b>Quiver / Flora / GPT-Image / Figma</b> — are optional: the skill runs without them, but results are substantially better with them. Flagged per the skill's honesty rule.</p>
+  </div>
+
+  <!-- 01 BRIEF -->
+  <section class="step panel" id="s1"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">01</span><h2>The Brief</h2><span class="note">from .agents/brand.md</span></div>
+    <p class="lede">A logo is never judged in a vacuum. Pull the <b>emotional target</b>, the <b>muses</b>, and the <b>competitor set</b> first. Magister is the console the whole marketing operation is armed, monitored, and fired from — <b>Mission Control</b> is the chosen direction.</p>
+    <div class="briefgrid">
+      <div>
+        <div class="kv"><div class="k">Brand</div><div class="v">Magister — <em>AI marketing operations. One deck; every channel armed, monitored, fired on command.</em></div></div>
+        <div class="kv"><div class="k">Emotional target</div><div class="feel"><span>Command</span><span>Precision</span><span>Confidence</span></div></div>
+        <div class="kv"><div class="k">Muses</div><div class="v"><em>Apollo mission control · Teenage Engineering OP-1 (machined dials, amber readout) · the launch trajectory.</em></div></div>
+      </div>
+      <div>
+        <div class="kv"><div class="k">Competitor set</div><div class="v"><em>Jasper · Copy.ai · Writer · HubSpot · Mutiny · AdCreative.ai (see §10, real marks).</em></div></div>
+        <div class="kv"><div class="k">Type license</div><div class="v">Chakra Petch (OFL) · IBM Plex Sans (OFL) · JetBrains Mono (OFL). <strong>All commercially licensed.</strong></div></div>
+        <div class="kv"><div class="k">Name to set</div><div class="v"><strong>Magister</strong> — the wordmark is explored in full, not just the initial.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 INSPIRATION -->
+  <section class="step panel" id="s2"><span class="corner tl"></span>
+    <div class="sechead"><span class="ix">02</span><h2>Inspiration</h2><span class="note">real sources → one distilled idea</span></div>
+    <div class="musegrid">
+      <div class="slider" data-slider>
+        <div class="slides">
+          <div class="slide"><div class="simg grade" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Eugene_F._Kranz_at_his_console_at_the_NASA_Mission_Control_Center.jpg/960px-Eugene_F._Kranz_at_his_console_at_the_NASA_Mission_Control_Center.jpg')"></div><div class="scap"><b>Apollo Mission Control (NASA, PD)</b> — banks of consoles → the single command point</div></div>
+          <div class="slide"><div class="simg grade" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/The_OP-1_by_Teenage_Engineering.jpg/960px-The_OP-1_by_Teenage_Engineering.jpg')"></div><div class="scap"><b>Teenage Engineering OP-1 (CC BY-SA)</b> — the machined dial → the mark's ring &amp; pointer</div></div>
+          <div class="slide"><div class="simg grade" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Apollo_11_Launch2.jpg/960px-Apollo_11_Launch2.jpg')"></div><div class="scap"><b>Apollo 11 launch (NASA, PD)</b> — the trajectory → the pointer aimed up-and-to-the-right</div></div>
+        </div>
+        <button class="sarrow prev" data-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="sarrow next" data-next><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dots" data-dots></div>
+      </div>
+      <div class="idea">
+        <div class="lab">The thematic idea (distill a bigger concept into one form)</div>
+        <div class="big">One operator, <b>one command point</b>, running the whole operation — the machined dial you set and fire from.</div>
+        <div class="distil">
+          <span class="mkbox" data-mark="cmd" data-variant="color"></span>
+          <p>The deck (ring) · the amber pointer <b>aimed up-and-to-the-right</b> = armed and climbing. Amber is the one reserved color. Every element traces to a muse and the feeling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SKETCHES -->
+  <section class="step panel" id="s3"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">03</span><h2>Sketches — walk the ugly</h2><span class="note">every option shown as a mark + "Magister" lockup</span></div>
+    <p class="lede">Sketch broadly and show the range. <b>Each option is shown with the wordmark "Magister" beside it</b> so orientation reads. You don't pick one per family — you pick the ones that work. <span style="color:var(--lo)">In a real run these are generated in Figma / FigJam / Quiver or an image model; tiles here are stand-ins.</span></p>
+
+    <div class="famhead"><h3>Typographic — the wordmark "Magister"</h3><span class="d">— the full word, its letterforms &amp; expression</span></div>
+    <div class="skrow">
+      <div class="sk adv"><span class="pin"><span class="tag win">advances</span></span><div class="wmonly"><span class="wm">Magister</span></div><div class="foot"><span class="cap">Clean cut · Chakra Petch 700</span><span class="why">confident, even color</span></div></div>
+      <div class="sk adv"><span class="pin"><span class="tag win">advances</span></span><div class="wmonly"><span class="wm">Magister<sup>▪</sup></span></div><div class="foot"><span class="cap">One ownable detail — the command index</span><span class="why">à la one-sparkle</span></div></div>
+      <div class="sk"><div class="wmonly"><span class="wm spaced">Magister</span></div><div class="foot"><span class="cap">Spaced caps</span><span class="why">even tracking or bust</span></div></div>
+      <div class="sk"><div class="wmonly"><span class="wm" style="font-weight:500;letter-spacing:.16em">MAGISTER</span></div><div class="foot"><span class="cap">Lighter, wider</span><span class="why">reads calmer, less command</span></div></div>
+      <div class="sk rej"><div class="wmonly"><img class="wmimg" src="img/wordmark2.svg.png" alt="generated wordmark, garbled"></div><div class="foot"><span class="cap">Generated wordmark (Quiver)</span><span class="why">type garbles — set in a licensed face, don't generate</span></div></div>
+      <div class="sk"><div class="lk"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span class="wm" style="font-size:19px">Magister</span></div><div class="foot"><span class="cap">Wordmark + mark lockup</span><span class="why">how it actually rides</span></div></div>
+    </div>
+
+    <div class="famhead"><h3>Pictorial</h3><span class="d">— a stylized representation (Apple-style)</span></div>
+    <div class="skrow">
+      <div class="sk adv"><span class="pin"><span class="tag win">advances</span></span><div class="lk"><span class="mkbox" data-mark="aperture" data-variant="color"></span><span class="wm" style="font-size:19px">Magister</span></div><div class="foot"><span class="cap">Aperture / iris — "open the channel"</span><span class="why">carried into abstract too</span></div></div>
+      <div class="sk rej"><div class="lk"><img class="rejimg" src="img/dial.svg.png" alt="console dial"><span class="wm" style="font-size:19px">Magister</span></div><div class="foot"><span class="cap">Console dial (Quiver)</span><span class="why">reads as a clock — too literal</span></div></div>
+    </div>
+
+    <div class="famhead"><h3>Abstract</h3><span class="d">— evokes the feeling without depicting (Nike-style)</span></div>
+    <div class="skrow">
+      <div class="sk adv"><span class="pin"><span class="tag win">advances</span></span><div class="lk"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span class="wm" style="font-size:19px">Magister</span></div><div class="foot"><span class="cap">Command point — ring + armed pointer</span><span class="why">dial distilled</span></div></div>
+      <div class="sk adv"><span class="pin"><span class="tag win">advances</span></span><div class="lk"><span class="mkbox" data-mark="aperture" data-variant="color"></span><span class="wm" style="font-size:19px">Magister</span></div><div class="foot"><span class="cap">Aperture, abstracted</span><span class="why">same idea, both families</span></div></div>
+      <div class="sk adv"><span class="pin"><span class="tag win">advances</span></span><div class="lk"><span class="mkbox" data-mark="trajectory" data-variant="color"></span><span class="wm" style="font-size:19px">Magister</span></div><div class="foot"><span class="cap">Trajectory — the launch arc</span><span class="why">climbing metric, abstracted</span></div></div>
+    </div>
+    <div class="mono-note">// Icon marks generated with <b>QuiverAI (arrow-1.1)</b> — real vectors, not hand-drawn. What advances: two wordmark cuts (real licensed type), the aperture (both families), the command point, the trajectory. Rejects shown too (the clock-dial; the garbled generated wordmark). Not one-per-family — the best few.</div>
+  </section>
+
+  <!-- 04 SHORTLIST -->
+  <section class="step panel" id="s4"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">04</span><h2>Shortlist + my recommendation</h2><span class="note">present the best · give an opinion</span></div>
+    <p class="lede">The three worth resolving — each shown as its real lockup with "Magister." All hold in one value and survive the favicon; the tiebreaker is <b>distinct + traceable</b>.</p>
+    <div class="threegrid">
+      <div class="cand rec">
+        <div class="top"><span class="fam">Abstract</span><span class="tag win">recommended</span></div>
+        <div class="disp"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span class="wm">Magister</span></div>
+        <h4>A · The Command Point</h4>
+        <p>The machined dial distilled to <b>ring + armed pointer</b>. Traces to the muse (the deck you command) and the feeling. Not a swoosh, shield, or rocket — <b>ownable in the category</b>.</p>
+      </div>
+      <div class="cand">
+        <div class="top"><span class="fam">Abstract / pictorial</span><span class="tag">alt</span></div>
+        <div class="disp"><span class="mkbox" data-mark="aperture" data-variant="color"></span><span class="wm">Magister</span></div>
+        <h4>B · The Aperture</h4>
+        <p>Four iris blades + core = "open every channel." Distinct and precise, but <b>reads a shade "camera/lens"</b> — slightly off command.</p>
+      </div>
+      <div class="cand">
+        <div class="top"><span class="fam">Typographic</span><span class="tag">alt</span></div>
+        <div class="disp"><span class="wm" style="font-size:28px">Magister<sup>▪</sup></span></div>
+        <h4>C · Wordmark + index</h4>
+        <p>The full wordmark carried by <b>one ownable detail</b> — the amber command index. Strong and safe; leans on the detail to feel distinct.</p>
+      </div>
+    </div>
+    <div class="mono-note">// Recommendation: <b>A, the Command Point</b> — with the C wordmark as its logotype. If the client hesitates, resolve in black &amp; white first (§07) before sign-off.</div>
+  </section>
+
+  <!-- 05 THE MARK -->
+  <section class="step panel" id="s5"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">05</span><h2>The mark</h2><span class="note">centered lockup · no tagline</span></div>
+    <div class="markhero">
+      <div class="markstage">
+        <span class="mkbox solo" data-mark="cmd" data-variant="color"></span>
+        <div class="lockup"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span class="wm">Magister</span></div>
+      </div>
+      <div class="markwhy">
+        <div class="kv"><div class="k">One idea, in a phrase</div><div class="v"><strong>The command point.</strong> One operator, one dial, the whole operation.</div></div>
+        <div class="kv"><div class="k">Lockup</div><div class="v">Mark <strong>optically centered</strong> with the wordmark; the gap = the mark's radius. <strong>No tagline</strong> — the wordmark stands alone.</div></div>
+        <div class="kv"><div class="k">Color</div><div class="v">One confident color — <strong>monochrome</strong>: bone on dark, ink on light. Amber is its brand-forward one-color treatment. No second accent.</div></div>
+        <div class="kv"><div class="k">How it was made</div><div class="v">A <strong>real vector, generated by QuiverAI</strong> (arrow-1.1), then recolored. A designer still refines curve tension + the cap-height-to-mark ratio in Illustrator/Figma before delivery — but this is a true vector, not a hand-drawn sketch.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 CONSTRUCTION -->
+  <section class="step panel" id="s6"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">06</span><h2>Construction</h2><span class="note">golden ratio applied to the mark itself</span></div>
+    <div class="constrgrid">
+      <div class="gridstage" style="position:relative">
+        <svg viewBox="0 0 240 240" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:88%;height:auto;opacity:.55" aria-hidden="true">
+          <defs><style>.g{stroke:#3A3020;stroke-width:1;fill:none}.gl{stroke:#5a4a2c;stroke-width:1;fill:none;stroke-dasharray:3 4}.gt{fill:#7C725C;font-family:'JetBrains Mono';font-size:8px}</style></defs>
+          <circle cx="120" cy="120" r="86" class="gl"/><circle cx="120" cy="120" r="53.2" class="gl"/><circle cx="120" cy="120" r="32.9" class="gl"/>
+          <line x1="120" y1="18" x2="120" y2="222" class="gl"/><line x1="18" y1="120" x2="222" y2="120" class="gl"/>
+          <rect x="34" y="34" width="172" height="172" class="g"/>
+          <text x="120" y="30" text-anchor="middle" class="gt">golden-ratio guides · 86 : 53.2 : 32.9 = 1.618 : 1</text>
+        </svg>
+        <span class="mkbox" data-mark="cmd" data-variant="color" style="width:190px;height:190px;position:relative;filter:drop-shadow(var(--glow))"></span>
+      </div>
+      <div class="constrlist">
+        <div class="item"><b>Generated, then checked against the bar</b><span>QuiverAI produced a real, unified single-path vector. The guides behind it are the <em>bar a designer checks it against</em> — golden-ratio harmony (1.618 steps), one clean construction.</span></div>
+        <div class="item"><b>It's a true vector</b><span>Editable paths, not a raster or a hand-typed &lt;path&gt;. Drops straight into Figma/Illustrator for refinement — the thing agent-drawn SVG never gave us.</span></div>
+        <div class="item"><b>Trust the eye</b><span>Optical &gt; numeric: the designer nudges the needle so it reads aimed, and balances the ring weight by eye — math gets close, the eye finalizes.</span></div>
+        <div class="item"><b>Unify &amp; deliver</b><span>Confirm one merged path per color, outline any strokes, then export the variant set via Logo Package Express.</span></div>
+        <div class="item"><b>Still to resolve</b><span>Needle taper &amp; terminal, hub-to-ring weight, and the cap-height-to-mark lockup ratio — the refinement a designer closes before delivery.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 VERSIONS -->
+  <section class="step panel" id="s7"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">07</span><h2>Versions</h2><span class="note">B&amp;W first · one-color · reversed</span></div>
+    <p class="lede">Resolve in <b>one value before color</b>. The pointer's <b>position</b> carries the meaning, not its hue — so it survives with all color removed. A <b>one-color orange</b> version is the workhorse for stamps, merch, and single-ink print.</p>
+    <div class="bwrow">
+      <div class="swatch"><div class="face f-white"><span class="mkbox" data-mark="cmd" data-variant="bw"></span></div><div class="lab">Black / on white</div></div>
+      <div class="swatch"><div class="face f-dark"><span class="mkbox" data-mark="cmd" data-variant="white"></span></div><div class="lab">White / reversed</div></div>
+      <div class="swatch"><div class="face f-white"><span class="mkbox" data-mark="cmd" data-variant="orange"></span></div><div class="lab">One-color · orange</div></div>
+      <div class="swatch"><div class="face f-gray"><span class="mkbox" data-mark="cmd" data-variant="gray"></span></div><div class="lab">Grayscale</div></div>
+      <div class="swatch"><div class="face f-dark"><span class="mkbox" data-mark="cmd" data-variant="color"></span></div><div class="lab">Full color / on ground</div></div>
+    </div>
+    <div class="mono-note">// Passes B&amp;W: recognizable with hue removed. One-color orange holds because the form, not the color contrast, does the work.</div>
+  </section>
+
+  <!-- 08 SPACING -->
+  <section class="step panel" id="s8"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">08</span><h2>Spacing &amp; size</h2><span class="note">clear space = x · centered lockup</span></div>
+    <div class="specgrid">
+      <div>
+        <div class="famhead" style="margin-top:0"><h3>Clear space &amp; alignment</h3></div>
+        <div class="csbox">
+          <div style="display:inline-flex;align-items:center;gap:24px;padding:28px 34px;border:1px dashed #5a4a2c;border-radius:4px">
+            <span class="mkbox" data-mark="cmd" data-variant="color" style="width:56px;height:56px"></span>
+            <span class="wm" style="font-size:34px">Magister</span>
+          </div>
+        </div>
+        <div class="mono-note">// Wordmark cap-height matched to mark height; optical centers aligned; gap = x. Wordmark rises to the guide line — no dead air.</div>
+      </div>
+      <div>
+        <div class="famhead" style="margin-top:0"><h3>Minimum size</h3></div>
+        <div class="csbox">
+          <div class="minsize">
+            <div class="m"><span class="mkbox" data-mark="cmd" data-variant="color" style="width:16px;height:16px"></span><span>16px (min)</span></div>
+            <div class="m"><span class="mkbox" data-mark="cmd" data-variant="color" style="width:24px;height:24px"></span><span>24px</span></div>
+            <div class="m"><span class="mkbox" data-mark="cmd" data-variant="color" style="width:40px;height:40px"></span><span>40px</span></div>
+            <div class="m"><span class="mkbox" data-mark="cmd" data-variant="color" style="width:64px;height:64px"></span><span>64px+</span></div>
+          </div>
+        </div>
+        <div class="mono-note">// Mark-only below ~120px lockup width — the wordmark tracking collapses before the mark does.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 SIMPLE GRID -->
+  <section class="step panel" id="s9"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">09</span><h2>Simple — the implementation grid</h2><span class="note">one construction, every context</span></div>
+    <p class="lede">Simple is an <b>observation across the set</b>, not a property of one file. Same mark, every context — no second drawing to survive the small sizes.</p>
+    <div class="implgrid">
+      <div class="impl"><div class="box f-dark"><div class="favtab"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span>Magister — Mission</span></div></div><div class="lab"><span>Browser tab · 16px</span><span class="tag pass">holds</span></div></div>
+      <div class="impl"><div class="box f-dark"><div class="avatar"><span class="mkbox" data-mark="cmd" data-variant="color"></span></div></div><div class="lab"><span>Social avatar · circle</span><span class="tag pass">holds</span></div></div>
+      <div class="impl"><div class="box f-dark"><div class="appicon"><span class="mkbox" data-mark="cmd" data-variant="color"></span></div></div><div class="lab"><span>App icon · rounded</span><span class="tag pass">holds</span></div></div>
+      <div class="impl"><div class="box f-white"><span class="mkbox" data-mark="cmd" data-variant="bw" style="width:58px;height:58px"></span></div><div class="lab"><span>1-color / on white</span><span class="tag pass">holds</span></div></div>
+      <div class="impl"><div class="box f-dark"><span class="mkbox" data-mark="cmd" data-variant="white" style="width:58px;height:58px"></span></div><div class="lab"><span>Reversed / on dark</span><span class="tag pass">holds</span></div></div>
+      <div class="impl"><div class="box f-gray"><span class="mkbox" data-mark="cmd" data-variant="gray" style="width:58px;height:58px"></span></div><div class="lab"><span>Grayscale / fax</span><span class="tag pass">holds</span></div></div>
+      <div class="impl"><div class="box onphoto"><span class="mkbox" data-mark="cmd" data-variant="white" style="width:54px;height:54px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.8))"></span></div><div class="lab"><span>Over a busy photo</span><span class="tag weak">needs knockout</span></div></div>
+      <div class="impl"><div class="box f-dark"><span class="mkbox" data-mark="cmd" data-variant="color" style="width:88px;height:88px;filter:drop-shadow(var(--glow))"></span></div><div class="lab"><span>Large / hero</span><span class="tag pass">holds</span></div></div>
+    </div>
+  </section>
+
+  <!-- 10 SHELF -->
+  <section class="step panel" id="s10"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">10</span><h2>Distinct — on the shelf</h2><span class="note">the real competitor marks</span></div>
+    <p class="lede">Distinctiveness only exists relative to the field. Here are the <b>actual competitor marks</b> beside ours — run the tests against reality, not stand-ins.</p>
+    <div class="shelf">
+      <div class="shelfcard"><img src="https://www.google.com/s2/favicons?domain=jasper.ai&sz=128" alt="Jasper"><span class="nm">Jasper</span></div>
+      <div class="shelfcard"><img src="https://www.google.com/s2/favicons?domain=copy.ai&sz=128" alt="Copy.ai"><span class="nm">Copy.ai</span></div>
+      <div class="shelfcard"><img src="https://www.google.com/s2/favicons?domain=writer.com&sz=128" alt="Writer"><span class="nm">Writer</span></div>
+      <div class="shelfcard"><img src="https://www.google.com/s2/favicons?domain=hubspot.com&sz=128" alt="HubSpot"><span class="nm">HubSpot</span></div>
+      <div class="shelfcard"><img src="https://www.google.com/s2/favicons?domain=mutinyhq.com&sz=128" alt="Mutiny"><span class="nm">Mutiny</span></div>
+      <div class="shelfcard us"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span class="nm">Magister</span></div>
+    </div>
+    <div class="testrow">
+      <div class="test"><div class="t">Cover-the-name</div><p>Mark alone: the ring + aimed pointer reads as <b>ours</b> — the field is soft glyphs and sprockets. Passes.</p></div>
+      <div class="test"><div class="t">Disappearance</div><p>In the lineup it's the only <b>instrument</b> — it doesn't dissolve into the rounded-tech set. Passes.</p></div>
+      <div class="test"><div class="t">Resemblance</div><p>The rejected ascending-triangle (§03) collided with Vercel; ring+pointer echoes no famous mark. Clean — verify vs. these real marks at full res.</p></div>
+    </div>
+    <div class="mono-note">// Real marks pulled live (favicon service). For final sign-off, drop in full-resolution vector logos.</div>
+  </section>
+
+  <!-- 11 SAD -->
+  <section class="step panel" id="s11"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">11</span><h2>SAD verdict</h2><span class="note">per dimension · with evidence · not averaged</span></div>
+    <div class="sadrow"><div class="dim">Simple<small>the grid, §09</small></div><div><span class="tag pass">pass</span></div><div class="ev">One construction holds 16px → hero, 1-color, reversed, grayscale, one-color orange. <b>Only caveat:</b> over a busy photo it needs a knockout — noted, not fatal.</div></div>
+    <div class="sadrow"><div class="dim">Appropriate<small>the feeling, §01</small></div><div><span class="tag pass">pass</span></div><div class="ev">The machined ring + amber pointer produces <b>command, precision, confidence</b> for an operator audience — armed and climbing, not playful, not generic-corporate.</div></div>
+    <div class="sadrow"><div class="dim">Distinct<small>the shelf, §10</small></div><div><span class="tag weak">weak → pending</span></div><div class="ev">Distinct vs. the category (an instrument among glyphs) and free of a famous-mark collision. <b>Held at "weak" until</b> the shelf is verified against full-res real logos <b>and</b> the rough-cut construction is resolved so the distinctiveness is real, not implied by a sketch.</div></div>
+    <div class="mono-note">// SAD is <b>not averaged</b> — one fail sinks the mark. Nothing fails; Distinct is honestly "weak-pending" until a resolved vector + the real-logo shelf confirm it. That is the gate before delivery.</div>
+  </section>
+
+  <!-- 12 APPLIED -->
+  <section class="step panel" id="s12"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">12</span><h2>Applied</h2><span class="note">the case is made in context</span></div>
+    <p class="lede">Sign-off is won here: the mark <b>applied</b> — small things and big things — with the objective case that it stands out in this market.</p>
+    <div class="appliedgrid">
+      <div class="ap card">
+        <div class="cbrand"><span class="mkbox" data-mark="cmd" data-variant="ink"></span><span class="cwm">Magister</span></div>
+        <div class="cinfo">AVA REYES · MISSION DIRECTOR<br>ava@magister.io · +1 415 555 0142<br>magister.io</div>
+      </div>
+      <div class="ap sign"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span class="swm">Magister</span><span class="aplab">Signage</span></div>
+      <div class="ap bill">
+        <h3>Run it like <span class="lead">mission control.</span></h3>
+        <div class="bb"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span class="wm">Magister</span></div>
+        <span class="aplab">Billboard</span>
+      </div>
+      <div class="ap social">
+        <div class="cover"><div class="av"><span class="mkbox" data-mark="cmd" data-variant="color"></span></div></div>
+        <div class="sbody"><div class="h">Magister</div><div class="hd">@magister</div></div>
+        <span class="aplab">Social profile</span>
+      </div>
+      <div class="ap merch">
+        <div class="chip"><div class="cap"><span class="mkbox" data-mark="cmd" data-variant="color"></span></div><small>cap</small></div>
+        <div class="chip"><div class="tee"><span class="mkbox" data-mark="cmd" data-variant="white"></span></div><small>tee</small></div>
+        <div class="chip"><div class="stk"><span class="mkbox" data-mark="cmd" data-variant="bw"></span></div><small>sticker</small></div>
+        <span class="aplab">Ephemera</span>
+      </div>
+      <div class="ap browser">
+        <div class="chrome"><div class="tl"><i></i><i></i><i></i></div><span class="mkbox fav" data-mark="cmd" data-variant="color"></span><div class="url">app.magister.io/mission</div></div>
+        <div class="b2"><span class="mkbox" data-mark="cmd" data-variant="color"></span><span class="wm">Magister</span></div>
+        <span class="aplab">Product nav + favicon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 SPEC -->
+  <section class="step panel" id="s13"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">13</span><h2>Spec → .agents/brand.md</h2><span class="note">what gets written back</span></div>
+    <div class="specblock"><span class="h">## Logo</span>
+<b>Mark:</b>       The Command Point — machined ring + amber pointer, aimed up-and-right (abstract). One idea: one operator, one dial, the whole operation.
+<b>Lockup:</b>     Horizontal — mark + "Magister" (Chakra Petch 700), optically centered, gap = mark radius. <b>No tagline.</b> No vertical stack (not needed).
+<b>Color:</b>      Ring/hub = Bone #ECE4D6 (Ink #131017 on light). Pointer = Action amber #E8830C — the one reserved color, used once.
+<b>Versions:</b>   full-color · black · white · grayscale · <b>one-color orange</b> · inverted (RGB / Apple RGB). Export via Logo Package Express.
+<b>Clear space:</b> ≥ x on all sides, x = ring radius. Wordmark rises to the guide line.
+<b>Min size:</b>   16px mark (favicon floor); mark-only below ~120px lockup width.
+<b>App icon:</b>   separate delivery — rounded + square, 240px @2x, ±name.
+<b>Misuse:</b>     don't recolor the pointer; no second accent; no tagline in the lockup; no simpler redraw for small sizes; never a system font for the wordmark.
+<span class="h">### SAD verdict</span>  Simple <b>pass</b> · Appropriate <b>pass</b> · Distinct <b>weak-pending</b> (resolve vector + verify real-logo shelf).
+<span class="h">### Status</span>       Rough cut — needs a resolved vector pass (Figma / Illustrator) before delivery.</div>
+  </section>
+
+  <!-- 14 DELIVERY -->
+  <section class="step panel" id="s14"><span class="corner tl"></span><span class="corner br"></span>
+    <div class="sechead"><span class="ix">14</span><h2>Delivery — download the files</h2><span class="note">on sign-off · the client houses these</span></div>
+    <p class="lede">On finalize, hand over a <b>downloadable, ordered package</b>. Pick a color variant, then download each asset in <b>SVG / PNG / JPEG</b>. Order: full color first, then the full mark, the icon, the social avatar, the app icon.</p>
+    <div class="varbar" id="varbar">
+      <button data-v="full-color" class="on">Full color</button>
+      <button data-v="inverse">Inverse</button>
+      <button data-v="white">All white</button>
+      <button data-v="black">All black</button>
+      <button data-v="grayscale">Grayscale</button>
+    </div>
+    <div class="dgrid">
+      <div class="dcard"><div class="dprev" data-asset="lockup"></div><div class="dname">Full logo</div><div class="dsub">icon + logotype</div><div class="dbtns"><button data-dl="lockup" data-fmt="svg">SVG</button><button data-dl="lockup" data-fmt="png">PNG</button><button data-dl="lockup" data-fmt="jpg">JPG</button></div></div>
+      <div class="dcard"><div class="dprev" data-asset="icon"></div><div class="dname">Icon only</div><div class="dsub">the mark, standalone</div><div class="dbtns"><button data-dl="icon" data-fmt="svg">SVG</button><button data-dl="icon" data-fmt="png">PNG</button><button data-dl="icon" data-fmt="jpg">JPG</button></div></div>
+      <div class="dcard"><div class="dprev" data-asset="avatar"></div><div class="dname">Social avatar</div><div class="dsub">square, icon centered</div><div class="dbtns"><button data-dl="avatar" data-fmt="svg">SVG</button><button data-dl="avatar" data-fmt="png">PNG</button><button data-dl="avatar" data-fmt="jpg">JPG</button></div></div>
+      <div class="dcard"><div class="dprev" data-asset="app"></div><div class="dname">App icon</div><div class="dsub">rounded square</div><div class="dbtns"><button data-dl="app" data-fmt="svg">SVG</button><button data-dl="app" data-fmt="png">PNG</button><button data-dl="app" data-fmt="jpg">JPG</button></div></div>
+    </div>
+    <div class="dtree"><b>Magister — Logo/</b>
+  <b>01 · full-color/</b>   magister-logo · magister-icon · avatar · app-icon   → svg · png · jpg
+  <b>02 · inverse/</b>      (icon keeps amber, wordmark flips to white — for dark)
+  <b>03 · white/</b>        all-white
+  <b>04 · black/</b>        all-black
+  <b>05 · grayscale/</b>    grayscale
+// Each color variant folder holds all four assets in all three formats. App icon also delivered ± name, rounded + square (separate delivery). Real deliveries run through Logo Package Express; this is the same ordered set, downloadable here.</div>
+  </section>
+
+  <div class="foot">MAGISTER · LOGO IDENTITY PRESENTATION · MISSION CONTROL · DOGFOOD v3 · real marks by QuiverAI · logo-design 1.8.0</div>
+</div>
+
+<script>
+// ---- mark builder — REAL vectors generated by QuiverAI (arrow-1.1), recolored via fill ----
+var MARKS = {
+  cmd: {vb:"11 -7.5 64 64", inner:'<path d="m48 51.9c7-1 13.1-4.3 17.3-9.2 3.1-3.5 5.3-7.8 6.2-12.4 0.5-2.8 0.7-5.7 0.3-9.4-0.4-3.9-2.4-9.1-6.2-13.9l-3.2 3.8c2.9 4 4.7 8.9 4.7 13.9 0 10.6-7.2 18.9-15.2 21.9-2.7 1.1-5.7 1.7-8.9 1.7-6.3 0-11.2-2.2-15-5.3-4.5-3.7-8.9-9.9-8.9-18.3 0-11.4 9.3-23.5 21.7-24.1 1.2-0.6 7.4-0.9 13.2 2 1.3 0.6 2.5 1.3 3.5 2.1l3.1-2.4c-1.3-1.1-3.5-2.3-5-3-2.8-1.3-5.4-2.2-8.6-2.6-2.1-0.2-5.8-0.4-9.4 0.3-1.9 0.4-3.7 1-5.4 1.7-3.3 1.5-6.4 3.6-9.4 6.7-1.5 1.6-2.9 3.5-4.1 5.6-1.1 2.1-2.2 4.6-2.9 7.7-0.2 1.1-0.6 3.3-0.6 5.8 0 2 0.2 4.1 0.7 6.3 0.9 3.7 2.6 7.1 4.8 10 5 6.5 12.1 11.3 22.6 11.3 1.2 0.1 2.9 0 4.7-0.2zm-4.1-31.4c-0.3-0.1-0.6-0.1-0.9-0.1-1.9 0-3.8 1.6-3.8 3.8 0 1.9 1.6 3.7 3.7 3.7h0.2c1.9 0 3.8-1.5 3.8-3.7 0-0.3 0-0.6-0.1-1 3.4-3.7 12.7-14.2 16.6-18.9 0.4-0.7-4.5 3-19.5 16.2z"/>'},
+  aperture: {vb:"34 76 122 118", inner:'<path d="m79.4 114.5h-37.2c6.6-13.5 20.5-29.5 43.2-34.5l3.3-0.4 16.5 31.8 0.3 0.2h-62.1"/><path d="m138.3 101.4c-8.3-10.4-21.2-20.4-36.6-21.7-2.7-0.3-5.4-0.4-9.2-0.3l26.8 53.2 19-31.2z"/><path d="m96.5 190.6-27.3-53.2-19.5 31c8.1 10.6 22.3 22.3 44.3 22.3 2.5 0 2.6 0 2.5-0.1z"/><path d="m141.3 103.9-32.1 51.6h37c2.1-5.2 3.3-11.6 3.3-20-0.1-9.9-3.2-23.6-8.8-31.5l0.6-0.1z"/><path d="m89.4 158.6h-5.8l15.9 31.6c13-1.3 23.2-5.7 31.6-13 5.8-5 10.6-11.4 13.4-18.6h-55.1z"/><path d="m79.3 114.6h-37.1c-2.3 5.9-3.8 12.2-3.8 20.8 0 9.7 2.8 20.1 9.4 30.4l31.5-51.2z"/>'},
+  trajectory: {vb:"4.9 11.7 53.8 66", inner:'<path d="m57 19c-2 0.1-3.1 1.6-3.1 3.2-3.9 0.7-15.2 2.8-25.7 10.2-4.2 2.9-8.2 6.5-11.8 10.6-3.8 4.3-7 9-9.6 14-1.8 3.6-3.6 8.2-4.7 12.9l0.1 0.3c0.3 0.3 1 0.4 1.1-0.1v-0.1c1.1-4.2 3-9.2 4.9-13 2.9-5.8 6.6-11.2 12.1-16.6 1.3-1.3 2.7-2.5 3.9-3.6 4.9-4.2 12.3-8.9 20.3-11.5 2.3-0.8 6.2-1.8 9.4-2.3 0.4 1.4 1.6 2.6 3.4 2.6 2 0 3.2-1.6 3.2-3.2 0-1.8-1.5-3.4-3.5-3.4z"/>'}
+};
+var VAR = { color:'#ECE4D6', bw:'#131017', white:'#ffffff', orange:'#E8830C', gray:'#8c8378', ink:'#131017' };
+document.querySelectorAll('[data-mark]').forEach(function(el){
+  var m=MARKS[el.getAttribute('data-mark')]; if(!m) return;
+  var c=VAR[el.getAttribute('data-variant')||'color'];
+  el.innerHTML='<svg viewBox="'+m.vb+'" style="width:100%;height:100%;display:block;fill:'+c+'">'+m.inner+'</svg>';
+});
+// ---- muse slider ----
+document.querySelectorAll('[data-slider]').forEach(function(sl){
+  var track=sl.querySelector('.slides'),slides=sl.querySelectorAll('.slide'),dots=sl.querySelector('[data-dots]'),i=0;
+  slides.forEach(function(_,k){var d=document.createElement('i');if(k===0)d.className='on';d.addEventListener('click',function(){go(k);});dots.appendChild(d);});
+  function go(k){i=(k+slides.length)%slides.length;track.style.transform='translateX(-'+(i*100)+'%)';dots.querySelectorAll('i').forEach(function(x,j){x.classList.toggle('on',j===i);});}
+  sl.querySelector('[data-prev]').addEventListener('click',function(){go(i-1);});
+  sl.querySelector('[data-next]').addEventListener('click',function(){go(i+1);});
+});
+// ---- section nav active state ----
+var links=[].slice.call(document.querySelectorAll('.snav a')), secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+function onscroll(){var y=window.scrollY+120,act=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)act=i;});links.forEach(function(a,i){a.classList.toggle('on',i===act);});}
+window.addEventListener('scroll',onscroll,{passive:true}); onscroll();
+
+// ---- delivery / download engine ----
+(function(){
+  var ICON = MARKS.cmd; // {vb, inner}
+  // "Magister" OUTLINED from Chakra Petch 700 (OFL) via fonttools — portable, no font dependency
+  var WM = {w:4276, h:1300, asc:992, inner:'<path transform="translate(0 0)" d="M65 700H191L399 248H401L610 700H736V0H605V426H603L442 98H358L198 426H196V0H65Z"/><path transform="translate(813 0)" d="M45 92V206L137 298H390V361L359 392H209L179 361V333H49V390L156 498H413L520 390V0H401V71L327 0H137ZM318 102 390 171V204H202L175 177V127L200 102Z"/><path transform="translate(1400 0)" d="M542 498V-114L434 -221H163L70 -129V-61H202V-91L221 -111H376L410 -76V65L341 0H153L50 104V394L153 498H349L420 430V498ZM410 325 342 386H220L182 347V151L220 112H329L410 195Z"/><path transform="translate(2014 0)" d="M55 602V666L101 712H171L217 666V602L171 556H101ZM70 498H202V0H70Z"/><path transform="translate(2298 0)" d="M35 98V159H165V131L187 108H349L371 131V174L348 198H133L39 293V402L134 498H394L491 400V339H361V367L339 390H191L169 367V328L192 304H407L501 209V96L406 0H132Z"/><path transform="translate(2846 0)" d="M105 102V387H15V498H107V660H237V498H389V386H237V145L271 112H389V0H208Z"/><path transform="translate(3272 0)" d="M50 102V394L153 498H434L538 394V205H182V141L214 108H377L407 139V165H537V100L438 0H151ZM406 297V355L372 390H216L182 355V297Z"/><path transform="translate(3867 0)" d="M60 498H182V415L262 498H404V386H289L192 286V0H60Z"/>'};
+  function wordmarkG(fill){ return '<svg x="98" y="0" width="360" height="100" viewBox="0 0 '+WM.w+' '+WM.h+'" preserveAspectRatio="xMinYMid meet"><g fill="'+fill+'" transform="translate(0 '+WM.asc+') scale(1 -1)">'+WM.inner+'</g></svg>'; }
+  var CV = {
+    'full-color':{icon:'#E8830C', word:'#131017', bg:'#F3ECDE', needBg:false},
+    'inverse':   {icon:'#E8830C', word:'#FFFFFF', bg:'#120E08', needBg:true},
+    'white':     {icon:'#FFFFFF', word:'#FFFFFF', bg:'#120E08', needBg:true},
+    'black':     {icon:'#131017', word:'#131017', bg:'#FFFFFF', needBg:false},
+    'grayscale': {icon:'#8C8378', word:'#3A352F', bg:'#FFFFFF', needBg:false}
+  };
+  var variant = 'full-color';
+  function iconG(fill){ return '<g fill="'+fill+'">'+ICON.inner+'</g>'; }
+  function svgIcon(v){ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+ICON.vb+'">'+iconG(v.icon)+'</svg>'; }
+  function svgLockup(v){ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 100">'
+      +(v.needBg?'<rect width="440" height="100" fill="'+v.bg+'"/>':'')
+      +'<svg x="6" y="12" width="76" height="76" viewBox="'+ICON.vb+'">'+iconG(v.icon)+'</svg>'
+      +wordmarkG(v.word)+'</svg>'; }
+  function svgAvatar(v){ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="'+v.bg+'"/><svg x="24" y="24" width="52" height="52" viewBox="'+ICON.vb+'">'+iconG(v.icon)+'</svg></svg>'; }
+  function svgApp(v){ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="'+v.bg+'"/><svg x="26" y="26" width="48" height="48" viewBox="'+ICON.vb+'">'+iconG(v.icon)+'</svg></svg>'; }
+  var BUILD = {lockup:svgLockup, icon:svgIcon, avatar:svgAvatar, app:svgApp};
+
+  function dl(name, blob){ var u=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=u; a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){URL.revokeObjectURL(u);},1500); }
+  function dlSVG(name, s){ dl(name, new Blob([s],{type:'image/svg+xml;charset=utf-8'})); }
+  function raster(name, svgStr, type, w, h, bg){
+    var img=new Image();
+    img.onload=function(){ var c=document.createElement('canvas'); c.width=w; c.height=h; var g=c.getContext('2d'); if(bg){g.fillStyle=bg;g.fillRect(0,0,w,h);} g.drawImage(img,0,0,w,h); c.toBlob(function(b){dl(name,b);}, type, .95); };
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgStr);
+  }
+  function download(asset, fmt){
+    var v=CV[variant], base='magister-'+(asset==='lockup'?'logo':asset)+'-'+variant;
+    if(fmt==='svg'){ dlSVG(base+'.svg', BUILD[asset](v)); return; }
+    var type=(fmt==='jpg')?'image/jpeg':'image/png', jpg=(type==='image/jpeg');
+    if(asset==='lockup'){ raster(base+'.'+fmt, svgLockup(v), type, 1320, 300, (jpg?v.bg:null)); return; }
+    var s=1024, bg=jpg?v.bg:(v.needBg&&asset==='icon'?v.bg:null); // avatar/app carry their own bg rect
+    raster(base+'.'+fmt, BUILD[asset](v), type, s, s, bg);
+  }
+  function paintPreviews(){
+    var v=CV[variant];
+    document.querySelectorAll('[data-asset]').forEach(function(el){
+      el.style.background=v.bg;
+      el.innerHTML=BUILD[el.getAttribute('data-asset')](v);
+    });
+  }
+  document.querySelectorAll('#varbar button').forEach(function(b){ b.addEventListener('click',function(){
+    variant=b.getAttribute('data-v'); document.querySelectorAll('#varbar button').forEach(function(x){x.classList.remove('on');}); b.classList.add('on'); paintPreviews();
+  });});
+  document.querySelectorAll('[data-dl]').forEach(function(b){ b.addEventListener('click',function(){ download(b.getAttribute('data-dl'), b.getAttribute('data-fmt')); });});
+  paintPreviews();
+})();
+</script>
+</body>
+</html>

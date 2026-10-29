@@ -1,0 +1,119 @@
+<!-- @dsCard group="Components" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Buttons and tags</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--ground);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.card{padding:56px 64px 64px}
+.eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+h2{font-family:var(--disp);font-weight:var(--w-lead);font-size:2.2rem;line-height:var(--lh-head);letter-spacing:var(--ls-head);margin-top:14px}
+h2 .d{color:var(--dim)}
+.k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.spec{font-family:var(--mono);font-size:.64rem;color:var(--faint);line-height:1.6}
+.msi{font-family:var(--icon);font-weight:400;font-style:normal;line-height:1;font-variation-settings:'opsz' 24;-webkit-font-feature-settings:'liga';display:inline-block;vertical-align:middle}
+
+/* buttons — CTA is green + pill; distinct from every squared card */
+.btn{font-family:var(--mono);font-size:var(--fs-btn);letter-spacing:var(--ls-btn);text-transform:uppercase;font-weight:500;
+  display:inline-flex;align-items:center;gap:.55rem;border-radius:var(--r-pill);white-space:nowrap;
+  transition:transform .2s var(--ease-out),box-shadow .24s var(--ease-out),background .24s,border-color .24s,color .24s}
+.btn .msi{font-size:1.1rem}
+.btn-cta{color:var(--cta-ink);background:var(--cta-fill);border:1px solid var(--cta-edge);padding:.72rem 1.15rem;box-shadow:var(--cta-shadow)}
+.btn-cta.is-hover{transform:translateY(-1px);box-shadow:var(--cta-shadow-hover)}
+.btn-cta.is-press{transform:scale(.97);box-shadow:var(--cta-shadow)}
+.btn-ghost{color:var(--bone);background:rgba(0,0,0,.2);border:1px solid var(--seam2);padding:.72rem 1.15rem}
+.btn-ghost.is-hover{border-color:var(--dim);background:rgba(0,0,0,.35)}
+[data-theme="light"] .btn-ghost{background:transparent}
+
+.grid{margin-top:40px;display:grid;grid-template-columns:1.5fr 1fr;gap:24px}
+.panel{background:var(--panel-fill);border:1px solid var(--seam);border-radius:var(--radius);padding:28px;position:relative;box-shadow:var(--lift)}
+.states{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.state{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.state .stage{height:84px;width:100%;display:flex;align-items:center;justify-content:center;border:1px dashed var(--seam);border-radius:6px}
+.state .lbl{font-family:var(--disp);font-weight:var(--w-lead);font-size:1rem}
+
+.urlbar{margin-top:28px;display:flex;gap:.5rem;background:var(--panel-fill);border:1px solid var(--seam2);border-radius:var(--r-pill);padding:.4rem .4rem .4rem 1.1rem;align-items:center;box-shadow:var(--lift)}
+.urlbar .msi{color:var(--faint);font-size:1.15rem}
+.urlbar .ph{flex:1;color:var(--faint);font-size:.98rem}
+.urlbar .btn-cta{padding:.62rem 1.05rem}
+.under{margin-top:12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.09em;color:var(--faint);text-transform:uppercase}
+
+.side{display:grid;gap:24px;align-content:start}
+.row{display:flex;gap:14px;align-items:center;margin-top:18px;flex-wrap:wrap}
+
+.light{background:var(--ground);border:1px solid var(--seam);border-radius:var(--radius);padding:28px;color:var(--bone)}
+.light p{font-size:.86rem;color:var(--dim);margin-top:14px}
+
+/* status tags */
+.tag{font-family:var(--mono);font-size:.62rem;letter-spacing:var(--ls-tag);text-transform:uppercase;padding:.24rem .58rem;border-radius:var(--r-pill);border:1px solid var(--seam2);color:var(--dim);white-space:nowrap}
+.tag.ship{color:var(--go);border-color:var(--go)}
+.tag.run{color:var(--accent-tx);border-color:var(--accent-edge)}
+.tag.review{color:var(--dim);border-color:var(--seam2)}
+.tags{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:24px;border-top:1px solid var(--seam)}
+.tagcol{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.tagcol p{font-size:.84rem;color:var(--dim)}
+
+.rules{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rules div{border-top:1px solid var(--seam);padding-top:14px}
+.rules b{font-family:var(--disp);font-weight:var(--w-lead);font-size:1.02rem;display:block}
+.rules p{font-size:.84rem;color:var(--dim);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">Components · buttons and status</div>
+  <h2>One green pill moves you forward. <span class="d">Only one per view.</span></h2>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="k">Primary CTA · --cta-fill · pill</div>
+      <div class="states">
+        <div class="state"><div class="stage"><span class="btn btn-cta">Start free</span></div><span class="lbl">Rest</span><span class="spec">gradient --cta-lo → --cta<br>--cta-shadow</span></div>
+        <div class="state"><div class="stage"><span class="btn btn-cta is-hover">Start free</span></div><span class="lbl">Hover</span><span class="spec">lift 1px · --cta-shadow-hover<br>.2s --ease-out</span></div>
+        <div class="state"><div class="stage"><span class="btn btn-cta is-press">Start free</span></div><span class="lbl">Press</span><span class="spec">scale .97 — press wins<br>over the hover lift</span></div>
+      </div>
+      <div class="urlbar"><span class="msi">link</span><span class="ph">Enter your website URL…</span><span class="btn btn-cta">Get my free plan <span class="msi">arrow_forward</span></span></div>
+      <div class="under">100% free · No credit card required</div>
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <div class="k">Secondary · ghost</div>
+        <div class="row">
+          <span class="btn btn-ghost">Sign in</span>
+          <span class="btn btn-ghost is-hover">Sign in</span>
+        </div>
+        <div class="spec" style="margin-top:12px">rest · hover (edge → --dim). Bone text, --seam2 edge, no fill color.</div>
+      </div>
+      <div class="light" data-theme="light">
+        <div class="k">On light · collateral</div>
+        <div class="row">
+          <span class="btn btn-cta">Start free trial</span>
+          <span class="btn btn-ghost">See pricing</span>
+        </div>
+        <p>Flat #1B7345, white label. Print never gets a pill — use the URL.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:24px">
+    <div class="k">Status tags · outline only, never a fill</div>
+    <div class="tags">
+      <div class="tagcol"><span class="tag ship">Shipped</span><p>Done and live. Status green (--go) as text and outline — not the action color.</p></div>
+      <div class="tagcol"><span class="tag run">Running</span><p>Work in flight. Amber text and outline — the system's energy, not its action.</p></div>
+      <div class="tagcol"><span class="tag review">Needs review</span><p>Waiting on you. Neutral by design: a request, not an alarm.</p></div>
+    </div>
+  </div>
+
+  <div class="rules">
+    <div><b>One CTA per view.</b><p>A second action in the same view is a ghost button or a text link.</p></div>
+    <div><b>Round controls, squared content.</b><p>Buttons, the URL bar, tags, and chips are pills; panels and cards are squared.</p></div>
+    <div><b>Labels in mono caps.</b><p>Short verbs that say what happens next — "Get my free plan," not "Submit."</p></div>
+  </div>
+</div>
+</body>
+</html>
