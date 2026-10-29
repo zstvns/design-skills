@@ -1,0 +1,95 @@
+<!-- @dsCard group="Templates" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Deck slides</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1328px;background:var(--surface-2);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.wrap{padding:28px 24px 32px;display:grid;gap:18px}
+.lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.lbl+.slide{margin-top:-6px}
+.msi{font-family:var(--icon);font-weight:400;font-style:normal;line-height:1;font-variation-settings:'opsz' 24;-webkit-font-feature-settings:'liga';display:inline-block;vertical-align:middle}
+img{display:block}
+
+/* a 16:9 slide, safe area 56px */
+.slide{position:relative;width:1280px;height:720px;overflow:hidden;background:var(--ground);color:var(--bone);border-radius:4px}
+.wash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 560px at 100% 0%,var(--wash-strong),transparent 62%)}
+.rings{position:absolute;pointer-events:none}
+.rings circle{fill:none;stroke:var(--dot);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:0 10}
+.ey{font-family:var(--mono);font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+
+/* 1 · title */
+.s1 .rings{width:1400px;height:1400px;left:560px;top:-180px;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,transparent 0 12%,black 26% 52%,rgba(0,0,0,.34) 70%,transparent 82%);
+          mask-image:radial-gradient(circle at 50% 50%,transparent 0 12%,black 26% 52%,rgba(0,0,0,.34) 70%,transparent 82%)}
+.s1 .body{position:absolute;left:96px;top:150px;width:720px}
+.s1 h1{margin-top:26px;font-family:var(--disp);font-weight:var(--w-lead);font-size:86px;line-height:1;letter-spacing:-.02em}
+.s1 h1 .hi{color:var(--accent-tx)}
+.s1 p{margin-top:28px;font-size:24px;line-height:1.45;color:var(--dim);max-width:30ch}
+.s1 .foot{position:absolute;left:96px;right:96px;bottom:64px;display:flex;justify-content:space-between;align-items:flex-end}
+.s1 .foot .url{font-family:var(--mono);font-size:14px;letter-spacing:.08em;color:var(--faint)}
+
+/* 2 · content */
+.s2 .rings{width:900px;height:900px;left:-560px;bottom:-560px;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,transparent 0 20%,black 34% 60%,transparent 80%);
+          mask-image:radial-gradient(circle at 50% 50%,transparent 0 20%,black 34% 60%,transparent 80%)}
+.s2 .head{position:absolute;left:96px;top:72px;right:96px;display:flex;justify-content:space-between;align-items:flex-end}
+.s2 h2{margin-top:16px;font-family:var(--disp);font-weight:var(--w-lead);font-size:54px;line-height:1.04;letter-spacing:-.015em;max-width:15ch}
+.s2 h2 .d{color:var(--dim)}
+.s2 .aside{max-width:30ch;font-size:18px;color:var(--dim);line-height:1.45;padding-bottom:6px}
+.steps{position:absolute;left:96px;right:96px;top:318px;display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:20px}
+.step{position:relative;background:var(--panel);border:1px solid var(--seam);border-radius:10px;padding:26px 26px 24px;min-height:262px;display:flex;flex-direction:column}
+.step .n{font-family:var(--mono);font-size:14px;letter-spacing:.14em;color:var(--accent-tx)}
+.step h3{margin-top:14px;font-family:var(--disp);font-weight:var(--w-lead);font-size:28px;line-height:1.08}
+.step p{margin-top:10px;font-size:17px;line-height:1.45;color:var(--dim)}
+.step .q{margin-top:auto;padding-top:16px;font-family:var(--mono);font-size:13px;color:var(--faint);border-top:1px solid var(--seam)}
+.step.you{background:var(--inv);border-color:var(--inv);color:var(--inv-tx)}
+.step.you .n{color:var(--amber-4)}
+.step.you p{color:var(--bone-3)}
+.step.you .q{border-color:var(--surface-5);color:var(--bone-2);display:flex;justify-content:space-between;align-items:center}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:var(--r-pill);border:1px solid var(--go-4);color:var(--go-4)}
+.s2 .foot{position:absolute;left:96px;right:96px;bottom:44px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lbl"><span>Deck · 01 title</span><span>1280 × 720 · light · safe 56</span></div>
+  <section class="slide s1" data-theme="light">
+    <div class="wash"></div>
+    <svg class="rings" viewBox="0 0 1400 1400" aria-hidden="true"><g>
+      <circle cx="700" cy="700" r="190"/><circle cx="700" cy="700" r="236"/><circle cx="700" cy="700" r="282"/><circle cx="700" cy="700" r="328"/><circle cx="700" cy="700" r="374"/><circle cx="700" cy="700" r="420"/><circle cx="700" cy="700" r="466"/><circle cx="700" cy="700" r="512"/><circle cx="700" cy="700" r="558"/><circle cx="700" cy="700" r="604"/><circle cx="700" cy="700" r="650"/>
+    </g></svg>
+    <div class="body">
+      <div class="ey">Sales deck · 2026</div>
+      <h1>Your autonomous <span class="hi">marketing agent.</span></h1>
+      <p>It executes across 100+ real tools and ships the work while you're away.</p>
+    </div>
+    <div class="foot">
+      <img src="../logo/logo-lockup.svg" width="190" height="35" alt="Magister">
+      <span class="url">magistermarketing.com</span>
+    </div>
+  </section>
+
+  <div class="lbl"><span>Deck · 04 content</span><span>takeaway title · three steps · one inverse</span></div>
+  <section class="slide s2" data-theme="light">
+    <svg class="rings" viewBox="0 0 900 900" aria-hidden="true"><g>
+      <circle cx="450" cy="450" r="180"/><circle cx="450" cy="450" r="226"/><circle cx="450" cy="450" r="272"/><circle cx="450" cy="450" r="318"/><circle cx="450" cy="450" r="364"/><circle cx="450" cy="450" r="410"/>
+    </g></svg>
+    <div class="head">
+      <div><div class="ey">How it works</div><h2>Tell it what you need. <span class="d">It gets to work.</span></h2></div>
+      <p class="aside">You stay the approver. The agent does everything between the ask and the ship.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">01 · Talk to it</span><h3>Describe the work in plain English.</h3><p>In the web app, in Slack, or from your own agent.</p><span class="q">"Audit my site and get to work."</span></div>
+      <div class="step"><span class="n">02 · It plans and executes</span><h3>100+ specialized skills.</h3><p>Copy, SEO, email, pages — run across your real tools.</p><span class="q">T+00:41 · 3 variants drafted</span></div>
+      <div class="step you"><span class="n">03 · You review and ship</span><h3>Nothing ships without approval.</h3><p>Every piece comes back to you first. Approve, edit, or send it back.</p><span class="q"><span>Social post · LinkedIn</span><span class="tag">Shipped</span></span></div>
+    </div>
+    <div class="foot"><img src="../logo/logo-icon.svg" width="24" height="24" alt="Magister"><span>04 / 07</span></div>
+  </section>
+</div>
+</body>
+</html>

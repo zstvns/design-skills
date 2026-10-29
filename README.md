@@ -60,7 +60,9 @@ The one input it can't infer is your **appetite** (incremental refinement vs. tr
 
 **3. Follow where it routes you.** The skills know their own sequence and hand off to each other. You don't need to memorize the map below — `brand` will tell you what's next.
 
-**4. Read one SKILL.md** to see the pattern. Each skill is a craft document you can also just read and execute by hand; the automation is a side effect.
+**4. See a finished run.** [`examples/magister/`](examples/magister/) is one brand taken through every skill — the `.agents/` documents, locked logo, art-direction library with its style test, Claude Design kit, homepage, motion, and collateral. Open it to see what you'll get before you start.
+
+**5. Read one SKILL.md** to see the pattern. Each skill is a craft document you can also just read and execute by hand; the automation is a side effect.
 
 ---
 

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Plan view of an operations room with four rows of consoles, one active">
+  <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap");   svg{background:#0F0C07;border:1px solid #3A3020;border-radius:8px;display:block}   .ln{stroke:#ECE4D6;stroke-opacity:.82;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}   .fn{stroke:#ECE4D6;stroke-opacity:.28;stroke-width:1;fill:none}   .pl{stroke-dasharray:2 7}   .act{stroke:#E8830C;stroke-opacity:1}   .dot{fill:#ECE4D6;fill-opacity:.82}   .adot{fill:#E8830C}   .lbl{font:500 9.5px 'JetBrains Mono',monospace;letter-spacing:.14em;fill:#988B71;text-transform:uppercase}   .albl{fill:#F4A93C}   .br{stroke:#4A3D24;stroke-width:1;fill:none}  svg{background:#0F0C07}</style>
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <rect class="fn" x="40" y="40" width="320" height="220"/>
+  <path class="ln" d="M80 88 q120 -26 240 0"/><path class="ln" d="M80 132 q120 -26 240 0"/>
+  <path class="ln act" d="M80 176 q120 -26 240 0"/><path class="ln" d="M80 220 q120 -26 240 0"/>
+  <rect class="ln" x="150" y="48" width="100" height="10"/>
+  <text class="lbl" x="262" y="56">Main display</text>
+  <circle class="adot" cx="200" cy="168" r="4"/><text class="lbl albl" x="212" y="194">Your seat</text>
+</svg>

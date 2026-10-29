@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="A trajectory from brief to draft to review to shipped, with the review stage active">
+  <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap");   svg{background:#0F0C07;border:1px solid #3A3020;border-radius:8px;display:block}   .ln{stroke:#ECE4D6;stroke-opacity:.82;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}   .fn{stroke:#ECE4D6;stroke-opacity:.28;stroke-width:1;fill:none}   .pl{stroke-dasharray:2 7}   .act{stroke:#E8830C;stroke-opacity:1}   .dot{fill:#ECE4D6;fill-opacity:.82}   .adot{fill:#E8830C}   .lbl{font:500 9.5px 'JetBrains Mono',monospace;letter-spacing:.14em;fill:#988B71;text-transform:uppercase}   .albl{fill:#F4A93C}   .br{stroke:#4A3D24;stroke-width:1;fill:none}  svg{background:#0F0C07}</style>
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <path class="fn" d="M40 240 H360"/>
+  <path class="ln" d="M50 240 C100 240 120 170 160 150"/>
+  <path class="ln act" d="M160 150 C200 130 230 100 260 96"/>
+  <path class="ln pl" d="M260 96 C300 92 330 70 352 56"/>
+  <circle class="dot" cx="50" cy="240" r="3"/><circle class="dot" cx="160" cy="150" r="3"/><circle class="adot" cx="260" cy="96" r="4"/><circle class="dot" cx="352" cy="56" r="3"/>
+  <text class="lbl" x="44" y="262">Brief</text><text class="lbl" x="168" y="170">Draft</text><text class="lbl albl" x="236" y="122">Review</text><text class="lbl" x="300" y="48">Shipped</text>
+  <rect class="ln" x="300" y="150" width="64" height="44" rx="4"/><path class="fn" d="M308 162 h40 M308 172 h48 M308 182 h28"/>
+  <path class="ln pl" d="M300 172 H272"/>
+</svg>

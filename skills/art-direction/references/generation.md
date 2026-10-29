@@ -11,6 +11,7 @@ Most operators have ChatGPT or Gemini. The trap is a fresh 200-word prompt per i
 - **ChatGPT:** create a **Project** for the brand and paste the primer below into the Project's instructions.
 - **Gemini:** create a **Gem** for the brand and paste the primer as its instructions.
 - **Either:** attach **2–3 anchors from the relevant class to every request.** Attached references are what actually carry the look; the primer carries the rules.
+- **Say what to take from a reference.** Attached images carry their subject, equipment, and era along with their light — archival anchors will happily give you a 1960s room when you asked for today. Name the qualities to borrow ("only the light, contrast, and grain — not the equipment or era") in the primer and in any request that drifts.
 - Save the primer and every prompt pack to `.agents/assets/imagery/prompts.md` so the setup can be rebuilt, shared, or moved to another tool.
 
 ### The primer
@@ -75,6 +76,7 @@ Current image models edit in place. When an image is mostly right:
 
 Same spec, same anchors, same review — you run it yourself.
 
+- **Upload anchors into the tool first.** Model providers often can't fetch hotlink-protected hosts (Wikimedia, many CDNs) and fail the run with a download or parameter error. Bring the anchor into the tool's own storage (in Flora, `flora_create_asset` from the URL) and reference that copy.
 - **Flora (MCP):** generate on a project canvas with the anchors attached as references. Flora also hosts Quiver's **Arrow** models, so flat and line-led illustration and spot icons can come out as real SVG, not raster. Once 10+ approved images exist in a class, train a style model on them if the workspace supports it — the strongest consistency lever available. Quote the cost before generating; the operator is paying for every run.
 - **Adobe (MCP):** Firefly generation, plus the fix-up tools that make Tier 1 output usable too — generative fill and expand, background removal, select-and-adjust, and vectorizing.
 - **Higgsfield, or any connected video generator:** start from an **approved still** (image-to-video) rather than text-to-video, so the grade and composition carry. Take the motion character from `.agents/design.md` (see `motion-design`); keep loops short and seamless; no text.
