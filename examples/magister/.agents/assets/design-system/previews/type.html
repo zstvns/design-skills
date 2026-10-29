@@ -1,0 +1,124 @@
+<!-- @dsCard group="Type" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Type</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--ground);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.card{position:relative;padding:56px 64px 64px;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(900px 520px at 88% -14%,var(--wash),transparent 60%)}
+.eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+.top{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}
+
+/* the live composition */
+.comp .eyebrow{margin-bottom:22px}
+.hero{font-family:var(--disp);font-weight:var(--w-strong);font-size:var(--fs-hero);line-height:1.02;letter-spacing:-.02em}
+.hero .at{color:var(--lo);text-shadow:var(--glow)}
+.typed{font-family:var(--disp);font-weight:var(--w-lead);font-size:var(--fs-hero);line-height:1.02;letter-spacing:-.02em;color:var(--dim);margin-top:.15rem}
+.typed .cur{display:inline-block;width:.5ch;height:.86em;background:var(--lo);margin-left:.06em;vertical-align:-.03em;box-shadow:var(--glow)}
+.sub{margin-top:22px;font-size:var(--fs-sub);color:var(--dim);max-width:42ch}
+.dim-head{margin-top:44px;padding-top:30px;border-top:1px solid var(--seam);font-family:var(--disp);font-weight:var(--w-lead);font-size:var(--fs-h2);line-height:var(--lh-head);letter-spacing:var(--ls-head);color:var(--dim);text-wrap:balance}
+.dim-head .hi{color:var(--bone)}
+.note{margin-top:12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--faint)}
+
+/* the three faces */
+.faces{display:grid;gap:12px}
+.face{border:1px solid var(--seam);border-radius:var(--radius);padding:18px 20px;background:var(--panel-fill)}
+.face .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.face .nm{font-size:1.5rem;line-height:1.1}
+.face .role{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.face .use{margin-top:8px;font-size:.84rem;color:var(--dim)}
+.face .glyphs{margin-top:10px;font-size:.95rem;color:var(--faint);letter-spacing:.02em;word-break:break-all}
+.f-disp .nm,.f-disp .glyphs{font-family:var(--disp);font-weight:var(--w-lead)}
+.f-body .nm,.f-body .glyphs{font-family:var(--body)}
+.f-mono .nm,.f-mono .glyphs{font-family:var(--mono);font-weight:500}
+.f-mono .nm{font-size:1.3rem}
+
+/* the scale */
+.scale{position:relative;margin-top:56px}
+.bigrow{position:relative;margin-top:48px;display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:end}
+.ladder{border-top:1px solid var(--seam)}
+.step{display:grid;grid-template-columns:140px 1fr 280px;gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--seam)}
+.step .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.step .s{white-space:nowrap;overflow:hidden;text-overflow:clip}
+.step .spec{font-family:var(--mono);font-size:.66rem;color:var(--faint);line-height:1.5}
+.s-h2{font-family:var(--disp);font-weight:var(--w-lead);font-size:var(--fs-h2);line-height:var(--lh-head);letter-spacing:var(--ls-head)}
+.s-fr{font-family:var(--disp);font-weight:var(--w-lead);font-size:var(--fs-featrow);line-height:var(--lh-head)}
+.s-h3{font-family:var(--disp);font-weight:var(--w-lead);font-size:var(--fs-h3);line-height:var(--lh-head)}
+.s-sub{font-size:var(--fs-sub);color:var(--dim)}
+.s-body{font-size:var(--fs-body);color:var(--dim)}
+.s-btn{font-family:var(--mono);font-weight:500;font-size:var(--fs-btn);letter-spacing:var(--ls-btn);text-transform:uppercase}
+.s-ey{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+.s-tag{font-family:var(--mono);font-size:var(--fs-tag);letter-spacing:var(--ls-tag);text-transform:uppercase;color:var(--dim);border:1px solid var(--seam2);border-radius:var(--r-pill);padding:.18rem .42rem}
+
+.big .bignum{font-family:var(--disp);font-weight:var(--w-strong);font-size:var(--fs-bignum);line-height:var(--lh-bignum);letter-spacing:var(--ls-bignum);color:var(--lo);text-shadow:var(--glow)}
+.big h3{margin-top:10px;font-family:var(--disp);font-weight:var(--w-lead);font-size:var(--fs-h3)}
+.big .spec{margin-top:14px;font-family:var(--mono);font-size:.66rem;color:var(--faint);line-height:1.6}
+.rules{margin-top:22px;padding-top:16px;border-top:1px solid var(--seam);font-size:.84rem;color:var(--dim)}
+.rules b{font-weight:var(--w-lead);color:var(--bone)}
+.rules p+p{margin-top:8px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="comp">
+      <div class="eyebrow">Type · the hierarchy, live</div>
+      <h1 class="hero">Hey <span class="at">@Magister</span>,</h1>
+      <div class="typed">audit my site and get to work.<span class="cur"></span></div>
+      <p class="sub">Your dedicated AI marketing agent. Describe the work in plain English — it executes across 100+ real tools, then hands it back for your approval before anything ships.</p>
+      <h2 class="dim-head">Not features bolted on. <span class="hi">A whole operation.</span></h2>
+      <div class="note">.dim-head — headline in --dim, one .hi phrase in --bone. Emphasis by color, never italic.</div>
+    </div>
+    <div class="faces">
+      <div class="face f-disp">
+        <div class="row"><span class="nm">Chakra Petch</span><span class="role">Display</span></div>
+        <div class="use">Headlines, numerals, card titles. 600 leads; 700 only for the hero h1 and the bignum.</div>
+        <div class="glyphs">ABCDEFGHIJKLM 0123456789 +18% T–00:04</div>
+      </div>
+      <div class="face f-body">
+        <div class="row"><span class="nm">IBM Plex Sans</span><span class="role">Body</span></div>
+        <div class="use">Paragraphs, inputs, long reading. 400 at 1rem / 1.55.</div>
+        <div class="glyphs">The quick operator ships before review.</div>
+      </div>
+      <div class="face f-mono">
+        <div class="row"><span class="nm">JetBrains Mono</span><span class="role">Telemetry</span></div>
+        <div class="use">Eyebrows, buttons, tags, timestamps — uppercase, tracked. Never paragraphs.</div>
+        <div class="glyphs">T+00:41 · 47 GAPS · SHIPPED</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scale">
+    <div class="ladder">
+      <div class="step"><span class="k">h2</span><span class="s s-h2">Use it anywhere.</span><span class="spec">Chakra 600 · 3rem<br>lh 1.08 · −.01em</span></div>
+      <div class="step"><span class="k">Feature h3</span><span class="s s-fr">Everything it makes looks like you.</span><span class="spec">Chakra 600 · 1.7rem</span></div>
+      <div class="step"><span class="k">h3</span><span class="s s-h3">Four things it does on its own.</span><span class="spec">Chakra 600 · 1.35rem</span></div>
+      <div class="step"><span class="k">Sub</span><span class="s s-sub">It runs while you're away, then asks.</span><span class="spec">Plex 400 · 1.18rem · --dim</span></div>
+      <div class="step"><span class="k">Body</span><span class="s s-body">Describe the work in plain English. Nothing ships without approval.</span><span class="spec">Plex 400 · 1rem / 1.55 · --dim</span></div>
+      <div class="step"><span class="k">Button</span><span class="s s-btn">Get my free plan</span><span class="spec">Mono 500 · .8rem · +.05em · caps</span></div>
+      <div class="step"><span class="k">Eyebrow</span><span class="s s-ey">Mission log · last night</span><span class="spec">Mono 400 · .66rem · +.22em · --faint</span></div>
+      <div class="step"><span class="k">Tag</span><span class="s"><span class="s-tag">Needs review</span></span><span class="spec">Mono · .55rem · +.09em · pill</span></div>
+    </div>
+  </div>
+  <div class="bigrow">
+    <div class="big">
+      <div class="bignum">+18%</div>
+    </div>
+    <div class="big">
+      <h3>signups this period.</h3>
+      <div class="spec">.bignum — Chakra 700 · 11rem · lh .82 · −.03em · --lo + --glow · one per view</div>
+      <div class="rules">
+        <p><b>Semibold leads.</b> Bold appears twice in the system: the hero h1 and the bignum.</p>
+        <p><b>Upright only.</b> No italics in headlines, labels, or swatches.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

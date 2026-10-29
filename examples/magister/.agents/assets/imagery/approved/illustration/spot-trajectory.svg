@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Trajectory spot illustration at 96 pixels, spot rules applied">
+  <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap");   svg{background:#0F0C07;border:1px solid #3A3020;border-radius:8px;display:block}   .ln{stroke:#ECE4D6;stroke-opacity:.82;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}   .fn{stroke:#ECE4D6;stroke-opacity:.28;stroke-width:1;fill:none}   .pl{stroke-dasharray:2 7}   .act{stroke:#E8830C;stroke-opacity:1}   .dot{fill:#ECE4D6;fill-opacity:.82}   .adot{fill:#E8830C}   .lbl{font:500 9.5px 'JetBrains Mono',monospace;letter-spacing:.14em;fill:#988B71;text-transform:uppercase}   .albl{fill:#F4A93C}   .br{stroke:#4A3D24;stroke-width:1;fill:none}  svg{background:#0F0C07}</style>
+  <path class="ln" style="stroke-width:2" d="M16 76 C34 76 40 52 52 46"/><path class="ln act" style="stroke-width:2" d="M52 46 C62 40 70 30 80 22"/>
+  <circle class="dot" cx="16" cy="76" r="2.5"/><circle class="adot" cx="80" cy="22" r="3.5"/>
+</svg>

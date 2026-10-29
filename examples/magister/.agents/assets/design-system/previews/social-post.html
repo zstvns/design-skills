@@ -1,0 +1,90 @@
+<!-- @dsCard group="Templates" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Social post</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--surface-1);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.msi{font-family:var(--icon);font-weight:400;font-style:normal;line-height:1;font-variation-settings:'opsz' 40;-webkit-font-feature-settings:'liga';display:inline-block;vertical-align:middle}
+.card{padding:48px;display:grid;grid-template-columns:800px 1fr;gap:40px;align-items:start}
+
+/* the 1080 × 1080 post, shown at 800px */
+.fit{width:800px;height:800px;position:relative;overflow:hidden;border-radius:6px;border:1px solid var(--seam)}
+.post{position:absolute;left:0;top:0;width:1080px;height:1080px;transform:scale(.74074);transform-origin:0 0;overflow:hidden;background:var(--ground)}
+.wash{position:absolute;inset:0;background:radial-gradient(900px 700px at 100% 0%,var(--wash-strong),transparent 62%)}
+.rings{position:absolute;width:1500px;height:1500px;left:420px;top:330px;pointer-events:none;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,transparent 0 12%,black 26% 52%,rgba(0,0,0,.34) 70%,transparent 82%);
+          mask-image:radial-gradient(circle at 50% 50%,transparent 0 12%,black 26% 52%,rgba(0,0,0,.34) 70%,transparent 82%)}
+.rings circle{fill:none;stroke:var(--dot);stroke-width:3.6;stroke-linecap:round;stroke-dasharray:0 11}
+.in{position:absolute;inset:104px;display:flex;flex-direction:column}
+.ey{font-family:var(--mono);font-size:24px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+h1{margin-top:28px;font-family:var(--disp);font-weight:var(--w-lead);font-size:112px;line-height:.98;letter-spacing:-.02em;max-width:8ch}
+h1 .hi{color:var(--lo);text-shadow:var(--glow)}
+.log{margin-top:52px;display:grid;gap:14px;width:640px}
+.row{display:grid;grid-template-columns:44px 1fr auto;gap:18px;align-items:center;padding:20px 24px;border-radius:14px;background:var(--panel-fill);border:1px solid var(--seam2);box-shadow:var(--lift)}
+.row .msi{font-size:30px;color:var(--lo)}
+.row b{display:block;font-family:var(--disp);font-weight:var(--w-lead);font-size:28px;line-height:1.15}
+.row span.t{font-family:var(--mono);font-size:18px;color:var(--faint)}
+.tag{font-family:var(--mono);font-size:16px;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:var(--r-pill);border:1px solid var(--go);color:var(--go)}
+.foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.cta{font-family:var(--mono);font-weight:500;font-size:24px;letter-spacing:var(--ls-btn);text-transform:uppercase;color:var(--cta-ink);background:var(--cta-fill);border:1px solid var(--cta-edge);border-radius:var(--r-pill);padding:20px 32px;box-shadow:var(--cta-shadow);display:inline-flex;gap:12px;align-items:center}
+.cta .msi{font-size:30px}
+.url{font-family:var(--mono);font-size:20px;letter-spacing:.06em;color:var(--faint)}
+
+/* notes */
+.notes .eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+.notes h2{margin-top:12px;font-family:var(--disp);font-weight:var(--w-lead);font-size:1.7rem;line-height:1.1}
+.notes dl{margin-top:24px;border-top:1px solid var(--seam)}
+.notes dl div{padding:12px 0;border-bottom:1px solid var(--seam)}
+.notes dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.notes dd{margin-top:3px;font-size:.88rem;color:var(--dim)}
+.thumb{margin-top:24px;display:grid;gap:10px}
+.thumb .mini{width:240px;height:240px;position:relative;overflow:hidden;border-radius:4px;border:1px solid var(--seam)}
+.thumb .mini .post{transform:scale(.22222)}
+.thumb p{font-size:.8rem;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="fit">
+    <div class="post" id="post">
+      <div class="wash"></div>
+      <svg class="rings" viewBox="0 0 1500 1500" aria-hidden="true"><g>
+        <circle cx="750" cy="750" r="200"/><circle cx="750" cy="750" r="250"/><circle cx="750" cy="750" r="300"/><circle cx="750" cy="750" r="350"/><circle cx="750" cy="750" r="400"/><circle cx="750" cy="750" r="450"/><circle cx="750" cy="750" r="500"/><circle cx="750" cy="750" r="550"/><circle cx="750" cy="750" r="600"/><circle cx="750" cy="750" r="650"/><circle cx="750" cy="750" r="700"/>
+      </g></svg>
+      <div class="in">
+        <div class="ey">Mission Log</div>
+        <h1>While you were <span class="hi">away.</span></h1>
+        <div class="log">
+          <div class="row"><span class="msi">grid_view</span><div><b>Social post · 3 variants</b><span class="t">T+00:41</span></div><span class="tag">Shipped</span></div>
+          <div class="row"><span class="msi">search</span><div><b>12 keyword gaps queued</b><span class="t">T+03:55</span></div><span class="tag">Shipped</span></div>
+        </div>
+        <div class="foot"><span class="cta">Get your free plan <span class="msi">arrow_forward</span></span><span class="url">magistermarketing.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="eyebrow">Templates · social</div>
+    <h2>Feed square.</h2>
+    <dl>
+      <div><dt>Frame</dt><dd>1080 × 1080 · IG, LinkedIn, Facebook.</dd></div>
+      <div><dt>Shown at</dt><dd>74% — the real frame is 1080px; type is sized for a phone feed, not the artboard.</dd></div>
+      <div><dt>Safe area</dt><dd>104px all round. Only the wash and rings cross it.</dd></div>
+      <div><dt>Hierarchy</dt><dd>Eyebrow → 112px headline → two shipped rows → one CTA.</dd></div>
+      <div><dt>Motif</dt><dd>Rings, oversized and cropped bottom-right; rows are opaque cards so they read over the pattern.</dd></div>
+      <div><dt>No logo</dt><dd>The account avatar signs the post. The system does the branding.</dd></div>
+    </dl>
+    <div class="thumb"><div class="mini" id="mini"></div><p>At 240px — smaller than any phone feed — the headline and CTA still read.</p></div>
+  </div>
+</div>
+<script>
+  // the in-feed check: the same post, cloned at thumbnail scale
+  document.getElementById('mini').appendChild(document.getElementById('post').cloneNode(true)).removeAttribute('id');
+</script>
+</body>
+</html>

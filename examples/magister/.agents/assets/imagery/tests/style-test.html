@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Magister — Art direction style test (art-direction · Step 4)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block" rel="stylesheet">
+<link href="https://unpkg.com/lucide-static@0.460.0/font/lucide.css" rel="stylesheet">
+<link href="../approved/texture/textures.css" rel="stylesheet">
+<style>
+  :root{--ground:#0F0C07;--panel:#1B160E;--seam:#3A3020;--seam2:#4A3D24;--bone:#ECE4D6;--dim:#C2B69C;--faint:#988B71;--accent:#E8830C;--lo:#F4A93C;--cta:#3FA968;--alert:#D2542E}
+  *{box-sizing:border-box}
+  body{margin:0;background:#5d5a55;color:#1d1a16;font:400 15px/1.55 'IBM Plex Sans',system-ui,sans-serif}
+  .shell{max-width:1240px;margin:0 auto;padding:40px 28px 80px}
+  h1,h2,h3{font-family:'Chakra Petch',sans-serif;font-weight:600;letter-spacing:-.01em;line-height:1.1;margin:0}
+  h1{font-size:2.2rem;color:#fff}
+  h2{font-size:1.5rem;margin:56px 0 6px;color:#fff}
+  .lede{color:#e8e4dc;max-width:760px}
+  .eyebrow{font:500 .68rem 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#d8d2c6}
+  .sheet{background:#efece6;border-radius:8px;padding:22px;margin-top:14px}
+  .grid{display:grid;gap:14px}
+  .g5{grid-template-columns:repeat(5,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  figure{margin:0}
+  figure img{width:100%;display:block;border-radius:4px;aspect-ratio:3/2;object-fit:cover;background:#222}
+  figcaption{font-size:.82rem;margin-top:6px;line-height:1.4}
+  .v{display:inline-block;font:500 .64rem 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-right:6px;vertical-align:1px}
+  .ok{background:#1B7345;color:#fff} .ed{background:#AD5D03;color:#fff} .rp{background:#4E7BC4;color:#fff} .rj{background:#8a2e18;color:#fff}
+  .note{font-size:.88rem;background:#fff;border-left:0;border-radius:6px;padding:12px 14px;margin-top:14px}
+  .note b{font-weight:600}
+  .inplace{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:21/8;background:#000}
+  .inplace img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .inplace .copy{position:absolute;left:5%;top:50%;transform:translateY(-50%);max-width:36%}
+  .inplace .q{font:500 clamp(1.1rem,2.4vw,1.9rem)/1.15 'Chakra Petch',sans-serif;color:var(--bone)}
+  .inplace .who{font:500 .66rem 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--lo);margin-top:14px}
+  iframe{width:100%;border:0;border-radius:6px;background:#0F0C07}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+  .pair img{width:100%;aspect-ratio:1;display:block;border-radius:8px;background:#0F0C07}
+  .icons{background:var(--ground);color:var(--bone);border-radius:8px;padding:20px 22px}
+  .irow{display:grid;grid-template-columns:150px repeat(10,1fr);align-items:center;gap:6px;padding:10px 0;border-top:1px solid var(--seam)}
+  .irow:first-child{border-top:0}
+  .irow .lab{font:500 .64rem 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .ms{font-family:'Material Symbols Sharp';font-variation-settings:'opsz' 24;font-size:24px;line-height:1}
+  .mr{font-family:'Material Symbols Rounded';font-variation-settings:'opsz' 24;font-size:24px;line-height:1}
+  .lu{font-size:24px;line-height:1}
+  .s20{font-size:20px}.s40{font-size:40px}
+  .inline{font-size:15px;color:var(--dim);margin-top:14px}
+  .inline .ms,.inline .mr,.inline .lu{font-size:18px;vertical-align:-3px;color:var(--bone)}
+  .tx{border-radius:8px;overflow:hidden;position:relative;background:var(--ground);color:var(--bone);padding:28px;min-height:200px}
+  .tx h3{font-size:1.6rem;position:relative}
+  .tx p{color:var(--dim);max-width:420px;position:relative}
+  .tx .layer{position:absolute;inset:0}
+</style></head>
+<body><div class="shell">
+
+<div class="eyebrow">art-direction · Step 4 · style test · 2026-10-29</div>
+<h1>Magister — does the spec hold?</h1>
+<p class="lede">Same spec, deliberately different subjects, run twice. A style is approved on this sheet, not on the written spec. The spec lives in <code>.agents/design.md → Art Direction</code>; what this test changed in it is listed under each class.</p>
+
+<!-- ============================ PHOTOGRAPHY ============================ -->
+<h2>Photography</h2>
+<p class="lede">Generated in Flora with GPT Image 2.5, anchored to three public-domain/CC0 mission-control photographs. Raw output shown; approved images then go through <code>treat.sh</code>.</p>
+
+<div class="sheet">
+  <div class="eyebrow" style="color:#555">Run A — first prompts</div>
+  <div class="grid g5" style="margin-top:10px">
+    <figure><img src="photos/p1-a.jpg" alt=""><figcaption><span class="v ed">Edit</span>Ops room at night. Composition and light right — but the stacked tick charts read <b>trading floor</b>, not marketing.</figcaption></figure>
+    <figure><img src="photos/p2-a.jpg" alt=""><figcaption><span class="v ok">Approve</span>Keycap press. Hard side light, one key lit. Anchor.</figcaption></figure>
+    <figure><img src="photos/p3-a.jpg" alt=""><figcaption><span class="v rp">Re-prompt</span>Monitor wall came back as a <b>1960s Apollo recreation</b> — the anchors pulled the era, not just the light.</figcaption></figure>
+    <figure><img src="photos/p4-a.jpg" alt=""><figcaption><span class="v rp">Re-prompt</span>Same failure: a period console. A fake "archival" photo is close to fabricating the real.</figcaption></figure>
+    <figure><img src="photos/p5-a.jpg" alt=""><figcaption><span class="v rp">Re-prompt</span>Headsets, CRT, rocket — costume, not abstraction.</figcaption></figure>
+  </div>
+  <div class="note"><b>What run A changed in the spec:</b> generated photography is always <b>present-day</b>; anchors lend only light, contrast and grain ("not their equipment or era"). When we want the archive, we use the real NASA archive — it's public domain.</div>
+
+  <div class="eyebrow" style="color:#555;margin-top:24px">Run B — tightened prompts, edits, and a repeat</div>
+  <div class="grid g5" style="margin-top:10px">
+    <figure><img src="photos/p1-b.jpg" alt=""><figcaption><span class="v ok">Approve</span>Edit of A1: "keep everything; only change the screens." Held composition, people, dark left third. → filmstrip.</figcaption></figure>
+    <figure><img src="photos/p2-b.jpg" alt=""><figcaption><span class="v ok">Approve</span>Keycap, run again from the same prompt — a sibling of A2. The spec repeats.</figcaption></figure>
+    <figure><img src="photos/p3-b.jpg" alt=""><figcaption><span class="v ed">Edit</span>Present-day now — but ceiling lights make it evenly lit, and potted plants are stock.</figcaption></figure>
+    <figure><img src="photos/p4-b.jpg" alt=""><figcaption><span class="v rj">Reject</span>Right raking light, wrong world: plant, frame, tidy desk = "work from home" stock.</figcaption></figure>
+    <figure><img src="photos/p3-c.jpg" alt=""><figcaption><span class="v ok">Approve</span>Edit of B3: lights off, plants gone; everything else held.</figcaption></figure>
+  </div>
+  <div class="grid g5" style="margin-top:14px">
+    <figure><img src="photos/p5-c.jpg" alt=""><figcaption><span class="v ok">Approve</span>Late dashboard. (B5 was blocked by the provider's content filter; re-prompted without the over-the-shoulder framing.)</figcaption></figure>
+  </div>
+
+  <div class="eyebrow" style="color:#555;margin-top:24px">Set test — the approved set after the treatment (grayscale → amber tone map → scanlines → grain), archive and generated side by side</div>
+  <div class="grid g4" style="margin-top:10px">
+    <figure><img src="../approved/photography/archive-kranz-console.jpg" alt=""><figcaption>NASA archive (PD), treated</figcaption></figure>
+    <figure><img src="../approved/photography/keycap-press.jpg" alt=""><figcaption>Generated, treated</figcaption></figure>
+    <figure><img src="../approved/photography/monitor-wall.jpg" alt=""><figcaption>Generated, treated</figcaption></figure>
+    <figure><img src="../approved/photography/archive-apollo15-mcc.jpg" alt=""><figcaption>NASA archive (PD), treated</figcaption></figure>
+  </div>
+  <div class="note"><b>Verdict:</b> one world across 1969 and 2026 — the grade is doing its job. <b>Watch:</b> the archive frames are flash-lit and run brighter than the generated ones; use them where brightness is welcome (thumbnails, dividers) and the generated set where type needs dark negative space. <b>In place</b> below: the filmstrip as the homepage uses it, with real type on the dark left third.</div>
+  <div class="inplace" style="margin-top:14px">
+    <img src="../approved/photography/filmstrip.jpg" alt="">
+    <div class="copy"><div class="q">It runs our whole marketing operation between reviews. We just read the telemetry.</div><div class="who">Dana Reyes · Head of Growth</div></div>
+  </div>
+</div>
+
+<!-- ============================ ILLUSTRATION ============================ -->
+<h2>Illustration — "flight plans"</h2>
+<p class="lede">Run A drawn in SVG by the agent from the spec. Run B: three of the same subjects generated with Arrow 2.0 in Flora from a prompt written only from the spec — does a different hand converge?</p>
+<div class="sheet">
+  <div class="eyebrow" style="color:#555">Run A — eight subjects incl. the hard cases (a person, a crowd, spot size)</div>
+  <iframe src="illustration-tiles.svg.html" style="height:1400px;margin-top:10px"></iframe>
+  <div class="note"><b>Findings:</b> <span class="v ed">Edit</span> the operator was first drawn as a ring around a point — too close to the logo's ring; now a square marker. <span class="v rj">Fail</span> tile 7 at 96px collapses into a squiggle → <b>spot rule added</b>: below 160px, 2px stroke, no labels, max three nodes (tile 7b passes). The person tile passes: "the operator is a marked point" says <i>you</i> without drawing a figure.</div>
+
+  <div class="eyebrow" style="color:#555;margin-top:24px">Run B — Arrow 2.0 (Quiver, via Flora), same subjects · left: Arrow · right: run A</div>
+  <div class="grid g3" style="margin-top:10px">
+    <div class="pair"><img src="arrow-place.svg" alt=""><img src="../approved/illustration/room-plan.svg" alt=""></div>
+    <div class="pair"><img src="arrow-idea.svg" alt=""><img src="../approved/illustration/approval-gate.svg" alt=""></div>
+    <div class="pair"><img src="arrow-crowd.svg" alt=""><img src="../approved/illustration/integrations-orbit.svg" alt=""></div>
+  </div>
+  <div class="note"><b>Verdict: siblings — the spec holds across tools.</b> Same flight-plan language, one amber active element, brackets. <b>Drift:</b> Arrow's line is a hairline (~0.9px at this size vs the spec's 1.5px) → the spec now sets weight relative to output size (1.5px at 400px wide; scale with it). Arrow added console segment dividers — acceptable detail. No labels on Arrow's tiles is correct: labels are always live text set in layout, never generated.</div>
+</div>
+
+<!-- ============================ ICONOGRAPHY ============================ -->
+<h2>Iconography</h2>
+<p class="lede">The brand's own ten concepts in three candidate libraries, at real sizes, next to body text in IBM Plex Sans.</p>
+<div class="sheet">
+  <div class="icons">
+    <div class="irow"><span class="lab">Concept</span><span class="lab">Post</span><span class="lab">Blog</span><span class="lab">SEO</span><span class="lab">Email</span><span class="lab">Report</span><span class="lab">Campaign</span><span class="lab">Shipped</span><span class="lab">Review</span><span class="lab">Running</span><span class="lab">Agent</span></div>
+    <div class="irow"><span class="lab">Sharp · 24</span><span class="ms">grid_view</span><span class="ms">description</span><span class="ms">travel_explore</span><span class="ms">mail</span><span class="ms">monitoring</span><span class="ms">campaign</span><span class="ms">task_alt</span><span class="ms">pending</span><span class="ms">progress_activity</span><span class="ms">smart_toy</span></div>
+    <div class="irow"><span class="lab">Sharp · 20 / 40</span><span class="ms s20">grid_view</span><span class="ms s20">description</span><span class="ms s20">travel_explore</span><span class="ms s20">mail</span><span class="ms s20">monitoring</span><span class="ms s40">campaign</span><span class="ms s40">task_alt</span><span class="ms s40">pending</span><span class="ms s40">progress_activity</span><span class="ms s40">smart_toy</span></div>
+    <div class="irow"><span class="lab">Rounded · 24</span><span class="mr">grid_view</span><span class="mr">description</span><span class="mr">travel_explore</span><span class="mr">mail</span><span class="mr">monitoring</span><span class="mr">campaign</span><span class="mr">task_alt</span><span class="mr">pending</span><span class="mr">progress_activity</span><span class="mr">smart_toy</span></div>
+    <div class="irow"><span class="lab">Lucide · 24</span><i class="lu icon-layout-grid"></i><i class="lu icon-file-text"></i><i class="lu icon-search"></i><i class="lu icon-mail"></i><i class="lu icon-chart-line"></i><i class="lu icon-megaphone"></i><i class="lu icon-circle-check"></i><i class="lu icon-clock"></i><i class="lu icon-loader"></i><i class="lu icon-bot"></i></div>
+    <p class="inline"><span class="ms">task_alt</span> Shipped — 3 variants scheduled &nbsp;·&nbsp; <span class="mr">task_alt</span> Shipped (Rounded) &nbsp;·&nbsp; <i class="lu icon-circle-check"></i> Shipped (Lucide)</p>
+  </div>
+  <div class="note"><b>Verdict: Material Symbols Sharp.</b> Its right angles match Chakra Petch's cut corners — the icon is drawn with the same pen as the type. Rounded reads friendly-consumer (it was concept 03's set, filled). Lucide's 2px stroke is lighter than Plex's stems inline. Sharp holds at 20px; at 40px it's a feature-card icon, not a spot illustration — those come from the illustration style.</div>
+</div>
+
+<!-- ============================ TEXTURE ============================ -->
+<h2>Pattern & texture</h2>
+<p class="lede">Each texture at three scales, behind a real headline and body copy. It has to stay a backdrop.</p>
+<div class="sheet">
+  <div class="grid g3">
+    <div class="tx"><div class="layer tx-grid" style="background-size:24px 24px"></div><h3>Grid · 24px</h3><p>Too busy behind body copy — reads as graph paper. Not used.</p></div>
+    <div class="tx"><div class="layer tx-grid"></div><h3>Grid · 48px</h3><p>The built value. Present without competing; masked to fade at the edges.</p></div>
+    <div class="tx"><div class="layer tx-grid" style="background-size:96px 96px"></div><h3>Grid · 96px</h3><p>Disappears behind a headline — fine for full-bleed heroes only.</p></div>
+    <div class="tx"><div class="layer tx-rings" style="background-size:auto;transform:scale(.5);transform-origin:80% 20%"></div><h3>Rings · small</h3><p>Reads as a target — too literal at this scale.</p></div>
+    <div class="tx"><div class="layer tx-rings" style="inset:-60% -60% auto auto;width:180%;height:200%"></div><h3>Rings · oversized</h3><p>The print/social deployment: oversized, cropped by the frame.</p></div>
+    <div class="tx"><div class="layer tx-scan"></div><h3>Scanlines on type</h3><p>Fails — it muddies the copy. Scanlines live inside photography only.</p></div>
+  </div>
+  <div class="note"><b>Verdict:</b> 48px grid on the web; oversized cropped rings in print and social; scanlines only inside the photo treatment. Nothing new added to the never list — the existing "never behind body text" rule is confirmed.</div>
+</div>
+
+</div></body></html>

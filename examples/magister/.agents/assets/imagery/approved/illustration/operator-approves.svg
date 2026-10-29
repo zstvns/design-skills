@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="The operator shown as a marked point receiving three work streams">
+  <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap");   svg{background:#0F0C07;border:1px solid #3A3020;border-radius:8px;display:block}   .ln{stroke:#ECE4D6;stroke-opacity:.82;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}   .fn{stroke:#ECE4D6;stroke-opacity:.28;stroke-width:1;fill:none}   .pl{stroke-dasharray:2 7}   .act{stroke:#E8830C;stroke-opacity:1}   .dot{fill:#ECE4D6;fill-opacity:.82}   .adot{fill:#E8830C}   .lbl{font:500 9.5px 'JetBrains Mono',monospace;letter-spacing:.14em;fill:#988B71;text-transform:uppercase}   .albl{fill:#F4A93C}   .br{stroke:#4A3D24;stroke-width:1;fill:none}  svg{background:#0F0C07}</style>
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <path class="ln pl" d="M40 70 C120 70 150 150 200 150"/>
+  <path class="ln pl" d="M40 150 H200"/>
+  <path class="ln pl" d="M40 230 C120 230 150 150 200 150"/>
+  <circle class="dot" cx="40" cy="70" r="3"/><circle class="dot" cx="40" cy="150" r="3"/><circle class="dot" cx="40" cy="230" r="3"/>
+  <text class="lbl" x="52" y="62">Draft</text><text class="lbl" x="52" y="142">Report</text><text class="lbl" x="52" y="222">Campaign</text>
+  <rect class="ln act" x="189" y="139" width="22" height="22"/><circle class="adot" cx="200" cy="150" r="4"/>
+  <path class="ln" d="M214 150 H360"/><path class="ln" d="M352 144 l8 6 -8 6"/>
+  <text class="lbl albl" x="182" y="186">You · approve</text><text class="lbl" x="300" y="140">Ships</text>
+</svg>

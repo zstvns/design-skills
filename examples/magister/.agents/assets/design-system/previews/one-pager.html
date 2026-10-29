@@ -1,0 +1,134 @@
+<!-- @dsCard group="Templates" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — One-pager</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--surface-1);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.msi{font-family:var(--icon);font-weight:400;font-style:normal;line-height:1;font-variation-settings:'opsz' 20;-webkit-font-feature-settings:'liga';display:inline-block;vertical-align:middle}
+img{display:block}
+.card{padding:48px;display:grid;grid-template-columns:612px 1fr;gap:48px;align-items:start}
+
+/* US Letter trim, 8.5 × 11in @ 96dpi = 816 × 1056, shown at 75% */
+.fit{width:612px;height:792px;position:relative;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.4),0 24px 60px rgba(0,0,0,.45)}
+.page{position:absolute;left:0;top:0;width:816px;height:1056px;transform:scale(.75);transform-origin:0 0;overflow:hidden;background:var(--ground);color:var(--bone)}
+.wash{position:absolute;inset:0;background:radial-gradient(640px 520px at 100% 0%,var(--wash-strong),transparent 62%)}
+.rings{position:absolute;width:1100px;height:1100px;left:300px;top:-640px;pointer-events:none;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,transparent 0 14%,black 28% 54%,rgba(0,0,0,.34) 70%,transparent 82%);
+          mask-image:radial-gradient(circle at 50% 50%,transparent 0 14%,black 28% 54%,rgba(0,0,0,.34) 70%,transparent 82%)}
+.rings circle{fill:none;stroke:var(--dot);stroke-width:3;stroke-linecap:round;stroke-dasharray:0 9}
+.in{position:absolute;inset:72px 72px 60px;display:flex;flex-direction:column}
+.ey{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.top{display:flex;justify-content:space-between}
+h1{margin-top:34px;font-family:var(--disp);font-weight:var(--w-lead);font-size:62px;line-height:1;letter-spacing:-.02em;max-width:11ch}
+.sub{margin-top:20px;font-size:16px;line-height:1.5;color:var(--dim);max-width:46ch}
+.go{margin-top:20px;display:flex;gap:18px;align-items:baseline}
+.go .lnk{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--accent-tx);letter-spacing:.02em}
+.go .fine{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.checks{margin-top:26px;display:flex;gap:26px;padding-top:18px;border-top:1px solid var(--seam)}
+.checks span{display:flex;gap:7px;align-items:center;font-size:13.5px;color:var(--bone)}
+.checks .msi{font-size:17px;color:var(--go)}
+
+.four{margin-top:40px}
+.four h2{font-family:var(--disp);font-weight:var(--w-lead);font-size:22px;line-height:1.15}
+.four h2 span{color:var(--dim)}
+.four .cols{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.four .c{border-top:2px solid var(--bone);padding-top:12px}
+.four .c .msi{font-size:20px;color:var(--accent-tx)}
+.four .c b{display:block;margin-top:8px;font-family:var(--disp);font-weight:var(--w-lead);font-size:17px}
+.four .c p{margin-top:4px;font-size:12.5px;line-height:1.45;color:var(--dim)}
+
+.lower{margin-top:28px;display:grid;grid-template-columns:1.15fr 1fr;gap:14px}
+.log{background:var(--panel);border:1px solid var(--seam);border-radius:10px;padding:16px 18px}
+.log .hd{display:flex;justify-content:space-between;align-items:baseline}
+.log .fig{font-family:var(--disp);font-weight:var(--w-lead);font-size:30px;color:var(--accent-tx);line-height:1}
+.lrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--seam);font-size:13px}
+.lrow:last-child{border-bottom:0;padding-bottom:0}
+.lrow i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--faint);margin-right:8px}
+.st{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:var(--r-pill);border:1px solid var(--seam2);color:var(--dim)}
+.st.ship{color:var(--go);border-color:var(--go)}
+.st.run{color:var(--accent-tx);border-color:var(--accent-edge)}
+.quote{background:var(--inv);color:var(--inv-tx);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column}
+.quote p{font-family:var(--disp);font-weight:500;font-size:19px;line-height:1.25;text-indent:-.45em}
+.quote .who{margin-top:auto;padding-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--bone-2)}
+
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--seam)}
+.foot .contact{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--faint);text-align:right;line-height:1.6}
+
+/* notes */
+.notes .eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+.notes h2{margin-top:12px;font-family:var(--disp);font-weight:var(--w-lead);font-size:1.7rem;line-height:1.1}
+.notes dl{margin-top:24px;border-top:1px solid var(--seam)}
+.notes dl div{padding:12px 0;border-bottom:1px solid var(--seam)}
+.notes dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.notes dd{margin-top:3px;font-size:.88rem;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="fit">
+    <div class="page" data-theme="light">
+      <div class="wash"></div>
+      <svg class="rings" viewBox="0 0 1100 1100" aria-hidden="true"><g>
+        <circle cx="550" cy="550" r="170"/><circle cx="550" cy="550" r="210"/><circle cx="550" cy="550" r="250"/><circle cx="550" cy="550" r="290"/><circle cx="550" cy="550" r="330"/><circle cx="550" cy="550" r="370"/><circle cx="550" cy="550" r="410"/><circle cx="550" cy="550" r="450"/><circle cx="550" cy="550" r="490"/>
+      </g></svg>
+      <div class="in">
+        <div class="top"><span class="ey">Autonomous marketing agent</span><span class="ey">2026</span></div>
+        <h1>Stop being the middleware.</h1>
+        <p class="sub">Your dedicated AI marketing agent. Describe the work in plain English — it executes across 100+ real tools, then hands it back for your approval before anything ships.</p>
+        <div class="go"><span class="lnk">magistermarketing.com/start →</span><span class="fine">Free plan · no credit card</span></div>
+        <div class="checks">
+          <span><span class="msi">check</span>Ships while you sleep</span>
+          <span><span class="msi">check</span>100+ real integrations</span>
+          <span><span class="msi">check</span>Nothing ships unapproved</span>
+        </div>
+
+        <div class="four">
+          <h2>Everything a marketer needs <span>— already loaded.</span></h2>
+          <div class="cols">
+            <div class="c"><span class="msi">edit_note</span><b>Writes</b><p>Pages, posts, and emails in your voice.</p></div>
+            <div class="c"><span class="msi">rocket_launch</span><b>Ships</b><p>Publishes to the tools you already use.</p></div>
+            <div class="c"><span class="msi">monitoring</span><b>Reports</b><p>GA4, ads, and product metrics in one read.</p></div>
+            <div class="c"><span class="msi">trending_up</span><b>Improves</b><p>Feeds what worked into the next round.</p></div>
+          </div>
+        </div>
+
+        <div class="lower">
+          <div class="log">
+            <div class="hd"><span class="ey">Telemetry · last night</span><span class="fig">+18%</span></div>
+            <div class="lrow"><span><i>00:41</i>Social post · 3 variants</span><span class="st ship">Shipped</span></div>
+            <div class="lrow"><span><i>03:55</i>SEO sweep · 12 gaps queued</span><span class="st run">Running</span></div>
+            <div class="lrow"><span><i>04:12</i>Trial-to-paid · 5 emails</span><span class="st">Needs review</span></div>
+          </div>
+          <div class="quote">
+            <p>“It runs our whole marketing operation between reviews. We just read the telemetry.”</p>
+            <span class="who">Dana Reyes · Head of Growth, Orbital</span>
+          </div>
+        </div>
+
+        <div class="foot">
+          <img src="../logo/logo-lockup.svg" width="150" height="28" alt="Magister">
+          <span class="contact">team@magistermarketing.com<br>magistermarketing.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="eyebrow">Templates · one-pager</div>
+    <h2>Sales one-pager.</h2>
+    <dl>
+      <div><dt>Frame</dt><dd>US Letter, 8.5 × 11in trim (816 × 1056 at 96dpi), +⅛in bleed for print. Shown at 75%.</dd></div>
+      <div><dt>Theme</dt><dd>Light first. Amber text darkens to --accent-tx; the rings use --dot.</dd></div>
+      <div><dt>No button</dt><dd>Print isn't interactive — the action is a URL, set in mono.</dd></div>
+      <div><dt>Margins</dt><dd>¾in interior. Content stays inside; only the wash and rings run to the edge.</dd></div>
+      <div><dt>Logo</dt><dd>Signs off bottom-left at 150px — never the top of the page.</dd></div>
+    </dl>
+  </div>
+</div>
+</body>
+</html>

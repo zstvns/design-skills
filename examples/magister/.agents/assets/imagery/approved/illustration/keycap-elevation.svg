@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Front elevation of a console keycap with dimension lines">
+  <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap");   svg{background:#0F0C07;border:1px solid #3A3020;border-radius:8px;display:block}   .ln{stroke:#ECE4D6;stroke-opacity:.82;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}   .fn{stroke:#ECE4D6;stroke-opacity:.28;stroke-width:1;fill:none}   .pl{stroke-dasharray:2 7}   .act{stroke:#E8830C;stroke-opacity:1}   .dot{fill:#ECE4D6;fill-opacity:.82}   .adot{fill:#E8830C}   .lbl{font:500 9.5px 'JetBrains Mono',monospace;letter-spacing:.14em;fill:#988B71;text-transform:uppercase}   .albl{fill:#F4A93C}   .br{stroke:#4A3D24;stroke-width:1;fill:none}  svg{background:#0F0C07}</style>
+  <path class="br" d="M14 26V14h12M374 14h12v12M386 274v12h-12M26 286H14v-12"/>
+  <rect class="ln" x="130" y="80" width="140" height="120" rx="10"/>
+  <rect class="ln" x="146" y="92" width="108" height="92" rx="6"/>
+  <path class="ln act" d="M176 160 h48"/>
+  <path class="fn" d="M130 222 v16 M270 222 v16 M130 232 H270"/><path class="fn" d="M290 80 h16 M290 200 h16 M300 80 V200"/>
+  <text class="lbl" x="178" y="252">19.05 mm</text><text class="lbl" x="312" y="144">Travel 2</text>
+  <text class="lbl albl" x="174" y="148">Fire</text>
+  <path class="ln" d="M110 210 H290"/>
+</svg>

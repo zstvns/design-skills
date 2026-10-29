@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magister — Your autonomous AI marketing agent</title>
+<meta property="og:title" content="Magister — Your autonomous AI marketing agent">
+<meta property="og:description" content="Describe the work in plain English. Your agent executes across 100+ tools, then hands it back for your approval.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&display=block" rel="stylesheet">
+<style>
+:root{
+  --ground:#0F0C07; --panel:#1B160E; --panel2:#221B11; --panel3:#2A2114;
+  --seam:#3A3020; --seam2:#4A3D24;
+  --bone:#ECE4D6; --dim:#C2B69C; --faint:#988B71;
+  /* amber = brand energy / status / hero accent (NOT the CTA) */
+  --accent:#E8830C; --lo:#F4A93C; --sync:#4E7BC4; --alert:#D2542E;
+  /* the CTA color — one forward color, distinct from text/graphics, used only for action */
+  --cta:#3FA968; --cta-lo:#63C98A; --go:#5BA772;
+  --disp:'Chakra Petch',sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --glow:0 0 .5px rgba(244,169,60,.9), 0 0 14px rgba(232,131,12,.35);
+  --ctaglow:0 0 .5px rgba(99,201,138,.9), 0 8px 24px rgba(63,169,104,.32);
+  --lift:inset 0 1px 0 rgba(255,220,170,.05), 0 1px 2px rgba(0,0,0,.4), 0 8px 22px rgba(0,0,0,.4), 0 18px 48px rgba(0,0,0,.35);
+  --radius:8px; --pad:clamp(1.1rem,2.4vw,1.5rem); --gap:clamp(1rem,2vw,1.5rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:radial-gradient(1200px 700px at 78% -12%, rgba(232,131,12,.08), transparent 60%), var(--ground);
+  color:var(--bone);font-family:var(--body);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.msi{font-family:'Material Symbols Sharp';font-weight:400;font-style:normal;line-height:1;-webkit-font-feature-settings:'liga';font-variation-settings:'opsz' 24;display:inline-block;vertical-align:middle}
+
+/* motif — calmed globally; hero stays clear (see .hero::before override) */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.34;
+  background-image:linear-gradient(rgba(255,220,170,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,220,170,.025) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:radial-gradient(1200px 1000px at 50% 30%,#000 20%,transparent 85%)}
+.sweep{position:fixed;inset:0;z-index:60;pointer-events:none;background:linear-gradient(100deg,transparent 45%,rgba(244,169,60,.03) 50%,transparent 55%);transform:translateX(-120%)}
+@media(prefers-reduced-motion:no-preference){.sweep{animation:sweep 22s linear infinite}@keyframes sweep{to{transform:translateX(120%)}}}
+
+.shell{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+.eyebrow{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;background:var(--lo);box-shadow:0 0 8px rgba(232,131,12,.6)}
+.panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--seam);border-radius:var(--radius);padding:var(--pad);position:relative;box-shadow:var(--lift)}
+.corner{position:absolute;width:9px;height:9px;border:1px solid var(--seam2);pointer-events:none}
+.corner.tl{top:6px;left:6px;border-right:0;border-bottom:0}.corner.tr{top:6px;right:6px;border-left:0;border-bottom:0}
+.corner.bl{bottom:6px;left:6px;border-right:0;border-top:0}.corner.br{bottom:6px;right:6px;border-left:0;border-top:0}
+
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+/* low-opacity headline with one standout word — an emphasis technique */
+.dim-head{color:var(--dim)}.dim-head .hi{color:var(--bone)}
+h2{font-size:clamp(1.9rem,4.4vw,3rem)}h3{font-size:clamp(1.12rem,2vw,1.35rem)}p{color:var(--dim)}
+.section{padding:clamp(3.5rem,8vw,6.5rem) 0}
+.lead{max-width:48ch}.center{text-align:center;margin-left:auto;margin-right:auto}
+.hdr{margin-bottom:2.4rem}
+
+/* buttons — CTA is green + pill; distinct from every squared card */
+.btn{font-family:var(--mono);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500;
+  display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;border-radius:999px;text-decoration:none;
+  transition:transform .18s ease,box-shadow .22s ease,background .22s,border-color .22s,color .22s}
+.btn .msi{font-size:1.1rem}
+.btn-cta{color:#06210f;background:linear-gradient(180deg,var(--cta-lo),var(--cta));border:1px solid #2b7d4c;
+  padding:.72rem 1.15rem;box-shadow:inset 0 1px 0 rgba(220,255,230,.5),0 2px 5px rgba(0,0,0,.35),var(--ctaglow)}
+.btn-cta:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(220,255,230,.6),0 4px 10px rgba(0,0,0,.4),0 14px 34px rgba(63,169,104,.5)}
+.btn-ghost{color:var(--bone);background:rgba(0,0,0,.2);border:1px solid var(--seam2);padding:.72rem 1.15rem}
+.btn-ghost:hover{border-color:var(--dim);color:#fff;background:rgba(0,0,0,.35)}
+.link-all{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lo);text-decoration:none;display:inline-flex;gap:.4rem;align-items:center}
+.link-all:hover{color:#fff}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(9px);background:linear-gradient(180deg,rgba(15,12,7,.92),rgba(15,12,7,.7));border-bottom:1px solid var(--seam)}
+.navrow{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:var(--disp);font-weight:600;letter-spacing:.02em;font-size:1.06rem;color:var(--bone);text-decoration:none}
+.navlinks{display:flex;gap:1.5rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+.navlinks a{color:var(--faint);text-decoration:none;transition:color .18s}.navlinks a:hover{color:var(--bone)}
+.navcta{display:flex;align-items:center;gap:.85rem}
+@media(max-width:980px){.navlinks{display:none}}
+
+/* hero */
+.hero{position:relative;padding:clamp(3rem,7vw,5rem) 0 clamp(2.5rem,6vw,3.5rem)}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background:radial-gradient(680px 380px at 22% 40%, rgba(232,131,12,.10), transparent 60%)}
+.herogrid{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(1.5rem,4vw,3.2rem);align-items:flex-start}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(2.9rem,7vw,5rem);line-height:.98;letter-spacing:-.02em}
+.hero h1 .at{color:var(--lo);text-shadow:var(--glow)}
+.hero .cursor{display:inline-block;width:.5ch;height:.86em;background:var(--lo);margin-left:.06em;vertical-align:-.03em;box-shadow:var(--glow)}
+@media(prefers-reduced-motion:no-preference){.hero .cursor{animation:blink 1.1s step-end infinite}@keyframes blink{50%{opacity:0}}}
+.hero .sub{margin-top:1.4rem;font-size:clamp(1.02rem,1.5vw,1.18rem);color:var(--dim);max-width:42ch}
+/* the invitation — enter a URL, get your free plan */
+.urlbar{margin-top:1.9rem;display:flex;gap:.5rem;max-width:35rem;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--seam2);border-radius:999px;padding:.4rem .4rem .4rem 1.1rem;align-items:center;box-shadow:var(--lift)}
+.urlbar .msi{color:var(--faint);font-size:1.15rem}
+.urlbar input{flex:1;background:transparent;border:0;outline:0;color:var(--bone);font-family:var(--body);font-size:.98rem;min-width:0}
+.urlbar input::placeholder{color:var(--faint)}
+.urlbar .btn-cta{padding:.62rem 1.05rem;white-space:nowrap}
+.hero .under{margin-top:1rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.09em;color:var(--faint);text-transform:uppercase}
+@media(max-width:860px){.herogrid{grid-template-columns:1fr}.hero .console{order:2}.urlbar{flex-wrap:wrap;border-radius:14px}.urlbar .btn-cta{width:100%;justify-content:center}}
+
+/* hero console */
+.console{display:grid;gap:.7rem}
+.log .row{display:grid;grid-template-columns:auto 1.2rem 1fr auto;gap:.65rem;align-items:center;padding:.55rem .2rem;border-bottom:1px solid rgba(58,48,32,.6)}
+.log .row:last-child{border-bottom:0}.log .t{font-family:var(--mono);font-size:.64rem;color:var(--faint)}
+.log .row .msi{font-size:1rem;color:var(--dim)}.log .task{font-size:.82rem;color:var(--bone)}.log .task span{color:var(--faint)}
+.tag{font-family:var(--mono);font-size:.55rem;letter-spacing:.09em;text-transform:uppercase;padding:.18rem .42rem;border-radius:999px;border:1px solid var(--seam2);color:var(--dim);white-space:nowrap}
+.tag.go{color:var(--dim);border-color:var(--seam2)}.tag.burn{color:var(--lo);border-color:rgba(232,131,12,.45)}
+.tag.sync{color:var(--sync);border-color:rgba(78,123,196,.4)}.tag.idle{color:var(--faint)}
+.chatline{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem .1rem}
+.chatline .who{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);width:4.6rem;flex-shrink:0;padding-top:.15rem}
+.chatline .msg{font-size:.86rem;color:var(--bone)}
+
+/* integrations — REAL logos, one color story, readable contrast */
+.trust{border-top:1px solid var(--seam);border-bottom:1px solid var(--seam);padding:clamp(2rem,4vw,2.4rem) 0;overflow:hidden}
+.trust .lbl{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-align:center;margin-bottom:1.6rem}
+.marquee{display:flex;gap:clamp(2rem,4vw,3.2rem);width:max-content;align-items:center}
+@media(prefers-reduced-motion:no-preference){.marquee{animation:scroll 42s linear infinite}@keyframes scroll{to{transform:translateX(-50%)}}}
+.marquee img{height:26px;width:auto;opacity:.8;filter:brightness(0) invert(88%) sepia(12%) saturate(180%) hue-rotate(0deg);transition:opacity .2s}
+.marquee img:hover{opacity:1}
+.mock img{filter:brightness(0) invert(88%) sepia(12%) saturate(180%)}
+.marq-mask{position:relative}
+.marq-mask::before,.marq-mask::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:3;pointer-events:none}
+.marq-mask::before{left:0;background:linear-gradient(90deg,var(--ground),transparent)}
+.marq-mask::after{right:0;background:linear-gradient(270deg,var(--ground),transparent)}
+
+/* generic grids */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.card{padding:var(--pad);display:flex;flex-direction:column;gap:.6rem}
+.card .ic{width:40px;height:40px;border:1px solid var(--seam2);border-radius:6px;display:grid;place-items:center;background:linear-gradient(180deg,var(--panel3),var(--panel));box-shadow:inset 0 1px 0 rgba(255,220,170,.06)}
+.card .ic .msi{font-size:1.35rem;color:var(--lo)}
+.card h3{margin-top:.2rem}.card p{font-size:.89rem}
+.card .stat{margin-top:auto;font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;color:var(--faint);text-transform:uppercase;display:flex;gap:.5rem;align-items:center}
+@media(max-width:900px){.grid3{grid-template-columns:1fr 1fr}}@media(max-width:600px){.grid3,.grid2{grid-template-columns:1fr}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.step .n{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--lo);text-transform:uppercase}
+.step .bar{height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin:.7rem 0 1rem;width:60%}
+.step h3{font-size:1.14rem}.step p{font-size:.89rem;margin-top:.35rem}
+@media(max-width:700px){.steps{grid-template-columns:1fr}}
+
+/* terminal signup — full-width dark block, unexpected rhythm beat */
+.terminal{background:linear-gradient(180deg,#0b0906,#070502);border:1px solid var(--seam2);border-radius:12px;overflow:hidden;box-shadow:var(--lift)}
+.terminal .bar{display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-bottom:1px solid var(--seam)}
+.terminal .bar i{width:11px;height:11px;border-radius:50%;background:var(--seam2);display:inline-block}
+.terminal .bar .ttl{margin-left:.6rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.terminal .body{padding:1.3rem 1.3rem 1.5rem;font-family:var(--mono);font-size:.9rem;line-height:1.8}
+.terminal .body .pr{color:var(--lo)}.terminal .body .cmd{color:var(--bone)}
+.terminal .copy{margin-top:1.1rem}
+.terminal .note{margin-top:1rem;font-family:var(--mono);font-size:.68rem;color:var(--faint);letter-spacing:.03em}
+
+/* stop being the middleware */
+.flow{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;font-family:var(--mono);font-size:.76rem;letter-spacing:.03em}
+.flow .node{border:1px solid var(--seam2);border-radius:999px;padding:.45rem .85rem;background:rgba(0,0,0,.22);color:var(--dim)}
+.flow .node.you{color:var(--bone)}.flow .node.mg{color:#06210f;background:linear-gradient(180deg,var(--cta-lo),var(--cta));border-color:#2b7d4c}
+.flow .arw{color:var(--faint)}
+.row-lbl{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+.verdict{font-family:var(--mono);font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;margin-top:.9rem}
+.old .verdict{color:var(--faint)}.new .verdict{color:var(--go)}
+
+/* orbital — the signature product visual: work loops around the agent */
+.orbital{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.4rem);align-items:flex-start}
+.orbit{position:relative;aspect-ratio:1;max-width:440px;margin:0 auto;width:100%}
+.orbit .ring{position:absolute;inset:0;border:1px solid var(--seam);border-radius:50%}
+.orbit .ring.r2{inset:16%}.orbit .ring.r3{inset:33%}
+.orbit .core{position:absolute;inset:38%;border-radius:50%;display:grid;place-items:center;text-align:center;
+  background:radial-gradient(circle at 38% 32%,var(--panel3),#0c0a06);border:1px solid var(--seam2);
+  box-shadow:inset 0 2px 8px rgba(0,0,0,.7),0 0 30px rgba(232,131,12,.25),var(--lift)}
+.orbit .core .msi{font-size:1.5rem;color:var(--lo);filter:drop-shadow(0 0 8px rgba(232,131,12,.6))}
+.orbit .core b{display:block;font-family:var(--disp);font-size:.82rem;color:var(--bone);margin-top:.2rem;letter-spacing:.02em}
+.spin{position:absolute;inset:0}
+@media(prefers-reduced-motion:no-preference){.spin{animation:spin 34s linear infinite}.spin.rev{animation-duration:26s;animation-direction:reverse}@keyframes spin{to{transform:rotate(360deg)}}}
+.chip{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);display:flex;gap:.4rem;align-items:center;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bone);white-space:nowrap;
+  background:linear-gradient(180deg,var(--panel3),var(--panel));border:1px solid var(--seam2);border-radius:999px;padding:.32rem .6rem;box-shadow:var(--lift)}
+.chip .msi{font-size:.85rem;color:var(--lo)}
+@media(prefers-reduced-motion:no-preference){.chip{animation:cspin 34s linear infinite}.spin.rev .chip{animation-duration:26s;animation-direction:reverse}@keyframes cspin{to{transform:translate(-50%,-50%) rotate(-360deg)}}}
+@media(max-width:820px){.orbital{grid-template-columns:1fr}}
+
+/* alternating feature rows */
+.featrow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.2rem);align-items:flex-start;margin-top:clamp(3.5rem,7vw,5.5rem)}
+.featrow:first-of-type{margin-top:0}
+.featrow.flip .txt{order:2}.featrow.flip .vis{order:1}
+.featrow h3{font-size:clamp(1.3rem,2.4vw,1.7rem)}.featrow p{margin-top:.8rem;font-size:.95rem;max-width:42ch}
+.featrow .tagline{color:var(--lo);font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.7rem}
+.vis .panel{padding:0;overflow:hidden}
+@media(max-width:820px){.featrow{grid-template-columns:1fr}.featrow.flip .txt{order:1}.featrow.flip .vis{order:2}}
+
+/* small mocks used in feature rows */
+.mock{padding:1.1rem 1.2rem;display:grid;gap:.6rem;min-height:200px}
+.mock .mrow{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:var(--dim)}
+.mock .mrow .msi{font-size:1.05rem;color:var(--dim)}.mock .mrow.acc .msi{color:var(--lo)}
+.mock .bar2{height:8px;border-radius:999px;background:var(--panel3);overflow:hidden}
+.mock .bar2 i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--lo))}
+.mock .brandkit{display:flex;gap:.5rem}.swatch{width:34px;height:34px;border-radius:6px;border:1px solid var(--seam2)}
+.mock .inbox .it{display:flex;justify-content:space-between;gap:.6rem;padding:.5rem 0;border-bottom:1px solid rgba(58,48,32,.5);font-size:.8rem;color:var(--dim)}
+.mock .inbox .it b{color:var(--bone);font-weight:500}
+.mono-sm{font-family:var(--mono);font-size:.66rem;color:var(--faint);letter-spacing:.05em}
+
+/* comparison */
+.cmp{width:100%;border-collapse:collapse;font-size:.9rem}
+.cmp th,.cmp td{text-align:left;padding:.9rem 1rem;border-bottom:1px solid var(--seam)}
+.cmp thead th{font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.cmp thead th.mg{color:var(--lo)}.cmp td.feat{color:var(--bone)}.cmp td.c{text-align:center;width:11rem}
+.cmp .yes{color:var(--lo)}.cmp .no{color:var(--faint)}.cmp .colmg{background:rgba(63,169,104,.06)}
+@media(max-width:640px){.cmp td.c{width:auto}.cmp th,.cmp td{padding:.65rem .5rem;font-size:.8rem}}
+
+/* metric */
+.metric{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(1.6rem,4vw,3.2rem);align-items:flex-start}
+.bignum{font-family:var(--disp);font-weight:700;font-size:clamp(3.6rem,9vw,5.8rem);line-height:.9;color:var(--lo);text-shadow:var(--glow)}
+.chart{width:100%;height:auto;display:block}
+.legend{display:flex;gap:1.2rem;margin-top:1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.legend i{width:14px;height:2px;display:inline-block;margin-right:.4rem;vertical-align:middle}
+@media(max-width:820px){.metric{grid-template-columns:1fr}}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);align-items:stretch}
+.plan{display:flex;flex-direction:column;gap:1rem}
+.plan.reco{border-color:#2b7d4c;box-shadow:inset 0 1px 0 rgba(255,220,170,.06),0 0 0 1px rgba(63,169,104,.3),var(--lift)}
+.plan .tier{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);display:flex;justify-content:space-between;align-items:center}
+.plan .badge{color:#160d02;background:var(--lo);padding:.18rem .5rem;border-radius:999px;letter-spacing:.08em}
+.plan .price{font-family:var(--disp);font-weight:600;font-size:2.3rem}.plan .price span{font-family:var(--mono);font-size:.76rem;color:var(--faint);font-weight:400}
+.plan .blurb{font-size:.85rem}.plan ul{list-style:none;display:grid;gap:.5rem;margin:.2rem 0}
+.plan li{display:grid;grid-template-columns:1.2rem 1fr;gap:.5rem;font-size:.84rem;color:var(--dim);align-items:start}
+.plan li .msi{font-size:1rem;color:var(--dim);margin-top:.1rem}.plan .btn{margin-top:auto;justify-content:center}
+.pricenote{font-family:var(--mono);font-size:.66rem;color:var(--faint);text-align:center;margin-top:1.8rem;letter-spacing:.03em;max-width:60ch}
+@media(max-width:860px){.plans{grid-template-columns:1fr}}
+
+/* founders */
+.founder{display:flex;gap:1rem;align-items:flex-start}
+.founder .av{width:46px;height:46px;flex-shrink:0;border:1px solid var(--seam2);border-radius:8px;display:grid;place-items:center;background:linear-gradient(180deg,var(--panel3),var(--panel));color:var(--lo);font-family:var(--disp);font-weight:600}
+.founder h3{font-size:1.08rem}.founder p{font-size:.84rem;margin-top:.3rem}
+.quote{max-width:54ch;margin:2.4rem auto 0;text-align:center}
+.quote p{font-family:var(--disp);font-weight:500;font-size:clamp(1.25rem,2.6vw,1.7rem);line-height:1.3;color:var(--bone)}
+
+/* faq */
+.faq{display:grid;gap:.6rem;max-width:800px;margin:0 auto}
+.faq details{border:1px solid var(--seam);border-radius:var(--radius);background:linear-gradient(180deg,var(--panel2),var(--panel));overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:1.05rem 1.2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--disp);font-weight:500;font-size:1.02rem;color:var(--bone)}
+.faq summary::-webkit-details-marker{display:none}.faq summary .msi{color:var(--lo);transition:transform .2s}
+.faq details[open] summary .msi{transform:rotate(45deg)}.faq .ans{padding:0 1.2rem 1.15rem;font-size:.89rem;color:var(--dim);max-width:64ch}
+
+/* final CTA — flips toward green (the forward color) */
+.launch{position:relative;text-align:center;border-radius:14px;overflow:hidden;padding:clamp(3rem,7vw,5rem) clamp(1.2rem,4vw,3rem);
+  background:radial-gradient(680px 320px at 50% 118%,rgba(63,169,104,.24),transparent 60%),linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--seam2);box-shadow:var(--lift)}
+.launch h2{font-family:var(--disp);font-weight:700}.launch p{margin:1.1rem auto 0;max-width:46ch}
+.launch .acts{display:flex;gap:.8rem;justify-content:center;margin-top:2rem;flex-wrap:wrap}
+.launch .risk{margin-top:1.3rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+
+footer{border-top:1px solid var(--seam);margin-top:clamp(3rem,6vw,5rem);padding:clamp(2.4rem,5vw,3.4rem) 0 2.4rem}
+.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:2rem}
+.foot .col h4{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem;font-weight:500}
+.foot .col a{display:block;color:var(--dim);text-decoration:none;font-size:.85rem;padding:.26rem 0}.foot .col a:hover{color:var(--bone)}
+.foot .about .latin{font-style:italic;color:var(--faint);font-size:.85rem;margin-top:.9rem;max-width:32ch}
+.footbar{display:flex;justify-content:space-between;gap:1rem;margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--seam);font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;color:var(--faint);text-transform:uppercase;flex-wrap:wrap}
+@media(max-width:760px){.foot{grid-template-columns:1fr 1fr}.foot .about{grid-column:1/-1}}
+
+/* ===== v4 additions ===== */
+/* hero: typed second line + smaller headline */
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.7rem)!important;line-height:1.02}
+.hero h1.typed{color:var(--dim);font-weight:600;margin-top:.15rem}
+.hero h1.typed #type{color:var(--bone)}
+
+/* hero: cycling stack of shipped-work cards (runs once, then rests) */
+.cardstack{position:relative;height:236px}
+.shipcard{position:absolute;inset:0;padding:1.15rem 1.2rem;border-radius:10px;display:flex;flex-direction:column;gap:.55rem;
+  background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--seam2);box-shadow:var(--lift);
+  transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .55s;will-change:transform,opacity}
+.shipcard .hd{display:flex;align-items:center;gap:.6rem}
+.shipcard .hd .msi{color:var(--lo);font-size:1.1rem}
+.shipcard .hd b{font-family:var(--disp);font-weight:600;font-size:1.02rem}
+.shipcard .hd .t{margin-left:auto;font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+.shipcard .body{font-size:.9rem;color:var(--dim);margin-top:.1rem}
+.shipcard .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.stacknudge{position:absolute;left:0;right:0;bottom:-2.6rem;text-align:center;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);opacity:0;transition:opacity .5s}
+.stacknudge.show{opacity:1}
+
+/* marquee: clickable logo + hover pause + reveal name (layers of discovery) */
+.marquee:hover{animation-play-state:paused}
+.lg{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:.35rem .2rem;cursor:pointer;text-decoration:none}
+.lg::after{content:attr(data-name);position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%);
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone);
+  background:var(--panel);border:1px solid var(--seam2);border-radius:999px;padding:.22rem .55rem;white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none;z-index:5}
+.lg:hover::after{opacity:1}
+.lg img{transition:opacity .2s,transform .2s}.lg:hover img{opacity:1;transform:translateY(-2px)}
+
+/* middleware dichotomy: old = neutral/grayscale, new = brand color */
+.old{filter:saturate(0);opacity:.9}
+.new .row-lbl{color:var(--lo)}.new .verdict{color:var(--lo)}
+.hub{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--disp);font-weight:600;color:var(--bone);
+  border:1px solid var(--seam2);border-radius:999px;padding:.35rem .7rem .35rem .45rem;background:linear-gradient(180deg,var(--panel3),var(--panel));box-shadow:0 0 18px rgba(232,131,12,.22)}
+.hub .mk{width:22px;height:22px;border:1px solid var(--seam2);border-radius:5px;display:grid;place-items:center;background:var(--ground)}
+.hub .mk .msi{font-size:14px;color:var(--lo);filter:drop-shadow(0 0 5px rgba(232,131,12,.6))}
+.node.c-blue{color:var(--sync);border-color:rgba(78,123,196,.5)}
+.node.c-amber{color:var(--lo);border-color:rgba(232,131,12,.5)}
+
+/* founders: photo on top; stylized quote */
+.founder{flex-direction:column;align-items:flex-start;gap:.9rem}
+.founder .av{width:52px;height:52px;border-radius:10px;font-size:1.05rem}
+.bigquote{max-width:60ch;margin:clamp(2.5rem,5vw,3.5rem) auto 0;text-align:center;position:relative;padding:clamp(1.6rem,4vw,2.6rem)}
+.bigquote .mark{font-family:var(--disp);font-weight:700;font-size:4rem;line-height:0;color:var(--lo);opacity:.5;display:block;height:1.4rem}
+.bigquote p{font-family:var(--disp);font-weight:500;font-size:clamp(1.35rem,3vw,2rem);line-height:1.25;color:var(--bone)}
+.bigquote .by{margin-top:1.4rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+
+/* scroll reveal for feature rows + cards */
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+}
+
+/* ══ MOTION-DESIGN PASS — 12 principles · Zajno techniques · Emil Kowalski defaults ══ */
+:root{
+  /* named easing system — ease-out is the workhorse (Emil), no raw linear */
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-standard:cubic-bezier(.4,0,.2,1);
+  --ease-overshoot:cubic-bezier(.34,1.56,.64,1);
+}
+/* press feedback — the interface listens (Emil: scale 0.97 on :active) */
+.btn{transition:transform .2s var(--ease-out),box-shadow .24s var(--ease-out),background .24s var(--ease-standard),border-color .24s,color .24s}
+.btn:active{transform:scale(.97)}
+.btn-cta:hover{transform:translateY(-1px)}      /* keep the hover lift … */
+.btn-cta:active{transform:scale(.97)}            /* … but the press wins over it */
+/* url-bar focus feedback — the primary action's field */
+.urlbar{transition:border-color .25s var(--ease-standard),box-shadow .25s var(--ease-standard)}
+.urlbar:focus-within{border-color:var(--dim);box-shadow:var(--lift),0 0 0 3px rgba(232,131,12,.12)}
+/* faq — smoother chevron (anticipation) + answer reveal (secondary action) */
+.faq summary .msi{transition:transform .25s var(--ease-overshoot)}
+@media(prefers-reduced-motion:no-preference){
+  .faq details[open] .ans{animation:ansin .3s var(--ease-out) both}
+  @keyframes ansin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  /* re-time the existing reveal to the token curve (was raw ease) */
+  .reveal{transition:opacity .55s var(--ease-out),transform .55s var(--ease-out)}
+  /* grouped, STAGGERED reveal — overlapping action, the biggest lever */
+  .stagger>*{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease-out),transform .55s var(--ease-out)}
+  .stagger.in>*{opacity:1;transform:none}
+  .stagger.in>*:nth-child(1){transition-delay:0s}
+  .stagger.in>*:nth-child(2){transition-delay:.07s}
+  .stagger.in>*:nth-child(3){transition-delay:.14s}
+  .stagger.in>*:nth-child(4){transition-delay:.21s}
+  .stagger.in>*:nth-child(5){transition-delay:.28s}
+  .stagger.in>*:nth-child(6){transition-delay:.35s}
+  /* metric line draws in — motion that explains */
+  .chart .draw{stroke-dasharray:760;stroke-dashoffset:760}
+  .metric.in .chart .draw{animation:draw 1.15s var(--ease-out) .15s forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}
+</style>
+</head>
+<body>
+<!-- Motion pass applied to homepage v4 — it predates homepage.html's filmstrip and pinned scroll-telling sections. Motion tokens: see .agents/design.md → Motion System. -->
+<div class="sweep" aria-hidden="true"></div>
+
+<nav>
+  <div class="shell navrow">
+    <a class="brand" href="#top"><img src="../.agents/assets/logo/logo-lockup-inverse.svg" alt="Magister" style="height:22px;width:auto;display:block"></a>
+    <div class="navlinks">
+      <a href="#how">How it works</a><a href="#skills">Skills</a><a href="#pricing">Pricing</a><a href="#mcp">MCP</a><a href="#founders">About</a><a href="#">Changelog</a>
+    </div>
+    <div class="navcta">
+      <a href="#" class="btn btn-ghost" style="padding:.5rem .9rem">Sign in</a>
+      <a href="#start" class="btn btn-cta" style="padding:.5rem .95rem">Get my free plan</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="shell">
+    <div class="herogrid">
+      <div>
+        <h1>Hey <span class="at">@Magister</span>,</h1>
+        <h1 class="typed"><span id="type"></span><span class="cursor" aria-hidden="true"></span></h1>
+        <p class="sub">Your dedicated AI marketing agent. Describe the work in plain English — it executes across 100+ real tools, then hands it back for your approval before anything ships.</p>
+        <form class="urlbar" onsubmit="return false">
+          <span class="msi">link</span>
+          <input type="text" placeholder="Enter your website URL…" aria-label="Your website URL">
+          <button class="btn btn-cta" type="submit">Get my free plan</button>
+        </form>
+        <div class="under">100% free · No credit card required</div>
+      </div>
+      <div class="console">
+        <div class="cardstack" id="stack">
+          <div class="shipcard"><div class="hd"><span class="msi">grid_view</span><b>Social post</b><span class="t">T+00:41</span></div><div class="body">LinkedIn · 3 variants, on-brand and scheduled.</div><div class="foot"><span class="tag go">Shipped</span></div></div>
+          <div class="shipcard"><div class="hd"><span class="msi">description</span><b>Blog draft</b><span class="t">T+02:07</span></div><div class="body">"The launch playbook" · 1,240 words, researched.</div><div class="foot"><span class="tag burn">Needs review</span></div></div>
+          <div class="shipcard"><div class="hd"><span class="msi">search</span><b>SEO sweep</b><span class="t">T+03:55</span></div><div class="body">47 keywords swept · 12 gaps found and queued.</div><div class="foot"><span class="tag sync">Running</span></div></div>
+          <div class="shipcard"><div class="hd"><span class="msi">mail</span><b>Email sequence</b><span class="t">T+04:12</span></div><div class="body">Trial-to-paid · 5 emails drafted from your data.</div><div class="foot"><span class="tag sync">Drafting</span></div></div>
+        </div>
+        <div class="stacknudge" id="nudge">↑ all shipped while you were away — give it your next task</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS — real logos -->
+<section class="trust" id="mcp">
+  <div class="shell">
+    <div class="lbl">Every tool a marketer needs — already loaded · 100+ integrations</div>
+  </div>
+  <div class="marq-mask">
+    <div class="marquee" id="marq">
+      <a class="lg" data-name="Instagram" href="#" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/instagram.svg" alt="Instagram"></a><a class="lg" data-name="LinkedIn" href="#" aria-label="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/linkedin.svg" alt="LinkedIn"></a><a class="lg" data-name="TikTok" href="#" aria-label="TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/tiktok.svg" alt="TikTok"></a><a class="lg" data-name="YouTube" href="#" aria-label="YouTube"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/youtube.svg" alt="YouTube"></a><a class="lg" data-name="Google Ads" href="#" aria-label="Google Ads"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/googleads.svg" alt="Google Ads"></a><a class="lg" data-name="Meta" href="#" aria-label="Meta"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/meta.svg" alt="Meta"></a><a class="lg" data-name="HubSpot" href="#" aria-label="HubSpot"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/hubspot.svg" alt="HubSpot"></a><a class="lg" data-name="Webflow" href="#" aria-label="Webflow"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/webflow.svg" alt="Webflow"></a><a class="lg" data-name="WordPress" href="#" aria-label="WordPress"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/wordpress.svg" alt="WordPress"></a><a class="lg" data-name="Shopify" href="#" aria-label="Shopify"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/shopify.svg" alt="Shopify"></a><a class="lg" data-name="Google Analytics" href="#" aria-label="Google Analytics"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/googleanalytics.svg" alt="Google Analytics"></a><a class="lg" data-name="Slack" href="#" aria-label="Slack"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/slack.svg" alt="Slack"></a><a class="lg" data-name="Notion" href="#" aria-label="Notion"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/notion.svg" alt="Notion"></a><a class="lg" data-name="Stripe" href="#" aria-label="Stripe"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/stripe.svg" alt="Stripe"></a><a class="lg" data-name="Mailchimp" href="#" aria-label="Mailchimp"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/mailchimp.svg" alt="Mailchimp"></a><a class="lg" data-name="Zapier" href="#" aria-label="Zapier"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/zapier.svg" alt="Zapier"></a><a class="lg" data-name="GitHub" href="#" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/github.svg" alt="GitHub"></a><a class="lg" data-name="Vercel" href="#" aria-label="Vercel"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/vercel.svg" alt="Vercel"></a><a class="lg" data-name="Instagram" href="#" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/instagram.svg" alt=""></a><a class="lg" data-name="LinkedIn" href="#" aria-label="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/linkedin.svg" alt=""></a><a class="lg" data-name="TikTok" href="#" aria-label="TikTok"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/tiktok.svg" alt=""></a><a class="lg" data-name="YouTube" href="#" aria-label="YouTube"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/youtube.svg" alt=""></a><a class="lg" data-name="Google Ads" href="#" aria-label="Google Ads"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/googleads.svg" alt=""></a><a class="lg" data-name="Meta" href="#" aria-label="Meta"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/meta.svg" alt=""></a><a class="lg" data-name="HubSpot" href="#" aria-label="HubSpot"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/hubspot.svg" alt=""></a><a class="lg" data-name="Webflow" href="#" aria-label="Webflow"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/webflow.svg" alt=""></a><a class="lg" data-name="WordPress" href="#" aria-label="WordPress"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/wordpress.svg" alt=""></a><a class="lg" data-name="Shopify" href="#" aria-label="Shopify"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/shopify.svg" alt=""></a><a class="lg" data-name="Google Analytics" href="#" aria-label="Google Analytics"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/googleanalytics.svg" alt=""></a><a class="lg" data-name="Slack" href="#" aria-label="Slack"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/slack.svg" alt=""></a><a class="lg" data-name="Notion" href="#" aria-label="Notion"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/notion.svg" alt=""></a><a class="lg" data-name="Stripe" href="#" aria-label="Stripe"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/stripe.svg" alt=""></a><a class="lg" data-name="Mailchimp" href="#" aria-label="Mailchimp"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/mailchimp.svg" alt=""></a><a class="lg" data-name="Zapier" href="#" aria-label="Zapier"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/zapier.svg" alt=""></a><a class="lg" data-name="GitHub" href="#" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/github.svg" alt=""></a><a class="lg" data-name="Vercel" href="#" aria-label="Vercel"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/vercel.svg" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<!-- USE IT ANYWHERE -->
+<section class="section">
+  <div class="shell">
+    <div class="hdr">
+      <h2>Use it anywhere.</h2>
+      <p class="lead" style="margin-top:1rem">Start in the web app, in Slack, or from your own agent.</p>
+    </div>
+    <div class="grid3">
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="ic"><span class="msi">language</span></div><h3>On the web</h3>
+        <p>Open the web app, give Magister a marketing task, and review the work before it ships.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="ic"><span class="msi">forum</span></div><h3>From Slack</h3>
+        <p>Mention Magister in a brand channel, approve drafts, and keep campaign work moving where your team already talks.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="ic"><span class="msi">smart_toy</span></div><h3>From your own agent</h3>
+        <p>Connect the MCP server to Claude, ChatGPT, or your internal agent and run Magister tools from your existing workflow.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMINAL SIGNUP (separate) -->
+<section class="section" style="padding-top:0">
+  <div class="shell">
+    <div class="grid2" style="align-items:flex-start;gap:clamp(1.6rem,4vw,3.2rem)">
+      <div>
+        <h2>Sign up from your terminal.</h2>
+        <p class="lead" style="margin-top:1rem">Already living in Claude Code or Codex? Paste one prompt and the agent creates your Magister account for you — no forms, no password.</p>
+        <p class="mono-sm" style="margin-top:1.2rem">Invite-only right now — use the email you were invited with. Not invited yet? <a href="#" style="color:var(--lo);text-decoration:none">Join the waitlist →</a></p>
+      </div>
+      <div class="terminal">
+        <div class="bar"><i></i><i></i><i></i><span class="ttl">claude code — magister</span></div>
+        <div class="body">
+          <div><span class="pr">$</span> <span class="cmd">npx magister init</span></div>
+          <div class="mono-sm" style="color:var(--dim)">✓ Creating your Magister account…</div>
+          <div class="mono-sm" style="color:var(--dim)">✓ Provisioning your dedicated agent…</div>
+          <button class="btn btn-cta copy" id="copybtn"><span class="msi">content_copy</span>Copy prompt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="grid2" style="gap:clamp(1.6rem,4vw,3.4rem);align-items:flex-start">
+      <div>
+        <h2 style="max-width:14ch">Tell it what you need. It gets to work.</h2>
+        <div class="steps" style="grid-template-columns:1fr;gap:1.4rem;margin-top:2rem">
+          <div class="step"><div class="n">01 — Talk to it</div><div class="bar"></div><h3>Describe it in plain English.</h3><p>Open Magister on the web or in Slack and tell it what you need.</p></div>
+          <div class="step"><div class="n">02 — It plans &amp; executes</div><div class="bar"></div><h3>The agent does the real work.</h3><p>It taps 100+ specialized skills — copy, SEO, email, pages.</p></div>
+          <div class="step"><div class="n">03 — You review &amp; ship</div><div class="bar"></div><h3>You stay in control.</h3><p>Check it, tweak it, push it live. Nothing ships without approval.</p></div>
+        </div>
+      </div>
+      <div class="panel" style="padding:1.3rem">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="eyebrow" style="margin-bottom:.9rem">Just tell it what you need</div>
+        <div class="chatline"><span class="who">You</span><span class="msg">Write a launch email sequence for our new pricing.</span></div>
+        <div class="chatline"><span class="who" style="color:var(--lo)">Magister</span><span class="msg">On it — a 5-email sequence. Here's the plan:</span></div>
+        <div style="display:grid;gap:.5rem;margin:.4rem 0 .2rem 5.2rem">
+          <div class="mock mrow acc" style="min-height:0;padding:0"><span class="msi">check_circle</span><span style="font-size:.82rem;color:var(--dim)">Analyzed the pricing page</span></div>
+          <div class="mock mrow acc" style="min-height:0;padding:0"><span class="msi">check_circle</span><span style="font-size:.82rem;color:var(--dim)">Pulled trial-to-paid data</span></div>
+          <div class="mock mrow" style="min-height:0;padding:0"><span class="msi">pending</span><span style="font-size:.82rem;color:var(--dim)">Drafting emails 1–5…</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STOP BEING THE MIDDLEWARE -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="hdr"><h2>Stop being the middleware.</h2>
+      <p class="lead" style="margin-top:1rem">You've been the connective tissue between AI advice and the tools that do the work. Magister takes that job — and runs it while you're away.</p></div>
+    <div class="grid2">
+      <div class="panel old"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="row-lbl">The old way</div>
+        <div class="flow"><span class="node">Prompt AI</span><span class="arw">›</span><span class="node">Use tools</span><span class="arw">›</span><span class="node">Check data</span><span class="arw">›</span><span class="node">Edit &amp; fix</span><span class="arw">›</span><span class="node you">You</span></div>
+        <div class="verdict">Slow · Manual · Time-constrained</div></div>
+      <div class="panel new"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="row-lbl">With Magister</div>
+        <div class="flow"><span class="hub"><span class="mk"><span class="msi">rocket_launch</span></span>Magister</span><span class="arw">›</span><span class="node c-blue">Review &amp; approve</span><span class="arw">›</span><span class="node c-amber you">You</span></div>
+        <div class="verdict">Fast · Autonomous · Always running</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE MAGISTER — ORBITAL -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell orbital">
+    <div>
+      <h2 style="max-width:16ch">One agent. Your whole marketing workflow.</h2>
+      <p class="lead" style="margin-top:1rem">You connect with Magister — and everything else orbits it. Writing, optimizing, launching, researching, reporting: it runs the whole loop, autonomously, and reports back.</p>
+      <a href="#start" class="btn btn-cta" style="margin-top:1.8rem">Get my free plan</a>
+    </div>
+    <div class="orbit" role="img" aria-label="Marketing work orbiting the Magister agent in a loop">
+      <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+      <div class="core"><div><span class="msi">rocket_launch</span><b>Magister</b></div></div>
+      <div class="spin">
+        <div class="chip" style="top:0;left:50%"><span class="msi">edit_note</span>Writing</div>
+        <div class="chip" style="top:50%;left:100%"><span class="msi">trending_up</span>Optimizing</div>
+        <div class="chip" style="top:100%;left:50%"><span class="msi">campaign</span>Launching</div>
+        <div class="chip" style="top:50%;left:0"><span class="msi">search</span>Researching</div>
+      </div>
+      <div class="spin rev">
+        <div class="chip" style="top:15%;left:85%"><span class="msi">monitoring</span>Reporting</div>
+        <div class="chip" style="top:85%;left:15%"><span class="msi">mail</span>Emailing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="hdr"><h2 style="max-width:20ch">One agent. 100+ specialized skills.</h2>
+      <p class="lead" style="margin-top:1rem">Built on Claude Code and OpenClaw. Enhanced by Marketing Skills — an open-source, crowdsourced knowledge base that gets smarter with every user.</p></div>
+    <div class="grid3">
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">edit_note</span></div><h3>Copywriting &amp; Content</h3><p>Landing pages, homepage, feature pages, email copy, social posts.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">search</span></div><h3>SEO &amp; AI Visibility</h3><p>Audits, AI-search visibility, competitive gaps, programmatic pages, schema.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">payments</span></div><h3>Conversion Optimization</h3><p>Page CRO, signup flows, onboarding, forms, popups, paywalls.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">campaign</span></div><h3>Paid &amp; Distribution</h3><p>Google Ads, Meta, and LinkedIn campaign creation and management.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">experiment</span></div><h3>Growth Engineering</h3><p>Free tools, referral programs, A/B tests, analytics setup.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">strategy</span></div><h3>Strategy &amp; Planning</h3><p>Pricing, launch plans, marketing psychology, competitive intel.</p></div>
+    </div>
+    <div style="margin-top:1.8rem"><a href="#" class="link-all">View all skills<span class="msi">arrow_forward</span></a></div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="grid2" style="gap:clamp(1.6rem,4vw,3.2rem);align-items:flex-start">
+      <div class="panel" style="padding:1.3rem">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="eyebrow" style="margin-bottom:.9rem">Workflow · running</div>
+        <div class="mock" style="min-height:0;padding:0;gap:.7rem">
+          <div class="mrow acc"><span class="msi">travel_explore</span>Running research workflow…</div>
+          <div class="bar2"><i style="width:100%"></i></div>
+          <div class="mrow acc"><span class="msi">description</span>Drafting blog post…</div>
+          <div class="bar2"><i style="width:72%"></i></div>
+          <div class="mrow"><span class="msi">task_alt</span>Review complete ✓</div>
+        </div>
+      </div>
+      <div>
+        <h2 style="max-width:16ch">Every tool a marketer needs, already loaded.</h2>
+        <p class="lead" style="margin-top:1rem">Magister ships with a live browser, its own inbox, real integrations, and the ability to run multi-step work without you watching it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOWS -->
+<section class="section" style="padding-top:0">
+  <div class="shell">
+    <div class="hdr"><h2>Build it once. Run it on repeat.</h2>
+      <p class="lead" style="margin-top:1rem">Describe the process — research this, write that, publish there. The agent sequences it, runs it, and delivers results on schedule.</p></div>
+  </div>
+</section>
+
+<!-- A REAL COMPUTER -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="hdr"><div class="eyebrow" style="margin-bottom:.9rem">Not another SaaS tool</div>
+      <h2>A real computer with a built-in agent.</h2>
+      <p class="lead" style="margin-top:1rem">Most AI tools share a server with thousands of users and forget you the moment the session ends. Magister is different.</p></div>
+    <div class="grid2" style="gap:clamp(1.5rem,3.5vw,2.6rem)">
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">dns</span></div><h3>Your own dedicated server</h3><p>Every customer gets an isolated machine — not a shared queue. Your agent runs on its own infrastructure, with its own memory and context.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">code</span></div><h3>Writes code to solve problems</h3><p>It doesn't just fill in templates. It writes real code — scripts, automations, custom solutions — whatever your problem requires.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">database</span></div><h3>Stores everything for you</h3><p>Files, data, research, past work — all persisted on your server. Your agent remembers what it's done and builds on it.</p></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">trending_up</span></div><h3>Gets better over time</h3><p>It learns your brand, your voice, and your workflows. The more you use it, the sharper it gets.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE RUN — alternating rows -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="hdr" style="margin-bottom:clamp(2.5rem,5vw,4rem)">
+      <div class="eyebrow" style="margin-bottom:.9rem">Inside the machine</div>
+      <h2 class="dim-head">Not features bolted on. <span class="hi">A whole operation.</span></h2>
+      <p class="lead" style="margin-top:1rem">A brand kit it remembers, a browser it drives, an inbox it works, conversations that never queue — every capability lives on your agent's own machine.</p>
+    </div>
+    <!-- Brand kit -->
+    <div class="featrow stagger">
+      <div class="txt"><div class="tagline">On brand</div><h3>Everything it makes looks like you.</h3>
+        <p>During your audit, Magister pulls your real visual identity — logos, fonts, and colors — and remembers it. Everything it makes looks like it belongs to you, not a stock template.</p></div>
+      <div class="vis"><div class="panel"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="mock"><div class="mono-sm">BRAND KIT · your.co</div>
+          <div class="brandkit"><span class="swatch" style="background:#E8830C"></span><span class="swatch" style="background:#1B160E"></span><span class="swatch" style="background:#ECE4D6"></span><span class="swatch" style="background:#3FA968"></span></div>
+          <div style="font-family:var(--disp);font-size:1.5rem;color:var(--bone)">Aa Chakra Petch</div>
+          <div style="font-family:var(--body);font-size:.95rem;color:var(--dim)">Ag IBM Plex Sans — body</div>
+        </div></div></div>
+    </div>
+    <!-- Browser -->
+    <div class="featrow flip stagger">
+      <div class="txt"><div class="tagline">Browser control</div><h3>It browses. It reads. It acts.</h3>
+        <p>The agent opens real websites, reads what's there, and does something about it — scraping competitor pricing, filling forms, pulling live data. No screenshots, no workarounds.</p></div>
+      <div class="vis"><div class="panel"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="mock"><div class="mrow"><span class="msi">lock</span><span class="mono-sm">competitor.com/pricing</span></div>
+          <div class="bar2"><i style="width:100%"></i></div>
+          <div class="mrow acc"><span class="msi">content_paste_search</span>Reading pricing table…</div>
+          <div class="mrow acc"><span class="msi">table_chart</span>3 tiers · $19 / $49 / $99 captured</div>
+        </div></div></div>
+    </div>
+    <!-- Agent email -->
+    <div class="featrow stagger">
+      <div class="txt"><div class="tagline">Agent email</div><h3>Your agent has its own inbox.</h3>
+        <p>Every brand gets a <span style="color:var(--bone)">@yourco.magister.ai</span> address. The agent checks it, replies to partners, sends outreach, and follows up — as a named member of your team.</p></div>
+      <div class="vis"><div class="panel"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="mock inbox"><div class="mono-sm">INBOX · agent@yourco.magister.ai</div>
+          <div class="it"><b>Re: Partnership</b><span>replied ✓</span></div>
+          <div class="it"><b>Outreach · 12 prospects</b><span>sent</span></div>
+          <div class="it"><b>Follow-up · Acme</b><span>scheduled</span></div>
+        </div></div></div>
+    </div>
+    <!-- Parallel -->
+    <div class="featrow flip stagger">
+      <div class="txt"><div class="tagline">Parallel conversations</div><h3>Four conversations. Zero waiting.</h3>
+        <p>Your whole team can talk to Magister at the same time — or spin up several chats that all work in parallel. Background workflows keep running too; nothing queues, nothing blocks.</p></div>
+      <div class="vis"><div class="panel"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="mock" style="gap:.5rem">
+          <div class="mrow acc"><span class="msi">forum</span>Blog draft · running</div>
+          <div class="mrow acc"><span class="msi">forum</span>Ad variants · running</div>
+          <div class="mrow acc"><span class="msi">forum</span>SEO sweep · running</div>
+          <div class="mrow"><span class="msi">forum</span>Weekly report · queued</div>
+        </div></div></div>
+    </div>
+    <!-- Orgs -->
+    <div class="featrow stagger">
+      <div class="txt"><div class="tagline">Organizations &amp; brands</div><h3>One workspace. Many campaigns.</h3>
+        <p>Invite your team, spin up a brand per client or campaign, and keep context, tools, and history cleanly separated across all of them.</p></div>
+      <div class="vis"><div class="panel"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="mock" style="gap:.5rem">
+          <div class="mrow"><span class="msi">workspaces</span><b style="color:var(--bone);font-weight:500">Acme Inc.</b></div>
+          <div class="mrow" style="padding-left:1.5rem"><span class="msi">folder</span>Brand A · 5,000 credits</div>
+          <div class="mrow" style="padding-left:1.5rem"><span class="msi">folder</span>Brand B · 5,000 credits</div>
+        </div></div></div>
+    </div>
+    <!-- OAuth -->
+    <div class="featrow flip stagger">
+      <div class="txt"><div class="tagline">Authenticated &amp; ready</div><h3>It logs in once, then acts.</h3>
+        <p>Connect GitHub, Webflow, WordPress, Wix, and more. The agent logs in once, then publishes posts, updates pages, and pushes code — without you in the loop.</p></div>
+      <div class="vis"><div class="panel"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="mock" style="gap:.7rem">
+          <div class="mrow acc"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/webflow.svg" alt="" style="height:18px">Webflow · connected</div>
+          <div class="mrow acc"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/wordpress.svg" alt="" style="height:18px">WordPress · connected</div>
+          <div class="mrow acc"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/github.svg" alt="" style="height:18px">GitHub · connected</div>
+        </div></div></div>
+    </div>
+    <!-- Slack -->
+    <div class="featrow stagger">
+      <div class="txt"><div class="tagline">Slack</div><h3>Run it straight from Slack.</h3>
+        <p>Drop a message in your team channel — <span style="color:var(--bone)">@magister, handle this</span>. It picks up the task, does the work, and posts the result back in the thread.</p></div>
+      <div class="vis"><div class="panel"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="mock" style="gap:.6rem">
+          <div class="chatline" style="padding:0"><span class="who">#growth</span><span class="msg">@magister draft this week's newsletter</span></div>
+          <div class="chatline" style="padding:0"><span class="who" style="color:var(--lo)">Magister</span><span class="msg">Drafted — 620 words, in the thread for review ✓</span></div>
+        </div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYTICS -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell metric">
+    <div>
+      <div class="bignum">+18%</div>
+      <h3 style="margin-top:.4rem">signups this period.</h3>
+      <p class="lead" style="margin-top:1rem">Pull GA4, ad, and product metrics into one place — any range, versus the prior period or a custom baseline. Magister doesn't just report it; it reads what's working and feeds that into the next round of work, so the agent gets sharper the longer it runs.</p>
+    </div>
+    <div class="panel" style="padding:clamp(1.2rem,3vw,1.7rem)">
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+      <div class="eyebrow" style="margin-bottom:1rem">Signups · vs last month</div>
+      <svg class="chart" viewBox="0 0 520 240" role="img" aria-label="Signups climbing versus prior baseline">
+        <g stroke="#3A3020" stroke-width="1"><line x1="0" y1="60" x2="520" y2="60"/><line x1="0" y1="120" x2="520" y2="120"/><line x1="0" y1="180" x2="520" y2="180"/></g>
+        <path d="M10 200 L510 176" stroke="#4E7BC4" stroke-width="2" fill="none" stroke-dasharray="4 5" opacity=".7"/>
+        <path class="draw" d="M10 200 C 130 194, 230 170, 320 130 C 400 96, 460 60, 510 40" stroke="#E8830C" stroke-width="2.6" fill="none"/>
+        <path d="M10 200 C 130 194, 230 170, 320 130 C 400 96, 460 60, 510 40 L510 232 L10 232 Z" fill="url(#g)" opacity=".18"/>
+        <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8830C"/><stop offset="1" stop-color="#E8830C" stop-opacity="0"/></linearGradient></defs>
+        <circle cx="510" cy="40" r="4" fill="#F4A93C"/>
+      </svg>
+      <div class="legend"><span><i style="background:#E8830C"></i>This period</span><span><i style="background:#4E7BC4"></i>Prior baseline</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="hdr"><h2>Built for marketers who'd rather ship than plan.</h2></div>
+    <div class="grid3">
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">rocket_launch</span></div><h3>SaaS founders</h3><p>You've got 30 minutes between product calls. Magister turns that into a fully written landing page or email sequence.</p><div class="stat"><span class="dot"></span> ~30 min → shipped</div></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">person</span></div><h3>Solo marketers</h3><p>You know what needs to happen — you just can't get to all of it. Magister handles execution so you focus on strategy.</p><div class="stat"><span class="dot"></span> Execution, off your plate</div></div>
+      <div class="panel card"><span class="corner tl"></span><span class="corner br"></span><div class="ic"><span class="msi">groups</span></div><h3>Growth teams</h3><p>Your backlog keeps growing. Magister works through it while you focus on what only humans can do.</p><div class="stat"><span class="dot"></span> Backlog, always moving</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MAGISTER -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="hdr"><h2>Not another chatbot.</h2></div>
+    <div class="panel" style="padding:0;overflow:hidden">
+      <table class="cmp">
+        <thead><tr><th>Capability</th><th class="c mg">Magister</th><th class="c">ChatGPT / Claude</th></tr></thead>
+        <tbody>
+          <tr><td class="feat">Knows your brand context</td><td class="c colmg yes">Always</td><td class="c no">Gives advice</td></tr>
+          <tr><td class="feat">Actually does the work</td><td class="c colmg yes">✓</td><td class="c no">Per session</td></tr>
+          <tr><td class="feat">Works inside your tools</td><td class="c colmg yes">✓</td><td class="c no">—</td></tr>
+          <tr><td class="feat">Works autonomously</td><td class="c colmg yes">✓</td><td class="c no">—</td></tr>
+          <tr><td class="feat">Learns your brand's look</td><td class="c colmg yes">✓</td><td class="c no">—</td></tr>
+          <tr><td class="feat">Learns from your results</td><td class="c colmg yes">✓</td><td class="c no">—</td></tr>
+          <tr><td class="feat">Tracks how AI recommends you</td><td class="c colmg yes">✓</td><td class="c no">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="hdr"><h2>Your marketing, multiplied.</h2>
+      <p class="lead" style="margin-top:1rem">Every plan ships with a dedicated agent and a monthly pool of credits. Scale brands, seats, and autonomy as your operation grows.</p></div>
+    <div class="plans">
+      <div class="panel plan"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="tier">Free Trial</div><div class="price">$0<span>/trial</span></div>
+        <p class="blurb">A dedicated agent, free to start — no credit card.</p>
+        <ul><li><span class="msi">check</span>300 credits to start</li><li><span class="msi">check</span>One brand · single seat</li><li><span class="msi">check</span>Starter audit &amp; first-week plan</li><li><span class="msi">check</span>Chat, research &amp; content creation</li><li><span class="msi">check</span>Unlimited integrations, incl. Slack</li></ul>
+        <a href="#start" class="btn btn-ghost">Start free</a></div>
+      <div class="panel plan reco"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="tier">Connect <span class="badge">Most popular</span></div><div class="price">$99<span>/mo</span></div>
+        <p class="blurb">Run Magister right inside Claude or ChatGPT.</p>
+        <ul><li><span class="msi">check</span>5,000 credits/mo · 1 brand · 5 seats</li><li><span class="msi">check</span>Full audits, plans &amp; AI-visibility tracking</li><li><span class="msi">check</span>Every supported integration</li><li><span class="msi">check</span>Publish to WordPress, Webflow &amp; more</li><li><span class="msi">check</span>Run Google Ads &amp; post social from your assistant</li><li><span class="msi">check</span>Send email from your connected Gmail</li></ul>
+        <a href="#start" class="btn btn-cta" style="width:100%">Start free</a></div>
+      <div class="panel plan"><span class="corner tl"></span><span class="corner br"></span>
+        <div class="tier">Agent</div><div class="price">$199<span>/mo</span></div>
+        <p class="blurb">A dedicated agent + server that runs 24/7.</p>
+        <ul><li><span class="msi">check</span>Everything in Connect, plus:</li><li><span class="msi">check</span>10,000 credits/mo · dedicated server</li><li><span class="msi">check</span>Runs autonomously 24/7</li><li><span class="msi">check</span>Works in your Slack — any channel</li><li><span class="msi">check</span>Hosted campaign orchestration &amp; workflows</li><li><span class="msi">check</span>Proactive daily briefs &amp; calendar</li></ul>
+        <a href="#start" class="btn btn-ghost">Start free</a></div>
+    </div>
+    <p class="pricenote center">Every plan includes a monthly pool of credits that powers the AI behind each task. Past your included credits, extra usage is billed at $0.02 per credit. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="section" id="founders" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <div class="hdr"><div class="eyebrow" style="margin-bottom:.9rem">Built by marketers</div>
+      <h2 style="max-width:24ch">Not another AI tool built by people who've never run a campaign.</h2></div>
+    <div class="grid2">
+      <div class="panel founder"><span class="corner tl"></span><span class="corner br"></span><div class="av">CH</div>
+        <div><h3>Corey Haines</h3><p>Founder of Conversion Factory, a SaaS marketing agency. Creator of Marketing Skills — the most-starred open-source repo for marketing AI agents.</p></div></div>
+      <div class="panel founder"><span class="corner tl"></span><span class="corner br"></span><div class="av">EE</div>
+        <div><h3>Elliot Eckholm</h3><p>Co-founder and OpenClaw power user. Led machine-learning engineering for startups serving millions of users. Also building SwipeWell.</p></div></div>
+    </div>
+    <div class="panel bigquote"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+      <span class="mark">“</span>
+      <p>We've spent years doing SaaS marketing by hand. Magister is the tool we wish we had.</p>
+      <div class="by">Corey Haines &amp; Elliot Eckholm · Founders</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="border-top:1px solid var(--seam)">
+  <div class="shell">
+    <h2 class="center" style="margin-bottom:2.4rem">Questions.</h2>
+    <div class="faq">
+      <details><summary>Do I need to bring my own API keys?<span class="msi">add</span></summary><div class="ans">No. Magister ships with 100+ integrations already loaded. Connect your accounts once and the agent acts through them.</div></details>
+      <details><summary>How is this different from just using ChatGPT or Claude?<span class="msi">add</span></summary><div class="ans">They give advice, one session at a time. Magister knows your brand, works inside your real tools, and does the work autonomously — then hands it back for your approval.</div></details>
+      <details><summary>What can it actually do right now?<span class="msi">add</span></summary><div class="ans">Write copy, audit SEO, build email sequences, run paid ads, post to social, and publish to your CMS — across 100+ integrated tools.</div></details>
+      <details><summary>Is my data safe?<span class="msi">add</span></summary><div class="ans">Every customer runs on an isolated, dedicated server with its own memory. Your work and data are persisted to your own machine, not a shared pool.</div></details>
+      <details><summary>Can I use it in Slack?<span class="msi">add</span></summary><div class="ans">Yes. On the Agent plan, @mention Magister in any brand channel — it picks up the task, does the work, and posts the result back in the thread.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section" id="start">
+  <div class="shell">
+    <div class="launch">
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+      <h2 style="font-size:clamp(2.1rem,5vw,3.4rem)">Ready to stop doing it all yourself?</h2>
+      <p>Start your free trial — a dedicated agent audits your site and gets to work. You approve everything before it ships.</p>
+      <form class="urlbar center" onsubmit="return false" style="margin:2rem auto 0">
+        <span class="msi">link</span>
+        <input type="text" placeholder="Enter your website URL…" aria-label="Your website URL">
+        <button class="btn btn-cta" type="submit">Start free trial</button>
+      </form>
+      <div class="risk">100% free to start · No credit card · You stay in control</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <div class="foot">
+      <div class="col about">
+        <a class="brand" href="#top"><img src="../.agents/assets/logo/logo-lockup-inverse.svg" alt="Magister" style="height:22px;width:auto;display:block"></a>
+        <p class="latin">Magister (n.) — Latin for "master" or "teacher."</p>
+      </div>
+      <div class="col"><h4>Product</h4><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#skills">Skills</a><a href="#mcp">MCP</a><a href="#">Changelog</a></div>
+      <div class="col"><h4>Company</h4><a href="#founders">About</a><a href="#">Waitlist</a><a href="#">Extension</a><a href="#">Support</a></div>
+      <div class="col"><h4>Comms</h4><a href="mailto:team@magistermarketing.com">team@magistermarketing.com</a><a href="#">X / Twitter</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="footbar"><span>© 2026 Magister · Privacy · Terms</span><span>Powered by Claude Code · Built on OpenClaw</span></div>
+  </div>
+</footer>
+
+<script>
+var REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// copy prompt
+(function(){var b=document.getElementById('copybtn'); if(!b) return;
+  b.addEventListener('click',function(){navigator.clipboard && navigator.clipboard.writeText('npx magister init');
+    var t=b.innerHTML; b.innerHTML='<span class="msi">check</span>Copied'; setTimeout(function(){b.innerHTML=t},1600);});})();
+
+// hero: type the secondary line once, then rest
+(function(){var el=document.getElementById('type'); if(!el) return;
+  var line='audit my site and get to work.';
+  if(REDUCE){el.textContent=line;return;}
+  var i=0;(function tick(){ if(i<=line.length){el.textContent=line.slice(0,i++); setTimeout(tick, 46);} })();
+})();
+
+// hero: cycle the shipped-card stack once, then settle + nudge forward
+(function(){var stack=document.getElementById('stack'); if(!stack) return;
+  var cards=[].slice.call(stack.children), n=cards.length, nudge=document.getElementById('nudge');
+  function layout(){cards.forEach(function(c,i){c.style.transform='translateY('+(i*15)+'px) scale('+(1-i*.045)+')';c.style.opacity=i>2?0:1-i*.14;c.style.zIndex=n-i;});}
+  layout();
+  if(REDUCE){return;}
+  var cycles=0;
+  function advance(){var front=cards[0];
+    front.style.transform='translateY(-46px) scale(1.03)';front.style.opacity=0;
+    setTimeout(function(){cards.push(cards.shift());layout();cycles++;
+      if(cycles<n-1){setTimeout(advance,1550);} else if(nudge){nudge.classList.add('show');}},560);}
+  setTimeout(advance,1500);
+})();
+
+// motion-design pass: tag section headers + content grids as staggered reveal groups
+// (overlapping action). Kept off the ambient/nav/footer — reveal is hierarchical, not universal.
+(function(){
+  if(REDUCE || !('IntersectionObserver' in window)) return;
+  ['.hdr','.grid3','.grid2','.plans','.faq','.metric','.orbital'].forEach(function(sel){
+    [].forEach.call(document.querySelectorAll(sel),function(el){el.classList.add('stagger');});
+  });
+})();
+
+// scroll reveal — observes both single (.reveal) and grouped/staggered (.stagger) targets
+(function(){var els=[].slice.call(document.querySelectorAll('.reveal, .stagger')); if(!els.length||REDUCE) {els.forEach(function(e){e.classList.add('in')});return;}
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>

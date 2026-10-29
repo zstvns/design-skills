@@ -2,6 +2,27 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
+## 1.5.0 — 2026-10-29
+
+**A worked example: Magister, end to end.** `examples/magister/` is one brand taken through every skill. It holds exactly what the skills write into a project: `brand.md` (with Toolkit), `brand-strategy.md`, the living `design.md`, the locked logo files, the art-direction library, and the Claude Design kit. It also holds the rendered deliverables: logo identity, homepage, motion pass, and collateral viewer. The README is honest about what was reconstructed after the fact (the strategy record has no verbatim session log, and the file says so) and lists the open items.
+
+- **The art direction was run for real, with the 1.2.0 skill as written.** That covered references from the web, a spec, a style test run twice (GPT Image 2.5 and Arrow 2.0 in Flora, plus agent-drawn SVG), verdicts, edits, and an approved, treated library with a manifest. It cost $1.27. The test caught real failures and tightened the spec each time:
+  - archival anchors dragged the 1960s into "present-day" photos
+  - a hero image read as a trading floor
+  - stock-home-office clichés
+  - an operator marker echoed the logo's ring
+  - an illustration collapsed at spot size
+- `art-direction` 1.1.0 — lessons from that run, written back into the skill:
+  - **Upload anchors into the tool first.** Providers often can't fetch hotlink-protected hosts like Wikimedia.
+  - **Say what to take from a reference** ("only the light, contrast, and grain — not the equipment or era").
+  - **A generated "archival" photo is fabrication.** Use the real archive.
+  - The skill now links the worked example.
+- README "Getting started" points at the example.
+
+| Skill | Version |
+|---|---|
+| `art-direction` | 1.1.0 |
+
 ## 1.4.0 — 2026-10-28
 
 **Easier to start, wherever you run it.** Two kinds of user were getting stuck at the front door: founders with no website yet, and people using the Claude app rather than a coding agent.

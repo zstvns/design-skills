@@ -1,0 +1,154 @@
+<!-- @dsCard group="Brand" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Motif and texture</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--ground);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.card{padding:56px 64px 64px}
+.eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+.card>h2{font-family:var(--disp);font-weight:var(--w-lead);font-size:2.2rem;line-height:var(--lh-head);letter-spacing:var(--ls-head);margin-top:14px;max-width:30ch}
+.card>h2 .d{color:var(--dim)}
+.card>.lede{margin-top:12px;font-size:.92rem;color:var(--dim);max-width:70ch}
+
+.tiles{margin-top:40px;display:grid;grid-template-columns:1.35fr 1fr;grid-template-areas:"grid rings" "scan rings" "brk wash";gap:24px}
+.tile{display:flex;flex-direction:column}
+.vis{position:relative;height:210px;border:1px solid var(--seam);border-radius:var(--radius);overflow:hidden;background:var(--ground)}
+.cap{margin-top:14px;display:grid;grid-template-columns:1fr;gap:6px}
+.cap .nm{display:flex;justify-content:space-between;align-items:baseline}
+.cap .nm b{font-family:var(--disp);font-weight:var(--w-lead);font-size:1.1rem}
+.cap .nm span{font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+.use{display:grid;grid-template-columns:62px 1fr;gap:10px;font-size:.84rem;color:var(--dim)}
+.use .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);padding-top:.2rem}
+.use.no .k{color:var(--faint)}
+
+/* 1 · 48px grid */
+.t-grid{grid-area:grid}
+.t-grid .vis::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:var(--grid-size) var(--grid-size);
+  -webkit-mask-image:radial-gradient(520px 300px at 50% 30%,black 20%,transparent 85%);mask-image:radial-gradient(520px 300px at 50% 30%,black 20%,transparent 85%)}
+/* the real grid runs at .34 opacity on a full page; shown at full strength here so it reads at card scale */
+.t-grid .vis{background:var(--ground)}
+.t-grid .vis::after{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:var(--grid-size) var(--grid-size);opacity:1}
+.pitch{position:absolute;left:48px;top:48px;width:48px;height:48px;border:1px dashed var(--seam2)}
+.pitch span{position:absolute;left:56px;top:14px;font-family:var(--mono);font-size:.6rem;color:var(--faint);white-space:nowrap}
+
+/* 2 · scanlines over a flat grade */
+.t-scan{grid-area:scan}
+.t-scan .vis{background:radial-gradient(480px 260px at 70% 40%,var(--amber-1),var(--surface-2) 70%)}
+.t-scan .vis::after{content:"";position:absolute;inset:0;background:var(--scan)}
+.t-scan .vis .zoom{position:absolute;right:18px;bottom:18px;width:96px;height:96px;border:1px solid var(--seam2);border-radius:6px;overflow:hidden;background:var(--amber-1);z-index:2}
+.t-scan .vis .zoom::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.42) 0 4px,transparent 4px 12px)}
+.t-scan .vis .zl{position:absolute;right:122px;bottom:20px;z-index:2;font-family:var(--mono);font-size:.6rem;color:var(--dim)}
+.t-scan .vis .ph{position:absolute;left:20px;top:18px;z-index:2;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+
+/* 3 · concentric dotted rings (collateral, light) */
+.t-rings{grid-area:rings}
+.t-rings .vis{height:auto;flex:1;min-height:444px;background:var(--ground)}
+.rings{position:absolute;width:820px;height:820px;right:-400px;bottom:-400px;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,transparent 0 16%,black 32% 54%,rgba(0,0,0,.34) 72%,transparent 84%);
+          mask-image:radial-gradient(circle at 50% 50%,transparent 0 16%,black 32% 54%,rgba(0,0,0,.34) 72%,transparent 84%)}
+.rings circle{fill:none;stroke:var(--dot);stroke-width:3;stroke-linecap:round;stroke-dasharray:0 9}
+.t-rings .copy{position:absolute;left:26px;top:26px;right:26px}
+.t-rings .copy .eyebrow{color:var(--faint)}
+.t-rings .copy h3{margin-top:12px;font-family:var(--disp);font-weight:var(--w-lead);font-size:2rem;line-height:1.05;letter-spacing:-.015em;color:var(--bone);max-width:11ch}
+.t-rings .copy p{margin-top:10px;font-size:.84rem;color:var(--dim);max-width:24ch}
+
+/* 4 · corner brackets */
+.t-brk{grid-area:brk}
+.t-brk .vis{display:grid;place-items:center}
+.panel{position:relative;width:62%;height:120px;background:var(--panel-fill);border:1px solid var(--seam);border-radius:var(--radius);box-shadow:var(--lift)}
+.corner{position:absolute;width:var(--corner-size);height:var(--corner-size);border:1px solid var(--seam2)}
+.corner.tl{top:var(--corner-inset);left:var(--corner-inset);border-right:0;border-bottom:0}
+.corner.tr{top:var(--corner-inset);right:var(--corner-inset);border-left:0;border-bottom:0}
+.corner.bl{bottom:var(--corner-inset);left:var(--corner-inset);border-right:0;border-top:0}
+.corner.br{bottom:var(--corner-inset);right:var(--corner-inset);border-left:0;border-top:0}
+.panel .m{position:absolute;left:26px;top:24px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.panel .v{position:absolute;left:26px;top:44px;font-family:var(--disp);font-weight:var(--w-lead);font-size:2rem;color:var(--lo)}
+.dimn{position:absolute;font-family:var(--mono);font-size:.58rem;color:var(--faint)}
+
+/* 5 · ambient amber wash */
+.t-wash{grid-area:wash}
+.t-wash .vis{background:radial-gradient(420px 240px at 92% -10%,var(--wash-strong),transparent 62%),var(--ground)}
+.t-wash .vis h3{position:absolute;left:24px;bottom:22px;font-family:var(--disp);font-weight:var(--w-lead);font-size:1.6rem;line-height:1.05;max-width:14ch}
+.t-wash .vis .src{position:absolute;right:16px;top:14px;font-family:var(--mono);font-size:.6rem;color:var(--faint)}
+
+.law{margin-top:32px;padding-top:20px;border-top:1px solid var(--seam);display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.law b{font-family:var(--disp);font-weight:var(--w-lead);font-size:1rem;display:block}
+.law p{font-size:.84rem;color:var(--dim);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">Brand · motif and texture</div>
+  <h2>Console instruments, used sparingly. <span class="d">Deployable with no logo and no amber — still this brand.</span></h2>
+
+  <div class="tiles">
+    <div class="tile t-grid">
+      <div class="vis"><div class="pitch"><span>48px</span></div></div>
+      <div class="cap">
+        <div class="nm"><b>48px grid</b><span>--grid-line · --grid-size</span></div>
+        <div class="use"><span class="k">Use</span><span>The web page ground, fixed, at .34 opacity with a radial fade. Collateral uses a 32px pitch (--tint).</span></div>
+        <div class="use no"><span class="k">Not</span><span>Inside panels, behind body copy at full strength, or in a frame that already carries the rings.</span></div>
+      </div>
+    </div>
+
+    <div class="tile t-rings">
+      <div class="vis" data-theme="light">
+        <svg class="rings" viewBox="0 0 820 820" aria-hidden="true"><g>
+          <circle cx="410" cy="410" r="130"/><circle cx="410" cy="410" r="164"/><circle cx="410" cy="410" r="198"/><circle cx="410" cy="410" r="232"/><circle cx="410" cy="410" r="266"/><circle cx="410" cy="410" r="300"/><circle cx="410" cy="410" r="334"/><circle cx="410" cy="410" r="368"/><circle cx="410" cy="410" r="402"/>
+        </g></svg>
+        <div class="copy"><div class="eyebrow">Mission log</div><h3>While you were away.</h3><p>Oversized, centered off the frame, cropped by the edge.</p></div>
+      </div>
+      <div class="cap">
+        <div class="nm"><b>Concentric dotted rings</b><span>--dot</span></div>
+        <div class="use"><span class="k">Use</span><span>Print, social, decks, thumbnails — the collateral motif. Scaled up and cropped by the frame; it yields where type sits.</span></div>
+        <div class="use no"><span class="k">Not</span><span>Web UI panels, shrunk to fit inside a frame, off-centre on a radial piece, or with the grid in the same frame.</span></div>
+      </div>
+    </div>
+
+    <div class="tile t-scan">
+      <div class="vis"><span class="ph">Flat grade stand-in · real use is graded photography</span><span class="zl">1px line · 3px pitch · detail ×4</span><div class="zoom"></div></div>
+      <div class="cap">
+        <div class="nm"><b>CRT scanlines</b><span>--scan</span></div>
+        <div class="use"><span class="k">Use</span><span>Only inside graded photography — the grayscale → amber duotone → scan recipe.</span></div>
+        <div class="use no"><span class="k">Not</span><span>As a page overlay (dropped from the build), over live text, or on the light theme.</span></div>
+      </div>
+    </div>
+
+    <div class="tile t-brk">
+      <div class="vis">
+        <div class="panel"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span><span class="m">Pipeline</span><span class="v">$1.2M</span></div>
+      </div>
+      <div class="cap">
+        <div class="nm"><b>Corner brackets</b><span>9px arm · 6px inset · --seam2</span></div>
+        <div class="use"><span class="k">Use</span><span>Panels holding live product data — charts, logs, metrics, mocks.</span></div>
+        <div class="use no"><span class="k">Not</span><span>Every card, buttons, pills, photos, or the logo.</span></div>
+      </div>
+    </div>
+
+    <div class="tile t-wash">
+      <div class="vis"><span class="src">radial · --wash-strong</span><h3>Ready to stop doing it all yourself?</h3></div>
+      <div class="cap">
+        <div class="nm"><b>Ambient amber wash</b><span>--wash · --wash-strong</span></div>
+        <div class="use"><span class="k">Use</span><span>One per view: the page's top-right, or behind the hero headline. Barely there.</span></div>
+        <div class="use no"><span class="k">Not</span><span>As a fill on buttons, cards, or text, or stacked with rings and a grid in one frame.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="law">
+    <div><b>One language per frame.</b><p>Grid on the web, rings on collateral. Vary scale, crop, and density — never stack both.</p></div>
+    <div><b>Cropped, not contained.</b><p>A motif runs off the edge. Shrunk politely inside the frame, it reads as clip art.</p></div>
+    <div><b>Type wins.</b><p>Where a headline sits, the motif yields — masked, faded, or behind an opaque card.</p></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!-- @dsCard group="Components" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Panel and shipped-work card</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--ground);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.card{padding:56px 64px 72px}
+.eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+h2{font-family:var(--disp);font-weight:var(--w-lead);font-size:2.2rem;line-height:var(--lh-head);letter-spacing:var(--ls-head);margin-top:14px}
+h2 .d{color:var(--dim)}
+.msi{font-family:var(--icon);font-weight:400;font-style:normal;line-height:1;font-variation-settings:'opsz' 24;-webkit-font-feature-settings:'liga';display:inline-block;vertical-align:middle}
+.spec{font-family:var(--mono);font-size:.66rem;color:var(--faint);line-height:1.7}
+
+.cols{margin-top:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+
+/* panel — the base surface */
+.panel{background:var(--panel-fill);border:1px solid var(--seam);border-radius:var(--radius);padding:28px;position:relative;box-shadow:var(--lift)}
+.corner{position:absolute;width:var(--corner-size);height:var(--corner-size);border:1px solid var(--seam2);pointer-events:none}
+.corner.tl{top:var(--corner-inset);left:var(--corner-inset);border-right:0;border-bottom:0}
+.corner.tr{top:var(--corner-inset);right:var(--corner-inset);border-left:0;border-bottom:0}
+.corner.bl{bottom:var(--corner-inset);left:var(--corner-inset);border-right:0;border-top:0}
+.corner.br{bottom:var(--corner-inset);right:var(--corner-inset);border-left:0;border-top:0}
+.panel .hd{display:flex;justify-content:space-between;align-items:baseline}
+.panel .fig{font-family:var(--disp);font-weight:var(--w-lead);font-size:2.4rem;line-height:1;color:var(--lo);margin-top:14px}
+.panel .fig small{font-family:var(--mono);font-weight:400;font-size:.7rem;color:var(--faint);margin-left:10px;letter-spacing:.06em}
+.chart{display:block;width:100%;height:auto;margin-top:16px}
+.chart .g{stroke:var(--seam);stroke-width:1}
+.chart .prev{fill:none;stroke:var(--sync);stroke-width:1.6;stroke-dasharray:4 6}
+.chart .now{fill:none;stroke:var(--lo);stroke-width:2.2}
+.chart .pt{fill:var(--lo)}
+.chart text{font-family:var(--mono);font-size:10px;fill:var(--faint)}
+.legend{display:flex;gap:22px;margin-top:10px;font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+.legend i{display:inline-block;width:18px;height:0;border-top:2px solid var(--lo);vertical-align:middle;margin-right:7px}
+.legend i.p{border-top:2px dashed var(--sync)}
+.anat{margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px}
+.anat div{border-top:1px solid var(--seam);padding-top:10px}
+.anat b{display:block;font-family:var(--disp);font-weight:var(--w-lead);font-size:.98rem}
+.anat p{font-size:.82rem;color:var(--dim)}
+
+/* shipped-work card — the stack at rest */
+.stack{position:relative;height:272px;margin-top:22px}
+.shipcard{position:absolute;left:0;right:0;bottom:0;height:206px;padding:1.15rem 1.2rem;border-radius:var(--r-card);display:flex;flex-direction:column;gap:.55rem;
+  background:var(--panel-fill);border:1px solid var(--seam2);box-shadow:var(--lift);transform-origin:50% 0}
+.shipcard.b3{transform:translateY(-66px) scale(.88);background:var(--panel);border-color:var(--seam);box-shadow:none}
+.shipcard.b2{transform:translateY(-44px) scale(.92);background:var(--panel);border-color:var(--seam)}
+.shipcard.b1{transform:translateY(-22px) scale(.96);background:var(--panel);border-color:var(--seam)}
+.shipcard .hd{display:flex;align-items:center;gap:.6rem}
+.shipcard .hd .msi{color:var(--lo);font-size:1.15rem}
+.shipcard .hd b{font-family:var(--disp);font-weight:var(--w-lead);font-size:1.05rem}
+.shipcard .hd .t{margin-left:auto;font-family:var(--mono);font-size:.64rem;color:var(--faint)}
+.shipcard .body{font-size:.92rem;color:var(--dim)}
+.shipcard .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.shipcard .who{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.tag{font-family:var(--mono);font-size:.58rem;letter-spacing:var(--ls-tag);text-transform:uppercase;padding:.2rem .5rem;border-radius:var(--r-pill);border:1px solid var(--seam2);color:var(--dim);white-space:nowrap}
+.tag.ship{color:var(--go);border-color:var(--go)}
+.tag.run{color:var(--accent-tx);border-color:var(--accent-edge)}
+.tag.sync{color:var(--sync);border-color:var(--sync-edge)}
+.nudge{margin-top:18px;text-align:center;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+
+.states{margin-top:30px;border-top:1px solid var(--seam)}
+.st{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:10px 0;border-bottom:1px solid var(--seam)}
+.st p{font-size:.84rem;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">Components · panel and card</div>
+  <h2>Machined surfaces. <span class="d">Brackets mark live data.</span></h2>
+
+  <div class="cols">
+    <div>
+      <div class="k">Panel · with corner brackets</div>
+      <div class="panel">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="hd"><span class="eyebrow">Signups · vs last month</span><span class="eyebrow">GA4</span></div>
+        <div class="fig">+18%<small>2,814 this period</small></div>
+        <svg class="chart" viewBox="0 0 520 170" role="img" aria-label="Signups this period climbing above the prior-period baseline">
+          <line class="g" x1="0" y1="30" x2="520" y2="30"/><line class="g" x1="0" y1="80" x2="520" y2="80"/><line class="g" x1="0" y1="130" x2="520" y2="130"/>
+          <polyline class="prev" points="0,128 52,122 104,124 156,116 208,118 260,110 312,112 364,104 416,106 468,100 520,98"/>
+          <polyline class="now" points="0,132 52,124 104,120 156,112 208,104 260,98 312,84 364,76 416,62 464,50 512,38"/>
+          <circle class="pt" cx="512" cy="38" r="4"/>
+          <text x="0" y="160">WK 1</text><text x="244" y="160">WK 2</text><text x="484" y="160">WK 4</text>
+        </svg>
+        <div class="legend"><span><i></i>This period</span><span><i class="p"></i>Prior baseline</span></div>
+      </div>
+      <div class="anat">
+        <div><b>Fill</b><p>--panel-fill: --panel2 → --panel, top to bottom.</p></div>
+        <div><b>Edge and depth</b><p>1px --seam, --radius 8px, --lift.</p></div>
+        <div><b>Corner brackets</b><p>9px arms in --seam2, inset 6px. Only on panels holding live product data.</p></div>
+        <div><b>Data color</b><p>Amber for this period, dashed sync blue for the baseline. Never green.</p></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="k">Shipped-work card · the stack at rest</div>
+      <div class="stack">
+        <div class="shipcard b3"></div>
+        <div class="shipcard b2"></div>
+        <div class="shipcard b1"></div>
+        <div class="shipcard">
+          <div class="hd"><span class="msi">grid_view</span><b>Social post</b><span class="t">T+00:41</span></div>
+          <div class="body">LinkedIn · 3 variants, on-brand and scheduled for Tuesday 9:00.</div>
+          <div class="foot"><span class="who">Agent · overnight</span><span class="tag ship">Shipped</span></div>
+        </div>
+      </div>
+      <div class="nudge">↑ all shipped while you were away — give it your next task</div>
+      <div class="states">
+        <div class="st"><span><span class="tag ship">Shipped</span></span><p>Social post · 3 variants, scheduled.</p></div>
+        <div class="st"><span><span class="tag">Needs review</span></span><p>Blog draft · 1,240 words, researched.</p></div>
+        <div class="st"><span><span class="tag run">Running</span></span><p>SEO sweep · 47 keywords, 12 gaps queued.</p></div>
+        <div class="st"><span><span class="tag sync">Drafting</span></span><p>Email sequence · trial-to-paid, 5 emails.</p></div>
+      </div>
+      <p class="spec" style="margin-top:14px">--r-card 10px · --seam2 edge · title Chakra 600 · time in mono · one tag, bottom right</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
