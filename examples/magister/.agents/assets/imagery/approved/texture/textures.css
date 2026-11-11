@@ -1,0 +1,25 @@
+/* Magister texture library — the motif's deployments, rendered in code (art-direction → Pattern & Texture).
+   Values are the built ones (homepage v5 / collateral v4). Never behind body text; scanlines never on UI or type. */
+
+/* The 48px grid — always faint (≤ .03 alpha), masked to fade at the edges. Web, product backdrops. */
+.tx-grid{background-image:linear-gradient(rgba(255,220,170,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,220,170,.025) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(1200px 1000px at 50% 30%,#000 20%,transparent 85%);mask-image:radial-gradient(1200px 1000px at 50% 30%,#000 20%,transparent 85%)}
+
+/* CRT scanlines — inside photography only (part of the treatment), never over UI or type. */
+.tx-scan{background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px)}
+
+/* Concentric dotted rings — print and social; oversized and cropped by the frame. Set --dot per ground. */
+.tx-rings{--dot:rgba(244,169,60,.18);background:repeating-radial-gradient(circle at 50% 50%,var(--dot) 0 1.6px,transparent 1.6px 3.2px,transparent 3.2px 34px)}
+
+/* The dotted trajectory — planned work dotted (2·7), done work solid, the live point amber. Use on SVG paths. */
+.tx-trajectory{stroke:#E8830C;stroke-width:1.5;stroke-dasharray:2 7;fill:none;stroke-linecap:round}
+
+/* Machined corner brackets — 9px, 1px seam, inset 6px, on panels. */
+.tx-brackets{position:relative}
+.tx-brackets::before,.tx-brackets::after{content:"";position:absolute;width:9px;height:9px;border:1px solid #4A3D24;pointer-events:none}
+.tx-brackets::before{top:6px;left:6px;border-right:0;border-bottom:0}
+.tx-brackets::after{bottom:6px;right:6px;border-left:0;border-top:0}
+
+/* The amber light sweep — one per page, fixed, 22s, behind everything; disabled under reduced motion. */
+.tx-sweep{position:fixed;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 45%,rgba(244,169,60,.03) 50%,transparent 55%);animation:tx-sweep 22s linear infinite}
+@keyframes tx-sweep{from{transform:translateX(-120%)}to{transform:translateX(120%)}}
+@media (prefers-reduced-motion:reduce){.tx-sweep{animation:none;display:none}}

@@ -1,0 +1,158 @@
+<!-- @dsCard group="Colors" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Color</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--ground);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.card{padding:56px 64px 64px}
+.eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+h2{font-family:var(--disp);font-weight:var(--w-lead);font-size:2.2rem;line-height:var(--lh-head);letter-spacing:var(--ls-head);margin-top:14px;max-width:24ch}
+h2 .d{color:var(--dim)}
+.k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.hex{font-family:var(--mono);font-size:.7rem;color:var(--dim)}
+.tok{font-family:var(--mono);font-size:.68rem;color:var(--faint)}
+
+.roles{margin-top:40px;display:grid;grid-template-columns:300px 1fr 300px;gap:24px;align-items:stretch}
+
+/* surfaces as a stacked elevation strip */
+.strip{border:1px solid var(--seam);border-radius:var(--radius);overflow:hidden}
+.band{display:flex;justify-content:space-between;align-items:center;padding:0 16px;height:52px;border-bottom:1px solid rgba(0,0,0,.25)}
+.band:last-child{border-bottom:0}
+.band .nm{font-family:var(--disp);font-weight:var(--w-lead);font-size:.95rem}
+.band .tok{color:var(--dim)}
+
+/* signal swatches */
+.sig{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-content:start}
+.sw{border:1px solid var(--seam);border-radius:var(--radius);overflow:hidden;background:var(--panel)}
+.sw .chip{height:74px}
+.sw .meta{padding:10px 12px 12px}
+.sw .nm{font-family:var(--disp);font-weight:var(--w-lead);font-size:1rem}
+.sw .job{font-size:.8rem;color:var(--dim);margin-top:2px}
+.sw .row{display:flex;justify-content:space-between;margin-top:8px}
+.textsw{grid-column:1 / -1;border:1px solid var(--seam);border-radius:var(--radius);padding:14px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.textsw .t{font-family:var(--disp);font-weight:var(--w-lead);font-size:1.3rem;line-height:1.1}
+
+/* the protected action color */
+.action{border:1px solid var(--seam2);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px;background:var(--panel-fill)}
+.action .chip{height:92px;border-radius:6px;background:var(--cta-fill);box-shadow:var(--cta-shadow)}
+.action .pair{display:flex;gap:8px}
+.action .pair div{flex:1;height:30px;border-radius:4px}
+.action .lock{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone)}
+.msi{font-family:var(--icon);font-weight:400;font-style:normal;line-height:1;font-variation-settings:'opsz' 20;-webkit-font-feature-settings:'liga';font-size:1.05rem}
+.action p{font-size:.86rem;color:var(--dim)}
+.action p b{font-weight:var(--w-lead);color:var(--bone)}
+.btn-cta{align-self:flex-start;font-family:var(--mono);font-weight:500;font-size:var(--fs-btn);letter-spacing:var(--ls-btn);text-transform:uppercase;color:var(--cta-ink);background:var(--cta-fill);border:1px solid var(--cta-edge);border-radius:var(--r-pill);padding:.72rem 1.15rem;box-shadow:var(--cta-shadow)}
+
+/* ramps */
+.ramps{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
+.ramp{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+.ramp .steps{display:grid;grid-template-columns:repeat(5,1fr);border-radius:6px;overflow:hidden;border:1px solid var(--seam)}
+.ramp .steps div{height:46px;position:relative}
+.ramp .steps span{position:absolute;left:7px;bottom:5px;font-family:var(--mono);font-size:.56rem;letter-spacing:.02em}
+.ramp .steps .core{box-shadow:inset 0 0 0 2px var(--ground)}
+.on-d{color:var(--bone)}.on-l{color:var(--surface-2)}
+
+/* rules + light */
+.foot{margin-top:48px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding-top:32px;border-top:1px solid var(--seam)}
+.rule{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--seam)}
+.rule:last-child{border-bottom:0}
+.rule .ix{width:14px;height:14px;border-radius:3px;margin-top:4px}
+.rule b{font-family:var(--disp);font-weight:var(--w-lead);font-size:1.05rem;color:var(--bone);display:block}
+.rule p{font-size:.86rem;color:var(--dim)}
+.light{border-radius:var(--radius);padding:20px;background:var(--ground);border:1px solid var(--seam);color:var(--bone)}
+.light .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.light .c{border:1px solid var(--seam);border-radius:6px;overflow:hidden;background:var(--panel)}
+.light .c div{height:44px}
+.light .c p{padding:7px 9px;font-family:var(--mono);font-size:.6rem;color:var(--dim);line-height:1.4}
+.light .say{margin-top:14px;font-size:.84rem;color:var(--dim)}
+.light .say span{color:var(--accent-tx);font-weight:var(--w-lead)}
+.light .btn-cta{margin-top:14px;display:inline-block}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">Color · roles, ramps, rules</div>
+  <h2>Warm console dark. <span class="d">Amber is the energy; green is the one way forward.</span></h2>
+
+  <div class="roles">
+    <div>
+      <div class="k" style="margin-bottom:10px">Surfaces · low → high</div>
+      <div class="strip">
+        <div class="band" style="background:var(--ground)"><span class="nm">Ground</span><span class="tok">--ground · #0F0C07</span></div>
+        <div class="band" style="background:var(--panel)"><span class="nm">Panel</span><span class="tok">--panel · #1B160E</span></div>
+        <div class="band" style="background:var(--panel2)"><span class="nm">Panel 2</span><span class="tok">--panel2 · #221B11</span></div>
+        <div class="band" style="background:var(--panel3)"><span class="nm">Panel 3</span><span class="tok">--panel3 · #2A2114</span></div>
+        <div class="band" style="background:var(--seam)"><span class="nm">Seam</span><span class="tok">--seam · #3A3020</span></div>
+        <div class="band" style="background:var(--seam2)"><span class="nm">Seam 2</span><span class="tok">--seam2 · #4A3D24</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="k" style="margin-bottom:10px">Text and signal</div>
+      <div class="sig">
+        <div class="textsw">
+          <div><div class="t" style="color:var(--bone)">Bone</div><div class="tok">--bone · #ECE4D6</div><div class="job" style="font-size:.78rem;color:var(--dim)">Primary text</div></div>
+          <div><div class="t" style="color:var(--dim)">Dim</div><div class="tok">--dim · #C2B69C</div><div class="job" style="font-size:.78rem;color:var(--dim)">Body, secondary</div></div>
+          <div><div class="t" style="color:var(--faint)">Faint</div><div class="tok">--faint · #988B71</div><div class="job" style="font-size:.78rem;color:var(--dim)">Eyebrows, meta</div></div>
+        </div>
+        <div class="sw"><div class="chip" style="background:var(--accent)"></div><div class="meta"><div class="nm">Amber</div><div class="job">Energy, status, hero accent</div><div class="row"><span class="tok">--accent</span><span class="hex">#E8830C</span></div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--lo)"></div><div class="meta"><div class="nm">Amber lo</div><div class="job">Amber text, figures, glow</div><div class="row"><span class="tok">--lo</span><span class="hex">#F4A93C</span></div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--sync)"></div><div class="meta"><div class="nm">Sync</div><div class="job">Syncing, idle, baseline</div><div class="row"><span class="tok">--sync</span><span class="hex">#4E7BC4</span></div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--alert)"></div><div class="meta"><div class="nm">Alert</div><div class="job">Abort and error only</div><div class="row"><span class="tok">--alert</span><span class="hex">#D2542E</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="action">
+      <div class="lock"><span class="msi">lock</span>Action · protected</div>
+      <div class="chip"></div>
+      <div class="pair"><div style="background:var(--cta-lo)"></div><div style="background:var(--cta)"></div></div>
+      <div style="display:flex;justify-content:space-between"><span class="tok">--cta-lo · #63C98A</span><span class="tok">--cta · #3FA968</span></div>
+      <p><b>The CTA and nothing else.</b> Fills the pill button, top to bottom. Never text, icons, charts, borders on content, or decoration. One per view.</p>
+      <span class="btn-cta">Get my free plan</span>
+    </div>
+  </div>
+
+  <div class="ramps">
+    <div class="ramp"><span class="k">Amber</span><div class="steps">
+      <div style="background:var(--amber-1)"><span class="on-d">#8A4B06</span></div><div style="background:var(--amber-2)"><span class="on-d">#B8660A</span></div><div class="core" style="background:var(--amber-3)"><span class="on-l">#E8830C</span></div><div style="background:var(--amber-4)"><span class="on-l">#F4A93C</span></div><div style="background:var(--amber-5)"><span class="on-l">#FBD08A</span></div></div></div>
+    <div class="ramp"><span class="k">Go · status</span><div class="steps">
+      <div style="background:var(--go-1)"><span class="on-d">#2E5A3E</span></div><div style="background:var(--go-2)"><span class="on-d">#42815A</span></div><div class="core" style="background:var(--go-3)"><span class="on-l">#5BA772</span></div><div style="background:var(--go-4)"><span class="on-l">#83C79A</span></div><div style="background:var(--go-5)"><span class="on-l">#B4E2C4</span></div></div></div>
+    <div class="ramp"><span class="k">Sync</span><div class="steps">
+      <div style="background:var(--sync-1)"><span class="on-d">#2C4A78</span></div><div style="background:var(--sync-2)"><span class="on-d">#3C6199</span></div><div class="core" style="background:var(--sync-3)"><span class="on-d">#4E7BC4</span></div><div style="background:var(--sync-4)"><span class="on-l">#7BA0DC</span></div><div style="background:var(--sync-5)"><span class="on-l">#B0C9F0</span></div></div></div>
+    <div class="ramp"><span class="k">Alert</span><div class="steps">
+      <div style="background:var(--alert-1)"><span class="on-d">#7A2E18</span></div><div style="background:var(--alert-2)"><span class="on-d">#A84224</span></div><div class="core" style="background:var(--alert-3)"><span class="on-d">#D2542E</span></div><div style="background:var(--alert-4)"><span class="on-l">#E07E5A</span></div><div style="background:var(--alert-5)"><span class="on-l">#EFB09A</span></div></div></div>
+    <div class="ramp"><span class="k">Bone · text</span><div class="steps">
+      <div style="background:var(--bone-1)"><span class="on-l">#988B71</span></div><div style="background:var(--bone-2)"><span class="on-l">#C2B69C</span></div><div style="background:var(--bone-3)"><span class="on-l">#D4C8B4</span></div><div class="core" style="background:var(--bone-4)"><span class="on-l">#ECE4D6</span></div><div style="background:var(--bone-5)"><span class="on-l">#F7F1E6</span></div></div></div>
+    <div class="ramp"><span class="k">Surface</span><div class="steps">
+      <div style="background:var(--surface-1)"><span class="on-d">#0A0805</span></div><div class="core" style="background:var(--surface-2)"><span class="on-d">#0F0C07</span></div><div style="background:var(--surface-3)"><span class="on-d">#1B160E</span></div><div style="background:var(--surface-4)"><span class="on-d">#2A2114</span></div><div style="background:var(--surface-5)"><span class="on-d">#3A3020</span></div></div></div>
+  </div>
+
+  <div class="foot">
+    <div>
+      <div class="k" style="margin-bottom:6px">The rules</div>
+      <div class="rule"><span class="ix" style="background:var(--accent)"></span><div><b>Amber is not the action.</b><p>Brand energy, status, the hero accent word, the big figure. It never fills a button — amber on a CTA reads as a warning light.</p></div></div>
+      <div class="rule"><span class="ix" style="background:var(--cta)"></span><div><b>Green means go — the CTA only.</b><p>--cta fills the one pill per view. Status green (--go) may outline a "Shipped" tag; it never fills anything.</p></div></div>
+      <div class="rule"><span class="ix" style="background:var(--alert)"></span><div><b>Red is abort.</b><p>Errors, failed runs, destructive confirmations. Never emphasis, never a highlight.</p></div></div>
+    </div>
+    <div class="light" data-theme="light">
+      <div class="k">Light theme · collateral</div>
+      <div class="grid">
+        <div class="c"><div style="background:var(--ground)"></div><p>--ground<br>#F6F1E7</p></div>
+        <div class="c"><div style="background:var(--bone)"></div><p>--bone (ink)<br>#14100A</p></div>
+        <div class="c"><div style="background:var(--seam)"></div><p>--seam<br>#DCD2BE</p></div>
+        <div class="c"><div style="background:var(--accent)"></div><p>--accent<br>#E8830C</p></div>
+        <div class="c"><div style="background:var(--accent-tx)"></div><p>--accent-tx<br>#AD5D03</p></div>
+        <div class="c"><div style="background:var(--cta)"></div><p>--cta<br>#1B7345</p></div>
+      </div>
+      <p class="say">On light, amber as text darkens to <span>#AD5D03</span> and the CTA to a flat #1B7345 — both for contrast.</p>
+      <span class="btn-cta">Get my free plan</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

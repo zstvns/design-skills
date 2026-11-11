@@ -1,0 +1,131 @@
+<!-- @dsCard group="Brand" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Logo</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--ground);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.card{padding:56px 64px 64px}
+.eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+.card>h2{font-family:var(--disp);font-weight:var(--w-lead);font-size:2.2rem;line-height:var(--lh-head);letter-spacing:var(--ls-head);margin-top:14px}
+.card>h2 .d{color:var(--dim)}
+.msi{font-family:var(--icon);font-weight:400;font-style:normal;line-height:1;font-variation-settings:'opsz' 20;-webkit-font-feature-settings:'liga';display:inline-block;vertical-align:middle}
+img{display:block}
+.file{font-family:var(--mono);font-size:.64rem;color:var(--faint)}
+.k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+
+/* grounds */
+.ground{position:relative;border:1px solid var(--seam);border-radius:var(--radius);background:var(--ground);color:var(--bone)}
+.ground .lab{position:absolute;left:18px;bottom:14px;right:18px;display:flex;justify-content:space-between}
+
+.pair{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pair .ground{height:260px;display:grid;place-items:center}
+.pair .dark{background:var(--surface-1)}
+
+.row2{margin-top:24px;display:grid;grid-template-columns:1.45fr 1fr;gap:24px}
+
+/* clear space diagram — lockup at 520px: 1u = .6904px; cap = 100u = 69px; x = 42u = 29px */
+.cs{height:340px;display:grid;place-items:center}
+.cs .wrap{position:relative;width:520px;height:97px}
+.cs .zone{position:absolute;inset:-29px;border:1px dashed var(--seam2)}
+.cs .x{position:absolute;width:29px;height:29px;background:var(--accent-soft);border:1px solid var(--accent-edge);display:grid;place-items:center;font-family:var(--mono);font-size:.6rem;color:var(--accent-tx)}
+.cs .x.l{left:-29px;top:34px}.cs .x.r{right:-29px;top:34px}.cs .x.t{top:-29px;left:245px}.cs .x.b{bottom:-29px;left:245px}
+.cs .cap{position:absolute;left:-40px;right:-40px;height:0;border-top:1px solid var(--sync-edge)}
+.cs .cap.top{top:6px}.cs .cap.base{top:75px}
+.cs .legend{position:absolute;left:18px;bottom:14px;right:18px;display:flex;gap:22px;font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+.cs .legend i{display:inline-block;width:16px;height:0;border-top:1px solid var(--sync);vertical-align:middle;margin-right:7px}
+.cs .legend em{font-style:normal;display:inline-block;width:10px;height:10px;background:var(--accent-soft);border:1px solid var(--accent-edge);vertical-align:-1px;margin-right:7px}
+.cs .note{position:absolute;left:18px;top:16px;right:18px;display:flex;justify-content:space-between}
+
+.side{display:grid;gap:24px}
+.icons{height:158px;display:grid;grid-template-columns:1fr 1fr}
+.icons>div{display:grid;place-items:center;position:relative}
+.icons>div:first-child{background:var(--surface-1);border-radius:var(--radius) 0 0 var(--radius);border-right:1px solid var(--seam)}
+.mins{height:158px;display:grid;grid-template-columns:1.4fr 1fr;align-items:center;padding:0 22px}
+.mins .m{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.mins b{font-family:var(--disp);font-weight:var(--w-lead);font-size:.98rem}
+
+/* misuse */
+.donts{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dont .ground{height:170px;display:grid;place-items:center;overflow:hidden}
+.dont .ground::after{content:"";position:absolute;inset:0;border-radius:var(--radius);pointer-events:none;
+  background:linear-gradient(to top right,transparent calc(50% - 1px),var(--alert) calc(50% - 1px),var(--alert) calc(50% + 1px),transparent calc(50% + 1px));opacity:.55}
+.dont .cap{margin-top:12px;display:flex;gap:10px;align-items:flex-start}
+.dont .cap .msi{color:var(--alert);font-size:1.15rem;margin-top:2px}
+.dont .cap b{font-family:var(--disp);font-weight:var(--w-lead);font-size:1rem;display:block}
+.dont .cap p{font-size:.84rem;color:var(--dim)}
+/* a misuse drawn on purpose: the delivered black file pushed to an accent with a filter */
+.recolor{filter:invert(52%) sepia(93%) saturate(1352%) hue-rotate(358deg) brightness(97%) contrast(92%)}
+.boxed{padding:16px 22px;border-radius:14px;background:var(--panel3);border:1px solid var(--seam2)}
+
+.rules{margin-top:32px;padding-top:20px;border-top:1px solid var(--seam);display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rules b{font-family:var(--disp);font-weight:var(--w-lead);font-size:1rem;display:block}
+.rules p{font-size:.84rem;color:var(--dim);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">Brand · logo — the Command Point</div>
+  <h2>Placed, never rebuilt. <span class="d">The ground picks the file; nothing tints the mark.</span></h2>
+
+  <div class="pair">
+    <div class="ground dark">
+      <img src="../logo/logo-lockup-inverse.svg" width="360" height="67" alt="Magister">
+      <div class="lab"><span class="k">On dark</span><span class="file">logo-lockup-inverse.svg · cream</span></div>
+    </div>
+    <div class="ground" data-theme="light">
+      <img src="../logo/logo-lockup.svg" width="360" height="67" alt="Magister">
+      <div class="lab"><span class="k">On light</span><span class="file">logo-lockup.svg · near-black</span></div>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="ground cs" data-theme="light">
+      <div class="note"><span class="k">Clear space</span><span class="file">x = 0.42 × cap height, all four sides</span></div>
+      <div class="wrap">
+        <div class="zone"></div>
+        <span class="cap top"></span><span class="cap base"></span>
+        <img src="../logo/logo-lockup.svg" width="520" height="97" alt="Magister">
+        <span class="x l">x</span><span class="x r">x</span><span class="x t">x</span><span class="x b">x</span>
+      </div>
+      <div class="legend"><span><i></i>cap height = 100u</span><span><em></em>x = 42u — nothing enters the dashed zone</span></div>
+    </div>
+    <div class="side">
+      <div class="ground icons">
+        <div><img src="../logo/logo-icon-white.svg" width="64" height="64" alt="Magister icon"><span class="file" style="position:absolute;bottom:10px">logo-icon-white.svg</span></div>
+        <div data-theme="light" style="background:var(--ground);border-radius:0 var(--radius) var(--radius) 0"><img src="../logo/logo-icon.svg" width="64" height="64" alt="Magister icon"><span class="file" style="position:absolute;bottom:10px">logo-icon.svg</span></div>
+      </div>
+      <div class="ground mins" data-theme="light">
+        <div class="m"><img src="../logo/logo-lockup.svg" width="60" height="11" style="margin:6px 0 7px" alt="Magister at minimum size"><b>Lockup ≥ 60px</b><span class="file">15mm in print</span></div>
+        <div class="m"><img src="../logo/logo-icon.svg" width="24" height="24" alt="Magister icon at minimum size"><b>Icon ≥ 24px</b><span class="file">8mm in print</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="donts">
+    <div class="dont">
+      <div class="ground" data-theme="light"><img class="recolor" src="../logo/logo-lockup-black.svg" width="260" height="48" alt="Misuse: recolored logo"></div>
+      <div class="cap"><span class="msi">close</span><div><b>Don't recolor</b><p>Not to amber, not to green, not "just for print." Choose a delivered file.</p></div></div>
+    </div>
+    <div class="dont">
+      <div class="ground"><div class="boxed"><img src="../logo/logo-lockup-inverse.svg" width="200" height="37" alt="Misuse: boxed logo"></div></div>
+      <div class="cap"><span class="msi">close</span><div><b>Don't box it</b><p>No chips, badges, or rounded tiles. The avatar and app icon are the only containers.</p></div></div>
+    </div>
+    <div class="dont">
+      <div class="ground" data-theme="light"><img src="../logo/logo-lockup.svg" width="200" height="37" style="transform:scaleX(1.5)" alt="Misuse: stretched logo"></div>
+      <div class="cap"><span class="msi">close</span><div><b>Don't stretch it</b><p>Width and height keep the file's ratio, 753 : 140. Never a second viewBox.</p></div></div>
+    </div>
+  </div>
+
+  <div class="rules">
+    <div><b>One locked lockup.</b><p>Icon + outlined Chakra Petch wordmark, gap 0.42× cap height. Never set the word yourself.</p></div>
+    <div><b>Icon is a named variant.</b><p>For tight spaces — favicon, avatar, a slide footer. Not licence to re-lockup.</p></div>
+    <div><b>Sign off, don't lead.</b><p>On collateral the logo closes the piece. No logo on social posts.</p></div>
+  </div>
+</div>
+</body>
+</html>

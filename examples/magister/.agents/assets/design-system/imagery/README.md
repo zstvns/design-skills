@@ -1,0 +1,1 @@
+Approved imagery is added here from `.agents/assets/imagery/approved/` once `art-direction` approves it — only assets whose rights in `.agents/assets/imagery/manifest.md` allow publishing to a third-party service.

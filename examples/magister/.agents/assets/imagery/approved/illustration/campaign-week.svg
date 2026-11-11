@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ill" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="A week-long campaign drawn as a flight plan with launch windows and one active burn">
+  <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap");   svg{background:#0F0C07;border:1px solid #3A3020;border-radius:8px;display:block}   .ln{stroke:#ECE4D6;stroke-opacity:.82;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}   .fn{stroke:#ECE4D6;stroke-opacity:.28;stroke-width:1;fill:none}   .pl{stroke-dasharray:2 7}   .act{stroke:#E8830C;stroke-opacity:1}   .dot{fill:#ECE4D6;fill-opacity:.82}   .adot{fill:#E8830C}   .lbl{font:500 9.5px 'JetBrains Mono',monospace;letter-spacing:.14em;fill:#988B71;text-transform:uppercase}   .albl{fill:#F4A93C}   .br{stroke:#4A3D24;stroke-width:1;fill:none}  svg{background:#0F0C07}</style>
+  <path class="br" d="M14 26V14h12M1174 14h12v12M1186 394v12h-12M26 406H14v-12"/>
+  <path class="fn" d="M60 340 H1140"/>
+  <g class="fn"><path d="M60 334v12M214 334v12M368 334v12M522 334v12M676 334v12M830 334v12M984 334v12M1138 334v12"/></g>
+  <text class="lbl" x="60" y="368">Mon</text><text class="lbl" x="214" y="368">Tue</text><text class="lbl" x="368" y="368">Wed</text><text class="lbl" x="522" y="368">Thu</text><text class="lbl" x="676" y="368">Fri</text><text class="lbl" x="830" y="368">Sat</text><text class="lbl" x="984" y="368">Sun</text>
+  <path class="ln" d="M60 340 C160 340 200 250 290 220 C380 190 430 200 522 170"/>
+  <path class="ln act" d="M522 170 C600 146 640 110 720 96"/>
+  <path class="ln pl" d="M720 96 C820 80 900 90 1000 70 C1060 58 1100 50 1140 46"/>
+  <path class="ln" d="M214 340 C300 330 330 290 400 280"/><path class="ln pl" d="M676 340 C760 334 800 300 880 286"/>
+  <circle class="dot" cx="290" cy="220" r="3"/><circle class="dot" cx="522" cy="170" r="3"/><circle class="adot" cx="720" cy="96" r="5"/><circle class="dot" cx="400" cy="280" r="3"/>
+  <text class="lbl" x="250" y="206">Blog live</text><text class="lbl" x="470" y="156">Email send</text><text class="lbl albl" x="734" y="116">Launch burn · now</text><text class="lbl" x="1040" y="40">Report</text>
+  <rect class="fn" x="660" y="60" width="140" height="280" fill="#E8830C" fill-opacity=".04"/><text class="lbl" x="668" y="76">Window</text>
+</svg>

@@ -1,0 +1,151 @@
+<!-- @dsCard group="Components" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magister — Section types</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{width:1200px;background:var(--ground);color:var(--bone);font-family:var(--body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+.card{padding:56px 64px 64px}
+.eyebrow{font-family:var(--mono);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--faint)}
+.card>h2{font-family:var(--disp);font-weight:var(--w-lead);font-size:2.2rem;line-height:var(--lh-head);letter-spacing:var(--ls-head);margin-top:14px}
+.card>h2 .d{color:var(--dim)}
+.msi{font-family:var(--icon);font-weight:400;font-style:normal;line-height:1;font-variation-settings:'opsz' 24;-webkit-font-feature-settings:'liga';display:inline-block;vertical-align:middle}
+
+.row{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.col .lbl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.col .lbl b{font-family:var(--disp);font-weight:var(--w-lead);font-size:1.05rem}
+.col .note{margin-top:14px;font-size:.84rem;color:var(--dim)}
+.col .note b{font-weight:var(--w-lead);color:var(--bone)}
+
+/* the miniature screen */
+.screen{position:relative;height:486px;border:1px solid var(--seam);border-radius:var(--r-card);overflow:hidden;background:var(--ground);padding:22px 22px 26px}
+.screen::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:var(--grid-size) var(--grid-size);
+  -webkit-mask-image:radial-gradient(420px 460px at 50% 30%,black 20%,transparent 85%);mask-image:radial-gradient(420px 460px at 50% 30%,black 20%,transparent 85%)}
+.screen>*{position:relative}
+.screen .mini-ey{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.screen h3{font-family:var(--disp);font-weight:var(--w-lead);line-height:var(--lh-head);letter-spacing:var(--ls-head)}
+.screen p{color:var(--dim)}
+
+.btn{font-family:var(--mono);font-size:.7rem;letter-spacing:var(--ls-btn);text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border-radius:var(--r-pill);white-space:nowrap}
+.btn-cta{color:var(--cta-ink);background:var(--cta-fill);border:1px solid var(--cta-edge);padding:.6rem 1rem;box-shadow:var(--cta-shadow)}
+.btn-ghost{color:var(--bone);background:rgba(0,0,0,.2);border:1px solid var(--seam2);padding:.42rem .8rem;font-size:.62rem}
+
+/* 1 · hero */
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(360px 260px at 30% 34%,var(--wash),transparent 65%)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--seam)}
+.nav img{display:block}
+.hero h1{margin-top:44px;font-family:var(--disp);font-weight:var(--w-strong);font-size:2.15rem;line-height:1.02;letter-spacing:-.02em}
+.hero h1 .at{color:var(--lo);text-shadow:var(--glow)}
+.hero .typed{font-family:var(--disp);font-weight:var(--w-lead);font-size:2.15rem;line-height:1.02;letter-spacing:-.02em;color:var(--dim)}
+.hero .typed .cur{display:inline-block;width:.5ch;height:.84em;background:var(--lo);margin-left:.05em;vertical-align:-.03em;box-shadow:var(--glow)}
+.hero .sub{margin-top:16px;font-size:.9rem}
+.urlbar{margin-top:22px;display:flex;flex-wrap:wrap;gap:.45rem;background:var(--panel-fill);border:1px solid var(--seam2);border-radius:var(--r-launch);padding:.45rem;box-shadow:var(--lift)}
+.urlbar .in{flex:1;display:flex;align-items:center;gap:.45rem;padding:.4rem .5rem;color:var(--faint);font-size:.86rem}
+.urlbar .in .msi{font-size:1.05rem}
+.urlbar .btn-cta{width:100%}
+.under{margin-top:12px;font-family:var(--mono);font-size:.58rem;letter-spacing:.09em;color:var(--faint);text-transform:uppercase}
+
+/* 2 · metric */
+.metric{border-top:0}
+.metric .bignum{margin-top:18px;font-family:var(--disp);font-weight:var(--w-strong);font-size:6.2rem;line-height:var(--lh-bignum);letter-spacing:var(--ls-bignum);color:var(--lo);text-shadow:var(--glow)}
+.metric h3{margin-top:12px;font-size:1.3rem}
+.metric p{margin-top:10px;font-size:.86rem}
+.panel{background:var(--panel-fill);border:1px solid var(--seam);border-radius:var(--radius);padding:16px;position:relative;box-shadow:var(--lift)}
+.corner{position:absolute;width:var(--corner-size);height:var(--corner-size);border:1px solid var(--seam2)}
+.corner.tl{top:var(--corner-inset);left:var(--corner-inset);border-right:0;border-bottom:0}
+.corner.tr{top:var(--corner-inset);right:var(--corner-inset);border-left:0;border-bottom:0}
+.corner.bl{bottom:var(--corner-inset);left:var(--corner-inset);border-right:0;border-top:0}
+.corner.br{bottom:var(--corner-inset);right:var(--corner-inset);border-left:0;border-top:0}
+.metric .panel{margin-top:22px}
+.chart{display:block;width:100%;height:auto;margin-top:8px}
+.chart .g{stroke:var(--seam)}
+.chart .prev{fill:none;stroke:var(--sync);stroke-width:1.6;stroke-dasharray:4 6}
+.chart .now{fill:none;stroke:var(--lo);stroke-width:2.4}
+.chart .pt{fill:var(--lo)}
+
+/* 3 · feature row */
+.feat .tagline{margin-top:6px;color:var(--accent-tx);font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase}
+.feat h3{margin-top:10px;font-size:1.45rem}
+.feat p{margin-top:10px;font-size:.86rem}
+.feat .panel{margin-top:22px;padding:0;overflow:hidden}
+.mock{padding:16px;display:grid;gap:12px}
+.mock .bar{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.swatches span{height:40px;border-radius:4px;border:1px solid var(--seam)}
+.mock .aa{font-family:var(--disp);font-weight:var(--w-lead);font-size:1.4rem;line-height:1.1;color:var(--bone)}
+.mock .ag{font-size:.84rem;color:var(--dim)}
+.mock .lines{display:grid;gap:6px;padding-top:10px;border-top:1px solid var(--seam)}
+.mock .lines div{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--dim)}
+.mock .lines .msi{font-size:.95rem;color:var(--go)}
+.feat .next{margin-top:20px;display:flex;gap:10px;align-items:center;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.feat .next i{flex:1;height:1px;background:var(--seam)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">Components · section types</div>
+  <h2>Three sections, three structures. <span class="d">Never one centered stack.</span></h2>
+
+  <div class="row">
+    <div class="col">
+      <div class="lbl"><b>Hero · URL bar</b><span class="eyebrow">01</span></div>
+      <div class="screen hero">
+        <div class="nav"><img src="../logo/logo-lockup-inverse.svg" width="96" height="18" alt="Magister"><span class="btn btn-ghost">Sign in</span></div>
+        <h1>Hey <span class="at">@Magister</span>,</h1>
+        <div class="typed">audit my site and get to work.<span class="cur"></span></div>
+        <p class="sub">Describe the work in plain English. It executes across 100+ real tools, then hands it back for your approval.</p>
+        <div class="urlbar"><div class="in"><span class="msi">link</span>Enter your website URL…</div><span class="btn btn-cta">Get my free plan</span></div>
+        <div class="under">100% free · No credit card required</div>
+      </div>
+      <p class="note"><b>Left-aligned, one CTA.</b> The URL bar is the invitation; amber marks the addressee, the wash sits behind the headline.</p>
+    </div>
+
+    <div class="col">
+      <div class="lbl"><b>Metric · bignum</b><span class="eyebrow">02</span></div>
+      <div class="screen metric">
+        <div class="mini-ey">Analytics · this period</div>
+        <div class="bignum">+18%</div>
+        <h3>signups this period.</h3>
+        <p>Pull GA4, ad, and product metrics into one place. It reads what's working and feeds it into the next round.</p>
+        <div class="panel">
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+          <div class="mini-ey">Signups · vs last month</div>
+          <svg class="chart" viewBox="0 0 300 110" role="img" aria-label="Signups climbing above the prior baseline">
+            <line class="g" x1="0" y1="25" x2="300" y2="25"/><line class="g" x1="0" y1="60" x2="300" y2="60"/><line class="g" x1="0" y1="95" x2="300" y2="95"/>
+            <polyline class="prev" points="0,92 50,88 100,86 150,82 200,80 250,76 296,74"/>
+            <polyline class="now" points="0,96 50,88 100,80 150,66 200,52 250,38 292,22"/>
+            <circle class="pt" cx="292" cy="22" r="3.5"/>
+          </svg>
+        </div>
+      </div>
+      <p class="note"><b>One figure owns the view.</b> Bold appears here and nowhere else in the section; the bracketed panel proves it.</p>
+    </div>
+
+    <div class="col">
+      <div class="lbl"><b>Feature row</b><span class="eyebrow">03</span></div>
+      <div class="screen feat">
+        <div class="tagline">On brand</div>
+        <h3>Everything it makes looks like you.</h3>
+        <p>During your audit, Magister pulls your real identity — logos, fonts, colors — and remembers it.</p>
+        <div class="panel">
+          <div class="mock">
+            <div class="bar"><span>Brand kit · your.co</span><span>Synced</span></div>
+            <div class="swatches"><span style="background:var(--accent)"></span><span style="background:var(--panel)"></span><span style="background:var(--bone)"></span><span style="background:var(--sync)"></span></div>
+            <div><div class="aa">Aa Chakra Petch</div><div class="ag">Ag IBM Plex Sans — body</div></div>
+            <div class="lines"><div><span class="msi">check</span>Logo files placed, never redrawn</div><div><span class="msi">check</span>Voice notes from 14 pages</div></div>
+          </div>
+        </div>
+        <div class="next"><span>Browser control</span><i></i><span>02 / 07</span></div>
+      </div>
+      <p class="note"><b>Text and visual alternate sides</b> row to row (.flip); on narrow screens they stack, text first.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
