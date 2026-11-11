@@ -42,6 +42,18 @@
         "Does not sign off based on one context"
       ],
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Evaluate this logo concept for our project-management SaaS, Orchard. The mark is a simple, geometric bitten-apple silhouette, drawn in a single black value, locked up with a clean grotesque wordmark. It holds at 16px, survives a circle crop and a rounded-square app icon, works reversed and in one color — same construction everywhere. The Emotional Target is focused, calm, and precise, and the mark's quiet geometry produces that. We put it on a shelf with Asana, Monday, Linear, ClickUp, and Notion: none of them use fruit or an apple, and the silhouette doesn't dissolve into the set. We'd like to go to mockups. Does this pass SAD?",
+      "expected_output": "Should treat Simple and Appropriate as able to pass on the evidence given (one construction that holds across the implementation grid; the mark produces the stated Emotional Target) but must still fail Distinct. The shelf may pass — these competitors don't use an apple — but Distinct is two checks, and the bitten apple is recognizable on sight as a match with a famous mark (Apple) in any class, which is a hard fail on Distinct. Should list each lookalike-sweep tool (Google Lens Exact and Visual Match, Pinterest visual search, WIPO Global Brand Database Conceptual Similarity, or named equivalents) as run or not run, include results only where a tool actually ran, and never invent or fabricate search results. Because SAD is not averaged, one failed criterion sinks the whole logo — should not say it 'passes SAD cleanly,' and should not claim legal clearance ('cleared,' 'safe to register,' or equivalent). This is a design originality check, not trademark clearance.",
+      "assertions": [
+        "Names the Apple collision as a famous-mark match, lists each sweep tool as run or not run, and does not fabricate search results",
+        "Fails Distinct even though Simple and Appropriate can pass — SAD is not averaged",
+        "Never says 'passes SAD cleanly'",
+        "Does not claim legal clearance"
+      ],
+      "files": []
     }
   ]
 }

@@ -2,7 +2,7 @@
 name: logo-design
 description: "Design or evaluate a logo against the SAD bar — Simple, Appropriate, Distinct — always judged in context. Use when designing a new mark, refining one, or assessing whether an existing logo is any good. Triggers on 'logo,' 'wordmark,' 'brandmark,' 'mark,' 'monogram,' 'favicon/app icon,' 'is our logo good,' 'redesign our logo,' 'logo critique,' or 'logo concepts.' Reads the brand's emotional target and competitor set first — a logo is never judged in a vacuum."
 metadata:
-  version: 1.11.2
+  version: 1.12.0
 ---
 
 # Logo Design
@@ -35,40 +35,55 @@ A logo can be beautiful and wrong. Appropriate means it produces the feelings th
 - A playful, bouncing mark is wrong for a brand whose job is to feel like a vault; a severe, serious mark is wrong for a kids' product.
 - You cannot judge appropriateness without the core feelings. If `.agents/brand.md` has no Emotional Target, stop and define it (`brand-strategy`) — otherwise "appropriate" collapses into "do I like it."
 
-### Distinct — judged against the *direct competition*
+### Distinct — two checks, both must pass
 
-Distinctiveness only exists relative to the field.
+Distinctiveness only exists relative to the field, and the field is bigger than the category. Distinct is two independent checks: **(a) the shelf** — direct competitors and the category default — and **(b) the lookalike sweep** — anyone at all. Both have to pass. A mark that passes the competitor shelf and still looks like someone else's mark from outside the category **fails Distinct**.
+
+#### (a) The shelf — judged against the *direct competition*
 
 - Put the mark on a shelf with the **direct competitors' logos** and the category's visual conventions. Does it stand out, or dissolve into the set?
 - **Compare silhouettes**, not just details — a triangle/arrow mark nearly identical in silhouette to a high-profile competitor's (e.g. Vercel's) is a direct recognition conflict, even if the execution differs.
-- Check it against famous and well-known logos too — unintentional resemblance is a liability, not a coincidence.
 - The real test: cover the name. Would the audience know it's *them* and not a competitor?
 - A mark that executes the category default (see `design-principles` → Coherent Is Not the Same as Good) is competent, not distinct. Name that when you see it.
-- **Run the shelf for real.** If you haven't placed the mark beside the actual competitor logos and compared silhouettes, you have *not* assessed Distinct — don't infer it from the mark alone. Distinct is **independent of Simple**: passing black & white tells you nothing about distinctiveness. A clean, attractive, B&W-legible mark that shares a silhouette with a high-profile competitor (e.g. Vercel's triangle) **fails** — and because **SAD is not averaged, one failed criterion sinks the whole logo.** Never report a colliding mark as "passes SAD cleanly."
+- **Run the shelf for real.** If you haven't placed the mark beside the actual competitor logos and compared silhouettes, you have *not* assessed the shelf, and Distinct is **unassessed** — don't infer it from the mark alone. Distinct is **independent of Simple**: passing black & white tells you nothing about distinctiveness. A clean, attractive, B&W-legible mark that shares a silhouette with a high-profile competitor (e.g. Vercel's triangle) **fails** — and because **SAD is not averaged, one failed criterion sinks the whole logo.** Never report a colliding mark as "passes SAD cleanly."
+
+#### (b) The lookalike sweep — judged against *anyone at all*
+
+The shelf only covers the category. A mark can pass every shelf check and still collide with a mark from outside it — unintentional resemblance is a liability, not a coincidence. Run the sweep on the **shortlist, before you present it and before any refinement rounds**, and again on the **final mark, before mockups**. Running it only at the end wastes whole construction rounds.
+
+- **Search the right artifact.** Search with the **black-and-white icon alone** — no wordmark, no color — *and* the full lockup. Color and type hide silhouette collisions. If there is no standalone icon, search the black-and-white wordmark.
+- **Run these tools** (or equivalents — Lens and Pinterest need a browser; if you can't run a named tool, use an equivalent visual-search or trademark-image search and say so):
+  - Google Lens, both **Exact** and **Visual Match**
+  - Pinterest visual search
+  - WIPO Global Brand Database image search, on **Conceptual Similarity**, with expired marks filtered out
+- **Record what actually ran.** The report lists each tool as **run** or **not run**, with the query and the top hits. If the sweep didn't run, Distinct is **unassessed**, not passed — same treatment as a clean mark that was never put on the shelf.
+- **Scoring.** These are a hard fail on Distinct: an identical or near-identical match; a near match in the same or a related class of goods; or a match with any famous mark in any class. A looser resemblance, or a near match in an unrelated class, is flagged as **weak**, with the designer's reasoning written down. Expired marks are filtered from the WIPO pass, but a dead mark that's still visually famous gets flagged anyway.
+
+This is a design originality check, not trademark clearance: any real client mark still needs a search by counsel before it ships, and you never write "cleared" or "safe to register."
 
 ## Assess (get) vs. Design (make)
 
 **Assessing an existing mark** — the live, common case:
 1. Make sure you're judging the **current** mark — take it from the live navigation bar, not a favicon, OG image, or press kit (those are often stale). Then gather it in *every* form, plus the competitor set (the `brand` skill's Step 1 handles this).
 2. **Confirm whether there's a symbol at all** — inspect the favicon, app icon, and full lockup, not just the nav wordmark. Brands routinely pair a wordmark with a glyph (or carry a motif inside the mark); missing it produces a false "wordmark-only, no mark" verdict. Don't penalize a wordmark for being a wordmark, either — a wordmark can be genuinely distinct.
-3. Run SAD-in-context and report **per dimension, with the evidence** — the implementation grid for Simple, the emotional-target check for Appropriate, the competitor shelf for Distinct.
+3. Run SAD-in-context and report **per dimension, with the evidence** — the implementation grid for Simple, the emotional-target check for Appropriate, the competitor shelf *and* the lookalike sweep for Distinct.
 4. Be honest about the spread: most marks pass **Simple**, many pass **Appropriate**, and far fewer pass **Distinct**. "Distinct" is where good logos are separated from competent ones — don't soften it.
 5. Write the verdict into the **Logo** section of `.agents/brand.md`.
 
 **The mark is equity, not scripture.** Don't preserve a weak logo just because it exists. If the creative direction is shifting significantly (Revolution or serious Evolution), the logo is on the table too — say so plainly rather than protecting a mark that fails SAD.
 
 **Designing a new mark** — new brand, or the existing one fails the bar:
-1. Work from `.agents/brand.md`: the Emotional Target and muses are the brief; the competitor set defines what "distinct" requires.
+1. Work from `.agents/brand.md`: the Emotional Target and muses are the brief; the competitor set defines what the shelf requires; the lookalike sweep covers everyone else.
 2. **Find the thematic idea first.** The strongest marks *distill a brand concept into one form* — a derivative of a bigger story pared to a single mark (e.g. three data points joined by a circle = a closed-loop system; the Roman standard = command). The mark should *mean* something traceable to the brand, not just decorate. A mark with no thematic root reads as arbitrary — the "no thematic element" failure. Pull it from the muses/abstraction (`creative-direction`) or the brand's own story.
 3. **Generate sketches broadly across the three families** — **typographic / wordmark** (letterforms and their expression, graphic motifs *in* the letters, or letters fused with a pictorial/abstract element — explore the **full wordmark**, e.g. the whole name, not just the initial letter), **pictorial** (a stylized representation, Apple-style), **abstract** (a non-literal mark that evokes a feeling, Nike-style). Three rules the sketch phase lives or dies by:
    - **Generate, don't hand-draw.** Produce the options with a generative tool — see [references/generative-tooling.md](references/generative-tooling.md). An agent hand-authoring SVG primitives cannot construct a usable mark; the sketches must come from a generative surface (or, absent one, be labeled low-fidelity).
    - **Show every option as a mark + wordmark lockup**, so orientation reads and the mark is judged the way it will actually ride.
    - **Don't force one per family.** Pick the ones that actually work — they can all be abstract. Family is a lens for coverage, not a quota.
-   Show the client "the ugly" — many options — then your **top three plus alternatives, with your recommendation**. Don't marry the first idea.
+   Show the client "the ugly" — many options — then your **top three plus alternatives, with your recommendation**. Don't marry the first idea. Run the **lookalike sweep** on the shortlist before you present it and before any refinement rounds.
 4. Resolve in **black and white first.** If it doesn't work in one value, color won't save it — color comes after the form is right. If the client is hesitant, show B&W before finalizing.
 5. **Construct it properly.** The mark's vector comes from a generative tool, not typed-out `<path>` coordinates; the wordmark is set in a **licensed face and outlined** — never *generated* (generative type garbles the letterforms). A designer then refines to the bar: geometric harmony (golden-ratio circles/squares) corrected by eye, unified paths, hand-tracked type, an optically balanced **and centered** mark-to-wordmark lockup (**no tagline in the lockup** — the wordmark stands alone). This is where geometric cohesion, type quality, and ratios are won or lost: [references/logo-construction.md](references/logo-construction.md) and [references/generative-tooling.md](references/generative-tooling.md).
 6. Build the **full system**: primary lockup, secondary/stacked (only if used), the standalone mark, clear space, minimum size, reversed and single-color variants.
-7. Test against SAD *and* the implementation grid before calling it done.
+7. Test against SAD *and* the implementation grid before calling it done. Run the **lookalike sweep** again on the final mark **before mockups**.
 
 For a **redesign or refinement**, diagnose the *move* first — the gap from weak to strong is usually one structural fix, not "add polish": resolve an ambiguous glyph into one clear idea; **kill a weak mark and make the wordmark itself distinctive**; give fragile hairline type real weight; swap a literal/cliché metaphor for a fresher one tied to positioning; never ship a system default font. Full patterns with worked before→after cases: [references/logo-fixes.md](references/logo-fixes.md).
 
@@ -96,7 +111,7 @@ Layout, print safe-zones/bleed, and deck-vs-web composition live in `collateral-
 
 ## Output & delivery
 
-Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, **misuse** — and, for an assessment, the SAD verdict with the evidence behind each dimension. **Also append the Logo section of `.agents/design.md`** (the living record — see `creative-direction` → design-doc-template.md): the same spec with the fuller rationale — construction/geometry notes, why the mark answers the Emotional Target, file locations — dated. `brand.md` carries the distilled rules; `design.md` carries the record.
+Write the **Logo** section of `.agents/brand.md`: lockups, the mark, clear space, minimum size, color/reversed variants, **misuse** — and, for an assessment, the SAD verdict with the evidence behind each dimension. Distinct evidence is both the shelf and the lookalike report: each tool listed as run or not run, with the query and the top hits. If the sweep didn't run, record Distinct as unassessed, not passed. **Also append the Logo section of `.agents/design.md`** (the living record — see `creative-direction` → design-doc-template.md): the same spec with the fuller rationale — construction/geometry notes, why the mark answers the Emotional Target, file locations — dated. `brand.md` carries the distilled rules; `design.md` carries the record.
 
 ### Write the locked assets where the other skills will find them
 
@@ -127,7 +142,8 @@ On finalize, hand over a **downloadable, ordered package** the client can house 
 - [ ] Brand context read — Emotional Target *and* competitor set — before judging or drawing
 - [ ] Mark has a **thematic idea** traceable to the brand, not arbitrary decoration
 - [ ] Logo seen in *every* implementation, not just the hero lockup
-- [ ] **Distinct** judged against the direct competitor set, not in isolation (and shown on the shelf in the presentation)
+- [ ] **Distinct (shelf)** judged against the direct competitor set and the category default, not in isolation (and shown on the shelf in the presentation)
+- [ ] **Distinct (lookalike sweep)** run on the shortlist before you present it and before any refinement rounds, and again on the final mark before mockups — black-and-white icon alone plus the full lockup; each tool recorded as run or not run, with the query and top hits; if the sweep didn't run, Distinct is unassessed, not passed
 - [ ] **Appropriate** judged against the Emotional Target
 - [ ] **Simple** verified across the implementation grid (favicon → large, 1-color, reversed)
 - [ ] Resolves in black and white (opacity/tints OK; hue/gradient dependence is not)

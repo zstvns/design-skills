@@ -10,7 +10,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | design-principles | 1.11.1 | Built | 2026-08-07 |
 | brand-strategy | 1.12.1 | Built | 2026-08-07 |
 | creative-direction | 1.14.2 | Built | 2026-08-07 |
-| logo-design | 1.11.2 | Built | 2026-08-07 |
+| logo-design | 1.12.0 | Built | 2026-11-11 |
 | web-design | 1.7.1 | Built | 2026-08-07 |
 | collateral-design | 1.11.1 | Built | 2026-08-07 |
 | motion-design | 1.6.1 | Built | 2026-08-07 |
