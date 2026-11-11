@@ -92,6 +92,10 @@ You don't have to configure tiers up front. `/brand` detects what's connected, a
 | **1 — Claude + a generator you run** | ChatGPT (GPT Image), Gemini, Midjourney… | `art-direction` writes a primer carrying the brand's image style that you paste into a ChatGPT Project or Gemini Gem once, then one-line requests; you run them and drop the images in a folder; the agent judges them against the brand, asks for fixes, treats the keepers, and places them. **Most people start here, and it's a complete working setup.** |
 | **2 — Connected tools** | A generator or canvas the agent can drive | The agent generates and places assets itself, in-session. See the table below. |
 
+### Claude Design
+
+If you have a Claude plan, you have Claude Design — the visual canvas inside Claude. Once your direction is approved, `creative-direction` can publish the brand to it as a **design system** (you run `/design-sync` in Claude Code and approve the plan), so every new Claude Design project starts with your type, color, logo, and components. That's how a teammate who never opens a terminal makes an on-brand deck or one-pager: `collateral-design` treats Claude Design as a first choice for those, and `web-design` can start from a Claude Design prototype handed off to Claude Code. Claude Design doesn't generate images; your imagery comes from `art-direction`.
+
 ### Tier 2 connections
 
 | Connection | Which skills use it | What it unlocks |

@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.12.0
+  version: 1.13.0
 ---
 
 # Collateral Design
@@ -140,6 +140,7 @@ A single beautiful slide is not the job; a *set* that reads as one brand is. Whe
 Collateral is produced in the format's native tooling, not custom web code. Lean on what's connected; **never block on a missing tool — degrade to the next option** (full map in [references/tooling.md](references/tooling.md)). Check `.agents/brand.md` → **Toolkit** first for what the operator has — including the image generator that supplies a piece's imagery — and write back anything new you find connected:
 
 - **`canvas-design` skill** — static art to PNG/PDF (posters, one-pagers, ads, print pieces) with design philosophy built in. A strong default for a single fixed-format graphic.
+- **Claude Design** — when the system has been published there (see `creative-direction`), the first choice for decks and one-pagers non-designers will keep editing: inherits the brand, edits on canvas, exports PDF / PPTX / Google Slides. Imagery still comes from `art-direction`.
 - **`slide-deck` (makerskills) / presentation tooling** — deck generation and structure.
 - **`dataviz` skill** — *any* chart, stat tile, or dashboard on a slide or sheet. Read it before drawing the first chart so the data reads as one system.
 - **Adobe MCP** (when connected) — layout and document rendering (`document_render_layout` / `render_vector`), InDesign / IDML for print production, Express, and `font_recommend` / `find_fonts` for licensed faces.
@@ -243,4 +244,4 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - `design-critique` *(planned — not yet shipped)* — will judge the finished collateral against the emotional target and the flex-vs-drift latitude
 - marketing library: `copywriting` (the words come first), `sales-enablement` (one-pager / battle-card substance), `ad-creative` (ad copy variants at scale)
 - method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade); [composition.md](references/composition.md) (light-first, background element, 8-col grid, print margin); delivery: [references/viewer.md](references/viewer.md) (true-size viewer + playable deck); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
-- tooling (use when connected, fall back gracefully): **`canvas-design`** (static PNG/PDF art), **`slide-deck`** (decks), **`dataviz`** (charts), **Adobe MCP** (layout / print / InDesign), **Paper / Pencil / Figma MCP** (design canvases), or **code → PDF/image export**; see [references/tooling.md](references/tooling.md)
+- tooling (use when connected, fall back gracefully): **Claude Design** (decks and one-pagers, once the system is published there), **`canvas-design`** (static PNG/PDF art), **`slide-deck`** (decks), **`dataviz`** (charts), **Adobe MCP** (layout / print / InDesign), **Paper / Pencil / Figma MCP** (design canvases), or **code → PDF/image export**; see [references/tooling.md](references/tooling.md)

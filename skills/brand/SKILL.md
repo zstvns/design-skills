@@ -2,7 +2,7 @@
 name: brand
 description: "The entry point for any brand work. Gathers the brand's existing assets itself from just a URL (crawling the site, following its links to social and press), diagnoses how much should change, routes to the right path, and gets-or-makes the brand context document every other design skill reads. Use at the start of any design project, or when the user mentions 'brand context,' 'set up the brand,' 'brand guidelines,' 'our visual identity,' 'rebrand,' 'refresh our brand,' 'what's our brand,' or wants to stop re-explaining their colors, type, and visual direction on every task. Creates and maintains `.agents/brand.md`."
 metadata:
-  version: 1.27.1
+  version: 1.28.0
 ---
 
 # Brand
@@ -153,7 +153,7 @@ Use the template in [references/brand-doc-template.md](references/brand-doc-temp
 Every downstream skill forks on what the operator can actually generate with, so record it here and no skill has to ask again.
 
 - **Detect what you can see yourself.** Check which generator and canvas MCPs are connected in this session (Flora, Adobe, Figma, Paper…) and whether keys like `QUIVER_API_KEY` are set. Don't ask the operator about things you can check.
-- **Ask one plain question about the rest** (skip it if they've already told you) — the tools they run by hand: *"Which image tools do you use yourself — ChatGPT, Gemini, Midjourney, anything else?"* Most people have at least ChatGPT or Gemini; that's a full working tier, not a degraded one.
+- **Ask one plain question about the rest** (skip it if they've already told you) — the tools they run by hand: *"Which image tools do you use yourself — ChatGPT, Gemini, Midjourney, anything else? And do you design in Claude Design, Figma, or anything like that?"* Most people have at least ChatGPT or Gemini; that's a full working tier, not a degraded one.
 - **Set the tier** — **0** Claude only · **1** plus a generator they run by hand (the agent writes prompts, they run them and bring results back) · **2** a generator connected to the agent (it generates directly). Record it with the date.
 
 ## Step 5: Confirm and Save
