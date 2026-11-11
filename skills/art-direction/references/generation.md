@@ -78,7 +78,8 @@ Same spec, same anchors, same review — you run it yourself.
 
 - **Upload anchors into the tool first.** Model providers often can't fetch hotlink-protected hosts (Wikimedia, many CDNs) and fail the run with a download or parameter error. Bring the anchor into the tool's own storage (in Flora, `flora_create_asset` from the URL) and reference that copy.
 - **Flora (MCP):** generate on a project canvas with the anchors attached as references. Flora also hosts Quiver's **Arrow** models, so flat and line-led illustration and spot icons can come out as real SVG, not raster. Once 10+ approved images exist in a class, train a style model on them if the workspace supports it — the strongest consistency lever available. Quote the cost before generating; the operator is paying for every run.
-- **Adobe (MCP):** Firefly generation, plus the fix-up tools that make Tier 1 output usable too — generative fill and expand, background removal, select-and-adjust, and vectorizing.
+- **Other node canvases** (Krea, ComfyUI, Higgsfield Canvas, Magnific Spaces, Runway Workflows): same house graph, same review. Per-tool notes, free tiers, and what's unverified: [node-generators.md](node-generators.md).
+- **Adobe (MCP):** the fix-up tools that make any tier's output usable — generative fill and expand, background removal, select-and-adjust, and vectorizing — plus layout and video handoff. What's shipped, what's announced, and what needs the desktop app: [adobe-mcps.md](adobe-mcps.md).
 - **Higgsfield, or any connected video generator:** start from an **approved still** (image-to-video) rather than text-to-video, so the grade and composition carry. Take the motion character from `.agents/design.md` (see `motion-design`); keep loops short and seamless; no text.
 
 ## Tier 0 — Claude Only

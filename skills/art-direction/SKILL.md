@@ -1,8 +1,8 @@
 ---
 name: art-direction
-description: "Turn the creative direction into the brand's actual imagery — photography, illustration, iconography, and pattern & texture, and how they combine. Implies each style from the brand strategy, finds real reference images on the web that fit the mood, writes a spec tight enough that two people would converge on it, then produces assets with whatever the operator has (ChatGPT or Gemini prompt packs, a connected generator like Flora, or treated free stock), reviews every result against the spec, and files an approved library. Use while building creative-direction stylescapes, whenever a page or piece needs on-brand imagery, or when the user mentions 'art direction,' 'photo style,' 'photography direction,' 'illustration style,' 'test our illustration style,' 'icon style,' 'image style,' 'find reference photos,' 'mood images,' 'what should our photos look like,' 'generate brand images,' 'ChatGPT image prompts,' 'make our images on-brand,' 'pattern,' or 'texture.'"
+description: "Turn the creative direction into the brand's actual imagery — photography, illustration, iconography, and pattern & texture, and how they combine. Implies each style from the brand strategy, finds real reference images on the web that fit the mood, writes a spec tight enough that two people would converge on it, then produces assets with whatever the operator has (ChatGPT or Gemini prompt packs, a connected generator like Flora, or treated free stock), reviews every result against the spec, and files an approved library. Use while building creative-direction stylescapes, whenever a page or piece needs on-brand imagery, or when the user mentions 'art direction,' 'photo style,' 'photography direction,' 'illustration style,' 'test our illustration style,' 'icon style,' 'image style,' 'find reference photos,' 'mood images,' 'what should our photos look like,' 'generate brand images,' 'ChatGPT image prompts,' 'make our images on-brand,' 'pattern,' 'texture,' 'which image generator,' or 'retouch in Photoshop.'"
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Art Direction
@@ -80,9 +80,25 @@ Choose **3–6 anchor images per class** — the best embodiments of the spec, f
 
 Read the Toolkit and take the most capable path available. Full playbooks — the ChatGPT Project / Gemini Gem primer, prompt anatomy per class, edit-first iteration, and connected-tool notes: [references/generation.md](references/generation.md).
 
-- **Tier 2 — a generator connected to you** (Flora, Adobe Firefly, Higgsfield…): generate directly, anchors attached as style references. Where the tool can train a style model on the anchors, do it once the anchor set is approved — it's the strongest consistency lever there is.
+- **Tier 2 — a generator connected to you** (Flora by default; Krea, Higgsfield, ComfyUI, and other node canvases): generate directly, anchors attached as style references. Where the tool can train a style model on the anchors, do it once the anchor set is approved — it's the strongest consistency lever there is. One briefing and curation method covers every node canvas, plus per-tool notes, free tiers, and costs: [references/node-generators.md](references/node-generators.md). Finishing in Photoshop, layout handoff to InDesign, and motion in Premiere or After Effects: [references/adobe-mcps.md](references/adobe-mcps.md).
 - **Tier 1 — a generator the operator runs** (ChatGPT, Gemini, Midjourney): write a **primer** — one block of instructions for a ChatGPT Project or Gemini Gem that carries the whole spec — so each request becomes one line plus 2–3 attached anchors. Save the primer and every prompt pack to `.agents/assets/imagery/prompts.md` for reuse. The operator saves results to `.agents/assets/imagery/inbox/`; you take it from there.
 - **Tier 0 — Claude only:** usable free stock (Unsplash, Pexels, public-domain collections) chosen against the spec and run through the treatment; icons from the chosen library; illustration and texture in SVG/CSS where the style allows. Say plainly that generated photography isn't available at this tier rather than faking it.
+
+**Which tool for which job** — take the first one the Toolkit has; never sign the operator up for a tool to fill a row.
+
+| Job | First choice | Then |
+|---|---|---|
+| Brand stills, style test, anchors-attached production | **Flora** | Krea Nodes · ComfyUI (local) · Tier 1 primer |
+| Flat illustration and spot icons as real SVG | **Arrow** (in Flora, or Quiver) | raster → vectorize (`logo-design` → generative-tooling.md) |
+| A style that must stay locked across hundreds of images | Style model / LoRA in **Flora** | Krea · ComfyUI LoRA |
+| Video from an approved still | **Flora** | Higgsfield (paid MCP) · Runway Workflows |
+| Free, commercially usable generation | **ComfyUI local** (check each model's license) | Flora's one-time free allowance |
+| Upscale a finished image | The generator's own upscaler | Magnific Spaces · Krea |
+| Remove, fill, extend, cut out, adjust a raster | **Adobe for creativity** connector | Photoshop community MCP (layered work) · code (ImageMagick / `sharp`) |
+| Print or multi-page layout handoff | `collateral-design` with the Adobe connector (InDesign tools) | InDesign community MCP |
+| Assemble or animate video | Adobe connector (resize, quick cut) → `motion-design` for timing | Premiere / After Effects community MCPs · Remotion |
+
+Figma Weave (formerly Weavy) is a capable node canvas but sits outside a no-Figma stack — use it only if the Toolkit already lists it. Adobe's own desktop MCPs are announced for early 2027, not shipped; what exists, and what's unverified, is in the two references above and [references/tool-sources.md](references/tool-sources.md).
 
 **Edit before you regenerate.** When an image is 80% right, ask for the specific fix ("keep everything; drop the second figure; cool the shadows") — current models edit in place. Regenerating throws away what was working.
 
@@ -134,6 +150,6 @@ Read the Toolkit and take the most capable path available. Full playbooks — th
 - `creative-direction` — decides the direction and the motif; calls this skill for the board pass; its element-standards.md sets the bar each class must clear
 - `logo-design` — the locked mark placed over imagery, never generated into it; its geometry seeds the pattern
 - `web-design` / `collateral-design` — draw imagery from the approved library; route back here for anything new
-- `motion-design` — motion character for any generated video or animated asset
+- `motion-design` — motion character for any generated video or animated asset; sets the timing before a Premiere or After Effects cut and reviews it after
 
 **Worked example:** [examples/magister](https://github.com/zstvns/design-skills/tree/main/examples/magister) — a full run, including the style test with every verdict (`.agents/assets/imagery/tests/style-test.html`).
