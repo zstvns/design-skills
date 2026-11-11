@@ -107,7 +107,7 @@ Run on the chosen board and the applied homepage. **AI-slop tropes found:** a mo
 <!-- ============ LIVING RECORD — appended by downstream skills ============ -->
 
 ## Logo *(appended by logo-design · 2026-07-23)*
-**The Command Point** — a bold open ring with a needle to the gap: a gauge reading a live system. From the Abstract family; chosen over the Aperture (read "a shade camera/lens") and the Trajectory arc. Wordmark: Chakra Petch 700, outlined. **SAD:** Simple — pass (holds 16px → hero, one colour, reversed). Appropriate — pass (the machined dial *is* command, precision, confidence). Distinct — **pending**: the competitor shelf passed cover-the-name, disappearance, and resemblance tests, but at favicon resolution only, and the rough-cut vector hasn't had a designer's construction pass.
+**The Command Point** — a bold open ring with a needle to the gap: a gauge reading a live system. From the Abstract family; chosen over the Aperture (read "a shade camera/lens") and the Trajectory arc. Wordmark: Chakra Petch 700, outlined. **SAD:** Simple — pass (holds 16px → hero, one colour, reversed). Appropriate — pass (the machined dial *is* command, precision, confidence). Distinct — **pending**: the competitor shelf passed cover-the-name, disappearance, and resemblance tests, but at favicon resolution only, and the rough-cut vector hasn't had a designer's construction pass. The lookalike sweep (black-and-white icon, against anyone at all) has not been run, so Distinct is unassessed, not passed.
 
 **Locked assets** — place, never rebuild:
 
@@ -208,7 +208,7 @@ Material Symbols Sharp, loaded from Google Fonts (`opsz,wght,FILL,GRAD@20..48,40
 
 ### Open items
 - **Logo colour.** The identity presentation specified a bone ring with an amber pointer and showed an amber icon; the locked files are one colour by construction (a single path), so a two-colour mark would need the vector split. Locked files win until `logo-design` decides — and if amber returns, it's a new named variant, not a recolour.
-- **Logo Distinct = pending** until the competitor shelf is re-run at full resolution and the vector has a designer's construction pass.
+- **Logo Distinct = pending** until the competitor shelf is re-run at full resolution, the lookalike sweep has been run on the black-and-white icon and the lockup, and the vector has a designer's construction pass. The sweep was not run in this example, so Distinct stays unassessed.
 - **Motion on v5.** Port the motion pass to the current homepage; add duration tokens.
 - **One domain.** Deliverables use magister.io, magister.com, and magistermarketing.com interchangeably; pick one and sweep.
 - **Claude Design.** The kit is built (`assets/design-system/`); run `/design-sync` when someone will use it.

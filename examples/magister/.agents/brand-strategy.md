@@ -62,6 +62,6 @@ Exact · calm · capable · a little wry. *Pressure test:* "capable" without "ca
 3. **Magister** — the operator as the standard-keeper; porphyry and bronze, a seal that ratifies. *The trust position; risked coldness.*
 
 ## Open Threads
-- The competitor set needs verifying, and the logo's Distinct verdict re-running at full resolution against it.
+- The competitor set needs verifying. The logo's Distinct verdict needs the shelf re-run at full resolution and a lookalike sweep; neither is done, so Distinct stays unassessed.
 - Concept 02's orchestration idea is unresolved strategy, not just a rejected board — decide whether it becomes the launch-moment flex.
 - No founder answers were captured; if this brand goes to a real launch, run the discovery questions and record them verbatim here.

@@ -52,7 +52,7 @@ The **art direction was run for real on 2026-10-29**, with the skill as written:
 These are recorded in `.agents/design.md` → Open items; an example that pretended to be finished would teach the wrong lesson.
 
 - **Logo colour.** The presentation showed an amber pointer; the locked files are one colour. Locked files win until `logo-design` decides.
-- **Logo Distinct = pending** until the competitor shelf is re-checked at full resolution and the vector gets a designer's construction pass.
+- **Logo Distinct = pending** until the competitor shelf is re-checked at full resolution, the lookalike sweep is run, and the vector gets a designer's construction pass. The sweep was not run here, so Distinct stays unassessed.
 - **The motion pass** was applied to the previous homepage version and needs porting to the current one.
 - **One domain.** The deliverables mix magister.io, magister.com, and magistermarketing.com.
 - **The competitor set** is as recorded during the run, not independently re-verified.
