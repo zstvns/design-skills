@@ -223,6 +223,32 @@
         "Does not frame Claude + ChatGPT as degraded or ask again which tools they have"
       ],
       "files": []
+    },
+    {
+      "id": 16,
+      "prompt": "I'm starting a company called Northline — scheduling software for independent physical therapists. No website, no logo, nothing yet. Where do I start with the brand?",
+      "expected_output": "Should not attempt a crawl or score a nine-category audit of nothing. Should gather the name, one-liner, category, and anything already made; source the competitor set (product-marketing.md or competitor-profiling) and confirm it with the founder; show the competitive visual landscape side by side and name the shared lane; call the depth a Revolution by default in plain words (not a judgement — nothing to keep yet), recording anything the founder already loves as Fixed core; stub .agents/brand.md (at a glance, competitor set, landscape finding, Toolkit); and route to brand-strategy.",
+      "assertions": [
+        "Does not crawl or produce a scorecard for a nonexistent brand",
+        "Confirms the competitor set with the founder",
+        "Shows the competitive visual landscape and names the shared lane",
+        "Calls it a Revolution by default, explained plainly",
+        "Stubs .agents/brand.md including the Toolkit",
+        "Routes to brand-strategy"
+      ],
+      "files": []
+    },
+    {
+      "id": 17,
+      "prompt": "[In the Claude app, inside a Claude Project. The Project's knowledge contains brand.md from a previous session.] We changed our mind about the competitor set — drop Acme, add Orbit. Update the brand doc.",
+      "expected_output": "Should read brand.md from the Project's knowledge as the current record (not ask the user to re-explain the brand), update the competitor set and anything that depends on it (and note the audit's distinctiveness read may need revisiting against Orbit), then hand back the complete updated brand.md as a file named exactly brand.md and tell the user to replace the copy in the Project's knowledge. Should not leave the change only in chat.",
+      "assertions": [
+        "Reads brand.md from Project knowledge rather than asking the user to re-explain",
+        "Updates the competitor set and flags dependent findings",
+        "Hands back the complete updated file named brand.md",
+        "Tells the user to replace the copy in Project knowledge"
+      ],
+      "files": []
     }
   ]
 }

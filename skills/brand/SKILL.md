@@ -1,8 +1,8 @@
 ---
 name: brand
-description: "The entry point for any brand work. Gathers the brand's existing assets itself from just a URL (crawling the site, following its links to social and press), diagnoses how much should change, routes to the right path, and gets-or-makes the brand context document every other design skill reads. Use at the start of any design project, or when the user mentions 'brand context,' 'set up the brand,' 'brand guidelines,' 'our visual identity,' 'rebrand,' 'refresh our brand,' 'what's our brand,' or wants to stop re-explaining their colors, type, and visual direction on every task. Creates and maintains `.agents/brand.md`."
+description: "The entry point for any brand work. Gathers the brand's existing assets itself from just a URL (crawling the site, following its links to social and press) — or, for a brand that doesn't exist yet, starts from the name and the idea — diagnoses how much should change, routes to the right path, and gets-or-makes the brand context document every other design skill reads. Use at the start of any design project, or when the user mentions 'brand context,' 'set up the brand,' 'brand guidelines,' 'our visual identity,' 'rebrand,' 'refresh our brand,' 'what's our brand,' 'starting a new brand,' 'we don't have a website yet,' or wants to stop re-explaining their colors, type, and visual direction on every task. Creates and maintains `.agents/brand.md`."
 metadata:
-  version: 1.28.0
+  version: 1.29.0
 ---
 
 # Brand
@@ -17,6 +17,14 @@ This is the **front door** for any brand work, and it has two jobs:
 ## Step 1: Gather the Assets — Do the Legwork Yourself
 
 Start here, always — and **take this off the user's plate.** Don't hand them a homework assignment ("send me your logo files, your colors, your social links, your decks…"). Get the one thing you actually need to begin — **the website URL** (or, failing that, the company name) — and go find the rest yourself.
+
+### No website yet — a brand that doesn't exist
+
+If there's no URL — pre-launch, a new company, a side project — don't fake a crawl. Gather what exists instead: the **name**, a **one-liner**, the **category**, and anything already made (a logo sketch, a pitch deck, a domain, a social handle). Source and confirm the competitor set exactly as below. Then:
+
+- **Skip the nine-category scorecard.** There's nothing to score, and a column of zeros tells a founder nothing. Show the **competitive visual landscape** instead: the confirmed competitors' sites side by side, with the lane they all share named plainly ("everyone is dark mode with one neon accent"). That lane is what the founder is deciding whether to leave.
+- **The depth is a Revolution by default** — not a judgement; there's simply nothing to keep yet. Say so in plain words. If they already have something they love (a name, a mark, a color), record it as **Fixed core** and treat it as equity.
+- **Stub `.agents/brand.md`** — Brand at a glance, the competitor set, the landscape finding, the Toolkit — and route to `brand-strategy`.
 
 **From just the domain, gather autonomously:**
 - **Crawl the key pages**, not only the homepage — home, product/features, pricing, about, blog. Each surface uses the brand differently.
@@ -155,6 +163,14 @@ Every downstream skill forks on what the operator can actually generate with, so
 - **Detect what you can see yourself.** Check which generator and canvas MCPs are connected in this session (Flora, Adobe, Figma, Paper…) and whether keys like `QUIVER_API_KEY` are set. Don't ask the operator about things you can check.
 - **Ask one plain question about the rest** (skip it if they've already told you) — the tools they run by hand: *"Which image tools do you use yourself — ChatGPT, Gemini, Midjourney, anything else? And do you design in Claude Design, Figma, or anything like that?"* Most people have at least ChatGPT or Gemini; that's a full working tier, not a degraded one.
 - **Set the tier** — **0** Claude only · **1** plus a generator they run by hand (the agent writes prompts, they run them and bring results back) · **2** a generator connected to the agent (it generates directly). Record it with the date.
+
+### Where the record lives — with and without a project folder
+
+The `.agents/` documents live in the user's project folder. Any agent working in a folder (Claude Code, Codex, Cursor, a desktop agent with a folder open) writes them there. **In the Claude app** — a chat or a Claude Project — there is no folder you can keep files in, so:
+
+- **Read** the documents from the Project's knowledge (or the conversation's attachments) by their filenames — `brand.md`, `brand-strategy.md`, `design.md` — exactly as if they were in `.agents/`.
+- **Hand back the complete updated file** whenever a session changes one, named exactly as it would be in `.agents/`, and tell the user plainly: *"Replace `brand.md` in your Project's knowledge with this one."* Asset folders (the logo files, the imagery library) come back as a zip with the same structure.
+- **Never leave the record only in chat history.** A conversation isn't a source of truth; the next one starts blank. Each template carries this rule in its header, so every skill that reads the file inherits it.
 
 ## Step 5: Confirm and Save
 

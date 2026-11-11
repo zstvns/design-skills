@@ -4,6 +4,7 @@ Copy this structure when creating the brand context document. Fill what's known;
 
 ```markdown
 # Brand Context — [Brand Name]
+<!-- This file is .agents/brand.md. With no project folder (the Claude app), it lives in the Claude Project's knowledge: read it from there, and whenever you change it, hand back the complete updated file so the user can replace the old one. -->
 
 *Last updated: [date]*
 *Sources ingested: [live site, logo files, style guide, social, decks, tokens — what this was built from]*

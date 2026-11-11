@@ -4,6 +4,7 @@ The working document for the coaching session. Create it at the first answer; up
 
 ```markdown
 # Brand Strategy — [Brand Name]
+<!-- This file is .agents/brand-strategy.md. With no project folder (the Claude app), it lives in the Claude Project's knowledge: read it from there, and whenever you change it, hand back the complete updated file so the user can replace the old one. -->
 
 *Last updated: [date] · Status: [in progress — section N / complete]*
 *Mode: [full discovery / deltas-only] · Depth: [Revolution / heavy Evolution] · Source: .agents/brand.md audit [date]*
