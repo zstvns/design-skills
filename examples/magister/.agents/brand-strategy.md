@@ -1,7 +1,7 @@
 # Brand Strategy — Magister
 <!-- This file is .agents/brand-strategy.md. With no project folder (the Claude app), it lives in the Claude Project's knowledge: read it from there, and whenever you change it, hand back the complete updated file so the user can replace the old one. -->
 
-*Last updated: 2026-10-29 · Status: complete (reconstructed)*
+*Last updated: 2026-11-11 · Status: complete (reconstructed; the concept choice is the clients' call)*
 *Mode: full discovery · Depth: Revolution · Source: the stylescape, logo, homepage, and collateral artifacts*
 *Published copies: none*
 
@@ -57,8 +57,8 @@ Exact · calm · capable · a little wry. *Pressure test:* "capable" without "ca
 **Flexible:** ground (dark on screen, light in print); how much of the muse shows (more on marketing surfaces, near none in product UI); a warmer, orchestral register for launches (from Concept 02).
 
 ### Concept Directions (Revolution)
-1. **Mission Control** — the operator as flight control; amber deck, throttle, trajectory. *Chosen.*
-2. **The Conductor** — the operator as conductor; a score, a playhead, an ensemble; light ivory. *Stronger idea, weaker execution — kept as a flex.*
+1. **Mission Control** — the operator as flight control; amber deck, throttle, trajectory. *Chosen — the clients preferred it.*
+2. **The Conductor** — the operator as conductor; a score, a playhead, an ensemble; light ivory. *Conceptually stronger, but the musical direction was too hard and wasn't landing. Kept as a flex.*
 3. **Magister** — the operator as the standard-keeper; porphyry and bronze, a seal that ratifies. *The trust position; risked coldness.*
 
 ## Open Threads

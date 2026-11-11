@@ -1,7 +1,7 @@
 # Creative Direction — Magister
 <!-- This file is .agents/design.md. With no project folder (the Claude app), it lives in the Claude Project's knowledge: read it from there, and whenever you change it, hand back the complete updated file so the user can replace the old one. -->
 
-*Last updated: 2026-10-29 · Status: system finalized; living record open*
+*Last updated: 2026-11-11 · Status: system finalized; living record open*
 *Depth: Revolution · Source: .agents/brand-strategy.md + .agents/brand.md*
 *Chosen direction: 01 Mission Control · Published copy: none · Claude Design kit: `.agents/assets/design-system/` (prepared, not yet synced)*
 
@@ -15,12 +15,12 @@ The full boards: `skills/creative-direction/examples/magister-stylescapes.html` 
 - **Muses → abstractions:** Apollo Mission Control → the deck, telemetry, the launch verbs (arm · hold · fire · go). Teenage Engineering OP-1 → the intensity dial and the keycaps. Apollo 11 launch → the payload in motion, the dotted trajectory.
 - **Through-line / signature element:** the throttle — a dial whose meter runs sync-blue → amber as it climbs. Supporting: keycap buttons, the mission log, the +218% trajectory chart.
 - **Why it answers the feeling:** the operator *is* flight control, not a spectator of charts. Command, precision, and confidence are literally the job of the room it borrows from.
-- **Why chosen:** it maps natively to what the product does (an agent executing while you watch the telemetry) and it held up best when applied — homepage, logo, collateral. It became the fidelity bar the other two were measured against.
+- **Why chosen:** the clients preferred it. The orchestrator idea was conceptually stronger, but the musical direction was too hard and wasn't landing at the time — and choosing the direction the client can feel, over the one that wins on paper, is the judgment a brand designer makes.
 
 ### Concept 02 — The Conductor *(not chosen)*
 - **Muses → abstractions:** a Bach manuscript → the score, each asset a note; a conductor → the hairpin, the cue, the playhead; a concert hall → the ensemble, channels seated.
 - **Through-line:** a draggable dynamics hairpin (pp → ff) that drives a live waveform; a playhead that "ships" notes across four movements. Light ivory ground — the only light board.
-- **Why not chosen:** the board itself called it *the stronger idea* — orchestration is what the product does, and it's far less reached-for than "mission control." But the music motifs slid toward kitsch in execution ("trite," "trying too hard"), and it needed the most work. **Kept here because it's the right seed for a later flex** — campaign or launch moments that want warmth and light.
+- **Why not chosen:** conceptually the stronger idea — orchestration is what the product does, and it's far less reached-for than mission control. The clients still preferred mission control. The musical direction was too hard and wasn't landing: the motifs slid toward kitsch ("trite," "trying too hard"). **Kept here because it's the right seed for a later flex** — campaign or launch moments that want warmth and light.
 
 ### Concept 03 — Magister *(not chosen)*
 - **Muses → abstractions:** the porphyry Tetrarchs → the porphyry ground and bronze rule; a signet ring → press-and-hold ratification; a Corinthian capital → vertical fluting, abstracted.
