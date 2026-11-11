@@ -38,7 +38,7 @@ done
 
 For Claude Code without the plugin, use `.claude/skills/` in place of `.agents/skills/`.
 
-There are **no required dependencies** — every skill runs as-is. A few optional connections make the output substantially better; see [INSTALL.md](./INSTALL.md).
+There are **no required dependencies** — every skill runs as-is. Claude plus a ChatGPT or Gemini subscription is a complete working setup; connected generators make it faster. See [INSTALL.md](./INSTALL.md#3-pick-your-tier-all-optional).
 
 ---
 
@@ -68,7 +68,7 @@ Everything in this library reads from and writes to plain markdown in your proje
 
 | Document | Written by | What it holds |
 |---|---|---|
-| **`.agents/brand.md`** | `brand` | **The keystone.** The distilled source of truth every skill reads first — emotional target, muses, color, type, pattern & texture, illustration, iconography, photography, logo, and the fixed-core / flexible-range latitude. |
+| **`.agents/brand.md`** | `brand` | **The keystone.** The distilled source of truth every skill reads first — emotional target, muses, color, type, pattern & texture, illustration, iconography, photography, logo, the fixed-core / flexible-range latitude, and your **Toolkit** (which generators and canvases you can use, asked once). |
 | **`.agents/brand-strategy.md`** | `brand-strategy` | The full coaching record behind the distillation — your verbatim answers, the muses with their stealable cues, the pressure-tested personality, the concept directions. `brand.md` gets the synthesis; this keeps the reasoning. |
 | **`.agents/design.md`** | `creative-direction` | The full creative-direction spec — concepts, color system and tokens, documented photo / graphic / icon / type styles with asset sources, the motif and signature element, and the *why* behind every choice. **It's a living record:** `logo-design` appends the approved mark, `motion-design` the built motion system, and the application skills their adopted libraries and notes. |
 | **`.agents/assets/logo/`** | `logo-design` | The locked logo files themselves — lockup · icon · square avatar · app icon, each in SVG/PNG/JPEG across the colorway set. Downstream skills *place these files*; they never redraw the mark. |
@@ -142,7 +142,7 @@ Eight skills ship today. Deliberately not shipped yet:
 
 | Skill | Why it's waiting |
 |---|---|
-| `art-direction` | Sourcing and generating the actual bespoke visual assets. Held for v2 because it can't exist without generative tooling connected — a raster image or video generator (Midjourney, Higgsfield, Flora, GPT Image, Gemini/Imagen) that has to sit outside this library. Until it ships, `creative-direction` owns asset direction and hands you prompt packs. See [INSTALL.md](./INSTALL.md#3-recommended-connections-all-optional). |
+| `art-direction` | Sourcing and generating the actual bespoke visual assets. Held for v2 because it can't exist without generative tooling connected — a raster image or video generator (Midjourney, Higgsfield, Flora, GPT Image, Gemini/Imagen) that has to sit outside this library. Until it ships, `creative-direction` owns asset direction and hands you prompt packs. See [INSTALL.md](./INSTALL.md#3-pick-your-tier-all-optional). |
 | `design-critique` | Judging any artifact against the emotional target and the latitude — including whether a deviation is a legitimate **flex** or a drift. For now, run that judgement against `.agents/brand.md` yourself; `design-principles` carries the flex-vs-drift reasoning. |
 | `email-design` · `social-design` | Folded into `collateral-design` for now, which already covers social posts, OG images, and email graphics as fixed formats. These split out only if the mediums earn their own depth. |
 | `brand-naming` | Naming a brand or product is a separate discipline from designing one. |

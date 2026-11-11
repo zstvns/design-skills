@@ -2,7 +2,7 @@
 name: brand
 description: "The entry point for any brand work. Gathers the brand's existing assets itself from just a URL (crawling the site, following its links to social and press), diagnoses how much should change, routes to the right path, and gets-or-makes the brand context document every other design skill reads. Use at the start of any design project, or when the user mentions 'brand context,' 'set up the brand,' 'brand guidelines,' 'our visual identity,' 'rebrand,' 'refresh our brand,' 'what's our brand,' or wants to stop re-explaining their colors, type, and visual direction on every task. Creates and maintains `.agents/brand.md`."
 metadata:
-  version: 1.26.1
+  version: 1.27.0
 ---
 
 # Brand
@@ -146,6 +146,15 @@ Use the template in [references/brand-doc-template.md](references/brand-doc-temp
 7. **Voice** — tone and personality (link `.agents/product-marketing.md` if present)
 8. **Fixed core vs. flexible range** — what must **always** hold vs. where the brand is free to flex. In an Evolution this is partly *given* by the equity you're keeping. Without it, no later critique can tell a legitimate flex from a drift.
 9. **In use** — examples of correct application
+10. **Toolkit** — what the operator can use to produce assets (see below)
+
+### Capture the Toolkit — once
+
+Every downstream skill forks on what the operator can actually generate with, so record it here and no skill has to ask again.
+
+- **Detect what you can see yourself.** Check which generator and canvas MCPs are connected in this session (Flora, Adobe, Figma, Paper…) and whether keys like `QUIVER_API_KEY` are set. Don't ask the operator about things you can check.
+- **Ask one plain question about the rest** (skip it if they've already told you) — the tools they run by hand: *"Which image tools do you use yourself — ChatGPT, Gemini, Midjourney, anything else?"* Most people have at least ChatGPT or Gemini; that's a full working tier, not a degraded one.
+- **Set the tier** — **0** Claude only · **1** plus a generator they run by hand (the agent writes prompts, they run them and bring results back) · **2** a generator connected to the agent (it generates directly). Record it with the date.
 
 ## Step 5: Confirm and Save
 
@@ -157,6 +166,7 @@ Show the document, ask what needs adjusting, save to `.agents/brand.md`, and tel
 - `creative-direction` writes the **Visual system** into this doc and produces the full **`.agents/design.md`** creative-direction spec
 - `logo-design` writes the **Logo** section
 - The application skills (`web-design`, `collateral-design`, `motion-design`) *read* this and apply it
+- **Every skill reads the Toolkit** before picking a tool path, asks only when it's missing or doesn't cover what it needs, and writes back what it learns (a newly connected MCP, a new generator)
 - A later critique pass *judges* against the **Emotional target** and the **Fixed-core / Flexible-range** latitude
 
 ## Tips

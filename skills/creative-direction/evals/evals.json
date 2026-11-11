@@ -42,6 +42,18 @@
         "Writes the updated system to .agents/brand.md"
       ],
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Strategy is done and .agents/brand.md has the emotional target, muses, and competitor set. Its Toolkit section says: Tier 1 — ChatGPT (GPT Image) run by hand; nothing connected to the agent. We're a Revolution. Build the stylescapes.",
+      "expected_output": "Should read the Toolkit and NOT ask again which image tools the operator has. Should take the prompt-pack path for ChatGPT: precise muse-anchored prompts (subject, grade, palette hexes, texture, lighting, composition, aspect ratio, no text) for the operator to run and bring back, while composing the boards itself and rendering CSS/SVG texture directly. Should not claim to generate images in-session, and should label any board still waiting on imagery as a composition / art-direction proof with the prompt packs attached.",
+      "assertions": [
+        "Reads the Toolkit from .agents/brand.md and does not re-ask about tools",
+        "Writes ChatGPT prompt packs with palette hexes, grade, composition, aspect ratio, and no-text",
+        "Composes the board itself; does not claim in-session generation",
+        "Labels boards awaiting imagery as composition proofs with prompt packs attached"
+      ],
+      "files": []
     }
   ]
 }

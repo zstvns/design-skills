@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.14.2
+  version: 1.15.0
 ---
 
 # Creative Direction
@@ -56,9 +56,9 @@ Work through each element with the audit's bar in mind — the nine-category aud
 
 A stylescape needs treated imagery and genuine texture; flat CSS shapes read as austere. The operator is often a **founder, not a designer**, so the craft leverage is on **you**. But *don't assume their toolset — ask first, then fork the workflow.*
 
-- **Ask what image-generation tools they have, then fork.** Before writing a single prompt, ask which the operator can access. Assume at least **ChatGPT (GPT Image)** and **Google Gemini / Imagen**; the fuller set — **Higgsfield, Flora, Weave, Magnific, Midjourney, Adobe Firefly, Figma, Paper** — isn't in everyone's purview, so *ask rather than assume.* Then take the most capable path available:
+- **Read the Toolkit, then fork.** `.agents/brand.md` → **Toolkit** records what the operator can generate with and which tier they're on. If it's missing or doesn't cover image generation, ask once — most operators have at least **ChatGPT (GPT Image)** or **Google Gemini / Imagen**; the fuller set — **Higgsfield, Flora, Weave, Magnific, Midjourney, Adobe Firefly, Figma, Paper** — isn't in everyone's purview, so *ask rather than assume* — and write the answer back so no later skill asks again. Then take the most capable path available:
   - **(a) Drive it directly** — if a tool is connected to *you* as an MCP (Adobe Firefly, Figma, and Paper are common), generate and place the bespoke, muse-anchored imagery yourself, in-session. Strongest and most ownable; zero founder steps.
-  - **(b) Hand off prompt packs** — for a generator only *they* have (Midjourney, Flora, Higgsfield…), write precise muse-anchored prompts (subject, grade, palette hexes, texture, lighting, composition, aspect ratio, "no text") for them to run and bring back. Iterate the prompt when a result misses.
+  - **(b) Hand off prompt packs** — for a generator only *they* have (ChatGPT, Gemini, Midjourney, Higgsfield…), write precise muse-anchored prompts (subject, grade, palette hexes, texture, lighting, composition, aspect ratio, "no text") for them to run and bring back. Iterate the prompt when a result misses.
   - **(c) Free stock, treated** — if they have none, real free stock (Unsplash/Pexels) run through the concept's grade is a great floor. Populate it *yourself* so tone is present without a founder step.
 - **You compose the board, not the founder.** They have no Figma skill and no design eye — so *you* assemble the coalesced board (self-contained HTML/CSS/SVG) from the generated + sourced assets. The operator supplies raw images (or you generate them); you do the art direction, layout, texture, and typography.
 - **Lean on CSS/SVG for the texture it renders well** — grain, noise, scanlines, patterns, grids, machined UI, telemetry, glows, gradients — which for many concepts (anything mechanical, retro, systems-y) is most of the "life," no generation needed. Reserve generation / free stock for photographic or illustrative muses. (Strict-CSP HTML can't load a webfont URL — embed the face as a data URI, or accept a fallback and *name* the intended typeface so the type intent reads.)
