@@ -25,6 +25,12 @@ The Big Three the system must produce — every choice below traces here.
 - **Why it answers the feeling:** …
 - **Why chosen / not chosen:** …
 
+## Presentation
+- **Presentation app:** [deployment URL, or the single-file HTML set] (see presenting-directions.md)
+- **Copy deck:** [where it lives] — the shared words every direction's website and mockups use
+- **Mockup kit (locked [date]):** [D1 laptop hero · D2 phone · D3 social/OG · D4 email · P1 business card · P2 billboard/poster · P3 tee · + module scenes], each with its camera note and copy-deck slots; base plates in `.agents/assets/imagery/mockup-scenes/` (see mockup-kit.md)
+- **Team verdict:** gains / trade-offs per direction; the team pick and why
+
 ## The System (chosen direction)
 ### Color
 | Role | Name | Hex | Notes |
@@ -51,7 +57,7 @@ What the motion feels like.
 Photo / graphic / icon / type styles, and where sourced assets came from (stock, Envato, Freepik, generated — note tool). Saves the application skills from guessing.
 
 ## Application Proof
-Website hero + 1–2 ads carrying the full system (links/exports). Confirms it has legs applied.
+The chosen direction on the full mockup kit and its homepage (links/exports). Confirms it has legs applied.
 
 ## Challenges & Differentiation
 Implementation difficulties across the board; how different this is from each direct competitor; anything the client weighed to decide.

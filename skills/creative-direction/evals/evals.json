@@ -69,6 +69,22 @@
         "Records the project in .agents/design.md; .agents/ stays the source of truth"
       ],
       "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Three designers have each built a stylescape for our client, a DTC coffee brand. Designer A put theirs on a billboard and a phone, B did packaging and a tote, C did a laptop site and an Instagram post, and each wrote their own headlines. The founder needs to pick one next week. How should we present them?",
+      "expected_output": "Should flag that the founder would be comparing scenes and copy, not directions, and fix it with a fixed mockup kit locked for the engagement: the core scenes (laptop homepage hero, phone, social/OG card, email, business card, billboard or poster, tee) plus the physical-product module (primary packaging, shelf or unboxing, product detail page), the same for all three. Every direction goes on the same base plates (same angle, crop, light, generated or sourced once via art-direction, never regenerated per direction), uses one shared copy deck slot by slot, and carries the same labelled placeholder mark. Should recommend the presentation app: one deployment for the client, each direction as Stylescape (16:10 board), Mockups (the kit), and an interactive Website, with slider and side-by-side compare, comment pins, a Rationale panel per direction (walkthrough video, client-call inspiration, muses, thinking, board checklist), and a team verdict with gains and trade-offs per direction and the team pick. Should run the per-direction mockup checklist before presenting and record the kit and deployment in .agents/design.md.",
+      "assertions": [
+        "Identifies that different scenes and different copy make the directions incomparable",
+        "Defines one locked mockup kit (core scenes + physical-product module) applied to every direction",
+        "Requires the same base plates, angles, and lighting; never regenerates scenes per direction",
+        "Requires a shared copy deck for every website and mockup",
+        "Uses one identical, labelled placeholder mark in Revolution work",
+        "Recommends the presentation app: Stylescape / Mockups / Website per direction, compare, comments, rationale, team verdict",
+        "Routes base-scene production to art-direction",
+        "Records the kit and deployment in .agents/design.md"
+      ],
+      "files": []
     }
   ]
 }
