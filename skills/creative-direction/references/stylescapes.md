@@ -1,6 +1,8 @@
 # Stylescapes — Building and Presenting the Three Concepts
 
 > **Worked exemplar:** [../examples/magister-stylescapes.html](../examples/magister-stylescapes.html) — a full three-concept interactive set (console *operates* / programme *performs* / stele *governs*) with `1·2·3` nav and a side-by-side compare view, built to every rule in this file. Open it in a browser; squint at the compare view to see silhouette-level distinctness in practice.
+>
+> **Presenting to a client:** the preferred surface is a deployed presentation app — each direction as Stylescape, Mockups, and Website, with compare, comment pins, rationale, and a team verdict. See [presenting-directions.md](presenting-directions.md). The applied mockups come from one fixed kit shared by every direction: [mockup-kit.md](mockup-kit.md).
 
 For **Revolution** (and serious Evolution) engagements: the discovery from `brand-strategy` becomes three distinct creative concepts, each expressed as a stylescape.
 
@@ -22,7 +24,7 @@ A concept board that is missing any of these reads as under-built. Work through 
 4. **A color system with roles.** Swatch blocks with named roles (background, ink, action/CTA — protected, support), hex values, and at least one ramp. Color assigned by *meaning*, not decoration.
 5. **An ownable motif or texture, derived from the concept.** Something specific: a Greek-key meander, isometric cubes, engraving hatching, a halftone field, topographic arcs, a pixel-block pattern, deco corner frames, drips, a paper/marble/grunge texture. It should trace to the muse or the idea and be deployable without the logo. A dot-grid on flat canvas is the *default*, not an ownable motif — push past it.
 6. **A custom icon set** in the concept's voice (stroke, fill, grid consistent).
-7. **Applied mockups.** The concept shown *on a real thing* — a phone/laptop/tablet, a product (bottle, package, business card), a poster, an OG image. This is non-negotiable: it is how you prove the direction survives contact with application, and it is exactly the step a concept-only board skips. If you can't show it applied, you haven't finished the concept.
+7. **Applied mockups.** The concept shown *on a real thing* — a phone/laptop/tablet, a product (bottle, package, business card), a poster, an OG image. This is non-negotiable: it is how you prove the direction survives contact with application, and it is exactly the step a concept-only board skips. If you can't show it applied, you haven't finished the concept. Draw these from the engagement's **fixed mockup kit** ([mockup-kit.md](mockup-kit.md)) — the same scenes, angles, and copy for every concept — so the board's mockup tile and the full Mockups view tell the same story and no concept gets a flattering scene the others don't.
 8. **The product's real work, shown through the muse.** Beyond a device mockup: show what the product *does* — its actual outputs (a drafted post, a written blog, an SEO run, charts climbing up-and-to-the-right) — rendered *in* the muse's abstraction, not as generic dashboard chrome. This is the **muse × product-function merge** that separates a *felt* direction from a decorated one; a board of muse ornaments over stock UI reads boring and unowned. If the board styles chrome but never shows the product's jobs — and never shows the non-UI asset classes (photo treatment, illustration, data-viz style) — it is under-built. "The UI is great, but that's not what makes the site."
 9. **Composition with depth.** Collage layering, overlap, rotation, full-bleed imagery, dramatic scale contrast, asymmetry. A board where everything sits in a centered single column at one scale is assembled, not designed (see `design-principles` → Designed vs. Assembled).
 
@@ -56,7 +58,7 @@ A concept board that is missing any of these reads as under-built. Work through 
 - **Depth is mandatory:** layering, overlap, rotation, full-bleed imagery, dramatic scale contrast, shadow/lift. Flat elements sitting in a centered single column at one scale = assembled, not designed (`design-principles` → Designed vs. Assembled).
 - **Read order still holds** underneath the collage — roughly *foundation* (color, type) → *expression* (motif, imagery) → *application* (mockup) — but expressed as a composition, not a stack.
 - Use **real copy** from the brand — lorem hides whether the type serves the message and starves the hero line.
-- Include the current logo for **Evolution** (the equity being kept). For **Revolution**, prefer **no logo/wordmark on the concept boards at all** — the mark comes later via `logo-design`, and a placeholder lockup only pulls the client's focus onto a stand-in mark instead of the system. Judge the direction on color, type, motif, motion, and application; add the mark once the direction is chosen.
+- Include the current logo for **Evolution** (the equity being kept). For **Revolution**, prefer **no logo/wordmark on the concept boards at all** — the mark comes later via `logo-design`, and a placeholder lockup only pulls the client's focus onto a stand-in mark instead of the system. Judge the direction on color, type, motif, motion, and application; add the mark once the direction is chosen. Where a surface genuinely needs a mark (the Website nav, a business card in the mockup kit), use **one placeholder** — the current logo or a plainly set wordmark — identical across all three concepts and labelled as a placeholder, with a standing note telling the founder the logo comes later.
 
 *(The [frontend-boilerplate.md](frontend-boilerplate.md) art-direction, token, typography, texture, and abomination rules apply to the board. Its **build** mechanics — website sections, interaction states, breakpoints, failure paths — are for the application skills, not the stylescape itself. The stylescape shows the language; the application skills build the site.)*
 
@@ -95,9 +97,13 @@ When the board is delivered digitally (an HTML artifact), **use the medium** —
 
 A single screen is fine, but only if the content genuinely *fits* with breathing room. If it's crowded or clipping, **extend to a fuller, scrollable page** rather than jamming everything into one viewport. Match the canvas to the content, not the reverse.
 
+**In the presentation app, the board is a fixed 16:10 frame** so every concept is judged at the same proportion and the slider compare lines up. There, "don't cram" means *cut*, not scroll: if the anatomy doesn't fit at 16:10 with breathing room, the board is carrying too much. Move the overflow to the Mockups or Website views, where it belongs.
+
 ## Presenting the set — all concepts, one surface, judged together
 
 Deliver the concepts **navigable on a single surface** so the client sees all three and judges them against each other — never three disconnected files, and never a thin top tab-strip that hides two-thirds of the work.
+
+**Preferred: the presentation app** ([presenting-directions.md](presenting-directions.md)) — one deployment per client; each direction as **Stylescape** (this board), **Mockups** (the fixed kit), and **Website** (an interactive homepage); slider and side-by-side compare; comment pins; a Rationale panel per direction; a team verdict with gains, trade-offs, and the pick; and a shared copy deck so every direction is judged on the same words. The rules below hold inside it, and for a single-file HTML set when an app isn't warranted:
 
 - **A floating side nav** — the three concepts *stacked*, each showing its **number, name, and a one-line descriptor**, so the whole set is legible at a glance and one click switches the stage.
 - **Put the concept's name inside the composition itself** (not only in the nav) — the board should announce what it is.
@@ -119,6 +125,7 @@ Before presenting, audit the **rendered board**, not the concept in your head. T
 - Present each concept with its **story first** — the feeling, the muses, why this answers the emotional target — then the board. A stylescape without its narrative is just tasteful arrangement.
 - Present all three together so they're judged against each other, not in isolation.
 - Ask for a **decision, not a critique**: which one is the brand? Gather reactions per concept, but drive to a pick.
+- **Close with the team's verdict**: gains and trade-offs per concept, and the one you'd pick and why (see [presenting-directions.md](presenting-directions.md) → The Team Verdict).
 
 ## Synthesis vs. averaging (the "little of each" line)
 

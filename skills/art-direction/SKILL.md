@@ -2,7 +2,7 @@
 name: art-direction
 description: "Turn the creative direction into the brand's actual imagery — photography, illustration, iconography, and pattern & texture, and how they combine. Implies each style from the brand strategy, finds real reference images on the web that fit the mood, writes a spec tight enough that two people would converge on it, then produces assets with whatever the operator has (ChatGPT or Gemini prompt packs, a connected generator like Flora, or treated free stock), reviews every result against the spec, and files an approved library. Use while building creative-direction stylescapes, whenever a page or piece needs on-brand imagery, or when the user mentions 'art direction,' 'photo style,' 'photography direction,' 'illustration style,' 'test our illustration style,' 'icon style,' 'image style,' 'find reference photos,' 'mood images,' 'what should our photos look like,' 'generate brand images,' 'ChatGPT image prompts,' 'make our images on-brand,' 'pattern,' or 'texture.'"
 metadata:
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # Art Direction
@@ -131,7 +131,7 @@ Read the Toolkit and take the most capable path available. Full playbooks — th
 
 - `design-principles` — the craft beliefs every spec traces to
 - `brand-strategy` — supplies the emotional target and the muses (hard prerequisite)
-- `creative-direction` — decides the direction and the motif; calls this skill for the board pass; its element-standards.md sets the bar each class must clear
+- `creative-direction` — decides the direction and the motif; calls this skill for the board pass and for the base plates of its fixed mockup kit (creative-direction → mockup-kit.md); its element-standards.md sets the bar each class must clear
 - `logo-design` — the locked mark placed over imagery, never generated into it; its geometry seeds the pattern
 - `web-design` / `collateral-design` — draw imagery from the approved library; route back here for anything new
 - `motion-design` — motion character for any generated video or animated asset
