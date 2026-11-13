@@ -2,7 +2,7 @@
 name: art-direction
 description: "Turn the creative direction into the brand's actual imagery — photography, illustration, iconography, and pattern & texture, and how they combine. Implies each style from the brand strategy, finds real reference images on the web that fit the mood, writes a spec tight enough that two people would converge on it, then produces assets with whatever the operator has (ChatGPT or Gemini prompt packs, a connected generator like Flora, or treated free stock), reviews every result against the spec, and files an approved library. Use while building creative-direction stylescapes, whenever a page or piece needs on-brand imagery, or when the user mentions 'art direction,' 'photo style,' 'photography direction,' 'illustration style,' 'test our illustration style,' 'icon style,' 'image style,' 'find reference photos,' 'mood images,' 'what should our photos look like,' 'generate brand images,' 'ChatGPT image prompts,' 'make our images on-brand,' 'pattern,' or 'texture.'"
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Art Direction
@@ -61,6 +61,7 @@ Turn the agreed paragraph and the picked references into a spec tight enough tha
 - **A never list per class** — the things that would instantly pull an image out of the brand world. It's often the most useful part of the spec.
 - **Combination rules** — which classes share a surface, what layers over what, how icons relate to the illustration's line, where texture unifies everything, and which class leads in which medium.
 - **The treatment recipe** — the one grade every image runs through, whatever its source. Write it as values (duotone stops, grain amount, contrast curve), and implement it once in code: an ImageMagick or `sharp` script for files, an SVG filter or CSS for the web. Show it as a before→after.
+- **A shader treatment only if the concept earns it** — halftone, pencil or ink, CRT, bokeh, built in custom code with a static fallback. One per system, traced to a muse, inside the palette, never on the logo: [references/style-specs.md](references/style-specs.md) → Shader Treatments.
 
 ## Step 4 — Test the Style Before You Lock It
 

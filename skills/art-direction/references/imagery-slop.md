@@ -34,9 +34,20 @@ The imagery-specific complement to `design-principles` → ai-slop.md (which cov
 - **Icon stroke or corner mismatch** against the chosen set or against the body type.
 - **Never-list violations** — check each item on the class's never list explicitly.
 
+## Shader Tells — a treatment the concept didn't earn
+
+The rules are in [style-specs.md](style-specs.md) → Shader Treatments; these are the generic versions that show up when they're skipped.
+
+- **The default bokeh blob background** — soft out-of-focus orbs behind the headline, standing in for a decision.
+- **Chromatic aberration as "tech"** — RGB-split edges used to signal software, not drawn from any muse.
+- **CRT scanlines on a brand with no screen-era idea** — the retro-monitor look with nothing in the strategy behind it.
+- **A halftone filter on everything** — every image screened the same, so it reads as a preset, not a system.
+- **Off-palette output** — glow, fringe, or dot colors the system doesn't own; the action color showing up inside the effect.
+- **Stacked or live-only** — two treatments on one surface, or a piece that falls apart with the shader off.
+
 ## In Place — the family test
 
 - **Thumbnail test** — does it still read at the size it'll actually be seen (in a feed, in a card)?
 - **Type test** — is there room for the headline where the layout needs it, at a contrast the type can sit on?
 - **Set test** — next to the approved images, does it look like a sibling? An image that wins on its own and breaks the set is a reject.
-- **Cover-the-logo test** — with the brand's mark covered, does the imagery still say *this* brand rather than the category? (See `design-principles` → Distinctiveness Must Survive Application.)
+- **Cover-the-logo test** — with the brand's mark covered, does the imagery still say *this* brand rather than the category? (See `design-principles` → Distinctiveness Must Survive Application.) Run it again with any shader treatment off: if the shader is the only thing making the work distinct, the system is weak.
