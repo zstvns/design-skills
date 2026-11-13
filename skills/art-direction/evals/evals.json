@@ -77,6 +77,20 @@
         "Saves the sheet to .agents/assets/imagery/tests/ and promotes passing tiles to anchor candidates"
       ],
       "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Direction is approved in .agents/design.md — emotional target 'quiet competence,' muses a machinist's workshop at dusk and Swiss railway signage. We want CRT scanlines and chromatic aberration over the hero photography and the social posts so it feels more techy. Add them to the system.",
+      "expected_output": "Should not add the treatments as asked. Should check the muses and find no screen-era idea behind CRT scanlines and no idea at all behind chromatic aberration — 'to feel techy' is decoration, and both are named shader tells in imagery-slop.md (CRT scanlines on a brand with no screen-era idea; chromatic aberration as 'tech'). Should explain the shader-treatment rules from style-specs.md → Shader Treatments: earned by the concept and named in design.md, approved palette only (RGB-split fringes create hues the palette doesn't own) with the action color held back, one signature treatment per system and never two stacked on one surface, never on the logo, static first with a print-fidelity fallback. Should then either reject it outright or offer to re-ground it — e.g. ask whether a treatment that does trace to the muses (an ink or engraving treatment from the workshop's technical drawings, rendered in brand ink on brand paper) would serve the feeling, applied as the single treatment with intensity as the only flex, and recorded in design.md with its reason. Should add that if the work only feels distinct with a shader on, the system underneath is what needs work.",
+      "assertions": [
+        "Does not add CRT scanlines or chromatic aberration to the system as requested",
+        "Checks the muses and names the missing screen-era idea; treats 'to feel techy' as decoration that fails review",
+        "Identifies both as shader slop tells",
+        "Cites the rules: earned by the concept, approved palette only with the action color held back, one treatment per system, no stacking, never on the logo, static fallback",
+        "Rejects outright or re-grounds in a treatment that traces to a muse, recorded in design.md with its reason",
+        "Notes that a system that's only distinct with the shader on is weak"
+      ],
+      "files": []
     }
   ]
 }

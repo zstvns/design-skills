@@ -10,12 +10,17 @@ Current versions of all skills. Agents can compare against local versions to che
 | design-principles | 1.11.1 | Built | 2026-08-07 |
 | brand-strategy | 1.12.2 | Built | 2026-10-28 |
 | creative-direction | 1.17.1 | Built | 2026-10-28 |
-| art-direction | 1.1.0 | Built | 2026-10-29 |
+| art-direction | 1.2.0 | Built | 2026-11-12 |
 | logo-design | 1.13.0 | Built | 2026-11-11 |
 | web-design | 1.9.0 | Built | 2026-10-28 |
-| collateral-design | 1.13.0 | Built | 2026-10-28 |
+| collateral-design | 1.14.0 | Built | 2026-11-12 |
 | motion-design | 1.6.1 | Built | 2026-08-07 |
 | design-critique | — | Planned | — |
 | email-design | — | Folded into `collateral-design` | — |
 | social-design | — | Folded into `collateral-design` | — |
 | brand-naming | — | Planned | — |
+
+## Skill changes since 1.5.0
+
+- **art-direction 1.2.0** (2026-11-12) — Shader Treatments spec in style-specs.md (earned by the muse, palette-only, one per system, static first, rights travel with the image), shader tells in imagery-slop.md, and a CRT/chromatic-aberration eval.
+- **collateral-design 1.14.0** (2026-11-12) — "shaders where the brand warrants" now links to `art-direction` → Shader Treatments so both skills use one rule.

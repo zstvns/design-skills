@@ -57,10 +57,60 @@ Every spec opens with its **one-paragraph style** (SKILL.md Step 1) and closes w
 | **Motif construction** | How it's built (from the mark's geometry, from a muse) — enough that it can be regenerated at any size. |
 | **Scale & density** | Allowed scales; how dense it gets; how it crops at edges. |
 | **Contrast** | The tonal range it lives in — backdrop, never a fight with the text. |
-| **Texture library** | Each named texture (grain, paper, halftone, noise) with its values and the code that renders it. |
+| **Texture library** | Each named texture (grain, paper, halftone, noise) with its values and the code that renders it — plus the system's one shader treatment, if the concept earns one (see Shader Treatments below). |
 | **Where it applies** | Surfaces and mediums — and which carry the motif without the logo or brand color present. |
 | **Where it doesn't** | E.g. never behind body text, never at full contrast, never animated except in X. |
 | **Never** | E.g. dot-grids as the default backdrop, a texture that collides with a competitor's. |
+
+### Shader Treatments
+
+A shader treatment feeds an image through a fragment shader — **halftone, pencil or ink, CRT, bokeh** — and renders the result. It's an entry in the texture library, **not a new motif**: the motif still comes from `creative-direction`. Build it in custom code — WebGL/GLSL for live surfaces, the same shader rendered to files for everything static. Most systems don't have one; the ones that do have exactly one.
+
+| Field | What to specify |
+|---|---|
+| **Earned by** | The muse or idea it traces to, in one line, named in `.agents/design.md` — e.g. "halftone because the muse is 1960s newsprint." If it doesn't trace, it's decoration and fails review. |
+| **Treatment** | The one signature treatment and its parameters as values — cell size and screen angle, stroke weight and hatch density, scanline pitch and curvature, blur radius and highlight threshold. |
+| **Palette** | The direction's approved color stops, in hex — the only colors the shader may output. It maps luminance onto those stops and **never creates a new hue.** Halftone and ink render in brand ink on brand paper; CRT phosphor and bokeh glow stay in palette. The protected action color is held back from every treatment. |
+| **Fixed core / flexible range** | Core: the same treatment, applied the same way, everywhere it appears. Flex: **intensity only** (e.g. cell size 4–8px, mix 60–100%). A different treatment per surface is drift, not range. |
+| **Static fallback** | The pre-rendered or static output for every use — print, email, OG and social, reduced-motion, no-WebGL. It has to deliver the brand **at print fidelity** on its own. |
+| **Interaction** | *n/a* for most. If pointer-reactive (e.g. smudge on drag): the reduced-motion static version, the performance budget (frame time, GPU cost, shader and texture weight), and the surfaces it may run on. Motion character and the reduced path come from `motion-design`. |
+| **Source images** | Which approved-library images it runs on. Each keeps its manifest license and labeling. |
+| **Where it applies / doesn't** | The surfaces it lives on. Never the logo; never stacked with a second treatment; reactive versions never on primary content or CTAs. |
+| **Never** | E.g. a treatment with no muse behind it, output outside the palette, the action color in the effect, two treatments on one surface, a live-only version with no static. |
+
+The rules behind those fields:
+
+- **Earned by the concept.** The treatment traces back to the direction's muse or idea and is named in `.agents/design.md` with the reason. "It looks cool" and "it feels techy" aren't reasons — re-ground it in a muse, or cut it.
+- **Approved palette only.** The shader is a mapping onto the system's color stops, not a color source. If the output introduces a hue the palette doesn't have, the shader is wrong, not the palette.
+- **One signature treatment per system.** It's a fixed core item, used the same way everywhere; the flexible range changes intensity only. **Never stack two treatments on one surface**, and **never apply one to the logo** — place the locked file from `.agents/assets/logo/` on top, and the mark must pass SAD without the effect (`logo-design`: Simple holds in plain black & white).
+- **Static first.** Approve the static render before the live one. Every treatment has a pre-rendered or static fallback that still delivers the brand at print fidelity — **if the brand only works with the shader running, it fails.** The live version is a layer on a brand that already works.
+- **Pointer-reactive effects are motion.** A smudge on drag, a lens that follows the cursor — each needs a reduced-motion static version and a performance budget, takes its character from `motion-design`, and **never sits on primary content or CTAs.** The effect never stands between the reader and the message or the action.
+- **The treatment doesn't launder an image.** Images fed into a shader keep their original license and labeling in the manifest. Halftoning an unlicensed or reference-only image doesn't make it usable, and an AI stand-in stays labeled as one after treatment.
+- **Cover the logo, then cover the shader.** Run the cover-the-logo test with the treatment off. If the shader is the only thing making the work distinct, the system is weak — type, color, composition, and imagery should already read as this brand underneath it.
+
+Implement it once, the way the treatment recipe is:
+
+```glsl
+// Halftone in brand ink on brand paper — the only two colors it can output
+precision mediump float;
+uniform sampler2D u_image;
+uniform vec2 u_resolution;
+uniform float u_cell;   // px — the flexible range moves this, nothing else
+uniform vec3 u_ink;     // #1b1f2a as 0–1 values
+uniform vec3 u_paper;   // #efe6d6 as 0–1 values
+varying vec2 v_uv;
+
+void main() {
+  vec2 px = v_uv * u_resolution;
+  vec2 center = floor(px / u_cell) * u_cell + u_cell * 0.5;
+  float lum = dot(texture2D(u_image, center / u_resolution).rgb, vec3(0.299, 0.587, 0.114));
+  float radius = (1.0 - lum) * u_cell * 0.7071;
+  float dot_ = 1.0 - step(radius, distance(px, center));
+  gl_FragColor = vec4(mix(u_paper, u_ink, dot_), 1.0);
+}
+```
+
+Render the same shader headless (e.g. a Playwright page with a WebGL canvas, exported at print resolution) to produce the static files, so live and static come from one source. Serve the static file under `prefers-reduced-motion` and wherever WebGL isn't available, and show static and live side by side on the board.
 
 ## Combination Rules
 
