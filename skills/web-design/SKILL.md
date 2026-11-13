@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.9.0
+  version: 1.10.0
 ---
 
 # Web Design
@@ -46,6 +46,7 @@ Redesigning a live site, or building "like" a reference? Then **look at what's a
 - **Match the action the site is driving.** Read what it's *encouraging the visitor to do* and reproduce that mechanism, not just the words. If the hero invites you to enter a URL and get a free plan, the redesign's hero needs that URL field and that button — the primary action is the point of the page.
 - **Pull the real assets.** Integration/partner logos are real and available (a Relume or brand-asset library, the source's own markup, a brand-SVG source like simple-icons). **Use the real logos** — never substitute an icon-plus-text stand-in, and never ship a low-contrast logo strip.
 - **Tell the visual's real story.** A product illustration has to communicate what the product *does* — e.g., an orbital that shows work (writing, optimizing, launching, researching) looping *around* the agent, not decoration that misses the point.
+- **Run the match loop.** Write a source-specific checklist before coding, then grade the build against side-by-side screenshots at 1440 and 390px — with section count/order and hero proportions *measured*, not eyeballed. Two rounds, then hand off for human review. See [references/faithful-replication.md](references/faithful-replication.md) → Match loop.
 
 You are not producing a comp for someone else to implement. **You design by building** — the design decisions *are* the code. Output real, production front-end:
 
@@ -124,6 +125,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - **Responsive + accessibility.** Check real breakpoints (mobile fixes as additive overrides, never touching desktop base). Hand off to `web-design-guidelines` for the interface/accessibility compliance pass.
 - **Motion check — watch it, don't screenshot it.** Static captures cannot audit motion. Play the page back: does the timing/easing match the brand's character, or did you default to a generic ease? Is anything on `linear`, queuing instead of overlapping, or janking on a layout property? Toggle `prefers-reduced-motion` and confirm the page is calm and usable.
 - **Copy check.** Does the layout give the words their proper emphasis, or did the design bury the message?
+- **Agent parity.** AI agents and crawlers get the same page visitors see. No hidden text, no content swapped by user agent, user-writable content (reviews, CMS entries, form-fed text) sanitized before it's published, and the real content present in the server-rendered HTML — not only after client JS runs. View the raw HTML response with JS off and confirm the copy is there. (Principle: [agent security is product security](https://webflow.com/blog/agent-security-is-product-security).)
 
 ## The Deliverable
 
@@ -136,7 +138,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - [ ] `.agents/design.md`, `brand.md`, `product-marketing.md` read; system applied, not re-invented
 - [ ] **Locked logo placed from `.agents/assets/logo/`** — not rebuilt, recoloured, cropped, boxed, or re-typeset; correct variant for the ground
 - [ ] Copy exists and drives the layout — no wireframe-first, no filler
-- [ ] If referencing an existing site: every section ported, the primary action reproduced, **real logos** pulled (no icon+text stand-ins)
+- [ ] If referencing an existing site: every section ported, the primary action reproduced, **real logos** pulled (no icon+text stand-ins); **match loop run** (section count/order and hero proportions measured at 1440 + 390px, max two rounds, then human review)
 - [ ] Real custom code shipped (project stack matched or clean HTML/CSS) — not a comp, not Webflow/Framer
 - [ ] CTA color is a single forward color, distinct from text/graphics, used *only* on CTAs (never headlines/decoration), pill/rounded, reserved; no fake CTAs; separate brand accent carries emphasis; five stops; bold not the default
 - [ ] Eyebrows sparing; hero motif calmed so message + action lead; motif carried assertively later; distinctiveness survives cover-the-logo
@@ -147,6 +149,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - [ ] **Motion character taken from the brand** (playful ≠ premium; no house default); functional motion kept utilitarian and expressive/storytelling motion handed to `motion-design`
 - [ ] **Motion floor met** — named easing with `ease-out` as workhorse (no raw `linear`), UI transitions under ~300ms, press feedback, entrances overlap/stagger rather than queue, `transform`/`opacity` only, reveals hierarchical not uniform, `prefers-reduced-motion` honored
 - [ ] Adversarial self-audit on the *rendered* page (web-slop tropes listed, not "none"); responsive + accessibility pass; spelling/grammar + OG image checked
+- [ ] **Agent parity** — agents and crawlers get the page visitors get: no hidden text or UA-swapped content, user-writable content sanitized, real content in the server-rendered HTML
 
 ## Related Skills
 

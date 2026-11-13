@@ -52,6 +52,20 @@
         "Pushes back on uniform 'animate everything' as slop; validates by watching the page"
       ],
       "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "You've rebuilt https://example.com in our stack from design.md. I scrolled through it and it looks right — same hero, same vibe, same CTA. Can we call it done and ship? (The source has nine sections; the build has eight. The 'use it anywhere' surfaces section between features and pricing was never ported.)",
+      "expected_output": "Should not accept 'looks right at a glance' as done. Should run the match loop from faithful-replication: grade a source-specific checklist against side-by-side screenshots of the source and the build at 1440px and 390px, never from memory. The measured section-count-and-order check should catch the gap — nine sections on the source, eight on the build — name the missing 'use it anywhere' section and where it belongs (between features and pricing), and grade that line 'no'. Should port the section with its real copy, re-screenshot both widths, and regrade the full checklist. Should also check hero proportions against a stated tolerance. Should stop after two rounds and hand off for human review with the graded checklist and screenshots rather than declaring it shipped.",
+      "assertions": [
+        "Refuses to sign off on a glance; runs the match loop instead",
+        "Screenshots source and build at 1440 and 390px and grades against them, not memory",
+        "Section count/order check catches the dropped section (9 vs 8) and names it",
+        "Ports the missing section in the right position, then re-screenshots and regrades",
+        "Checks hero proportions against a stated tolerance",
+        "Stops after round 2 and hands off for human review with the graded checklist and screenshots"
+      ],
+      "files": []
     }
   ]
 }
