@@ -57,3 +57,14 @@ The full family this skill applies a brand system to (CF's "Every Design Deliver
 - **Slide decks** (sales, pitch, demo)
 - Case studies, enterprise one-pager PDFs, lead magnets / ebooks
 - Email and social graphics live here too — this skill owns the static, fixed-format core across every medium. Animated pieces route to `motion-design`. (Dedicated `email-design` and `social-design` skills may split out later; until then, treat those formats as collateral.)
+
+## Make the System Self-Serve: the Building-Block Kit
+
+A template serves one set. A **kit** serves every request after it. Break the system into building blocks — logo, type styles, color roles, grid and spacing, one motif and one treatment, the approved imagery, the voice — so an agent or a non-designer can assemble new collateral without breaking the brand.
+
+- **The kit points; it never copies.** Each block names its source in `.agents/design.md`, `.agents/brand.md`, `.agents/assets/logo/`, or `.agents/assets/imagery/` — a copied value goes stale the day the system changes.
+- **Each format carries 2–3 approved examples as its spec**, and every slot is marked **locked**, **flexible**, or **off limits**. Logo, type, color roles, grid, motif, voice, and the emotional target are locked everywhere; copy, approved images, a capped partner-logo slot, and locale are flexible.
+- **Every render is checked before it goes back** — overflow, fonts, dimensions, contrast, logo variant against its ground, bleed, and image provenance — then the imagery slop check and cover-the-logo.
+- **Governed, not open-ended.** The kit is versioned against `design.md`; only examples that passed brand review and the brand owner's sign-off become references; uncovered requests go to the brand lead as input; two failed renders on one request send that format back to designer-made.
+
+Full blocks, slot rules, checks, and governance: [self-serve-kit.md](self-serve-kit.md).

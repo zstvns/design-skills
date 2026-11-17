@@ -13,7 +13,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | art-direction | 1.1.0 | Built | 2026-10-29 |
 | logo-design | 1.13.0 | Built | 2026-11-11 |
 | web-design | 1.9.0 | Built | 2026-10-28 |
-| collateral-design | 1.13.0 | Built | 2026-10-28 |
+| collateral-design | 1.15.0 | Built | 2026-11-17 |
 | motion-design | 1.6.1 | Built | 2026-08-07 |
 | design-critique | — | Planned | — |
 | email-design | — | Folded into `collateral-design` | — |

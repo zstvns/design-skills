@@ -80,6 +80,32 @@
         "Validates the export against the collateral bar"
       ],
       "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Make me a UK version of the one-pager.",
+      "expected_output": "Should treat this as a self-serve request against the building-block kit: open the one-pager's approved examples and its slot map, and change only the flexible slots — currency (£), UK spelling, date and number formats, and copy within the voice. Every locked slot must match the approved example exactly: logo file, placement, and clear space; type styles and pairing; color roles and the action color's job; grid and margins; motif and treatment; voice. Locked strings — the tagline and product names — stay exactly as written; translating or 'localizing' them fails the task unless the brand lead has approved a UK version. Should run the render checks on the exported file (overflow audit with coverage, fonts embedded and not substituted, exact dimensions, contrast pairs, logo variant against its ground, bleed and safe margin if it prints, images only from the approved library) plus the imagery slop check and cover-the-logo, and report the results alongside the file.",
+      "assertions": [
+        "Changes only flexible slots (currency, spelling, dates, copy within voice)",
+        "Locked slots match the approved example — logo, type styles, color roles, grid, motif, voice",
+        "Does not translate or localize locked strings such as the tagline or product names",
+        "Runs the render checks on the exported file and reports results with coverage",
+        "Runs the imagery slop check and cover-the-logo as the final pass"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Make it pop for a holiday promo — use a festive red, something like #D62828, for the background and headline.",
+      "expected_output": "Should refuse the new color: a new hue is off limits in every format, and color roles are locked — the kit offers ground, ink, accent, and the protected action color, nothing else. Should not approximate it with a gradient or by repurposing the action color as decoration. Should log the request and send it to the brand lead as input to the system (a seasonal flex is the brand lead's call, made in .agents/design.md, not at the point of use). May offer what the flexible slots allow — holiday copy within the voice, an approved image — but any rough first pass using the new color is labeled draft for internal use or held back, never shipped.",
+      "assertions": [
+        "Refuses the new hue — color roles are locked and new hues or gradients are off limits",
+        "Does not fake it with a gradient or by spending the protected action color as decoration",
+        "Logs the request and escalates it to the brand lead as input to the system",
+        "Any rough pass with the new color is labeled internal draft or held back — never shipped",
+        "Offers only what the flexible slots allow (copy within voice, approved imagery)"
+      ],
+      "files": []
     }
   ]
 }
