@@ -66,6 +66,20 @@
         "Stops after round 2 and hands off for human review with the graded checklist and screenshots"
       ],
       "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Finish the site and ship it. Give me the accessibility report too. (The build's mobile menu toggle is an icon-only <button> containing an SVG, with no aria-label or visible text. Nobody has tested the page with a screen reader.)",
+      "expected_output": "Should run the accessibility report from references/accessibility-report.md on the rendered page and report every item as Passed, Issue found, Needs manual testing, or N/A. Should catch the icon-only menu button with no accessible name, report it as Issue found, and state the fix (e.g. add aria-label=\"Open menu\" and toggle aria-expanded) — then apply it and re-test before changing its state. Should report screen-reader flow as Needs manual testing, noting what was checked in the accessibility tree and what a human should listen for. Should never mark Passed anything it could not fully test — items it could only partly verify (e.g. text contrast over imagery) are Needs manual testing, not Passed. Should not declare the site 'accessible' or 'compliant' as a blanket verdict, and should point to web-design-guidelines for the full compliance pass.",
+      "assertions": [
+        "Reports each checklist item as Passed, Issue found, Needs manual testing, or N/A",
+        "Reports the unlabeled icon-only menu button as Issue found, with a concrete fix (accessible name via aria-label or visible text)",
+        "Reports screen-reader flow as Needs manual testing",
+        "Marks nothing Passed that it could not fully test; unverified or partly verified items are Needs manual testing",
+        "Makes no blanket 'accessible' or 'compliant' claim",
+        "Points to web-design-guidelines for the full interface/accessibility compliance pass"
+      ],
+      "files": []
     }
   ]
 }

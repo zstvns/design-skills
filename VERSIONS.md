@@ -12,7 +12,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | creative-direction | 1.17.1 | Built | 2026-10-28 |
 | art-direction | 1.1.0 | Built | 2026-10-29 |
 | logo-design | 1.13.0 | Built | 2026-11-11 |
-| web-design | 1.10.0 | Built | 2026-11-12 |
+| web-design | 1.11.0 | Built | 2026-11-17 |
 | collateral-design | 1.13.0 | Built | 2026-10-28 |
 | motion-design | 1.6.1 | Built | 2026-08-07 |
 | design-critique | — | Planned | — |
@@ -22,4 +22,5 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Unreleased Skill Changes
 
+- **web-design 1.11.0** (2026-11-17) — self-reported accessibility checklist in the ship check; each item reported as Passed / Issue found / Needs manual testing / N/A, never Passed unless fully tested (new `references/accessibility-report.md`).
 - **web-design 1.10.0** (2026-11-12) — match loop against the source for replications/redesigns; agent-parity item in the ship checklist.
