@@ -2,7 +2,7 @@
 name: motion-design
 description: "Design and build UI motion with intent — micro-interactions, transitions, entrances, scroll and hover behavior — applying the twelve principles of animation to a brand's settled system, in custom code. Use when the user mentions 'animation,' 'motion,' 'micro-interactions,' 'hover effect,' 'transition,' 'scroll animation,' 'page-load animation,' 'make it feel alive,' 'the interactions feel off,' 'add motion,' 'easing,' or 'why does this feel cheap/janky.' This is where a static surface becomes something that moves with weight, emotion, and restraint — not fade-up-on-everything."
 metadata:
-  version: 1.6.1
+  version: 1.6.2
 ---
 
 # Motion Design
@@ -175,6 +175,7 @@ Judge motion the way `design-principles` says to judge any work — **adversaria
 - `creative-direction` — defines the brand's motion character as part of the visual system; route back for Revolution / heavy Evolution
 - `web-design` — ships the surface with a light motion floor and defers expressive motion craft to here; the most common upstream skill
 - `collateral-design` — sibling Application skill for fixed formats; motion for video/social ads lives alongside it
+- `product-film` — launch films, muted landing-page hero loops, and promo or social cuts, rendered in code with Remotion on this skill's tokens; route those there
 - `brand` — the audit whose emotional target sets the feeling motion must produce
 - `design-critique` *(planned — not yet shipped)* — will judge the shipped motion against the emotional target and the latitude
 - reference: the twelve principles ([references/twelve-principles.md](references/twelve-principles.md)), the UI-native technique toolkit ([references/ui-motion-techniques.md](references/ui-motion-techniques.md), from [motion.zajno.com](https://motion.zajno.com/)), the technical floor ([references/motion-floor.md](references/motion-floor.md)), and Emil Kowalski's production defaults + the case for restraint ([references/practical-tips.md](references/practical-tips.md))
