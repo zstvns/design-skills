@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.14.0
+  version: 1.15.0
 ---
 
 # Collateral Design
@@ -116,6 +116,7 @@ Collateral almost always comes in *sets* — a deck, a run of conference-speaker
 2. **Build one template as the system** — a grid, borders, defined slots for what repeats and what changes, the brand's type / color / motif, and **mixed media with variety** (photo, vector, icon, illustration, and richer treatments like gradients or shaders where the brand warrants). "Warrants" has one definition, the same everywhere: a shader is the system's single signature treatment, earned by the muse, inside the palette, never on the logo, with a static fallback at print fidelity — `art-direction` → [style-specs.md](../art-direction/references/style-specs.md) → Shader Treatments. Anything you'd compose on a design canvas you can compose in code — *if you set up that structure first*.
 3. **Stress-test against the worst-case content before cascading.** Find the **longest name / longest headline / densest bio** and design the type scale and slots around *that* instance — if it holds for the extreme, every shorter one fits. Give optional slots to elements that aren't always present.
 4. **Cascade the content through the proven system** so the set reads as one brand — *one system, varied content*, no two pieces stamped identically.
+5. **Make it self-serve with a building-block kit** so the next request doesn't need a designer. The kit *points to* the blocks in `.agents/design.md` and the `art-direction` specs — never copies them — keeps 2–3 approved examples per format, and marks every slot locked, flexible, or off limits. Requests it doesn't cover are refused and sent to the brand lead, not improvised. Full method in [references/self-serve-kit.md](references/self-serve-kit.md).
 
 ## Design to the Format — Each Has Its Own Craft
 
@@ -208,6 +209,7 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - [ ] Imagery is specific and good, or replaced by a typographic/graphic solution — no placeholder-grade stock
 - [ ] Message exists and drives the layout — no template-first, no bullet soup, size follows content
 - [ ] For a set: one reusable system/template built and **stress-tested against worst-case content** (longest name/headline, densest/sparsest) before cascading — one system, varied content
+- [ ] Self-serve requests stay inside the kit: **only flexible slots change**, locked strings (tagline, product names) are never translated or localized, the render checks run and report, and anything off limits (a new hue, a second motif) is refused and sent to the brand lead
 - [ ] **Light expression designed first** (print especially); dark is a second variant, and any dark piece has depth (gradient, not flat black)
 - [ ] A **background element ties each composition together** (wash / oversized cropped motif / graphic line), behind the content and cropped by the frame — not text-and-boxes on an empty ground
 - [ ] Composed on an **8-column grid with varied spans** and mixed media band to band — not one two-column split repeated
@@ -243,5 +245,5 @@ A set of collateral is hard to judge as a pile of files or a shrunken contact sh
 - `motion-design` — the same system in motion; animated and video ads route there
 - `design-critique` *(planned — not yet shipped)* — will judge the finished collateral against the emotional target and the flex-vs-drift latitude
 - marketing library: `copywriting` (the words come first), `sales-enablement` (one-pager / battle-card substance), `ad-creative` (ad copy variants at scale)
-- method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade); [composition.md](references/composition.md) (light-first, background element, 8-col grid, print margin); delivery: [references/viewer.md](references/viewer.md) (true-size viewer + playable deck); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
+- method: [references/build-the-system.md](references/build-the-system.md) (build one system, stress-test, cascade); [self-serve-kit.md](references/self-serve-kit.md) (building blocks, locked/flexible/off-limits slots, render checks, governance); [composition.md](references/composition.md) (light-first, background element, 8-col grid, print margin); delivery: [references/viewer.md](references/viewer.md) (true-size viewer + playable deck); per-format deep dives: [decks.md](references/decks.md), [print.md](references/print.md), [ads.md](references/ads.md); [collateral-slop.md](references/collateral-slop.md)
 - tooling (use when connected, fall back gracefully): **Claude Design** (decks and one-pagers, once the system is published there), **`canvas-design`** (static PNG/PDF art), **`slide-deck`** (decks), **`dataviz`** (charts), **Adobe MCP** (layout / print / InDesign), **Paper / Pencil / Figma MCP** (design canvases), or **code → PDF/image export**; see [references/tooling.md](references/tooling.md)

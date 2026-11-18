@@ -13,7 +13,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | art-direction | 1.3.0 | Built | 2026-11-18 |
 | logo-design | 1.13.0 | Built | 2026-11-11 |
 | web-design | 1.12.0 | Built | 2026-11-17 |
-| collateral-design | 1.14.0 | Built | 2026-11-12 |
+| collateral-design | 1.15.0 | Built | 2026-11-17 |
 | motion-design | 1.6.1 | Built | 2026-08-07 |
 | design-critique | — | Planned | — |
 | email-design | — | Folded into `collateral-design` | — |
@@ -22,6 +22,7 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Unreleased Skill Changes
 
+- **collateral-design 1.15.0** (2026-11-17) — self-serve building-block kit: points to design.md and the art-direction specs, 2–3 approved examples per format, every slot locked / flexible / off limits, render checks, and governance for new examples (new `references/self-serve-kit.md`).
 - **web-design 1.12.0** (2026-11-17) — interactive pieces built on a tested headless behavior library (stay with shadcn/Radix if present, otherwise Radix, React Aria, or Base UI), never hand-rolled ARIA; ship check tabs through each piece and confirms focus returns to the trigger.
 - **web-design 1.11.0** (2026-11-17) — self-reported accessibility checklist in the ship check; each item reported as Passed / Issue found / Needs manual testing / N/A, never Passed unless fully tested (new `references/accessibility-report.md`).
 - **art-direction 1.3.0** (2026-11-18) — Shader Treatments spec in style-specs.md (earned by the muse, palette-only, one per system, static first, rights travel with the image), shader tells in imagery-slop.md, and a CRT/chromatic-aberration eval.
