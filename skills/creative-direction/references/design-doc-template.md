@@ -4,7 +4,7 @@ The creative-direction record, generated at the end of the exercise — the deta
 
 Create it as concepts take shape; finalize on the client's pick. Keep the rejected concepts — they document *why* the chosen one won and seed later flexes.
 
-**This is a living record, not a snapshot.** `creative-direction` writes the founding sections; every downstream skill that *decides* a brand asset **appends its decision here** — `logo-design` writes the Logo section, `art-direction` the Art Direction specs, `motion-design` the Motion System as built, application skills their adopted libraries and application notes. Each append carries a date and the one-sentence *why*, and updates the `Last updated` line. Read before deciding; append after deciding; never re-derive or contradict an existing section silently — if a decision changes, update the section and note what changed. The distilled result of any append also flows to `.agents/brand.md` where it affects the Fixed core / Flexible range.
+**This is a living record, not a snapshot.** `creative-direction` writes the founding sections; every downstream skill that *decides* a brand asset **appends its decision here** — `logo-design` writes the Logo section, `art-direction` the Art Direction specs, `motion-design` the Motion System as built, application skills their adopted libraries, application notes, and a five-field record for every component they adopt. Each append carries a date and the one-sentence *why*, and updates the `Last updated` line. Read before deciding; append after deciding; never re-derive or contradict an existing section silently — if a decision changes, update the section and note what changed. The distilled result of any append also flows to `.agents/brand.md` where it affects the Fixed core / Flexible range.
 
 ```markdown
 # Creative Direction — [Brand Name]
@@ -24,6 +24,12 @@ The Big Three the system must produce — every choice below traces here.
 - **Through-line / signature element:** [the one unforgettable functional hook]
 - **Why it answers the feeling:** …
 - **Why chosen / not chosen:** …
+
+## Presentation
+- **Presentation app:** [deployment URL, or the single-file HTML set] (see presenting-directions.md)
+- **Copy deck:** [where it lives] — the shared words every direction's website and mockups use
+- **Mockup kit (locked [date]):** [D1 laptop hero · D2 phone · D3 social/OG · D4 email · P1 business card · P2 billboard/poster · P3 tee · + module scenes], each with its camera note and copy-deck slots; base plates in `.agents/assets/imagery/mockup-scenes/` (see mockup-kit.md)
+- **Team verdict:** gains / trade-offs per direction; the team pick and why
 
 ## The System (chosen direction)
 ### Color
@@ -51,7 +57,7 @@ What the motion feels like.
 Photo / graphic / icon / type styles, and where sourced assets came from (stock, Envato, Freepik, generated — note tool). Saves the application skills from guessing.
 
 ## Application Proof
-Website hero + 1–2 ads carrying the full system (links/exports). Confirms it has legs applied.
+The chosen direction on the full mockup kit and its homepage (links/exports). Confirms it has legs applied.
 
 ## Challenges & Differentiation
 Implementation difficulties across the board; how different this is from each direct competitor; anything the client weighed to decide.
@@ -97,5 +103,23 @@ The actual library/system shipped (named pack or custom set), grid/stroke/fill r
 Easing tokens, duration scale, stagger step, reduced-motion rule, and the signature moves as shipped. Extends the directional Motion note above into the enforceable system.
 
 ## Application Notes *(appended by web-design / collateral / email / social skills · [date])*
-Decisions made during application that future work must respect: component patterns adopted, grade/treatment implementations, places the system flexed and the ruling on whether the flex is now canon.
+Decisions made during application that future work must respect: grade/treatment implementations, places the system flexed and the ruling on whether the flex is now canon — and a record for every component the direction adopts.
+
+### Components
+<!-- One block per adopted component, all five fields filled. Why: a component recorded only by name gets rebuilt differently by whoever touches it next — later agents and designers shouldn't have to guess. Field set adapted from Octahedroid's AI-readiness criteria (https://x.com/OctahedroidHQ/status/2120608475969433971). -->
+#### [Component name] *(adopted by [skill] · [date])*
+- **What it is:** purpose, one line.
+- **How it's built:** structure, the tokens it uses, the assets it places.
+- **Behavior:** across breakpoints and content extremes — long or short text, missing image, many or few items.
+- **Use / don't use:** when to reach for it, and when something else is right.
+- **Must meet:** the accessibility, performance, and brand constraints it has to satisfy.
+
+<!-- Example:
+#### Proof strip (adopted by web-design · 2026-11-12)
+- What it is: one row of customer logos that earns credibility directly under the hero.
+- How it's built: <section> → label + <ul> of logos; --space-6 vertical padding; label in --color-muted; logos as mono SVG via currentColor, sourced per .agents/assets/imagery/manifest.md.
+- Behavior: 6 across ≥1024px, 3×2 on tablet, scroll-snap row on mobile (no auto-marquee). Under 4 logos → swap for one pull-quote; over 8 → the strongest 8, never a carousel. Missing file → drop the logo, never type the name in its place. Label wraps to two lines max.
+- Use / don't use: once per page, under the hero, when 4+ recognizable customers exist. Not as a section divider, not on pricing, never with logos the client lacks permission to show.
+- Must meet: alt = company name on each logo; fixed aspect-ratio boxes, zero layout shift, each SVG under 4 KB; all logos mono in --color-muted — never their own brand colors, so the action color stays protected.
+-->
 ```

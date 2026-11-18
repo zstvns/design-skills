@@ -2,7 +2,7 @@
 name: collateral-design
 description: "Apply a brand's defined visual system to any fixed-format piece that isn't a website — decks and presentations, one-pagers and sales sheets, social posts and graphics, blog/OG thumbnails, business cards, brochures, flyers, posters, banners, billboards, and paid ads. Use when the user mentions 'design a deck,' 'pitch deck,' 'sales deck,' 'presentation,' 'slides,' 'one-pager,' 'sales sheet,' 'leave-behind,' 'social post,' 'social graphic,' 'blog thumbnail,' 'OG image,' 'business card,' 'brochure,' 'flyer,' 'poster,' 'banner,' 'billboard,' 'print,' 'ad creative,' 'display ad,' 'collateral,' or wants a branded document or graphic that isn't a website. Mostly screen-first; print is one destination among many. Ships as a true-size viewer plus real exports."
 metadata:
-  version: 1.13.0
+  version: 1.14.0
 ---
 
 # Collateral Design
@@ -113,7 +113,7 @@ A fixed frame has no scroll to rescue a flat layout and no interaction to add in
 Collateral almost always comes in *sets* — a deck, a run of conference-speaker posts, a family of OG images, ten localized one-pagers. The craft is to **build one reusable template and cascade content through it**, not to decorate each piece by hand. This is the same discipline the rest of the library teaches (grids, hierarchy, brand adherence), pointed at repeated, fixed-format output. Full method in [references/build-the-system.md](references/build-the-system.md).
 
 1. **Identify the format and size first.** Fixed-format means the destination and its dimensions are decided *before* you design — a 16:9 slide, an 8.5×11 PDF, a 1080×1350 post, an OG image, a printed banner. For print-bound pieces, set up for a **PDF export** with bleed / safe / carryover handled (see [references/print.md](references/print.md)); for screen, size to the exact placement and export at native resolution.
-2. **Build one template as the system** — a grid, borders, defined slots for what repeats and what changes, the brand's type / color / motif, and **mixed media with variety** (photo, vector, icon, illustration, and richer treatments like gradients or shaders where the brand warrants). Anything you'd compose in Figma or Paper you can compose in code — *if you set up that structure first*.
+2. **Build one template as the system** — a grid, borders, defined slots for what repeats and what changes, the brand's type / color / motif, and **mixed media with variety** (photo, vector, icon, illustration, and richer treatments like gradients or shaders where the brand warrants). "Warrants" has one definition, the same everywhere: a shader is the system's single signature treatment, earned by the muse, inside the palette, never on the logo, with a static fallback at print fidelity — `art-direction` → [style-specs.md](../art-direction/references/style-specs.md) → Shader Treatments. Anything you'd compose on a design canvas you can compose in code — *if you set up that structure first*.
 3. **Stress-test against the worst-case content before cascading.** Find the **longest name / longest headline / densest bio** and design the type scale and slots around *that* instance — if it holds for the extreme, every shorter one fits. Give optional slots to elements that aren't always present.
 4. **Cascade the content through the proven system** so the set reads as one brand — *one system, varied content*, no two pieces stamped identically.
 
