@@ -2,7 +2,7 @@
 name: design-principles
 description: "The universal principles behind strong visual design — across logos, brand identity, collateral, and web. Use at the start of any design work, when a design feels off but you can't name why, when judging whether a piece earns its choices, or when a brand needs to flex without breaking. Other design skills inherit these principles."
 metadata:
-  version: 1.11.1
+  version: 1.12.0
 ---
 
 # Design Principles
@@ -160,6 +160,50 @@ When you're guiding a person — a client or teammate — rather than producing 
 - **Brain-dump first, refine later.** Get the raw material out before polishing. Premature polish kills the good messy ideas.
 - **Specificity, always.** Drive every answer from generic toward concrete.
 
+## Corrections Become Rules
+
+A correction the brand owner makes once should never need making twice. At the end of any session where they corrected the work, turn the corrections into proposed rules — so the next agent starts where this one ended, not where it began.
+
+**Collect four signals:**
+
+1. **Asked** — things they asked to change.
+2. **Edited** — values they edited themselves (a 400ms duration changed to 200ms).
+3. **Nudge** — where a run of nudges landed ("smaller… still too big… ok"). Record the endpoint, not the steps.
+4. **Revert-or-pick** — a revert, or picking B over A.
+
+**Filter hard.**
+
+- **Keep a correction only if a fresh agent building a *different* component would make the same mistake.** Skip one-off fixes — page copy, a single image swap.
+- **Tighten before you add.** If an existing rule already covers it, sharpen that rule — a number, a token, a "never" — instead of writing a duplicate.
+- **Write for a type of component, not one instance.** "Card radius" not "the pricing card on /plans."
+
+**Write it honestly.**
+
+- **Never invent a reason.** Use the owner's words, or mark the reason *inferred* and confirm it with them.
+- **Show every candidate; write only what's approved.** Nothing lands in the record before the owner says yes.
+- **Rules as tokens or roles where possible** — `--dur-fast`, not 200ms. Where a raw number *is* the rule, also suggest the token.
+- **If code can catch it, say so.** Raw hex instead of a token, a banned value — suggest a lint rule or token restriction alongside the rule.
+
+**Precedence:** `brand.md` > `design.md` fixed core > Taste Rules > skill defaults.
+
+- **A taste rule may only add to or tighten the core — never loosen or override it.** The core is the emotional target, logo, type styles, color roles, the protected action color, grid, motif and treatment, and voice.
+- **A correction that contradicts the core is a brand change, not a taste rule.** It goes to the brand lead as a proposed `brand.md` / `design.md` edit with its reason, and lands only after the brand owner approves the brand change itself. Never write it as a taste rule.
+- **Taste Rules may override skill defaults** — and each one names the default it beats.
+
+**Scope every candidate:** `scope: component | brand`.
+
+- **Brand scope** — anything touching logo, color, type, motif, imagery treatment, voice, or the flexible range. Gets the brand lead's on-brand check before it's shown to the owner.
+- **Component scope** — motion timing, spacing, density, interaction. Goes straight to the owner.
+- Either way, **the owner's approval is what writes a rule.**
+
+**Where rules live.** Project-scoped by default, in that project's `.agents/design.md` → `## Taste Rules`. Promoting one across projects or library-wide is a design-skills proposal — never a direct skill edit.
+
+**Conflicts.** If a new rule conflicts with an existing taste rule, show both and ask. Never replace one silently.
+
+**Whose taste counts.** Only the brand owner's corrections, and anyone they name. A client's feedback on their own project is a project brief note, not a taste rule.
+
+**Expiry.** Rules from a rejected direction are archived — moved to Taste Rules → Archived — not carried into the next one.
+
 ## The Standard
 
 Not perfection — **better than it was.** Sweat the details. Follow the through-line. The goal, at the end of any piece, is that a person can feel intention behind every choice — even the ones they couldn't name.
@@ -168,5 +212,5 @@ Not perfection — **better than it was.** Sweat the details. Follow the through
 
 - `brand` — the context doc (`.agents/brand.md`) that records a specific brand's answers to these principles
 - `brand-strategy` — the muse method and the fixed-core / flexible-range latitude
-- `creative-direction` — establishes the concrete visual system (color, type, pattern, texture, illustration, iconography, photography)
+- `creative-direction` — establishes the concrete visual system (color, type, pattern, texture, illustration, iconography, photography); its `.agents/design.md` holds the Taste Rules that corrections become
 - `design-critique` *(planned — not yet shipped)* — will apply "coherence, not repetition" to judge brand fit and legitimate flex
