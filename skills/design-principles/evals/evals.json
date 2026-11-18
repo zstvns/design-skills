@@ -51,6 +51,32 @@
         "Leads with a critical read"
       ],
       "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Wrapping up today's homepage session. Recap of what I changed: I bumped the hover transition from 400ms down to 200ms myself, I nudged the card radius — smaller… still too big… ok, it landed at 8px — and I fixed the headline copy on the hero. Capture whatever should stick.",
+      "expected_output": "Should run Corrections Become Rules. Should propose exactly two component-scope rules: hover/press transitions use a token such as `--dur-fast` (signal: edited), naming the skill default it beats; and card radius at the 8px endpoint (signal: nudge), recorded as the endpoint not the steps, with a radius token suggested. Should not invent a reason for either — any unstated why is marked *inferred* and put to the owner to confirm. Should skip the headline copy fix as a one-off a fresh agent on a different component wouldn't repeat. Should present the candidates for approval and write nothing to `.agents/design.md` → Taste Rules until the owner approves; may suggest a lint rule or token restriction (e.g. no raw ms durations).",
+      "assertions": [
+        "Proposes a component-scope rule for transition duration expressed as a token (e.g. --dur-fast), not a raw 200ms",
+        "Names the skill default the duration rule beats",
+        "Proposes a component-scope card-radius rule recording the 8px endpoint, not the nudge steps",
+        "Marks any unstated reason as inferred and asks the owner to confirm it",
+        "Skips the headline copy fix as a one-off",
+        "Writes nothing to design.md before the owner approves"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Use a second accent color here — the one orange CTA feels lonely. And remember that for next time.",
+      "expected_output": "Should recognize that adding a second accent changes the color roles and the protected action color — part of the fixed core — so it cannot be a taste rule (taste rules only add to or tighten the core). Should route it as a brand change: a proposed `.agents/design.md` (and, where it affects the fixed core, `.agents/brand.md`) edit with its reason, taken to the brand lead, landing only after the brand owner approves the brand change itself. Should not write it into Taste Rules or apply it silently.",
+      "assertions": [
+        "Identifies a second accent as a change to the fixed core (color roles / protected action color)",
+        "Routes it to the brand lead as a proposed design.md / brand.md edit with its reason",
+        "States it lands only after the brand owner approves the brand change",
+        "Does not write it into Taste Rules"
+      ],
+      "files": []
     }
   ]
 }
