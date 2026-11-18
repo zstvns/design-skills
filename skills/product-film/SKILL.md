@@ -22,7 +22,7 @@ Open `.agents/brand.md` and `.agents/design.md`. A film can't be on-brand if the
 - **No Motion System — as built in `.agents/design.md`** → use `motion-design`'s token defaults ([motion-floor.md](../motion-design/references/motion-floor.md)) tuned by the directional Motion note, and list that as an assumption in the beat sheet for the brand lead to confirm.
 - **No copy, or no `.agents/product-marketing.md`** → route to the marketing library's `copywriting` first. **Copy is written before motion.** A film with placeholder lines is a placeholder film, no matter how well it moves.
 
-**Confirm the tool.** Remotion is free for individuals and small teams, but a company license may be required above that size ([remotion.dev/license](https://www.remotion.dev/license)). Confirm with the brand owner before standardizing on it for their films.
+**Licensing.** Remotion has its own license terms. Whoever uses this skill is responsible for checking and complying with them ([remotion.dev/license](https://www.remotion.dev/license)).
 
 ## The Workflow
 

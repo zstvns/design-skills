@@ -2,7 +2,7 @@
 
 Every film is a Remotion project. React components render each frame as a still; the renderer captures them and encodes video. The rules below exist because Remotion renders frames **independently, out of order, across parallel processes** — anything that isn't a function of the frame number paints a different picture each run.
 
-**Licensing.** Remotion is free for individuals and small teams; a company license may be required above that size ([remotion.dev/license](https://www.remotion.dev/license)). Confirm with the brand owner before standardizing on it.
+**Licensing.** Check and comply with Remotion's license terms yourself ([remotion.dev/license](https://www.remotion.dev/license)).
 
 ## The Workspace
 
