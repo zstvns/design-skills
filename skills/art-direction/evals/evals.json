@@ -77,6 +77,36 @@
         "Saves the sheet to .agents/assets/imagery/tests/ and promotes passing tiles to anchor candidates"
       ],
       "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Our Flora credits ran out and we don't want to pay for anything new this month. Which free node-based generator should we use to finish the illustration set for the client site? Someone suggested Krea's free tier or Weavy.",
+      "expected_output": "Should not retry Flora or switch tools silently. Should apply the four free-tier checks (commercial rights on that tier, watermark, public visibility, model roster) from node-generators.md and answer per tool: Krea's free tier has contradictory commercial terms and may make generations public, so it's test-only; Weavy is now Figma Weave, outside a no-Figma stack, so don't route to it unless the Toolkit lists it; local ComfyUI is genuinely free with no watermark if the operator has a capable GPU, but each model's license must be checked and Partner API nodes cost credits. Should say that pricing was checked from public docs and should be re-verified on the vendor page, carry the same house graph (anchors, fixed primer node, one model per class chosen on the style test) into the new tool, note that switching models mid-set risks breaking the family (re-run a small style test against the approved set), and keep the same Step 7 review with the tool, model, and commercial terms recorded in the manifest.",
+      "assertions": [
+        "Does not retry Flora after an out-of-credits error or switch tools without asking",
+        "Checks commercial rights, watermark, visibility, and model roster for each free tier",
+        "Marks Krea's free tier as test-only because its commercial terms conflict",
+        "Treats Figma Weave as outside the stack rather than recommending it",
+        "Offers local ComfyUI with the model-license and Partner-node caveats",
+        "Flags that pricing is from public docs and should be re-checked",
+        "Re-runs a small style test before continuing the set in a new model",
+        "Keeps the same review and records tool, model, and terms in the manifest"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "The approved hero photo is 3:2 but the site needs 21:9, and there's a stray coffee cup on the desk. Fix it in Photoshop through the Adobe MCP and then turn it into a 6-second looping video for the homepage.",
+      "expected_output": "Should use the Adobe for creativity connector (calling adobe_mandatory_init first) for single fixes: image_generative_expand to 21:9 and image_fill_area or select-and-fill to remove the cup, naming what to keep and changing one thing per edit. Should be clear that the connector works on cloud files and returns flattened results; layered PSD work would need the desktop app via a community MCP, and Adobe's own desktop MCP is announced for early 2027, not shipped. Should review the expanded and filled image against the spec and imagery-slop list (generative fill is a generation), apply the treatment recipe, and update the manifest. For the loop: start from the approved still (image-to-video), get the motion character and timing from motion-design / .agents/design.md before generating, keep it short and seamless with no text, and run the result past motion-design's earn-its-place review, defaulting to less motion.",
+      "assertions": [
+        "Uses the Adobe connector's expand and fill tools, one change per edit",
+        "States that the connector is cloud-based and flattened; desktop MCPs are community-only until Adobe's early-2027 beta",
+        "Reviews the edited image against the spec and imagery-slop list and re-applies the treatment",
+        "Generates video from the approved still, not text-to-video",
+        "Hands timing and the earn-its-place review to motion-design",
+        "Keeps logos and text out of the generated frames"
+      ],
+      "files": []
     }
   ]
 }
