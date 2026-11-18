@@ -4,7 +4,7 @@ The creative-direction record, generated at the end of the exercise — the deta
 
 Create it as concepts take shape; finalize on the client's pick. Keep the rejected concepts — they document *why* the chosen one won and seed later flexes.
 
-**This is a living record, not a snapshot.** `creative-direction` writes the founding sections; every downstream skill that *decides* a brand asset **appends its decision here** — `logo-design` writes the Logo section, `art-direction` the Art Direction specs, `motion-design` the Motion System as built, application skills their adopted libraries, application notes, and a five-field record for every component they adopt. Each append carries a date and the one-sentence *why*, and updates the `Last updated` line. Read before deciding; append after deciding; never re-derive or contradict an existing section silently — if a decision changes, update the section and note what changed. The distilled result of any append also flows to `.agents/brand.md` where it affects the Fixed core / Flexible range.
+**This is a living record, not a snapshot.** `creative-direction` writes the founding sections; every downstream skill that *decides* a brand asset **appends its decision here** — `logo-design` writes the Logo section, `art-direction` the Art Direction specs, `motion-design` the Motion System as built, application skills their adopted libraries, application notes, and a five-field record for every component they adopt; any skill appends owner-approved Taste Rules from the brand owner's corrections. Each append carries a date and the one-sentence *why*, and updates the `Last updated` line. Read before deciding; append after deciding; never re-derive or contradict an existing section silently — if a decision changes, update the section and note what changed. The distilled result of any append also flows to `.agents/brand.md` where it affects the Fixed core / Flexible range.
 
 ```markdown
 # Creative Direction — [Brand Name]
@@ -122,4 +122,29 @@ Decisions made during application that future work must respect: grade/treatment
 - Use / don't use: once per page, under the hero, when 4+ recognizable customers exist. Not as a section divider, not on pricing, never with logos the client lacks permission to show.
 - Must meet: alt = company name on each logo; fixed aspect-ratio boxes, zero layout shift, each SVG under 4 KB; all logos mono in --color-muted — never their own brand colors, so the action color stays protected.
 -->
+
+## Taste Rules *(appended by any skill after owner approval · [date])*
+Rules distilled from the brand owner's corrections — see `design-principles` → Corrections Become Rules. Precedence: brand.md > the fixed core above > Taste Rules > skill defaults; a taste rule only adds to or tightens the core, never loosens it — a correction that would is a brand change, routed to the brand lead.
+
+<!-- One block per approved rule. Nothing lands here before the owner approves it. -->
+#### [Rule, stated as a token or role where possible]
+- **Why:** the owner's words, or an *inferred* reason they confirmed.
+- **Scope:** component | brand.
+- **Beats default:** the skill default it overrides, if any.
+- **Signal:** asked / edited / nudge / revert-or-pick.
+- **Source:** the session it came from · [date].
+- **Check:** the lint rule or token restriction that enforces it, if any.
+
+<!-- Example:
+#### Hover and press transitions use --dur-fast
+- Why: "the 400ms hover felt sluggish — it should feel instant." (owner's words)
+- Scope: component.
+- Beats default: motion-design's `--dur-base` for component transitions.
+- Signal: edited (400ms → 200ms).
+- Source: homepage build review · 2026-11-18.
+- Check: lint rule — no raw ms values in transition / animation; durations must use --dur-* tokens.
+-->
+
+### Archived
+<!-- Rules from a rejected direction, or superseded with the owner's approval. Keep the full block, add: Archived [date] — reason. -->
 ```
