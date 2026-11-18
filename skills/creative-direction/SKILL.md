@@ -1,8 +1,8 @@
 ---
 name: creative-direction
-description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
+description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' 'present the directions,' 'compare the concepts,' 'mockups for each direction,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.17.1
+  version: 1.18.0
 ---
 
 # Creative Direction
@@ -81,7 +81,8 @@ Run your own work through the same gauntlet the audit runs — **adversarially, 
 - **Give it a walkthrough first, then present.** Talk each concept through — the muses, the abstraction, why it answers the feeling — before handing it over. A stylescape without its narrative is just arrangement.
 - **Name the challenges, honestly.** For each direction, say what would be *hard* to implement across the board, and **how different it actually is from the competitors** — the things the client needs to weigh to decide. Don't only sell; surface the tradeoffs.
 - **Close with a comparison — per direction or a synopsis at the end.** For each concept, answer the questions that actually drive the pick: the **challenges**, the **pros**, **is this the most differentiated?**, and **is this the most on-brand with the emotion you're trying to elicit?** Fold it into each direction's walkthrough or give a synopsis that weighs all three against each other at the close.
-- **Prove it has legs applied.** Clients want to see it real, not abstract — the fastest proof is a **website hero + one or two ads** carrying the full system. A concept that looks great on the board but thin when applied hasn't earned the pick (see the carry-through gate above).
+- **Present in a presentation app (preferred).** One deployment per client: each direction shown as **Stylescape**, **Mockups**, and an interactive **Website**, with slider and side-by-side compare, comment pins, a Rationale panel (walkthrough, muses, thinking, board checklist), and a team verdict. A **shared copy deck** means every direction is judged on the same words. Structure and build: [references/presenting-directions.md](references/presenting-directions.md).
+- **Prove it has legs applied — on one fixed mockup kit.** Clients want to see it real, not abstract. Lock a standard set of scenes before any direction is built (laptop hero, phone, social/OG, email, business card, billboard, tee, plus a module for SaaS, physical product, or services), and apply every direction to the *same* scenes, angles, and copy, so the founder compares directions, not scenes. Kit, rules, sourcing, and checklist: [references/mockup-kit.md](references/mockup-kit.md). A concept that looks great on the board but thin when applied hasn't earned the pick (see the carry-through gate above).
 - **Document the styles and their sources.** Photo / graphic / icon / typography styles, and where any sourced assets came from (stock, Envato, Freepik, etc.) — notes now save the application skills from guessing later.
 - **Revolution:** present the three stylescapes; the client picks one. **Push for one idea, not a Frankenstein.** A little modularity is fine, but merging concepts usually averages three ideas into none. When a client asks to graft (e.g. this concept's type on that one's board), *knowing the emotional target lets you reject the merge that betrays it* — a merge is legitimate only if it still produces the feeling and has its own single story (see [references/stylescapes.md](references/stylescapes.md) → synthesis vs. averaging).
 - **Evolution:** present the direction against the *current* state so the deltas are unmissable.
@@ -108,7 +109,7 @@ Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from
 - [ ] Motif is ownable and doesn't collide with a competitor's
 - [ ] Every element traces to a muse or the emotional target
 - [ ] Adversarial self-audit run on the *rendered* board (AI-slop tropes listed, not "none"; applied fragment passes cover-the-logo) before presenting
-- [ ] Challenges + competitor-differentiation named; direction proven applied (hero + ad)
+- [ ] Challenges + competitor-differentiation named; every direction applied to the same locked mockup kit with the shared copy deck
 - [ ] Client approval secured; full record written to `.agents/design.md`; distilled system written to `.agents/brand.md`
 - [ ] If the operator uses Claude Design: system published as a design system (kit or repo), validation checked, project recorded in `.agents/design.md`
 
