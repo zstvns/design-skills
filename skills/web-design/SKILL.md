@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.10.0
+  version: 1.11.0
 ---
 
 # Web Design
@@ -122,7 +122,19 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - **Score it against the audit categories** vs. the confirmed competitor set at a rival's harshness — Creative Direction, Color, Type, Layout. Would this earn 4–5?
 - **Run the web-slop check** ([references/web-slop.md](references/web-slop.md)) and **list what it finds** — the tropes actually on the page (bold-as-default, banded sections, uniform icon grids, CTA color bleeding everywhere, eyeballed nested radii). "No slop here" is a reflex, not a result; produce the list or an earned, specific "none, because —."
 - **Cover-the-logo carry-through:** with the mark hidden, is the built page still recognizably this brand? If the distinctiveness lived only in the logo, the system didn't survive application.
-- **Responsive + accessibility.** Check real breakpoints (mobile fixes as additive overrides, never touching desktop base). Hand off to `web-design-guidelines` for the interface/accessibility compliance pass.
+- **Responsive.** Check every real breakpoint the build uses; mobile fixes are additive overrides, never touching the desktop base.
+- **Accessibility report.** Check and report each item as **Passed**, **Issue found** (with the fix), **Needs manual testing**, or **N/A**:
+  - Heading order and semantic tags
+  - Alt text (decorative images marked decorative)
+  - Accessible names on icon buttons, links, and form fields
+  - Visible form error states
+  - Contrast
+  - Reflow at each real breakpoint
+  - Reduced motion and autoplay
+  - Meaning carried only by color or animation
+  - `<html lang>`
+
+  **Never mark Passed anything you could not fully test** — an unverified item is not a pass. Screen-reader flow is always Needs manual testing. What to check per item, how to test it on the rendered page, and the report format: [references/accessibility-report.md](references/accessibility-report.md). For the full interface/accessibility compliance pass, use `web-design-guidelines`.
 - **Motion check — watch it, don't screenshot it.** Static captures cannot audit motion. Play the page back: does the timing/easing match the brand's character, or did you default to a generic ease? Is anything on `linear`, queuing instead of overlapping, or janking on a layout property? Toggle `prefers-reduced-motion` and confirm the page is calm and usable.
 - **Copy check.** Does the layout give the words their proper emphasis, or did the design bury the message?
 - **Agent parity.** AI agents and crawlers get the same page visitors see. No hidden text, no content swapped by user agent, user-writable content (reviews, CMS entries, form-fed text) sanitized before it's published, and the real content present in the server-rendered HTML — not only after client JS runs. View the raw HTML response with JS off and confirm the copy is there. (Principle: [agent security is product security](https://webflow.com/blog/agent-security-is-product-security).)

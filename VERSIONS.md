@@ -12,7 +12,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | creative-direction | 1.19.0 | Built | 2026-11-18 |
 | art-direction | 1.3.0 | Built | 2026-11-18 |
 | logo-design | 1.13.0 | Built | 2026-11-11 |
-| web-design | 1.10.0 | Built | 2026-11-12 |
+| web-design | 1.11.0 | Built | 2026-11-17 |
 | collateral-design | 1.14.0 | Built | 2026-11-12 |
 | motion-design | 1.6.1 | Built | 2026-08-07 |
 | design-critique | — | Planned | — |
@@ -22,6 +22,7 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Unreleased Skill Changes
 
+- **web-design 1.11.0** (2026-11-17) — self-reported accessibility checklist in the ship check; each item reported as Passed / Issue found / Needs manual testing / N/A, never Passed unless fully tested (new `references/accessibility-report.md`).
 - **art-direction 1.3.0** (2026-11-18) — Shader Treatments spec in style-specs.md (earned by the muse, palette-only, one per system, static first, rights travel with the image), shader tells in imagery-slop.md, and a CRT/chromatic-aberration eval.
 - **collateral-design 1.14.0** (2026-11-12) — "shaders where the brand warrants" now links to `art-direction` → Shader Treatments so both skills use one rule.
 - **creative-direction 1.19.0** (2026-11-18) — five-field record for every adopted component (what it is, how it's built, behavior, use / don't use, must meet) in the design doc's Application Notes.
