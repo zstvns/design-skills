@@ -1,0 +1,50 @@
+{
+  "skill_name": "product-film",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We need a 30-second muted hero loop for the top of our landing page. The product is a dark-mode SaaS dashboard and the page background is our near-black token. Build it in Remotion from our real UI.",
+      "expected_output": "Should run the front door (design.md, locked logo files, approved copy) and the workflow: quick discovery, a short interview, a message-first beat sheet to the brand owner, three style frames to the brand lead then the brand owner, before building. Should build every scene as a pure function of the frame (no CSS transitions/keyframes, timers, Date.now(), or carried state), on a tempo grid even though the loop is silent, with timing and easing taken from motion-design's --dur-* and named easings via the brand's Motion System, not new values. Should design frame 0 as a composed on-brand state that doubles as the poster and make the last frame equal the first, then verify the seam by decoding the last and first frames and comparing. Should run the color check: decode as a browser does, sample the near-black ground and compare to the token (ΔE ≤ 2 plus per-channel tolerance), confirm BT.709 tags, explicitly handle the limited-range/BT.601 untagged master that lifts near-black into a gray box, and view the loop over the real page ground. Should deliver a muted MP4 + WebM, an on-brand poster, reduced-motion behavior that shows the poster instead of playing, and a stated file-size and length budget. Should keep every render version and not publish without the brand owner.",
+      "assertions": [
+        "Runs the workflow checkpoints: message-first beat sheet to the brand owner, three style frames to the brand lead first, before the full build",
+        "Builds scenes as pure functions of the frame — no CSS transitions/keyframes, timers, Date.now(), or state carried between frames",
+        "Takes timing and easing from motion-design's tokens / the brand's Motion System in design.md rather than defining new curves or durations",
+        "Makes the loop seamless (last frame equals first) and verifies it by decoding the first and last frames, not by eye",
+        "Checks the near-black ground against the token on decoded frames (ΔE ≤ 2) and names the limited-range/BT.601 untagged master lift (gray box) and its fix",
+        "Confirms BT.709 tags on the delivery encodes",
+        "Delivers a muted encode with an on-brand poster, a reduced-motion path that shows the poster, and a file-size and length budget",
+        "Keeps every render version (v1, v2, …) and does not publish without the brand owner's approval"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "For the end of our launch video, can you do a glowy particle logo reveal? Like the logo bursts out of glowing particles with a lens flare, then the tagline bounces in under it as part of the logo.",
+      "expected_output": "Should refuse the glowy particle reveal plainly and explain why: particles, glows, and flares are banned logo moves because the mark stops reading as the real mark mid-effect and can't pass SAD; adding a tagline into the lockup and bouncing letters are also banned. Should offer the approved alternative: one reveal in the end card that assembles the lockup from its own parts (icon then wordmark, or a stroke draw-on of the real paths), on the brand's motion tokens, ending on the exact locked file from .agents/assets/logo/ in the right variant for the ground, at correct clear space and minimum size, and holding the resolved state for at least 1.5s. Should set the tagline beside the lockup, separately, not inside it. Should suggest putting the energy into the cut and the music rather than the mark, render a pose sheet so every frame reads as the real mark, and record the reveal in design.md so later films reuse it. The brand lead reviews the end card before the brand owner approves.",
+      "assertions": [
+        "Refuses the glowy/particle/flare reveal and names those as banned logo moves",
+        "Explains the mark must read as the real mark on every frame and pass SAD as a still",
+        "Offers the approved assemble reveal built from the logo's own parts (icon then wordmark, or stroke draw-on)",
+        "Ends on the exact locked logo file in the correct variant, at correct clear space and minimum size",
+        "Holds the resolved logo for at least 1.5 seconds",
+        "Keeps the tagline out of the lockup and rejects letters bouncing in one by one",
+        "Records the logo motion in design.md for reuse and routes the end card to the brand lead before the brand owner"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our brand ground is #0B0B0C. The rendered launch film looks a bit washed out on our site — there's a faint gray rectangle around the video. Is something wrong with our token?",
+      "expected_output": "Should say the token is almost certainly fine and the conversion is wrong: a Remotion master can be limited range, BT.601, and untagged, and blending or decoding it as full range lifts near-black (e.g. #0B0B0C to roughly #19191A, #0a0a0a to about #171717), which shows as a gray box against the page. Should probe the master and the delivery file (pix_fmt, range, matrix, primaries, transfer), convert the matrix once and explicitly, keep limited range, and tag BT.709 on the encode. Should then verify on decoded frames the way a browser decodes them: sample the ground and compare to #0B0B0C with ΔE (CIEDE2000) ≤ 2 and per-channel code values within about ±2, and also check banding and chroma on thin colored type. Should view the fixed file over the real page ground in a browser, keep the old version rather than overwriting it, and never change the token to compensate.",
+      "assertions": [
+        "Identifies the limited-range / BT.601 untagged master decoded as full range as the cause of the near-black lift",
+        "States the fix is in the conversion and tagging, never in changing the token",
+        "Probes the files and converts the color matrix explicitly, tagging BT.709",
+        "Samples decoded frames and compares the ground to #0B0B0C with ΔE ≤ 2 (and a per-channel near-black tolerance)",
+        "Checks the result over the real page ground in a browser for the box edge",
+        "Keeps the previous render version instead of overwriting it"
+      ],
+      "files": []
+    }
+  ]
+}
