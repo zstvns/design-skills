@@ -52,6 +52,47 @@
         "Pushes back on uniform 'animate everything' as slop; validates by watching the page"
       ],
       "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "You've rebuilt https://example.com in our stack from design.md. I scrolled through it and it looks right — same hero, same vibe, same CTA. Can we call it done and ship? (The source has nine sections; the build has eight. The 'use it anywhere' surfaces section between features and pricing was never ported.)",
+      "expected_output": "Should not accept 'looks right at a glance' as done. Should run the match loop from faithful-replication: grade a source-specific checklist against side-by-side screenshots of the source and the build at 1440px and 390px, never from memory. The measured section-count-and-order check should catch the gap — nine sections on the source, eight on the build — name the missing 'use it anywhere' section and where it belongs (between features and pricing), and grade that line 'no'. Should port the section with its real copy, re-screenshot both widths, and regrade the full checklist. Should also check hero proportions against a stated tolerance. Should stop after two rounds and hand off for human review with the graded checklist and screenshots rather than declaring it shipped.",
+      "assertions": [
+        "Refuses to sign off on a glance; runs the match loop instead",
+        "Screenshots source and build at 1440 and 390px and grades against them, not memory",
+        "Section count/order check catches the dropped section (9 vs 8) and names it",
+        "Ports the missing section in the right position, then re-screenshots and regrades",
+        "Checks hero proportions against a stated tolerance",
+        "Stops after round 2 and hands off for human review with the graded checklist and screenshots"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Finish the site and ship it. Give me the accessibility report too. (The build's mobile menu toggle is an icon-only <button> containing an SVG, with no aria-label or visible text. Nobody has tested the page with a screen reader.)",
+      "expected_output": "Should run the accessibility report from references/accessibility-report.md on the rendered page and report every item as Passed, Issue found, Needs manual testing, or N/A. Should catch the icon-only menu button with no accessible name, report it as Issue found, and state the fix (e.g. add aria-label=\"Open menu\" and toggle aria-expanded) — then apply it and re-test before changing its state. Should report screen-reader flow as Needs manual testing, noting what was checked in the accessibility tree and what a human should listen for. Should never mark Passed anything it could not fully test — items it could only partly verify (e.g. text contrast over imagery) are Needs manual testing, not Passed. Should not declare the site 'accessible' or 'compliant' as a blanket verdict, and should point to web-design-guidelines for the full compliance pass.",
+      "assertions": [
+        "Reports each checklist item as Passed, Issue found, Needs manual testing, or N/A",
+        "Reports the unlabeled icon-only menu button as Issue found, with a concrete fix (accessible name via aria-label or visible text)",
+        "Reports screen-reader flow as Needs manual testing",
+        "Marks nothing Passed that it could not fully test; unverified or partly verified items are Needs manual testing",
+        "Makes no blanket 'accessible' or 'compliant' claim",
+        "Points to web-design-guidelines for the full interface/accessibility compliance pass"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Homepage is done. The FAQ accordion and the mobile menu are just divs with onClick handlers and some aria attributes I added — they open and close fine. Can we ship?",
+      "expected_output": "Should block the ship: hand-rolled ARIA on divs is not an accepted build for interactive pieces. Should rebuild both on a tested headless behavior library — staying with shadcn/Radix if the project already uses it, otherwise Radix, React Aria, or Base UI. Should then verify on the rendered page by tabbing through both pieces: the accordion is reachable and operable from the keyboard, the mobile menu closes on both Escape and outside click, and focus returns to the menu trigger on close rather than dropping to the body or page top. 'Opens and closes fine' with a mouse is not a pass.",
+      "assertions": [
+        "Refuses to ship the hand-rolled div accordion and menu",
+        "Rebuilds both on a headless behavior library (stays with shadcn/Radix if present; otherwise Radix, React Aria, or Base UI)",
+        "Tabs through both pieces on the rendered page rather than trusting mouse testing",
+        "Confirms Escape and outside click both dismiss the mobile menu",
+        "Confirms focus returns to the menu trigger after it closes"
+      ],
+      "files": []
     }
   ]
 }

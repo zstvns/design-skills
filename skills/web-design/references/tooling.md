@@ -22,6 +22,20 @@ Relume's output is a starting point for **custom code**, not a Webflow handoff �
 - **Reference-site intake** — ask for (or take in) the popular sites the client admires. Name explicitly what to steal (a rhythm, a hero mechanic, a motion idea) and what to avoid.
 - **three.js / WebGL** — when a brand genuinely warrants ambitious 3D or interactive depth and the emotional target supports it. Ambition in service of the story, never decoration for its own sake.
 
+## Interactive behaviors — on a tested headless library, never hand-rolled
+
+Every interactive piece — nav menus, FAQ accordions, pricing toggles, tabs, dialogs, comboboxes — is built on a **tested headless library that owns the behavior and the accessibility**. You own the look; the library owns focus, keyboard, and ARIA state. **Never hand-roll ARIA** on a `div` — a click handler with a role sprinkled on it passes a screenshot and fails the first keyboard user.
+
+- **If the project already uses shadcn/Radix, stay with it.** Don't introduce a second behavior library alongside the one that's there.
+- **Otherwise, use Radix, React Aria, or Base UI.** Pick one per project and use it for every piece.
+
+Four behaviors every piece must get right — the library gives you most of them, but verify each on the rendered page:
+
+- **One Tab stop per composite group, arrow keys inside.** A tab list, a radio-style pricing toggle, or a menu is one stop in the Tab order; arrows move between its items.
+- **Escape and outside click both dismiss.** Every popup, menu, and dialog closes on either.
+- **Focus returns to the trigger on close.** Close the mobile menu or the dialog and focus lands back on the button that opened it — never on `<body>`, never at the top of the page.
+- **Anything draggable also works from the keyboard.** A carousel, a slider, a before/after handle — if a pointer can drag it, a key can move it.
+
 ## The point
 
 These tools change *how fast* and *how varied* you can build — they don't change the standard. Everything they produce still has to pass the same validation: hierarchy, the reserved forward-CTA, varied rhythm, real assets, distinctiveness that survives cover-the-logo.
