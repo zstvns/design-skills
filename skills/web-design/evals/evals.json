@@ -80,6 +80,19 @@
         "Points to web-design-guidelines for the full interface/accessibility compliance pass"
       ],
       "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Homepage is done. The FAQ accordion and the mobile menu are just divs with onClick handlers and some aria attributes I added — they open and close fine. Can we ship?",
+      "expected_output": "Should block the ship: hand-rolled ARIA on divs is not an accepted build for interactive pieces. Should rebuild both on a tested headless behavior library — staying with shadcn/Radix if the project already uses it, otherwise Radix, React Aria, or Base UI. Should then verify on the rendered page by tabbing through both pieces: the accordion is reachable and operable from the keyboard, the mobile menu closes on both Escape and outside click, and focus returns to the menu trigger on close rather than dropping to the body or page top. 'Opens and closes fine' with a mouse is not a pass.",
+      "assertions": [
+        "Refuses to ship the hand-rolled div accordion and menu",
+        "Rebuilds both on a headless behavior library (stays with shadcn/Radix if present; otherwise Radix, React Aria, or Base UI)",
+        "Tabs through both pieces on the rendered page rather than trusting mouse testing",
+        "Confirms Escape and outside click both dismiss the mobile menu",
+        "Confirms focus returns to the menu trigger after it closes"
+      ],
+      "files": []
     }
   ]
 }

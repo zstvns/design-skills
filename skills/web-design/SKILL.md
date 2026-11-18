@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.11.0
+  version: 1.12.0
 ---
 
 # Web Design
@@ -160,6 +160,8 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - [ ] Craft floor met (rem/clamp, layered shadows, optical alignment, nested radii, distinct CTA states); global changes done systematically
 - [ ] **Motion character taken from the brand** (playful ≠ premium; no house default); functional motion kept utilitarian and expressive/storytelling motion handed to `motion-design`
 - [ ] **Motion floor met** — named easing with `ease-out` as workhorse (no raw `linear`), UI transitions under ~300ms, press feedback, entrances overlap/stagger rather than queue, `transform`/`opacity` only, reveals hierarchical not uniform, `prefers-reduced-motion` honored
+- [ ] **Tabbed through every interactive piece on the rendered page** — each one built on a headless behavior library, not hand-rolled ARIA (see [references/tooling.md](references/tooling.md) → Interactive behaviors)
+- [ ] **Focus confirmed to return to the trigger after each popup or dialog closes**
 - [ ] Adversarial self-audit on the *rendered* page (web-slop tropes listed, not "none"); responsive + accessibility pass; spelling/grammar + OG image checked
 - [ ] **Agent parity** — agents and crawlers get the page visitors get: no hidden text or UA-swapped content, user-writable content sanitized, real content in the server-rendered HTML
 
