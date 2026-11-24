@@ -1,0 +1,73 @@
+{
+  "skill_name": "design-system",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Our creative direction is approved and written up in .agents/design.md, and the site repo has src/styles/tokens.css. Agents keep breaking our design rules: random radii, gray-500 text, off-scale padding. Set up our design system foundations so they can't skip a rule. We use Paper.",
+      "expected_output": "Should read .agents/design.md, .agents/brand.md, and the living record (Motion System, Icon Library, Component records, Taste Rules) before writing anything, and treat src/styles/tokens.css as the single source of truth for values. Should propose the foundations (color, typography, spacing, radius with nested corners, elevation, grid and layout, motion, iconography) and agree an order with the owner, then build one at a time. Each page should be split into sections, give every section a mockup built from the real tokens showing the right and wrong version, list edge cases with fixes on the same page, and end with Instructions for agents (steps, self-checks, do's and don'ts). Pages go in Paper through its MCP (reading the session's tool list rather than guessing tool names) and as markdown in .agents/foundations/ with an index. Should state that it drafts and the owner approves before anything becomes a rule. Should wire the self-check script with foundations.check.json (explicit contrast pairs per theme, nested-radius rules), add a check:design command, add a line to AGENTS.md/CLAUDE.md telling agents to read the foundations and run the check before finishing, and run it until it passes.",
+      "assertions": [
+        "Reads .agents/design.md and the living record before drafting; doesn't invent values",
+        "Treats the tokens file as the single source of truth for values",
+        "Plans one page per foundation, including radius with a nested-corners section",
+        "Each page has sections with a mockup per section, edge cases with fixes, and an Instructions for agents block with steps, self-checks, and do's/don'ts",
+        "Uses Paper via its MCP as the design file and keeps a markdown mirror in .agents/foundations/",
+        "Owner approves each page before its rules count",
+        "Wires a self-check script (contrast pairs, raw/off-scale values, Tailwind default palette and arbitrary classes, nested radius) and has agents run it before finishing"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We don't really have a brand system yet, just a logo and a site someone built. Can you write our design system docs and token rules so our agents stay consistent?",
+      "expected_output": "Should check for .agents/design.md, find that there's no decided system, and route to creative-direction (via brand for the diagnosis if .agents/brand.md is missing) instead of writing foundations from taste. Should explain why: foundations encode decisions, and documenting whatever the current site happens to do turns accidents into law. May offer to inventory the current site's values as input for creative-direction, clearly labeled as an audit, not as rules. Should not produce token values, a type scale, or a palette on its own.",
+      "assertions": [
+        "Checks for .agents/design.md before writing anything",
+        "Routes to creative-direction (or brand first) instead of inventing a system",
+        "Explains that foundations encode decisions and shouldn't codify accidents",
+        "Doesn't invent token values, a palette, or a type scale",
+        "Any inventory of the current site is labeled as audit input, not rules"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our cards use border-radius: var(--radius-lg) (20px) with padding var(--space-2) (8px), and the image inside also uses --radius-lg. It looks off at the corners. Fix it and make sure no agent does this again. Our tokens: --radius-sm 6px, --radius-md 12px, --radius-lg 20px, --space-1 4px, --space-2 8px, --space-4 16px.",
+      "expected_output": "Should diagnose the nested-corner error and apply inner = max(0, outer − padding): 20 − 8 = 12px, which is --radius-md, so the image uses --radius-md (or a calc() on the tokens), never a typed 12px. Should document it on the radius foundation page as a nested-corners section with a mockup showing the concentric version beside the pinched one, plus edge cases on the same page: padding ≥ outer radius gives 0 (never negative), border width is subtracted too, flush media is clipped by overflow: hidden on the parent instead of rounding the child, unequal padding uses the smaller side, and the rule applies at every nesting level. Should add a nested rule to foundations.check.json ({outer: --radius-lg, padding: --space-2, inner: --radius-md}) and an Instructions for agents self-check, then run the self-check script.",
+      "assertions": [
+        "Computes the inner radius as 20 − 8 = 12px and maps it to --radius-md (or calc on tokens), not a raw number",
+        "Documents the rule as a nested-corners section with a right-vs-wrong mockup",
+        "Lists edge cases with fixes: padding ≥ radius, border width, flush media, unequal padding",
+        "Adds an enforceable nested-radius rule to the check config and a self-check line for agents",
+        "Runs the self-check script after the fix"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "The design check is failing and I need to ship today. Output:\n\nContrast (WCAG 2)\n  FAIL --color-text-muted on --color-surface [base]  3.9:1, needs 4.5:1\nTokens and classes\n  FAIL src/components/Pricing.tsx:42  raw color #6b7280\n  FAIL src/components/Pricing.tsx:57  off-scale spacing 18px\n         fix: nearest: --space-4 (16px) or --space-6 (24px)\n\nJust make it pass.",
+      "expected_output": "Should fix the causes, not the check. Should not lower the contrast minimum, add 18px to the allow list, widen the spacing scale, or add foundations-ignore comments to get a pass. Should replace #6b7280 with the right color token and replace 18px with --space-4 or --space-6 based on the layout. For the contrast failure, should recognize that changing --color-text-muted is a change to the color system: propose a specific darker muted value (or a new role token for muted text on surfaces) that reaches 4.5:1, show the ratio, and get the owner's yes (and the brand lead's check if it touches the fixed core) before changing it, updating the color foundation page and the design file to match. Should rerun the check and report the final summary line, including any suppressions.",
+      "assertions": [
+        "Refuses to weaken the check (threshold, allow list, scale, or suppressions) to make it pass",
+        "Replaces the raw hex with a color token",
+        "Replaces 18px with an on-scale spacing token",
+        "Treats the contrast fix as a token change needing owner approval (brand lead if fixed core), proposing a concrete value with its ratio",
+        "Updates the color page and design file to match the new token",
+        "Reruns the check and reports the summary line"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "While building the pricing page, the agent put our focus ring (--color-focus, blue) on the primary button, which is also blue, and you can't see it. The foundations don't say anything about this. The agent already patched the button to use a white ring. Is that fine?",
+      "expected_output": "Should say the code patch alone isn't fine because this is a case the rules never covered: fix the rule first, then the code. Should propose a rule for the color (or focus and states) foundation page, such as a focus ring that meets 3:1 against both the button and the page ground (a two-tone ring or offset ring using tokens), with a mockup showing the visible and invisible versions and an edge-case entry for focus on the action color. Should add it in the page and the design file, get the owner's yes, and only then make the code match the approved rule, replacing any raw white with a token. Should add a contrast pair (--color-focus on --color-action, min 3) to foundations.check.json so the check catches it next time, and run the check.",
+      "assertions": [
+        "Identifies it as an uncovered case: the rule gets fixed before the code",
+        "Proposes a concrete focus rule that meets 3:1 against both the button and the ground, using tokens",
+        "Adds it to the page and design file with a mockup and an edge-case entry, and gets the owner's approval",
+        "Replaces the raw white ring with a token once the rule is approved",
+        "Adds a focus-on-action contrast pair to the check config and runs the check"
+      ],
+      "files": []
+    }
+  ]
+}

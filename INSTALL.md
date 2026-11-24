@@ -34,7 +34,7 @@ If you want the cross-agent `.agents/skills/` layout specifically, use `--all` o
 | Flag | Effect |
 |---|---|
 | *(none)* | Interactive — pick which skills and which agents |
-| `--all` | All 10 skills, all detected agents, no prompts |
+| `--all` | All 11 skills, all detected agents, no prompts |
 | `-s <names>` | Only named skills, space-separated: `-s brand logo-design` |
 | `-g` | Install user-level instead of project-level |
 | `--copy` | Copy files instead of symlinking |
@@ -117,7 +117,7 @@ If you have a Claude plan, you have Claude Design — the visual canvas inside C
 | **Flora MCP** *or* **Higgsfield** | `art-direction` (and through it `creative-direction`, `collateral-design`, `web-design`) | Generative imagery and video for muse-anchored boards, bespoke assets, and rich media on the page. Either is a good choice — pick one; you don't need both. |
 | **Adobe MCP** | `art-direction`, `collateral-design`, `logo-design` | Firefly generation, image editing and adjustment, vectorizing, background removal, and real document/print export. |
 | **Figma MCP** | `logo-design`, `creative-direction`, `web-design` | Read an existing brand's variables, tokens, type styles, and components during the audit; draw and assemble vectors on a real canvas a designer can take over. |
-| **Paper MCP** | `creative-direction`, `web-design`, `collateral-design` | A design canvas the agent can compose in directly — useful for stylescapes and fixed-format layout. |
+| **Paper MCP** | `creative-direction`, `web-design`, `collateral-design`, `design-system` | A design canvas the agent can compose in directly — useful for stylescapes and fixed-format layout, and the default home for `design-system`'s foundation pages, kept in sync with your tokens. |
 
 Set the Quiver key in your shell profile:
 

@@ -77,6 +77,7 @@ Everything in this library reads from and writes to plain markdown in your proje
 | **`.agents/design.md`** | `creative-direction` | The full creative-direction spec — concepts, color system and tokens, documented photo / graphic / icon / type styles with asset sources, the motif and signature element, and the *why* behind every choice. **It's a living record:** `logo-design` appends the approved mark, `art-direction` the imagery specs, `motion-design` the built motion system, and the application skills their adopted libraries and notes. |
 | **`.agents/assets/logo/`** | `logo-design` | The locked logo files themselves — lockup · icon · square avatar · app icon, each in SVG/PNG/JPEG across the colorway set. Downstream skills *place these files*; they never redraw the mark. |
 | **`.agents/assets/design-system/`** | `creative-direction` | Only if you use Claude Design and have no site repo yet: the kit published to Claude Design as a design system (tokens, fonts, logo, imagery, preview cards), so every new Claude Design project starts on-brand. A published copy — `.agents/design.md` stays the source of truth. |
+| **`.agents/foundations/`** | `design-system` | One page per design-system foundation (color, type, spacing, radius, elevation, grid, motion, icons) with sections, mockups, edge cases, and instructions for agents, plus an index. Mirrors the design file (Paper by default) and is checked against your tokens file, which stays the source of every value. |
 | **`.agents/assets/imagery/`** | `art-direction` | The brand's image library — anchors per class, approved photography / illustration / icons / textures (treated to the brand's grade), the reference board, the prompt packs, and a `manifest.md` with source, rights, and alt text for every file. Application skills place from it and route new needs back. |
 | **`.agents/product-marketing.md`** | *external* | Positioning, ICP, voice, and the competitive landscape — from the [marketingskills](https://github.com/coreyhaines31/marketingskills) library. Read, never written. If present, the brand audit pulls its competitor set from here instead of guessing. |
 
@@ -94,6 +95,7 @@ brand  (diagnose REO) ──┼─ Evolution   → capture, then strategy on the
                         └─ Optimization → capture + audit → straight to the medium skills (fix execution)
 
 then:  logo-design · art-direction (imagery — its board pass also runs inside creative-direction)
+       → design-system (foundations agents follow, plus the checks that catch them)
        → APPLICATION (web · collateral · motion · product-film)
 ```
 
@@ -107,6 +109,7 @@ then:  logo-design · art-direction (imagery — its board pass also runs inside
 | Identity | [`creative-direction`](skills/creative-direction/SKILL.md) | Translates the emotional target + muses into the concrete visual system — color, type, composition, pattern & texture, icons, illustration, photography — as one coherent language, validated against the audit's own bar. Three stylescapes for a Revolution; anchored deltas for an Evolution. |
 | Identity | [`art-direction`](skills/art-direction/SKILL.md) | The imagery — photography, illustration, iconography, pattern & texture, and how they combine. Implies each style from the strategy, shows you real reference images from the web to point at, writes a spec tight enough to converge on, then produces assets with what you have — ChatGPT or Gemini prompt packs, a connected generator, or treated free stock — and reviews every one before it enters the library. |
 | Identity | [`logo-design`](skills/logo-design/SKILL.md) | The core mark — Simple, Appropriate, Distinct (SAD), each judged *in context*: distinct vs. competitors, appropriate to the feeling, simple across every implementation. Delivers locked asset files, not a description. |
+| System | [`design-system`](skills/design-system/SKILL.md) | Turns the approved system into foundations agents can't skip: one page per foundation with sections, a mockup per section, edge cases with fixes, and instructions for agents, kept in sync with the design file (Paper by default) and the tokens in code. A self-check script catches contrast failures, raw and off-scale values, off-token radius, broken nested corners, and docs that drift. |
 | Application | [`web-design`](skills/web-design/SKILL.md) | Applying the brand to a live, conversion-focused site with real copy — designed *and built* in custom code, giving the words their proper emphasis. Rhythm as a vocabulary of section types, one reserved CTA color, faithful replication when referencing a live site. |
 | Application | [`collateral-design`](skills/collateral-design/SKILL.md) | Every fixed-format piece that isn't a website — decks, one-pagers, social posts, OG images, ads, print. Ships as a true-size viewer plus real exports. Coherence across the family, not one cloned template. |
 | Application | [`motion-design`](skills/motion-design/SKILL.md) | The twelve principles of animation applied to UI motion in custom code — micro-interactions, transitions, entrances, scroll and hover behavior — with weight, emotion, and restraint. Motion carries feeling; not fade-up-on-everything. |
@@ -121,6 +124,7 @@ then:  logo-design · art-direction (imagery — its board pass also runs inside
 | Pick my colors, type, and visual language | [`creative-direction`](skills/creative-direction/SKILL.md) |
 | Decide what our photos, illustrations, and icons look like — and make them | [`art-direction`](skills/art-direction/SKILL.md) |
 | Design or critique a logo | [`logo-design`](skills/logo-design/SKILL.md) |
+| Write our design system foundations so agents follow every rule, and check that they did | [`design-system`](skills/design-system/SKILL.md) |
 | Design and build a website or landing page | [`web-design`](skills/web-design/SKILL.md) |
 | Make a deck, one-pager, social post, OG image, ad, or print piece | [`collateral-design`](skills/collateral-design/SKILL.md) |
 | Add animation, hover states, or scroll behavior | [`motion-design`](skills/motion-design/SKILL.md) |
@@ -148,7 +152,7 @@ Invoke any skill by name (e.g. `/brand`, `/logo-design`). Start at `brand` for a
 
 ## Roadmap
 
-Ten skills ship today. Deliberately not shipped yet:
+Eleven skills ship today. Deliberately not shipped yet:
 
 | Skill | Why it's waiting |
 |---|---|
