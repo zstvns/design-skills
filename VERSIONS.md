@@ -12,7 +12,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | creative-direction | 1.20.0 | Built | 2026-11-18 |
 | art-direction | 1.3.0 | Built | 2026-11-18 |
 | logo-design | 1.13.0 | Built | 2026-11-11 |
-| web-design | 1.12.0 | Built | 2026-11-17 |
+| web-design | 1.13.0 | Built | 2026-11-24 |
 | collateral-design | 1.15.1 | Built | 2026-11-18 |
 | motion-design | 1.6.2 | Built | 2026-11-18 |
 | product-film | 1.0.0 | Built | 2026-11-18 |
@@ -23,4 +23,4 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Unreleased Skill Changes
 
-None yet.
+- **web-design 1.13.0** — template-hero and type-scale tells: the 50/50 hero, hero KPI strips, body-size sprawl, a third mono face for numbers, button walls, and nested card cages; hero copy stays short, and blogs/docs/changelogs/tool pages skip the marketing hero.
