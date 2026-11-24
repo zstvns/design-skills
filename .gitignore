@@ -5,3 +5,10 @@ node_modules/
 # Corey Haines's makerskills — local reference/tooling, not part of this library
 makerskills/
 .claude/
+
+# Local baseline-eval runs (blinded outputs, judge keys)
+.baseline-eval/
+
+# Python
+__pycache__/
+*.pyc

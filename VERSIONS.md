@@ -23,4 +23,4 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Unreleased Skill Changes
 
-None yet.
+- Repo process: every skill behavior change is tested in a blind head-to-head against a no-skill baseline and the previous skill version; a rule that doesn't beat the baseline gets cut or rewritten (`CONTRIBUTING.md`, `CLAUDE.md`).

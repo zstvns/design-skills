@@ -70,6 +70,19 @@ Rules that follow from this:
 - YAML frontmatter is valid; `name` matches the directory
 - `description` is 1–1024 characters and includes trigger phrases
 - `evals/evals.json` (if present) parses as valid JSON
+- Skill behavior changes include baseline-eval results in the PR — see [Baseline evals](#baseline-evals)
+
+## Baseline evals
+
+Valid JSON is not a test of whether the skill helps. A change that loses to the model with no skill is not an improvement.
+
+- **Every skill behavior change is tested in a blind head-to-head** on **3 or more evals** from that skill's `evals/evals.json` (all of them, if there are fewer than 3). Prefer the evals that exercise the change.
+- Run the same prompt three ways: **no skill**, the **previous** version on `main`, and this **candidate**. Blind the outputs. A judge (human or model) that does not know which is which picks a winner against the eval's `expected_output` and `assertions`, or calls a tie.
+- **Report win rates in the PR** using the table in `CONTRIBUTING.md`. `python3 scripts/baseline-eval.py` lists evals, prints that table, and blinds output files.
+- **A rule or reference that does not beat the no-skill baseline gets cut or rewritten**, not shipped. Also report the head-to-head against the previous version so a regression is visible.
+- Typos, changelog-only, and process or docs changes that don't alter skill behavior can mark the section N/A.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md#baseline-evals) for the procedure.
 
 ## Releases
 
