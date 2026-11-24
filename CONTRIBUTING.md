@@ -46,7 +46,7 @@ Two independent numbers:
 | Per-skill | `metadata.version` in each SKILL.md | `VERSIONS.md` |
 | Plugin | `.claude-plugin/plugin.json` + `.claude-plugin/marketplace.json` | `CHANGELOG.md` |
 
-Bump the per-skill version on every substantive edit (PATCH for clarifications, MINOR for new capability). Bump the plugin version only when cutting a release, and keep both manifests in sync.
+Bump the per-skill version on every substantive edit (PATCH for clarifications, MINOR for new capability). Bump the plugin version only when cutting a release, and keep both manifests in sync. When you cut a plugin version, also create a `v<version>` git tag and GitHub Release whose notes are that changelog entry — aggregators subscribe to releases, not to `main`. See the Releases section in `CLAUDE.md`.
 
 ## Verify
 

@@ -34,7 +34,7 @@ If you want the cross-agent `.agents/skills/` layout specifically, use `--all` o
 | Flag | Effect |
 |---|---|
 | *(none)* | Interactive — pick which skills and which agents |
-| `--all` | All 9 skills, all detected agents, no prompts |
+| `--all` | All 10 skills, all detected agents, no prompts |
 | `-s <names>` | Only named skills, space-separated: `-s brand logo-design` |
 | `-g` | Install user-level instead of project-level |
 | `--copy` | Copy files instead of symlinking |

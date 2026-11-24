@@ -1,0 +1,59 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.claude-plugin/plugin.json'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: github.repository == 'zstvns/design-skills'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Create GitHub release for the new plugin version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          VERSION=$(jq -r '.version' .claude-plugin/plugin.json)
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid plugin version: $VERSION"
+            exit 1
+          fi
+          TAG="v${VERSION}"
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $TAG already exists; nothing to do."
+            exit 0
+          fi
+          export VERSION
+          python3 - <<'PY'
+          import os, re, sys
+          from pathlib import Path
+          version = os.environ["VERSION"]
+          text = Path("CHANGELOG.md").read_text()
+          parts = re.split(r'(?m)^(## .+)$', text)
+          notes = None
+          for i in range(1, len(parts), 2):
+              header = parts[i]
+              body = parts[i + 1].strip()
+              m = re.match(r'## ([0-9.]+)', header)
+              if m and m.group(1) == version:
+                  notes = header + "\n\n" + body + "\n"
+                  break
+          if not notes:
+              sys.exit(f"CHANGELOG.md has no entry for {version}")
+          Path("release-notes.md").write_text(notes)
+          PY
+          gh release create "$TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "$TAG" \
+            --notes-file release-notes.md \
+            --latest

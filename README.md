@@ -2,7 +2,7 @@
 
 [![Stars](https://img.shields.io/github/stars/zstvns/design-skills?style=flat-square&label=stars&color=000)](https://github.com/zstvns/design-skills/stargazers) [![Release](https://img.shields.io/github/v/release/zstvns/design-skills?style=flat-square&color=000)](https://github.com/zstvns/design-skills/releases) [![License](https://img.shields.io/badge/license-MIT-000?style=flat-square)](./LICENSE)
 
-**AI agent skills for the designer's craft.** Brand diagnosis and audit, brand strategy, creative direction, art direction, logo design, and application across web, collateral, and motion — with a shared context document so you never re-explain your brand.
+**AI agent skills for the designer's craft.** Brand diagnosis and audit, brand strategy, creative direction, art direction, logo design, and application across web, collateral, motion, and product film — with a shared context document so you never re-explain your brand.
 
 The principles are **universal** — good design, stated with authority, usable on any brand. They are not tied to one agency's process.
 
@@ -94,7 +94,7 @@ brand  (diagnose REO) ──┼─ Evolution   → capture, then strategy on the
                         └─ Optimization → capture + audit → straight to the medium skills (fix execution)
 
 then:  logo-design · art-direction (imagery — its board pass also runs inside creative-direction)
-       → APPLICATION (web · collateral · motion)
+       → APPLICATION (web · collateral · motion · product-film)
 ```
 
 `brand-strategy` is the heavy generative path the diagnostic routes *to* — in an Optimization it's skipped entirely. That's the line between them: `brand` always runs; `brand-strategy` only when something is actually being defined or changed.
@@ -110,6 +110,7 @@ then:  logo-design · art-direction (imagery — its board pass also runs inside
 | Application | [`web-design`](skills/web-design/SKILL.md) | Applying the brand to a live, conversion-focused site with real copy — designed *and built* in custom code, giving the words their proper emphasis. Rhythm as a vocabulary of section types, one reserved CTA color, faithful replication when referencing a live site. |
 | Application | [`collateral-design`](skills/collateral-design/SKILL.md) | Every fixed-format piece that isn't a website — decks, one-pagers, social posts, OG images, ads, print. Ships as a true-size viewer plus real exports. Coherence across the family, not one cloned template. |
 | Application | [`motion-design`](skills/motion-design/SKILL.md) | The twelve principles of animation applied to UI motion in custom code — micro-interactions, transitions, entrances, scroll and hover behavior — with weight, emotion, and restraint. Motion carries feeling; not fade-up-on-everything. |
+| Application | [`product-film`](skills/product-film/SKILL.md) | Launch films, muted landing-page hero loops, and promo or social cuts built in code with Remotion from the product's real tokens, components, locked logo, and voice — message first, cut on the beat, and verified frame by frame. |
 
 ## Which skill do I invoke when?
 
@@ -123,6 +124,7 @@ then:  logo-design · art-direction (imagery — its board pass also runs inside
 | Design and build a website or landing page | [`web-design`](skills/web-design/SKILL.md) |
 | Make a deck, one-pager, social post, OG image, ad, or print piece | [`collateral-design`](skills/collateral-design/SKILL.md) |
 | Add animation, hover states, or scroll behavior | [`motion-design`](skills/motion-design/SKILL.md) |
+| Make a launch film, landing-page hero loop, or promo/social cut | [`product-film`](skills/product-film/SKILL.md) |
 | Understand why a design feels off when I can't name it | [`design-principles`](skills/design-principles/SKILL.md) |
 
 ---
@@ -146,7 +148,7 @@ Invoke any skill by name (e.g. `/brand`, `/logo-design`). Start at `brand` for a
 
 ## Roadmap
 
-Nine skills ship today. Deliberately not shipped yet:
+Ten skills ship today. Deliberately not shipped yet:
 
 | Skill | Why it's waiting |
 |---|---|

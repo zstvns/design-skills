@@ -33,7 +33,7 @@ design-skills/
 └── LICENSE
 ```
 
-**Two version numbers.** Per-skill `metadata.version` in each SKILL.md (tracked in `VERSIONS.md`), and the plugin version in both `.claude-plugin/*.json` (tracked in `CHANGELOG.md`). Bump the plugin version only for a release; keep the two manifests in sync with each other.
+**Two version numbers.** Per-skill `metadata.version` in each SKILL.md (tracked in `VERSIONS.md`), and the plugin version in both `.claude-plugin/*.json` (tracked in `CHANGELOG.md`). Bump the plugin version only for a release; keep the two manifests in sync with each other. Every plugin version also gets a matching GitHub Release — see [Releases](#releases).
 
 ## The Shared Context Documents
 
@@ -43,7 +43,7 @@ Skills read and write plain markdown in the *user's* project under `.agents/`. C
 |---|---|---|
 | `.agents/brand.md` | `brand` | **The keystone.** Distilled source of truth; every skill reads it before acting. |
 | `.agents/brand-strategy.md` | `brand-strategy` | Full coaching record — verbatim answers, muses with stealable cues, concept directions. `brand.md` gets the synthesis. |
-| `.agents/design.md` | `creative-direction` | Full creative-direction spec, and a **living record**: `logo-design`, `art-direction`, `motion-design`, and the application skills append their decided assets as the pipeline advances. |
+| `.agents/design.md` | `creative-direction` | Full creative-direction spec, and a **living record**: `logo-design`, `art-direction`, `motion-design`, `product-film`, and the other application skills append their decided assets as the pipeline advances. |
 | `.agents/assets/logo/` | `logo-design` | The locked logo *files*. Downstream skills place them; they never redraw the mark. |
 | `.agents/assets/design-system/` | `creative-direction` | The kit published to Claude Design via `/design-sync` when no site repo exists — `tokens.css`, licensed fonts, logo copies, rights-cleared imagery, preview cards. A published copy; `.agents/design.md` stays the source of truth. |
 | `.agents/assets/imagery/` | `art-direction` | The image library — anchors, approved assets per class, references, prompt packs, and `manifest.md` (source, rights, alt text). Application skills place from it and route new needs back. |
@@ -70,3 +70,11 @@ Rules that follow from this:
 - YAML frontmatter is valid; `name` matches the directory
 - `description` is 1–1024 characters and includes trigger phrases
 - `evals/evals.json` (if present) parses as valid JSON
+
+## Releases
+
+Skill aggregators and installers subscribe to GitHub Releases, not to commits on `main`. A plugin version that exists only in `.claude-plugin/*.json` and `CHANGELOG.md` is invisible to them.
+
+- **Every plugin version gets a matching GitHub release.** When you cut a plugin version — bump both `.claude-plugin/*.json` files and move the Unreleased Skill Changes into a `CHANGELOG.md` entry — create a `v<version>` git tag at that commit and a GitHub Release titled `v<version>` whose notes are that changelog entry. Do this in the same release PR or immediately after it merges. Never leave a shipped plugin version without a release.
+- **Point the tag at the commit that landed the version**, not at a later `main` that already has unreleased skill changes.
+- A workflow at `.github/workflows/release.yml` creates the tag and release when the plugin version changes on `main` and no `v<version>` release exists yet, using the matching `CHANGELOG.md` section as the notes. If the workflow is skipped or fails, create the release by hand the same way. Do not invent notes.
