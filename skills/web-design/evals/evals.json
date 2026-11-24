@@ -93,6 +93,17 @@
         "Confirms focus returns to the menu trigger after it closes"
       ],
       "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Build a SaaS homepage hero.",
+      "expected_output": "Should design a hero that gives the headline commanding scale rather than trapping a half-width H1 in a 50/50 split beside a media box, and should not put a row of three or four stats along the bottom of the hero. Below the hero, the type scale should use three or fewer body sizes (hero display type and the nav wordmark don't count), with subheads set apart by weight and color rather than extra 20–24px steps. The hero should have one primary CTA — not a button wall, and not an automatic secondary link just to fill the template.",
+      "assertions": [
+        "Does not use a half-width H1 with a stat row (the 50/50 template hero)",
+        "Uses three or fewer body sizes below the hero",
+        "Has one primary CTA"
+      ],
+      "files": []
     }
   ]
 }

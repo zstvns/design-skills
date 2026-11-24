@@ -6,8 +6,10 @@ Section types for marketing sites and how to approach each. These are **starting
 
 The first thing anyone sees. Job: communicate the core value and earn the scroll.
 
+**Not every page earns a hero.** Blogs, docs, changelogs, and tool pages should open straight into the content — a masthead and the work itself, not a marketing banner that pushes the actual page down.
+
 - Headline is the star — room and emphasis.
-- Subheadline expands, doesn't repeat.
+- Subheadline expands, doesn't repeat. Keep supporting copy to 1–2 lines (25 words or fewer) so the headline can hold its scale.
 - One primary CTA, optionally one secondary (distinct treatment).
 - The headline may be *completed* by a typed/animated second line — plan the copy for it, and size the headline down to make room.
 - Prefer a hero visual that shows real work (a cycling stack of shipped items) over a static, decorative image.
@@ -117,7 +119,7 @@ Rhythm is what makes a page read as *designed* rather than *assembled* — and i
 
 The deepest source of rhythm isn't varying column counts; it's rotating through genuinely **different section types**, each a different *medium*, and never playing the same one twice in a row. A strong marketing page draws from a vocabulary like:
 
-- **Asymmetric hero** — text to one side, a layered product mockup + a stat sticker to the other, over live motion (particles, gradient).
+- **Asymmetric hero** — text to one side, a layered product mockup + a stat sticker to the other, over live motion (particles, gradient). This only works when the headline still has commanding scale — if the H1 is trapped in a half-width column under a long paragraph stack, it's the 50/50 template hero (see `web-slop.md`), not this pattern.
 - **Full-bleed human moment** — a testimonial *video* or portrait, edge-to-edge, with a quote card overlaid. A face and motion, right after a UI-heavy beat, is a huge tonal shift.
 - **Illustration / contrast beat** — a dark, neutral section carrying a brand illustration or a before/after.
 - **Aphorism** — one idea, oversized, acres of air, on a textured ground.

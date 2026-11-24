@@ -7,7 +7,9 @@ Patterns that immediately signal a site was *generated* rather than *designed*. 
 - **Bold as default** — bold everywhere, so nothing is emphasized. Body should be regular weight.
 - **No secondary text color** — every heading and paragraph the same color/opacity, so there's no hierarchy within a face.
 - **Flat hierarchy** — headline and body too close in size; no "guitar solo," everything at one volume.
+- **Body-size sprawl** — more than three font sizes below the hero, extra in-between steps around 20–24px, or a large `.lead` paragraph followed by smaller ones. The scale dissolves. Lock three body sizes (hero display type and the nav wordmark don't count); set subheads, buttons, and labels apart with weight and color, not another size. A fourth compact step is only for a dense dashboard or data table that actually needs it. Keep body paragraphs and lists at the same size.
 - **Missing casing variation** — everything sentence case. Uppercase labels, lowercase accents, and sentence case are design tools.
+- **A third mono font just for numbers** — a monospace face pulled in only for prices, timers, or counts. That's a third family doing a job the body face can handle. Use `tabular-nums` (`font-variant-numeric: tabular-nums`) on the body font instead, unless the product is actually a code, docs, or terminal tool.
 
 ## Color
 
@@ -28,6 +30,8 @@ Patterns that immediately signal a site was *generated* rather than *designed*. 
 - **Sections that blur together** — a run of L-R-L-R feature rows with no headers or spacing between groups, so distinct features read as one tied-together block.
 - **One instrument the whole song** — the same card/panel idiom repeated down the page with only the column count changing; no shift in *medium* (no video, photo, illustration, pinned scroll-tell, or scale contrast). Tidy, but assembled.
 - **A lone hook headline** — a giant one-liner hero with no follow-through, when the copy needed a completing second line and a smaller headline.
+- **The 50/50 template hero** — a half-width H1 stacked with a long paragraph, a button, a secondary link, and a rule, sitting beside a media box. The headline gets trapped in half the screen, and every site starts to look like the same template. Let the headline and the lead visual command the full width, the center, or the depth of the viewport.
+- **A KPI/spec strip under the hero** — a row of three or four stats along the bottom of the hero (users, uptime, funding, "trusted by"). It pads the opening and turns a value proposition into a spec sheet. Keep stats out of the hero; if they earn a place, give them their own tight social-proof beat after it.
 - **Widows** — a single word stranded on a headline's last line.
 - **A fake CTA** — a non-interactive element (a diagram node, a label) styled like a button.
 - **Dump-it-all** — every detail shown at once where a layer of discovery (hover-to-reveal, expand) would be cleaner; interactive things that don't look interactive; a marquee that snaps back instead of looping seamlessly.
@@ -40,6 +44,7 @@ Patterns that immediately signal a site was *generated* rather than *designed*. 
 ## Components
 
 - **Identical CTA treatments** — primary and secondary buttons the same, especially on hover.
+- **Button walls** — a row of separate bordered buttons for choosing a mode, size, or filter. That's a selection control dressed as a pile of CTAs. Use a segmented toggle, tabs, or radios instead. Marketing sections still get at most one primary CTA — and a secondary only when the workflow genuinely needs two actions.
 - **Squared-off CTA** — the primary action shaped like every other card and input, with no differentiated (pill/rounded) form.
 - **Icon-plus-text instead of real logos** — "📷 Instagram" stand-ins in a trust/integration strip where the actual brand marks exist and should be pulled.
 - **Low-contrast logo strip** — real logos, but dimmed until they're barely visible; the trust beat evaporates.
@@ -47,6 +52,7 @@ Patterns that immediately signal a site was *generated* rather than *designed*. 
 - **Generic screenshots** — raw product screenshots dropped in where a branded, layered mockup would be more intentional.
 - **A product visual that misses its own story** — an illustration that decorates instead of showing what the product actually does.
 - **Scattered logos** — trust marks at mismatched sizes and weights, tucked beside other elements.
+- **Nested card cages** — cards inside cards, boxes inside boxes, every group wrapped in another border. The page turns into a wireframe of containers. Group with whitespace, a 1px divider, or a surface tint.
 
 ## Motion
 
@@ -59,3 +65,7 @@ Patterns that immediately signal a site was *generated* rather than *designed*. 
 - **Eyeballed nested radii** — inner elements sharing the container's radius (should be `max(0, outer − padding)`).
 - **Fixed pixel sizing** — px instead of rem/`clamp()`, breaking fluid scaling.
 - **Mobile fixes that break desktop** — base values changed to fix mobile instead of additive smaller-breakpoint overrides.
+
+---
+
+Some of these tells were sharpened against Google's [gemini-frontend-design](https://github.com/google-gemini/demolab/tree/main/skills/gemini-frontend-design) skill (Apache-2.0) — especially the 50/50 template hero, the hero KPI strip, body-size sprawl, a third mono face for numbers, button walls, and nested card cages.
