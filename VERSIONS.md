@@ -23,4 +23,5 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Unreleased Skill Changes
 
+- Repo process: every skill behavior change is tested in a blind head-to-head against a no-skill baseline and the previous skill version; a rule that doesn't beat the baseline gets cut or rewritten (`CONTRIBUTING.md`, `CLAUDE.md`).
 - **web-design 1.13.0** — template-hero and type-scale tells: the 50/50 hero, hero KPI strips, body-size sprawl, a third mono face for numbers, button walls, and nested card cages; hero copy stays short, and blogs/docs/changelogs/tool pages skip the marketing hero.
