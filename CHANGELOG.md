@@ -2,6 +2,16 @@
 
 Plugin-level releases. Per-skill versions live in [VERSIONS.md](VERSIONS.md).
 
+## 1.7.0 — 2026-11-24
+
+**web-design 1.13.0 — template-hero and type-scale tells.** The 50/50 hero, hero KPI strips, body-size sprawl, a third mono face for numbers, button walls, and nested card cages; hero copy stays short, and blogs/docs/changelogs/tool pages skip the marketing hero.
+
+- Repo process: every skill behavior change is tested in a blind head-to-head against a no-skill baseline and the previous skill version; a rule that doesn't beat the baseline gets cut or rewritten (`CONTRIBUTING.md`, `CLAUDE.md`).
+
+| Skill | Version |
+|---|---|
+| `web-design` | 1.13.0 |
+
 ## 1.6.0 — 2026-11-23
 
 **New skill: `product-film`.** Launch films, muted landing-page hero loops, and promo/social cuts built in code with Remotion from the product's real tokens, components, locked logo, and voice; message-first beat sheet, three style frames, pure-function-of-time scenes cut on bars, brand-in-motion rules (one end-card logo reveal from an allowed set, one motif, ΔE ≤ 2 color, real UI only), and decode-and-verify before sign-off (new `references/story-and-beats.md`, `engine.md`, `brand-in-motion.md`, `render-and-verify.md`).
