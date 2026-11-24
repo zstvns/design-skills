@@ -1,6 +1,6 @@
 # Design Skills Versions
 
-Plugin version: **1.6.0** — see [CHANGELOG.md](CHANGELOG.md).
+Plugin version: **1.7.0** — see [CHANGELOG.md](CHANGELOG.md).
 
 Current versions of all skills. Agents can compare against local versions to check for updates.
 
@@ -23,5 +23,4 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Unreleased Skill Changes
 
-- Repo process: every skill behavior change is tested in a blind head-to-head against a no-skill baseline and the previous skill version; a rule that doesn't beat the baseline gets cut or rewritten (`CONTRIBUTING.md`, `CLAUDE.md`).
-- **web-design 1.13.0** — template-hero and type-scale tells: the 50/50 hero, hero KPI strips, body-size sprawl, a third mono face for numbers, button walls, and nested card cages; hero copy stays short, and blogs/docs/changelogs/tool pages skip the marketing hero.
+None yet.
