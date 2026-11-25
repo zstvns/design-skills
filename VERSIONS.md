@@ -1,6 +1,6 @@
 # Design Skills Versions
 
-Plugin version: **1.7.0** — see [CHANGELOG.md](CHANGELOG.md).
+Plugin version: **1.8.0** — see [CHANGELOG.md](CHANGELOG.md).
 
 Current versions of all skills. Agents can compare against local versions to check for updates.
 
@@ -24,4 +24,4 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Unreleased Skill Changes
 
-- **design-system 1.0.0** — new skill: design-system foundations agents can't skip. One page per foundation (color, typography, spacing, radius and nested corners, elevation, grid and layout, motion, iconography), each with sections, a mockup per section, edge cases with fixes, and Instructions for agents (steps, self-checks, do's and don'ts); written with the owner and approved before it counts. Tokens in code are the single source of truth, the design file (Paper by default) and `.agents/foundations/` stay in sync with them, and `scripts/check-foundations.py` (stdlib Python) checks WCAG contrast on token pairs per theme, raw and off-scale values, Tailwind arbitrary and default-palette classes, nested corners, and pages that drift from the tokens.
+None yet.

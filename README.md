@@ -2,7 +2,7 @@
 
 [![Stars](https://img.shields.io/github/stars/zstvns/design-skills?style=flat-square&label=stars&color=000)](https://github.com/zstvns/design-skills/stargazers) [![Release](https://img.shields.io/github/v/release/zstvns/design-skills?style=flat-square&color=000)](https://github.com/zstvns/design-skills/releases) [![License](https://img.shields.io/badge/license-MIT-000?style=flat-square)](./LICENSE)
 
-**AI agent skills for the designer's craft.** Brand diagnosis and audit, brand strategy, creative direction, art direction, logo design, and application across web, collateral, motion, and product film — with a shared context document so you never re-explain your brand.
+**AI agent skills for the designer's craft.** Brand diagnosis and audit, brand strategy, creative direction, art direction, logo design, design-system foundations, and application across web, collateral, motion, and product film — with a shared context document so you never re-explain your brand.
 
 The principles are **universal** — good design, stated with authority, usable on any brand. They are not tied to one agency's process.
 
