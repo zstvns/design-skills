@@ -2,7 +2,7 @@
 name: web-design
 description: "Apply a brand's defined visual system to a real, conversion-focused website — designing and building it in custom code, with real copy given its proper emphasis. Use when the user mentions 'website design,' 'design my site,' 'build a landing page,' 'homepage,' 'marketing site,' 'product page,' 'pricing page,' 'redesign our website,' 'hero section,' or wants to ship a site. This is where the approved identity becomes a live, shipped surface — not a mockup, working code."
 metadata:
-  version: 1.13.0
+  version: 1.13.1
 ---
 
 # Web Design
@@ -158,6 +158,7 @@ Run your own build through the same gauntlet the audit runs — **adversarially,
 - [ ] Columns top-aligned, content left-aligned by default (center only genuinely-centered blocks); each section demarcated (header + spacing) so repeated L-R rows don't blur into one
 - [ ] Headline size follows the content; contrast checked; no widows (headlines balanced); real photography pulled where imagery is called for
 - [ ] Craft floor met (rem/clamp, layered shadows, optical alignment, nested radii, distinct CTA states); global changes done systematically
+- [ ] Brand faces self-hosted as WOFF2 with `@font-face` and a preload on the critical cut — no production dependency on a third-party font stylesheet (see [references/craft-details.md](references/craft-details.md) and `creative-direction` → type-sources.md)
 - [ ] **Motion character taken from the brand** (playful ≠ premium; no house default); functional motion kept utilitarian and expressive/storytelling motion handed to `motion-design`
 - [ ] **Motion floor met** — named easing with `ease-out` as workhorse (no raw `linear`), UI transitions under ~300ms, press feedback, entrances overlap/stagger rather than queue, `transform`/`opacity` only, reveals hierarchical not uniform, `prefers-reduced-motion` honored
 - [ ] **Tabbed through every interactive piece on the rendered page** — each one built on a headless behavior library, not hand-rolled ARIA (see [references/tooling.md](references/tooling.md) → Interactive behaviors)

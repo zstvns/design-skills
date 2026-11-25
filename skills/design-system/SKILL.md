@@ -2,7 +2,7 @@
 name: design-system
 description: "Turn an approved visual system into design-system foundations agents can't skip: one page per foundation (color, typography, spacing, radius and nested corners, elevation, grid and layout, motion, iconography), each split into sections with a mockup showing the rule in use, its edge cases and fixes, and closing instructions for agents. Tokens in code are the single source of truth, the design file (Paper by default) and the pages stay in sync with them, and a self-check script catches what the instructions miss: contrast on token pairs, raw hex/px and off-scale values, off-token radius, nested corners, and docs that drift from the tokens. Use when the user mentions 'design system,' 'foundations,' 'document our tokens,' 'token docs,' 'design system docs,' 'rules for agents,' 'agents keep breaking our design rules,' 'keep the design file and code in sync,' 'radius scale,' 'nested corners,' 'contrast check,' 'lint our styles,' or 'self-check script.'"
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Design System

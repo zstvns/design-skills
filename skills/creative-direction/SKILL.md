@@ -1,8 +1,8 @@
 ---
 name: creative-direction
-description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'define our look,' 'present the directions,' 'compare the concepts,' 'mockups for each direction,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
+description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'Facetypes,' 'free fonts,' 'define our look,' 'present the directions,' 'compare the concepts,' 'mockups for each direction,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.20.0
+  version: 1.21.0
 ---
 
 # Creative Direction
@@ -44,7 +44,7 @@ This is the engine of a distinct direction, and the step most likely to be skipp
 Work through each element with the audit's bar in mind — the nine-category audit (see `brand`) is your acceptance test, and **every "Moving forward" item the audit raised (all nine categories except the logo, which `logo-design` handles after) must be answered by the system** — don't leave an audit gap unaddressed. Full per-element standards: [references/element-standards.md](references/element-standards.md). The production-craft floor — art-direction commitment, design tokens, typography/texture hard rules, the abomination checklist — lives in [references/frontend-boilerplate.md](references/frontend-boilerplate.md); the board's collage/bento composition in [references/stylescapes.md](references/stylescapes.md).
 
 1. **Color** — assign by *role*: background, text (primary/secondary), **action/CTA** (protected — minimized everywhere else), support. Five stops per color, not ten. **Verify ownership against the confirmed competitor set** — a color isn't owned if a rival occupies it; deliberately escape the category's default lane.
-2. **Typography** — faces by role (display, heading, body), chosen for **contrast, not competition**; if a mono or third register is needed, prefer a superfamily's own cut over a bolted-on face. Set weight/style restrictions. **Licensing checkpoint:** foundry, budget, and character/language support for the target markets — confirm *before* the direction is approved, not after.
+2. **Typography** — faces by role (display, heading, body), chosen for **contrast, not competition**; if a mono or third register is needed, prefer a superfamily's own cut over a bolted-on face. Set weight/style restrictions. **Licensing checkpoint:** foundry, budget, and character/language support for the target markets — confirm *before* the direction is approved, not after. For distinctive free faces, start at [FaceTypes](https://facetypes.xyz); how to browse it, pick against `.agents/brand.md`, read each font's own licence, and self-host the files: [references/type-sources.md](references/type-sources.md).
 3. **Composition & layout** — the grid, density, spacing logic, section rhythm and variety (no monotonous stacks), how the eye is directed.
 4. **Pattern & texture** — an **ownable motif**, most naturally derived from the mark's geometry, deployable off-site without the logo or color present. Check it doesn't collide with a competitor's motif.
 5. **Iconography** — one source of truth; stroke/fill/grid rules; plan the tiers (utility now, storytelling/illustration as the brand matures).
@@ -105,7 +105,7 @@ Plus, if the client wants it, a **published copy** (Notion, PDF) generated *from
 - [ ] Emotional Target + muses read from `.agents/brand.md` (or routed to `brand-strategy` first)
 - [ ] Depth + appetite respected (three stylescapes / anchored deltas / documentation pass)
 - [ ] Color ownership verified against the confirmed competitor set
-- [ ] Type licensing + character support confirmed
+- [ ] Type licensing + character support confirmed (each face's own licence, at the official source — a FaceTypes listing is not the licence)
 - [ ] Motif is ownable and doesn't collide with a competitor's
 - [ ] Every element traces to a muse or the emotional target
 - [ ] Adversarial self-audit run on the *rendered* board (AI-slop tropes listed, not "none"; applied fragment passes cover-the-logo) before presenting

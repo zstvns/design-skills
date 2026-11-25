@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Is our logo any good? It's a serif 'M' inside a rounded square, plus the wordmark. Here's the site: https://example.com",
-      "expected_output": "Should refuse to judge the mark in a vacuum: first gather it in every form (favicon, social avatar, app icon, OG, reversed) and pull the direct competitors' logos, and read the Emotional Target from .agents/brand.md. Should then evaluate against SAD with each dimension in its context — Simple across the implementation grid, Appropriate against the core feelings, Distinct against the competitor shelf and the category default (a serif initial in a rounded square is a common pattern — should test, not assume). Should report pass/weak/fail per dimension with evidence, be honest that Distinct is the hardest bar, and write the verdict to .agents/brand.md.",
+      "expected_output": "Should refuse to judge the mark in a vacuum: first gather it in every form (favicon, social avatar, app icon, OG, reversed) and pull the direct competitors' logos, and read the Emotional Target from .agents/brand.md. Should then evaluate against SAD with each dimension in its context \u2014 Simple across the implementation grid, Appropriate against the core feelings, Distinct against the competitor shelf and the category default (a serif initial in a rounded square is a common pattern \u2014 should test, not assume). Should report pass/weak/fail per dimension with evidence, be honest that Distinct is the hardest bar, and write the verdict to .agents/brand.md.",
       "assertions": [
         "Takes the current mark from the live nav, not a stale favicon/OG/press-kit version",
         "Gathers the mark in all implementations and the competitor set before judging",
@@ -18,22 +18,22 @@
     },
     {
       "id": 2,
-      "prompt": "Design a logo for our new B2B security product. We want it to feel like a vault — calm, certain, impenetrable.",
-      "expected_output": "Should treat this as a new mark and work from .agents/brand.md (Emotional Target = calm/certain/impenetrable; muses; competitor set) — if no brand context exists, should route to brand-strategy first. Should sketch across the three families (typographic, pictorial, abstract), resolve in black and white before color, and build the full system (primary, secondary, mark, clear space, min size, reversed/mono). Should reject playful or busy directions as inappropriate to the vault feeling, and check distinctiveness against security-category conventions (shields, locks, keyholes are clichés). Should test against the implementation grid before finishing.",
+      "prompt": "Design a logo for our new B2B security product. We want it to feel like a vault \u2014 calm, certain, impenetrable.",
+      "expected_output": "Should treat this as a new mark and work from .agents/brand.md (Emotional Target = calm/certain/impenetrable; muses; competitor set) \u2014 if no brand context exists, should route to brand-strategy first. Should sketch across the three families (typographic, pictorial, abstract), resolve in black and white before color, and build the full system (primary, secondary, mark, clear space, min size, reversed/mono). Should reject playful or busy directions as inappropriate to the vault feeling, and check distinctiveness against security-category conventions (shields, locks, keyholes are clich\u00e9s). Should test against the implementation grid before finishing.",
       "assertions": [
         "Works from the Emotional Target (or routes to brand-strategy if none)",
         "Sketches across typographic / pictorial / abstract families",
         "Resolves in black and white before color",
         "Builds the full system (lockups, mark, clear space, min size, reversed)",
         "Screens directions for appropriateness to the 'vault' feeling",
-        "Checks distinctiveness against category clichés (shield/lock/keyhole)"
+        "Checks distinctiveness against category clich\u00e9s (shield/lock/keyhole)"
       ],
       "files": []
     },
     {
       "id": 3,
       "prompt": "Our logo looks great on the website hero. Can we just call it done?",
-      "expected_output": "Should push back that the hero lockup is not enough to judge or finalize a logo. Simplicity is verified across every implementation — favicon, social avatar, app icon, single-color, reversed, tiny/print — and the mark must be the same construction in all of them. Should ask to see (or generate) the implementation grid, and also note that Appropriate and Distinct still need the emotional target and competitor set. Should not sign off on a single context.",
+      "expected_output": "Should push back that the hero lockup is not enough to judge or finalize a logo. Simplicity is verified across every implementation \u2014 favicon, social avatar, app icon, single-color, reversed, tiny/print \u2014 and the mark must be the same construction in all of them. Should ask to see (or generate) the implementation grid, and also note that Appropriate and Distinct still need the emotional target and competitor set. Should not sign off on a single context.",
       "assertions": [
         "Rejects judging the logo from the hero lockup alone",
         "Explains simplicity is verified across the full implementation grid",
@@ -45,13 +45,25 @@
     },
     {
       "id": 4,
-      "prompt": "Evaluate this logo concept for our project-management SaaS, Orchard. The mark is a simple, geometric bitten-apple silhouette, drawn in a single black value, locked up with a clean grotesque wordmark. It holds at 16px, survives a circle crop and a rounded-square app icon, works reversed and in one color — same construction everywhere. The Emotional Target is focused, calm, and precise, and the mark's quiet geometry produces that. We put it on a shelf with Asana, Monday, Linear, ClickUp, and Notion: none of them use fruit or an apple, and the silhouette doesn't dissolve into the set. We'd like to go to mockups. Does this pass SAD?",
-      "expected_output": "Should treat Simple and Appropriate as able to pass on the evidence given (one construction that holds across the implementation grid; the mark produces the stated Emotional Target) but must still fail Distinct. The shelf may pass — these competitors don't use an apple — but Distinct is two checks, and the bitten apple is recognizable on sight as a match with a famous mark (Apple) in any class, which is a hard fail on Distinct. Should list each lookalike-sweep tool (Google Lens Exact and Visual Match, Pinterest visual search, WIPO Global Brand Database Conceptual Similarity, or named equivalents) as run or not run, include results only where a tool actually ran, and never invent or fabricate search results. Because SAD is not averaged, one failed criterion sinks the whole logo — should not say it 'passes SAD cleanly,' and should not claim legal clearance ('cleared,' 'safe to register,' or equivalent). This is a design originality check, not trademark clearance.",
+      "prompt": "Evaluate this logo concept for our project-management SaaS, Orchard. The mark is a simple, geometric bitten-apple silhouette, drawn in a single black value, locked up with a clean grotesque wordmark. It holds at 16px, survives a circle crop and a rounded-square app icon, works reversed and in one color \u2014 same construction everywhere. The Emotional Target is focused, calm, and precise, and the mark's quiet geometry produces that. We put it on a shelf with Asana, Monday, Linear, ClickUp, and Notion: none of them use fruit or an apple, and the silhouette doesn't dissolve into the set. We'd like to go to mockups. Does this pass SAD?",
+      "expected_output": "Should treat Simple and Appropriate as able to pass on the evidence given (one construction that holds across the implementation grid; the mark produces the stated Emotional Target) but must still fail Distinct. The shelf may pass \u2014 these competitors don't use an apple \u2014 but Distinct is two checks, and the bitten apple is recognizable on sight as a match with a famous mark (Apple) in any class, which is a hard fail on Distinct. Should list each lookalike-sweep tool (Google Lens Exact and Visual Match, Pinterest visual search, WIPO Global Brand Database Conceptual Similarity, or named equivalents) as run or not run, include results only where a tool actually ran, and never invent or fabricate search results. Because SAD is not averaged, one failed criterion sinks the whole logo \u2014 should not say it 'passes SAD cleanly,' and should not claim legal clearance ('cleared,' 'safe to register,' or equivalent). This is a design originality check, not trademark clearance.",
       "assertions": [
         "Names the Apple collision as a famous-mark match, lists each sweep tool as run or not run, and does not fabricate search results",
-        "Fails Distinct even though Simple and Appropriate can pass — SAD is not averaged",
+        "Fails Distinct even though Simple and Appropriate can pass \u2014 SAD is not averaged",
         "Never says 'passes SAD cleanly'",
         "Does not claim legal clearance"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Set the wordmark in Fraunces. It's on Facetypes, they already licence-checked it for commercial use, so we should be fine to outline it and ship the logo.",
+      "expected_output": "Should refuse Fraunces as a banned / try-hard trendy face; a FaceTypes listing does not lift the cliche-typefaces ban. Should also refuse to treat the listing as the commercial-license check: the wordmark has to be set in a face the client can legally use for a logo, and the licence that comes with the official-source download is the one that applies (licences on FaceTypes are not all OFL). Should point the next choice at FaceTypes as the go-to free catalog, or a paid foundry if exclusivity or budget says so, then confirm that face's licence before outlining the wordmark.",
+      "assertions": [
+        "Refuses Fraunces as a banned / try-hard face rather than setting the wordmark in it",
+        "Does not treat a FaceTypes listing as the licence check for a logo",
+        "Requires a confirmed commercial licence from the official source before outlining and shipping",
+        "Offers a next step: pick a different face (FaceTypes as the free catalog, or a paid foundry) and check that licence"
       ],
       "files": []
     }

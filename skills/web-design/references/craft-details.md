@@ -12,6 +12,7 @@ The tells that separate a site that was *designed* from one that was *assembled*
 - **No widows.** Never leave a single word stranded on a headline's last line. Balance the wrap (`text-wrap: balance`), or rewrite, unless the break is deliberate.
 - **Low-opacity headline + one standout word.** A reliable emphasis move: set the headline in a dimmed color and lift one word (or phrase) to full opacity or the brand accent. The dimmed-with-a-highlight version usually reads better than full-strength everywhere.
 - **Contrast.** Check small/secondary text against its background — the softest text is usually a hair too low; nudge it up until it's comfortably readable.
+- **Self-host the brand faces.** Load the licensed files from `.agents/design.md` as WOFF2 with `@font-face` and preload the critical cut. Don't point the production site at a third-party stylesheet or CDN (including Google Fonts' CSS). The method is the same whether the official source was Google Fonts, Fontshare, or a foundry: see `creative-direction` → [type-sources.md](../../creative-direction/references/type-sources.md). If a role still needs a free face, start at [FaceTypes](https://facetypes.xyz), download from the official source it names, and have the operator check that font's own licence before you ship it.
 
 ## Color Discipline
 
