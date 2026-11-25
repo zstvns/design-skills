@@ -1,0 +1,22 @@
+{
+  "tokens": ["src/styles/tokens.css"],
+  "scan": ["src"],
+  "docs": ".agents/foundations",
+  "contrast": [
+    { "fg": "--color-text", "bg": "--color-bg", "min": 4.5 },
+    { "fg": "--color-text", "bg": "--color-surface", "min": 4.5 },
+    { "fg": "--color-text-muted", "bg": "--color-bg", "min": 4.5 },
+    { "fg": "--color-text-muted", "bg": "--color-surface", "min": 4.5 },
+    { "fg": "--color-on-action", "bg": "--color-action", "min": 4.5 },
+    { "fg": "--color-focus", "bg": "--color-bg", "min": 3 },
+    { "fg": "--color-focus", "bg": "--color-action", "min": 3 }
+  ],
+  "nested": [
+    { "outer": "--radius-lg", "padding": "--space-2", "inner": "--radius-md" },
+    { "outer": "--radius-md", "padding": "--space-1", "inner": "--radius-sm" }
+  ],
+  "allow": ["1px", "2px"],
+  "bannedClasses": [
+    { "pattern": "(?<![\\w-])font-bold(?![\\w-])", "message": "bold is reserved; use font-semibold unless the page allows bold here" }
+  ]
+}

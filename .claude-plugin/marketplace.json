@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "designskills",
-      "description": "10 skills that give an agent real design competency. Foundation (brand / design-principles), strategy (brand-strategy), identity (creative-direction / art-direction / logo-design), application (web-design / collateral-design / motion-design / product-film). Reads and writes a shared brand context in .agents/. Sibling to makerskills and marketingskills.",
+      "description": "11 skills that give an agent real design competency. Foundation (brand / design-principles), strategy (brand-strategy), identity (creative-direction / art-direction / logo-design), system (design-system), application (web-design / collateral-design / motion-design / product-film). Reads and writes a shared brand context in .agents/. Sibling to makerskills and marketingskills.",
       "source": "./"
     }
   ]
