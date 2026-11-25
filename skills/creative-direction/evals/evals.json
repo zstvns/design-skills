@@ -3,8 +3,8 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "We need our visual identity figured out — pick our colors, fonts, and overall look. We're a B2B fintech startup, no brand work done yet. Just make it look premium.",
-      "expected_output": "Should check .agents/brand.md for an Emotional Target and muses, find none, and STOP — routing to brand-strategy first rather than choosing colors/typefaces from taste. Should explain why: without the feeling and the muses, any palette/type choice is a default or an accident (the 'premium' ask would likely produce the current AI-startup default). Should not just pick a tasteful palette to be helpful.",
+      "prompt": "We need our visual identity figured out \u2014 pick our colors, fonts, and overall look. We're a B2B fintech startup, no brand work done yet. Just make it look premium.",
+      "expected_output": "Should check .agents/brand.md for an Emotional Target and muses, find none, and STOP \u2014 routing to brand-strategy first rather than choosing colors/typefaces from taste. Should explain why: without the feeling and the muses, any palette/type choice is a default or an accident (the 'premium' ask would likely produce the current AI-startup default). Should not just pick a tasteful palette to be helpful.",
       "assertions": [
         "Checks .agents/brand.md for Emotional Target and muses before designing",
         "Refuses to pick colors/type from taste; routes to brand-strategy",
@@ -15,8 +15,8 @@
     },
     {
       "id": 2,
-      "prompt": "Our brand strategy is done — emotional target is 'calm certainty, like a bank vault crossed with a Muji store,' with muses documented in .agents/brand.md, and our competitor set is confirmed (all of them run dark-mode purple-gradient AI aesthetics). We're a Revolution. Build the creative direction.",
-      "expected_output": "Should produce THREE genuinely distinct concepts (different muses/color stories/type pairings/attitudes — not three shades of one idea), presented as stylescapes described as real intended assets, not mood boards. Each element should trace to a muse or the emotional target. Color must be verified against the competitor set — escaping the dark-purple-gradient lane rather than joining it. Typography should include role assignments, restrictions, and the licensing/character-support checkpoint. Should plan a motif derivable from the (future) mark or system geometry. Should run the self-audit (foundational categories + AI-slop check) before presenting, and drive to a client decision, resisting 'a little of each.' Approved system gets written to .agents/brand.md with the why per choice.",
+      "prompt": "Our brand strategy is done \u2014 emotional target is 'calm certainty, like a bank vault crossed with a Muji store,' with muses documented in .agents/brand.md, and our competitor set is confirmed (all of them run dark-mode purple-gradient AI aesthetics). We're a Revolution. Build the creative direction.",
+      "expected_output": "Should produce THREE genuinely distinct concepts (different muses/color stories/type pairings/attitudes \u2014 not three shades of one idea), presented as stylescapes described as real intended assets, not mood boards. Each element should trace to a muse or the emotional target. Color must be verified against the competitor set \u2014 escaping the dark-purple-gradient lane rather than joining it. Typography should include role assignments, restrictions, and the licensing/character-support checkpoint. Should plan a motif derivable from the (future) mark or system geometry. Should run the self-audit (foundational categories + AI-slop check) before presenting, and drive to a client decision, resisting 'a little of each.' Approved system gets written to .agents/brand.md with the why per choice.",
       "assertions": [
         "Produces three genuinely distinct concepts, not variations of one",
         "Frames stylescapes as real intended assets, not mood boards",
@@ -32,7 +32,7 @@
     {
       "id": 3,
       "prompt": "We're an Evolution: keeping our logo and our navy (that's the fixed core, it's in .agents/brand.md along with our emotional target), but the audit said our type is generic, we have no motif, and our accent color collides with a competitor. Build the direction for the deltas.",
-      "expected_output": "Should anchor on the fixed core (logo + navy carried forward, untouched) and work ONLY the named deltas: a new type pairing (contrast-not-competition, licensing checked), a motif — preferably derived from the kept logo's geometry — that works without logo or color present and doesn't collide with a competitor's, and a replacement accent verified as unowned in the confirmed competitor set. Should start from the primary touchpoint (hero/website) to show the evolved direction against the current state. Should NOT rerun full discovery or propose three from-scratch concepts. Should validate and write the updated system into .agents/brand.md.",
+      "expected_output": "Should anchor on the fixed core (logo + navy carried forward, untouched) and work ONLY the named deltas: a new type pairing (contrast-not-competition, licensing checked), a motif \u2014 preferably derived from the kept logo's geometry \u2014 that works without logo or color present and doesn't collide with a competitor's, and a replacement accent verified as unowned in the confirmed competitor set. Should start from the primary touchpoint (hero/website) to show the evolved direction against the current state. Should NOT rerun full discovery or propose three from-scratch concepts. Should validate and write the updated system into .agents/brand.md.",
       "assertions": [
         "Carries the fixed core (logo, navy) forward untouched",
         "Works only the named deltas; does not rerun full discovery or offer three concepts",
@@ -45,7 +45,7 @@
     },
     {
       "id": 4,
-      "prompt": "Strategy is done and .agents/brand.md has the emotional target, muses, and competitor set. Its Toolkit section says: Tier 1 — ChatGPT (GPT Image) run by hand; nothing connected to the agent. We're a Revolution. Build the stylescapes.",
+      "prompt": "Strategy is done and .agents/brand.md has the emotional target, muses, and competitor set. Its Toolkit section says: Tier 1 \u2014 ChatGPT (GPT Image) run by hand; nothing connected to the agent. We're a Revolution. Build the stylescapes.",
       "expected_output": "Should read the Toolkit and NOT ask again which image tools the operator has. Should take the prompt-pack path for ChatGPT: precise muse-anchored prompts (subject, grade, palette hexes, texture, lighting, composition, aspect ratio, no text) for the operator to run and bring back, while composing the boards itself and rendering CSS/SVG texture directly. Should not claim to generate images in-session, and should label any board still waiting on imagery as a composition / art-direction proof with the prompt packs attached.",
       "assertions": [
         "Reads the Toolkit from .agents/brand.md and does not re-ask about tools",
@@ -57,7 +57,7 @@
     },
     {
       "id": 5,
-      "prompt": "The client approved concept B and it's written to .agents/design.md; the logo is locked in .agents/assets/logo/. There's no website code yet. Their marketing lead lives in Claude Design — can we get the brand in there so she can make decks herself?",
+      "prompt": "The client approved concept B and it's written to .agents/design.md; the logo is locked in .agents/assets/logo/. There's no website code yet. Their marketing lead lives in Claude Design \u2014 can we get the brand in there so she can make decks herself?",
       "expected_output": "Should build a kit in .agents/assets/design-system/ from .agents/design.md: tokens.css (color roles and ramps with the action color named as protected, type scale, spacing, radii), fonts only if the license permits uploading them, copies of the locked logo files (never redrawn), rights-cleared imagery per the art-direction manifest, and preview cards that each import tokens.css (type specimen, color roles, buttons, card, section types, motif, deck slides, one-pager, social post). Should have the operator run /design-sync and review the plan before approving, then check the sync's validation output (not just the cards) for missing tokens or CSS, confirm in a new Claude Design project, and record the project in .agents/design.md. Should state that .agents/ stays the source of truth and changes made in Claude Design get pulled back.",
       "assertions": [
         "Builds the kit in .agents/assets/design-system/ from .agents/design.md",
@@ -83,6 +83,32 @@
         "Recommends the presentation app: Stylescape / Mockups / Website per direction, compare, comments, rationale, team verdict",
         "Routes base-scene production to art-direction",
         "Records the kit and deployment in .agents/design.md"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Our brand strategy is done \u2014 emotional target and muses are in .agents/brand.md \u2014 and we're a Revolution with no budget for paid type. Pick our typography and tell me where the files come from. I heard Facetypes is all free, so just grab something distinctive from there.",
+      "expected_output": "Should start from the emotional target and muses in .agents/brand.md, not from 'something distinctive' on a catalog. Should use FaceTypes (facetypes.xyz, or its public fonts.json catalog) as the go-to free source: browse by typographic classification, shortlist faces that fit the feeling, and download from the official source each FaceTypes page names (Google Fonts, Fontshare, a foundry, GitHub \u2014 FaceTypes is a guide, not a host). Should not treat 'it's on FaceTypes' or 'all free' as the license: licences vary (mostly OFL, also Fontshare/ITF, Apache, and foundry terms; some are desktop-only or forbid sharing or modifying files), and the operator must read the licence that comes with the download at the official source, for this project's actual uses, before approval. Should still apply contrast-not-competition, evoke-don't-costume, the cliche-typefaces ban/wave list (a FaceTypes listing does not lift it), and language coverage. Should record foundry, licence, and source URL in design.md, and self-host approved files as WOFF2 with @font-face and a preload \u2014 the same method whether the official source was Google Fonts or a foundry. If budget later appears or exclusivity matters, a paid face remains valid.",
+      "assertions": [
+        "Starts from brand.md (emotional target and muses), not from a catalog's most-interesting sort",
+        "Uses FaceTypes as the go-to free source and downloads from the official source it names, not from FaceTypes itself",
+        "Does not treat 'all free' or a FaceTypes listing as the licence; says the operator must read the licence that comes with the download",
+        "Notes that licences vary (not all OFL; some restrict sharing, modification, or web use)",
+        "Still applies typography rules: contrast-not-competition, evoke-don't-costume, and the cliche-typefaces ban/wave list",
+        "Records foundry, licence, and official source, and self-hosts approved files (WOFF2, @font-face, preload)"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Let's set our display face to Fraunces and our body to Pricedown. Both are on Facetypes, they already licence-checked everything for commercial use, and we need them on the marketing site this week.",
+      "expected_output": "Should refuse Fraunces as a banned / try-hard trendy face under design-principles \u2192 cliche-typefaces.md (and ai-slop). A FaceTypes listing, including FaceTypes' own overused-by-AI set, does not lift that ban. Should also refuse to put Pricedown on the marketing site on the strength of the listing: FaceTypes' catalog flags Typodermic's desktop EULA as fine for artwork but not for websites or apps without a paid licence, and the licence that comes with the download is the one that applies \u2014 the operator has to read it. Should offer a new pairing from FaceTypes (or a paid face if the budget appears) that fits the emotional target, passes the typography bar, and is actually cleared for web use.",
+      "assertions": [
+        "Refuses Fraunces as a banned / try-hard face; a FaceTypes listing does not lift the ban",
+        "Does not approve Pricedown for the website on the strength of the listing alone",
+        "Calls out that some FaceTypes licences (including Typodermic's desktop EULA) do not cover websites or apps without a paid licence, and that the download's licence is the one that applies",
+        "Offers a replacement pairing that fits the typography bar and is actually cleared for web use"
       ],
       "files": []
     }

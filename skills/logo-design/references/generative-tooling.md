@@ -66,7 +66,7 @@ for ch in "Wordmark":
 # wrap in <g transform="translate(0 ascent) scale(1 -1)"> to flip font y-up into SVG y-down
 ```
 
-Confirm the face's **commercial license** first (OFL Google fonts, Adobe, Pangram Pangram, etc.) — see [logo-construction.md](logo-construction.md).
+Confirm the face's **commercial license** first for this use. Don't assume OFL: FaceTypes and Google Fonts both list faces under several licences, and the file that arrives with the download is the one that applies. See [logo-construction.md](logo-construction.md) and `creative-direction` → type-sources.md.
 
 ## Honesty (non-negotiable)
 

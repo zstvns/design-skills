@@ -14,11 +14,11 @@ Thresholds come from the library's own rules: contrast from `web-design` → acc
 
 ## Typography
 
-- **Source:** design.md → type roles, scale, weights; `design-principles` → cliche-typefaces.md for the faces you don't swap in.
-- **Sections:** faces by role; the scale (size + leading pairs); weights and when bold is allowed; tracking; measure (line length); numerals (`tabular-nums` for figures, not a third face).
+- **Source:** design.md → type roles, scale, weights; `design-principles` → cliche-typefaces.md for the faces you don't swap in. If a role's face still needs sourcing, `creative-direction` → [type-sources.md](../../creative-direction/references/type-sources.md): [FaceTypes](https://facetypes.xyz) is the go-to free catalog; download from the official source it names, and have the operator check that face's own licence.
+- **Sections:** faces by role; the scale (size + leading pairs); weights and when bold is allowed; tracking; measure (line length); numerals (`tabular-nums` for figures, not a third face); files (WOFF2, `@font-face`, preload — self-hosted, same method whether the official source was Google Fonts or a foundry).
 - **Mockups:** the scale as a specimen in real copy; a section using three body sizes or fewer, beside the sprawl version; a heading that wraps, balanced and unbalanced.
 - **Edge cases:** long words and URLs; headlines at the smallest breakpoint; 200% zoom; translated strings 30% longer; missing font (fallback stack that keeps the metrics); numbers in tables.
-- **Checked:** raw or off-scale `font-size`; arbitrary `text-[…]` classes.
+- **Checked:** raw or off-scale `font-size`; arbitrary `text-[…]` classes. Self-hosting and licence filing are self-checks on the typography page (keep the licence file with the fonts when the licence asks; preload only the critical cut).
 
 ## Spacing
 
