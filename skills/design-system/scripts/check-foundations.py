@@ -2,11 +2,13 @@
 """Design-system self-check. Run it before you say you're finished.
 
 Python 3.9+, standard library only. Checks:
-  contrast  WCAG 2 contrast for token pairs, per theme
-  values    raw colors, raw px/rem, off-scale values, and Tailwind arbitrary or
-            default-palette classes where a token should be used
-  nested    nested corners follow inner = max(0, outer - padding)
-  docs      foundation pages match the tokens file and keep their required sections
+  contrast   WCAG 2 contrast for token pairs, per theme
+  values     raw colors, raw px/rem, off-scale values, and Tailwind arbitrary or
+             default-palette classes where a token should be used
+  typefaces  house-banned families (Space Grotesk, Fraunces, Instrument, Cormorant)
+             unless the owner override is declared in allowBannedTypefaces
+  nested     nested corners follow inner = max(0, outer - padding)
+  docs       foundation pages match the tokens file and keep their required sections
 
 Usage:
   python3 check-foundations.py --tokens src/styles/tokens.css [src ...]
@@ -14,7 +16,8 @@ Usage:
 
 Exit code 1 when anything fails (warnings too, with --strict).
 Suppress one finding with a `foundations-ignore: <reason>` comment on the same or
-previous line. Suppressions are counted in the summary.
+previous line. Suppressions are counted in the summary. A foundations-ignore
+comment does not lift a house-banned typeface.
 """
 
 from __future__ import annotations
@@ -525,6 +528,130 @@ def check_docs(docs, themes, where, rep):
                 "document each token on its foundation page, or delete it if nothing uses it")
 
 
+# ---------------------------------------------------------------- typefaces
+# House bans. Only the owner can lift these, via allowBannedTypefaces in
+# foundations.check.json, after recording the override in the typography
+# foundation or brief. A foundations-ignore comment does not lift them.
+
+BANNED_TYPEFACES = (
+    ("Space Grotesk", re.compile(r"^space grotesk(?:[\s-]+\w+)*$", re.I)),
+    ("Fraunces", re.compile(r"^fraunces(?:[\s-]+\w+)*$", re.I)),
+    ("Instrument", re.compile(r"^instrument(?:[\s-]+\w+)*$", re.I)),
+    ("Cormorant", re.compile(r"^cormorant(?:[\s-]+\w+)*$", re.I)),
+)
+GENERIC_FAMILIES = {
+    "serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui",
+    "ui-sans-serif", "ui-serif", "ui-monospace", "ui-rounded", "emoji", "math",
+    "fangsong", "inherit", "initial", "unset", "revert", "revert-layer",
+}
+FONT_DECL = re.compile(
+    r"(?:^|[\s;{])(?:font-family|fontFamily|--font-[\w-]+)\s*[:=]\s*([^;}\n]+)", re.I)
+GOOGLE_FAM = re.compile(r"[?&]family=([^&\"']+)", re.I)
+NEXT_FONT = re.compile(r"\b(Fraunces|Instrument_[A-Za-z]+|Cormorant(?:_[A-Za-z]+)?|Space_Grotesk)\b")
+FONT_FILE = re.compile(
+    r"(?i)(?:^|[/\"'(])((?:fraunces|instrument(?:[-_][a-z]+)?|cormorant(?:[-_][a-z]+)?|space[-_]?grotesk))"
+    r"[-_a-z0-9]*\.(?:woff2?|ttf|otf|eot)\b")
+TW_FONT_ARB = re.compile(r"font-\[(?:['\"]([^'\"]+)['\"]|([^\]\s]+))\]")
+TYPEFACE_FIX = ("pick a different face, or record an owner override in the typography "
+                "foundation or brief and declare it under allowBannedTypefaces")
+
+
+def norm_family(name):
+    return re.sub(r"[\s_-]+", " ", name).strip().lower()
+
+
+def banned_label(name):
+    n = norm_family(name)
+    if not n or n in GENERIC_FAMILIES:
+        return None
+    for label, rx in BANNED_TYPEFACES:
+        if rx.match(n):
+            return label
+    return None
+
+
+def typeface_allowed(name, allowed):
+    n = norm_family(name)
+    return any(n == a or n.startswith(a + " ") for a in allowed)
+
+
+def stack_families(value):
+    value = re.sub(r"\s*!important\s*$", "", value).strip()
+    names = []
+    for part in value.split(","):
+        part = VAR.sub("", part).strip().strip("\"'")
+        if part:
+            names.append(part)
+    return names
+
+
+def google_families(text):
+    names = []
+    for raw in GOOGLE_FAM.findall(text):
+        raw = raw.replace("%20", " ").replace("+", " ")
+        for item in raw.split("|"):
+            names.append(item.split(":")[0].strip())
+    return names
+
+
+def typefaces_in_line(line):
+    names = []
+    for value in FONT_DECL.findall(line):
+        names.extend(stack_families(value))
+    names.extend(google_families(line))
+    if "next/font" in line or re.search(r"\b(?:Fraunces|Instrument_[A-Za-z]+|Cormorant(?:_[A-Za-z]+)?|Space_Grotesk)\s*\(", line):
+        for m in NEXT_FONT.finditer(line):
+            names.append(m.group(1).replace("_", " "))
+    for m in FONT_FILE.finditer(line):
+        stem = re.sub(r"\.(?:woff2?|ttf|otf|eot)$", "", m.group(1), flags=re.I)
+        names.append(stem)
+    for m in TW_FONT_ARB.finditer(line):
+        names.append(m.group(1) or m.group(2))
+    return names
+
+
+def check_typefaces(files, token_files, cfg, rep):
+    allowed, seen = [], set()
+    for item in cfg.get("allowBannedTypefaces", []):
+        if not isinstance(item, dict):
+            rep.add("typefaces", "error", "config",
+                    "allowBannedTypefaces entries must be {family, reason}",
+                    "record an owner override in the typography foundation or brief, then list it here")
+            continue
+        fam = (item.get("family") or "").strip()
+        reason = (item.get("reason") or "").strip()
+        if not fam or not reason:
+            rep.add("typefaces", "error", "config",
+                    "allowBannedTypefaces needs a family and a reason pointing at the owner's override",
+                    "agents must never add this; only the owner can lift a house ban")
+            continue
+        allowed.append(norm_family(fam))
+
+    paths = []
+    for t in list(token_files) + list(files):
+        path = Path(t)
+        if path not in paths and path.is_file():
+            paths.append(path)
+
+    for path in paths:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+        for i, line in enumerate(lines):
+            if re.match(r"\s*(//|/\*|<!--|\*\s)", line) and "font-family" not in line.lower():
+                continue
+            here = f"{path}:{i + 1}"
+            for name in typefaces_in_line(line):
+                label = banned_label(name)
+                if not label or typeface_allowed(name, allowed):
+                    continue
+                key = (here, label)
+                if key in seen:
+                    continue
+                seen.add(key)
+                # A foundations-ignore comment does not lift a house ban.
+                rep.add("typefaces", "error", here, f"house-banned typeface {name.strip()}",
+                        TYPEFACE_FIX)
+
+
 # ---------------------------------------------------------------- main
 
 def collect(paths, exclude):
@@ -543,7 +670,7 @@ def collect(paths, exclude):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Design-system self-check (contrast, tokens, nested corners, docs).")
+    ap = argparse.ArgumentParser(description="Design-system self-check (contrast, tokens, typefaces, nested corners, docs).")
     ap.add_argument("paths", nargs="*", help="files or folders to scan (default: config 'scan', or src app components)")
     ap.add_argument("--tokens", action="append", help="tokens file(s) — the single source of truth")
     ap.add_argument("--docs", help="folder of foundation pages (default: config 'docs', or .agents/foundations)")
@@ -571,6 +698,7 @@ def main():
         or default_pairs(theme_view(themes, "base"))
     check_contrast(themes, pairs, rep)
     check_values(files, themes, cfg, rep)
+    check_typefaces(files, token_files, cfg, rep)
     check_nested(themes, files, cfg, rep)
     if Path(docs).is_dir():
         check_docs(docs, themes, where, rep)
@@ -580,6 +708,7 @@ def main():
           f"themes: {', '.join(themes)} · {len(files)} files scanned"
           + ("" if Path(docs).is_dir() else f" · no docs at {docs}"))
     titles = {"contrast": "Contrast (WCAG 2)", "values": "Tokens and classes",
+              "typefaces": "House-banned typefaces",
               "nested": "Nested corners", "docs": "Foundation pages vs tokens"}
     tags = {"error": "FAIL", "warn": "WARN", "ok": " ok "}
     for sec, title in titles.items():

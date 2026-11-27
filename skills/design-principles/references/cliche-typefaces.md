@@ -2,6 +2,19 @@
 
 The companion to [ai-slop.md](ai-slop.md)'s Type section. This is the field guide: which faces read as trite, *why*, and the principle that outlives any list.
 
+## House bans (owner override only)
+
+These families are **banned by default** in every project that uses these skills. A FaceTypes listing, a wave-law argument, or a muse-traced justification does **not** lift them:
+
+- **Space Grotesk**
+- **Fraunces**
+- **Instrument** — any family in the Instrument line (Instrument Serif, Instrument Sans, and any other Instrument cut)
+- **Cormorant** — any family in the Cormorant line (Cormorant Garamond, Cormorant Infant, and any other Cormorant cut)
+
+The owner may lift the ban for a specific project by recording an **explicit override** in that project's typography foundation or brief — the family, and why it is allowed here. Agents must never add, invent, or assume that override. A `foundations-ignore` comment is not enough.
+
+When `check-foundations.py` is wired in the project, it flags these families in tokens and `font-family` usage unless the same override is declared in `foundations.check.json` under `allowBannedTypefaces` (family + a reason that points at the recorded owner override).
+
 ## The wave law (read this before the list)
 
 The most important finding from tracking this discourse is that **the ban list decays**. The 2024–25 "escape Inter" advice recommended Fraunces, Instrument Serif, Geist, Clash Display, and Satoshi as the *cure* for default-font slop — and within one cycle, the same design community was posting "Slop fonts: Space Grotesk, Instrument Serif, Geist, Syne, Fraunces." Yesterday's escape hatch is today's cliché. Lobster was the fresh alternative to Comic Sans; now "Lobster is the new Comic Sans." Montserrat was the indie darling; then Fiverr crowned it font of the year and it became wallpaper.
@@ -21,9 +34,10 @@ A face escapes the list only by being **the muse abstracted** (traceable, specif
 
 ### 1. The AI / vibe-coding wave (the current tell — banned as defaults)
 The faces LLMs and template kits reach for; their presence now *identifies* generated work.
-- **Space Grotesk** — the #1 tell; "techy personality" grabbed for every AI/dev product
-- **Fraunces** — the character-serif every generated "warm premium" brand lands on
-- **Instrument Serif / Instrument Sans**
+- **Space Grotesk** — the #1 tell; "techy personality" grabbed for every AI/dev product; also a house ban (see above)
+- **Fraunces** — the character-serif every generated "warm premium" brand lands on; also a house ban (see above)
+- **Instrument Serif / Instrument Sans** — and any other Instrument cut; also a house ban (see above)
+- **Cormorant** — including Cormorant Garamond and other cuts; the "editorial elegance" default; also a house ban (see above)
 - **Syne**
 - **Geist** — Vercel's system face; costume when worn outside Vercel's ecosystem
 - The creator-template cohort: **DM Sans, Manrope, Plus Jakarta Sans, Outfit, Sora, Urbanist** — fine faces individually, but they arrive together as the "modern SaaS" kit, unchosen
@@ -60,7 +74,8 @@ Defaults of drag-and-drop design; each signals its template:
 
 ## How to apply this
 
-- **Cohorts 1–2 and 4–7: do not reach for these.** For cohorts 1–2 the ban is *as defaults/wave-picks* — a genuine muse-traced justification could theoretically earn one back, but the bar is "state why, or the default stands," and "it looks designed" is not a why.
+- **House bans first.** Space Grotesk, Fraunces, Instrument (any cut), and Cormorant (any cut) are banned by default. Only the owner can lift them, with an explicit override in that project's typography foundation or brief. Agents never self-override.
+- **Cohorts 1–2 and 4–7: do not reach for these.** For cohorts 1–2 the ban is *as defaults/wave-picks* — a genuine muse-traced justification could theoretically earn one back (except the house bans, which it cannot), but the bar is "state why, or the default stands," and "it looks designed" is not a why.
 - **Cohort 3 is conditional:** deliberate neutrality is a legitimate, often superior strategy (see the type-abstraction law in `creative-direction`).
 - **Refresh the wave cohorts.** Anything topping "best free fonts" lists, Fontshare's most-downloaded, or every third portfolio *this year* is entering the wave. When auditing, ask: "would three other brands in this category plausibly ship this face this quarter?" If yes, it's not ownable.
 - **The audit question is always the same:** was this face *decided* — and can the decision be stated in one sentence that traces to the muse or the emotional target?

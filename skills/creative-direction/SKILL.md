@@ -2,7 +2,7 @@
 name: creative-direction
 description: "Translate a brand's strategy — its emotional target and muses — into the concrete visual system: color, typography, composition, pattern & texture, iconography, illustration, and photography, as one coherent language. Use after brand-strategy and before logo or application work, or when the user mentions 'creative direction,' 'visual identity,' 'visual system,' 'design language,' 'stylescape,' 'pick our colors and fonts,' 'Facetypes,' 'free fonts,' 'define our look,' 'present the directions,' 'compare the concepts,' 'mockups for each direction,' or an audit's moving-forward items. This is where 'what it should feel like' becomes 'what it looks like.'"
 metadata:
-  version: 1.21.0
+  version: 1.21.1
 ---
 
 # Creative Direction
