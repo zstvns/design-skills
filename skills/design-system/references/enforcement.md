@@ -33,6 +33,7 @@ It exits 1 when anything fails, so it can also run in a pre-commit hook or CI. O
 |---|---|
 | **Contrast** | WCAG 2 ratio for every pair in `contrast`, in every theme the tokens file defines. Reads hex, `rgb()`, `hsl()`, bare shadcn HSL triples, and `oklch()`, resolves `var()` chains, and composites translucent colors before measuring. With no pairs configured it guesses common ones (text, muted, and foreground tokens on bg, surface, and background tokens; `--on-x` and `x-foreground` on `x`; focus and ring at 3:1), but list them explicitly. |
 | **Tokens and classes** | Raw colors in code. Raw or off-scale px and rem in padding, margin, gap, `border-radius`, and `font-size`, with the token it should be or the nearest steps on the scale. Raw `box-shadow`, durations, easing, and `z-index` when that token family exists. Tailwind arbitrary values (`p-[13px]`, `rounded-[10px]`, `bg-[#fff]`) unless they wrap a `var(--token)`. Default palette classes (`bg-blue-500`). Anything in `bannedClasses`. |
+| **Typefaces** | House-banned families in token values, `font-family` / `fontFamily`, Google Fonts `family=` URLs, `next/font` identifiers, font file names, and `font-['…']` classes: **Space Grotesk**, **Fraunces**, **Instrument** (any cut), and **Cormorant** (any cut). A `foundations-ignore` comment does not lift these. |
 | **Nested corners** | Each `nested` rule: inner = max(0, outer − padding), within 0.5px. Radius tokens whose `calc()` goes negative. A padded rounded element whose next child repeats the same `rounded-*` class (a warning, since markup heuristics can be wrong). |
 | **Foundation pages** | Each page in `docs` has `## Sections` with a mockup per section, `## Edge cases`, and `## Instructions for agents` with Steps, Self-checks, and Do / don't. Every token a page names exists. Every token row's value matches the tokens file. Tokens that no page documents are listed (a warning). |
 
@@ -41,6 +42,19 @@ Token files themselves are not scanned for raw values, since that's where values
 ### What it doesn't check
 
 Hierarchy, rhythm, whether the action color is used only on CTAs, focus order, grid breaks, and anything that needs the rendered page. Those stay on the page as manual self-checks and in `web-design`'s ship check. Say which is which on every page.
+
+## Banned typefaces
+
+Space Grotesk, Fraunces, Instrument (any cut), and Cormorant (any cut) are house-banned by default (`design-principles` → cliche-typefaces.md). The owner can lift the ban for this project by recording an explicit override in the typography foundation or brief, then declaring the same override in `foundations.check.json`:
+
+```json
+"allowBannedTypefaces": [
+  { "family": "Cormorant Garamond", "reason": "Owner override recorded in .agents/foundations/typography.md — [why it is allowed here]" }
+]
+```
+
+- **`family` + a non-empty `reason` are required.** The reason must point at the recorded owner override. A shorter name covers its cuts (`Cormorant` allows Cormorant Garamond; `Instrument Serif` does not allow Instrument Sans).
+- **Agents must never add this key.** A muse justification is not an override. Do not offer or draft an `allowBannedTypefaces` entry (or a brief override) as a way to keep a banned face. A `foundations-ignore` comment does not lift a house ban.
 
 ## Suppressions
 
@@ -52,7 +66,7 @@ A finding can be suppressed with a comment on the same or previous line:
 
 - **Every suppression needs a reason** after the colon.
 - **The summary counts suppressions**, so a reviewer sees them.
-- **Never suppress to finish faster.** Never lower a contrast `min`, add a value to `allow`, or widen a scale to make the check pass. Those are rule changes: they go on the page first, with the owner's yes.
+- **Never suppress to finish faster.** Never lower a contrast `min`, add a value to `allow`, or widen a scale to make the check pass. Those are rule changes: they go on the page first, with the owner's yes. Never add `allowBannedTypefaces` unless the owner has already recorded the override in the typography foundation or brief.
 
 ## When the check fails
 
