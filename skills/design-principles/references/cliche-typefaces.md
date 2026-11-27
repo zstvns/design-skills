@@ -11,7 +11,7 @@ These families are **banned by default** in every project that uses these skills
 - **Instrument** — any family in the Instrument line (Instrument Serif, Instrument Sans, and any other Instrument cut)
 - **Cormorant** — any family in the Cormorant line (Cormorant Garamond, Cormorant Infant, and any other Cormorant cut)
 
-The owner may lift the ban for a specific project by recording an **explicit override** in that project's typography foundation or brief — the family, and why it is allowed here. Agents must never add, invent, or assume that override. A `foundations-ignore` comment is not enough.
+The owner may lift the ban for a specific project by recording an **explicit override** in that project's typography foundation or brief — the family, and why it is allowed here. Agents must never add, invent, or assume that override. **Do not offer, draft, or present an override as a way to keep one of these faces.** Refuse the face, offer a different pairing, and honor an override only if the owner has already recorded it. A `foundations-ignore` comment is not enough.
 
 When `check-foundations.py` is wired in the project, it flags these families in tokens and `font-family` usage unless the same override is declared in `foundations.check.json` under `allowBannedTypefaces` (family + a reason that points at the recorded owner override).
 
@@ -74,7 +74,7 @@ Defaults of drag-and-drop design; each signals its template:
 
 ## How to apply this
 
-- **House bans first.** Space Grotesk, Fraunces, Instrument (any cut), and Cormorant (any cut) are banned by default. Only the owner can lift them, with an explicit override in that project's typography foundation or brief. Agents never self-override.
+- **House bans first.** Space Grotesk, Fraunces, Instrument (any cut), and Cormorant (any cut) are banned by default. Only the owner can lift them, with an explicit override in that project's typography foundation or brief. Agents never self-override, and they never offer or draft that override as a way to keep the face.
 - **Cohorts 1–2 and 4–7: do not reach for these.** For cohorts 1–2 the ban is *as defaults/wave-picks* — a genuine muse-traced justification could theoretically earn one back (except the house bans, which it cannot), but the bar is "state why, or the default stands," and "it looks designed" is not a why.
 - **Cohort 3 is conditional:** deliberate neutrality is a legitimate, often superior strategy (see the type-abstraction law in `creative-direction`).
 - **Refresh the wave cohorts.** Anything topping "best free fonts" lists, Fontshare's most-downloaded, or every third portfolio *this year* is entering the wave. When auditing, ask: "would three other brands in this category plausibly ship this face this quarter?" If yes, it's not ownable.

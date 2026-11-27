@@ -54,7 +54,7 @@ Space Grotesk, Fraunces, Instrument (any cut), and Cormorant (any cut) are house
 ```
 
 - **`family` + a non-empty `reason` are required.** The reason must point at the recorded owner override. A shorter name covers its cuts (`Cormorant` allows Cormorant Garamond; `Instrument Serif` does not allow Instrument Sans).
-- **Agents must never add this key.** A muse justification is not an override. A `foundations-ignore` comment does not lift a house ban.
+- **Agents must never add this key.** A muse justification is not an override. Do not offer or draft an `allowBannedTypefaces` entry (or a brief override) as a way to keep a banned face. A `foundations-ignore` comment does not lift a house ban.
 
 ## Suppressions
 
